@@ -1,0 +1,8 @@
+{
+  "description": "OpenUI5 TypeScript Walkthrough",
+  "author": "SAP SE",
+  "private": true,
+  "workspaces": [
+    "steps/*"
+  ]
+}

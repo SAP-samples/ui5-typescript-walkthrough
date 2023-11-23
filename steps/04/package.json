@@ -1,0 +1,18 @@
+{
+  "name": "ui5.walkthrough.step04",
+  "version": "1.0.0",
+  "author": "SAP SE",
+  "description": "OpenUI5 TypeScript Walkthrough: Step 4: XML Views",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve -o index.html"
+  },
+  "devDependencies": {
+    "@types/openui5": "^1.120.0",
+    "@ui5/cli": "^3.7.1",
+    "typescript": "^5.2.2",
+    "ui5-middleware-livereload": "^3.0.2",
+    "ui5-middleware-serveframework": "^3.0.0",
+    "ui5-tooling-transpile": "^3.2.7"
+  }
+}
