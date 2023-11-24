@@ -18,23 +18,24 @@ This way, they are all in a central place and can be easily translated into othe
 
 ### webapp/i18n/i18n.properties \(New\)
 
-We create the folder `webapp/i18n` and the file `i18n.properties` inside. The resolved bundle name is `ui5.walkthrough.i18n`, as we will see later. The `properties` file for texts contains name-value pairs for each element. You can add any number of parameters to the texts by adding numbers in curly brackets to them. These numbers correspond to the sequence in which the parameters are accessed \(starting with 0\).
+The i18n file allows you to store translated texts for multiple languages, making your application accessible to a wider audience. In oder to achive this, the `properties` file for texts contains name-value pairs for each element. You can add any number of placeholders to the texts by enclosing them in curly brackets with corresponding numbers. These numbers indicate the sequence in which the placeholders are accessed \(starting with 0\).
 
+To set up the `i18n` file, we navigate to the `webapp` folder and create a new folder named `i18n`. Inside this folder, we place the `i18n.properties` file. This file will serve as storage for our translated texts. We add two name-value pairs to our properties file: The `showHelloButtonText` property represents the text for the button on our App view. The `helloMsg` property represents the greeting message we will display in the message toast. To include the appropriate recipient's name in the message, we use a placeholder with the greeting message text.
 
 ```ini
 showHelloButtonText=Say Hello
 helloMsg=Hello {0}
 ```
 
-In this tutorial we will only have one properties file. However, in real-world projects, you would have a separate file for each supported language with a suffix for the locale, for example`i18n_de.properties` for German, `i18n_en.properties` for English, and so on. When a user runs the app, OpenUI5 will load the language file that fits best to the user's environment.
+In this tutorial we only have one properties file. However, in real-world projects, you would have a separate file for each supported language with a suffix for the locale, for example`i18n_de.properties` for German, `i18n_en.properties` for English, and so on. When a user runs the app, OpenUI5 will load the language file that fits best to the user's environment.
 
 ***
 
 ### webapp/controller/App.controller.ts
 
-In the `onInit` function of our controller we instantiate the `ResourceModel` that points to the new message bundle file where our texts are now located \(`i18n.properties file`\). The bundle name `ui5.walkthrough.i18n.i18n` consists of the application namespace `ui5.walkthrough` \(the application root as defined in the `index.html`\), the folder name `i18n` and finally the file name `i18n` without extension. The OpenUI5 runtime calculates the correct path to the resource; in this case the path to our `i18n.properties` file. Next, the model instance is set on the view as a named model with the key `i18n`.
+In the `onInit` function of our controller, we instantiate a `ResourceModel` and specify the `bundleName` parameter to refer to our new resource bundle file \(`i18n.properties`\). Then, we use the `setModel` function on the view to assign our newly created model as a named model with the key `i18n` to the view. With this, we enabled the binding of control properties in our view to translatable texts.  
 
-In the `onShowHello` event handler function we access the `i18n` model to get the text from the message bundle file and replace the placeholder `{0}` with the recipient from our data model. 
+In the `onShowHello` event handler function, we replace the static "Hello World" message with a dynamic greeting text `helloMsg` from the resource bundle and substitute the placeholder in the text with the recipient's name from our data model. To retrieve the recipient's name, we access the JSON model associated with the view and use the `getProperty` method. This method allows us to retrieve the value for a specific model property using a given path. We pass the data path to the recipient's name as an argument to `getProperty` method to retrieve the corresponding value. Next, we need to obtain the resource bundle from the view's model named `i18n`. We achieve this by using the `getResourceBundle` method provided by the `ResourceModel` module. The resource bundle has a specific `getText` method , which returns a locale-specific string value for a given text key. It can also accept an array of strings as a second argument. When this argument is provided, the `getText` method uses the `sap/base/strings/formatMessage` API to replace placeholders in the text with the corresponding values from the arguments array. In our case, we use the second parameter of `getText` to replace the `helloMsg` text's placeholder with the recipient's name. The resulting string is then returned by `getText` and passed to the `show` method of the message toast control.
 
 ```ts
 import MessageToast from "sap/m/MessageToast";
@@ -67,9 +68,8 @@ export default class AppController extends Controller {
 
    onShowHello(): void {
       // read msg from i18n model
-      // functions with generic return values require casting 
-      const resourceBundle = <ResourceBundle>(<ResourceModel>this.getView()?.getModel("i18n"))?.getResourceBundle();
       const recipient = (<JSONModel>this.getView()?.getModel())?.getProperty("/recipient/name");
+      const resourceBundle = <ResourceBundle>(<ResourceModel>this.getView()?.getModel("i18n"))?.getResourceBundle();
       const msg = resourceBundle.getText("helloMsg", [recipient]) || "no text defined";
       // show message
       MessageToast.show(msg);
@@ -77,19 +77,17 @@ export default class AppController extends Controller {
 };
 ```
 
-The `getProperty` method can be called in any model and takes the data path as an argument. In addition, the resource bundle has a specific `getText` method that takes an array of strings as second argument.
+The bundle name \(`ui5.walkthrough.i18n.i18n`\) consists of the application namespace `ui5.walkthrough` \(the application root as defined in the `index.html`\), the folder name `i18n` and finally the base file name `i18n` without extension. The OpenUI5 runtime calculates the correct path to the resource, to which `.properties` is then appended.
 
-The resource bundle can be accessed with the `getResourceBundle` method of a `ResourceModel`. Rather than concatenating translatable texts manually, we can use the second parameter of `getText` to replace parts of the text with non-static data. 
-
-During runtime, OpenUI5 tries to load the correct`i18n_*.properties` file based on your browser settings and your locale. In our case we have only created one `i18n.properties` file to make it simple. However, you can see in the network traffic of your browser’s developer tools that OpenUI5 tries to load one or more `i18n_*.properties` files before falling back to the default `i18n.properties` file.
-
-> :warning: **Important:**
-> You use named models when you need to have several models available in parallel.
+During runtime, OpenUI5 tries to load the correct`i18n_*.properties` file based on your browser settings and your locale. In our case we have only created the base `i18n.properties` file to make it simple. However, you can see in the network traffic of your browser’s developer tools that OpenUI5 tries to load one or more `i18n_*.properties` files before falling back to the default `i18n.properties` file.
 
 ***
+
 ### webapp/view/App.view.xml
 
-In the XML view, we connect the button text to the `showHelloButtonText` property in the `i18n` model. To address the correct model, the binding path has to start with the model name `i18n` followed by a '>'. A resource bundle is a flat structure, therefore the preceding slash \(/\) can be omitted for the path to the text.
+Finally, we can now bind the text properties in our XML view to translatable texts. We connect text property of the button control to the `showHelloButtonText` key in the `i18n` model. To correctly reference the model, the binding path should start with the model name `i18n`, followed by a '>'. 
+
+Since a resource bundle is a flat structure, we can omit the preceding slash \(/\) when specifying the path to the text.
 
 ```xml
 <mvc:View controllerName="ui5.walkthrough.controller.App"
@@ -122,7 +120,7 @@ In the XML view, we connect the button text to the `showHelloButtonText` propert
 
 -   Resource bundle keys are written in \(lower\) camelCase.
 
--   Resource bundle values can contain parameters like `{0}`, `{1}`, `{2}`, …
+-   Resource bundle values can contain placeholders like `{0}`, `{1}`, `{2}`, …
 
 -   Never concatenate strings that are translated, always use placeholders.
 
@@ -141,10 +139,12 @@ In the XML view, we connect the button text to the `showHelloButtonText` propert
 
 [Resource Model](https://sdk.openui5.org/topic/91f122a36f4d1014b6dd926db0e91070.html#loio91f122a36f4d1014b6dd926db0e91070 "The resource model is used as a wrapper for resource bundles. In data binding you use the resource model instance, for example, to bind texts of a control to language-dependent resource bundle properties.")
 
-[API Reference: `sap/base/i18n/ResourceBundle`](https://sdk.openui5.org/#/api/module:sap/base/i18n/ResourceBundle)
+[Use of Localized Texts in Applications](https://sdk.openui5.org/topic/91f385926f4d1014b6dd926db0e91070 "OpenUI5 provides two options to use localized texts in applications: The sap/base/i18n/ResourceBundle module and data binding.")
 
 [API Reference: `sap.ui.model.resource.ResourceModel`](https://sdk.openui5.org/#/api/sap.ui.model.resource.ResourceModel)
 
-[API Reference: `sap/base/strings/formatMessage`](https://sdk.openui5.org/#/api/sap.base.strings.formatMessage)
+[API Reference: `sap/base/i18n/ResourceBundle`](https://sdk.openui5.org/#/api/module:sap/base/i18n/ResourceBundle)
 
-[Binding Path](Binding_Path_2888af4.html "Binding paths address the different properties and lists in a model and define how a node in the hierarchical data tree can be found.")
+[API Reference: `sap/base/strings/formatMessage`](https://sdk.openui5.org/#/api/module:sap/base/strings/formatMessage)
+
+[Binding Path](https://sdk.openui5.org/topic/2888af49635949eca14fa326d04833b9 "Binding paths address the different properties and lists in a model and define how a node in the hierarchical data tree can be found.")

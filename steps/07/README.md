@@ -52,8 +52,6 @@ export default class AppController extends Controller {
 ```
 The model is now set on the view.
 
-The message toast is just showing the static "Hello World" message. We will show how to load a translated text here in [Step 8: Translatable Texts](../08/README.md).
-
 ***
 
 ### webapp/view/App.view.xml
@@ -83,7 +81,7 @@ We include an `sap/m/Input` control in the view, allowing the user to input a re
 </mvc:View>
 ```
 
-The text on the button and also the message toast are just showing static texts for now which is not acceptable in business applications. We will show how to load a translated text here in the next step.
+The mdoel is now set on the view.
 
 &nbsp;
 ***
