@@ -31,7 +31,7 @@ We navigate to the `webapp` folder and place the `Component.ts` file to it that 
 
 We define the component by extending `sap/ui/core/UIComponent` and supplement the component with additional metadata. Within the `interfaces` settings, we specify that the component should implement the `sap/ui/core/IAsyncContentCreation` interface. This allows the component to be generated asynchronously, which in turn sets the component's rootView and router configuration to async. In the `rootView` property, we establish the app view as the component's root view. We name our app view in the `viewName` property and specify that it's an XML view in the `type` property. Furthermore, we assign the `id` of the root view as "app".
 
-> :important: **Important:**
+> :warning: **Important:**
 >
 > Note that the `rootView` metadata property of the UI component is deprecated and should not be used in real-world applications. Normally, this configuration is done in the app descriptor, which we will handle in [Step 10](../10/README.md). For this particular step, we're using it because we're setting up a component without the app descriptor.
 
