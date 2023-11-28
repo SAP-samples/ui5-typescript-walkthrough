@@ -4,7 +4,7 @@
         "id": "ui5.walkthrough",
         "type": "application",
         "i18n": {
-            "bundleUrl": "i18n/i18n.properties",  
+            "bundleName": "ui5.walkthrough.i18n.i18n",  
             "supportedLocales": [
               ""
         ],

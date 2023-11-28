@@ -52,7 +52,7 @@ Specify the compiler options as follow:
 
 ### webapp/index.ts \(New\)
 
-Create a new `index.ts` script in the webapp folder and add a native `alert()` method with the message "UI5 is ready" to it. We'll integrate this script to the `index.html` page next.
+We create a new `index.ts` script in the webapp folder and add a native `alert()` method with the message "UI5 is ready" to it. We'll integrate this script to the `index.html` page next.
 
 ```ts
 alert("UI5 is ready");
@@ -74,7 +74,7 @@ In this step, we we change the `index.html` page to make it load the SAPUI5 fram
 
 -   We configure the bootstrapping process to run asynchronously. This means that the OpenUI5 resources can be loaded simultaneously in the background for performance reasons.
 
--   With attribute `data-sap-ui-onInit` we define that the module `ui5/walkthrough/index` is loaded initially in a declarative way. With this, we avoid directly executable JavaScript code in the HTML file. This makes your app more secure. Note that the path to our file includes the namespace, whereby the "." is replaced by a "/" (see explanation below).
+-    The `data-sap-ui-onInit` attribute is used in OpenUI5 to specify a JavaScript or TypeScript function that will be executed when the framework is fully loaded and initialized. This approach allows us to avoid directly including executable JavaScript code in the HTML file, which improves the security of our application. Here, we're indicating that our `ui5/walkthrough/index` module should be triggered and executed at the start of the application. Note that the path to our file includes the namespace, whereby the "." is replaced by a "/" (see explanation below).
 
 -   The attribute `data-sap-ui-resourceroots` lets you map a namespace to a specific path. We define the namespace `ui5.walkthrough` and map it relative to `index.html`. This way, We tell OpenUI5 core that resources in the `ui5.walkthrough` namespace are located in the same folder as `index.html`.
 

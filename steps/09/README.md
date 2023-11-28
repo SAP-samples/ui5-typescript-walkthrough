@@ -17,7 +17,7 @@ In this step, we will encapsulate all UI assets in a component that is independe
 
 After this step your project structure will look like the figure below. We will create the `Component.ts` file now and modify the related files in the app.
 
-![](xxx.png "Folder Structure for this Step")
+![](https://sdk.openui5.org/docs/topics/loio1e237a36972a44ac8522dd1a540ac062_LowRes.png "Folder Structure for this Step")
 
 <sup>*Folder Structure for this Step*</sup>
 
@@ -25,18 +25,22 @@ After this step your project structure will look like the figure below. We will 
 ***
 
 
-#### webapp/Component.ts \(New\)
+### webapp/Component.ts \(New\)
 
-We create the `Component.ts` file in the `webapp` folder.
+We navigate to the `webapp` folder and place the `Component.ts` file to it that will hold our application setup. This file is commonly referred to as the component controller. A component is organized in a unique namespace which is synonymous with the application namespace. All required and optional resources of the component have to be organized in the namespace of the component.
 
-Our component inherits from the base class `sap/ui/core/UIComponent` and it is obligatory to make the super call to the `init` function of the base class in the overridden `init` method.
+We define the component by extending `sap/ui/core/UIComponent` and supplement the component with additional metadata. Within the `interfaces` settings, we specify that the component should implement the `sap/ui/core/IAsyncContentCreation` interface. This allows the component to be generated asynchronously, which in turn sets the component's rootView and router configuration to async. In the `rootView` property, we establish the app view as the component's root view. We name our app view in the `viewName` property and specify that it's an XML view in the `type` property. Furthermore, we assign the `id` of the root view as "app".
 
-As a next step we need to define the `metadata` for our component. The `metadata` section defines a reference to the root view, so that instead of displaying the root view directly in the `index.ts` file as we did previously, the component manages the display of the app view. It also implements the `sap.ui.core.IAsyncContentCreation` interface, which allows the component to be created fully asynchronously.
+> :important: **Important:**
+>
+> Note that the `rootView` metadata property of the UI component is deprecated and should not be used in real-world applications. Normally, this configuration is done in the app descriptor, which we will handle in [Step 10](../10/README.md). For this particular step, we're using it because we're setting up a component without the app descriptor.
 
-In the `init` function we instantiate our data model and the `i18n` model like we did before in the App controller.
+When the component is instantiated, OpenUI5 automatically calls the `init` function of the component. It's crucial that when extending the base class, a super call to the `init` function of the base class is executed. Additionally, we instantiate our data model and the `i18n` model in this section, similar to what we did earlier in the `onInit` function of app controller.
 
 ```ts
 import UIComponent from "sap/ui/core/UIComponent";
+import JSONModel from "sap/ui/model/json/JSONModel";
+import ResourceModel from "sap/ui/model/resource/ResourceModel";
 
 /**
  * @namespace ui5.walkthrough
@@ -47,6 +51,7 @@ export default class Component extends UIComponent {
         "rootView": {
             "viewName": "ui5.walkthrough.view.App",
             "type": "XML",
+            /*"async": true, // implicitly set via the sap.ui.core.IAsyncContentCreation interface*/
             "id": "app"
         }
     };
@@ -73,15 +78,11 @@ export default class Component extends UIComponent {
 
 Be aware that the models are set directly on the component and not on the root view of the component. However, as nested controls automatically inherit the models from their parent controls, the models are available on the view as well.
 
-> :bulb: **Note:**
-> 
-> The `sap.ui.core.IAsyncContentCreation` interface implicitly sets both the component's `rootView` and its router configuration to `"async": true`; the latter will be described in [Step 30: Routing and Navigation](../30/README.md).
-
 ***
 
-#### webapp/controller/App.controller.ts
+### webapp/controller/App.controller.ts
 
-We delete the `onInit` function and the required modules from our App controller; this is now done in the component. 
+We delete the `onInit` function from the app controller; this is now done in the component controller. 
 
 ```ts
 import MessageToast from "sap/m/MessageToast";
@@ -96,9 +97,8 @@ import ResourceBundle from "sap/base/i18n/ResourceBundle";
 export default class AppController extends Controller {
     onShowHello(): void {
         // read msg from i18n model
-        // functions with generic return values require casting 
-        const resourceBundle = <ResourceBundle> (<ResourceModel> this.getView()?.getModel("i18n"))?.getResourceBundle();
         const recipient = (<JSONModel> this.getView()?.getModel())?.getProperty("/recipient/name");
+        const resourceBundle = <ResourceBundle> (<ResourceModel> this.getView()?.getModel("i18n"))?.getResourceBundle();
         const msg = resourceBundle.getText("helloMsg", [recipient]) || "no text defined";
         // show message
         MessageToast.show(msg);
@@ -111,7 +111,9 @@ export default class AppController extends Controller {
 
 #### webapp/index.ts
 
-We now create a component container instead of the view in our `index.ts` that instantiates the view for us according to the component configuration.
+Instead of directly creating a view, we now utilize a ComponentContainer control. This particular control allows us to encapsulate a UI Component within a control tree.
+
+To set up the ComponentContainer, we assign the `name` property with the namespace of the component. This specifies which component to load and initialize. In addition, we give our component a unique `id` through the `ComponentContainer` constructor's setting argument. It's vital to ensure that this component id is unique among all components created during the application's runtime to avoid any potential conflicts. Furthermore, to allow the component and its dependencies to load in a fully asynchronous manner, we set the `async` property to "true". This implies that the loading of the component will not block other operations, leading to a smoother, more efficient loading experience. Finally, we position our newly created ComponentController control within the DOM element with the id `content`.
 
 ```ts
 import ComponentContainer from "sap/ui/core/ComponentContainer";
@@ -119,7 +121,7 @@ import ComponentContainer from "sap/ui/core/ComponentContainer";
 new ComponentContainer({
     name: "ui5.walkthrough",
     settings: {
-        id: "walkthroughts"
+        id: "walkthrough"
     },
     async: true
 }).placeAt("content");
@@ -150,14 +152,8 @@ new ComponentContainer({
 
 [Components](https://sdk.openui5.org/topic/958ead51e2e94ab8bcdc90fb7e9d53d0.html "Components are independent and reusable parts used in OpenUI5 applications.")
 
-[API Reference: `sap.ui.core.mvc.ViewType`](https://sdk.openui5.org/api/sap.ui.core.mvc.ViewType)
-
-[Samples: `sap.ui.core.mvc.ViewType` ](https://sdk.openui5.org/entity/sap.ui.core.mvc.ViewType)
-
-[Declarative API for Initial Components](https://sdk.openui5.org/topic/82a0fcecc3cb427c91469bc537ebdddf.html "The declarative API enables you to define the initially started component directly in the HTML markup.")
-
 [Methods Controlling the Initial Instantiation](https://sdk.openui5.org/topic/b430345887f1419fba50320b57c1bdf9.html "OpenUI5 provides two methods for the initial instantiation of the component.")
 
 [Advanced Concepts for OpenUI5 Components](https://sdk.openui5.org/topic/ecbc417ff264498b96bc364c53280242.html "Advanced concepts for components include routing and navigation and component data as well as the event bus.")
 
-[Make Your App CSP Compliant](https://sdk.openui5.org/topic/1f81a093a9f3433983dcb2ebe11cd4cd.html "CSP stands for Content Security Policy and is a security standard to prevent cross-site scripting or other code injection attacks.")
+[API Reference: `sap.ui.core.ComponentContainer`](https://sdk.openui5.org/api/sap.ui.core.ComponentContainer)

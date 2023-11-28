@@ -17,7 +17,7 @@ The SAP Fiori launchpad acts as an application container and instantiates the ap
 
 ### webapp/i18n/i18n.properties
 
-We add new key/value pairs to our text bundle  for the app title and the app description`. We will use these texts in our app descriptor. In addition we add comments to separate the bundle texts semantically.
+In our text bundle, we include two new name-value pairs: `appTitle` for the title of our app and `appDescription` for a brief description. These texts will be used in our app descriptor later on. To improve readability, we also add comments to separate the bundle texts based on their meaning.
 
 ```ini
 # App Descriptor
@@ -32,43 +32,53 @@ helloMsg=Hello {0}
 
 ### webapp/manifest.json
 
-The content of the manifest file is a configuration object in JSON format that contains all global application settings and parameters. It is called the descriptor for applications, components, and libraries and is also referred to as “descriptor” or “app descriptor” when used for applications. It is stored in the `webapp` folder and read by OpenUI5 to instantiate the component. 
+As mentioned in [Step 1](../01/README.md#webappmanifestjson-new), the manifest file is used by OpenUI5 to instantiate the component. We have already configured the essential attributes of the file so that it can be used with the UI5 Tooling. Now, we will add additional attributes that are important for creating a proper UI component in OpenUI5.
 
-There are three important sections defined by namespaces in the `manifest.json` file:
-
--   **`sap.app`**
-
-    The `sap.app` namespace we already know from [step 1](../01/README.md). We extend this configuration with the following application-specific attributes:
+We enhance the **`sap.app`** namespace by adding configuration for the following application-specific attributes:
     
-    -   `i18n`: Defines the path to the resource bundle file. The `supportedLocales` and `fallbackLocale` properties are set to empty strings, as our demo app uses only one `i18n.properties` file for simplicity and we'd like to prevent the browser from trying to load additional `i18n_*.properties` files based on your browser settings and your locale.
+    -   `i18n`: The `i18n` property is an optional attribute to configure internationalization settings. It is optional and only necessary if the manifest contains text symbols (placeholders in {{...}} syntax). The `i18n` property has the following sub-settings:
 
-    -   `title`: As mentioned in step 1, it is recommended to make the title language dependend. To reference a text from the app's resource bundle we use the handlebar syntax: {{key}}
+            -   The `bundleName` parameter specifies the name of the resource bundle file that contains the text symbols for the descriptor. The file is referenced using a dot notation namespace. In our case, we stored the texts for the app descriptor in the same resource bundle as the remaining texts, so we reference the properties file stored in the `i18n` folder.
+            
+            -   The `supportedLocales` property defines an array of locales supported by the application (for example en_GB, en-GB, or en). This helps optimize the loading performance of resource bundles. It controls the language fallback chain and prevents unnecessary and potentially failing requests. In our application, we only use the base `i18n.properties` file for simplicity, so we set this property to an empty string. This ensures that the browser does not attempt to load additional `i18n_*.properties` files based on the browser's language setting and locale.
 
-    -   `description`: Short description text what the application does in handlebars syntax referenced from the app's resource bundle.
+            -   The `fallbackLocale` property specifies the fallback locale to be used in case the user's locale is not present in the list of supported locales or the required text can't be found in any other resource bundle. The fallback locale must be listed in the `supportedLocales`. Also here, we specify an empty string as per default `fallbackLocale` is set to "en".
 
-        > :warning: **Important:**
+    -   `title`: In [Step 1](../01/README.md#webappmanifestjson-new), we recommended making the title language-dependent. We now implement this by referencing the `appTitle` text from the resource bundle using the handlebar syntax: {{key}}
+
+    -   `description`: Similarly, we make the description text language-dependent by referencing the `appDescription` text from the resource bundle using the handlebar syntax: {{key}}
+
+        > :bulb: **Note:**
         >
-        > Properties of the resource bundle are enclosed in two curly brackets in the descriptor. This is not an OpenUI5 data binding syntax, but a variable reference to the resource bundle in the descriptor in handlebars syntax. The referred texts are not visible in the app built in this tutorial but can be read by an application container like the SAP Fiori launchpad.
+        > Properties of the resource bundle are enclosed in two curly brackets in the descriptor. This is not an OpenUI5 data binding syntax, but a variable reference to the resource bundle in the descriptor in handlebars syntax. The referred texts are not visible in the app itself but can be read by an application container like the SAP Fiori launchpad.
 
--   **`sap.ui`**
+In addition to the `sap.app` namespace, there are two other important namespaces:
+-   **`sap.ui`**: This namespace is used for UI-specific attributes and comes with the following main attributes:
 
-    The `sap.ui namespace` contributes the following UI-specific attributes:
+    -   `technology`: This property specifies the technology used for the application; the value is `UI5`
 
-    -   `technology`: This value specifies the UI technology; the value is `UI5`
+    -   `deviceTypes` \(mandatory\): This property defines the supported device types for the application. It is an object that contains three boolean properties: `desktop`, `tablet`, and `phone`. Each property indicates whether the application is designed to be used on that particular device type. We define all three device types as true, which means that our application is intended to be used on desktops, tablets, and phones.
+        
+        > :bulb> **Note:**
+        >
+        > By configuring the `deviceTypes` property, developers can ensure that the application's user interface is optimized for different device types, providing a consistent and responsive experience across various devices.
 
-    -   `deviceTypes` \(mandatory\): Tells what devices are supported by the app: desktop, tablet, phone \(all true by default\)
+-   **`sap.ui5`**: This namespace adds OpenUI5-specific configuration parameters that are automatically processed by OpenUI5. The following parameters are important:
 
+    -   `dependencies`\(mandatory\): This section defines the dependencies of the component. It comes with the following sub-settings:
 
--   **<code><b>sap.ui5</b></code>**
+            -   The `minUI5Version` property is mandatory and specifies the minimmum version of OpenUI5 required by the component. Our component requires version 1.20 as minimum.
+            
+            -    The `libs` settings declare the libraries that the OpenUI5 core should load for use in the component. To benefit from the asynchronous library preload, it is essential to add all obligatory libraries here. You can set the `lazy` parameter to "true" to indicate that the lib shall be lazy loaded. This makes sure that the libraries are only loaded when they're needed. If your app requires a minimum version of the lib, you need to specify the `minVersion` for information purposes. We declare here the two libraries `sap.ui.core` and `sap.m` as dependencies to be loaded directly when starting the component.
 
-    The `sap.ui5` namespace adds OpenUI5-specific configuration parameters that are automatically processed by OpenUI5. The most important parameters are:
+            > :warning: **Important:**
+            >
+            > Make sure that you don't load too many dependencies. In most apps it's enough to load the libraries sap.ui.core and sap.m by default, and add additional libraries only when needed.
 
-    -   `dependencies`\(mandatory\): Here we have to declare the dependencies so they are loaded by the OpenUI5 core during the initialization phase of the component and used afterwards. 
-    It's mandatory to set in `minUI5Version` the mimimum version of OpenUI5 our component requires. Additionally we declare the dependency to the libraries `sap.ui.core` and `sap.m`, to benefit from the asynchronous library preload. 
+    -   `rootView`: This section defines the root view of the application. The root view is the initial view that is displayed when the component is loaded. It specifies view name as a string for XML views, or the view configuration object with `viewName` for the view name as string and `type` for the view type, `id`, `async`, and other properties of `sap.ui.core.mvc.view`. We configure our app view as root view and add the ID "app" to it.
 
-    -   `rootView`: If you specify this parameter, the component will automatically instantiate the view and use it as the root for this component
-
-    -   `models`: In this section of the descriptor we can define models that will be automatically instantiated by OpenUI5 when the app starts. Here we can now define the local resource bundle. We define the name of the model "i18n" as key and specify the bundle file by namespace. As in the previous steps, the file with our translated texts is stored in the `i18n` folder and named `i18n.properties`. We simply prefix the path to the file with the namespace of our app. The manual instantiation in the app component's init method will be removed later in this step. The `supportedLocales` and `fallbackLocale` properties are set to empty strings, as in this tutorial our demo app uses only one `i18n.properties` file for simplicity, and we'd like to prevent the browser from trying to load additional `i18n_*.properties` files based on your browser settings and your locale.
+    -   `models`: This section is used to define the models that will be created or destroyed during the lifecycle of the app. Each model is identified by a unique key, and an empty string ("") is used to represent the default model. For each model you need to specify its type, and depending on the chosen model type, you may also need to provide additional settings. <br>
+    In our current scenario, we only have one model called `i18n`, which is a resource model. To configure this model, we set its name as the key and specify the type as "sap.ui.model.resource.ResourceModel". Additionally, we can use the same settings that we have defined for the `i18n` properties in the `sap.app` namespace.
 
 ```json
 {
@@ -77,7 +87,7 @@ There are three important sections defined by namespaces in the `manifest.json` 
         "id": "ui5.walkthrough",
         "type": "application",
         "i18n": {
-            "bundleUrl": "i18n/i18n.properties",
+            "bundleName": "ui5.walkthrough.i18n.i18n",
             "supportedLocales": [
                 ""
             ],
@@ -130,13 +140,15 @@ There are three important sections defined by namespaces in the `manifest.json` 
 >
 > In this tutorial, we only introduce the most important settings and parameters of the descriptor file. In some development environments you may get validation errors because some settings are missing - you can ignore those in this context for the moment.
 
-The existence of the `manifest.json` file must be declared in the component metadata, which is then delivered as part of the application archive. So let's do this as a next step.
+
 
 ***
 
 ### webapp/Component.ts
 
-In the component's `metadata` section, we now replace the `rootView` property with the property key `manifest` and the value `json`. This defines a reference to the descriptor that will be loaded and parsed automatically when the component is instantiated. We can now completely remove the lines of code containing the model instantiation for our resource bundle. It is done automatically by OpenUI5 with the help of the configuration entries in the descriptor. We can also remove the dependency to `sap/ui/model/resource/ResourceModel` and the corresponding formal parameter `ResourceModel` because we will not use this inside our anonymous callback function.
+To apply the configuration from the app descriptor to the component, we need to declare the file in the component metadata. This can be done by specifying the `manifest` property in the component's `metadata` section and setting it to "json". This property serves as a reference to the `manifest.json` file, which will be loaded and utilized.
+
+Since we have already specified the configuration of the rootView in the app descriptor, the corresponding property in the metadata becomes obsolete. Therefore, we can safely remove this property from the metadata. Additionally, the instantiation of the resource model is now done automatically based on the configuration in the app descriptor. As a result, we can safely remove the corresponding code block from the component controller. This also means that we can remove the import statement for the `ResourceModel` module from `sap/ui/model/resource/ResourceModel`, as it is no longer used inside our anonymous callback function.
 
 ```ts
 import UIComponent from "sap/ui/core/UIComponent";
@@ -165,12 +177,17 @@ export default class Component extends UIComponent {
     };
 };
 ```
+> :bulb: **Note:**
+>
+> In previous versions of OpenUI5, additional configuration settings for the app, like the service configuration, the root view, and the routing configuration, had to be added to the metadata section of the `Component` file. As of OpenUI5 version 1.30, we recommend that you define these settings in the `manifest.json` descriptor file. Apps and examples that were created based on an older OpenUI5 version still use the `Component` file for this purpose - so it is still supported, but deprecated.
 
 ***
 
 ### webapp/index.html
 
-Now we declare our component in the body of our `index.html`. In the bootstrapping script of our `index.html`, we enable the `ComponentSupport` module. Then, we declare our component in the body via a `div` tag. This will instantiate the component when the `onInit` event is executed.
+Now let's explore how to instantiate a component in a declarative way directly in the HTML markup of our `index.html` file, instead of an imperative approach through script. To do this, we need to make a few changes.
+
+First, we replace the reference to our `ui5/walkthrough/index` in the `data-sap-ui-onInit` attribute with a reference to `sap/ui/core/ComponentSupport`. This change allows us to use a declarative approach. Next, we add a `div` tag to the body of our HTML file. Inside this `div` tag, we add a special data attribute called `data-sap-ui-component`. This attribute is important because the `sap/ui/core/ComponentSupport` module scans the DOM for HTML elements containing this attribute. Any DOM element marked with this attribute will be considered a container element into which a `sap/ui/core/ComponentContainer` is inserted. We can also use additional data attributes to define the constructor arguments of the created `ComponentContainer` instance. In our previous step, we created the `ComponentContainer` instance in the `index.ts` file. Now, we transfer those arguments as data attributes to our `div` tag. It's worth noting that the `ComponentSupport` module enforces asynchronous loading of the respective component, so we don't need to set the `async` attribute to "true" in this case.
 
 ```html
 <!DOCTYPE html>
@@ -196,13 +213,10 @@ Now we declare our component in the body of our `index.html`. In the bootstrappi
 </html>
 ```
 
-We can delete our `index.ts`, because the descriptor now takes care of everything.
+We can now delete our `index.ts` file, because our component is now initiated directly in the HTML markup.
 
 ***
 
-> :bulb: **Note:**
->
-> In previous versions of OpenUI5, additional configuration settings for the app, like the service configuration, the root view, and the routing configuration, had to be added to the metadata section of the `Component` file. As of OpenUI5 version 1.30, we recommend that you define these settings in the `manifest.json` descriptor file. Apps and examples that were created based on an older OpenUI5 version still use the `Component` file for this purpose - so it is still supported, but not recommended.
 
 ***
 
@@ -228,6 +242,12 @@ We can delete our `index.ts`, because the descriptor now takes care of everythin
 
 [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html "The descriptor for applications, components, and libraries (in short: app descriptor) is inspired by the WebApplication Manifest concept introduced by the W3C. The descriptor provides a central, machine-readable, and easy-to-access location for storing metadata associated with an application, an application component, or a library.")
 
-[Methods Controlling the Initial Instantiation](https://sdk.openui5.org/topic/b430345887f1419fba50320b57c1bdf9.html "OpenUI5 provides two methods for the initial instantiation of the component.")
+[Supported Locales and Fallback Chain](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da "You can configure a list of supported locales and a fallback locale in your app’s manifest to control the loading of resource bundles and avoid ‘404 Not Found’ network responses.")
 
-[Advanced Concepts for OpenUI5 Components](https://sdk.openui5.org/topic/ecbc417ff264498b96bc364c53280242.html "Advanced concepts for components include routing and navigation and component data as well as the event bus.")
+[Terminologies](https://sdk.openui5.org/topic/eba8d25a31ef416ead876e091e67824e.html "By defining terminologies together with additional resource bundles, an application can easily be switched from one scenario or industry to another.")
+
+[Declarative API for Initial Components](https://sdk.openui5.org/topic/82a0fcecc3cb427c91469bc537ebdddf.html "The declarative API enables you to define the initially started component directly in the HTML markup.")
+
+[API Reference: `sap.ui.core.ComponentSupport`](https://sdk.openui5.org/api/sap.ui.core.ComponentSupport)
+
+[Make Your App CSP Compliant](https://sdk.openui5.org/topic/1f81a093a9f3433983dcb2ebe11cd4cd.html "CSP stands for Content Security Policy and is a security standard to prevent cross-site scripting or other code injection attacks.")
