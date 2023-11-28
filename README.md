@@ -16,27 +16,26 @@ Please edit this file as it is the primary description file for your project. Yo
 
 # OpenUI5 TypeScript Walkthrough
 
-In this tutorial we will introduce you to all major development paradigms of OpenUI5. Thereby we use TypeScript with OpenUI5 and also explain the specific characteristics of using OpenUI5 with TypeScript.
+In this tutorial we'll introduce you to all major development paradigms of OpenUI5. We'll demonstrate the use of TypeScript with OpenUI5 and highlight the specific characteristics of this approach.
 
 ## Description
 
-We first introduce you to the basic development paradigms like *Model-View-Controller* and establish a best-practice structure of our application. We'll do this along the classic example of “Hello World” and start a new app from scratch. Next, we'll introduce the fundamental data binding concepts of OpenUI5 and extend our app to show a list of invoices. We'll continue to add more functionality by adding navigation, extending controls, and making our app responsive. We'll also look at the testing features and the built-in support tools of OpenUI5.
+We first introduce you to the basic development paradigms like *Model-View-Controller* and establish a best-practice structure of our application. We'll do this along the classic example of “Hello World” and start a new app from scratch. Next, we'll introduce the fundamental data binding concepts of OpenUI5 and extend our app to show a list of invoices. We'll continue to add more functionality by adding navigation, extending controls, and making our app responsive. We'll also have look at the testing features and the built-in support tools of OpenUI5.
 
 ### Preview
 
 ![Preview of the OpenUI5 application that is going to be built in this tutorial. Contains a Hello World upper part with buttons and a text input. The lower part shows list of invoices with details, grouped by vendor names.](https://sdk.openui5.org/docs/topics/loiofb12cea5ac9b45bb9007aac5a1a8689f_LowRes.png)
 
-> :bulb: **Note:**
->
+> :bulb: **Tip:** <br>
 > You don't have to do all tutorial steps sequentially, you can also jump directly to any step you want. Just download the code from the previous step and make sure that the application runs as intended.
 > 
-> You can view and download the samples for all steps here in this repository.
+> You can view the samples for all steps here in this repository.
 >
 > For more information, read the [Getting Started](#getting-started) section below.
 
 ### Steps
 
-The tutorial consists of the following steps. To start, just open the first link - you will be guided from there.
+The tutorial consists of the following steps. To start, just open the first link - you`ll be guided from there.
 
 - **[Step 1: Hello World!](/steps/01/README.md "As you know OpenUI5 is all about HTML5. Let’s get started with building a first “Hello World” with only HTML.")**  
 - **[Step 2: Bootstrap](/steps/02/README.md "Before we can do something with OpenUI5, we need to load and initialize it. This process of loading and initializing OpenUI5 is called bootstrapping. Once this bootstrapping is finished, we simply	display an alert.")**
