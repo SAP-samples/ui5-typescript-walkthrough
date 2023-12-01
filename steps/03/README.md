@@ -15,22 +15,25 @@ Now it is time to build our first little UI by replacing the “Hello World” t
 
 ***
 
-### Coding
+### Tooling
 
 ### package.json
 
-First, we need to install `@types/openui5` to get the type definitions for OpenUI5. Open a terminal in the app root folder and execute the following command:
+To get the type definitions for OpenUI5, we need to install them to our project. We open a terminal in the root folder of our app and exectue the following command:
 
-`npm install @types/openui5 --save-dev` 
+```sh
+npm install @types/openui5 --save-dev
+```
 
-This will install the type definitions for OpenUI5 and update the `package.json` with this new development dependency.
+***
 
+### Coding
 
 ### webapp/index.ts
 
-Now we make some changes to our `index.ts` file: We remove the alert method and instantiate an OpenUI5 text control instead; its options are passed to the constructor with a TypeScript object. For our control we set the `text` property to the value “Hello World”. 
+Now we make some changes to our `index.ts` file: We remove the alert method and instantiate an OpenUI5 text control instead. We create an instance of the text control by passing its options as a TypeScript object to the constructor. In our case, we want the text control to display the message "Hello World", so we'll set the `text` property accordingly. 
 
-We chain the constructor call of the control to the standard method `placeAt` that is used to place OpenUI5 controls inside a node of the document object model \(DOM\) or any other OpenUI5 control instance. We pass the ID `content` as an argument.
+To place the text control to our HTML document, we chain the constructor call of the control with the `placeAt` method. This method is used to position OpenUI5 controls. In our case, we add the text control to the DOM element with the ID `content`.
 
 ```ts
 import Text from "sap/m/Text";
@@ -38,15 +41,13 @@ import Text from "sap/m/Text";
 new Text({
     text: "Hello World"
 }).placeAt("content");
-
 ```
 
 Controls are used to define appearance and behavior of parts of the screen.
 
 All controls of OpenUI5 have a fixed set of properties, aggregations, and associations for configuration. You can find their descriptions in the Demo Kit. In addition, each control comes with a set of public functions that you can look up in the API reference.
 
-> :warning: **Important:**
->
+> :warning: **Important:** <br>
 > Only instances of `sap.ui.core.Control` or their subclasses can be rendered stand-alone and have a `placeAt` function. Each control extends `sap.ui.core.Element` that can only be rendered inside controls. Check the API reference to learn more about the inheritance hierarchy of controls. The API documentation of each control refers to the directly known subclasses.
 
 ***
@@ -87,11 +88,13 @@ In the example above, the callback of the `onInit` event is where we now instant
 
 ### UI5 Tooling
 
-As we now use the `sap.m` library with our app, we need to update our UI5 Tooling setup with a dependency to this library. Open a terminal in the app root folder an execute the command:
- 
- `ui5 add sap.m` 
- 
- This will configure the OpenUI5 library `sap.m` as a dependency in our `ui5.yaml`.
+As we now use the `sap.m` library with our app, we need to add the dependency to this library our UI5 Tooling setup. 
+
+We open a terminal in the root folder of our app and exectue the following command:
+
+```sh 
+ui5 add sap.m` 
+```
 
 &nbsp;
 ***
