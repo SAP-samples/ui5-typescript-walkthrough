@@ -2,7 +2,7 @@
 
 Putting all our UI into the `index.ts` file will very soon result in a messy setup and there is quite a bit of work ahead of us. So let’s do a first modularization by putting the `sap/m/Text` control into a dedicated `view`.
 
-When working with OpenUI5, we recommend the use of XML, as this produces the most readable code and will force us to separate the view declaration from the controller logic. Yet the look of our UI will not change.
+When working with OpenUI5, we recommend the use of XML views, as this produces the most readable code and will force us to separate the view declaration from the controller logic. Yet the look of our UI will not change.
 
 &nbsp;
 ***
@@ -18,9 +18,9 @@ When working with OpenUI5, we recommend the use of XML, as this produces the mos
 
 ### webapp/view/App.view.xml \(New\)
 
-We create a new folder called `view` inside the `webapp` folder. This folder will hold all your XML view files. Inside the `view` folder, we create a new file called `App.view.xml`. In OpenUI5, the root node of an XML view is the `<mvc:View>` tag. To use this tag, we need to declare the XML namespace `mvc`, which corresponds to the `sap.ui.core.mvc` namespace. This namespace provides classes for creating and working with views and other Model-View-Controller \(MVC\) assets. Additionally, we need to declare the default XML namespace to the `sap.m` namespace. This namespace contains the majority of OpenUI5's UI assets, including the `Text` control that we want to place on our view.
+We create a new folder called `view` inside the `webapp` folder. This folder will hold all your XML view files. Inside the `view` folder, we create a new file called `App.view.xml`. In OpenUI5, the root node of an XML view is the `<mvc:View>` tag. To use this tag, we need to declare the XML namespace `mvc`, which corresponds to the `sap.ui.core.mvc` namespace. This namespace provides classes for creating and working with views and other Model-View-Controller \(MVC\) assets. Additionally, we declare the default XML namespace to the `sap.m` namespace. This namespace contains the majority of OpenUI5's UI assets, including the `Text` control that we want to use with our view.
 
-Inside the `<mvc:View>` tag, we add the `<Text>` tag from the default XML namespace. This `<Text>` tag represents the text control that will be displayed on the view. We set the `text` attribute of the `<Text>` tag to "Hello World". This will display the text "Hello World" on the view. XML tags are mapped to OpenUI5 controls and attributes are mapped to the properties of the control.
+Inside the `<mvc:View>` tag, we add the `<Text>` tag from the default XML namespace. This `<Text>` tag represents the text control that will be displayed on the view. We set the `text` attribute of the `<Text>` tag to "Hello World". This will display the text "Hello World" on the view.
 
 ```xml
 <mvc:View
