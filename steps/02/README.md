@@ -17,7 +17,7 @@ Before we can do something with OpenUI5, we need to load and initialize it. This
 
 First, let's set up our UI5 Tooling to use the OpenUI5 framework for our project. We also need to add the necessary OpenUI5 libraries as dependencies to the project's UI5 Tooling configuration.
 
-We open a terminal in the root folder of our app and exectue the following command:
+We open a terminal in the root folder of our app and execute the following command:
 
 ```sh
 ui5 use OpenUI5
@@ -98,19 +98,20 @@ Let's go through the compiler options specified in the file:
 
 ### webapp/index.ts \(New\)
 
-Now let's move on to the UI work. We create a new `index.ts` script in the webapp folder. In this script, we add a native `alert()` method with the message "UI5 is ready" as shown:
+Now let's move on to the UI work. We create a new `index.ts` script in the webapp folder. In this script, we add a native `alert()` method with the message "UI5 is ready".
 
 ```ts
 alert("UI5 is ready");
 ```
 
-Next, we'll integrate this script into the `index.html` page to indicate when the loading of the OpenUI5 framework is complete.
 
 ***
 
 ### webapp/index.html
 
-We change the `index.html` page to make it load the OpenUI5 framework from the webserver provided by UI5 Tooling. We initialize the core modules with the following configuration options:
+Next, we'll integrate the script we just created into the `index.html` page to signal when the OpenUI5 framework has finished loading. This process involves first incorporating the OpenUI5 framework into our HTML page by adding a script tag specifically for loading OpenUI5. 
+
+We initialize the core modules with the following configuration options:
 
 -   The `id` attribute of the `<script>` tag has to be exactly `"sap-ui-bootstrap"` to ensure proper booting of the OpenUI5 runtime.
 
