@@ -15,7 +15,9 @@ Before we can do something with OpenUI5, we need to load and initialize it. This
 
 ### Tooling
 
-First, let's enhance our UI5 Tooling setup. We open a terminal in the root folder of our app and exectue the following command:
+First, let's set up our UI5 Tooling to use the OpenUI5 framework for our project. We also need to add the necessary OpenUI5 libraries as dependencies to the project's UI5 Tooling configuration.
+
+We open a terminal in the root folder of our app and exectue the following command:
 
 ```sh
 ui5 use OpenUI5
@@ -27,7 +29,7 @@ This command tells the UI5 Tooling to use the OpenUI5 framework to build and run
 ui5 add sap.ui.core themelib_sap_horizon
 ```
 
-The `ui5 add` command adds specific libraries as dependency to the projects UI5 Tooling configuration. In this case, we are adding the `sap.ui.core` library, which provides core functionality of the OpenUI5 framework. This library is essential for bootstrapping OpenUI5. Additionally, we are adding the `themelib_sap_horizon` library which provides the visual styles for the Horizon theme. We`ll use this theme with our application. 
+The `ui5 add` command adds specific libraries as dependency to the projects UI5 Tooling configuration. In this case, we'e adding the `sap.ui.core` library, which provides core functionality of the OpenUI5 framework. This library is essential for bootstrapping OpenUI5. Additionally, we're adding the `themelib_sap_horizon` library which provides the visual styles for the Horizon theme. We'll use this theme with our application. 
 
 ***
 
@@ -227,8 +229,6 @@ Now you can benefit from live reload on changes, built framework resources at de
 [SAP Fiori with Horizon](https://experience.sap.com/fiori-design-web/sap-fiori/#sap-fiori-with-horizon)
 
 [What is a tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
-
-[Compatibility Version Information](https://sdk.openui5.org/topic/9feb96da02c2429bb1afcf6534d77c79.html "Compatibility version flags allow applications to react to incompatible changes in OpenUI5.")
 
 [Bootstrapping: Loading and Initializing](https://sdk.openui5.org/topic/a04b0d10fb494d1cb722b9e341b584ba.html "To use OpenUI5 features in your HTML page, you have to load and initialize the OpenUI5 library.")
 

@@ -19,7 +19,7 @@ In this step, we replace the text with a button and show the “Hello World” m
 
 First of all, we need a conroller for our app view that defines how the view should react to user inputs, such as a button press event. 
 
-We create the folder `webapp/controller` and a new file `App.controller.ts` inside. We define the app controller in its own file by extending the OpenUI5-provided `sap/ui/core/mvc/Controller`. In the beginning, it holds only a single function called `onShowHello` that shows an alert.
+We create the folder `webapp/controller` and a new file `App.controller.ts` inside. We define the app controller in its own file by extending the OpenUI5-provided `sap/ui/core/mvc/Controller`. In the beginning, it holds only a single function called `onShowHello` that shows an alert with the static text "Hello World".
 
 
 ```ts
