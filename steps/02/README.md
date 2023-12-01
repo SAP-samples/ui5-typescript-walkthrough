@@ -13,21 +13,41 @@ Before we can do something with OpenUI5, we need to load and initialize it. This
 <sup>*An alert "UI5 is ready" is displayed*</sup>
 ***
 
-### Coding
+### Tooling
 
+First, let's enhance our UI5 Tooling setup. We open a terminal in the root folder of our app and exectue the following command:
+
+```sh
+ui5 use OpenUI5
+```
+
+This command tells the UI5 Tooling to use the OpenUI5 framework to build and run the application. Next, we configure some runtime dependencies by executing the following command:
+
+```sh
+ui5 add sap.ui.core themelib_sap_horizon
+```
+
+The `ui5 add` command adds specific libraries as dependency to the projects UI5 Tooling configuration. In this case, we are adding the `sap.ui.core` library, which provides core functionality of the OpenUI5 framework. This library is essential for bootstrapping OpenUI5. Additionally, we are adding the `themelib_sap_horizon` library which provides the visual styles for the Horizon theme. We`ll use this theme with our application. 
+
+***
 
 ### package.json
 
-As we'd like to use TypeScript with our project, we first need to istall the TypeScript package. It provides the necessary tools and utilities to compile TypeScript code into JavaScript.
+To work with TypeScript, we must install it in our project. To do this, we execute the following command in the terminal:
 
-Open a terminal in the app root folder and execute `npm install typescript --save-dev`. This will install the latest stable version of TypeScript to your project and will add it as development dependency to your `package.json`.
+```sh
+npm install typescript --save-dev
+```
 
+By running this command, npm will download the TypeScript package from the npm registry and install it in our project's "node_modules" directory. It will also add an entry for TypeScript in the "devDependencies" section of our package.json file, so that other developers working on the project can easily install the same version of TypeScript.
+
+***
 
 ### tsconfig.json \(New\)
 
-Let's create the file `tsconfig.json` in the app root folder to indicate that this folder is the root of a TypeScript project. This file  specifies the root files and the compiler options required to compile the project.
+As a next step, we need to create the file `tsconfig.json` in the app root directory to indicate that this folder is the root of a TypeScript project. This file specifies various compiler options and project settings that affect how TypeScript code is compiled into JavaScript.
 
-Specify the compiler options as follow:
+We specify the compiler options as follow:
 
 ```json
 {
@@ -49,34 +69,60 @@ Specify the compiler options as follow:
   }
 ```
 
+Let's go through the compiler options specified in the file:
+
+- `"target": "es2022"`: The `target` parameter sets the JavaScript language level that the TypeScript code should be compiled down to. We set it to ES2022, which means the generated JavaScript code will be compatible with ECMAScript 2022.
+
+- `"module": "es2022"`: The `module` parameter specifies the module code generation for the compiled JavaScript. We configured it to ES2022, which means the generated JavaScript will use ECMAScript modules.
+
+- `"moduleResolution": "node"`: The `moduleResolution` parameter specifies how module dependencies should be resolved. We set it to "node", which means the compiler will use Node.js-style module resolution.
+
+- `"skipLibCheck": true`: When the `skipLibCheck` parameter is set to `true`, it tells the compiler to skip type checking of declaration files (`.d.ts` files) that are part of external libraries. This can improve compilation speed.
+
+- `"allowJs": true`: The `allwJs` parameter allows JavaScript files to be included in the TypeScript project. This option enables TypeScript to compile JavaScript code along with TypeScript code.
+
+- `"strict": true`: When set to "true" the `strict` parameter enables a wide range of type checking behavior that results in more type-safe programs. It includes settings like `noImplicitAny`, `noImplicitThis`, `alwaysStrict` and others.
+
+- `"strictPropertyInitialization": false`: The `strictPropertyInitialization` parameter is a specific type of strict check that ensures that each instance property of a class gets initialized in the constructor body, or by a property initializer. By setting this to false, it disables strict checking of uninitialized class properties. This means that class properties can be left uninitialized or assigned the value `undefined` without causing a compiler error.
+
+- `"rootDir": "webapp"`: The `rootDir` paraemter specifies the root directory of the TypeScript source files. The compiler will consider this directory as the starting point for resolving file paths. We set it to our `webapp` folder.
+
+- `"baseUrl": "./"`: The `baseUrl` parameter is used to resolve non-relative module names. We specified that non-relative module names are resolved relative to the location of the `tsconfig.json` file.
+
+- `"paths": { "ui5/walkthrough/*": ["webapp/*"] }`: The `path` paramter specifies path mappings for module resolution. It allows you to define custom module paths that map to specific directories or files. In this case, it maps the module path `ui5/walkthrough/*`
+
+***
+### Coding
 
 ### webapp/index.ts \(New\)
 
-We create a new `index.ts` script in the webapp folder and add a native `alert()` method with the message "UI5 is ready" to it. We'll integrate this script to the `index.html` page next.
+Now let's move on to the UI work. We create a new `index.ts` script in the webapp folder. In this script, we add a native `alert()` method with the message "UI5 is ready" as shown:
 
 ```ts
 alert("UI5 is ready");
 ```
 
+Next, we'll integrate this script into the `index.html` page to indicate when the loading of the OpenUI5 framework is complete.
+
 ***
 
 ### webapp/index.html
 
-In this step, we we change the `index.html` page to make it load the SAPUI5 framework from the webserver provided by UI5 Tooling. We initialize the core modules with the following configuration options:
+We change the `index.html` page to make it load the OpenUI5 framework from the webserver provided by UI5 Tooling. We initialize the core modules with the following configuration options:
 
 -   The `id` attribute of the `<script>` tag has to be exactly `"sap-ui-bootstrap"` to ensure proper booting of the OpenUI5 runtime.
 
 -   The `src` attribute of the `<script>` tag tells the browser where to find the OpenUI5 core library – it initializes the OpenUI5 runtime and loads additional resources, such as the theme specified in the `data-sap-ui-theme` attribute.
 
--   The OpenUI5 controls support different themes. We choose `sap_horizon` as our default theme.
+-   The OpenUI5 controls support different themes. With setting the `data-sap-ui-theme` attribute of the `<script>` tag to "sap_horizon" we specify the Horizon theme as our default theme.
 
--   To make use of the most recent functionality of OpenUI5 we define the compatibility version as `edge`.
+-   To make use of the most recent functionality of OpenUI5 we specify the `data-sap-ui-compatVersion` attribute as `edge`.
 
--   We configure the bootstrapping process to run asynchronously. This means that the OpenUI5 resources can be loaded simultaneously in the background for performance reasons.
+-   We configure the bootstrapping process to run asynchronously by setting the `data-sap-ui-async` attribute to "true". This means that the OpenUI5 resources can be loaded simultaneously in the background for performance reasons.
 
--    The `data-sap-ui-onInit` attribute is used in OpenUI5 to specify a JavaScript or TypeScript function that will be executed when the framework is fully loaded and initialized. This approach allows us to avoid directly including executable JavaScript code in the HTML file, which improves the security of our application. Here, we're indicating that our `ui5/walkthrough/index` module should be triggered and executed at the start of the application. Note that the path to our file includes the namespace, whereby the "." is replaced by a "/" (see explanation below).
+-    The `data-sap-ui-onInit` attribute is used in OpenUI5 to specify the name of a module that should be executed when the framework is fully loaded and initialized. This approach provides a way to avoid directly including executable JavaScript code in the HTML file, which improves the security of our application. To specify the name of the module, you need to provide the module name as the value of `the data-sap-ui-onInit` attribute. The module name should be in the format of a module path, which is a dot-separated string that represents the location of the module within the application's folder structure. When specifying the path to a module within the current project, it's important to include the namespace (explained below) and omit the file extension. We specify the `index.ts` script to the `data-sap-ui-onInit` attribute.
 
--   The attribute `data-sap-ui-resourceroots` lets you map a namespace to a specific path. We define the namespace `ui5.walkthrough` and map it relative to `index.html`. This way, We tell OpenUI5 core that resources in the `ui5.walkthrough` namespace are located in the same folder as `index.html`.
+-   The `data-sap-ui-resourceroots` attribute lets you map a namespace to a specific path. We define the `ui5.walkthrough` namespace and map it relative to the location of `index.html`. This way, we tell OpenUI5 core that resources in the `ui5.walkthrough` namespace are located in the same folder as `index.html`.
 
 
 ```html
@@ -103,33 +149,33 @@ In this step, we we change the `index.html` page to make it load the SAPUI5 fram
 </html>
 ```
 
+> :round_pushpin: **Note:**
+> The namespace is a unique identifier for your application file. It helps prevent naming conflicts with other modules or libraries.
 ***
 
 ### package.json
 
-Now, it's time to enhance our tooling setup once again. This time we install some custom middleware for the ui5-server to facilitate the handling of our development project.
+Let's enhance our tooling setup by installing some custom middleware for the ui5-server. This will help us handle our development project more efficiently.
 
-Open a terminal in the app root folder. Then execute the following command:
+We open a terminal and navigate to the root folder of our app. Then, we execute the following command:
 
-`npm install ui5-middleware-livereload ui5-middleware-serveframework ui5-tooling-transpile --save-dev`
+```sh
+npm install ui5-middleware-livereload ui5-middleware-serveframework ui5-tooling-transpile --save-dev
+```
 
-This will install the `ui5-middleware-livereload`, `ui5-middleware-serveframework`, and `ui5-tooling-transpile` tooling extension and add them as a development dependency to your `package.json`:
+When you run the command, npm will download the specified packages from the npm registry and store them in a folder called `node_modules` within your project directory. The `--save-dev` flag instructs npm to save these packages as development dependencies in the `devDependencies` section of the `package.json` file. Development dependencies are packages that are only needed during development and not in production. By separating them from production dependencies, we can keep our project clean and ensure that only the required packages are included when deploying the application.
 
--	`ui5-middleware-livereload` is a middleware for ui5-server, which does a live reload when files inside your directory change, e.g. upon *Save*.
--	`ui5-middleware-serveframework` is a middleware for ui5-server, delivering the OpenUI5 framework from a locally built version.
-- `ui5-tooling-transpile` provides a middleware and a task which transpiles TypeScript code to ES5 by using Babel. The middleware transpiles a matching .ts-file on-the-fly. The task transpiles the relevant source files during the UI5 Tooling build process. 
+Let's break down what each package does:
+
+-	`ui5-middleware-livereload` is a middleware plugin for the UI5 Tooling that enables live reloading of your application in the browser. Live-reloading means that whenever you make changes to your code, the browser automatically refreshes and displays the updated version without requiring manual refreshes (e.g. upon *Save*).
+
+-	`ui5-middleware-serveframework` is another middleware plugin for the UI5 Tooling that provides a web server to serve your OpenUI5 project during development. It allows you to easily serve the necessary OpenUI5 libraries and resources required by your application from your development environment.
+
+- `ui5-tooling-transpile` is a plugin for the UI5 Tooling that transpiles modern JavaScript (ES6+) and TypeScript into a compatible version for OpenUI5. OpenUI5 is based on older versions of JavaScript, so this plugin allows you to take advantage of the latest language features and syntax while ensuring that your code remains compatible with OpenUI5.
 
 ***
 
 ### ui5.yaml
-
-For our UI5 Tooling setup we require some additional configuration changes:
-
-Open a terminal in the app root folder and exectue the following commands:
-
--   `ui5 use OpenUI5` to configure the latest OpenUI5 version in your UI5 Tooling setup.
-
--   `ui5 add sap.ui.core themelib_sap_horizon` - this will add the two libraries `sap.ui.core` and `themelib_sap_horizon` library as dependency to your `ui5.yaml` file.
 
 Next,  we have to configure the tooling extension we installed from npm to our UI5 Tooling setup, so we can use them in our project. To hook a custom task into a certain build phase of a project, it needs to reference another task that will get executed before or after it. The same applies for a custom middleware:
 
@@ -137,8 +183,7 @@ Next,  we have to configure the tooling extension we installed from npm to our U
 
 -   All our custom middleware extensions will be called after the `compression` middleware.
 
-> :warning: **Important:**
->
+> :warning: **Important:** <br>
 > Middleware configurations are applied in the order in which they are defined. 
 
 ```yaml
@@ -163,8 +208,7 @@ server:
 ```
 Now you can benefit from live reload on changes, built framework resources at development time, and make use of TypeScript in OpenUI5.
 
-> :bulb: **Note:**
->
+> :round_pushpin: **Note:** <br>
 > During its initial run, the `ui5-middleware-serveframework` middleware will build the framework, which can take a while. In all following steps, the build will not happen again and the framework is served from the built resources.
 
 &nbsp;
@@ -178,6 +222,10 @@ Now you can benefit from live reload on changes, built framework resources at de
 
 **Related Information** 
 
+[UI5 Tooling: Consuming OpenUI5 Libaries](https://sap.github.io/ui5-tooling/v3/pages/OpenUI5/)
+
+[SAP Fiori with Horizon](https://experience.sap.com/fiori-design-web/sap-fiori/#sap-fiori-with-horizon)
+
 [What is a tsconfig.json](https://www.typescriptlang.org/docs/handbook/tsconfig-json.html)
 
 [Compatibility Version Information](https://sdk.openui5.org/topic/9feb96da02c2429bb1afcf6534d77c79.html "Compatibility version flags allow applications to react to incompatible changes in OpenUI5.")
@@ -185,8 +233,6 @@ Now you can benefit from live reload on changes, built framework resources at de
 [Bootstrapping: Loading and Initializing](https://sdk.openui5.org/topic/a04b0d10fb494d1cb722b9e341b584ba.html "To use OpenUI5 features in your HTML page, you have to load and initialize the OpenUI5 library.")
 
 [Content Security Policy](https://sdk.openui5.org/topic/fe1a6dba940e479fb7c3bc753f92b28c.html "Content Security Policy (CSP) adds an additional layer of security that can detect and mitigate certain types of attacks, such as cross-site scripting and data injection.")
-
-[UI5 Tooling: Consuming OpenUI5 Libaries](https://sap.github.io/ui5-tooling/v3/pages/OpenUI5/)
 
 [NPM Package: `ui5-middleware-livereload`](https://www.npmjs.com/package/ui5-middleware-livereload)
 

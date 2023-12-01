@@ -53,7 +53,7 @@ All controls of OpenUI5 have a fixed set of properties, aggregations, and associ
 
 ### webapp/index.html
 
-We replace the `<div>` tags in our `webapp/index.html` file with a `<body>` tag and assign it the ID `content`. The body tag of the HTML document thus becomes the target node for the text control we defined in the `index.ts` script.
+We replace the `<div>` tag in our `webapp/index.html` file with a `<body>` tag and assign it the ID `content`. The body tag of the HTML document thus becomes the target node for the text control we defined in the `index.ts` script.
 
 We also add the `sapUiBody` class, which provides additional theme-dependent styles.
 

@@ -177,9 +177,6 @@ export default class Component extends UIComponent {
     };
 };
 ```
-> :bulb: **Note:**
->
-> In previous versions of OpenUI5, additional configuration settings for the app, like the service configuration, the root view, and the routing configuration, had to be added to the metadata section of the `Component` file. As of OpenUI5 version 1.30, we recommend that you define these settings in the `manifest.json` descriptor file. Apps and examples that were created based on an older OpenUI5 version still use the `Component` file for this purpose - so it is still supported, but deprecated.
 
 ***
 

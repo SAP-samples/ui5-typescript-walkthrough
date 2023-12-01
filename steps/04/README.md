@@ -18,9 +18,9 @@ When working with OpenUI5, we recommend the use of XML, as this produces the mos
 
 ### webapp/view/App.view.xml \(New\)
 
-We create a new `view` folder in our webapp folder and add a new file called `App.view.xml` inside this folder. The root node of the XML structure is the `view`. Here, we reference the default namespace `sap.m` where the text control and the the majority of our UI assets are located. We define an additional `sap.ui.core.mvc` namespace with alias `mvc`, where the OpenUI5 views and all other Model-View-Controller \(MVC\) assets are located.
+We create a new folder called `view` inside the `webapp` folder. This folder will hold all your XML view files. Inside the `view` folder, we create a new file called `App.view.xml`. In OpenUI5, the root node of an XML view is the `<mvc:View>` tag. To use this tag, we need to declare the XML namespace `mvc`, which corresponds to the `sap.ui.core.mvc` namespace. This namespace provides classes for creating and working with views and other Model-View-Controller \(MVC\) assets. Additionally, we need to declare the default XML namespace to the `sap.m` namespace. This namespace contains the majority of OpenUI5's UI assets, including the `Text` control that we want to place on our view.
 
-Inside the `view` tag, we add the declarative definition of our `text` control with the same properties as in the previous step. XML tags are mapped to controls and attributes are mapped to the properties of the control.
+Inside the `<mvc:View>` tag, we add the `<Text>` tag from the default XML namespace. This `<Text>` tag represents the text control that will be displayed on the view. We set the `text` attribute of the `<Text>` tag to "Hello World". This will display the text "Hello World" on the view. XML tags are mapped to OpenUI5 controls and attributes are mapped to the properties of the control.
 
 ```xml
 <mvc:View
@@ -30,26 +30,35 @@ Inside the `view` tag, we add the declarative definition of our `text` control w
 </mvc:View>
 ```
 
-> :bulb: **Note:**  
->
+We have created an XML view that displays a text control with the text "Hello World".
+
+> :bulb: <br>
+> XML tags are mapped to UI controls, and attributes are mapped to the properties of the control. In this case, the `<Text>` tag represents the `Text` control in the sap.m library, and the `text` attribute sets the `text` property of the control.
+
+> :round_pushpin: **Note:**  <br>
 > The namespace identifies all resources of the project and has to be unique. If you develop your own application code or library, you cannot use the namespace prefix `sap`, because this namespace is reserved for SAP resources. Instead, simply define your own unique namespace \(for example, `myCompany.myApp`\).
 
 ***
 
 ### webapp/index.ts
 
-In our `index.ts` script, we replace the instantiation of the `sap/m/Text` control by our new `App.view.xml` file. The view is created by a factory function of OpenUI5. The name is prefixed with the namespace `ui5.walkthrough.view` in order to uniquely identify this resource.
+As a next step, we are going to replace the `sap/m/Text` control in our `index.ts` file with the app view that we've just created. To do this, we utilize the `XMLView.create` function, which is a part of the `sap/ui/core/mvc/View` module. This function needs a `viewName` property, which indicates the resource that needs to be loaded. The `viewName` is a combination of the namespace defined in the bootstrap and the path to the app view, but without the ".view.xml" extension. In addition, we set the `id` property to "app". Providing a stable ID is beneficial as it offers an easy and consistent way to identify and refer to specific views and elements in your code, thus helping to keep your code organized.
 
 ```ts
 import XMLView from "sap/ui/core/mvc/XMLView";
 
 XMLView.create({
-    viewName: "ui5.walkthrough.view.App"
+    viewName: "ui5.walkthrough.view.App",
+    id: "app"
 }).then(function (view) {
     view.placeAt("content");
 });
 
 ```
+We have now embed our app view to the body of the HTML document.
+
+> :bulb: **Tip:**  <br>
+>Although setting an ID is not mandatory, it greatly improves the maintainability and flexibility of your code. With a stable ID, you can easily locate and update specific parts of your application.
 
 ***
 
@@ -60,6 +69,8 @@ XMLView.create({
 -   All views are stored in the `view` folder
 
 -   Names of XML views always end with `*.view.xml`
+
+-   XML namespaces are declared in the root element of teh view
 
 -   As a general rule, the default XML namespace is `sap.m`
 
@@ -79,6 +90,7 @@ XMLView.create({
 
 [Model View Controller \(MVC\)](https://sdk.openui5.org/topic/91f233476f4d1014b6dd926db0e91070.html "The Model View Controller (MVC) concept is used in OpenUI5 to separate the representation of information from the user interaction. This separation facilitates development and the changing of parts independently.")
 
+[XML Namespaces - The xmlns Atribute](https://www.w3schools.com/XML/xml_namespaces.asp)
 [Views](https://sdk.openui5.org/topic/91f27e3e6f4d1014b6dd926db0e91070.html "The view in the Model-View-Controller (MVC) concept is responsible for defining and rendering the UI. OpenUI5 supports predefined view types.")
 
 [API Reference: sap.ui.core.mvc.View](https://sdk.openui5.org/api/sap.ui.core.mvc.View)

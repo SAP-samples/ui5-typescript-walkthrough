@@ -40,8 +40,7 @@ In our webapp folder, we createt a new HTML file named `index.html` and copy the
 </html>
 ```
 
-> :round_pushpin: **Note:**
->
+> :round_pushpin: **Note:** <br>
 > An HTML document consists basically of two sections: head and body. The head part will be used by the browser to process the document.
 > 
 > Using meta tags, we can influence the behavior of the browser. In this case, we tell the browser to use `UTF-8` as the document character set.
@@ -58,7 +57,7 @@ Hence, we create a new file called `manifest.json` in the webapp folder and defi
 
 -   The `_version` attribute is a mandatory field in the app descriptor that indicates the format version of the descriptor. This attribute is crucial for identifying application settings when the descriptor is read by various tools. As new features or changes are introduced in future versions of the descriptor, the version number helps ensure compatibility and proper interpretation of the descriptor's contents. Consequently, with each new version of OpenUI5 a corresponding version of the app descriptor is released. For this tutorial, we have determined that our app requires a minimum OpenUI5 version of 1.120. Therefore, we specify the descriptor format version as 1.60.0, aligning it with the appropriate OpenUI5 version.
 
-    > :round_pushpin: **Note:** <br>
+    > :bulb: **Tip:** <br>
     > To find the appropriate `_version` for each OpenUI5 release, see [Descriptor for Applications, Components, and Libraries \(manifest.json\)](httsp://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html).
 
 -   The **`sap.app`**  namespace is used to define properties that are specific to the application itself. It includes the following obligatory application-specific attributes:
@@ -123,20 +122,32 @@ Enter the following content:
 
 Next, we install the UI5 CLI and add it as development dependency to our project. For this, we open a terminal in the app root folder and execute the following command:
 
-`npm install --save-dev @ui5/cli` 
+```sh
+npm install --save-dev @ui5/cli
+```
 
 Finally, we initialize the UI5 Tooling configuration for our project by executing the following command on the app root folder: 
 
-`ui5 init`
+```sh
+ui5 init
+```
 
 This will generate a `ui5.yaml` file in the app root directory, which is essential for using UI5 Tooling with our project.
 &nbsp;
 
 To start the web server, ecexcute the following command:
 
-`npm start` 
+```sh
+npm start 
+```
 
 This will open a new browser window hosting your newly created `index.html`.
+
+***
+
+### Conventions
+
+-   The `index.html` file is located in the `webapp` folder if it is used productively.
 
 &nbsp;
 ***

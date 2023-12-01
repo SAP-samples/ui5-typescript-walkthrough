@@ -29,16 +29,16 @@ After this step your project structure will look like the figure below. We will 
 
 We navigate to the `webapp` folder and place the `Component.ts` file to it that will hold our application setup. This file is commonly referred to as the component controller. A component is organized in a unique namespace which is synonymous with the application namespace. All required and optional resources of the component have to be organized in the namespace of the component.
 
-We define the component by extending `sap/ui/core/UIComponent` and supplement the component with additional metadata. Within the `interfaces` settings, we specify that the component should implement the `sap/ui/core/IAsyncContentCreation` interface. This allows the component to be generated asynchronously, which in turn sets the component's rootView and router configuration to async. In the `rootView` property, we establish the app view as the component's root view. We name our app view in the `viewName` property and specify that it's an XML view in the `type` property. Furthermore, we assign the `id` of the root view as "app".
-
-> :warning: **Important:**
->
-> Note that the `rootView` metadata property of the UI component is deprecated and should not be used in real-world applications. Normally, this configuration is done in the app descriptor, which we will handle in [Step 10](../10/README.md). For this particular step, we're using it because we're setting up a component without the app descriptor.
+We define the component by extending `sap/ui/core/UIComponent` and supplement the component with additional metadata. Within the `interfaces` settings, we specify that the component should implement the `sap/ui/core/IAsyncContentCreation` interface. This allows the component to be generated asynchronously, which in turn sets the component's rootView and router configuration to async.
 
 When the component is instantiated, OpenUI5 automatically calls the `init` function of the component. It's crucial that when extending the base class, a super call to the `init` function of the base class is executed. Additionally, we instantiate our data model and the `i18n` model in this section, similar to what we did earlier in the `onInit` function of app controller.
 
+Finally we call the `createContent` hook method of the component. This create the content (UI Control Tree) of this component. Here we now create the view as we did before in the `index.ts` file in the previous step to establish our app view as the component's root view.
+
 ```ts
+import Control from "sap/ui/core/Control";
 import UIComponent from "sap/ui/core/UIComponent";
+import XMLView from "sap/ui/core/mvc/XMLView";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 
@@ -47,13 +47,7 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
  */
 export default class Component extends UIComponent {
     public static metadata = {
-        "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-        "rootView": {
-            "viewName": "ui5.walkthrough.view.App",
-            "type": "XML",
-            /*"async": true, // implicitly set via the sap.ui.core.IAsyncContentCreation interface*/
-            "id": "app"
-        }
+        "interfaces": ["sap.ui.core.IAsyncContentCreation"]
     };
     init(): void {
         // call the init function of the parent
@@ -72,6 +66,12 @@ export default class Component extends UIComponent {
             bundleName: "ui5.walkthrough.i18n.i18n"
         });
         this.setModel(i18nModel, "i18n");
+    };
+    createContent(): Control | Promise<Control | null> | null {
+        return XMLView.create({
+            "viewName": "ui5.walkthrough.view.App",
+            "id": "app"
+        });
     };
 };
 ```
@@ -116,16 +116,15 @@ Instead of directly creating a view, we now utilize a ComponentContainer control
 To set up the ComponentContainer, we assign the `name` property with the namespace of the component. This specifies which component to load and initialize. In addition, we give our component a unique `id` through the `ComponentContainer` constructor's setting argument. It's vital to ensure that this component id is unique among all components created during the application's runtime to avoid any potential conflicts. Furthermore, to allow the component and its dependencies to load in a fully asynchronous manner, we set the `async` property to "true". This implies that the loading of the component will not block other operations, leading to a smoother, more efficient loading experience. Finally, we position our newly created ComponentController control within the DOM element with the id `content`.
 
 ```ts
-import ComponentContainer from "sap/ui/core/ComponentContainer";
-
 new ComponentContainer({
-    name: "ui5.walkthrough",
+    id: "container",
     settings: {
         id: "walkthrough"
     },
+    name: "ui5.walkthrough",
+    autoPrefixId: true,
     async: true
 }).placeAt("content");
-
 ```
 
 ***
@@ -135,8 +134,6 @@ new ComponentContainer({
 -   The component is named `Component.js` or rather `Component.ts`.
 
 -   Together with all UI assets of the app, the component is located in the `webapp` folder.
-
--   The `index.html` file is located in the `webapp` folder if it is used productively.
 
 &nbsp;
 ***
