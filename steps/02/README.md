@@ -124,7 +124,6 @@ We change the `index.html` page to make it load the OpenUI5 framework from the w
 
 -   The `data-sap-ui-resourceroots` attribute lets you map a namespace to a specific path. We define the `ui5.walkthrough` namespace and map it relative to the location of `index.html`. This way, we tell OpenUI5 core that resources in the `ui5.walkthrough` namespace are located in the same folder as `index.html`.
 
-
 ```html
 <!DOCTYPE html>
 <html>
@@ -151,11 +150,12 @@ We change the `index.html` page to make it load the OpenUI5 framework from the w
 
 > :round_pushpin: **Note:**
 > The namespace is a unique identifier for your application file. It helps prevent naming conflicts with other modules or libraries.
-***
 
+***
+### Tooling
 ### package.json
 
-Let's enhance our tooling setup by installing some custom middleware for the ui5-server. This will help us handle our development project more efficiently.
+Let's enhance our tooling setup once again by installing some custom middleware for the ui5-server. This will help us handle our development project more efficiently.
 
 We open a terminal and navigate to the root folder of our app. Then, we execute the following command:
 
