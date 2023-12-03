@@ -19,7 +19,7 @@ In this step, we replace the text with a button and show the “Hello World” m
 
 First of all, we need a conroller for our app view that defines how the view should react to user inputs, such as a button press event. 
 
-We create the folder `webapp/controller` and a new file `App.controller.ts` inside. We define the app controller in its own file by extending the OpenUI5-provided `sap/ui/core/mvc/Controller`. In the beginning, it holds only a single function called `onShowHello` that shows an alert with the static text "Hello World".
+We create a new folder called `controller` inside the `webapp` folder. This folder will hold all our controller files. Inside the `controller` folder, we create a new file called `App.view.xml`. We define the app controller in its own file by extending the OpenUI5-provided `sap/ui/core/mvc/Controller`. In the beginning, it holds only a single function called `onShowHello` that shows an alert with the static text "Hello World".
 
 
 ```ts
@@ -37,13 +37,15 @@ export default class AppController extends Controller {
 
 ```
 
+> :round_pushpin: **Note:**
+> The comment `@name ui5.walkthrough.controller.App` is a JSDoc comment that names this controller. It can be used by documentation generators and IDEs to provide more information about this class.
 ***
 
 ### webapp/view/App.view.xml
 
-We add a reference to the controller by setting the `controllerName` attribute of the view. This way we get access to the event handlers and other functionalities defined in the controller.
+To connect our controller with the view, we need to specify the name of our newly created controller in the `controllerName` attribute of the root node. This allows us to access the event handlers and other functionalities defined in the controller. The name should be a module path, which is the location of the controller file. 
 
-We also replace the text control with a button with text “Say Hello” and assign a press event to it. When pressed, the button triggers the `onShowHello` event handler function we introduced in the view controller. To point out that the press event handler of the button is located in the controller of the view and not in the Global Namespace, we prefix the handler name with a `.` character.
+In addition, we replace the `<text>` tag with a `<button>` tag. We set the `text` attribute of the button to the static value "Say Hello" and assign the `onShowHello` event from our app controller to the `press` attribute of the button. To indicate that the press event handler is located in the controller of the view and not in the Global Namespace, we prefix the handler name with a dot (`.`) character.
 
 ```xml
 <mvc:View

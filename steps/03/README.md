@@ -107,6 +107,8 @@ ui5 add sap.m`
 
 **Related Information** 
 
+[TypeScript definitions for OpenUI5](https://www.npmjs.com/package/@types/openui5)
+
 [Working with Controls](https://sdk.openui5.org/topic/91f0a22d6f4d1014b6dd926db0e91070.html "Controls are used to define the appearance and behavior of screen areas.")
 
 [API Reference: `sap.m.Text`](https://sdk.openui5.orgapi/sap.m.Text)
@@ -118,5 +120,3 @@ ui5 add sap.m`
 [API Reference: `sap.ui.core.Element`](https://sdk.openui5.orgapi/sap.ui.core.Element)
 
 [API Reference: `sap.ui.base.ManagedObject`](https://sdk.openui5.orgapi/sap.ui.base.ManagedObject)
-
-[TypeScript definitions for OpenUI5](https://www.npmjs.com/package/@types/openui5)
