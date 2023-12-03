@@ -88,7 +88,7 @@ In the example above, the callback of the `onInit` event is where we now instant
 
 ### UI5 Tooling
 
-As we now use the `sap.m` library with our app, we need to add the dependency to this library our UI5 Tooling setup. 
+As we now use the `sap.m` library with our app, we need to add the dependency to this library to our UI5 Tooling setup. 
 
 We open a terminal in the root folder of our app and exectue the following command:
 
@@ -99,9 +99,9 @@ ui5 add sap.m`
 &nbsp;
 ***
 
-**Previous:** [Step 2: Bootstrap](../02/README.md "Before we can do something with OpenUI5, we need to load and initialize it. This process of loading and initializing OpenUI5 is called bootstrapping. Once this bootstrapping is finished, we simply display an alert.")
-
 **Next:** [Step 4: XML Views](../04/README.md "Putting all our UI into the index.html file will very soon result in a messy setup and there is quite a bit of work ahead of us. So let’s do a first modularization by putting the sap/m/Text control into a dedicated view.")
+
+**Previous:** [Step 2: Bootstrap](../02/README.md "Before we can do something with OpenUI5, we need to load and initialize it. This process of loading and initializing OpenUI5 is called bootstrapping. Once this bootstrapping is finished, we simply display an alert.")
 
 ***
 

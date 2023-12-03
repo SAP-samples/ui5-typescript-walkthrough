@@ -38,12 +38,6 @@ export default class AppController extends Controller {
 
 For now, the message toast just displays a static "Hello World" message. We will show how to load a translated text here in [Step 8: Translatable Texts](../08/README.md).
 
-***
-
-### Conventions
-
--   Use the name of the artifact to load for naming the module \(without namespace\).
-
 &nbsp;
 ***
 

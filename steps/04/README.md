@@ -32,7 +32,7 @@ Inside the `<mvc:View>` tag, we add the `<Text>` tag from the default XML namesp
 
 We have created an XML view that displays a text control with the text "Hello World".
 
-> :bulb: <br>
+> :bulb: **Tip:** <br>
 > XML tags are mapped to UI controls, and attributes are mapped to the properties of the control. In this case, the `<Text>` tag represents the `Text` control in the sap.m library, and the `text` attribute sets the `text` property of the control.
 
 > :round_pushpin: **Note:**  <br>
