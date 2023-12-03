@@ -2,7 +2,7 @@
 
 Now that we have set up the view and controller, it’s about time to think about the M in MVC.
 
-We will add an input field to our app, bind its value to the model, and bind the same value to the description of the input field. The description will be directly updated as the user types.
+We'll create a view model in our controller, add an input field to our app, bind its value to the model, and bind the same value to the description of the input field. The description will be directly updated as the user types.
 
 &nbsp;
 ***
@@ -18,11 +18,12 @@ We will add an input field to our app, bind its value to the model, and bind the
 
 ### webapp/controller/App.controller.ts
 
-We add an `onInit` function to the controller. This is one of OpenUI5’s lifecycle methods that is invoked by the framework when the controller is created, similar to the constructor of a control.
+In the controller, we'll create a new data model and link it to the view that is related to the controller. The best time to create a model is during the `onInit` method. This is a special method in the Controller class that is automatically invoked by the framework when the controller is first set up.
 
-Inside the function we instantiate a JSON model. The data for the model only contains a single property for the “recipient”, and inside this it also contains one additional property for the name.
+To create the data model, we define the `onInit` method in the controller. Inside this method, we construct a data object that contains a property called `recipient`. This `recipient` property has another property within it named `name`, which is assigned the string value "World". We then create a new instance of the `JSONModel` class by providing the data object we just created as an argument.
 
-To be able to use this model from within the XML view, we call the `setModel` function on the view and pass on our newly created model.
+Next, we need to link this data model to our view. We do this by first obtaining a reference to the view connected to our controller. We can get this reference by using the `getView` function. Then, we use the `setModel` method on the view object to set the data model. We pass the JSON model as a parameter to this method.
+
 
 ```ts
 import MessageToast from "sap/m/MessageToast";
@@ -50,21 +51,27 @@ export default class AppController extends Controller {
 };
 
 ```
-The model is now set on the view.
+
+The data in the model is now accessible to the view and all the child controls within that view.
+
+Models in OpenUI5 are used to store and manipulate data that is displayed in the view. By setting a model on the view, the data can be bound to UI controls in the view, allowing for automatic updating of the UI when the data changes. 
 
 ***
 
 ### webapp/view/App.view.xml
 
-We include an `sap/m/Input` control in the view, allowing the user to input a recipient for greetings: We bind the value of the control to the name property of the recipient object in our JSON model by using simple binding syntax. Additionally, we combine the static text "Hello" with the name property from the data model and assign it to the description property of the input field. To ensure real-time updates, we set the `valueLiveUpdate` property of the input control to "true". This means that as the user types, the value will be immediately updated per keystroke and reflected in the data model.
+We add an `sap/m/Input` control to our view, allowing the user to enter a name for the person they want to greet.
 
-> :bulb: **Note:**
->
+To make this work, we connect, or 'bind', the value of the input control to the `name` attribute of the 'recipient' object in our JSON data model. We do this using a simple binding syntax, which is a straightforward way to link data between the model and the view. 
+
+> :warning: **Important:** <br>
 > To bind a control property to your view model data you need to specify a [`sap.ui.base.ManagedObject.PropertyBindingInfo`](https://sdk.openui5.org/api/sap.ui.base.ManagedObject.PropertyBindingInfo) for the property. A binding info is always initiated by enclosing it in curly brackets `{…}`, and the properties defined in the BindingInfos API are placed within the brackets.
 >
 > You can omit all properties of the binding info and just provide the binding path as a simple string. A binding path consists of path segments separated by a slash (`/`) which point to a property in the model that you want to bind to. This applies all OpenUI5 provided models.
 >
 > Binding paths can be either absolute or relative. Absolute binding paths start with a slash, while relative binding paths start with a name token and are resolved relative to the context of the control that is being bound (we will discuss this further later on).
+
+In addition to this, we create a greeting message. We combine the static text "Hello" with the `name` attribute from our data model, and assign it to the `description` property of the input field. This means that the greeting message will dynamically update with whatever name the user enters. To ensure that the greeting message updates in real time as the user types, we set the `valueLiveUpdate` attribute of the input control to "true".
 
 ```xml
 <mvc:View controllerName="ui5.walkthrough.controller.App"
@@ -80,8 +87,6 @@ We include an `sap/m/Input` control in the view, allowing the user to input a re
       width="60%"/>    
 </mvc:View>
 ```
-
-The mdoel is now set on the view.
 
 &nbsp;
 ***
