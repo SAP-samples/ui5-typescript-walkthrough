@@ -100,7 +100,6 @@ The following steps are tailored for using this project with [UI5 Tooling](https
 
 ***
 
-
 ### package.json \(New\)
 
 We create a new file called `package.json` in the app root directory. It allows us to execute commands and consume packages from the [npm registry](https://www.npmjs.com/) via the npm command line interface.
@@ -143,6 +142,7 @@ npm start
 
 This will open a new browser window hosting your newly created `index.html`.
 
+&nbsp;
 ***
 
 ### Conventions

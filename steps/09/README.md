@@ -3,7 +3,7 @@
 After we have introduced all three parts of the Model-View-Controller \(MVC\) concept, we now come to another important structural aspect of OpenUI5.
 
 
-In this step, we will enhance our application by encapsulating all UI assets within a component in OpenUI5. By doing so, we create an independent and reusable module independent of our index.html file. This architectural change enables us to access resources relative to the component, rather than relative to the `index.html` file.
+In this step, we will enhance our application by encapsulating all UI assets within a component in OpenUI5. By doing so, we create an independent and reusable module independent of a local HTML file for the bootstrap. This architectural change enables us to access resources relative to the component, rather than relative to the `index.html` file.
 
 By encapsulating our application as a component, we can seamlessly integrate it into surrounding containers like the SAP Fiori launchpad. This means our application can be easily embedded within a larger ecosystem, providing a more cohesive and integrated user experience.
 
@@ -123,7 +123,7 @@ We take out the creation of the view and create a new `ComponentContainer` inste
 
 -   We pass the `id` "walkthrough" to our component through the `ComponentContainer` constructor's settings argument. This `id` helps us identify our component among others that may be created during the application's runtime. 
 
--   To ensure the `id` of our component is unique and avoid any mix-ups, we set the `autoPrefixId` property to `true`. This automatically adds a prefix to the ID of the Component, which is the ID of the ComponentContainer followed by a single dash \("-"/). 
+-   To ensure the `id` of our component is unique and avoid any mix-ups, we set the `autoPrefixId` property to "true". This automatically adds a prefix to the ID of the Component, which is the ID of the ComponentContainer followed by a single dash \("-"/). 
 
 -   For better loading performance, we set the `async` property to "true". This allows the component and its dependencies to load in the background without blocking other parts of the application. 
 
@@ -143,6 +143,7 @@ new ComponentContainer({
 }).placeAt("content");
 ```
 
+&nbsp;
 ***
 
 ### Conventions

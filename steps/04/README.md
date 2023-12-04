@@ -60,6 +60,7 @@ We have now embed our app view to the body of the HTML document.
 > :bulb: **Tip:**  <br>
 >Although setting an ID is not mandatory, it greatly improves the maintainability and flexibility of your code. With a stable ID, you can easily locate and update specific parts of your application.
 
+&nbsp;
 ***
 
 ### Conventions

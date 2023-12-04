@@ -94,6 +94,7 @@ Let's go through the compiler options specified in the file:
 - `"paths": { "ui5/walkthrough/*": ["webapp/*"] }`: The `path` paramter specifies path mappings for module resolution. It allows you to define custom module paths that map to specific directories or files. In this case, it maps the module path `ui5/walkthrough/*`
 
 ***
+
 ### Coding
 
 ### webapp/index.ts \(New\)
@@ -103,7 +104,6 @@ Now let's move on to the UI work. We create a new `index.ts` script in the webap
 ```ts
 alert("UI5 is ready");
 ```
-
 
 ***
 
@@ -155,7 +155,9 @@ We initialize the core modules with the following configuration options:
 > The namespace is a unique identifier for your application file. It helps prevent naming conflicts with other modules or libraries.
 
 ***
+
 ### Tooling
+
 ### package.json
 
 Let's enhance our tooling setup once again by installing some custom middleware for the ui5-server. This will help us handle our development project more efficiently.
