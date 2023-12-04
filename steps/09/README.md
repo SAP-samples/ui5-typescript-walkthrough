@@ -3,7 +3,9 @@
 After we have introduced all three parts of the Model-View-Controller \(MVC\) concept, we now come to another important structural aspect of OpenUI5.
 
 
-In this step, we will encapsulate all UI assets in a component that is independent from our `index.html` file. Components are independent and reusable parts used in OpenUI5 applications. Whenever we access resources, we will now do this relatively to the component \(instead of relatively to the `index.html`\). This architectural change allows our app to be used in more flexible environments than our static `index.html` page, such as in a surrounding container like the SAP Fiori launchpad.
+In this step, we will enhance our application by encapsulating all UI assets within a component in OpenUI5. By doing so, we create an independent and reusable module independent of our index.html file. This architectural change enables us to access resources relative to the component, rather than relative to the `index.html` file.
+
+By encapsulating our application as a component, we can seamlessly integrate it into surrounding containers like the SAP Fiori launchpad. This means our application can be easily embedded within a larger ecosystem, providing a more cohesive and integrated user experience.
 
 &nbsp;
 ***
@@ -27,13 +29,13 @@ After this step your project structure will look like the figure below. We will 
 
 ### webapp/Component.ts \(New\)
 
-We navigate to the `webapp` folder and place the `Component.ts` file to it that will hold our application setup. This file is commonly referred to as the component controller. A component is organized in a unique namespace which is synonymous with the application namespace. All required and optional resources of the component have to be organized in the namespace of the component.
+We navigate to the `webapp` folder and place the `Component.ts` file to it. This file is commonly referred to as the component controller. A component is organized in a unique namespace \(which is synonymous with the application namespace\). All required and optional resources of the component have to be organized in the namespace of the component.
 
 We define the component by extending `sap/ui/core/UIComponent` and supplement the component with additional metadata. Within the `interfaces` settings, we specify that the component should implement the `sap/ui/core/IAsyncContentCreation` interface. This allows the component to be generated asynchronously, which in turn sets the component's rootView and router configuration to async.
 
-When the component is instantiated, OpenUI5 automatically calls the `init` function of the component. It's crucial that when extending the base class, a super call to the `init` function of the base class is executed. Additionally, we instantiate our data model and the `i18n` model in this section, similar to what we did earlier in the `onInit` function of app controller.
+When the component is instantiated, OpenUI5 automatically calls the `init` function of the component. It's important to include a call to the `init` function of the base class by using the `super` keyword. In this section, we also instantiate our data model and the `i18n` model, similar to what we did earlier in the `onInit` function of our app controller.
 
-Finally we call the `createContent` hook method of the component. This create the content (UI Control Tree) of this component. Here we now create the view as we did before in the `index.ts` file in the previous step to establish our app view as the component's root view.
+Finally we call the `createContent` hook method of the component. This method creates the content \(UI Control Tree\) of this component. Here, we create the view as we did in the `index.ts` file to set our app view as the root view of the component.
 
 ```ts
 import Control from "sap/ui/core/Control";
@@ -111,17 +113,31 @@ export default class AppController extends Controller {
 
 #### webapp/index.ts
 
-Instead of directly creating a view, we now utilize a ComponentContainer control. This particular control allows us to encapsulate a UI Component within a control tree.
+We'll replace the view with a UI component we've just created. To do this, we use a control called `ComponentContainer`. This control allows us to wrap a UI Component and place it in our HTML document.
 
-To set up the ComponentContainer, we assign the `name` property with the namespace of the component. This specifies which component to load and initialize. In addition, we give our component a unique `id` through the `ComponentContainer` constructor's setting argument. It's vital to ensure that this component id is unique among all components created during the application's runtime to avoid any potential conflicts. Furthermore, to allow the component and its dependencies to load in a fully asynchronous manner, we set the `async` property to "true". This implies that the loading of the component will not block other operations, leading to a smoother, more efficient loading experience. Finally, we position our newly created ComponentController control within the DOM element with the id `content`.
+We take out the creation of the view and create a new `ComponentContainer` instead. We configure this instance by providing the following options: 
+
+-   We assign the `id` property to "container" so that we can refer to it later if needed. 
+
+-   We set the `name` property to the namespace of the component. This tells the `ComponentContainer` control which UI component it should load and show.
+
+-   We pass the `id` "walkthrough" to our component through the `ComponentContainer` constructor's settings argument. This `id` helps us identify our component among others that may be created during the application's runtime. 
+
+-   To ensure the `id` of our component is unique and avoid any mix-ups, we set the `autoPrefixId` property to `true`. This automatically adds a prefix to the ID of the Component, which is the ID of the ComponentContainer followed by a single dash \("-"/). 
+
+-   For better loading performance, we set the `async` property to "true". This allows the component and its dependencies to load in the background without blocking other parts of the application. 
+
+Finally, we position our newly created ComponentController control within the HTML element with the id `content`.
 
 ```ts
+import ComponentContainer from "sap/ui/core/ComponentContainer";
+
 new ComponentContainer({
     id: "container",
+    name: "ui5.walkthrough",
     settings: {
         id: "walkthrough"
     },
-    name: "ui5.walkthrough",
     autoPrefixId: true,
     async: true
 }).placeAt("content");
