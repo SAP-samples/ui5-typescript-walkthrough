@@ -136,7 +136,7 @@ In our current scenario, we only have one model called `i18n`, which is a resour
 }
 ```   
 
-> :round_pushpin: **NOTE:** <br>
+> :round_pushpin: **Note:** <br>
 > In this tutorial, we only introduce the most important settings and parameters of the descriptor file. In some development environments you may get validation errors because some settings are missing - you can ignore those in this context.
 
 ***

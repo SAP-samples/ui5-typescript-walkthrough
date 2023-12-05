@@ -43,7 +43,7 @@ export default class ProductRating extends Control {
 		events: {
 			change: {
 				parameters: {
-					"value": "int"
+					"value": "float"
 				}
 			}
 		}
@@ -53,7 +53,6 @@ export default class ProductRating extends Control {
 		this.setAggregation("_rating", new RatingIndicator({
 			value: this.getValue(),
 			iconSize: "2rem",
-			visualMode: "Half",
 			liveChange: this._onRate.bind(this)
 		}));
 		this.setAggregation("_label", new Label({
@@ -65,7 +64,7 @@ export default class ProductRating extends Control {
 		}).addStyleClass("sapUiTinyMarginTopBottom"));
 	}
 
-	setValue( value : "float" ): ProductRating {
+	setValue(value: "float" ): ProductRating {
 		this.setProperty("value", value, true);
 		(<RatingIndicator> this.getAggregation("_rating")).setValue(value);
 
@@ -73,7 +72,7 @@ export default class ProductRating extends Control {
 	}
 
 	reset(): void {
-		var resourceBundle = <ResourceBundle> (<ResourceModel> this?.getModel("i18n"))?.getResourceBundle();
+		const resourceBundle = <ResourceBundle> (<ResourceModel> this?.getModel("i18n"))?.getResourceBundle();
 
 		this.setValue(0);
 		(<Label> this.getAggregation("_label")).setDesign("Standard");
@@ -82,7 +81,7 @@ export default class ProductRating extends Control {
 		(<Button> this.getAggregation("_button")).setEnabled(true);
 	}
 
-	_onRate(event : RatingIndicator$LiveChangeEvent): void {
+	_onRate(event: RatingIndicator$LiveChangeEvent): void {
 		const ressourceBundle = <ResourceBundle> (<ResourceModel> this?.getModel("i18n"))?.getResourceBundle();
 		const value = event.getParameter("value");
 
@@ -92,7 +91,7 @@ export default class ProductRating extends Control {
 		(<Label> this.getAggregation("_label")).setDesign("Bold");
 	}
 
-	_onSubmit(event : Button$PressEvent): void {
+	_onSubmit(event: Button$PressEvent): void {
 		const resourceBundle = <ResourceBundle> (<ResourceModel> this?.getModel("i18n"))?.getResourceBundle();
 
 		(<RatingIndicator> this.getAggregation("_rating")).setEnabled(false);
