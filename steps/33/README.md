@@ -447,7 +447,6 @@ Adding the block between the BEGIN and END line into the `ProductRating` class b
 
 [API Reference: `sap.ui.core.Control`](https://sdk.openui5.org/api/sap.ui.core.Control)
 
-
 [Defining the Control Metadata](https://sdk.openui5.org/topic/7b52540d9d8c4e00b9723151622bbb64.html "Control metadata consists of properties, events, as well as aggregations and associations.")
 
 [Init() Method](https://sdk.openui5.org/topic/6d6b5bda5727419eadcc9cbac1f6e6a1 "The init() method can be used to set up, for example, internal variables or subcontrols of a composite control.")
