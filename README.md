@@ -14,6 +14,8 @@ The [Reuse Tool](https://reuse.software/) must be used for your samples project.
 Please edit this file as it is the primary description file for your project. You can find some placeholder titles for sections below.
 -->
 
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/ui5-typescript-walkthrough)](https://api.reuse.software/info/github.com/SAP-samples/ui5-typescript-walkthrough)
+
 # OpenUI5 TypeScript Walkthrough
 
 In this tutorial we'll introduce you to all major development paradigms of OpenUI5. We'll demonstrate the use of TypeScript with OpenUI5 and highlight the specific characteristics of this approach.
