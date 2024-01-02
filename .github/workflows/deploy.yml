@@ -29,4 +29,8 @@ jobs:
         run: node tools/prepare-gh-pages.js
 
       - name: Deploy to GH pages
-        run: node tools/deploy-gh-pages.js
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true
