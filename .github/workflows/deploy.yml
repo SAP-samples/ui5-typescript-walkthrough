@@ -1,0 +1,32 @@
+name: "Deploy to GH pages"
+
+on:
+  push:
+    branches: [main]
+
+env:
+  HUSKY_SKIP: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build and validate all steps
+        run: node tools/prepare-gh-pages.js
+
+      - name: Deploy to GH pages
+        run: node tools/deploy-gh-pages.js
