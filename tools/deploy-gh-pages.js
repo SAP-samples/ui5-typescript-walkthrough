@@ -4,7 +4,8 @@ const ghpages = require("gh-pages");
 
 	await new Promise(function(resolve, reject) {
 		ghpages.publish("dist", {
-			nojekyll: true
+			nojekyll: true,
+			history: false
 		}, function() {
 			resolve();
 		});
