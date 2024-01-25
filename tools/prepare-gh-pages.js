@@ -1,5 +1,5 @@
 const { join } = require("path");
-const { readdirSync, existsSync, rmSync, mkdirSync, createWriteStream } = require("fs");
+const { readdirSync, existsSync, rmSync, mkdirSync, createWriteStream, copyFileSync } = require("fs");
 const { exec } = require("child_process");
 const utils = require("util");
 const execute = utils.promisify(exec);
@@ -42,5 +42,6 @@ function zipDirectory(sourceDir, outPath) {
 			cwd: join(process.cwd(), "steps", step)
 		});
 	}
+	copyFileSync(join(process.cwd(), "README.md"), join(process.cwd(), "dist/index.md"));
 
 }());
