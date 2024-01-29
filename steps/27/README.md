@@ -11,7 +11,7 @@ Actually, every feature that we added to the app so far, would require a separat
 
 ### Preview  
   
-![](https://sdk.openui5.org/docs/topics/_LowRes.png "A unit test for our formatters is now available")
+![](https://sdk.openui5.org/docs/topics/loio0d29491d96574cfe8d8158d60a0a32e2_LowRes.png "A unit test for our formatters is now available")
 
 <sup>*A unit test for our formatters is now available*</sup>
 

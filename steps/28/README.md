@@ -10,9 +10,9 @@ We haven’t thought about testing our interaction with the app yet, so in this 
 ***
 
 ### Preview
-  
 
-![](https://sdk.openui5.org/docs/topics/loio250d5b92921d44a4b432cc0fade88cc9_LowRes.png "An OPA test opens the "Hello" dialog from step 16")
+![](hhttps://sdk.openui5.org/docs/topics/loio250d5b92921d44a4b432cc0fade88cc9_LowRes.png "An OPA test opens the "Hello" dialog from step 16")
+
 <sup>*An OPA test opens the "Hello" dialog from step 16*</sup>
 
 ***
