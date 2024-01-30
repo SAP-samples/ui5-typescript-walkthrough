@@ -32,6 +32,7 @@ function zipDirectory(sourceDir, outPath) {
 	if (existsSync(join(process.cwd(), "dist"))) {
 		rmSync(join(process.cwd(), "dist"), { recursive: true });
 	}
+	/*
 	mkdirSync(join(process.cwd(), "dist"), { recursive: true });
 	await Promise.all(steps.map((step) => {
 		return zipDirectory(join(process.cwd(), "steps", step), join(process.cwd(), "dist", `ui5-typescript-walkthrough-step-${step}.zip`))
@@ -42,14 +43,17 @@ function zipDirectory(sourceDir, outPath) {
 			cwd: join(process.cwd(), "steps", step)
 		});
 	}
+	*/
 
 	function rewriteLinks(file) {
-		let content = readFileSync(file, { encoding: "utf8"});
+		let content = `---\npermalink: README.md\n---\n\n${readFileSync(file, { encoding: "utf8"})}`;
 		content = content.replace(/steps\/(\d{2})/g, "step-$1");
 		content = content.replace(/\.\.\/(\d{2})/g, "../step-$1");
+		content = content.replace(/README\.md/g, "README.html");
 		writeFileSync(file, content, { encoding: "utf8" });
 	}
 
+	mkdirSync(join(process.cwd(), "dist"), { recursive: true });
 	copyFileSync(join(process.cwd(), "README.md"), join(process.cwd(), "dist/index.md"));
 	rewriteLinks(join(process.cwd(), "dist/index.md"));
 	const readmes = fg.globSync(["steps/**/README.md"]);
