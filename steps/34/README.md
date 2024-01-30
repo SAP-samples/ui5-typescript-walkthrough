@@ -180,8 +180,6 @@ We can see the results when we decrease the browser's screen size or open the ap
 > 💡 **Tip:** <br>
 > You can test the device specific features of your app with the developer tools of your browser. For example in Google Chrome, you can emulate a tablet or a phone easily and see the effects. Some responsive options of OpenUI5 are only set initially when loading the app, so you might have to reload your page to see the results.
 
-&nbsp;
-
 ***
 
 ### Conventions

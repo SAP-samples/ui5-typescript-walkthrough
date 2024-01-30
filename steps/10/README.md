@@ -214,8 +214,6 @@ It's worth noting that the `ComponentSupport` module enforces asynchronous loadi
 
 We can now delete our `index.ts` file, because our component is now initiated directly in the HTML markup.
 
-&nbsp;
-
 ***
 
 ### Conventions

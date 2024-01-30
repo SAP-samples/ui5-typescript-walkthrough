@@ -182,8 +182,6 @@ In the app view we add a second view and assign it to our newly created InvoiceL
 </mvc:View>
 ```
 
-&nbsp;
-
 ***
 
 ### Conventions

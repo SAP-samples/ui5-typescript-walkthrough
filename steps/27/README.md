@@ -136,8 +136,6 @@ The so-called QUnit test suite is an HTML page that triggers all QUnit tests for
 
 If we now open the `webapp/test/unit/unitTests.qunit.html` file in the browser, we should see our test running and verifying the formatter logic.
 
-&nbsp;
-
 ***
 
 ### Conventions

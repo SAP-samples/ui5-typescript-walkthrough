@@ -143,8 +143,6 @@ npm start
 
 This will open a new browser window hosting your newly created `index.html`.
 
-&nbsp;
-
 ***
 
 ### Conventions

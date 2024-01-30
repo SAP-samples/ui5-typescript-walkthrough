@@ -65,8 +65,6 @@ To format the output text individually, we remove the description from the input
 </mvc:View>
 ```
 
-&nbsp;
-
 ***
 
 ### Conventions

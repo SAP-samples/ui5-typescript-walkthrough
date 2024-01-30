@@ -144,8 +144,6 @@ new ComponentContainer({
 }).placeAt("content");
 ```
 
-&nbsp;
-
 ***
 
 ### Conventions

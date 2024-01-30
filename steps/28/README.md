@@ -187,8 +187,6 @@ Then we load the basic QUnit functionality via script tags from OpenUI5 so that 
 
 When you call the `webapp/test/integration/opaTests.qunit.html` page of your project on the server, you should see the QUnit layout and a test “Should see the Hello dialog” is executed immediately. It will load the app component on the right side of the page. There you can see what operations the test is performing on the app, if everything works correctly the button click is triggered, then a dialog is shown and the test case is green.
 
-&nbsp;
-
 ***
 
 ### Conventions

@@ -172,8 +172,6 @@ Our last piece to fit the puzzle together is the detail view. We replace the app
 
 You should now see the invoice details on a separate page when you click on an item in the list of invoices.
 
-&nbsp;
-
 ***
 
 ### Conventions

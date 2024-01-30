@@ -56,8 +56,6 @@ The condition of the operator is a value from our data model. A model binding in
 
 Expressions are limited to a particular set of operations that help formatting the data such as Math expression, comparisons, and such. You can look up the possible operations in the [documentation](https://sdk.openui5.org/topic/daf6852a04b44d118963968a1239d2c0.html).
 
-&nbsp;
-
 ***
 
 ### Conventions

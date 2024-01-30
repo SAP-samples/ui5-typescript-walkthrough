@@ -63,8 +63,6 @@ In addition, we replace the `<text>` tag with a `<button>` tag. We set the `text
 
 A view does not necessarily need an explicitly assigned controller. You do not have to create a controller if the view is just displaying information and no additional functionality is required. If a controller is specified, it is instantiated after the view is loaded.
 
-&nbsp;
-
 ***
 
 ### Conventions

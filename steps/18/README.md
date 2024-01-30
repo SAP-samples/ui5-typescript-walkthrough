@@ -83,8 +83,6 @@ In the dialog fragment, we add an icon control to the content aggregation of the
 </core:FragmentDefinition>
 ```
 
-&nbsp;
-
 ***
 
 ### Conventions

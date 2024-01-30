@@ -91,8 +91,6 @@ Now only the back button is missing on the detail page. We do this by telling th
 
 You should now see now see a back button when navigating to the detail page and being able to get back to the overview when clicking on it.
 
-&nbsp;
-
 ***
 
 ### Conventions

@@ -101,8 +101,6 @@ For a more detailed explanation of the OpenUI5 support tools, go through the [Tr
 
 If you're stuck and need help for some development task, you can also post a question in the OpenUI5-related forums, for example in the [SAP Community](https://www.sap.com/community/topic/ui5.html) or on [Stack Overflow](https://stackoverflow.com/search?q=openui5).
 
-&nbsp;
-
 ***
 
 ### Conventions

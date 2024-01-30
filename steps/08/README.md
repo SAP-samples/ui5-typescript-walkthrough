@@ -115,8 +115,6 @@ A resource bundle is a flat structure, therefore the preceding slash \(/\) can b
 > 
 > Furthermore, `i18n` files only impact client-side application texts. Texts that are loaded from back-end systems can appear in all languages that are supported by the back-end system.
 
-&nbsp;
-
 ***
 
 ### Conventions

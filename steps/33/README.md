@@ -428,8 +428,6 @@ export default class ProductRating extends Control {
 
 Adding the block between the BEGIN and END line into the `ProductRating` class body in the file `webapp/control/ProductRating.ts` provides the constructors and the structure of the constructor settings object. As result, the constructor signatures with and without control ID are available. Furthermore, TypeScript checks the settings you give in the constructor and suggests the available ones, like the direction property.
 
-&nbsp;
-
 ***
 
 ### Conventions

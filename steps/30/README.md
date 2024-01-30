@@ -289,8 +289,6 @@ In the invoice list view we finally add the press event to the list item we just
 
 If you now open the app, you should now see the detail page when clicking an item in the list of invoices.
 
-&nbsp;
-
 ***
 
 ### Conventions
