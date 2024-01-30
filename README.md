@@ -28,7 +28,7 @@ We first introduce you to the basic development paradigms like *Model-View-Contr
 
 ![Preview of the OpenUI5 application that is going to be built in this tutorial. Contains a Hello World upper part with buttons and a text input. The lower part shows list of invoices with details, grouped by vendor names.](https://sdk.openui5.org/docs/topics/loiofb12cea5ac9b45bb9007aac5a1a8689f_LowRes.png)
 
-> :bulb: **Tip:** <br>
+> 💡 **Tip:** <br>
 > You don't have to do all tutorial steps sequentially, you can also jump directly to any step you want. Just download the code from the previous step and make sure that the application runs as intended.
 > 
 > You can view the samples for all steps here in this repository.
