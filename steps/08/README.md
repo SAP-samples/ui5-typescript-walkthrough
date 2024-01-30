@@ -109,7 +109,7 @@ A resource bundle is a flat structure, therefore the preceding slash \(/\) can b
 </mvc:View>
 ```
 
-> :round_pushpin: **Note:** <br>
+> 📝 **Note:** <br>
 > The description text is not completely localized in this example for illustration purposes. To be on the safe side, we would have to use a similar mechanism as in the controller to use a string from the resource bundle and replace parts of it. This can be done with the `sap/base/strings/formatMessage` formatter.
 > 
 > Furthermore, `i18n` files only impact client-side application texts. Texts that are loaded from back-end systems can appear in all languages that are supported by the back-end system.

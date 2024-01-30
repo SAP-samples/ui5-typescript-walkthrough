@@ -62,7 +62,7 @@ export default  {
 The new `formatter` file is placed in the model folder of the app, because formatters are working on data properties and format them for display on the UI. This time we do not extend from any base object but just return an object with our `formatter` functions inside.
 
 
->:warning: **Important:**
+>📌 **Important:**
 >
 > In the above example, `this` refers to the controller instance as soon as the formatter gets called. We access the resource bundle via the component using `this.getOwnerComponent().getModel()` instead of using `this.getView().getModel()`. The latter call might return `undefined`, because the view might not have been attached to the component yet, and thus the view can't inherit a model from the component.
 

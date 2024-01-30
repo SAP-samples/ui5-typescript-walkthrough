@@ -151,7 +151,7 @@ We initialize the core modules with the following configuration options:
 </html>
 ```
 
-> :round_pushpin: **Note:**
+> 📝 **Note:**
 > The namespace is a unique identifier for your application file. It helps prevent naming conflicts with other modules or libraries.
 
 ***
@@ -188,7 +188,7 @@ Next,  we have to configure the tooling extension we installed from npm to our U
 
 -   All our custom middleware extensions will be called after the `compression` middleware.
 
-> :warning: **Important:** <br>
+> 📌 **Important:** <br>
 > Middleware configurations are applied in the order in which they are defined. 
 
 ```yaml
@@ -213,7 +213,7 @@ server:
 ```
 Now you can benefit from live reload on changes, built framework resources at development time, and make use of TypeScript in OpenUI5.
 
-> :round_pushpin: **Note:** <br>
+> 📝 **Note:** <br>
 > During its initial run, the `ui5-middleware-serveframework` middleware will build the framework, which can take a while. In all following steps, the build will not happen again and the framework is served from the built resources.
 
 &nbsp;

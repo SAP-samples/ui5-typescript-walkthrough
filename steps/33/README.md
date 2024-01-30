@@ -78,7 +78,7 @@ The `init` function is a lifecycle function that is automatically called by the 
 
 The `renderer` property is an object that determines how the control is rendered. It is invoked initially by the OpenUI5 framework and each time a property of the control is changed. The `renderer` object has two properties: `apiVersion` and `render`. The `apiVersion` property specifies the API version of the RenderManager that is used in this renderer. The `render` property is a method that takes two parameters: a `RenderManager` object and the control instance itself. We'll delve into the implementation of our control's rendering within this method at a later stage.
 
-> :round_pushpin: **Note:** <br>
+> 📝 **Note:** <br>
 > The RenderManager is an important component in OpenUI5 that is responsible for converting abstract representations of controls into actual HTML elements that can be displayed in the browser. There are different versions of the RenderManager API, each representing an evolution of the RenderManager with specific sets of APIs and rendering techniques. These different API versions are important to ensure compatibility between different versions of OpenUI5.
 >
 > The latest version of the RenderManager API is version 4, which introduces new features and improvements compared to previous versions. It also includes performance enhancements, making your applications run faster and more efficiently. For example, version 4 avoids re-rendering of child controls unless they are invalidated, which can save processing time.
@@ -125,7 +125,7 @@ In the `metadata` section we therefore define several properties that we make us
 
 	As described in the first paragraph, we need three internal controls to realize our rating functionality. We therefore create three “hidden aggregations” by setting the `visibility` attribute to `hidden`. This way, we can use the models that are set on the view also in the inner controls and OpenUI5 will take care of the lifecycle management and destroy the controls when they are not needed anymore. Aggregations can also be used to hold arrays of controls but we just want a single control in each of the aggregations so we need to adjust the cardinality by setting the attribute `multiple` to `false`.
 
-	> :round_pushpin: **Note:** <br>
+	> 📝 **Note:** <br>
 	> You can define `aggregations` and `associations`
 	> 
 	> -   An **aggregation** is a strong relation that also manages the lifecycle of the related control, for example, when the parent is destroyed, the related control is also destroyed. Also, a control can only be assigned to one single aggregation, if it is assigned to a second aggregation, it is removed from the previous aggregation automatically.

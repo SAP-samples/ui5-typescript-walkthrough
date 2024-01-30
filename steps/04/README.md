@@ -32,10 +32,10 @@ Inside the `<mvc:View>` tag, we add the `<Text>` tag from the default XML namesp
 
 We have created an XML view that displays a text control with the text "Hello World".
 
-> :bulb: **Tip:** <br>
+> 💡 **Tip:** <br>
 > XML tags are mapped to UI controls, and attributes are mapped to the properties of the control. In this case, the `<Text>` tag represents the `Text` control in the sap.m library, and the `text` attribute sets the `text` property of the control.
 
-> :round_pushpin: **Note:**  <br>
+> 📝 **Note:**  <br>
 > The namespace identifies all resources of the project and has to be unique. If you develop your own application code or library, you cannot use the namespace prefix `sap`, because this namespace is reserved for SAP resources. Instead, simply define your own unique namespace \(for example, `myCompany.myApp`\).
 
 ***
@@ -57,7 +57,7 @@ XMLView.create({
 ```
 We have now embed our app view to the body of the HTML document.
 
-> :bulb: **Tip:**  <br>
+> 💡 **Tip:**  <br>
 >Although setting an ID is not mandatory, it greatly improves the maintainability and flexibility of your code. With a stable ID, you can easily locate and update specific parts of your application.
 
 &nbsp;

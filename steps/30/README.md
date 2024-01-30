@@ -107,7 +107,7 @@ We add a new “routing" section to the `sap.ui5` part of the descriptor. There 
 -   `config`
     This section contains the global router configuration and default values that apply for all routes and targets. The property routerClass is special as it determines the router implementation. The default value is `sap.ui.core.routing.Router`. Here, we set the `routerClass` to s`ap.m.routing.Router`, because our app is based on `sap.m`. All other properties in config are given to the router instance. For example, we define in `path` where our views are located in the app. As we want to specify view to view navigation and we only use XML views in our app we preset also the paramter `type` and `viewType`. To load and display views automatically, we also specify the `controlId` of the control that will contain the views and the aggregation (`controlAggregation`) of the control where the views will be added. Here we specify that the views are loaded into the `pages` aggregation of the control with the id we provided in the app view. 
 
-    > :warning: **Important:**
+    > 📌 **Important:**
     > The possible values for `routerClass` are `sap.ui.core.routing.Router`, `sap.m.routing.Router`, or any other subclasses of `sap.ui.core.routing.Router`. Compared to `sap.ui.core.routing.Router` the `sap.m.routing.Router` is optimized for mobile apps and adds the properties `level`, `transition` and `transitionParameters` which can be specified for each route or target created by the `sap.m.routing.Router`. 
 
 -   `routes`
@@ -168,7 +168,7 @@ The router will automatically add the view that corresponds to the current URL i
 
 The overview view is always shown when the hash is empty. The detail view is shown when the hash matches the pattern `detail`.
 
-> :warning: **Important:**
+> 📌 **Important:**
 >
 > The sequence of the routes in the routes definition is important. As soon as a pattern is matched, the following patterns are ignored. To prevent this for a specific route, you use the `greedy` parameter. If set to `true`, the route is always taken into account.
 

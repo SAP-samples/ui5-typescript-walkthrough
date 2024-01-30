@@ -49,7 +49,7 @@ We add an icon to the button that opens the dialog. The `sap-icon://` protocol i
 </mvc:View>
 ```
 
->:bookmark: **Tip:**
+>💡 **Tip:**
 >
 > You can look up other icons using the [Icon Explorer tool](https://sdk.openui5.org/test-resources/sap/m/demokit/iconExplorer/webapp/index.html).
 > 

@@ -40,7 +40,7 @@ In our webapp folder, we createt a new HTML file named `index.html` and copy the
 </html>
 ```
 
-> :round_pushpin: **Note:** <br>
+> 📝 **Note:** <br>
 > An HTML document consists basically of two sections: head and body. The head part will be used by the browser to process the document.
 > 
 > Using meta tags, we can influence the behavior of the browser. In this case, we tell the browser to use `UTF-8` as the document character set.
@@ -57,7 +57,7 @@ Hence, we create a new file called `manifest.json` in the webapp folder and defi
 
 -   The `_version` attribute is a mandatory field in the app descriptor that indicates the format version of the descriptor. This attribute is crucial for identifying application settings when the descriptor is read by various tools. As new features or changes are introduced in future versions of the descriptor, the version number helps ensure compatibility and proper interpretation of the descriptor's contents. Consequently, with each new version of OpenUI5 a corresponding version of the app descriptor is released. For this tutorial, we have determined that our app requires a minimum OpenUI5 version of 1.120. Therefore, we specify the descriptor format version as 1.60.0, aligning it with the appropriate OpenUI5 version.
 
-    > :bulb: **Tip:** <br>
+    > 💡 **Tip:** <br>
     > To find the appropriate `_version` for each OpenUI5 release, see [Descriptor for Applications, Components, and Libraries \(manifest.json\)](httsp://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html).
 
 -   The **`sap.app`**  namespace is used to define properties that are specific to the application itself. It includes the following obligatory application-specific attributes:
@@ -68,7 +68,7 @@ Hence, we create a new file called `manifest.json` in the webapp folder and defi
 
     -   `title`: This property defines the title of the application, which can be displayed in the SAP Fiori launchpad or other application management tools.
 
-        > :round_pushpin: **Note:** <br>
+        > 📝 **Note:** <br>
         > It's recommended to make the title language-dependent, although for now we will use a static title. We'll discuss how to implement language-dependent titles in [Step 10: Descriptor for Applications](../10/README.md).
 
     -   `applicationVersion`: This property is used to specify the version of the application. It's typically used for tracking and managing changes to the application over time. The application version must be provided using semantic versioning principles.
@@ -89,7 +89,7 @@ Hence, we create a new file called `manifest.json` in the webapp folder and defi
 }
 ```
 
-> :round_pushpin: **Note:** <br>
+> 📝 **Note:** <br>
 > In this tutorial step, we focus on addingg the absolute minimum configuration to the app descriptor file. In certain development environments you might encounter validation errors due to missing settings. However, for the purposes of this tutorial you can safely ignore these errors. In [Step 10: Descriptor for Applications](../10/README.md) we'll examine the purpose of the file in detail and configure some further options.
 
 ***

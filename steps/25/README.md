@@ -6,7 +6,7 @@ So far we have worked with local JSON data, but now we will access a real OData 
 
 In the real world, data often resides on remote servers and is accessed via an OData service. We will add a data source configuration to the manifest and replace the JSONModel type for our `invoice` model with the publicly available Northwind OData service to visualize remote data. You will be surprised how little needs to be changed in order to make this work!
 
-> :bulb: **Note:**
+> 📝 **Note:**
 >
 > If you cannot get it to run, don't worry too much, the remaining steps will also work with the local JSON data you have used so far. In [Step 26: Mock Server Configuration](../26/README.md), you will learn how to simulate a back-end system to achieve a similar working scenario. However, you should at least read this chapter about remote OData services to learn about non-local data sources.
 
@@ -123,7 +123,7 @@ In the `models` section, we replace the content of the `invoice` model. This key
 
 Our component now automatically creates an instance of `sap.ui.model.odata.v2.ODataModel` according to the settings we specified above, and makes it available as a model named `invoice`. When you use the `invoiceRemote` data source, the `ODataModel` fetches the data from the real Northwind OData service. The invoices we receive from the Northwind OData service have identical properties as the JSON data we used previously \(except for the `status` property, which is not available in the Northwind OData service\).
 
-> :bulb: **Note:**
+> 📝 **Note:**
 >
 > If you want to have a default model on the component, you can change the name of the model to an empty string in the descriptor file. 
 >

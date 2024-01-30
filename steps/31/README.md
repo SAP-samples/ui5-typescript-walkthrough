@@ -23,7 +23,7 @@ To make this work, we have to pass over the information which item has been sele
 
 We want to hand over the information for the selected item when navigating to the detail view. To achieve that, we add the navigation parameter `invoicePath` to the detail route in the app descriptor. There, we add a navigation parameter `invoicePath` to the detail route so that we can hand over the information for the selected item to the detail page.
 
-> :bulb: **Note:**
+> 📝 **Note:**
 >
 > Mandatory navigation parameters are defined with curly brackets.
 

@@ -37,7 +37,7 @@ export default class AppController extends Controller {
 
 ```
 
-> :round_pushpin: **Note:** <br>
+> 📝 **Note:** <br>
 > The comment `@name ui5.walkthrough.controller.App` is a JSDoc comment that names this controller. It can be used by documentation generators and IDEs to provide more information about this class.
 
 ***

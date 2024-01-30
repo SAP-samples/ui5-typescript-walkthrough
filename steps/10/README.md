@@ -61,7 +61,7 @@ The **`sap.ui`** namespace is used for UI-specific attributes and comes with the
 
 -   `deviceTypes` \(mandatory\): This property defines the supported device types for the application. It is an object that contains three boolean properties: `desktop`, `tablet`, and `phone`. Each property indicates whether the application is designed to be used on that particular device type. We define all three device types as "true", which means that our application is intended to be used on desktops, tablets, and phones.
         
-> :round_pushpin: **Note:** <br>
+> 📝 **Note:** <br>
 > By configuring the `deviceTypes` property, developers can ensure that the application's user interface is optimized for different device types, providing a consistent and responsive experience across various devices.
 
 The **`sap.ui5`** namespace adds OpenUI5-specific configuration parameters that are automatically processed by OpenUI5. The following parameters are important:
@@ -72,7 +72,7 @@ The **`sap.ui5`** namespace adds OpenUI5-specific configuration parameters that 
     
     -    The `libs` settings declare the libraries that the OpenUI5 core should load for use in the component. To benefit from the asynchronous library preload, it is essential to add all obligatory libraries here. You can set the `lazy` parameter to "true" to indicate that the lib shall be lazy loaded. This makes sure that the libraries are only loaded when they're needed. If your app requires a minimum version of the lib, you need to specify the `minVersion` for information purposes. We declare here the two libraries `sap.ui.core` and `sap.m` as dependencies to be loaded directly when starting the component.
 
-    > :warning: **Important:** <br>
+    > 📌 **Important:** <br>
     > Make sure that you don't load too many dependencies. In most apps it's enough to load the libraries sap.ui.core and sap.m by default, and add additional libraries only when needed.
 
 -   `rootView`: This section defines the root view of the application. The root view is the initial view that is displayed when the component is loaded. It specifies view name as a string for XML views, or the view configuration object with `viewName` for the view name as string and `type` for the view type, `id`, `async`, and other properties of `sap.ui.core.mvc.view`. We configure our app view as root view and add the ID "app" to it.
@@ -136,7 +136,7 @@ In our current scenario, we only have one model called `i18n`, which is a resour
 }
 ```   
 
-> :round_pushpin: **Note:** <br>
+> 📝 **Note:** <br>
 > In this tutorial, we only introduce the most important settings and parameters of the descriptor file. In some development environments you may get validation errors because some settings are missing - you can ignore those in this context.
 
 ***

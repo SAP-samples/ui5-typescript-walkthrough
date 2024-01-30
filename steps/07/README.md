@@ -64,7 +64,7 @@ We add an `sap/m/Input` control to our view, allowing the user to enter a name f
 
 To make this work, we connect, or 'bind', the value of the input control to the `name` attribute of the 'recipient' object in our JSON data model. We do this using a simple binding syntax, which is a straightforward way to link data between the model and the view. 
 
-> :warning: **Important:** <br>
+> 📌 **Important:** <br>
 > To bind a control property to your view model data you need to specify a [`sap.ui.base.ManagedObject.PropertyBindingInfo`](https://sdk.openui5.org/api/sap.ui.base.ManagedObject.PropertyBindingInfo) for the property. A binding info is always initiated by enclosing it in curly brackets `{…}`, and the properties defined in the BindingInfos API are placed within the brackets.
 >
 > You can omit all properties of the binding info and just provide the binding path as a simple string. A binding path consists of path segments separated by a slash (`/`) which point to a property in the model that you want to bind to. This applies all OpenUI5 provided models.
