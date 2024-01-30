@@ -5,6 +5,7 @@ Putting all our UI into the `index.ts` file will very soon result in a messy set
 When working with OpenUI5, we recommend the use of XML views, as this produces the most readable code and will force us to separate the view declaration from the controller logic. Yet the look of our UI will not change.
 
 &nbsp;
+
 ***
 ### Preview
 
@@ -61,6 +62,7 @@ We have now embed our app view to the body of the HTML document.
 >Although setting an ID is not mandatory, it greatly improves the maintainability and flexibility of your code. With a stable ID, you can easily locate and update specific parts of your application.
 
 &nbsp;
+
 ***
 
 ### Conventions
@@ -77,8 +79,8 @@ We have now embed our app view to the body of the HTML document.
 
 -   Other XML namespaces use the last part of the SAP namespace as alias \(for example, `mvc` for `sap.ui.core.mvc`\)
 
-
 &nbsp;
+
 ***
 
 **Next:** [Step 5: Controllers](../05/README.md "In this step, we replace the text with a button and show the Hello World message when the button is pressed. The handling of the button's press event is implemented in the controller of the view.")

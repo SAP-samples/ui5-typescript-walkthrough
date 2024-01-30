@@ -8,6 +8,7 @@ In this step, we will enhance our application by encapsulating all UI assets wit
 By encapsulating our application as a component, we can seamlessly integrate it into surrounding containers like the SAP Fiori launchpad. This means our application can be easily embedded within a larger ecosystem, providing a more cohesive and integrated user experience.
 
 &nbsp;
+
 ***
 
 ### Preview
@@ -144,6 +145,7 @@ new ComponentContainer({
 ```
 
 &nbsp;
+
 ***
 
 ### Conventions
@@ -153,6 +155,7 @@ new ComponentContainer({
 -   Together with all UI assets of the app, the component is located in the `webapp` folder.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 10: Descriptor for Applications](../10/README.md "All application-specific configuration settings will now further be put in a separate descriptor file called manifest.json. This clearly separates the application coding from the configuration settings and makes our app even more flexible. For example, all SAP Fiori applications are realized as components and come with a descriptor file in order to be hosted in the SAP Fiori launchpad.")

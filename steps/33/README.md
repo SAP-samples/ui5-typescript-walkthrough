@@ -2,6 +2,8 @@
 
 In this step, we are going to extend the functionality of OpenUI5 with a custom control. We want to rate the product shown on the detail page, so we create a composition of multiple standard controls using the OpenUI5 extension mechanism and add some glue code to make them work nicely together. This way, we can reuse the control across the app and keep all related functionality in one module.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -110,7 +112,7 @@ export default class ProductRating extends Control {
 };
 ```
 
-> :warning: **Remember:**
+> 📌 **Remember:** <br>
 > Controls always extend `sap.ui.core.Control` and render themselves. You could also extend `sap.ui.core.Element` or `sap.ui.base.ManagedObject` directly if you want to reuse life cycle features of OpenUI5 including data binding for objects that are not rendered. Please refer to the API reference to learn more about the inheritance hierarchy of controls.
 
 We now enhance our new custom control with the custom functionality that we need. In our case we want to create an interactive product rating feature. We utilize three controls provided by the sap.m library to compose our custom control: A `RatingIndicator` control to collect user input on a product, a `Label` control to display additional information, and a `Button` control that allows users to submit their rating.
@@ -426,6 +428,8 @@ export default class ProductRating extends Control {
 
 Adding the block between the BEGIN and END line into the `ProductRating` class body in the file `webapp/control/ProductRating.ts` provides the constructors and the structure of the constructor settings object. As result, the constructor signatures with and without control ID are available. Furthermore, TypeScript checks the settings you give in the constructor and suggests the available ones, like the direction property.
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -433,6 +437,7 @@ Adding the block between the BEGIN and END line into the `ProductRating` class b
 -   Put custom controls in the `control` folder of your app.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 34: Responsiveness](../34/README.md "In this step, we improve the responsiveness of our app. OpenUI5 applications can be run on phone, tablet, and desktop devices and we can configure the application to make best use of the screen estate for each scenario. Fortunately, OpenUI5 controls like the sap.m.Table already deliver a lot of features that we can use.")

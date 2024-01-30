@@ -2,6 +2,8 @@
 
 In this step, we add a search field for our product list and define a filter that represents the search term. When searching, the list is automatically updated to show only the items that match the search term.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -96,7 +98,8 @@ In addition, we remove the `headerText` property in the list control and use `he
 
 The search field is part of the list header and therefore, each change on the list binding will trigger a rerendering of the whole list, including the search field.
 
-&nbsp; 
+&nbsp;
+ 
 ***
 
 **Next:**[Step 24: Sorting and Grouping](../24/README.md "To make our list of invoices even more user-friendly, we sort it alphabetically instead of just showing the order from the data model. Additionally, we introduce groups and add the company that ships the products so that the data is easier to consume.")

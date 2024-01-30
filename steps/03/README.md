@@ -2,8 +2,8 @@
 
 Now it is time to build our first little UI by replacing the “Hello World” text in the HTML body by the OpenUI5 control `sap/m/Text`. In the beginning, we will use the TypeScript control API to set up the UI, the control instance is then placed into the HTML body.
 
-
 &nbsp;
+
 ***
 
 ### Preview
@@ -97,6 +97,7 @@ ui5 add sap.m`
 ```
 
 &nbsp;
+
 ***
 
 **Next:** [Step 4: XML Views](../04/README.md "Putting all our UI into the index.html file will very soon result in a messy setup and there is quite a bit of work ahead of us. So let’s do a first modularization by putting the sap/m/Text control into a dedicated view.")

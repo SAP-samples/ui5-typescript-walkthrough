@@ -5,6 +5,7 @@ In this step we move the texts of our UI to a separate resource file.
 This way, they are all in a central place and can be easily translated into other languages. This process of internationalization – in short `i18n` – is achieved in OpenUI5 by using a special resource model and the standard data binding syntax, but without a preceding "`/`" character.
 
 &nbsp;
+
 ***
 
 ### Preview
@@ -115,6 +116,7 @@ A resource bundle is a flat structure, therefore the preceding slash \(/\) can b
 > Furthermore, `i18n` files only impact client-side application texts. Texts that are loaded from back-end systems can appear in all languages that are supported by the back-end system.
 
 &nbsp;
+
 ***
 
 ### Conventions
@@ -132,6 +134,7 @@ A resource bundle is a flat structure, therefore the preceding slash \(/\) can b
 -   Use Unicode escape sequences for special characters.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 9: Component Configuration](../09/README.md "After we have introduced all three parts of the Model-View-Controller \(MVC\) concept, we now come to another important structural aspect of OpenUI5.")

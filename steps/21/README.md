@@ -2,6 +2,8 @@
 
 Sometimes the predefined types of OpenUI5 are not flexible enough and you want to do a simple calculation or formatting in the view - that is where expressions are really helpful. We use them to format our price according to the current number in the data model.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -54,6 +56,8 @@ The condition of the operator is a value from our data model. A model binding in
 
 Expressions are limited to a particular set of operations that help formatting the data such as Math expression, comparisons, and such. You can look up the possible operations in the [documentation](https://sdk.openui5.org/topic/daf6852a04b44d118963968a1239d2c0.html).
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -61,6 +65,7 @@ Expressions are limited to a particular set of operations that help formatting t
 -   Only use expression binding for trivial calculations.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 22: Custom Formatters](../22/README.md "If we want to do a more complex logic for formatting properties of our data model, we can also write a custom formatting function. We will now add a localized status with a custom formatter, because the status in our data model is in a rather technical format.")

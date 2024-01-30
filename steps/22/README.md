@@ -2,6 +2,8 @@
 
 If we want to do a more complex logic for formatting properties of our data model, we can also write a custom formatting function. We will now add a localized status with a custom formatter, because the status in our data model is in a rather technical format.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -62,8 +64,7 @@ export default  {
 The new `formatter` file is placed in the model folder of the app, because formatters are working on data properties and format them for display on the UI. This time we do not extend from any base object but just return an object with our `formatter` functions inside.
 
 
->📌 **Important:**
->
+>📌 **Important:** <br>
 > In the above example, `this` refers to the controller instance as soon as the formatter gets called. We access the resource bundle via the component using `this.getOwnerComponent().getModel()` instead of using `this.getView().getModel()`. The latter call might return `undefined`, because the view might not have been attached to the component yet, and thus the view can't inherit a model from the component.
 
 **Additional Information:**
@@ -143,7 +144,8 @@ We add a status using the `firstStatus` aggregation to our `ObjectListItem` that
 
 Instead of a technical status we get now the human-readable texts per invoice we specified in our resource bundle below the `number` attribute of the `ObjectListItem`.
 
-&nbsp;  
+&nbsp; 
+ 
 ***
 
 **Next:** [Step 23: Filtering](../23/README.md "In this step, we add a search field for our product list and define a filter that represents the search term. When searching, the list is automatically updated to show only the items that match the search term.")

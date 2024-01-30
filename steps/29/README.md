@@ -4,6 +4,8 @@ Even though we have added a basic test coverage in the previous steps, it seems 
 
 Luckily, OpenUI5 provides a couple of debugging tools that we can use within the app to check the application logic and the developer tools of modern browsers are also quite good. We will now check for the root cause.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -85,8 +87,7 @@ A hierarchical tree of OpenUI5 controls is shown on the left and the properties 
 
 Sometimes errors are not as easy to spot and you actually need to debug the JavaScript code with the tools of the browser.
 
-> 📝 **Note:**
->
+> 📝 **Note:** <br>
 > When debugging UI5 applications that use built resources, the OpenUI5 files are minified, which means that variable names are shortened and comments are removed.
 > 
 > This makes debugging harder, because the code is a lot less readable. You can load the debug sources by adding the URL parameter `sap-ui-debug=true` or by pressing [Ctrl\] + [Shift\] + [Alt\] /[Option\] + [P\]  and selecting *Use Debug Sources* in the dialog box that is displayed. After reloading the page, you can see in the *Network* tab of the browser’s developer tools that now a lot of files are loaded that have a `–dbg` suffix. These are the source code files that include comments and the uncompressed code of the app and the OpenUI5 artifacts.
@@ -100,6 +101,8 @@ For a more detailed explanation of the OpenUI5 support tools, go through the [Tr
 
 If you're stuck and need help for some development task, you can also post a question in the OpenUI5-related forums, for example in the [SAP Community](https://www.sap.com/community/topic/ui5.html) or on [Stack Overflow](https://stackoverflow.com/search?q=openui5).
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -107,6 +110,7 @@ If you're stuck and need help for some development task, you can also post a que
 -   As per OpenUI5 convention uncompressed source files end with `*-dbg.js`
 
 &nbsp;
+
 ***
 
 **Next:** [Step 30: Routing and Navigation](../30/README.md "So far, we have put all app content on one single page. As we add more and more features, we want to split the content and put it on separate pages.")

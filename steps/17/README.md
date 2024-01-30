@@ -2,6 +2,8 @@
 
 Now that we have integrated the dialog, it's time to add some user interaction. The user will definitely want to close the dialog again at some point, so we add a button to close the dialog and assign an event handler.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -87,6 +89,7 @@ In the fragment definition, we add a button to the `beginButton` aggregation of 
 By using the `loadFragment` function to create the fragment content in the controller of the panel’s content view, the method will be invoked there when the button is pressed. The dialog has an aggregation named `beginButton` as well as `endButton`. Placing buttons in both of these aggregations makes sure that the `beginButton` is placed before the `endButton` on the UI. What `before` means, however, depends on the text direction of the current language. We therefore use the terms `begin` and `end` as a synonym to “left” and “right". In languages with left-to-right direction, the `beginButton` will be rendered left, the `endButton` on the right side of the dialog footer; in right-to-left mode for specific languages the order is switched.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 18: Icons](../18/README.md "Our dialog is still pretty much empty. Since  OpenUI5 is shipped with a large icon font that contains more than 500 icons, we will add an icon to greet our users when the dialog is opened.")

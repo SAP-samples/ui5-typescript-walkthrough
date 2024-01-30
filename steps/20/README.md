@@ -2,6 +2,8 @@
 
 The list of invoices is already looking nice, but what is an invoice without a price assigned? Typically prices are stored in a technical format and with a '`.`' delimiter in the data model. For example, our invoice for pineapples has the calculated price `87.2` without a currency. We are going to use the OpenUI5 data types to format the price properly, with a locale-dependent decimal separator and two digits after the separator.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -75,6 +77,8 @@ Additionally, we set the formatting option `showMeasure` to `false`. This hides 
 
 As you can see above, we are using a special binding syntax for the `number` property of the `ObjectListItem`. This binding syntax makes use of so-called "Calculated Fields", which allows the binding of multiple properties from different models to a single property of a control. The properties bound from different models are called “parts”. In the example above, the property of the control is `number` and the bound properties \(“parts”\) retrieved from two different models are `invoice>ExtendedPrice` and `view>/currency`.
 
+&nbsp;
+
 ***
 
 ### Convention
@@ -82,6 +86,7 @@ As you can see above, we are using a special binding syntax for the `number` pro
 - Use data types instead of custom formatters whenever possible.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 21: Expression Binding](../21/README.md "Sometimes the predefined types of OpenUI5 are not flexible enough and you want to do a simple calculation or formatting in the view - that is where expressions are really helpful. We use them to format our price according to the current number in the data model.")

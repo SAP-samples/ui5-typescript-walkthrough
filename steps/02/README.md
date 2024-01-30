@@ -3,6 +3,7 @@
 Before we can do something with OpenUI5, we need to load and initialize it. This process of loading and initializing OpenUI5 is called **bootstrapping**. Once this bootstrapping is finished, we simply display an alert.
 
 &nbsp;
+
 ***
 
 ### Preview
@@ -217,6 +218,7 @@ Now you can benefit from live reload on changes, built framework resources at de
 > During its initial run, the `ui5-middleware-serveframework` middleware will build the framework, which can take a while. In all following steps, the build will not happen again and the framework is served from the built resources.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 3: Controls](../03/README.md "Now it's time to build our first little UI by replacing the Hello World text in the HTML body by the OpenUI5 control sap.m.Text. In the beginning, we will use the TypeScript control API to set up the UI, the control instance is then placed into the HTML body‚")

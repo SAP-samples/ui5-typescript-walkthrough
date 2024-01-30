@@ -2,6 +2,8 @@
 
 In this step, we improve the responsiveness of our app. OpenUI5 applications can be run on phone, tablet, and desktop devices and we can configure the application to make best use of the screen estate for each scenario. Fortunately, OpenUI5 controls like the `sap.m.Table` already deliver a lot of features that we can use.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -175,9 +177,10 @@ Now we have defined our table responsively and can see the results when we decre
 
 We can see the results when we decrease the browser's screen size or open the app on a small device.
 
-> 💡 **Tip:**
->  
+> 💡 **Tip:** <br>
 > You can test the device specific features of your app with the developer tools of your browser. For example in Google Chrome, you can emulate a tablet or a phone easily and see the effects. Some responsive options of OpenUI5 are only set initially when loading the app, so you might have to reload your page to see the results.
+
+&nbsp;
 
 ***
 
@@ -186,6 +189,7 @@ We can see the results when we decrease the browser's screen size or open the ap
 -   Optimize your application for the different screen sizes of phone, tablet, and desktop devices.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 35: Routing and Navigation](../35/README.md "We now configure the visibility and properties of controls based on the device that we run the application on. By making use of the sap.ui.Device API and defining a device model we will make the app look great on many devices.")

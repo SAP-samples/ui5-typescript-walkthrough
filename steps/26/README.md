@@ -4,6 +4,8 @@ We just ran our app against a real service, but for developing and testing our a
 
 This system is the so-called back-end system that we will now simulate with anOpenUI5 feature called mock server. It serves local files, but it simulates a back-end system more realistically than just loading the local data. We will also change the model instantiation part so that the model is configured in the descriptor and instantiated automatically byOpenUI5. This way, we do not need to take care of the model instantiation in the code.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -261,6 +263,7 @@ In case you prefer to continue with the local data, you should adjust the `start
 -   The script to start the `MockServer` is called `mockserver.js` or rather `mockserver.ts`.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 27: Remote OData Service](../27/README.md "Now that we have a test folder in the app, we can start to increase our test coverage.")

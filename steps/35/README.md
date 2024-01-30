@@ -2,6 +2,8 @@
 
 We now configure the visibility and properties of controls based on the device that we run the application on. By making use of the `sap.ui.Device` API and defining a device model we will make the app look great on many devices.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -106,8 +108,7 @@ We can also hide single controls by device type when we set a CSS class like `sa
 
 The device API of OpenUI5 offers more functionality to detect various device-specific settings, please have a look at the [documentation](https://sdk.openui5.org/api/sap.ui.Device) for more details.
 
-> 📌 **Important:**
->
+> 📌 **Important:** <br>
 > The `sap.ui.Device` API detects the device type \(Phone, Tablet, Desktop\) based on the user agent and many other properties of the device. Therefore simply reducing the screen size will not change the device type. To test this feature, you will have to enable device emulation in your browser or open it on a real device.
 
 ***
@@ -219,6 +220,8 @@ We can see the results when we decrease the browser's screen size or open the ap
 >
 > You can test the device specific features of your app with the developer tools of your browser. For example in Google Chrome, you can emulate a tablet or a phone easily and see the effects. Some responsive options of OpenUI5 are only set initially when loading the app, so you might have to reload your page to see the results.
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -226,6 +229,7 @@ We can see the results when we decrease the browser's screen size or open the ap
 Optimize your application for the different screen sizes of phone, tablet, and desktop devices.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 36: Content Density](../36/README.md "In this step of our Walkthrough tutorial, we adjust the content density based on the user’s device. OpenUI5 contains different content densities allowing you to display larger controls for touch-enabled devices and a smaller, more compact design for devices that are operated by mouse. In our app, we will detect the device and adjust the density accordingly.")

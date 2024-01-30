@@ -2,6 +2,8 @@
 
 Now we can navigate to our detail page and display an invoice, but we cannot go back to the overview page yet. We'll add a back button to the detail page and implement a function that shows our overview page again.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -89,6 +91,8 @@ Now only the back button is missing on the detail page. We do this by telling th
 
 You should now see now see a back button when navigating to the detail page and being able to get back to the overview when clicking on it.
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -96,6 +100,7 @@ You should now see now see a back button when navigating to the detail page and 
 -   Add a path to go back to the parent page when the history state is unclear.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 33: Custom Controls](../33/README.md "We can now navigate between the overview and the detail page, but the actual item that we selected in the overview is not displayed on the detail page yet. A typical use case for our app is to show additional information for the selected item on the detail page.")

@@ -2,6 +2,8 @@
 
 Our dialog is still pretty much empty. Since SAPUI5 is shipped with a large icon font that contains more than 500 icons, we will add an icon to greet our users when the dialog is opened.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -49,10 +51,8 @@ We add an icon to the button that opens the dialog. The `sap-icon://` protocol i
 </mvc:View>
 ```
 
->💡 **Tip:**
->
+>💡 **Tip:** <br>
 > You can look up other icons using the [Icon Explorer tool](https://sdk.openui5.org/test-resources/sap/m/demokit/iconExplorer/webapp/index.html).
-> 
 > To call any icon, use its name as listed in the *Icon Explorer* in <code>sap-icon://<i>&lt;iconname&gt;</i></code>.
 
 ***
@@ -83,6 +83,8 @@ In the dialog fragment, we add an icon control to the content aggregation of the
 </core:FragmentDefinition>
 ```
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -90,6 +92,7 @@ In the dialog fragment, we add an icon control to the content aggregation of the
 -   Always use icon fonts rather than images wherever possible, as they are scalable without quality loss \(vector graphics\) and do not need to be loaded separately.
 
 &nbsp;
+
 ***
 
 **Next:** Step 19: [Aggregation Binding](../19/README.md "Now that we have established a good structure for our app, it's time to add some more functionality. We start exploring more features of data binding by adding some invoice data in JSON format that we display in a list below the panel.")

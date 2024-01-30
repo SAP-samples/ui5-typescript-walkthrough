@@ -2,6 +2,8 @@
 
 To make our list of invoices even more user-friendly, we sort it alphabetically instead of just showing the order from the data model. Additionally, we introduce groups and add the company that ships the products so that the data is easier to consume.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -73,6 +75,7 @@ As with the sorter, no further action is required. The list and the data binding
 We could define a custom group header factory if we wanted by setting the `groupHeaderFactory` property, but the result looks already fine.
 
 &nbsp; 
+
 ***
 
 **Next:** [Step 25: Remote OData Service](../25/README.md "So far we have worked with local JSON data, but now we will access a real OData service to visualize remote data.")

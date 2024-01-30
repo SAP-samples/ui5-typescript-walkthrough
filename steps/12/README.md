@@ -2,6 +2,8 @@
 
 Now we use a shell control as container for our app and use it as our new root element. The shell takes care of visual adaptation of the application to the device’s screen size by introducing a so-called letterbox on desktop screens.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -56,6 +58,7 @@ The `Shell` control is now the outermost control of our app and automatically di
 There are further options to customize the shell, like setting a custom background image or color and setting a custom logo. Check the related API reference for more details.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 13: Margins and Paddings](../13/README.md "Our app content is still glued to the corners of the letterbox. To fine-tune our layout, we can add margins and paddings to the controls that we added in the previous step.")

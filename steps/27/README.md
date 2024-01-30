@@ -4,8 +4,10 @@ Now that we have a test folder in the app, we can start to increase our test cov
 
 Actually, every feature that we added to the app so far, would require a separate test case. We have totally neglected this so far, so let’s add a simple unit test for our custom formatter function from Step 23. We will test if the long text for our status is correct by comparing it with the texts from our resource bundle.
 
-> ### Note:  
+> 📝 **Note:** <br>  
 > In this tutorial, we focus on a simple use case for the test implementation. If you want to learn more about QUnit tests, have a look at the [Testing Tutorial](https://sdk.openui5.org/topic/291c9121e6044ab381e0b51716f97f52.html) tutorial, especially [Step 2: A First Unit Test](https://sdk.openui5.org/topic/b81736e0fcb246efb3b0cf0ca422f8fd.html).
+
+&nbsp;
 
 ***
 
@@ -134,6 +136,8 @@ The so-called QUnit test suite is an HTML page that triggers all QUnit tests for
 
 If we now open the `webapp/test/unit/unitTests.qunit.html` file in the browser, we should see our test running and verifying the formatter logic.
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -149,6 +153,7 @@ If we now open the `webapp/test/unit/unitTests.qunit.html` file in the browser, 
 -   All dependencies are replaced by stubs to test only the functionality in scope.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 28: Integration Test with OPA](../28/README.md "If we want to test interaction patterns or more visual features of our app, we can also write an integration test.")

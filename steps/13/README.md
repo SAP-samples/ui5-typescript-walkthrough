@@ -4,6 +4,8 @@ Our app content is still glued to the corners of the letterbox. To fine-tune our
 
 Instead of manually adding CSS to the controls, we will use the standard classes provided by OpenUI5. These classes take care of consistent sizing steps, left-to-right support, and responsiveness.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -63,6 +65,8 @@ To format the output text individually, we remove the description from the input
 </mvc:View>
 ```
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -70,6 +74,7 @@ To format the output text individually, we remove the description from the input
 -   Use the standard OpenUI5 CSS classes for the layout if possible.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 14: Custom CSS and Theme Colors](../14/README.md "Sometimes we need to define some more fine-granular layouts and this is when we can use the flexibility of CSS by adding custom style classes to controls and style them as we like.")

@@ -2,6 +2,8 @@
 
 After all the work on the app structure it’s time to improve the look of our app. We will use two controls from the `sap.m` library to add a bit more "bling" to our UI. You will also learn about control aggregations in this step.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -70,10 +72,10 @@ In order to make the fullscreen height of the view work properly, we add the `di
 
 The `App` control does the following important things for us:
 -   It writes a bunch of properties into the header of the `index.html` that are necessary for proper display on mobile devices.
-
 -   It offers functionality to navigate between pages with animations. We will use this soon.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 12: Shell Control as Container](../12/README.md "Now we use a shell control as container for our app and use it as our new root element. The shell takes care of visual adaptation of the application to the device’s screen size by introducing a so-called letterbox on desktop screens.")

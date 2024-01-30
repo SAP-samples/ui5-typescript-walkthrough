@@ -2,6 +2,8 @@
 
 Now that we have established a good structure for our app, it's time to add some more functionality. We start exploring more features of data binding by adding some invoice data in JSON format that we display in a list below the panel.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -180,6 +182,8 @@ In the app view we add a second view and assign it to our newly created InvoiceL
 </mvc:View>
 ```
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -189,6 +193,7 @@ In the app view we add a second view and assign it to our newly created InvoiceL
 -   Model file names are lowercased
 
 &nbsp;
+
 ***
 
 **Next:** Step 20: [Data Types](../20/README.md "The list of invoices is already looking nice, but what is an invoice without a price assigned? Typically prices are stored in a technical format and with a '.' delimiter in the data model. For example, our invoice for pineapples has the calculated price 87.2 without a currency. We are going to use the OpenUI5 data types to format the price properly, with a locale-dependent decimal separator and two digits after the separator.")

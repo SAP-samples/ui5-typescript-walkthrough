@@ -3,6 +3,7 @@
 In this step, we replace the text with a button and show the “Hello World” message when the button is pressed. The handling of the button's `press` event is implemented in the controller of the view.
 
 &nbsp;
+
 ***
 
 ### Preview
@@ -62,8 +63,8 @@ In addition, we replace the `<text>` tag with a `<button>` tag. We set the `text
 
 A view does not necessarily need an explicitly assigned controller. You do not have to create a controller if the view is just displaying information and no additional functionality is required. If a controller is specified, it is instantiated after the view is loaded.
 
-
 &nbsp;
+
 ***
 
 ### Conventions
@@ -79,6 +80,7 @@ A view does not necessarily need an explicitly assigned controller. You do not h
 -   Controller names always end with `*.controller.js` \(in JavaScript\) or `*.controller.ts` \(in TypeScript\) 
 
 &nbsp;
+
 ***
 
 **Next:** [Step 6: Modules](../06/README.md "In OpenUI5, resources are often referred to as modules. In this step, we replace the alert from the last exercise with a proper Message Toast from the `sap.m` library.")

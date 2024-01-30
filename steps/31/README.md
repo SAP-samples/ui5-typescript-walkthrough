@@ -4,6 +4,8 @@ We can now navigate between the overview and the detail page, but the actual ite
 
 To make this work, we have to pass over the information which item has been selected to the detail page and show the details for the item there.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -23,8 +25,7 @@ To make this work, we have to pass over the information which item has been sele
 
 We want to hand over the information for the selected item when navigating to the detail view. To achieve that, we add the navigation parameter `invoicePath` to the detail route in the app descriptor. There, we add a navigation parameter `invoicePath` to the detail route so that we can hand over the information for the selected item to the detail page.
 
-> 📝 **Note:**
->
+> 📝 **Note:** <br>
 > Mandatory navigation parameters are defined with curly brackets.
 
 ```json
@@ -67,8 +68,6 @@ We want to hand over the information for the selected item when navigating to th
     }
 }
 ```
-
-Mandatory navigation parameters are defined with curly brackets.
 
 ***
 
@@ -173,6 +172,8 @@ Our last piece to fit the puzzle together is the detail view. We replace the app
 
 You should now see the invoice details on a separate page when you click on an item in the list of invoices.
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -182,6 +183,7 @@ You should now see the invoice details on a separate page when you click on an i
 -   Initialize the router at the end of your `Component#init` function
 
 &nbsp;
+
 ***
 
 **Next:** [Step 32: Routing Back and History](../32/README.md "Now we can navigate to our detail page and display an invoice, but we cannot go back to the overview page yet. We'll add a back button to the detail page and implement a function that shows our overview page again.")

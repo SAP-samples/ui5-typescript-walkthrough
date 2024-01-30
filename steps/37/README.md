@@ -4,9 +4,10 @@ In this step we're going to improve the accessibility of our app.
 
 To achieve this, we will add ARIA attributes. ARIA attributes are used by screen readers to recognize the application structure and to interpret UI elements properly. That way, we can make our app more accessible for users who are limited in their use of computers, for example visually impaired persons. The main goal here is to make our app usable for as many people as we can.
 
-> 💡 **Tip:**
->  
+> 💡 **Tip:** <br>
 > ARIA is short for **Accessible Rich Internet Applications**. It is a set of attributes that enable us to make apps more accessible by assigning semantic characteristics to certain elements. For more information, see [Accessible Rich Internet Applications \(ARIA\) – Part 1: Introduction](https://blogs.sap.com/2015/06/01/accessible-rich-internet-applications-aria-part-1-introduction/).
+
+&nbsp;
 
 ***
 
@@ -175,6 +176,7 @@ As you can see, we now have four landmarks on our page. The top three landmarks 
 -   *Page Content* marks the content of our page. This landmark already has two children.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 38: Build Your Application](../38/README.md "We now configure the visibility and properties of controls based on the device that we run the application on. By making use of the `sap.ui.Device` API and defining a device model we will make the app look great on many devices.")

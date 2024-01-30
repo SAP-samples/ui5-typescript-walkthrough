@@ -2,6 +2,8 @@
 
 Our panel content is getting more and more complex and now it is time to move the panel content to a separate view. With that approach, the application structure is much easier to understand, and the individual parts of the app can be reused.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -116,8 +118,8 @@ export default class App extends Controller {
 
 We have now moved everything out of the app view and controller. The app controller remains an empty stub for now, we will use it later to add more functionality.
 
-
 &nbsp;
+
 ***
 
 **Next:** [Step 16: Dialogs and Fragments](../16/README.md "In this step, we will take a closer look at another element which can be used to assemble views: the fragment.")

@@ -2,6 +2,8 @@
 
 In this step of our Walkthrough tutorial, we adjust the content density based on the user’s device. Content density refers to the spacing and sizing of the UI controls and elements within your application. OpenUI5 contains different content densities allowing you to display larger controls for touch-enabled devices and a smaller, more compact design for devices that are operated by mouse. In our app, we will detect the device and adjust the density accordingly.
 
+&nbsp;
+
 ***
 
 ### Preview 
@@ -92,6 +94,7 @@ As we have just enabled the app to run in both modes depending on the devices ca
 ```
 
 &nbsp;
+
 ***
 
 **Next:** [Step 37: Accessibility](../37/README.md "In this step we're going to improve the accessibility of our app.")

@@ -4,6 +4,8 @@ So far, we have put all app content on one single page. As we add more and more 
 
 In this step, we will use the OpenUI5 navigation features to load and show a separate detail page that we can later use to display details for an invoice. In the previous steps, we defined the page directly in the app view so that it is displayed when the app is loaded. We will now use the OpenUI5 router class to load the pages and update the URL for us automatically. We specify a routing configuration for our app and create a separate view for each page of the app, then we connect the views by triggering navigation events.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -168,8 +170,7 @@ The router will automatically add the view that corresponds to the current URL i
 
 The overview view is always shown when the hash is empty. The detail view is shown when the hash matches the pattern `detail`.
 
-> 📌 **Important:**
->
+> 📌 **Important:** <br>
 > The sequence of the routes in the routes definition is important. As soon as a pattern is matched, the following patterns are ignored. To prevent this for a specific route, you use the `greedy` parameter. If set to `true`, the route is always taken into account.
 
 ***
@@ -288,6 +289,8 @@ In the invoice list view we finally add the press event to the list item we just
 
 If you now open the app, you should now see the detail page when clicking an item in the list of invoices.
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -297,6 +300,7 @@ If you now open the app, you should now see the detail page when clicking an ite
 -   Initialize the router at the end of your `Component#init` function
 
 &nbsp;
+
 ***
 
 **Next:** [Step 31: Routing and Navigation](../31/README.md "We can now navigate between the overview and the detail page, but the actual item that we selected in the overview is not displayed on the detail page yet. A typical use case for our app is to show additional information for the selected item on the detail page.")

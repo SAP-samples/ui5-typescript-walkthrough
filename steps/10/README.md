@@ -4,6 +4,9 @@ All application-specific configuration settings will now further be put in a sep
 
 Instead of relying on a local HTML file for the bootstrap, the descriptor file is parsed and the component is loaded directly into the current HTML page. This allows multiple apps to be displayed in the same context. Each app can define its own local settings, such as language properties and supported devices. Additionally, the descriptor file can be used to load additional resources and instantiate models, such as the `i18n` resource bundle.
 
+&nbsp;
+
+***
 
 ### Preview
 ![](https://sdk.openui5.org/docs/topics/loio7b2aef85c016485da4a31c087bf4c0f0_LowRes.png "An input field and a description displaying the value of the input field \(No visual changes to last step\)")  
@@ -211,8 +214,7 @@ It's worth noting that the `ComponentSupport` module enforces asynchronous loadi
 
 We can now delete our `index.ts` file, because our component is now initiated directly in the HTML markup.
 
-***
-
+&nbsp;
 
 ***
 
@@ -225,6 +227,7 @@ We can now delete our `index.ts` file, because our component is now initiated di
 -   Use translatable texts for the title and the description of the app.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 11: Pages and Panels](../11/README.md "After all the work on the app structure it’s time to improve the look of our app. We will use two controls from the sap.m library to add a bit more bling to our UI. You will also learn about control aggregations in this step.")

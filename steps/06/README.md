@@ -3,6 +3,7 @@
 In OpenUI5, resources are often referred to as modules. In this step, we replace the alert from the last exercise with a proper Message Toast from the `sap.m` library.
 
 &nbsp;
+
 ***
 
 ### Preview
@@ -39,6 +40,7 @@ export default class AppController extends Controller {
 For now, the message toast just displays a static "Hello World" message. We will show how to load a translated text here in [Step 8: Translatable Texts](../08/README.md).
 
 &nbsp;
+
 ***
 
 **Next:** [Step 7: JSON Model](../07/README.md "Now that we have set up the view and controller, it’s about time to think about the M in MVC.")

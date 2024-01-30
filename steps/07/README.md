@@ -5,6 +5,7 @@ Now that we have set up the view and controller, it’s about time to think abou
 We'll create a view model in our controller, add an input field to our app, bind its value to the model, and bind the same value to the description of the input field. The description will be directly updated as the user types.
 
 &nbsp;
+
 ***
 
 ### Preview
@@ -89,6 +90,7 @@ In addition to this, we create a greeting message. We combine the static text "H
 ```
 
 &nbsp;
+
 ***
 
 **Next:** [Step 8: Translatable Texts](../08/README.md "In this step we move the texts of our UI to a separate resource file.")

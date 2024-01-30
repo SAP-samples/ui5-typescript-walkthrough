@@ -3,6 +3,7 @@
 As you know OpenUI5 is all about HTML5. Let's get started with building a first "Hello World" with only HTML. In addition we'll initialize the UI5 Tooling, so we can benefit from it from the beginning.
 
 &nbsp;
+
 ***
 
 ### Preview
@@ -150,8 +151,8 @@ This will open a new browser window hosting your newly created `index.html`.
 
 -   The `index.html` file is located in the `webapp` folder if it is used productively.
 
-<br>
-<br>
+&nbsp;
+
 ***
 
 **Next:** [Step 2: Bootstrap](../02/README.md "Before we can do something with UI5, we need to laod and initialize it. This process of loading and initializing UI5 is called bootstrapping. Once this bootstrapping is finished, we simply display an alert.")

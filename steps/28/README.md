@@ -7,6 +7,8 @@ We haven’t thought about testing our interaction with the app yet, so in this 
 > 📝 **Note:** 
 > In this tutorial, we focus on a simple use case for the test implementation. If you want to learn more about OPA tests, have a look at our [Testing Tutorial](https://sdk.openui5.org/topic/291c9121e6044ab381e0b51716f97f52.html) tutorial, especially [Step 6: A First OPA Test](https://sdk.openui5.org/topic/1b47457cbe4941ee926317d827517acb.html).
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -185,6 +187,8 @@ Then we load the basic QUnit functionality via script tags from OpenUI5 so that 
 
 When you call the `webapp/test/integration/opaTests.qunit.html` page of your project on the server, you should see the QUnit layout and a test “Should see the Hello dialog” is executed immediately. It will load the app component on the right side of the page. There you can see what operations the test is performing on the app, if everything works correctly the button click is triggered, then a dialog is shown and the test case is green.
 
+&nbsp;
+
 ***
 
 ### Conventions
@@ -194,6 +198,7 @@ When you call the `webapp/test/integration/opaTests.qunit.html` page of your pro
 -   Use `page` objects and `journeys` for structuring OPA tests.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 29: Debugging Tools](../29/README.md "Even though we have added a basic test coverage in the previous steps, it seems like we accidentally broke our app, because it does not display prices to our invoices anymore. We need to debug the issue and fix it before someone finds out.")

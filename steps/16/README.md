@@ -8,6 +8,8 @@ A fragment can consist of 1 to n controls. At runtime, fragments placed in a vie
 
 We will now add a dialog to our app. Dialogs are special, because they open on top of the regular app content and thus do not belong to a specific view. That means the dialog must be instantiated somewhere in the controller code, but since we want to stick with the declarative approach and create reusable artifacts to be as flexible as possible, we will create an XML fragment containing the dialog. A dialog, after all, can be used in more than one view of your app.
 
+&nbsp;
+
 ***
 
 ### Preview
@@ -79,8 +81,7 @@ export default class HelloPanel extends Controller {
 };
 ```
 
-> :bookmark: **Tip**:
->
+> 💡 **Tip:** <br>
 > To reuse the dialog opening and closing functionality in other controllers, you might create a new file `ui5.walkthrough.controller.controller.BaseController`, which extends `sap.ui.core.mvc.Controller`, and put all your dialog-related coding into this controller. Now, all the other controllers can extend from `ui5.walkthrough.controller.BaseController` instead of `sap.ui.core.mvc.Controller`.
 
 
@@ -138,6 +139,7 @@ You will need the id of the button control `id="helloDialogButton"` in [Step 28:
 It is a good practice to set a unique ID like `helloWorldButton` to key controls of your app so that can be identified easily. If the attribute \`id\` is not specified, the OpenUI5 runtime generates unique but changing ID like \`\_\_button23\` for the control. Inspect the DOM elements of your app in the browser to see the difference.
 
 &nbsp;
+
 ***
 
 **Next:** [Step 17: Fragment Callbacks](../17/README.md "Now that we have integrated the dialog, it's time to add some user interaction. The user will definitely want to close the dialog again at some point, so we add a button to close the dialog and assign an event handler.")
