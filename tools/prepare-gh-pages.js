@@ -1,10 +1,11 @@
 const { join } = require("path");
-const { readdirSync, existsSync, rmSync, mkdirSync, createWriteStream, copyFileSync } = require("fs");
+const { readdirSync, existsSync, rmSync, mkdirSync, createWriteStream, copyFileSync, readFileSync, writeFileSync } = require("fs");
 const { exec } = require("child_process");
 const utils = require("util");
 const execute = utils.promisify(exec);
 
 const archiver = require("archiver");
+const fg = require('fast-glob');
 
 function zipDirectory(sourceDir, outPath) {
 	const archive = archiver('zip', { zlib: { level: 9 }});
@@ -32,7 +33,6 @@ function zipDirectory(sourceDir, outPath) {
 		rmSync(join(process.cwd(), "dist"), { recursive: true });
 	}
 	mkdirSync(join(process.cwd(), "dist"), { recursive: true });
-	console.log(steps);
 	await Promise.all(steps.map((step) => {
 		return zipDirectory(join(process.cwd(), "steps", step), join(process.cwd(), "dist", `ui5-typescript-walkthrough-step-${step}.zip`))
 	}));
@@ -42,6 +42,22 @@ function zipDirectory(sourceDir, outPath) {
 			cwd: join(process.cwd(), "steps", step)
 		});
 	}
+
+	function rewriteLinks(file) {
+		let content = readFileSync(file, { encoding: "utf8"});
+		content = content.replace(/steps\/(\d{2})/g, "step-$1");
+		content = content.replace(/\.\.\/(\d{2})/g, "../step-$1");
+		writeFileSync(file, content, { encoding: "utf8" });
+	}
+
 	copyFileSync(join(process.cwd(), "README.md"), join(process.cwd(), "dist/index.md"));
+	rewriteLinks(join(process.cwd(), "dist/index.md"));
+	const readmes = fg.globSync(["steps/**/README.md"]);
+	readmes.forEach((readme) => {
+		const [, path, step] = readme.match("steps/((.*)/README.md)");
+		mkdirSync(join(process.cwd(), `dist/step-${step}`), { recursive: true });
+		copyFileSync(join(process.cwd(), readme), join(process.cwd(), `dist/step-${path}`));
+		rewriteLinks(join(process.cwd(), `dist/step-${path}`));
+	});
 
 }());
