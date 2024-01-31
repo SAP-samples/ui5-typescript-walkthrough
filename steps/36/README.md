@@ -9,7 +9,12 @@ In this step of our Walkthrough tutorial, we adjust the content density based on
 ### Preview 
 
 ![](https://sdk.openui5.org/docs/topics/loiof216b131c492448d8a1df25db2b9a26d_LowRes.png "The content density is compact on desktop devices and cozy on touch-enabled devices")
+
 <sup>*The content density is compact on desktop devices and cozy on touch-enabled devices*</sup>
+
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 36](https://sap-samples.github.io/ui5-typescript-walkthrough/step-36/test/mockServer-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 36](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-36.zip).
 
 ***
 
@@ -104,7 +109,6 @@ As we have just enabled the app to run in both modes depending on the devices ca
 ***
 
 **Related Information**  
-
 
 [Content Densities](https://sdk.openui5.org/topic/e54f729da8e3405fae5e4fe8ae7784c1.html "The devices used to run apps that are developed with OpenUI5 run on various different operating systems and have very different screen sizes. OpenUI5 contains different content densities for certain controls that allow your app to adapt to the device in question, allowing you to display larger controls for touch-enabled devices and a smaller, more compact design for devices that are operated by mouse.")
 

@@ -13,17 +13,19 @@ To achieve this, we will add ARIA attributes. ARIA attributes are used by screen
 
 ### Preview
   
-  
 ![](https://sdk.openui5.org/docs/topics/loiod9c6cd32743d40629bec7d77590e2c58_HiRes.png "Landmarks in our app")
+
 <sup>*Landmarks in our app*</sup>
+
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 37](https://sap-samples.github.io/ui5-typescript-walkthrough/step-37/test/mockServer-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 37](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-37.zip).
 
 ***
 
 ### Coding
 
 One part of the ARIA attribute set are the so-called landmarks. You can compare landmarks to maps in that they help the user navigate through an app. For this step, we will use Google Chrome with a free [landmark navigation extension](https://chrome.google.com/webstore/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) We will now add meaningful landmarks to our code.
-
-***
 
 ### webapp/i18n/i18n.properties
 

@@ -13,6 +13,10 @@ Now it is time to build our first little UI by replacing the “Hello World” t
 <sup>*The "Hello World" text is now displayed by an OpenUI5 control*</sup>
 
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 3](https://sap-samples.github.io/ui5-typescript-walkthrough/step-03/index-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 3](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-03.zip).
+
 ***
 
 ### Tooling

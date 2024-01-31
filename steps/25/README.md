@@ -8,15 +8,17 @@ So far we have worked with local JSON data, but now we will access a real OData 
 
 In the real world, data often resides on remote servers and is accessed via an OData service. We will add a data source configuration to the manifest and replace the JSONModel type for our `invoice` model with the publicly available Northwind OData service to visualize remote data. You will be surprised how little needs to be changed in order to make this work!
 
-> 📝 **Note:** <br>
-> If you cannot get it to run, don't worry too much, the remaining steps will also work with the local JSON data you have used so far. In [Step 26: Mock Server Configuration](../26/README.md), you will learn how to simulate a back-end system to achieve a similar working scenario. However, you should at least read this chapter about remote OData services to learn about non-local data sources.
-
 ***
 
 ### Preview 
 
 ![](https://sdk.openui5.org/docs/topics/loio5b76bb4b15eb44e1862d0b6c1c802571_LowRes.png "Products from the OData invoices test service are now shown within our app")
+
 <sup>>*Products from the OData invoices test service are now shown within our app*</sup>
+
+*A real-time preview utilizing data from the OData remote service is currently unavailable in this setup. However, we assure you that it will work on your local machine as long as you avoid making any mistakes. So, give it a try and see the results for yourself!*
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 25](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-25.zip).
 
 ***
 

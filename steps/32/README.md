@@ -13,6 +13,10 @@ Now we can navigate to our detail page and display an invoice, but we cannot go 
 
 <sup>*A back button is now displayed on the detail page*</sup>
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 32](https://sap-samples.github.io/ui5-typescript-walkthrough/step-32/test/mockServer-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 32](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-32.zip).
+
 ***
 
 ### Coding

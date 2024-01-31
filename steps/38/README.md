@@ -10,7 +10,10 @@ In this step we're going to build our application and consume the speed of a bui
   
   
 ![](https://sdk.openui5.org/docs/topics/loiofb12cea5ac9b45bb9007aac5a1a8689f_LowRes.png "The UI5 application is built and served")
+
 <sup>*The OpenUI5 application is built and served*</sup>
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 38](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-38.zip).
 
 ***
 

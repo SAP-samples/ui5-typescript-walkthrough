@@ -12,7 +12,12 @@ In this step, we will use the OpenUI5 navigation features to load and show a sep
   
   
 ![](https://sdk.openui5.org/docs/topics/loio94152a595fe24d45b12223e0abcccb9c_LowRes.png "A second page is added to display the invoice")
+
 <sup>*A second page is added to display the invoice*</sup>
+
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 30](https://sap-samples.github.io/ui5-typescript-walkthrough/step-30/test/mockServer-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 30](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30.zip).
 
 ***
 

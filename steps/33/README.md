@@ -7,12 +7,14 @@ In this step, we are going to extend the functionality of OpenUI5 with a custom 
 ***
 
 ### Preview
-  
-  
+    
 ![](https://sdk.openui5.org/docs/topics/loio21dd14c37b67473b817c8865f168f668_LowRes.png "A custom product rating control is added to the detail page")
+
 <sup>*A custom product rating control is added to the detail page*</sup>
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 33](https://sap-samples.github.io/ui5-typescript-walkthrough/step-33/test/mockServer-cdn.html).
 
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 33](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-33.zip).
  
 ***
 
@@ -130,9 +132,9 @@ In the `metadata` section we therefore define several properties that we make us
 	> 📝 **Note:** <br>
 	> You can define `aggregations` and `associations`
 	> 
-	> -   An **aggregation** is a strong relation that also manages the lifecycle of the related control, for example, when the parent is destroyed, the related control is also destroyed. Also, a control can only be assigned to one single aggregation, if it is assigned to a second aggregation, it is removed from the previous aggregation automatically.
+	> -   An **`aggregation`** is a strong relation that also manages the lifecycle of the related control, for example, when the parent is destroyed, the related control is also destroyed. Also, a control can only be assigned to one single aggregation, if it is assigned to a second aggregation, it is removed from the previous aggregation automatically.
 	> 
-	> -   An **association** is a weak relation that does not manage the lifecycle and can be defined multiple times. To have a clear distinction, an association only stores the ID, whereas an aggregation stores the direct reference to the control. We do not specify associations in this example, as we want to have our internal controls managed by the parent.
+	> -   An **`association`** is a weak relation that does not manage the lifecycle and can be defined multiple times. To have a clear distinction, an association only stores the ID, whereas an aggregation stores the direct reference to the control. We do not specify associations in this example, as we want to have our internal controls managed by the parent.
 
 -   Events
 
@@ -142,7 +144,7 @@ In the `init` function we instantiate the three controls and store them in the i
 
 Let’s ignore the other internal helper functions and event handlers for now and define our renderer. By using the APIs of the RenderManager and the control instance that are passed as references, we can describe the necessary HTML for our control. To open a new HTML tag we use the `openStart` method and pass `"div"` as the HTML element to be created. We also pass our control instance (ProductRating) to be associated with the HTML tag. The RenderManager will automatically generate the properties for the control and assign it to the `div` tag. After calling `openStart`, we can chain additional methods to set attributes or styles for the element. To set our custom CSS class `myAppDemoWTProductRating` for the `div` element, we use the `class` method. If a `tooltip` exists, we call the `attr` method to set the `title` attribute with the value of the tooltip for the div element. Finally, we close the surrounding `div` tag by calling `openEnd`.
 
-> :warning: **Remember:**  <br>
+> 📌 **Remember:**  <br>
 > Since our custom control extends the `sap.ui.core.Control` class, it also inherits its properties and aggregations from it. In this case, the `tooltip` property is defined in the `sap.ui.core.Element` class, which is inherited by the `sap.ui.core.Control` class. Therefore, your custom control also inherits this aggregation. However, controls must explicitly support tooltips as they have to render them.
 
 Next, we render the three child controls we defined in the aggregation of our ProductRating control. We retrieve the child controls using the `getAggregation` method with the aggregation name as the parameter. The `renderControl` method is then called on each child control to render them. Finally, we close the element by calling the `close` method on the RenderManager and passing the `"div"` element name as argument. This completes the rendering of the custom control.

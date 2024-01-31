@@ -15,11 +15,13 @@ To make this work, we have to pass over the information which item has been sele
 
 <sup>*The selected invoice details are now shown in the details page*</sup>
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 31](https://sap-samples.github.io/ui5-typescript-walkthrough/step-31/test/mockServer-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 31](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-31.zip).
+
 ***
 
 ### Coding
-
-***
 
 ### webapp/manifest.json
 

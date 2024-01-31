@@ -12,6 +12,11 @@ In this step, we replace the text with a button and show the “Hello World” m
 ![](https://sdk.openui5.org/docs/topics/loiocedfdf89b30643ddbfcab1fe50bfa892_LowRes.png "A Say Hello button is added")
 
 <sup>*A Say Hello button is added*</sup>
+
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 5](https://sap-samples.github.io/ui5-typescript-walkthrough/step-05/index-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 5](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-05.zip).
+
 ***
 
 ### Coding

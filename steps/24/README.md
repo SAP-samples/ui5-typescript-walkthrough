@@ -13,6 +13,10 @@ To make our list of invoices even more user-friendly, we sort it alphabetically 
 
 <sup>*The list is now sorted and grouped by the shipping company*</sup>
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 24](https://sap-samples.github.io/ui5-typescript-walkthrough/step-24/index-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 24](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-24.zip).
+
 ***
 
 ### Coding

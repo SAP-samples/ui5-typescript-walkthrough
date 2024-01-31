@@ -17,6 +17,10 @@ Actually, every feature that we added to the app so far, would require a separat
 
 <sup>*A unit test for our formatters is now available*</sup>
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/step-27/test/unit/unitTests-cdn.qunit.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-27.zip).
+
 ***
 
 ### Coding

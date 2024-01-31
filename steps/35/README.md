@@ -8,23 +8,23 @@ We now configure the visibility and properties of controls based on the device t
 
 ### Preview
 
-  
-
 ![](https://sdk.openui5.org/docs/topics/loio0b0d57e04e574d7fbc4b10395e6cb260_LowRes.png "On phone devices, the panel is collapsed to save screen space and a button is hidden")
+
 <sup>*On phone devices, the panel is collapsed to save screen space and a button is hidden*</sup>
+
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 35](https://sap-samples.github.io/ui5-typescript-walkthrough/step-35/test/mockServer-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 35](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-35.zip).
 
 ***
 
 ### Coding
 
-***
-
 ### webapp/Component.ts
 
 In the `app` component we import the `Device` module from the `sap.ui` namespace and initialize the device model in the `init` method. We can simply pass the loaded dependency `Device` to the constructor function of the JSONModel. This will make most properties of the OpenUI5 device API available as a JSON model. The model is then set on the component as a named model so that we can reference it in data binding.
 
-> 📌 **Important:**
->
+> 📌 **Important:** <br>
 > We have to set the binding mode to `OneWay` as the device model is read-only and we want to avoid changing the model accidentally when we bind properties of a control to it. By default, models in OpenUI5 are bidirectional \(`TwoWay`\). When the property changes, the bound model value is updated as well.
 
 ```ts
@@ -216,8 +216,7 @@ We add the `number` and `numberUnit` field from the list of the previous steps a
 
 We can see the results when we decrease the browser's screen size or open the app on a small device.
 
-> 📝 **Note:**
->
+> 📝 **Note:** <br>
 > You can test the device specific features of your app with the developer tools of your browser. For example in Google Chrome, you can emulate a tablet or a phone easily and see the effects. Some responsive options of OpenUI5 are only set initially when loading the app, so you might have to reload your page to see the results.
 
 ***

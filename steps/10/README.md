@@ -13,6 +13,9 @@ Instead of relying on a local HTML file for the bootstrap, the descriptor file i
 
 <sup>*An input field and a description displaying the value of the input field \(No visual changes to last step\)*</sub>
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 10](https://sap-samples.github.io/ui5-typescript-walkthrough/step-10/index-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 10](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-10.zip).
 
 ***
 

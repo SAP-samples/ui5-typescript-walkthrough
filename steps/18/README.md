@@ -9,7 +9,12 @@ Our dialog is still pretty much empty. Since SAPUI5 is shipped with a large icon
 ### Preview
   
 ![](https://sdk.openui5.org/docs/topics/loiofbc48e23cc7d45e393cc95bbbfc6e0a3_LowRes.png "An icon is now displayed in the dialog box")
+
 <sup>*An icon is now displayed in the dialog box*</sup>
+
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 18](https://sap-samples.github.io/ui5-typescript-walkthrough/step-18/index-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 15](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-18.zip).
 
 ***
 

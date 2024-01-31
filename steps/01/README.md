@@ -13,10 +13,15 @@ As you know OpenUI5 is all about HTML5. Let's get started with building a first 
 
 <sup>*The browser shows the text \"Hello World\"*</sup>
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 1](https://sap-samples.github.io/ui5-typescript-walkthrough/step-01/index.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 1](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01.zip).
+
 ***
 
 ### Coding
 
+### webapp \(New\)
 
 We create a folder on our local machine which will contain all the sources of the app we're going to build. We'll refer to this folder as the “app root directory".
 

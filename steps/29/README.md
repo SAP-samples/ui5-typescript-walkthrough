@@ -15,6 +15,8 @@ Luckily, OpenUI5 provides a couple of debugging tools that we can use within the
   
 <sup>*The diagnostics window*</sup>
 
+*The code in this step remains unchanged, except for the addition and subsequent removal of a bug using troubleshooting tools. As a result, there is no live preview or download available for this step.*
+
 ***
 
 ### Coding

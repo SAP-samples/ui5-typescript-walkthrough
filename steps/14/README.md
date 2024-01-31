@@ -8,9 +8,13 @@ Sometimes we need to define some more fine-granular layouts and this is when we 
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loiod9a40e539b7c49c485be821efbd3821f_LowRes.png "The space between the button and the input field is now smaller and the
-					output text is bold")
+![](https://sdk.openui5.org/docs/topics/loiod9a40e539b7c49c485be821efbd3821f_LowRes.png "The space between the button and the input field is now smaller and the output text is bold")
+
 <sup>*The space between the button and the input field is now smaller and the output text is bold*</sup>
+
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 14](https://sap-samples.github.io/ui5-typescript-walkthrough/step-14/index-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 14](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-14.zip).
 
 
 > ### 🚨 Caution:  

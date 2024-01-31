@@ -12,6 +12,10 @@ If we want to do a more complex logic for formatting properties of our data mode
 
 <sup>*A status is now displayed with a custom formatter*</sup>
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 22](https://sap-samples.github.io/ui5-typescript-walkthrough/step-22/index-cdn.html).
+
+To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 22](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-22.zip).
+
 ***
 
 ### Coding
