@@ -9,6 +9,7 @@ import Dialog from "sap/m/Dialog";
  * @namespace ui5.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
+    private oDialog : Dialog;
     onShowHello(): void {
         // read msg from i18n model
         const recipient = (<JSONModel> this.getView()?.getModel())?.getProperty("/recipient/name");
@@ -18,10 +19,9 @@ export default class HelloPanel extends Controller {
         MessageToast.show(msg);
     }
     async onOpenDialog(): Promise<void> {
-    // create dialog lazily
-        const oDialog = await <Promise<Dialog>> this.loadFragment({
+        this.oDialog ??= await <Promise<Dialog>> this.loadFragment({
              name: "ui5.walkthrough.view.HelloDialog"
         });
-        oDialog.open();
+        this.oDialog.open();
     }
 };
