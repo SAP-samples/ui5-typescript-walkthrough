@@ -34,12 +34,12 @@ import Dialog from "sap/m/Dialog";
  * @namespace ui5.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
-    private dialogPromise: Promise<Dialog>;
+    
 
     onShowHello(): void {
         ...
     }
-    onOpenDialog(): void {
+    async onOpenDialog(): Promise<void> {
         ...
     }
     onCloseDialog(): void {

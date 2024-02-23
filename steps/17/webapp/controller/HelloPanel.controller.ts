@@ -9,8 +9,6 @@ import Dialog from "sap/m/Dialog";
  * @namespace ui5.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
-    private dialogPromise: Promise<Dialog>;
-
     onShowHello(): void {
         // read msg from i18n model
         const recipient = (<JSONModel> this.getView()?.getModel())?.getProperty("/recipient/name");
@@ -19,16 +17,12 @@ export default class HelloPanel extends Controller {
         // show message
         MessageToast.show(msg);
     }
-    onOpenDialog(): void {
-        // create dialog lazily
-        if (!this.dialogPromise) {
-            this.dialogPromise = <Promise<Dialog>> this.loadFragment({
-                name: "ui5.walkthrough.view.HelloDialog"
-            });
-        } 
-        this.dialogPromise.then(function(oDialog) {
-            oDialog.open();
+    async onOpenDialog(): Promise<void> {
+    // create dialog lazily
+        const oDialog = await <Promise<Dialog>> this.loadFragment({
+             name: "ui5.walkthrough.view.HelloDialog"
         });
+        oDialog.open();
     }
     onCloseDialog(): void {
         // note: We don't need to chain to the pDialog promise, since this event-handler
