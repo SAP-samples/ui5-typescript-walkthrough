@@ -65,7 +65,7 @@ import Dialog from "sap/m/Dialog";
  * @namespace ui5.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
-    private oDialog : Dialog;
+    private dialog : Dialog;
 
     onShowHello(): void {
         ...
