@@ -47,11 +47,11 @@ The syntax is similar to a view, but since fragments do not have a controller th
 
 ### webapp/controller/HelloPanel.controller.ts
 
-In the HelloPanel controller, we define a new event handler function `onOpenDialog` which calls the dialog in the HelloDialog fragement when triggered. To do so we need to import the `sap.m.Dialog` module. 
+In the HelloPanel controller, we define a new event handler function `onOpenDialog` which calls the dialog in the HelloDialog fragment when triggered. To do so we need to import the `sap.m.Dialog` module.
 
-We store the loading `Promise` of the dialog fragment on the controller instance. This allows us to handle the opening of the dialog asynchronously every time the event is triggered.
+Using async/await, we handle the opening of the dialog asynchronously whenever the event is triggered.
 
-If the dialog fragment does not exist yet, the fragment is instantiated by calling the `loadFragment` API. 
+If the dialog fragment does not exist yet, the fragment is instantiated by calling the `loadFragment` API. We then store the dialog on the controller instance. This allows us to reuse the dialog every time the event is triggered again.
 
 ```ts
 import Controller from "sap/ui/core/mvc/Controller";
@@ -65,21 +65,16 @@ import Dialog from "sap/m/Dialog";
  * @namespace ui5.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
-    private dialogPromise: Promise<Dialog>;
+    private dialog : Dialog;
 
     onShowHello(): void {
         ...
     }
-    onOpenDialog(): void {
-    // create dialog lazily
-        if (!this.dialogPromise) {
-            this.dialogPromise = <Promise<Dialog>> this.loadFragment({
-                name: "ui5.walkthrough.view.HelloDialog"
-            });
-        } 
-        this.dialogPromise.then(function(oDialog) {
-            oDialog.open();
+    async onOpenDialog(): Promise<void> {
+        this.dialog ??= await <Promise<Dialog>> this.loadFragment({
+             name: "ui5.walkthrough.view.HelloDialog"
         });
+        this.dialog.open();
     }
 };
 ```
