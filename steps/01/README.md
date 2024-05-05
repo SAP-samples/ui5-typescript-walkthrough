@@ -31,7 +31,7 @@ We create a folder on our local machine which will contain all the sources of th
 
 In the app root directory, we create a new folder named `webapp`. This folder exists to store all the sources that become available in the browser later. We refer to this folder as the "webapp folder".
 
-In our webapp folder, we createt a new HTML file named `index.html` and copy the following content to it:
+In our webapp folder, we create a new HTML file named `index.html` and copy the following content to it:
 
 ```html
 <!DOCTYPE html>
@@ -96,7 +96,7 @@ Hence, we create a new file called `manifest.json` in the webapp folder and defi
 ```
 
 > 📝 **Note:** <br>
-> In this tutorial step, we focus on addingg the absolute minimum configuration to the app descriptor file. In certain development environments you might encounter validation errors due to missing settings. However, for the purposes of this tutorial you can safely ignore these errors. In [Step 10: Descriptor for Applications](../10/README.md) we'll examine the purpose of the file in detail and configure some further options.
+> In this tutorial step, we focus on adding the absolute minimum configuration to the app descriptor file. In certain development environments you might encounter validation errors due to missing settings. However, for the purposes of this tutorial you can safely ignore these errors. In [Step 10: Descriptor for Applications](../10/README.md) we'll examine the purpose of the file in detail and configure some further options.
 
 ***
 
@@ -140,7 +140,7 @@ ui5 init
 This will generate a `ui5.yaml` file in the app root directory, which is essential for using UI5 Tooling with our project.
 &nbsp;
 
-To start the web server, ecexcute the following command:
+To start the web server, execute the following command:
 
 ```sh
 npm start 
