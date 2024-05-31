@@ -44,13 +44,13 @@ import History from "sap/ui/core/routing/History";
 export default class Detail extends Controller {
     
     onInit(): void {
-        const router = (<Component> this.getOwnerComponent()).getRouter();
+        const router = (this.getOwnerComponent() as Component).getRouter();
         router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
     }
 
     onObjectMatched(event: Route$PatternMatchedEvent): void {
         this.getView().bindElement({
-            path: "/" + window.decodeURIComponent( (<any> event.getParameter("arguments")).invoicePath),
+            path: "/" + window.decodeURIComponent( (event.getParameter("arguments") as any).invoicePath),
             model: "invoice"
         });
     }
@@ -62,7 +62,7 @@ export default class Detail extends Controller {
         if (previousHash !== undefined) {
             window.history.go(-1);
         } else {
-            const router = (<Component> this.getOwnerComponent()).getRouter();
+            const router = (this.getOwnerComponent() as Component).getRouter();
             router.navTo("overview", {}, true);
         }
     }    

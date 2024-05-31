@@ -243,7 +243,7 @@ export default class App extends Controller {
 		…
 
     onPress(): void {
-        const router = (<Component> this.getOwnerComponent()).getRouter();
+        const router = (this.getOwnerComponent() as Component).getRouter();
         router.navTo("detail");
     }    
 };

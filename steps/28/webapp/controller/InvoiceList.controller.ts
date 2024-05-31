@@ -16,7 +16,7 @@ export default class App extends Controller {
         const viewModel = new JSONModel({
             currency: "EUR"
         });
-        this.getView()?.setModel(viewModel, "view");        
+        this.getView()?.setModel(viewModel, "view");
     }
 
     onFilterInvoices(event: SearchField$SearchEvent): void {
@@ -29,7 +29,7 @@ export default class App extends Controller {
 
         // filter binding
         const list = this.byId("invoiceList");
-        const binding = <ListBinding> list?.getBinding("items");
+        const binding = list?.getBinding("items") as ListBinding;
         binding?.filter(filter);
     }
 };

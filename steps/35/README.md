@@ -139,7 +139,7 @@ export default class Detail extends Controller {
         });
         this.getView().setModel(viewModel, "view");
         
-        const router = (<Component> this.getOwnerComponent()).getRouter();
+        const router = (this.getOwnerComponent() as Component).getRouter();
         router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
     }
 		…
