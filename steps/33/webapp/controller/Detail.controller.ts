@@ -13,15 +13,15 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 export default class Detail extends Controller {
 
     onInit(): void {
-        const router = (<Component> this.getOwnerComponent()).getRouter();
+        const router = (this.getOwnerComponent() as Component).getRouter();
         router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
     }
 
     onObjectMatched(event: Route$PatternMatchedEvent): void {
-    
-        (<ProductRating> this.byId("rating")).reset();
+
+        (this.byId("rating") as ProductRating).reset();
         this.getView().bindElement({
-            path: "/" + window.decodeURIComponent((<any> event.getParameter("arguments")).invoicePath),
+            path: "/" + window.decodeURIComponent((event.getParameter("arguments") as any).invoicePath),
             model: "invoice"
         });
     }
@@ -33,15 +33,15 @@ export default class Detail extends Controller {
         if (previousHash !== undefined) {
             window.history.go(-1);
         } else {
-            const router = (<Component> this.getOwnerComponent()).getRouter();
+            const router = (this.getOwnerComponent() as Component).getRouter();
             router.navTo("overview", {}, true);
         }
-    }    
-    
+    }
+
     onRatingChange(event: ProductRating$ChangeEvent): void {
         const value = event.getParameter("value");
-        const resourceBundle = <ResourceBundle> (<ResourceModel> this?.getView().getModel("i18n"))?.getResourceBundle();
+        const resourceBundle = (this?.getView().getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
 
         MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]));
-    }    
+    }
 };

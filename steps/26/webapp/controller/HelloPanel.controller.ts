@@ -12,21 +12,21 @@ export default class HelloPanel extends Controller {
     private dialog: Dialog;
     onShowHello(): void {
         // read msg from i18n model
-        const recipient = (<JSONModel> this.getView()?.getModel())?.getProperty("/recipient/name");
-        const resourceBundle = <ResourceBundle> (<ResourceModel> this.getView()?.getModel("i18n"))?.getResourceBundle();
+        const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
+        const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
         const msg = resourceBundle.getText("helloMsg", [recipient]) || "no text defined";
         // show message
         MessageToast.show(msg);
     }
     async onOpenDialog(): Promise<void> {
-        this.dialog ??= await <Promise<Dialog>> this.loadFragment({
+        this.dialog ??= await this.loadFragment({
              name: "ui5.walkthrough.view.HelloDialog"
-        });
+        }) as Dialog;
         this.dialog.open();
     }
     onCloseDialog(): void {
         // note: We don't need to chain to the pDialog promise, since this event-handler
         // is only called from within the loaded dialog itself.
-        (<Dialog> this.byId("helloDialog"))?.close();
-    }         
+        (this.byId("helloDialog") as Dialog)?.close();
+    }
 };

@@ -65,7 +65,7 @@ import Component from "../Component";
  */
 export default class App extends Controller {
 	onInit(): void {
-        this.getView().addStyleClass((<Component> this.getOwnerComponent()).getContentDensityClass())
+        this.getView().addStyleClass((this.getOwnerComponent() as Component).getContentDensityClass())
     }
 };
 ```

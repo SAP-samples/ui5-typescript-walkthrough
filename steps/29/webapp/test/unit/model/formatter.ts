@@ -13,7 +13,7 @@ QUnit.test("Should return the translated texts", (assert) => {
         fallbackLocale: ""
     });
 
-    const controllerMock = <Controller> <any> {
+    const controllerMock = {
         getOwnerComponent() {
             return {
                 getModel() {
@@ -21,7 +21,7 @@ QUnit.test("Should return the translated texts", (assert) => {
                 }
             };
         }
-    };
+    } as any as Controller;
 
     // System under test
     const fnIsolatedFormatter = formatter.statusText.bind(controllerMock);
