@@ -142,7 +142,6 @@ Finally, we call the `start` method on the `MockServer`. From this point, each r
 
 ```ts
 import MockServer from "sap/ui/core/util/MockServer";
-import UriParameters from "sap/base/util/UriParameters";
 
 export default {
     init: function () {
@@ -151,12 +150,12 @@ export default {
             rootUri: sap.ui.require.toUrl("ui5/walkthrough/V2/Northwind/Northwind.svc/")
         });
 
-        const uriParameters = new UriParameters(window.location.href);
+        const urlParams = new URLSearchParams(window.location.search);
 
         // configure mock server with a delay
         MockServer.config({
             autoRespond: true,
-            autoRespondAfter: parseInt(uriParameters.get("serverDelay") || "500")
+            autoRespondAfter: parseInt(urlParams.get("serverDelay") || "500")
         });
 
         // simulate
