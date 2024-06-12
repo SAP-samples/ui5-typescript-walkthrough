@@ -1,0 +1,2 @@
+"use strict";sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/json/JSONModel","../model/formatter"],function(t,e,o){"use strict";function n(t){return t&&t.__esModule&&typeof t.default!=="undefined"?t.default:t}const r=n(o);const u=t.extend("ui5.walkthrough.controller.App",{constructor:function e(){t.prototype.constructor.apply(this,arguments);this.formatter=r},onInit:function t(){const o=new e({currency:"EUR"});this.getView()?.setModel(o,"view")}});return u});
+//# sourceMappingURL=InvoiceList.controller.js.map
