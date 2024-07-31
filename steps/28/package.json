@@ -8,12 +8,12 @@
     "start": "ui5 serve -o test/mockServer.html"
   },
   "devDependencies": {
-    "@types/openui5": "^1.126.0",
-    "@ui5/cli": "^3.11.0",
+    "@types/openui5": "^1.120.0",
+    "@ui5/cli": "^4.0.2",
     "typescript": "^5.5.4",
     "ui5-middleware-livereload": "^3.0.3",
-    "ui5-middleware-serveframework": "^3.1.1",
-    "ui5-middleware-simpleproxy": "^3.2.16",
+    "ui5-middleware-serveframework": "^3.1.2",
+    "ui5-middleware-simpleproxy": "^3.2.18",
     "ui5-tooling-transpile": "^3.4.7"
   }
 }
