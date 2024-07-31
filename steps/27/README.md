@@ -85,6 +85,7 @@ We create a new `unitTests.qunit.ts` file under `webapp/test/unit/`.
 This script loads and executes our formatter. 
 
 ```ts
+/* @sapUiRequire */
 QUnit.config.autostart = false;
 
 // import all your QUnit tests here
@@ -119,8 +120,7 @@ First, we load some basic QUnit functionality via script tags. Other QUnit tests
 		data-sap-ui-resourceroots='{
 			"ui5.walkthrough": "../../"
 		}'
-		data-sap-ui-async="true"
-        data-sap-ui-oninit="module:ui5/walkthrough/test/unit/unitTests.qunit">
+		data-sap-ui-async="true">
 	</script>
 
 	<link rel="stylesheet" type="text/css" href="../../resources/sap/ui/thirdparty/qunit-2.css">
@@ -128,12 +128,14 @@ First, we load some basic QUnit functionality via script tags. Other QUnit tests
 	<script src="../../resources/sap/ui/thirdparty/qunit-2.js"></script>
 	<script src="../../resources/sap/ui/qunit/qunit-junit.js"></script>
 
+	<script src="./unitTests.qunit.js"></script>
 </head>
 <body>
 	<div id="qunit"/>
 	<div id="qunit-fixture"/>
 </body>
 </html>
+
 ```
 
 The so-called QUnit test suite is an HTML page that triggers all QUnit tests for the application. Most of it is generating the layout of the result page that you can see in the preview and we won’t further explain these parts.

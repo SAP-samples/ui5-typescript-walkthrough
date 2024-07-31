@@ -1,4 +1,4 @@
-
+/* @sapUiRequire */
 QUnit.config.autostart = false;
 
 // import all your integration tests here
