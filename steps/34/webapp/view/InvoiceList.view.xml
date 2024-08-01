@@ -1,6 +1,7 @@
 <mvc:View
 	controllerName="ui5.walkthrough.controller.InvoiceList"
 	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Table
 		id="invoiceList"
@@ -19,7 +20,7 @@
 					<ToolbarSpacer/>
 					<SearchField width="50%" search=".onFilterInvoices"/>
 				</Toolbar>
-			</headerToolbar> 
+			</headerToolbar>
 			<columns>
 				<Column
 					hAlign="End"
@@ -44,23 +45,26 @@
 				<Column hAlign="End">
 					<Text text="{i18n>columnPrice}"/>
 				</Column>
-			</columns>           
+			</columns>
 			<items>
 				<ColumnListItem
 					type="Navigation"
 					press=".onPress">
 					<cells>
-						<ObjectNumber 
-							number="{invoice>Quantity}" 
+						<ObjectNumber
+							number="{invoice>Quantity}"
 							emphasized="false"/>
-						<ObjectIdentifier 
+						<ObjectIdentifier
 							title="{invoice>ProductName}"/>
-						<Text 
+						<Text
+							core:require= "{
+								Formatter: 'ui5/walkthrough/model/formatter'
+							}"
 							text="{
 								path: 'invoice>Status',
-								formatter: '.formatter.statusText'
+								formatter: 'Formatter.statusText.bind($controller)'
 							}"/>
-						<Text 
+						<Text
 							text="{invoice>ShipperName}"/>
 						<ObjectNumber
 							number="{
