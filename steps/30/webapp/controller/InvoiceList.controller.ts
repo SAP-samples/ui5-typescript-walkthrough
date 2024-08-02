@@ -1,6 +1,5 @@
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
-import formatter from "../model/formatter";
 import { SearchField$SearchEvent } from "sap/m/SearchField";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
@@ -11,8 +10,6 @@ import Component from "../Component";
  * @namespace ui5.walkthrough.controller
  */
 export default class App extends Controller {
-    public formatter = formatter;
-
     onInit(): void {
         const viewModel = new JSONModel({
             currency: "EUR"
