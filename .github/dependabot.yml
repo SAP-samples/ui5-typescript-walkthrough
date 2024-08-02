@@ -8,6 +8,8 @@ updates:
     prefix: "ci(github-actions)"
 - package-ecosystem: npm
   directory: "/"
+  ignore:
+    - dependency-name: "@types/openui5"
   schedule:
     interval: weekly
     day: sunday
@@ -16,6 +18,7 @@ updates:
   reviewers:
   - petermuessig
   - flovogt
+  - margopolo
   versioning-strategy: increase
   commit-message:
     prefix: "deps"

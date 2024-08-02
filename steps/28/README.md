@@ -173,14 +173,15 @@ Then we load the basic QUnit functionality via script tags from OpenUI5 so that 
 		}'
 		data-sap-ui-animation="false"
 		data-sap-ui-compatVersion="edge"
-		data-sap-ui-async="true"
-        data-sap-ui-oninit="module:ui5/walkthrough/test/integration/opaTests.qunit">
+		data-sap-ui-async="true">
 	</script>
 
 	<link rel="stylesheet" type="text/css" href="../../resources/sap/ui/thirdparty/qunit-2.css">
 
 	<script src="../../resources/sap/ui/thirdparty/qunit-2.js"></script>
 	<script src="../../resources/sap/ui/qunit/qunit-junit.js"></script>
+
+	<script src="./opaTests.qunit.js"></script>
 </head>
 <body>
 	<div id="qunit"></div>
