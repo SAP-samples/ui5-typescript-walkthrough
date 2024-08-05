@@ -82,7 +82,7 @@ QUnit.test("Should return the translated texts", (assert) => {
 ### webapp/test/unit/unitTests.qunit.ts \(New\)
 
 We create a new `unitTests.qunit.ts` file under `webapp/test/unit/`.
-This script loads and executes our formatter. 
+This script loads and executes our formatter.
 
 ```ts
 /* @sapUiRequire */
@@ -96,6 +96,9 @@ void Promise.all([
 });
 ```
 
+> 📝 **Note:** <br>
+> The annotation `@sapUiRequire` instructs the UI5 TypeScript transpilation process (executed by `ui5-tooling-transpile`) to use `sap.ui.require` instead of `sap.ui.define` for the transpiled module. This allows to load the module via a `<script>` tag. This is important for test suites to guarantee that the `QUnit.config.autostart` is set to `false` directly after QUnit has been loaded to avoid that QUnit immediately starts the test execution before the QUnit tests have been imported. Once the QUnit tests have been imported the tests will be executed after calling `QUnit.start()`.
+
 ***
 
 ### webapp/test/unit/unitTests.qunit.html \(New\)
@@ -104,8 +107,7 @@ Finally we create a new `unitTests.qunit.html` page under `webapp/test/unit`.
 
 Since we are now in the `webapp/test/unit` folder, we actually need to go up two levels to get the `webapp` folder again. This namespace can be used inside the tests to load and trigger application functionality.
 
-First, we load some basic QUnit functionality via script tags. Other QUnit tests can be added here as well. Then the HTML page loads our `unitTests.qunit.ts` script.
-
+First, we load some basic QUnit functionality via script tags. The QUnit test suite must be included at the end via a script tag which loads `unitTests.qunit.js`. The file extension `.js` must be used since this loads the transpiled version of `unitTests.qunit.ts`.
 
 ```html
 <!DOCTYPE html>
