@@ -1,0 +1,2 @@
+"use strict";sap.ui.require([],function(){"use strict";function t(t){return new Promise(function(e,i){sap.ui.require([t],function(i){if(!(i&&i.__esModule)){i=i===null||!(typeof i==="object"&&t.endsWith("/library"))?{default:i}:i;Object.defineProperty(i,"__esModule",{value:true})}e(i)},function(t){i(t)})})}QUnit.config.autostart=false;void Promise.all([t("ui5/walkthrough/test/integration/NavigationJourney")]).then(()=>{QUnit.start()})});
+//# sourceMappingURL=opaTests.qunit.js.map
