@@ -80,7 +80,7 @@ The tutorial consists of the following steps. To start, just open the first link
 
 ## Requirements
 
-The project uses npm workspaces and requires a [Node.js](https://nodejs.org/) version  >= `16` to be installed.
+The project uses npm workspaces and requires a [Node.js](https://nodejs.org/) version  >= `20.11.0` to be installed.
 
 ### Getting Started
 
@@ -128,4 +128,4 @@ If you wish to contribute code, offer fixes or improvements, please send a pull 
 
 ## License
 
-Copyright (c) 2023 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
