@@ -285,7 +285,7 @@ While the application would run successfully, the editor still displays an error
 
 The solution is to use the [ts-interface-generator](https://www.npmjs.com/package/@ui5/ts-interface-generator), a small tools that scans the project for any controls (as well as other subclasses of sap.ui.ManagedObject) and generates TypeScript interface definitions declaring those generated methods.
 
--  Open a new terminal window in your app root folder and execute `npm install @ui5/ts-inteface-generator --save-dev` to install this package as a new development dependency in your `package.json`.
+-  Open a new terminal window in your app root folder and execute `npm install @ui5/ts-interface-generator --save-dev` to install this package as a new development dependency in your `package.json`.
 
 -  Run `ui5-serve`. This starts the interface generator tool in "watch" mode and creates the required interface definition (after a short startup delay during which all existing types in the project and in UI5 are scanned).
 
