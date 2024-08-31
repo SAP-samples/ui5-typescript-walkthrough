@@ -60,7 +60,7 @@ We specify the compiler options as follow:
 ```json
 {
     "compilerOptions": {
-      "target": "es2022",
+      "target": "es2023",
       "module": "es2022",
       "moduleResolution": "node",
       "skipLibCheck": true,
