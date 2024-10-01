@@ -119,7 +119,6 @@ In the `Detail` controller we simply add the view model with our currency defini
 
 ```ts
 import Controller from "sap/ui/core/mvc/Controller";
-import Component from "../Component";
 import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 import History from "sap/ui/core/routing/History";
 import MessageToast from "sap/m/MessageToast";
@@ -127,6 +126,7 @@ import ProductRating, { ProductRating$ChangeEvent } from "../control/ProductRati
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import JSONModel from "sap/ui/model/json/JSONModel";
+import UIComponent from "sap/ui/core/UIComponent";
 
 /**
  * @namespace ui5.walkthrough.controller
@@ -139,7 +139,7 @@ export default class Detail extends Controller {
         });
         this.getView().setModel(viewModel, "view");
         
-        const router = (this.getOwnerComponent() as Component).getRouter();
+        const router = UIComponent.getRouterFor(this);
         router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
     }
 		…
