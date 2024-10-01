@@ -1,7 +1,7 @@
 import Controller from "sap/ui/core/mvc/Controller";
-import Component from "../Component";
 import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 import History from "sap/ui/core/routing/History";
+import UIComponent from "sap/ui/core/UIComponent";
 
 /**
  * @namespace ui5.walkthrough.controller
@@ -9,7 +9,7 @@ import History from "sap/ui/core/routing/History";
 export default class Detail extends Controller {
 
     onInit(): void {
-        const router = (this.getOwnerComponent() as Component).getRouter();
+        const router = UIComponent.getRouterFor(this);
         router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
     }
 
@@ -27,7 +27,7 @@ export default class Detail extends Controller {
         if (previousHash !== undefined) {
             window.history.go(-1);
         } else {
-            const router = (this.getOwnerComponent() as Component).getRouter();
+            const router = UIComponent.getRouterFor(this);
             router.navTo("overview", {}, true);
         }
     }

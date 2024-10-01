@@ -1,6 +1,6 @@
 import Controller from "sap/ui/core/mvc/Controller";
-import Component from "../Component";
 import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
+import UIComponent from "sap/ui/core/UIComponent";
 
 /**
  * @namespace ui5.walkthrough.controller
@@ -8,7 +8,7 @@ import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 export default class Detail extends Controller {
 
     onInit(): void {
-        const router = (this.getOwnerComponent() as Component).getRouter();
+        const router = UIComponent.getRouterFor(this);
         router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
     }
 

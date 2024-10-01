@@ -4,7 +4,7 @@ import { SearchField$SearchEvent } from "sap/m/SearchField";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
 import ListBinding from "sap/ui/model/ListBinding";
-import Component from "../Component";
+import UIComponent from "sap/ui/core/UIComponent";
 
 /**
  * @namespace ui5.walkthrough.controller
@@ -32,7 +32,7 @@ export default class App extends Controller {
     }
 
     onPress(): void {
-        const router = (this.getOwnerComponent() as Component).getRouter();
+        const router = UIComponent.getRouterFor(this);
         router.navTo("detail");
     }
 };

@@ -41,10 +41,10 @@ Finally we call the `createContent` hook method of the component. This method cr
 
 ```ts
 import Control from "sap/ui/core/Control";
-import UIComponent from "sap/ui/core/UIComponent";
 import XMLView from "sap/ui/core/mvc/XMLView";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
+import UIComponent from "sap/ui/core/UIComponent";
 
 /**
  * @namespace ui5.walkthrough
