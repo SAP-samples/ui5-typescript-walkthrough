@@ -122,6 +122,7 @@ First, we load some basic QUnit functionality via script tags. The QUnit test su
 		data-sap-ui-resourceroots='{
 			"ui5.walkthrough": "../../"
 		}'
+		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true">
 	</script>
 

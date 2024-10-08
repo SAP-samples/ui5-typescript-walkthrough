@@ -191,7 +191,7 @@ import("sap/ui/core/ComponentSupport");
 
 Finally we create a new `mockServer.html` page in our `test` folder. We will use this file to run our app in test mode with our mock server loading mock data loaded from out local `Invoices` JSON file. Test pages should not be placed in the application root folder but in a subfolder called `test` to clearly separate productive and test coding.
 
-We copy content of the `index.html` to it and change the page title to distinguish it from the productive start page. We need to change `data-sap-ui-resourceroots` property. The namespace now points to the folder above \(`"../"`\), because the `mockServer.html` file is in a subfolder of the `webapp` folder. Also the bootstrap script to the OpenUI5 core library needs to be adapted this way.
+We copy content of the `index.html` to it and change the page title to distinguish it from the productive start page. We need to change `data-sap-ui-resource-roots` property. The namespace now points to the folder above \(`"../"`\), because the `mockServer.html` file is in a subfolder of the `webapp` folder. Also the bootstrap script to the OpenUI5 core library needs to be adapted this way.
 
 Instead the app component, we define that the `initMockServer` is initialized from the HTML page.
 
@@ -205,10 +205,10 @@ Instead the app component, we define that the `initMockServer` is initialized fr
 		id="sap-ui-bootstrap"
 		src="../resources/sap-ui-core.js"
 		data-sap-ui-theme="sap_horizon"
-		data-sap-ui-compatVersion="edge"
+		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true"
-		data-sap-ui-oninit="module:ui5/walkthrough/test/initMockServer"
-		data-sap-ui-resourceroots='{
+		data-sap-ui-on-init="module:ui5/walkthrough/test/initMockServer"
+		data-sap-ui-resource-roots='{
 			"ui5.walkthrough": "../"
 		}'>
 

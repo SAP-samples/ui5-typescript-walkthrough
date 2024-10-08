@@ -155,7 +155,7 @@ Finally we create a new `opaTests.qunit.html` page under `webapp/test/integratio
 
 This HTML page contains our test suite for all OPA tests of the app. We use the same namespace as for our application.
 
-Then we load the basic QUnit functionality via script tags from OpenUI5 so that we can execute the test journey. In `data-sap-ui-onInit` we define that the module `opaTests.qunit` is loaded initially, which then again loads our `NavigationJourney`.
+Then we load the basic QUnit functionality via script tags from OpenUI5 so that we can execute the test journey. Finally we load the `opaTests.qunit`, which then again loads our `NavigationJourney`.
 
 ```html
 <!DOCTYPE html>
@@ -172,7 +172,7 @@ Then we load the basic QUnit functionality via script tags from OpenUI5 so that 
 			"ui5.walkthrough": "../../"
 		}'
 		data-sap-ui-animation="false"
-		data-sap-ui-compatVersion="edge"
+		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true">
 	</script>
 
