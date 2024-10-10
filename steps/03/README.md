@@ -58,7 +58,7 @@ All controls of OpenUI5 have a fixed set of properties, aggregations, and associ
 
 ### webapp/index.html
 
-We replace the `<div>` tag in our `webapp/index.html` file with a `<body>` tag and assign it the ID `content`. The body tag of the HTML document thus becomes the target node for the text control we defined in the `index.ts` script.
+We replace the `<div>` tag in our `webapp/index.html` file with a `<body>` tag and assign it the ID `content`. The body tag of the HTML document thus becomes the target node for the text control we defined in the `index` script.
 
 We also add the `sapUiBody` class, which provides additional theme-dependent styles.
 
@@ -72,10 +72,10 @@ We also add the `sapUiBody` class, which provides additional theme-dependent sty
 		id="sap-ui-bootstrap"
 		src="resources/sap-ui-core.js"
 		data-sap-ui-theme="sap_horizon"
-		data-sap-ui-compatVersion="edge"
+		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true"
-		data-sap-ui-onInit="module:ui5/walkthrough/index"
-		data-sap-ui-resourceroots='{
+		data-sap-ui-on-init="module:ui5/walkthrough/index"
+		data-sap-ui-resource-roots='{
             "ui5.walkthrough": "./"
 		}'>
 	</script>
@@ -85,7 +85,7 @@ We also add the `sapUiBody` class, which provides additional theme-dependent sty
 </html>
 ```
 
-In the example above, the callback of the `onInit` event is where we now instantiate an OpenUI5 text control. 
+In the example above, the callback of the `on-init` event is where we now instantiate an OpenUI5 text control. 
 
 ***
 

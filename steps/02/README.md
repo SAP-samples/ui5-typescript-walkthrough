@@ -125,13 +125,13 @@ We initialize the core modules with the following configuration options:
 
 -   The OpenUI5 controls support different themes. With setting the `data-sap-ui-theme` attribute of the `<script>` tag to "sap_horizon" we specify the Horizon theme as our default theme.
 
--   To make use of the most recent functionality of OpenUI5 we specify the `data-sap-ui-compatVersion` attribute as `edge`.
+-   To make use of the most recent functionality of OpenUI5 we specify the `data-sap-ui-compat-version` attribute as `edge`.
 
 -   We configure the bootstrapping process to run asynchronously by setting the `data-sap-ui-async` attribute to "true". This means that the OpenUI5 resources can be loaded simultaneously in the background for performance reasons.
 
--    The `data-sap-ui-onInit` attribute is used in OpenUI5 to specify the name of a module that should be executed when the framework is fully loaded and initialized. This approach provides a way to avoid directly including executable JavaScript code in the HTML file, which improves the security of our application. To specify the name of the module, you need to provide the module name as the value of `the data-sap-ui-onInit` attribute. The module name should be in the format of a module path, which is a dot-separated string that represents the location of the module within the application's folder structure. When specifying the path to a module within the current project, it's important to include the namespace (explained below) and omit the file extension. We specify the `index.ts` script to the `data-sap-ui-onInit` attribute.
+-    The `data-sap-ui-on-init` attribute is used in OpenUI5 to specify the name of a module that should be executed when the framework is fully loaded and initialized. This approach provides a way to avoid directly including executable JavaScript code in the HTML file, which improves the security of our application. To specify the name of the module, you need to provide the module name as the value of the `data-sap-ui-on-init` attribute. The module name should be in the format of a module path, which is a dot-separated string that represents the location of the module within the application's folder structure. When specifying the path to a module within the current project, it's important to include the namespace (explained below) and omit the file extension. We specify the `index.ts` script to the `data-sap-ui-on-init` attribute.
 
--   The `data-sap-ui-resourceroots` attribute lets you map a namespace to a specific path. We define the `ui5.walkthrough` namespace and map it relative to the location of `index.html`. This way, we tell OpenUI5 core that resources in the `ui5.walkthrough` namespace are located in the same folder as `index.html`.
+-   The `data-sap-ui-resource-roots` attribute lets you map a namespace to a specific path. We define the `ui5.walkthrough` namespace and map it relative to the location of `index.html`. This way, we tell OpenUI5 core that resources in the `ui5.walkthrough` namespace are located in the same folder as `index.html`.
 
 ```html
 <!DOCTYPE html>
@@ -143,10 +143,10 @@ We initialize the core modules with the following configuration options:
 		id="sap-ui-bootstrap"
 		src="resources/sap-ui-core.js"
 		data-sap-ui-theme="sap_horizon"
-		data-sap-ui-compatVersion="edge"
+		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true"
-		data-sap-ui-onInit="module:ui5/walkthrough/index"
-		data-sap-ui-resourceroots='{
+		data-sap-ui-on-init="module:ui5/walkthrough/index"
+		data-sap-ui-resource-roots='{
 			"ui5.walkthrough": "./"
 		}'>
 	</script>
