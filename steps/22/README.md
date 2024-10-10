@@ -78,17 +78,41 @@ The new `formatter` file is placed in the model folder of the app, because forma
 
 ***
 
+### webapp/controller/InvoiceList.controller.ts
+
+To be able to access the formatter in the invoice list view, we load it to the `InvoiceList.controller.ts` and store it in a local property `formatter`.
+
+```ts
+import Controller from "sap/ui/core/mvc/Controller";
+import JSONModel from "sap/ui/model/json/JSONModel";
+import formatter from "../model/formatter";
+
+/**
+ * @namespace ui5.walkthrough.controller
+ */
+export default class App extends Controller {
+    public formatter = formatter;
+
+    onInit(): void {
+        const viewModel = new JSONModel({
+            currency: "EUR"
+        });
+        this.getView()?.setModel(viewModel, "view");        
+    } 
+};
+
+```
+
+***
+
 ### webapp/view/InvoiceList.view.xml
 
-To load our formatter functions, we use the `require` attribute with the namespace URI `sap.ui.core`, for which the prefix `core` is already defined in our XML view. This allows us to write the attribute as `core:require`. We then add our custom formatter module to the list of required modules and assign it the alias `Formatter`, making it available for use within the view.
-
-We add a status using the `firstStatus` aggregation to our `ObjectListItem` that will display the status of our invoice. There we defined our alias `Formatter` that holds our formatter functions, so we can access it by `Formatter.statusText`. When called, we want the `this` context to be set to the controller instance of the current view. To achieve this, we use `.bind($controller)`.
+We add a status using the `firstStatus` aggregation to our `ObjectListItem` that will display the status of our invoice. The custom formatter function is specified with the reserved property `formatter` of the binding syntax. Our formatter is stored in the controller of the current view in paramter `formatter`, so we can access it by assigning `.formatter.statusText` to the `formatter` property of the binding syntax. 
 
 ```xml
 <mvc:View
    controllerName="ui5.walkthrough.controller.InvoiceList"
    xmlns="sap.m"
-   xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
    <List
       headerText="{i18n>invoiceListTitle}"
@@ -110,18 +134,13 @@ We add a status using the `firstStatus` aggregation to our `ObjectListItem` that
             }"
             numberUnit="{view>/currency}"
             numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
-            <firstStatus>
-               <ObjectStatus
-                  core:require="{
-                     Formatter: 'ui5/walkthrough/model/formatter'
-                  }"
-                  text="{
-                     path: 'invoice>Status',
-                     formatter: 'Formatter.statusText.bind($controller)'
-                  }"
-               />
-            </firstStatus>
-         </ObjectListItem>
+				<firstStatus>
+					<ObjectStatus text="{
+						path: 'invoice>Status',
+						formatter: '.formatter.statusText'
+					}"/>
+				</firstStatus>
+			</ObjectListItem>
       </items>
    </List>
 </mvc:View>
@@ -142,5 +161,3 @@ Instead of a technical status we get now the human-readable texts per invoice we
 **Related Information** 
 
 [Formatting, Parsing, and Validating Data](https://sdk.openui5.org/topic/07e4b920f5734fd78fdaa236f26236d8.html "Data that is presented on the UI often has to be converted so that is human readable and fits to the locale of the user. On the other hand, data entered by the user has to be parsed and validated to be understood by the data source. For this purpose, you use formatters and data types.")
-
-[Require Modules in XML View and Fragment](https://sdk.openui5.org/topic/b11d853a8e784db6b2d210ef57b0f7d7.html "Modules can be required in XML views and fragments and assigned to aliases which can be used as variables in properties, event handlers, and bindings.")
