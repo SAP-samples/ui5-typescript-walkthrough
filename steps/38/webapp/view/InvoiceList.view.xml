@@ -1,8 +1,7 @@
 <mvc:View
-	controllerName="ui5.walkthrough.controller.InvoiceList"
-	xmlns="sap.m"
-	xmlns:core="sap.ui.core"
-	xmlns:mvc="sap.ui.core.mvc">
+   controllerName="ui5.walkthrough.controller.InvoiceList"
+   xmlns="sap.m"
+   xmlns:mvc="sap.ui.core.mvc">
 	<Panel accessibleRole="Region">
 		<headerToolbar>
 			<Toolbar>
@@ -12,7 +11,7 @@
 					width="50%"
 					search=".onFilterInvoices"/>
 			</Toolbar>
-		</headerToolbar>
+		</headerToolbar>   
 		<Table
 			id="invoiceList"
 			class="sapUiResponsiveMargin"
@@ -30,7 +29,7 @@
 						<ToolbarSpacer/>
 						<SearchField width="50%" search=".onFilterInvoices"/>
 					</Toolbar>
-				</headerToolbar>
+				</headerToolbar> 
 				<columns>
 					<Column
 						hAlign="End"
@@ -55,26 +54,23 @@
 					<Column hAlign="End">
 						<Text text="{i18n>columnPrice}"/>
 					</Column>
-				</columns>
+				</columns>           
 				<items>
 					<ColumnListItem
 						type="Navigation"
 						press=".onPress">
 						<cells>
-							<ObjectNumber
-								number="{invoice>Quantity}"
+							<ObjectNumber 
+								number="{invoice>Quantity}" 
 								emphasized="false"/>
-							<ObjectIdentifier
+							<ObjectIdentifier 
 								title="{invoice>ProductName}"/>
-							<Text
-								core:require= "{
-									Formatter: 'ui5/walkthrough/model/formatter'
-								}"
+							<Text 
 								text="{
 									path: 'invoice>Status',
-									formatter: 'Formatter.statusText.bind($controller)'
+									formatter: '.formatter.statusText'
 								}"/>
-							<Text
+							<Text 
 								text="{invoice>ShipperName}"/>
 							<ObjectNumber
 								number="{

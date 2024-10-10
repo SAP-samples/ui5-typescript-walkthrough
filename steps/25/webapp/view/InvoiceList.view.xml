@@ -1,7 +1,6 @@
 <mvc:View
    controllerName="ui5.walkthrough.controller.InvoiceList"
    xmlns="sap.m"
-   xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
    <List
       id="invoiceList"
@@ -10,9 +9,9 @@
       items="{
          path: 'invoice>/Invoices',
          sorter: {
-            path: 'ShipperName',
-            group: true
-         }
+				path: 'ShipperName',
+				group: true
+			}
       }" >
       <headerToolbar>
          <Toolbar>
@@ -20,7 +19,7 @@
             <ToolbarSpacer/>
             <SearchField width="50%" search=".onFilterInvoices"/>
          </Toolbar>
-      </headerToolbar>
+      </headerToolbar>      
       <items>
          <ObjectListItem
             title="{invoice>Quantity} x {invoice>ProductName}"
@@ -36,18 +35,13 @@
             }"
             numberUnit="{view>/currency}"
             numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
-            <firstStatus>
-               <ObjectStatus
-                  core:require= "{
-                     Formatter: 'ui5/walkthrough/model/formatter'
-                  }"
-                  text="{
-                     path: 'invoice>Status',
-                     formatter: 'Formatter.statusText.bind($controller)'
-                  }"
-               />
-            </firstStatus>
-         </ObjectListItem>
+				<firstStatus>
+					<ObjectStatus text="{
+						path: 'invoice>Status',
+						formatter: '.formatter.statusText'
+					}"/>
+				</firstStatus>
+			</ObjectListItem>
       </items>
    </List>
 </mvc:View>
