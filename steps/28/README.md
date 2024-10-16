@@ -132,19 +132,19 @@ As you can see, the test case reads like a user story, we actually do not need t
 
 We create a new `opaTests.qunit.ts` file under `webapp/test/integration/`. 
 
-We instruct QUnit to wait longer, allowing us to load our test files asynchronously. Then, we load the `NavigationJourney`, and execute the test functions inside immediately.
+This script loads and executes our `NavigationJourney`. Before the QUnit test execution can be started we need to wait until the Core has been booted. Therefore, you need to disable the autostart `QUnit.config.autostart = false;`, require the `sap/ui/core/Core` module and use `Core.ready()` to wait until the Core has booted and then you can start the QUnit tests with `QUnit.start()`.
 
 ```ts
-
+/* @sapUiRequire */
 QUnit.config.autostart = false;
 
-// import all your OPA tests here
+// import all your integration tests here
 void Promise.all([
-	import("ui5/walkthrough/test/integration/NavigationJourney")
-]).then(() => {
+	import("sap/ui/core/Core"), // required to wait until Core has booted to start the QUnit tests
+	import("ui5/walkthrough/test/integration/NavigationJourney"),
+]).then(([{default: Core}]) => Core.ready()).then(() => {
 	QUnit.start();
 });
-
 ```
 
 ***
