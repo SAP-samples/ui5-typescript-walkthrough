@@ -17,7 +17,7 @@ We haven’t thought about testing our interaction with the app yet, so in this 
 
 <sup>*An OPA test opens the "Hello" dialog from step 16*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 28](https://sap-samples.github.io/ui5-typescript-walkthrough/step-28/test/integration/opaTests-cdn.qunit.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 28](https://sap-samples.github.io/ui5-typescript-walkthrough/step-28/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=integration/opaTests).
 
 To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 28](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-28.zip).
 
