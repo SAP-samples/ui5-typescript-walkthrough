@@ -82,7 +82,7 @@ QUnit.test("Should return the translated texts", (assert) => {
 ### webapp/test/unit/unitTests.qunit.ts \(New\)
 
 We create a new `unitTests.qunit.ts` file under `webapp/test/unit/`.
-This script loads and executes our formatter.
+This script loads and executes our formatter test. Before the QUnit test execution can be started we need to wait until the Core has been booted. Therefore, you need to disable the autostart `QUnit.config.autostart = false;`, require the `sap/ui/core/Core` module and use `Core.ready()` to wait until the Core has booted and then you can start the QUnit tests with `QUnit.start()`.
 
 ```ts
 /* @sapUiRequire */
@@ -90,8 +90,9 @@ QUnit.config.autostart = false;
 
 // import all your QUnit tests here
 void Promise.all([
-	import("ui5/walkthrough/test/unit/model/formatter")
-]).then(() => {
+	import("sap/ui/core/Core"), // required to wait until Core has booted to start the QUnit tests
+	import("ui5/walkthrough/test/unit/model/formatter"),
+]).then(([{default: Core}]) => Core.ready()).then(() => {
 	QUnit.start();
 });
 ```
