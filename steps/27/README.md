@@ -40,6 +40,9 @@ The new formatter file just contains one QUnit module for our formatter function
 
 Finally, we perform our assertions. We check each branch of the formatter logic by invoking the isolated formatter function with the values that we expect in the data model \(`A`, `B`, `C`, and everything else\). We strictly compare the result of the formatter function with the hard-coded strings that we expect from the resource bundle and give a meaningful error message if the test should fail.
 
+> 📝 **Note:** <br>  
+> Test code needs to import modules under test (i.e. productive code) via their full namespace (in our case `ui5/walkthrough/`), not via relative paths as test code uses a different namespace (`test-resources/ui5/walkthrough/`).
+
 ```ts
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import Controller from "sap/ui/core/mvc/Controller";
@@ -82,7 +85,7 @@ QUnit.test("Should return the translated texts", (assert) => {
 ### webapp/test/unit/unitTests.qunit.ts \(New\)
 
 We create a new `unitTests.qunit.ts` file under `webapp/test/unit/`.
-This script loads and executes our formatter test. Before the QUnit test execution can be started we need to wait until the Core has been booted. Therefore, you need to disable the autostart `QUnit.config.autostart = false;`, require the `sap/ui/core/Core` module and use `Core.ready()` to wait until the Core has booted and then you can start the QUnit tests with `QUnit.start()`.
+This module is the entrypoint for all our unit tests and will be referenced in the test suite that will be created later on.
 
 ```ts
 import "./model/formatter";
@@ -90,26 +93,25 @@ import "./model/formatter";
 
 ***
 
-### webapp/test/testsuite.qunit.html \(New\)
+### webapp/test/Test.qunit.html \(New\)
 
-We create a new `testsuite.qunit.html` page under `webapp/test`. 
-This page serves as an entry point for all tests within our project. For more information about the UI5 Test Suite, read [Concept and Basic Setup](https://sdk.openui5.org/#/topic/22f50c0f0b104bf3ba84620880793d3f).
+We also need a generic test page to run our tests. This is necessary as the namespace of the test code needs to be registered via the `data-sap-ui-resource-roots` attribute. The page will also be referenced in the test suite, which we're going to create next.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>QUnit test suite for UI5 TypeScript Walkthrough</title>
 	<script
-		src="../resources/sap/ui/test/starter/createSuite.js"
-		data-sap-ui-testsuite="test-resources/ui5/walkthrough/testsuite.qunit"
+		src="../resources/sap/ui/test/starter/runTest.js"
 		data-sap-ui-resource-roots='{
 			"test-resources.ui5.walkthrough": "./"
 		}'
 	></script>
 </head>
-<body>
+<body class="sapUiBody">
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
 </body>
 </html>
 ```
@@ -118,7 +120,10 @@ This page serves as an entry point for all tests within our project. For more in
 
 ### webapp/test/testsuite.qunit.ts \(New\)
 
-Now, we create the corresponding configuration next to the test suite itself.
+The `testsuite.qunit.ts` file contains the configuration of our test suite.
+It serves as the entry point for all tests within our project.
+
+For more information, read [Test Starter - Concept and Basic Setup](https://sdk.openui5.org/#/topic/22f50c0f0b104bf3ba84620880793d3f).
 
 ```ts
 export default {
@@ -128,19 +133,9 @@ export default {
 		qunit: {
 			version: 2
 		},
-		sinon: {
-			version: 1
-		},
 		ui5: {
-			language: "EN",
-			theme: "sap_horizon"
-		},
-		coverage: {
-			only: "ui5/walkthrough/",
-			never: [
-				"ui5/walkthrough/test/",
-				"ui5/walkthrough/localService/"
-			]
+			theme: "sap_horizon",
+			animationMode: "minimal"
 		},
 		loader: {
 			paths: {
@@ -158,25 +153,27 @@ export default {
 
 ***
 
-### webapp/test/Test.qunit.html \(New\)
+### webapp/test/testsuite.qunit.html \(New\)
 
-Finally, we create a generic test page. It will be called with the test suite and test name in order to run a test.
+We also create a corresponding `testsuite.qunit.html` in the same folder. 
+This is the page we will open in the browser to run our tests.
+It registers a resource root mapping for the test resources of our project and references the `testsuite.qunit` module we created in the previous step.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
+	<title>QUnit test suite for UI5 TypeScript Walkthrough</title>
 	<script
-		src="../resources/sap/ui/test/starter/runTest.js"
+		src="../resources/sap/ui/test/starter/createSuite.js"
+		data-sap-ui-testsuite="test-resources/ui5/walkthrough/testsuite.qunit"
 		data-sap-ui-resource-roots='{
 			"test-resources.ui5.walkthrough": "./"
 		}'
 	></script>
 </head>
-<body class="sapUiBody">
-	<div id="qunit"></div>
-	<div id="qunit-fixture"></div>
+<body>
 </body>
 </html>
 ```
