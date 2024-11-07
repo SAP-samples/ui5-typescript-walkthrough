@@ -127,6 +127,9 @@ The previously created `Test.qunit.html` file is referenced as the test `page` w
 
 For more information, read [Test Starter - Concept and Basic Setup](https://sdk.openui5.org/#/topic/22f50c0f0b104bf3ba84620880793d3f).
 
+> 📝 **Note:** <br>
+> There are currently no types available for the test suite configuration. Please refer to [Test Starter - Configuration Options](https://sdk.openui5.org/topic/738ed025b36e484fa99046d0f80552fd) to see all available options.
+
 ```ts
 export default {
 	name: "QUnit test suite for UI5 TypeScript Walkthrough",
