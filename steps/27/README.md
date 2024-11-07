@@ -178,7 +178,7 @@ It registers a resource root mapping for the test resources of our project and r
 </html>
 ```
 
-If we now open the `webapp/test/testsuite.qunit.html` file in the browser, we should see our test running and verifying the formatter logic.
+If we now open the `webapp/test/testsuite.qunit.html` file in the browser and select `unit/unitTests`, we should see our test running and verifying the formatter logic.
 
 ### Conventions
 
