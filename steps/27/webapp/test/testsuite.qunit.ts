@@ -6,8 +6,7 @@ export default {
 			version: 2
 		},
 		ui5: {
-			theme: "sap_horizon",
-			animationMode: "minimal"
+			theme: "sap_horizon"
 		},
 		loader: {
 			paths: {

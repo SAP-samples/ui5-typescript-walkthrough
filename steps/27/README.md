@@ -120,8 +120,10 @@ We also need a generic test page to run our tests. This is necessary as the name
 
 ### webapp/test/testsuite.qunit.ts \(New\)
 
-The `testsuite.qunit.ts` file contains the configuration of our test suite.
-It serves as the entry point for all tests within our project.
+The `testsuite.qunit.ts` file contains the configuration of our test suite such as using QUnit version 2 and the `sap_horizon` theme.
+It serves as the entry point for all tests within our project such as the previously created `unit/unitTests` (The `.qunit.ts` extension is omitted and will be added automatically during runtime).
+
+The previously created `Test.qunit.html` file is referenced as the test `page` which is used to run the individual tests.
 
 For more information, read [Test Starter - Concept and Basic Setup](https://sdk.openui5.org/#/topic/22f50c0f0b104bf3ba84620880793d3f).
 
@@ -134,8 +136,7 @@ export default {
 			version: 2
 		},
 		ui5: {
-			theme: "sap_horizon",
-			animationMode: "minimal"
+			theme: "sap_horizon"
 		},
 		loader: {
 			paths: {
@@ -156,7 +157,7 @@ export default {
 ### webapp/test/testsuite.qunit.html \(New\)
 
 We also create a corresponding `testsuite.qunit.html` in the same folder. 
-This is the page we will open in the browser to run our tests.
+This is the page we will open in the browser to see a list of all our tests and run them by clicking on the test name.
 It registers a resource root mapping for the test resources of our project and references the `testsuite.qunit` module we created in the previous step.
 
 ```html
