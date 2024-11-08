@@ -57,7 +57,7 @@ In our webapp folder, we create a new HTML file named `index.html` and copy the 
 
 ### webapp/manifest.json \(New\)
 
-The manifest file, also known as the "descriptor" or "app descriptor," serves as a crucial configuration file for applications, components, and libraries. Stored in the `webapp` folder, this file is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: COmponent Configuration](../09/README.md)), we need to create the app descriptor already now, because UI5 Tooling , whichwe intend to use for development, also requires an app descriptor.
+The manifest file, also known as the "descriptor" or "app descriptor," serves as a crucial configuration file for applications, components, and libraries. Stored in the `webapp` folder, this file is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: Component Configuration](../09/README.md)), we need to create the app descriptor already now, because UI5 Tooling , whichwe intend to use for development, also requires an app descriptor.
 
 Hence, we create a new file called `manifest.json` in the webapp folder and define its essential attributes:
 
