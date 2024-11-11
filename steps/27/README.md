@@ -190,7 +190,9 @@ If we now open the `webapp/test/testsuite.qunit.html` file in the browser and se
 
 -   All unit tests are placed in the webapp/test/unit folder of the app.
 
--   Test files referenced in the test suite end with `*.qunit.ts`.
+-   Test suites consist of HTML/TS files with the same name starting with `testsuite.` and ending with `.qunit.html` / `.qunit.ts`.
+
+-   Test files referenced in the test suite end with `.qunit.ts`.
 
 -   A unit test should be written for formatters, controller logic, and other individual functionality.
 
