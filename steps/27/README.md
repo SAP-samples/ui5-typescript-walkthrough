@@ -97,7 +97,11 @@ import "./model/formatter";
 
 ### webapp/test/Test.qunit.html \(New\)
 
-We also need a generic test page to run our tests. This is necessary as the namespace of the test code needs to be registered via the `data-sap-ui-resource-roots` attribute. The page will also be referenced in the test suite, which we're going to create next.
+We also need a generic test page that will be used to run individual tests.
+
+Unlike with the UI5 bootstrap, the generic test page only accepts the `data-sap-ui-resource-roots` configuration where we need to register our project specific test namespace so that our modules can be loaded.
+
+The page will be referenced in the test suite, which we're going to create next.
 
 ```html
 <!DOCTYPE html>
@@ -122,10 +126,13 @@ We also need a generic test page to run our tests. This is necessary as the name
 
 ### webapp/test/testsuite.qunit.ts \(New\)
 
-The `testsuite.qunit.ts` file contains the configuration of our test suite such as using QUnit version 2 and the `sap_horizon` theme.
-It serves as the entry point for all tests within our project such as the previously created `unit/unitTests` (The `.qunit.ts` extension is omitted and will be added automatically during runtime).
+The `testsuite.qunit.ts` file contains the configuration of our test suite.
+Although it comes with a set of defaults, it is recommended to configure the used QUnit version so that potential future updates do not break our tests.
+In addition the `sap_horizon` theme is configured in the `ui5` section where the UI5 runtime configuration can be provided.
 
-The previously created `Test.qunit.html` file is referenced as the test `page` which is used to run the individual tests.
+The test suite serves as the entry point for all tests within our project such as the previously created `unit/unitTests` (The `.qunit.ts` extension is omitted and will be added automatically during runtime).
+
+The previously created generic `Test.qunit.html` file is referenced as the test `page` and configured with query parameters so that individual tests can be run. The placeholders `{suite}` and `{name}` are replaced with the suite and test names respectively.
 
 For more information, read [Test Starter - Concept and Basic Setup](https://sdk.openui5.org/#/topic/22f50c0f0b104bf3ba84620880793d3f).
 
@@ -170,7 +177,6 @@ It registers a resource root mapping for the test resources of our project and r
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>QUnit test suite for UI5 TypeScript Walkthrough</title>
 	<script
 		src="../resources/sap/ui/test/starter/createSuite.js"
 		data-sap-ui-testsuite="test-resources/ui5/walkthrough/testsuite.qunit"
@@ -190,7 +196,7 @@ If we now open the `webapp/test/testsuite.qunit.html` file in the browser and se
 
 -   All unit tests are placed in the webapp/test/unit folder of the app.
 
--   The default naming convention for the test suite is `testsuite.qunit.html` and `testsuite.qunit.js`. When adding additional test suite pages, the naming must follow the pattern `testsuite.<name>.qunit.html` / `testsuite.<name>.qunit.ts`.
+-   The default naming convention for the test suite is `testsuite.qunit.html` and `testsuite.qunit.js`. When adding additional test suites, the naming must follow the pattern `testsuite.<name>.qunit.html` / `testsuite.<name>.qunit.ts`.
 
 -   Test files referenced in the test suite end with `.qunit.ts`.
 
