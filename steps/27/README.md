@@ -190,7 +190,7 @@ If we now open the `webapp/test/testsuite.qunit.html` file in the browser and se
 
 -   All unit tests are placed in the webapp/test/unit folder of the app.
 
--   Test suites consist of HTML/TS files with the same name starting with `testsuite.` and ending with `.qunit.html` / `.qunit.ts`.
+-   The default naming convention for the test suite is `testsuite.qunit.html` and `testsuite.qunit.js`. When adding additional test suite pages, the naming must follow the pattern `testsuite.<name>.qunit.html` / `testsuite.<name>.qunit.ts`.
 
 -   Test files referenced in the test suite end with `.qunit.ts`.
 
