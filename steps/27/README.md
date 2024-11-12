@@ -87,7 +87,7 @@ QUnit.test("Should return the translated texts", (assert) => {
 We create a new `unitTests.qunit.ts` file under `webapp/test/unit/`.
 This module will serve as the entry point for all our unit tests. It will be referenced in the test suite that we will set up later on.
 
-Inside the  `unitTests.qunit.ts` file, we import the unit test for the custom formatter. This ensures that any tests related to the custom formatter functionality will be included when running our unit tests.
+Inside the `unitTests.qunit.ts` file, we import the unit test for the custom formatter. This ensures that any tests related to the custom formatter functionality will be included when running our unit tests.
 
 ```ts
 import "./model/formatter";
