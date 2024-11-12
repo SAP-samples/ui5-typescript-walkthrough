@@ -77,6 +77,14 @@ The `App` control does the following important things for us:
 -   It writes a bunch of properties into the header of the `index.html` that are necessary for proper display on mobile devices.
 -   It offers functionality to navigate between pages with animations. We will use this soon.
 
+> 📝 **Note:** <br>
+> The `sap/m/Page` control used here is one of the most popular view-level containers in SAPUI5. However, SAPUI5 applications are used in different environments: they can be embedded within shells that come with their own header (like e.g. SAP Build Work Zone or the SAP Fiori launchpad). Or they are displayed stand-alone without such a shell around them. This has implications on how the header area of a SAPUI5 application should look:
+> - A stand-alone SAPUI5 application could use a `sap/m/Page` control as root control of its views. This Page control provides a visually distinguished header bar with a title and has a built-in "back" button using which the user can navigate back to the previous page. (This back button can be enabled by setting the Page’s `showNavButton` property to `true`.)
+> - When, on the other hand, a containing shell already comes with a header that has a "back" button and a title, then using `sap/m/Page` controls will lead to duplicate headers (and possibly even duplicate back buttons). The `sap/f/DynamicPage` control would be a preferred alternative in such a scenario, as it comes without a header bar and back button, but still offers the option to configure a title if needed – and many other features on top of a plain `sap/m/Page`. Further alternatives are `sap/f/semantic/SemanticPage` and `sap/uxap/ObjectPageLayout`, depending on the use-case. Note that they are part of other control libraries than sap.m, so you might need to add the respective library to your application setup. For some scenarios, the `sap/tnt/ToolPage` may be another alternative. But also the `sap/m/Page` can be configured to have its header hidden.
+
+> So while this tutorial uses a `sap/m/Page`, it's important to be aware of the above considerations when developing applications. For further guidance, refer to the [SAP Fiori for Web Design Guidelines regarding Page Layouts and Floorplans](https://experience.sap.com/fiori-design-web/floorplan-overview/).  
+
+
 &nbsp;
 
 ***
