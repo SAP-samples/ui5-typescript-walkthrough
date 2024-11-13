@@ -99,7 +99,9 @@ import "./model/formatter";
 
 We also need a generic test page that will be used to run individual tests.
 
-Unlike with the UI5 bootstrap, the generic test page only accepts the `data-sap-ui-resource-roots` configuration where we need to register our project specific test namespace so that our modules can be loaded.
+It includes the `sap/ui/test/starter/runTest.js` script which is responsible for loading the test suite configuration and starting the test.
+
+Unlike with the UI5 bootstrap, the script only accepts the `data-sap-ui-resource-roots` configuration where we need to register our project specific test namespace so that our modules can be loaded.
 
 The page will be referenced in the test suite, which we're going to create next.
 
@@ -169,7 +171,9 @@ export default {
 ### webapp/test/testsuite.qunit.html \(New\)
 
 We also create a corresponding `testsuite.qunit.html` in the same folder. 
+
 This is the page we will open in the browser to see a list of all our tests and run them by clicking on the test name.
+
 It registers a resource root mapping for the test resources of our project and references the `testsuite.qunit` module we created in the previous step.
 
 ```html
