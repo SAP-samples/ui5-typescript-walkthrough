@@ -41,7 +41,7 @@ The new formatter file just contains one QUnit module for our formatter function
 Finally, we perform our assertions. We check each branch of the formatter logic by invoking the isolated formatter function with the values that we expect in the data model \(`A`, `B`, `C`, and everything else\). We strictly compare the result of the formatter function with the hard-coded strings that we expect from the resource bundle and give a meaningful error message if the test should fail.
 
 > 📝 **Note:** <br>  
-> Test code needs to import modules under test (i.e. productive code) via their full namespace (in our case `ui5/walkthrough/`), not via relative paths as test code uses a different namespace (`test-resources/ui5/walkthrough/`).
+> Test code needs to import the modules under test (i.e. productive code) using their full namespace (in our case `ui5/walkthrough/`), rather than using relative paths. This is because the test code uses a different namespace (`test-resources/ui5/walkthrough/`).
 
 ```ts
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
@@ -101,9 +101,9 @@ We also need a generic test page that will be used to run individual tests.
 
 It includes the `sap/ui/test/starter/runTest.js` script which is responsible for loading the test suite configuration and starting the test.
 
-Unlike with the UI5 bootstrap, the script only accepts the `data-sap-ui-resource-roots` configuration where we need to register our project specific test namespace so that our modules can be loaded.
+Unlike with the UI5 bootstrap, this script only accepts the `data-sap-ui-resource-roots` configuration where we need to register our project-specific test namespace so that our modules can be loaded.
 
-The page will be referenced in the test suite, which we're going to create next.
+The page will be referenced in the test suite that we will create next.
 
 ```html
 <!DOCTYPE html>
@@ -128,9 +128,9 @@ The page will be referenced in the test suite, which we're going to create next.
 
 ### webapp/test/testsuite.qunit.ts \(New\)
 
-The `testsuite.qunit.ts` file contains the configuration of our test suite.
-Although it comes with a set of defaults, it is recommended to configure the used QUnit version so that potential future updates do not break our tests.
-In addition the `sap_horizon` theme is configured in the `ui5` section where the UI5 runtime configuration can be provided.
+The `testsuite.qunit.ts` file contains the configuration for our test suite.
+Although it comes with a set of defaults, we recommend specifying the used QUnit version to prevent potential future updates from breaking our tests.
+Additionally, the `sap_horizon` theme is configured in the `ui5` section, where you can provide the UI5 runtime configuration.
 
 The test suite serves as the entry point for all tests within our project such as the previously created `unit/unitTests` (The `.qunit.ts` extension is omitted and will be added automatically during runtime).
 
