@@ -1,6 +1,6 @@
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import Controller from "sap/ui/core/mvc/Controller";
-import formatter from "../../../model/formatter";
+import formatter from "ui5/walkthrough/model/formatter";
 
 QUnit.module("Formatting function", {});
 
