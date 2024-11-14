@@ -17,7 +17,7 @@ Actually, every feature that we added to the app so far, would require a separat
 
 <sup>*A unit test for our formatters is now available*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/step-27/test/unit/unitTests-cdn.qunit.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/step-27/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=unit/unitTests).
 
 To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-27.zip).
 
@@ -40,10 +40,13 @@ The new formatter file just contains one QUnit module for our formatter function
 
 Finally, we perform our assertions. We check each branch of the formatter logic by invoking the isolated formatter function with the values that we expect in the data model \(`A`, `B`, `C`, and everything else\). We strictly compare the result of the formatter function with the hard-coded strings that we expect from the resource bundle and give a meaningful error message if the test should fail.
 
+> 📝 **Note:** <br>  
+> Test code needs to import modules under test (i.e. productive code) via their full namespace (in our case `ui5/walkthrough/`), not via relative paths as test code uses a different namespace (`test-resources/ui5/walkthrough/`).
+
 ```ts
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import Controller from "sap/ui/core/mvc/Controller";
-import formatter from "../../../model/formatter";
+import formatter from "ui5/walkthrough/model/formatter";
 
 QUnit.module("Formatting function", {});
 
@@ -82,79 +85,124 @@ QUnit.test("Should return the translated texts", (assert) => {
 ### webapp/test/unit/unitTests.qunit.ts \(New\)
 
 We create a new `unitTests.qunit.ts` file under `webapp/test/unit/`.
-This script loads and executes our formatter test. Before the QUnit test execution can be started we need to wait until the Core has been booted. Therefore, you need to disable the autostart `QUnit.config.autostart = false;`, require the `sap/ui/core/Core` module and use `Core.ready()` to wait until the Core has booted and then you can start the QUnit tests with `QUnit.start()`.
+This module will serve as the entry point for all our unit tests. It will be referenced in the test suite that we will set up later on.
+
+Inside the `unitTests.qunit.ts` file, we import the unit test for the custom formatter. This ensures that any tests related to the custom formatter functionality will be included when running our unit tests.
 
 ```ts
-/* @sapUiRequire */
-QUnit.config.autostart = false;
-
-// import all your QUnit tests here
-void Promise.all([
-	import("sap/ui/core/Core"), // required to wait until Core has booted to start the QUnit tests
-	import("ui5/walkthrough/test/unit/model/formatter"),
-]).then(([{default: Core}]) => Core.ready()).then(() => {
-	QUnit.start();
-});
+import "./model/formatter";
 ```
-
-> 📝 **Note:** <br>
-> The annotation `@sapUiRequire` instructs the UI5 TypeScript transpilation process (executed by `ui5-tooling-transpile`) to use `sap.ui.require` instead of `sap.ui.define` for the transpiled module. This allows to load the module via a `<script>` tag. This is important for test suites to guarantee that the `QUnit.config.autostart` is set to `false` directly after QUnit has been loaded to avoid that QUnit immediately starts the test execution before the QUnit tests have been imported. Once the QUnit tests have been imported the tests will be executed after calling `QUnit.start()`.
 
 ***
 
-### webapp/test/unit/unitTests.qunit.html \(New\)
+### webapp/test/Test.qunit.html \(New\)
 
-Finally we create a new `unitTests.qunit.html` page under `webapp/test/unit`.
+We also need a generic test page that will be used to run individual tests.
 
-Since we are now in the `webapp/test/unit` folder, we actually need to go up two levels to get the `webapp` folder again. This namespace can be used inside the tests to load and trigger application functionality.
+It includes the `sap/ui/test/starter/runTest.js` script which is responsible for loading the test suite configuration and starting the test.
 
-First, we load some basic QUnit functionality via script tags. The QUnit test suite must be included at the end via a script tag which loads `unitTests.qunit.js`. The file extension `.js` must be used since this loads the transpiled version of `unitTests.qunit.ts`.
+Unlike with the UI5 bootstrap, the script only accepts the `data-sap-ui-resource-roots` configuration where we need to register our project specific test namespace so that our modules can be loaded.
+
+The page will be referenced in the test suite, which we're going to create next.
 
 ```html
 <!DOCTYPE html>
 <html>
 <head>
-	<title>UI5 TypeScript Walkthrough - Unit Tests</title>
 	<meta charset="utf-8">
-
 	<script
-		id="sap-ui-bootstrap"
-		src="../../resources/sap-ui-core.js"
-		data-sap-ui-resourceroots='{
-			"ui5.walkthrough": "../../"
+		src="../resources/sap/ui/test/starter/runTest.js"
+		data-sap-ui-resource-roots='{
+			"test-resources.ui5.walkthrough": "./"
 		}'
-		data-sap-ui-compat-version="edge"
-		data-sap-ui-async="true">
-	</script>
-
-	<link rel="stylesheet" type="text/css" href="../../resources/sap/ui/thirdparty/qunit-2.css">
-
-	<script src="../../resources/sap/ui/thirdparty/qunit-2.js"></script>
-	<script src="../../resources/sap/ui/qunit/qunit-junit.js"></script>
-
-	<script src="./unitTests.qunit.js"></script>
+	></script>
 </head>
-<body>
-	<div id="qunit"/>
-	<div id="qunit-fixture"/>
+<body class="sapUiBody">
+	<div id="qunit"></div>
+	<div id="qunit-fixture"></div>
 </body>
 </html>
-
 ```
 
-The so-called QUnit test suite is an HTML page that triggers all QUnit tests for the application. Most of it is generating the layout of the result page that you can see in the preview and we won’t further explain these parts.
+***
 
-If we now open the `webapp/test/unit/unitTests.qunit.html` file in the browser, we should see our test running and verifying the formatter logic.
+### webapp/test/testsuite.qunit.ts \(New\)
+
+The `testsuite.qunit.ts` file contains the configuration of our test suite.
+Although it comes with a set of defaults, it is recommended to configure the used QUnit version so that potential future updates do not break our tests.
+In addition the `sap_horizon` theme is configured in the `ui5` section where the UI5 runtime configuration can be provided.
+
+The test suite serves as the entry point for all tests within our project such as the previously created `unit/unitTests` (The `.qunit.ts` extension is omitted and will be added automatically during runtime).
+
+The previously created generic `Test.qunit.html` file is referenced as the test `page` and configured with query parameters so that individual tests can be run. The placeholders `{suite}` and `{name}` are replaced with the suite and test names respectively.
+
+For more information, read [Test Starter - Concept and Basic Setup](https://sdk.openui5.org/#/topic/22f50c0f0b104bf3ba84620880793d3f).
+
+> 📝 **Note:** <br>
+> There are currently no types available for the test suite configuration. Please refer to [Test Starter - Configuration Options](https://sdk.openui5.org/topic/738ed025b36e484fa99046d0f80552fd) to see all available options.
+
+```ts
+export default {
+	name: "QUnit test suite for UI5 TypeScript Walkthrough",
+	defaults: {
+		page: "ui5://test-resources/ui5/walkthrough/Test.qunit.html?testsuite={suite}&test={name}",
+		qunit: {
+			version: 2
+		},
+		ui5: {
+			theme: "sap_horizon"
+		},
+		loader: {
+			paths: {
+				"ui5/walkthrough": "../"
+			}
+		}
+	},
+	tests: {
+		"unit/unitTests": {
+			title: "UI5 TypeScript Walkthrough - Unit Tests"
+		}
+	}
+};
+```
 
 ***
+
+### webapp/test/testsuite.qunit.html \(New\)
+
+We also create a corresponding `testsuite.qunit.html` in the same folder. 
+
+This is the page we will open in the browser to see a list of all our tests and run them by clicking on the test name.
+
+It registers a resource root mapping for the test resources of our project and references the `testsuite.qunit` module we created in the previous step.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script
+		src="../resources/sap/ui/test/starter/createSuite.js"
+		data-sap-ui-testsuite="test-resources/ui5/walkthrough/testsuite.qunit"
+		data-sap-ui-resource-roots='{
+			"test-resources.ui5.walkthrough": "./"
+		}'
+	></script>
+</head>
+<body>
+</body>
+</html>
+```
+
+If we now open the `webapp/test/testsuite.qunit.html` file in the browser and select `unit/unitTests`, we should see our test running and verifying the formatter logic.
 
 ### Conventions
 
 -   All unit tests are placed in the webapp/test/unit folder of the app.
 
--   Files in the test suite end with `*.qunit.html`.
+-   The default naming convention for the test suite is `testsuite.qunit.html` and `testsuite.qunit.js`. When adding additional test suites, the naming must follow the pattern `testsuite.<name>.qunit.html` / `testsuite.<name>.qunit.ts`.
 
--   The `unitTests.qunit.html` file triggers all unit tests of the app.
+-   Test files referenced in the test suite end with `.qunit.ts`.
 
 -   A unit test should be written for formatters, controller logic, and other individual functionality.
 
@@ -171,6 +219,8 @@ If we now open the `webapp/test/unit/unitTests.qunit.html` file in the browser, 
 ***
 
 **Related Information** 
+
+[Test Starter](https://sdk.openui5.org/topic/032be2cb2e1d4115af20862673bedcdb.html "The test starter is a concept intended to simplify the test setup for OpenUI5 applications and libraries by orchestrating your QUnit and OPA5 tests.")
 
 [Unit Testing with QUnit](https://sdk.openui5.org/topic/09d145cd86ee4f8e9d08715f1b364c51.html "QUnit is a powerful, easy-to-use JavaScript unit testing framework. It is used by the jQuery, jQuery UI and jQuery Mobile projects and is capable of testing any generic JavaScript code. It supports asynchronous tests out-of-the-box.")
 
