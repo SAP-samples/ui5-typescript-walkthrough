@@ -80,14 +80,14 @@ To add functionality to the control, we can provide meta information via a stati
 
 The `init` function is a lifecycle function that is automatically called by the OpenUI5 framework when an instance of the control is created. We'll use this function to initialize the control and prepare its contents for display.
 
-The `renderer` property is an object that determines how the control is rendered. It is invoked initially by the OpenUI5 framework and each time a property of the control is changed. The `renderer` object has two properties: `apiVersion` and `render`. The `apiVersion` property specifies the API version of the RenderManager that is used in this renderer. The `render` property is a method that takes two parameters: a `RenderManager` object and the control instance itself. We'll delve into the implementation of our control's rendering within this method at a later stage.
+The static `renderer` property expects an object that defines how the control is rendered. It is invoked initially by the OpenUI5 framework and each time a property of the control is changed. The `renderer` object has two properties: `apiVersion` and `render`. The `apiVersion` property specifies the API version of the RenderManager that is used in this renderer. The `render` property is a method that takes two parameters: a `RenderManager` object and the control instance itself. We'll delve into the implementation of our control's rendering within this method at a later stage.
 
 > 📝 **Note:** <br>
 > The RenderManager is an important component in OpenUI5 that is responsible for converting abstract representations of controls into actual HTML elements that can be displayed in the browser. There are different versions of the RenderManager API, each representing an evolution of the RenderManager with specific sets of APIs and rendering techniques. These different API versions are important to ensure compatibility between different versions of OpenUI5.
 >
 > The latest version of the RenderManager API is version 4, which introduces new features and improvements compared to previous versions. It also includes performance enhancements, making your applications run faster and more efficiently. For example, version 4 avoids re-rendering of child controls unless they are invalidated, which can save processing time.
 >
-> When developing a custom control, it is crucial to specify the appropriate apiVersion for the control's renderer. This ensures that your control can can leverage the latest rendering features and improvements available in the RenderManager.
+> When developing a custom control, it is crucial to specify the appropriate apiVersion for the control's renderer. This ensures that your control can leverage the latest rendering features and improvements available in the RenderManager.
 
 ```ts
 import Control from "sap/ui/core/Control";
@@ -106,7 +106,7 @@ export default class ProductRating extends Control {
 
 	}
 
-	renderer = {  
+	static renderer = {
 		apiVersion: 4,
 		render: (rm: RenderManager, control: ProductRating) => {
 		}
@@ -171,6 +171,10 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
  * @namespace ui5.walkthrough.control
  */
 export default class ProductRating extends Control {
+	// The following three lines were generated and should remain as-is to make TypeScript aware of the constructor signatures
+	constructor(idOrSettings?: string | $ProductRatingSettings);
+	constructor(id?: string, settings?: $ProductRatingSettings);
+	constructor(id?: string, settings?: $ProductRatingSettings) { super(id, settings); }
 
 	static readonly metadata: MetadataOptions = {
 		properties: {
@@ -181,12 +185,12 @@ export default class ProductRating extends Control {
 		},
 		aggregations: {
 			_rating: {
-				type: "sap.m.RatingIndicator", 
+				type: "sap.m.RatingIndicator",
 				multiple: false,
 				visibility: "hidden"
 			},
 			_label: {
-				type: "sap.m.Label", 
+				type: "sap.m.Label",
 				multiple: false,
 				visibility: "hidden"
 			},
@@ -194,12 +198,12 @@ export default class ProductRating extends Control {
 				type: "sap.m.Button",
 				multiple: false,
 				visibility: "hidden"
-			} 
+			}
 		},
 		events: {
 			change: {
 				parameters: {
-					"value": "int"
+					"value": "float"
 				}
 			}
 		}
@@ -220,11 +224,11 @@ export default class ProductRating extends Control {
 		}).addStyleClass("sapUiTinyMarginTopBottom"));
 	}
 
-	setValue(value: "float"): ProductRating {
+	setValue(value: "float" ): ProductRating {
 		this.setProperty("value", value, true);
 		(this.getAggregation("_rating") as RatingIndicator).setValue(value);
 
-		return this;		
+		return this;
 	}
 
 	reset(): void {
@@ -258,7 +262,7 @@ export default class ProductRating extends Control {
 		})
 	}
 
-	renderer = {  
+	static renderer = {
 		apiVersion: 4,
 		render: (rm: RenderManager, control: ProductRating) => {
 			const tooltip = control.getTooltip_AsString();

@@ -81,7 +81,7 @@ Now we call the app and notice that the price is actually missing. By entering t
 
 > 📝 **Note:**
 >
-> If you use the Google Chrome browser, you can install the *UI5 Inspector* plugin. With this plugin, you can easily debug your SAPUI5- or OpenUI5-based apps. For more information, see [UI5 Inspector](https://sdk.openui5.org/topic/b24e72443eb34d0fb7bf6940f2d697eb.html).
+> If you use the Google Chrome browser, you can install the *UI5 Inspector* plugin. With this plugin, you can easily debug your OpenUI5- or OpenUI5-based apps. For more information, see [UI5 Inspector](https://sdk.openui5.org/topic/b24e72443eb34d0fb7bf6940f2d697eb.html).
 
 Besides technical information about the app and a trace that is similar to the developer tools console of the browser, there is a really handy tool for checking such errors in this dialog. Open the tab *Control Tree* by clicking on the expand symbol on the right.
 

@@ -12,7 +12,7 @@ export default class AppController extends Controller {
         // read msg from i18n model
         const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
         const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
-        const msg = resourceBundle.getText("helloMsg", [recipient]) || "no text defined";
+        const msg = resourceBundle.getText("helloMsg", [recipient]);
         // show message
         MessageToast.show(msg);
      }
