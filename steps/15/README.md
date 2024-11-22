@@ -42,7 +42,7 @@ export default class HelloPanel extends Controller {
         // functions with generic return values require casting 
         const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
         const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
-        const msg = resourceBundle.getText("helloMsg", [recipient]) || "no text defined";
+        const msg = resourceBundle.getText("helloMsg", [recipient]);
         // show message
         MessageToast.show(msg);
     }
@@ -82,7 +82,7 @@ We create a new `HelloPanel.view.xml` file in folder `webapp/view` and move the 
 
 ### webapp/view/App.view.xml
 
-In the App view, we remove the panel control and it content and put the `XMLView` control to the content of the page instead. We add the `viewName` attribute with the value `ui5.walkthrough.view.HelloPanel` to reference the new view that now contains the panel.
+In the App view, we remove the panel control and its content and put the `XMLView` control to the content of the page instead. We add the `viewName` attribute with the value `ui5.walkthrough.view.HelloPanel` to reference the new view that now contains the panel.
 
 ```xml
 <mvc:View

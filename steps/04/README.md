@@ -76,7 +76,7 @@ We have now embed our app view to the body of the HTML document.
 
 -   Names of XML views always end with `*.view.xml`
 
--   XML namespaces are declared in the root element of teh view
+-   XML namespaces are declared in the root element of the view
 
 -   As a general rule, the default XML namespace is `sap.m`
 

@@ -134,7 +134,7 @@ We add a new button to the view to open the dialog and assign an unique `id`to i
 
 You will need the id of the button control `id="helloDialogButton"` in [Step 28: Integration Test with OPA](../28/README.md). 
 
-It is a good practice to set a unique ID like `helloWorldButton` to key controls of your app so that can be identified easily. If the attribute \`id\` is not specified, the OpenUI5 runtime generates unique but changing ID like \`\_\_button23\` for the control. Inspect the DOM elements of your app in the browser to see the difference.
+It is a good practice to set a unique ID like `helloWorldButton` to key controls of your app so that they can be identified easily. If the attribute `id` is not specified, the OpenUI5 runtime generates unique but changing ID like `\_\_button23` for the control. Inspect the DOM elements of your app in the browser to see the difference.
 
 &nbsp;
 

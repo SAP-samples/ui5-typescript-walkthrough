@@ -40,7 +40,7 @@ export default class App extends Controller {
         const item = event.getSource() as ObjectListItem;
         const router = UIComponent.getRouterFor(this);
         router.navTo("detail", {
-            invoicePath: window.encodeURIComponent(item.getBindingContext("invoice").getPath().substr(1))
+            invoicePath: window.encodeURIComponent(item.getBindingContext("invoice").getPath().substring(1))
         });
     }
 };

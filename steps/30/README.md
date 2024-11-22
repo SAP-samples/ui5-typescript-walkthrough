@@ -228,7 +228,6 @@ What is still missing is the event handler that performs a navigation to the det
 ```ts
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
-import formatter from "../model/formatter";
 import { SearchField$SearchEvent } from "sap/m/SearchField";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
@@ -239,7 +238,6 @@ import UIComponent from "sap/ui/core/UIComponent";
  * @namespace ui5.walkthrough.controller
  */
 export default class App extends Controller {
-    public formatter = formatter;
 		…
 
     onPress(): void {

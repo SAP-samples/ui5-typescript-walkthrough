@@ -172,7 +172,7 @@ export default {
 
 ### webapp/test/initMockServer.ts \(New\)
 
-As a next step, we create a module that initializes our local `mockserver`. For this, we add the new `test` folder to our App folder where we place the new `inimockServer.ts` file.
+As a next step, we create a module that initializes our local `mockserver`. For this, we add the new `test` folder to our App folder where we place the new `initmockServer.ts` file.
 
 First, we call the `init` method of our local `mockserver`, then we initialize the app component. 
 
@@ -271,9 +271,9 @@ In case you prefer to continue with the local data, you should adjust the `start
 
 ***
 
-**Next:** [Step 27: Remote OData Service](../27/README.md "Now that we have a test folder in the app, we can start to increase our test coverage.")
+**Next:** [Step 27: Unit Test with QUnit](../27/README.md "Now that we have a test folder in the app, we can start to increase our test coverage.")
 
-**Previous:** [Step 25: Unit Test with QUnit](../25/README.md "So far we have worked with local JSON data, but now we will access a real OData service to visualize remote data.")
+**Previous:** [Step 25: Remote OData Service](../25/README.md "So far we have worked with local JSON data, but now we will access a real OData service to visualize remote data.")
 
 ***
 

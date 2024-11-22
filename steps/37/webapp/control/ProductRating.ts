@@ -102,7 +102,7 @@ export default class ProductRating extends Control {
 		})
 	}
 
-	renderer = {
+	static renderer = {
 		apiVersion: 4,
 		render: (rm: RenderManager, control: ProductRating) => {
 			const tooltip = control.getTooltip_AsString();

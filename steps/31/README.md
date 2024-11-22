@@ -87,7 +87,6 @@ Typically we woudl use the key of the item in the back-end system to identify th
 ```ts
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
-import formatter from "../model/formatter";
 import { SearchField$SearchEvent } from "sap/m/SearchField";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
@@ -100,15 +99,13 @@ import UIComponent from "sap/ui/core/UIComponent";
  * @namespace ui5.walkthrough.controller
  */
 export default class App extends Controller {
-    public formatter = formatter;
-		
 	…
 
     onPress(event: Event): void {
         const item = event.getSource() as ObjectListItem;
         const router = UIComponent.getRouterFor(this);
         router.navTo("detail", {
-            invoicePath: window.encodeURIComponent(item.getBindingContext("invoice").getPath().substr(1))
+            invoicePath: window.encodeURIComponent(item.getBindingContext("invoice").getPath().substring(1))
         });
     }     
 };
@@ -124,7 +121,7 @@ In addition to the (base) controller and our local component we import the `Rout
 
 In the `onInit` method, we receive the router instance from the owner component and attach a listener to the `details` route's "patternMatched" event by calling the method `attachPatternMatched`. The `onObjectMatched` method is the event handler for the "patternMatched" event. When the `detail` route is matched, it will trigger the `onObjectMatched` method.
 
-In the `onObjectMatched` method we bind the view's element to a specific path in the "invoice" model. We get the path from the `invoicePath` argument from the event that was set in the invoice list controller. Because we have encoded the binding path part in the URL in the invoice list controller, we have to decode it again with `decodeURIComponent` anf also add the root `/` in front of the path again that was removed for passing on the path as a URL parameter.
+In the `onObjectMatched` method we bind the view's element to a specific path in the "invoice" model. We get the path from the `invoicePath` argument from the event that was set in the invoice list controller. Because we have encoded the binding path part in the URL in the invoice list controller, we have to decode it again with `decodeURIComponent` and also add the root `/` in front of the path again that was removed for passing on the path as a URL parameter.
 
 The `bindElement` function is creating a binding context for a OpenUI5 control and receives the model name as well as the path to an item in a configuration object. This will trigger an update of the UI controls that we connected with fields of the invoice model. 
 
@@ -156,7 +153,7 @@ export default class Detail extends Controller {
 
 ### webapp/view/Detail.view.xml
 
-Our last piece to fit the puzzle together is the detail view. We replace the app controller by the new detail controller that will take care of setting the item's context on the view and bind the properties `intro` and `title` of the `ObjectHeader` to the fields `ShipperName` and `ProductName` of our `invoice` model to display display does two fields of an invoice on the view. We could add more detailed information from the `invoice` object here, but for simplicity reasons we just display these two fields for now.
+Our last piece to fit the puzzle together is the detail view. We replace the app controller by the new detail controller that will take care of setting the item's context on the view and bind the properties `intro` and `title` of the `ObjectHeader` to the fields `ShipperName` and `ProductName` of our `invoice` model to display display those two fields of an invoice on the view. We could add more detailed information from the `invoice` object here, but for simplicity reasons we just display these two fields for now.
 
 ```xml
 <mvc:View
