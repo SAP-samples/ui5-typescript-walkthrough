@@ -97,7 +97,7 @@ As we now use the `sap.m` library with our app, we need to add the dependency to
 We open a terminal in the root folder of our app and exectue the following command:
 
 ```sh 
-ui5 add sap.m` 
+ui5 add sap.m 
 ```
 
 &nbsp;

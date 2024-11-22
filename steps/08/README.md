@@ -79,7 +79,7 @@ export default class AppController extends Controller {
       // read msg from i18n model
       const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
       const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
-      const msg = resourceBundle.getText("helloMsg", [recipient]) || "no text defined";
+      const msg = resourceBundle.getText("helloMsg", [recipient]);
       // show message
       MessageToast.show(msg);
    }
@@ -105,7 +105,7 @@ A resource bundle is a flat structure, therefore the preceding slash \(/\) can b
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <Button
-      text="*HIGHLIGHT START*{i18n>showHelloButtonText}*HIGHLIGHT END*"
+      text="{i18n>showHelloButtonText}"
       press=".onShowHello"/>
    <Input
       value="{/recipient/name}"
