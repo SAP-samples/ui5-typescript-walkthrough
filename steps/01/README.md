@@ -57,33 +57,36 @@ In our webapp folder, we create a new HTML file named `index.html` and copy the 
 
 ### webapp/manifest.json \(New\)
 
-The manifest file, also known as the "descriptor" or "app descriptor," serves as a crucial configuration file for applications, components, and libraries. Stored in the `webapp` folder, this file is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: Component Configuration](../09/README.md)), we need to create the app descriptor now because the UI5 Tooling we intend to use for development also requires it.
+The manifest file, also known as the "descriptor" or "app descriptor," serves as a crucial configuration file for applications, components, and libraries. Stored in the `webapp` folder, this file is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: Component Configuration](../09/README.md)), creating the app descriptor now is necessary due to the UI5 Tooling requirements for development.
 
-Hence, we create a new file called `manifest.json` in the webapp folder and define its essential attributes:
+Let's start by creating a new file named `manifest.json` in the webapp folder and define its essential attributes:
 
--   The `_version` attribute is a mandatory field in the app descriptor that indicates the format version of the descriptor. This attribute is crucial for identifying application settings when the descriptor is read by various tools. As new features or changes are introduced in future versions of the descriptor, the version number helps ensure compatibility and proper interpretation of the descriptor's contents. Consequently, with each new version of OpenUI5 a corresponding version of the app descriptor is released. For this tutorial, we have determined that our app requires a minimum OpenUI5 version of 1.120. Therefore, we specify the descriptor format version as 1.60.0, aligning it with the appropriate OpenUI5 version.
+-   The `_version` attribute is mandatory in the app descriptor. It indicates the format version of the descriptor, which is crucial for identifying application settings whenever the descriptor is read by various tools.As new features or changes are introduced in future versions, maintaining the correct version number ensures compatibility and precise interpretation of the descriptor's contents. 
+
+    > 📝 **Note:** <br>
+    > The descriptor version should not necessarily align directly with the OpenUI5 version being used. Instead, choose the descriptor version that matches the requirements or supports the features you intend to use in your application.
+
+Given that this tutorial uses OpenUI5 version 1.129, we set the descriptor format version as `1.66.0` to ensure compatibility with all the latest features.
 
     > 💡 **Tip:** <br>
-    > To find the appropriate `_version` for each OpenUI5 release, see [Descriptor for Applications, Components, and Libraries \(manifest.json\)](httsp://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html).
+    > To find the appropriate `_version` for each OpenUI5 release, refer to [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html).
 
--   The **`sap.app`**  namespace is used to define properties that are specific to the application itself. It includes the following obligatory application-specific attributes:
+-   The **`sap.app`**  namespace defines properties specific to the application. It includes the following required attributes:
 
-    -   `id`: This property specifies a unique identifier for the application and states the namespace of the application. 
-        It's used to identify the application within the SAP Fiori launchpad or any other deployment environment.
-        The id has to be provided in dot notation and must not exceed 70 characters.
+    -   `id`: This specifies an identifier for the application using dot notation, limited to 70 characters. It must be unique and must correspond to the component ID/namespace.
 
-    -   `title`: This property defines the title of the application, which can be displayed in the SAP Fiori launchpad or other application management tools.
+    -   `title`: This defines the title of the application, which appears in application management tools like the SAP Fiori launchpad.
 
         > 📝 **Note:** <br>
-        > It's recommended to make the title language-dependent, although for now we will use a static title. We'll discuss how to implement language-dependent titles in [Step 10: Descriptor for Applications](../10/README.md).
+        > It is advisable to make the title language-dependent. We'll cover implementing language-dependent titles in [Step 10: Descriptor for Applications](../10/README.md), but for now we'll use a static title.
 
-    -   `applicationVersion`: This property is used to specify the version of the application. It's typically used for tracking and managing changes to the application over time. The application version must be provided using semantic versioning principles.
+    -   `type`: Although not mandatory, this property helps in identify whether the project is an `application` or `component`. Including it provides a useful classification and assists in the correct loading of the application.
 
-    -   `type`: This property defines the type of the project, such as `application` or `component`. It helps in determining the application's behavior and how it should be loaded. While the type is actually not a mandatory attribute, it provides a useful project description; hence, it makes sense to conigure it as well. We describe an `application`.
+    -   `applicationVersion`: This is used to denote the version of the application using semantic versioning principles. It's typically used for tracking and managing changes to the application over time. While not mandatory, maintaining this property is recommended to better manage application updates and deployment history.
 
 ```json
 {
-    "_version": "1.60.0",
+    "_version": "1.66.0",
     "sap.app": {
         "id": "ui5.walkthrough",
         "type": "application",

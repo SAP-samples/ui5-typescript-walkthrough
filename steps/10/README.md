@@ -88,7 +88,7 @@ In our current scenario, we only have one model called `i18n`, which is a resour
 
 ```json
 {
-    "_version": "1.60.0",
+    "_version": "1.66.0",
     "sap.app": {
         "id": "ui5.walkthrough",
         "type": "application",
