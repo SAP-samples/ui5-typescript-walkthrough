@@ -1,8 +1,8 @@
-## Step 10: Descriptor for Applications
+## Step 10: Manifest (Descriptor for Applications)
 
-All application-specific configuration settings will now further be put in a separate descriptor file called `manifest.json`. This clearly separates the application coding from the configuration settings and makes our app even more flexible.
+All application-specific configuration settings will now further be put into the manifest. This clearly separates the application coding from the configuration settings and makes our app even more flexible.
 
-Instead of relying on a local HTML file for the bootstrap, the descriptor file is parsed and the component is loaded directly into the current HTML page. This allows multiple apps to be displayed in the same context. Each app can define its own local settings, such as language properties and supported devices. Additionally, the descriptor file can be used to load additional resources and instantiate models, such as the `i18n` resource bundle.
+Instead of relying on a local HTML file for the bootstrap, the manifest is parsed and the component is loaded directly into the current HTML page. This allows multiple apps to be displayed in the same context. Each app can define its own local settings, such as language properties and supported devices. Additionally, the manifest can be used to load additional resources and instantiate models, such as the `i18n` resource bundle.
 
 &nbsp;
 
@@ -41,7 +41,7 @@ helloMsg=Hello {0}
 
 ### webapp/manifest.json
 
-As mentioned in [Step 1](../01/README.md#webappmanifestjson-new), the manifest file is used by OpenUI5 to instantiate the component. We have already configured the essential attributes of the file so that it can be used with the UI5 Tooling. Now, we'll add further attributes that are important for creating a proper UI component in OpenUI5.
+As mentioned in [Step 1](../01/README.md#webappmanifestjson-new), the manifest is used by OpenUI5 to instantiate the component. We have already configured the essential attributes of the file so that it can be used with the UI5 Tooling. Now, we'll add further attributes that are important for creating a proper UI component in OpenUI5.
 
 We enhance the **`sap.app`** namespace by adding configuration for the following application-specific attributes:
     
@@ -74,7 +74,7 @@ The **`sap.ui5`** namespace adds OpenUI5-specific configuration parameters that 
 
 -   `dependencies`\(mandatory\): This section defines the dependencies of the component. It comes with the following sub-settings:
 
-    -   The `minUI5Version` property is mandatory and specifies the minimum version of OpenUI5 required by the component. Our component requires version 1.20 as minimum.
+    -   The `minUI5Version` property is mandatory and indicates the minimum OpenUI5 version that the component requires to function properly. Following the guideline discussed in step 1, our component should be designed to work with the long-term support (LTS) version 1.120 of OpenUI5.
     
     -    The `libs` settings declare the libraries that the OpenUI5 core should load for use in the component. To benefit from the asynchronous library preload, it is essential to add all obligatory libraries here. You can set the `lazy` parameter to "true" to indicate that the lib shall be lazy loaded. This makes sure that the libraries are only loaded when they're needed. If your app requires a minimum version of the lib, you need to specify the `minVersion` for information purposes. We declare here the two libraries `sap.ui.core` and `sap.m` as dependencies to be loaded directly when starting the component.
 
@@ -88,7 +88,7 @@ In our current scenario, we only have one model called `i18n`, which is a resour
 
 ```json
 {
-    "_version": "1.66.0",
+    "_version": "1.60.0",
     "sap.app": {
         "id": "ui5.walkthrough",
         "type": "application",

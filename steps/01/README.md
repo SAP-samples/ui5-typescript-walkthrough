@@ -57,19 +57,18 @@ In our webapp folder, we create a new HTML file named `index.html` and copy the 
 
 ### webapp/manifest.json \(New\)
 
-The manifest file, also known as the "descriptor" or "app descriptor," serves as a crucial configuration file for applications, components, and libraries. Stored in the `webapp` folder, this file is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: Component Configuration](../09/README.md)), creating the app descriptor now is necessary due to the UI5 Tooling requirements for development.
+The manifest serves as a crucial configuration file for applications, components, and libraries. Stored in the `webapp` folder, this file is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: Component Configuration](../09/README.md)), creating the app descriptor now is necessary due to the UI5 Tooling requirements for development.
 
 Let's start by creating a new file named `manifest.json` in the webapp folder and define its essential attributes:
 
--   The `_version` attribute is mandatory in the app descriptor. It indicates the format version of the descriptor, which is crucial for identifying application settings whenever the descriptor is read by various tools.As new features or changes are introduced in future versions, maintaining the correct version number ensures compatibility and precise interpretation of the descriptor's contents. 
+-   The `_version` attribute is mandatory in the app descriptor. It indicates the format version of the descriptor, which is crucial for identifying application settings whenever the descriptor is read by various tools. As new features or changes are introduced in future versions, maintaining the correct version number ensures compatibility and precise interpretation of the descriptor's contents. 
 
-    > 📝 **Note:** <br>
-    > The descriptor version should not necessarily align directly with the OpenUI5 version being used. Instead, choose the descriptor version that matches the requirements or supports the features you intend to use in your application.
+Since we want the app we build to supports not only the latest OpenUI5 version but also the latest long-term version, which is OpenUI5 1.120, we set the descriptor format version to `1.60.0`.
 
-Given that this tutorial uses OpenUI5 version 1.129, we set the descriptor format version as `1.66.0` to ensure compatibility with all the latest features.
-
-    > 💡 **Tip:** <br>
-    > To find the appropriate `_version` for each OpenUI5 release, refer to [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html).
+  > 📝  **Note:** <br>
+  > The descriptor version should not necessarily align directly with the OpenUI5 version being used. Instead, choose the descriptor version that matches the requirements or supports the features you intend to use in your application. 
+  
+  To find the appropriate `_version` for each OpenUI5 release, refer to [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html).
 
 -   The **`sap.app`**  namespace defines properties specific to the application. It includes the following required attributes:
 
@@ -86,7 +85,7 @@ Given that this tutorial uses OpenUI5 version 1.129, we set the descriptor forma
 
 ```json
 {
-    "_version": "1.66.0",
+    "_version": "1.60.0",
     "sap.app": {
         "id": "ui5.walkthrough",
         "type": "application",
