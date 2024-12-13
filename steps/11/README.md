@@ -24,9 +24,9 @@ To download the solution for this step as a zip file, just choose the link here:
 We add new key/value pairs to the '# Hello Panel' section of our text bundle for the start page title and the panel title.
 
 ```ini
-# App Descriptor
+# Manifest
 appTitle=Hello World
-appDescription=A simple walkthrough app that explains the most important concepts of UI5
+appDescription=A simple walkthrough app that explains the most important concepts of OpenUI5
 
 # Hello Panel
 showHelloButtonText=Say Hello
@@ -91,7 +91,7 @@ The `App` control does the following important things for us:
 
 **Next:** [Step 12: Shell Control as Container](../12/README.md "Now we use a shell control as container for our app and use it as our new root element. The shell takes care of visual adaptation of the application to the device’s screen size by introducing a so-called letterbox on desktop screens.")
 
-**Previous:** [Step 10: Descriptor for Applications](../10/README.md "All application-specific configuration settings will now further be put in a separate descriptor file called manifest.json. This clearly separates the application coding from the configuration settings and makes our app even more flexible. For example, all SAP Fiori applications are realized as components and come with a descriptor file in order to be hosted in the SAP Fiori launchpad.")
+**Previous:** [Step 10: Manifest (Descriptor for Applications)](../10/README.md "All application-specific configuration settings will now further be put into the manifest. This clearly separates the application coding from the configuration settings and makes our app even more flexible.")
 
 ***
 
