@@ -57,16 +57,16 @@ In our webapp folder, we create a new HTML file named `index.html` and copy the 
 
 ### webapp/manifest.json \(New\)
 
-The manifest serves as a crucial configuration file for applications, components, and libraries. Stored in the `webapp` folder, this file is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: Component Configuration](../09/README.md)), creating the app descriptor now is necessary due to the UI5 Tooling requirements for development.
+The manifest serves as a crucial configuration file for applications, components, and libraries. Stored in the `webapp` folder, this file is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: Component Configuration](../09/README.md)), creating the manifest now is necessary due to the UI5 Tooling requirements for development.
 
 Let's start by creating a new file named `manifest.json` in the webapp folder and define its essential attributes:
 
--   The `_version` attribute is mandatory in the app descriptor. It indicates the format version of the descriptor, which is crucial for identifying application settings whenever the descriptor is read by various tools. As new features or changes are introduced in future versions, maintaining the correct version number ensures compatibility and precise interpretation of the descriptor's contents. 
+-   The `_version` attribute in the root is mandatory in the manifest. It indicates the format version of the manifest, which is crucial for identifying application settings whenever the file is read by various tools. As new features or changes are introduced in future versions, maintaining the correct version number ensures compatibility and precise interpretation of the manifest's contents. 
 
 Since we want the app we build to supports not only the latest OpenUI5 version but also the latest long-term version, which is OpenUI5 1.120, we set the descriptor format version to `1.60.0`.
 
   > 📝  **Note:** <br>
-  > The descriptor version should not necessarily align directly with the OpenUI5 version being used. Instead, choose the descriptor version that matches the requirements or supports the features you intend to use in your application. 
+  > The manifest version should not necessarily align directly with the OpenUI5 version being used. Instead, choose the descriptor version that matches the requirements or supports the features you intend to use in your application. 
   
   To find the appropriate `_version` for each OpenUI5 release, refer to [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html).
 
@@ -74,14 +74,14 @@ Since we want the app we build to supports not only the latest OpenUI5 version b
 
     -   `id`: This specifies an identifier for the application using dot notation, limited to 70 characters. It must be unique and must correspond to the component ID/namespace.
 
+    -   `type`: This property helps in identify whether the project is an `application` or `component`. Including it provides a useful classification and assists in the correct loading of the application.
+
     -   `title`: This defines the title of the application, which appears in application management tools like the SAP Fiori launchpad.
 
         > 📝 **Note:** <br>
-        > It is advisable to make the title language-dependent. We'll cover implementing language-dependent titles in [Step 10: Descriptor for Applications](../10/README.md), but for now we'll use a static title.
+        > It is advisable to make the title language-dependent. We'll cover implementing language-dependent titles in [Step 10: Manifest (Descriptor for Applications)](../10/README.md), but for now we'll use a static title.
 
-    -   `type`: Although not mandatory, this property helps in identify whether the project is an `application` or `component`. Including it provides a useful classification and assists in the correct loading of the application.
-
-    -   `applicationVersion`: This is used to denote the version of the application using semantic versioning principles. It's typically used for tracking and managing changes to the application over time. While not mandatory, maintaining this property is recommended to better manage application updates and deployment history.
+    -   `applicationVersion`: This is used to denote the version of the application using semantic versioning principles. It's typically used for tracking and managing changes to the application over time.
 
 ```json
 {

@@ -24,14 +24,14 @@ To download the solution for this step as a zip file, just choose the link here:
 
 ### webapp/i18n/i18n.properties
 
-In our resource bundle, we include two new name-value pairs: `appTitle` for the title of our app and `appDescription` for a short description. We'll use these texts in our app descriptor file at a later stage. 
+In our resource bundle, we include two new name-value pairs: `appTitle` for the title of our app and `appDescription` for a short description. We'll use these texts in our maniest file at a later stage. 
 
 To improve readability, we also add comments to separate the bundle texts based on their meaning.
 
 ```ini
-# App Descriptor
+# Manifest
 appTitle=Hello World
-appDescription=A simple walkthrough app that explains the most important concepts of UI5
+appDescription=A simple walkthrough app that explains the most important concepts of OpenUI5
 
 # Hello Panel
 showHelloButtonText=Say Hello
@@ -47,7 +47,7 @@ We enhance the **`sap.app`** namespace by adding configuration for the following
     
 -   `i18n`: The `i18n` property is an attribute to configure internationalization settings. It is optional and only necessary if the manifest contains text symbols (placeholders in {{...}} syntax). The `i18n` property has the following sub-settings:
 
-    -   The `bundleName` parameter specifies the name of the resource bundle file that contains the text symbols for the descriptor. The file is referenced using a dot notation namespace. In our case, we stored the texts for the app descriptor in the same resource bundle as the remaining texts, so we reference the properties file stored in the `i18n` folder.
+    -   The `bundleName` parameter specifies the name of the resource bundle file that contains the text symbols for the manifest. The file is referenced using a dot notation namespace. In our case, we stored the texts for the manifest in the same resource bundle as the remaining texts, so we reference the properties file stored in the `i18n` folder.
     
     -   The `supportedLocales` property defines an array of locales supported by the application (for example en_GB, en-GB, or en). This helps optimize the loading performance of resource bundles. It controls the language fallback chain and prevents unnecessary and potentially failing requests. In our application, we only use the base `i18n.properties` file for simplicity, so we set this property to an empty string. This ensures that the browser does not attempt to load additional `i18n_*.properties` files based on the browser's language setting and locale.
 
@@ -57,13 +57,13 @@ We enhance the **`sap.app`** namespace by adding configuration for the following
 
 -   `description`: Similarly, we make the description text language-dependent by referencing the `appDescription` text from the resource bundle using the handlebar syntax: {{key}}
 
-> :warning: **Remeber:** <br>
-> Properties of the resource bundle are enclosed in two curly brackets in the descriptor. This is not an OpenUI5 data binding syntax, but a variable reference to the resource bundle in the descriptor in handlebars syntax. The referred texts are not visible in the app itself but can be read by an application container like the SAP Fiori launchpad.
+> :warning: **Remember:** <br>
+> Properties of the resource bundle are enclosed in two curly brackets in the manifest. This is not an OpenUI5 data binding syntax, but a variable reference to the resource bundle in the manifest in handlebars syntax.
 
 In addition to the `sap.app` namespace, there are two other important namespaces:
 The **`sap.ui`** namespace is used for UI-specific attributes and comes with the following main attributes:
 
--   `technology`: This property specifies the technology used for the application; the value is `UI5`.
+-   `technology` \(mandatory\): This property specifies the technology used for the application; the value is `UI5`.
 
 -   `deviceTypes` \(mandatory\): This property defines the supported device types for the application. It is an object that contains three boolean properties: `desktop`, `tablet`, and `phone`. Each property indicates whether the application is designed to be used on that particular device type. We define all three device types as "true", which means that our application is intended to be used on desktops, tablets, and phones.
         
@@ -74,12 +74,15 @@ The **`sap.ui5`** namespace adds OpenUI5-specific configuration parameters that 
 
 -   `dependencies`\(mandatory\): This section defines the dependencies of the component. It comes with the following sub-settings:
 
-    -   The `minUI5Version` property is mandatory and indicates the minimum OpenUI5 version that the component requires to function properly. Following the guideline discussed in step 1, our component should be designed to work with the long-term support (LTS) version 1.120 of OpenUI5.
+    -   The `minUI5Version` property is mandatory as it specifies the minimum version of OpenUI5 that the component requires to function properly. Following the guideline discussed in step 1, our component should be designed to work with the long-term support (LTS) version 1.120 of OpenUI5.
     
-    -    The `libs` settings declare the libraries that the OpenUI5 core should load for use in the component. To benefit from the asynchronous library preload, it is essential to add all obligatory libraries here. You can set the `lazy` parameter to "true" to indicate that the lib shall be lazy loaded. This makes sure that the libraries are only loaded when they're needed. If your app requires a minimum version of the lib, you need to specify the `minVersion` for information purposes. We declare here the two libraries `sap.ui.core` and `sap.m` as dependencies to be loaded directly when starting the component.
+    -    The `libs` settings is used to declare all OpenUI5 libraries that the component depends on. It's crucial to list every library within the component here for correct dependency management.<br>
+    In our component we are currenetly only using the two libraries `sap.ui.core` and `sap.m`. The `sap.ui.core` library provides the basic framework functionality and is required for any OpenUI5 application.<br>
+    By default, loading of libraries is set to `"lazy": false`, which means they are loaded immediately when the component initializes. For libraries that are essential for your app to function from the start, like `sap.ui.core` and in our case also `sap.m` (since it is used in the root view), we can keep the default setting of `"lazy": false`.
 
     > 📌 **Important:** <br>
-    > Make sure that you don't load too many dependencies. In most apps it's enough to load the libraries sap.ui.core and sap.m by default, and add additional libraries only when needed.
+    > It is crucial to be mindful of the lazy loading configuration for libraries. Only libraries that are absolutely necessary for your component to start should be declared with `"lazy": false`. For libraries that are not required immediately, it is recommended to override the default setting and set `"lazy": true`. This approach allows for better performance and faster initial loading of the component by deferring the loading of non-essential libraries until they are actually needed.
+    > If your component requires a minimum version of the library, you need to specify the `minVersion` for information purposes.
 
 -   `rootView`: This section defines the root view of the application. The root view is the initial view that is displayed when the component is loaded. It specifies view name as a string for XML views, or the view configuration object with `viewName` for the view name as string and `type` for the view type, `id`, `async`, and other properties of `sap.ui.core.mvc.view`. We configure our app view as root view and add the ID "app" to it.
 
@@ -143,15 +146,15 @@ In our current scenario, we only have one model called `i18n`, which is a resour
 ```   
 
 > 📝 **Note:** <br>
-> In this tutorial, we only introduce the most important settings and parameters of the descriptor file. In some development environments you may get validation errors because some settings are missing - you can ignore those in this context.
+> In this tutorial, we only introduce the most important settings and parameters of the manifest. In some development environments you may get validation errors because some settings are missing - you can ignore those in this context.
 
 ***
 
 ### webapp/Component.ts
 
-To apply the settings specified in the app descriptor to the component, we need to include the descriptor file in the component's metadata. To do this, we add a `manifest` property to the `metadata` section of the component and set it to "json". This property acts as a reference to the `manifest.json` file, which will be loaded and used.
+To apply the settings specified in the manifest to the component, we need to include the manifest in the component's metadata. To do this, we add a `manifest` property to the `metadata` section of the component and set it to "json". This property acts as a reference to the `manifest.json` file, which will be loaded and used.
 
-Now that the resource model is automatically instantiated based on the configuration in the app descriptor, we can safely remove the corresponding code block from the `init` method in our component controller. This also means that we can remove the import statement for the `ResourceModel` module from `sap/ui/model/resource/ResourceModel`, as it is no longer needed. Additionally, we can remove the `createContent` call since the configuration of the rootView is specified in the app descriptor and therefore makes the implementation in this method unnecessary.
+Now that the resource model is automatically instantiated based on the configuration in the manifest, we can safely remove the corresponding code block from the `init` method in our component controller. This also means that we can remove the import statement for the `ResourceModel` module from `sap/ui/model/resource/ResourceModel`, as it is no longer needed. Additionally, we can remove the `createContent` call since the configuration of the rootView is specified in the manifest and therefore makes the implementation in this method unnecessary.
 
 ```ts
 import UIComponent from "sap/ui/core/UIComponent";
@@ -221,9 +224,9 @@ We can now delete our `index.ts` file, because our component is now initiated di
 
 ### Conventions
 
--   The descriptor file is named `manifest` and stored as JSON file.
+-   The manifest file is named `manifest` and stored as JSON file.
 
--   The descriptor file is located in the `webapp` folder.
+-   The manifest file is located in the `webapp` folder.
 
 -   Use translatable texts for the title and the description of the app.
 
