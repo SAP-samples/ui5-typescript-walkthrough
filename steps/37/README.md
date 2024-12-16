@@ -32,9 +32,9 @@ One part of the ARIA attribute set are the so-called landmarks. You can compare 
 We add the labels we will need for the ARIA regions to the text bundle.
 
 ```ini
-# App Descriptor
+# Manifest
 appTitle=Hello World
-appDescription=A simple walkthrough app that explains the most important concepts of UI5
+appDescription=A simple walkthrough app that explains the most important concepts of OpenUI5
 
 #Overview Page
 Overview_rootLabel=Overview Page

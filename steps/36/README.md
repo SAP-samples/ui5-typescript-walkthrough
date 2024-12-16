@@ -10,7 +10,7 @@ In this step of our Walkthrough tutorial, we adjust the content density based on
 
 ![](https://sdk.openui5.org/docs/topics/loiof216b131c492448d8a1df25db2b9a26d_LowRes.png "The content density is compact on desktop devices and cozy on touch-enabled devices")
 
-<sup>*The content density is compact on desktop devices and cozy on touch-enabled devices*</sup>
+<sup>*The content density is compact on devices without a touch screen and cozy on touch-enabled devices*</sup>
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 36](https://sap-samples.github.io/ui5-typescript-walkthrough/step-36/test/mockServer-cdn.html).
 
@@ -74,9 +74,9 @@ export default class App extends Controller {
 
 ### webapp/manifest.json
 
-In the `sap.ui5` namespace of the app descriptor we add the `contentDensities` section to specify the modes that the application supports. Containers like the SAP Fiori launchpad allow switching the content density based on these settings.
+In the `sap.ui5` namespace of the manifest we add the `contentDensities` section to specify the modes that the application supports. Containers like the SAP Fiori launchpad allow switching the content density based on these settings.
 
-As we have just enabled the app to run in both modes depending on the devices capabilities, we can set both to `true` in the application descriptor.
+As we have just enabled the app to run in both modes depending on the devices capabilities, we can set both to `true` in the manifest.
 
 ```json
 {
