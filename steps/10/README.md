@@ -119,7 +119,7 @@ In our current scenario, we only have one model called `i18n`, which is a resour
     },
     "sap.ui5": {
         "dependencies": {
-            "minUI5Version": "1.120",
+            "minUI5Version": "1.131",
             "libs": {
                 "sap.ui.core": {},
                 "sap.m": {}
