@@ -153,8 +153,6 @@ new ComponentContainer({
 
 -   The `index.html` file is located in the `webapp` folder if it is used productively.
 
-&nbsp;
-
 ***
 
 **Next:** [Step 10: Manifest (Descriptor for Applications)](../10/README.md "All application-specific configuration settings will now further be put into the manifest. This clearly separates the application coding from the configuration settings and makes our app even more flexible.")
