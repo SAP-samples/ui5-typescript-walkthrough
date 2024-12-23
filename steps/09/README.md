@@ -127,7 +127,7 @@ We'll replace the view with a UI component. To do this, we use a control called 
 
 -   For better loading performance, we set the `async` property to `true`. This allows the component and its dependencies to load in the background without blocking other parts of the application. 
 
-Finally, we position our newly created ComponentController control within the HTML element with the id `content`.
+Finally, we position our newly created `ComponentContainer` control within the HTML element with the id `content`.
 
 ```ts
 import ComponentContainer from "sap/ui/core/ComponentContainer";
@@ -150,6 +150,8 @@ new ComponentContainer({
 -   The component is named `Component.js` or rather `Component.ts`.
 
 -   Together with all UI assets of the app, the component is located in the `webapp` folder.
+
+-   The `index.html` file is located in the `webapp` folder if it is used productively.
 
 &nbsp;
 
