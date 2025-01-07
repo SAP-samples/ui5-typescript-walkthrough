@@ -24,7 +24,7 @@ To download the solution for this step as a zip file, just choose the link here:
 
 ### webapp/i18n/i18n.properties
 
-In our resource bundle, we include two new name-value pairs: `appTitle` for the title of our app and `appDescription` for a short description. We'll use these texts in our maniest file at a later stage. 
+In our resource bundle, we include two new name-value pairs: `appTitle` for the title of our app and `appDescription` for a short description. We'll use these texts in our manifest file at a later stage. 
 
 To improve readability, we also add comments to separate the bundle texts based on their meaning.
 
@@ -81,7 +81,8 @@ The **`sap.ui5`** namespace adds OpenUI5-specific configuration parameters that 
     By default, loading of libraries is set to `"lazy": false`, which means they are loaded immediately when the component initializes. For libraries that are essential for your app to function from the start, like `sap.ui.core` and in our case also `sap.m` (since it is used in the root view), we can keep the default setting of `"lazy": false`.
 
     > 📌 **Important:** <br>
-    > It is crucial to be mindful of the lazy loading configuration for libraries. Only libraries that are absolutely necessary for your component to start should be declared with `"lazy": false`. For libraries that are not required immediately, it is recommended to override the default setting and set `"lazy": true`. This approach allows for better performance and faster initial loading of the component by deferring the loading of non-essential libraries until they are actually needed.
+    > It is crucial to be mindful of the lazy loading configuration for libraries. Only libraries that are absolutely necessary for your component to start should be declared with `"lazy": false`. For libraries that are not required immediately, it is recommended to override the default setting and set `"lazy": true`. This approach allows for better performance and faster initial loading of the component by deferring the loading of non-essential libraries until they are actually needed. 
+    > For more information on loading libraries, refer to the [sap.ui.core.Lib.load](https://sdk.openui5.org/api/sap.ui.core.Lib#methods/sap.ui.core.Lib.load) API reference. 
     > If your component requires a minimum version of the library, you need to specify the `minVersion` for information purposes.
 
 -   `rootView`: This section defines the root view of the application. The root view is the initial view that is displayed when the component is loaded. It specifies view name as a string for XML views, or the view configuration object with `viewName` for the view name as string and `type` for the view type, `id`, `async`, and other properties of `sap.ui.core.mvc.view`. We configure our app view as root view and add the ID "app" to it.
