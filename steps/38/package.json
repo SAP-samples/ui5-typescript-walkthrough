@@ -13,7 +13,7 @@
     "@types/openui5": "^1.120.0",
     "@ui5/cli": "^4.0.12",
     "@ui5/ts-interface-generator": "^0.9.0",
-    "typescript": "^5.7.2",
+    "typescript": "^5.7.3",
     "local-web-server": "^5.4.0",
     "ui5-middleware-livereload": "^3.1.0",
     "ui5-middleware-serveframework": "^3.4.0",
