@@ -115,19 +115,17 @@ export default class AppController extends Controller {
 
 #### webapp/index.ts
 
-We'll replace the view with a UI component we've just created. To do this, we use a control called `ComponentContainer`. This control allows us to wrap a UI Component and place it in our HTML document.
+We'll replace the view with a UI component. To do this, we use a control called `ComponentContainer`. This control allows us to wrap a UI Component and place it in our HTML document. We configure this instance by providing the following options:
 
-We take out the creation of the view and create a new `ComponentContainer` instead. We configure this instance by providing the following options: 
-
--   We assign the `id` property to "container" so that we can refer to it later if needed. 
+-   We assign the `id` property to `"container"` so that we can refer to it later if needed. 
 
 -   We set the `name` property to the namespace of the component. This tells the `ComponentContainer` control which UI component it should load and show.
 
--   We pass the `id` "walkthrough" to our component through the `ComponentContainer` constructor's settings argument. This `id` helps us identify our component among others that may be created during the application's runtime. 
+-   We pass the `id: "walkthrough"` to our component through the `ComponentContainer` constructor's settings argument. This ID helps us identify our component among others that may be created during the application's runtime. 
 
--   To ensure the `id` of our component is unique and avoid any mix-ups, we set the `autoPrefixId` property to "true". This automatically adds a prefix to the ID of the Component, which is the ID of the ComponentContainer followed by a single dash \("-"/). 
+-   To ensure the ID of our component is unique and avoid any mix-ups, we set the `autoPrefixId` property to `true`. This automatically adds a prefix to the ID of the Component, which is the ID of the ComponentContainer followed by a single dash ("`-`"). 
 
--   For better loading performance, we set the `async` property to "true". This allows the component and its dependencies to load in the background without blocking other parts of the application. 
+-   For better loading performance, we set the `async` property to `true`. This allows the component and its dependencies to load in the background without blocking other parts of the application. 
 
 Finally, we position our newly created ComponentController control within the HTML element with the id `content`.
 
