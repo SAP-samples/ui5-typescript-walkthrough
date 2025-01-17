@@ -57,24 +57,24 @@ In our webapp folder, we create a new HTML file named `index.html` and copy the 
 
 ### webapp/manifest.json \(New\)
 
-The manifest serves as a crucial configuration file for applications, components, and libraries. Stored in the `webapp` folder, this file is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: Component Configuration](../09/README.md)), creating the manifest now is necessary due to the UI5 Tooling requirements for development.
+The manifest serves as a crucial configuration file for applications, components, and libraries. For applications, the manifest file is stored in the `webapp` folder and is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: Component Configuration](../09/README.md)), creating the manifest now is necessary due to the UI5 Tooling requirements for development.
 
 Let's start by creating a new file named `manifest.json` in the webapp folder and define its essential attributes:
 
 -   The `_version` attribute in the root is mandatory in the manifest. It indicates the format version of the manifest, which is crucial for identifying application settings whenever the file is read by various tools. As new features or changes are introduced in future versions, maintaining the correct version number ensures compatibility and precise interpretation of the manifest's contents. 
 
-Since we want the app we build to supports not only the latest OpenUI5 version but also the latest long-term version, which is OpenUI5 1.120, we set the descriptor format version to `1.60.0`.
+Since we want our app to support not only the latest OpenUI5 version but rather the latest long-term maintenance version, which is OpenUI5 1.120, we set the format version to `1.60.0`.
 
   > 📝  **Note:** <br>
   > The manifest version should not necessarily align directly with the OpenUI5 version being used. Instead, choose the descriptor version that matches the requirements or supports the features you intend to use in your application. 
   
-  To find the appropriate `_version` for each OpenUI5 release, refer to [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html).
+  To find the appropriate `_version` for each OpenUI5 release, refer to [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html) or the [mapping.json](https://github.com/SAP/ui5-manifest/blob/main/mapping.json) file of the [ui5-manifest](https://github.com/SAP/ui5-manifest/) project.
 
 -   The **`sap.app`**  namespace defines properties specific to the application. It includes the following required attributes:
 
-    -   `id`: This specifies an identifier for the application using dot notation, limited to 70 characters. It must be unique and must correspond to the component ID/namespace.
+    -   `id`: This specifies an identifier for the application. It is provided in dot notation and is limited to 70 characters. It must be unique and must correspond to the component ID/namespace.
 
-    -   `type`: This property helps in identify whether the project is an `application` or `component`. Including it provides a useful classification and assists in the correct loading of the application.
+    -   `type`: This property defines the nature of the project and specifies whether it is an `application`, `component`, `library`, or `card`. It provides a clear classification, helping to identify the project's purpose and ensuring the correct loading and handling of the project within the system.
 
     -   `title`: This defines the title of the application, which appears in application management tools like the SAP Fiori launchpad.
 
@@ -167,6 +167,8 @@ This will open a new browser window hosting your newly created `index.html`.
 **Related Information**  
 
 [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html "The descriptor for applications, components, and libraries (in short: app descriptor) is inspired by the WebApplication Manifest concept introduced by the W3C. The descriptor provides a central, machine-readable, and easy-to-access location for storing metadata associated with an application, an application component, or a library.")
+
+[ui5-manifest](https://github.com/SAP/ui5-manifest/tree/main)
 
 [Development Environment](https://sdk.openui5.org/topic/7bb04e05f9484e1b95b38a2e48ecef4f.html "This part of the documentation introduces you to some common and recommended use cases for the installation, configuration, and setup of OpenUI5 development environments.")
 
