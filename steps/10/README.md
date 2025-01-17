@@ -1,6 +1,6 @@
 ## Step 10: Manifest (Descriptor for Applications)
 
-All application-specific configuration settings will now further be put into the manifest. This clearly separates the application coding from the configuration settings and makes our app even more flexible.
+All application-specific configuration settings will now be put into the manifest. This clearly separates the application coding from the configuration settings and makes our app even more flexible.
 
 Instead of relying on a local HTML file for the bootstrap, the manifest is parsed and the component is loaded directly into the current HTML page. This allows multiple apps to be displayed in the same context. Each app can define its own local settings, such as language properties and supported devices. Additionally, the manifest can be used to load additional resources and instantiate models, such as the `i18n` resource bundle.
 
@@ -58,12 +58,12 @@ We enhance the **`sap.app`** namespace by adding configuration for the following
 -   `description`: Similarly, we make the description text language-dependent by referencing the `appDescription` text from the resource bundle using the handlebar syntax: {{key}}
 
 > :warning: **Remember:** <br>
-> Properties of the resource bundle are enclosed in two curly brackets in the manifest. This is not an OpenUI5 data binding syntax, but a variable reference to the resource bundle in the manifest in handlebars syntax.
+> Properties of the resource bundle are enclosed in two curly brackets in the manifest. This is not an OpenUI5 data binding syntax but a variable reference to the resource bundle in the manifest in handlebars syntax.
 
 In addition to the `sap.app` namespace, there are two other important namespaces:
 The **`sap.ui`** namespace is used for UI-specific attributes and comes with the following main attributes:
 
--   `technology` \(mandatory\): This property specifies the technology used for the application; the value is `UI5`.
+-   `technology` \(mandatory\): This property specifies the technology used for the application; its value must be `UI5`.
 
 -   `deviceTypes` \(mandatory\): This property defines the supported device types for the application. It is an object that contains three boolean properties: `desktop`, `tablet`, and `phone`. Each property indicates whether the application is designed to be used on that particular device type. We define all three device types as "true", which means that our application is intended to be used on desktops, tablets, and phones.
         
@@ -77,7 +77,7 @@ The **`sap.ui5`** namespace adds OpenUI5-specific configuration parameters that 
     -   The `minUI5Version` property is mandatory as it specifies the minimum version of OpenUI5 that the component requires to function properly. Following the guideline discussed in step 1, our component should be designed to work with the long-term support (LTS) version 1.120 of OpenUI5.
     
     -    The `libs` settings is used to declare all OpenUI5 libraries that the component depends on. It's crucial to list every library within the component here for correct dependency management.<br>
-    In our component we are currenetly only using the two libraries `sap.ui.core` and `sap.m`. The `sap.ui.core` library provides the basic framework functionality and is required for any OpenUI5 application.<br>
+    In our component we currenetly only use the `sap.ui.core` and `sap.m` liibraries. The `sap.ui.core` library provides the basic framework functionality and is required for any OpenUI5 application.<br>
     By default, loading of libraries is set to `"lazy": false`, which means they are loaded immediately when the component initializes. For libraries that are essential for your app to function from the start, like `sap.ui.core` and in our case also `sap.m` (since it is used in the root view), we can keep the default setting of `"lazy": false`.
 
     > 📌 **Important:** <br>
@@ -225,7 +225,7 @@ We can now delete our `index.ts` file, because our component is now initiated di
 
 ### Conventions
 
--   The manifest file is named `manifest` and stored as JSON file.
+-   The manifest file is named `manifest` and stored as a JSON file.
 
 -   The manifest file is located in the `webapp` folder.
 
