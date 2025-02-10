@@ -4,9 +4,9 @@ import { SearchField$SearchEvent } from "sap/m/SearchField";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
 import ListBinding from "sap/ui/model/ListBinding";
-import Component from "../Component";
 import Event from "sap/ui/base/Event";
 import ObjectListItem from "sap/m/ObjectListItem";
+import UIComponent from "sap/ui/core/UIComponent";
 
 /**
  * @namespace ui5.walkthrough.controller
