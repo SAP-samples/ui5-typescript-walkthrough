@@ -34,7 +34,7 @@ Now we create a production-ready version of our OpenUI5 application that can be 
     "build": "ui5 build --all --clean-dest"
   },
   "devDependencies": {
-    "@types/openui5": "^1.131.0",
+    "@types/openui5": "^1.132.0",
     "@ui5/cli": "^3.7.1",
     "@ui5/ts-interface-generator": "^0.8.1",
     "typescript": "^5.2.2",
@@ -76,7 +76,7 @@ To actually use the newly added web server, we have to add a new script to our `
     "serve-dist": "ws --compress -d dist --open"
   },
   "devDependencies": {
-    "@types/openui5": "^1.131.0",
+    "@types/openui5": "^1.132.0",
     "@ui5/cli": "^3.7.1",
     "@ui5/ts-interface-generator": "^0.8.1",
     "typescript": "^5.2.2",

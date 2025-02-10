@@ -246,7 +246,7 @@ In case you prefer to continue with the local data, you should adjust the `start
     "start": "ui5 serve -o test/mockServer.html"
   },
   "devDependencies": {
-    "@types/openui5": "^1.131.0",
+    "@types/openui5": "^1.132.0",
     "@ui5/cli": "^3.7.1",
     "typescript": "^5.2.2",	  
     "ui5-middleware-livereload": "^3.0.2",

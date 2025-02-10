@@ -200,7 +200,7 @@ Next,  we have to configure the tooling extension we installed from npm to our U
 ```yaml
 framework:
   name: OpenUI5
-  version: "1.131.1"
+  version: "1.132.1"
   libraries:
     - name: sap.ui.core
     - name: themelib_sap_horizon

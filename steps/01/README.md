@@ -61,10 +61,9 @@ The manifest serves as a crucial configuration file for applications, components
 
 Let's start by creating a new file named `manifest.json` in the webapp folder and define its essential attributes:
 
--   The `_version` attribute is a mandatory field in the app descriptor that indicates the format version of the descriptor. This attribute is crucial for identifying application settings when the descriptor is read by various tools. As new features or changes are introduced in future versions of the descriptor, the version number helps ensure compatibility and proper interpretation of the descriptor's contents. Consequently, with each new version of OpenUI5 a corresponding version of the app descriptor is released. For this tutorial, we have determined that our app requires a minimum OpenUI5 version of 1.131. Therefore, we specify the descriptor format version as 1.68.0, aligning it with the appropriate OpenUI5 version.
+-   The `_version` attribute in the root is mandatory in the manifest. It indicates the format version of the manifest, which is crucial for identifying application settings whenever the file is read by various tools. As new features or changes are introduced in future versions, maintaining the correct version number ensures compatibility and precise interpretation of the manifest's contents. 
 
-    > 💡 **Tip:** <br>
-    > To find the appropriate `_version` for each OpenUI5 release, see [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da).
+Since we want our app to support not only the latest OpenUI5 version but rather the latest long-term maintenance version, which is OpenUI5 1.120, we set the format version to `1.60.0`.
 
   > 📝  **Note:** <br>
   > The manifest version should not necessarily align directly with the OpenUI5 version being used. Instead, choose the descriptor version that matches the requirements or supports the features you intend to use in your application. 
