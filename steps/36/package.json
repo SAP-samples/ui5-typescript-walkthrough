@@ -15,6 +15,6 @@
     "ui5-middleware-livereload": "^3.1.0",
     "ui5-middleware-serveframework": "^3.5.0",
     "ui5-middleware-simpleproxy": "^3.3.1",
-    "ui5-tooling-transpile": "^3.6.1"
+    "ui5-tooling-transpile": "^3.7.1"
   }
 }
