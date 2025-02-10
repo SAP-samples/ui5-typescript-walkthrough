@@ -10,7 +10,7 @@
     "serve-dist": "ws --compress -d dist --open"
   },
   "devDependencies": {
-    "@types/openui5": "^1.120.0",
+    "@types/openui5": "^1.132.0",
     "@ui5/cli": "^4.0.13",
     "@ui5/ts-interface-generator": "^0.9.0",
     "typescript": "^5.7.3",

@@ -87,7 +87,7 @@ As we have just enabled the app to run in both modes depending on the devices ca
       "cozy": true
     },
     "dependencies": {
-        "minUI5Version": "1.120",
+        "minUI5Version": "1.132",
         "libs": {
             "sap.ui.core": {},
             "sap.m": {}
