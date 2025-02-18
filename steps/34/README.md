@@ -151,24 +151,27 @@ Instead of the `ObjectListItem` that we had before, we will now split the inform
 						number="{invoice>Quantity}"
 						emphasized="false"/>
 					<ObjectIdentifier 
-                        title="{invoice>ProductName}" />
+					  title="{invoice>ProductName}" />
 					<Text
 						text="{
-							    path: 'invoice>Status',
-								formatter: '.formatter.statusText'
-							}"/>
+					    path: 'invoice>Status',
+							formatter: '.formatter.statusText'
+						}"/>
 					<Text text="{invoice>ShipperName}" />
 					<ObjectNumber
+						core:require="{
+							Currency: 'sap/ui/model/type/Currency'
+            }"
 						number="{
-								parts: [
-									'invoice>ExtendedPrice',
-									'view>/currency'
-								],
-								type: 'sap.ui.model.type.Currency',
-								formatOptions: {
-									showMeasure: false
-								}
-							}"
+							parts: [
+								'invoice>ExtendedPrice',
+								'view>/currency'
+							],
+							type: 'Currency',
+							formatOptions: {
+								showMeasure: false
+							}
+						}"
 						unit="{view>/currency}"
 						state="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"/>
 				</cells>
