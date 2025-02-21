@@ -1,0 +1,2 @@
+"use strict";sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/model/json/JSONModel","sap/ui/model/Filter","sap/ui/model/FilterOperator"],function(e,t,i,n){"use strict";const o=e.extend("ui5.walkthrough.controller.App",{onInit:function e(){const i=new t({currency:"EUR"});this.getView()?.setModel(i,"view")},onFilterInvoices:function e(t){const o=[];const s=t.getParameter("query");if(s){o.push(new i("ProductName",n.Contains,s))}const r=this.byId("invoiceList");const c=r?.getBinding("items");c?.filter(o)}});return o});
+//# sourceMappingURL=InvoiceList.controller.js.map
