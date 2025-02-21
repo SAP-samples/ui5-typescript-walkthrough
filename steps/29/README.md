@@ -30,6 +30,7 @@ We introduced a typo in the binding of the number attribute to simulate a freque
 <mvc:View
    controllerName="ui5.walkthrough.controller.InvoiceList"
    xmlns="sap.m"
+   xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
    <List
       id="invoiceList"
@@ -51,13 +52,16 @@ We introduced a typo in the binding of the number attribute to simulate a freque
       </headerToolbar>      
       <items>
          <ObjectListItem
+            core:require="{
+               Currency: 'sap/ui/model/type/Currency'
+            }"
             title="{invoice>Quantity} x {invoice>ProductName}"
             number="{
                 parts: [
                     'invoice>ExTendedPrice',
                     'view>/currency'
                 ],
-                type: 'sap.ui.model.type.Currency',
+                type: 'Currency',
                 formatOptions: {
                     showMeasure: false
                 }
