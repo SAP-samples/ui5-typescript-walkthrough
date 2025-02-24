@@ -15,9 +15,9 @@ In this step, we will use the OpenUI5 navigation features to load and show a sep
 
 <sup>*A second page is added to display the invoice*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 30](https://sap-samples.github.io/ui5-typescript-walkthrough/step-30/test/mockServer-cdn.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 30](https://sap-samples.github.io/ui5-typescript-walkthrough/build/30/test/mockServer-cdn.html).
 
-To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 30](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30.zip).
+Download solution for step 30 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30-js.zip).
 
 ***
 

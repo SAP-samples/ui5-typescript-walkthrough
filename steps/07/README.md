@@ -14,9 +14,9 @@ We'll create a view model in our controller, add an input field to our app, bind
 
 <sup>*An input field and a description displaying the value of the input field*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 7](https://sap-samples.github.io/ui5-typescript-walkthrough/step-07/index-cdn.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 7](https://sap-samples.github.io/ui5-typescript-walkthrough/build/07/index-cdn.html).
 
-To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 7](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-07.zip).
+Download solution for step 7 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-07.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-07-js.zip).
 
 ***
 

@@ -17,9 +17,9 @@ To achieve this, we will add ARIA attributes. ARIA attributes are used by screen
 
 <sup>*Landmarks in our app*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 37](https://sap-samples.github.io/ui5-typescript-walkthrough/step-37/test/mockServer-cdn.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 37](https://sap-samples.github.io/ui5-typescript-walkthrough/build/37/test/mockServer-cdn.html).
 
-To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 37](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-37.zip).
+Download solution for step 37 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-37.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-37-js.zip).
 
 ***
 

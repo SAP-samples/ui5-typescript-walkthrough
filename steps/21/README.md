@@ -12,9 +12,9 @@ Sometimes the predefined types of OpenUI5 are not flexible enough and you want t
 
 <sup>*The price is now formatted according to its number*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 21](https://sap-samples.github.io/ui5-typescript-walkthrough/step-21/index-cdn.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 21](https://sap-samples.github.io/ui5-typescript-walkthrough/build/21/index-cdn.html).
 
-To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 21](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-21.zip).
+Download solution for step 21 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-21.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-21-js.zip).
 
 ***
 
