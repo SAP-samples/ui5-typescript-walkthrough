@@ -12,9 +12,9 @@ After all the work on the app structure it’s time to improve the look of our a
 
 <sup>*A panel is now displaying the controls from the previous steps*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 11](https://sap-samples.github.io/ui5-typescript-walkthrough/step-11/index-cdn.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 11](https://sap-samples.github.io/ui5-typescript-walkthrough/build/11/index-cdn.html).
 
-To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 11](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-11.zip).
+Download solution for step 11 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-11.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-11-js.zip).
 ***
 
 ### Coding

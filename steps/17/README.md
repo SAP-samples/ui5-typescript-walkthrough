@@ -12,9 +12,9 @@ Now that we have integrated the dialog, it's time to add some user interaction. 
 
 <sup>*The dialog now has an \"OK\" button to close the dialog*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 17](https://sap-samples.github.io/ui5-typescript-walkthrough/step-17/index-cdn.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 17](https://sap-samples.github.io/ui5-typescript-walkthrough/build/17/index-cdn.html).
 
-To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 17](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-17.zip).
+Download solution for step 17 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-17.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-17-js.zip).
 
 ### Coding
 

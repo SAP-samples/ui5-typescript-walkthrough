@@ -18,7 +18,7 @@ In the real world, data often resides on remote servers and is accessed via an O
 
 *A real-time preview utilizing data from the OData remote service is currently unavailable in this setup. However, we assure you that it will work on your local machine as long as you avoid making any mistakes. So, give it a try and see the results for yourself!*
 
-To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 25](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-25.zip).
+Download solution for step 25 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-25.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-25-js.zip).
 
 ***
 

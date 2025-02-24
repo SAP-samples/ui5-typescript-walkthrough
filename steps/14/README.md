@@ -12,9 +12,9 @@ Sometimes we need to define some more fine-granular layouts and this is when we 
 
 <sup>*The space between the button and the input field is now smaller and the output text is bold*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 14](https://sap-samples.github.io/ui5-typescript-walkthrough/step-14/index-cdn.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 14](https://sap-samples.github.io/ui5-typescript-walkthrough/build/14/index-cdn.html).
 
-To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 14](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-14.zip).
+Download solution for step 14 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-14.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-14-js.zip).
 
 
 > ### 🚨 Caution:  

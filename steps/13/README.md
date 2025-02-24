@@ -14,9 +14,9 @@ Instead of manually adding CSS to the controls, we will use the standard classes
 
 <sup>*The layout of the panel and its content now has margins and padding*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 13](https://sap-samples.github.io/ui5-typescript-walkthrough/step-13/index-cdn.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 13](https://sap-samples.github.io/ui5-typescript-walkthrough/build/13/index-cdn.html).
 
-To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 13](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-13.zip).
+Download solution for step 13 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-13.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-13-js.zip).
 
 ***
 

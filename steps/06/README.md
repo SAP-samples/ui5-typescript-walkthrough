@@ -12,9 +12,9 @@ In OpenUI5, resources are often referred to as modules. In this step, we replace
 
 <sup>*A message toast displays the "Hello World" message*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 6](https://sap-samples.github.io/ui5-typescript-walkthrough/step-06/index-cdn.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 6](https://sap-samples.github.io/ui5-typescript-walkthrough/build/06/index-cdn.html).
 
-To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 5](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-06.zip).
+Download solution for step 5 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-06.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-06-js.zip).
 
 ***
 

@@ -13,9 +13,9 @@ As you know OpenUI5 is all about HTML5. Let's get started with building a first 
 
 <sup>*The browser shows the text \"Hello World\"*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 1](https://sap-samples.github.io/ui5-typescript-walkthrough/step-01/index.html).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 1](https://sap-samples.github.io/ui5-typescript-walkthrough/build/01/index.html).
 
-To download the solution for this step as a zip file, just choose the link here: [📥 Download Solution for Step 1](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01.zip).
+Download solution for step 1 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01-js.zip).
 
 ***
 
