@@ -50,7 +50,7 @@ function zipDirectory(sourceDir, outPath) {
 	}
 
 	function rewriteLinks(file, path) {
-		let content = `---\npermalink: ${path ? path.replace(".md", ".html") : "index.html"}\n---\n\n${readFileSync(file, { encoding: "utf8"})}`;
+		let content = `---\npermalink: ${path ? `build/${path.replace(".md", ".html")}` : "index.html"}\n---\n\n${readFileSync(file, { encoding: "utf8"})}`;
 		content = content.replace(/steps\/(\d{2})/g, "build/$1");
 		content = content.replace(/\.\.\/(\d{2})/g, "../$1");
 		content = content.replace(/README\.md/g, "README.html");
