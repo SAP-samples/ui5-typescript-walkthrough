@@ -10,7 +10,7 @@
   "devDependencies": {
     "@types/openui5": "^1.132.0",
     "@ui5/cli": "^4.0.13",
-    "typescript": "^5.7.3",
+    "typescript": "^5.8.2",
     "ui5-middleware-livereload": "^3.1.0",
     "ui5-middleware-serveframework": "^3.5.0",
     "ui5-middleware-simpleproxy": "^3.4.0",
