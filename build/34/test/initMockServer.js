@@ -1,0 +1,2 @@
+"use strict";sap.ui.define(["../localService/mockserver"],function(e){"use strict";function t(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}function n(e){return new Promise(function(t,n){sap.ui.require([e],function(n){if(!(n&&n.__esModule)){n=n===null||!(typeof n==="object"&&e.endsWith("/library"))?{default:n}:n;Object.defineProperty(n,"__esModule",{value:true})}t(n)},function(e){n(e)})})}const u=t(e);u.init();n("sap/ui/core/ComponentSupport")});
+//# sourceMappingURL=initMockServer.js.map
