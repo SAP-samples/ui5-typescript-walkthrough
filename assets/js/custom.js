@@ -185,6 +185,7 @@ function getUrlParameter(name) {
 	const button = document.createElement('button');
 	button.textContent = text;
 	button.classList.add('language-switch-button');
+	button.classList.add('lang-' + lang);
 	button.addEventListener('click', () => switchLanguage(lang));
 	return button;
   }
