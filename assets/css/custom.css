@@ -1,0 +1,88 @@
+/* hide content in the non-current language */
+.page-language-ts .js-only,
+.page-language-ts .code-couple .language-js.highlighter-rouge
+{
+    display: none;
+}
+
+.page-language-js .ts-only,
+.page-language-js .code-couple .language-ts.highlighter-rouge
+{
+    display: none;
+}
+
+
+/* generic... maybe helpful... */
+.hidden {
+    display: none;
+}
+
+
+/* tabbed switchable language area */
+.code-couple-button {
+    margin-top: 8px;
+    padding: 10px 20px;
+    border: 1px solid #e1e4e8;
+    border-bottom-width: 0;
+    border-radius: 16px 16px 0 0;
+    cursor: pointer;
+}
+
+/* active */
+.code-couple-button-active {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
+
+/* inactive */
+.code-couple-button-inactive {
+    color: #586069;
+    background-color: #f6f8fa;
+}
+
+/* default state based on page language */
+.page-language-ts .code-couple-button-ts:not(.code-couple-button-active):not(.code-couple-button-inactive),
+.page-language-js .code-couple-button-js:not(.code-couple-button-active):not(.code-couple-button-inactive) {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
+
+.page-language-ts .code-couple-button-js:not(.code-couple-button-active):not(.code-couple-button-inactive),
+.page-language-js .code-couple-button-ts:not(.code-couple-button-active):not(.code-couple-button-inactive) {
+    color: #586069;
+    background-color: #f6f8fa;
+}
+
+.code-couple-container {
+    border: 1px solid #e1e4e8;
+}
+
+
+/* overall language switch buttons */
+
+.language-switch-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+    z-index: 1000;
+  }
+
+  .language-switch-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s, background-color 0.3s;
+    opacity: 0.7;
+  }
+
+  .language-switch-button:hover {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
