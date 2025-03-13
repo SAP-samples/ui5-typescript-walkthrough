@@ -73,13 +73,21 @@
 
   .language-switch-button {
     background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 5px 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
     border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
     cursor: pointer;
     transition: opacity 0.3s, background-color 0.3s;
     opacity: 0.7;
+  }
+
+  body.page-language-js .language-switch-button.lang-js,
+  body.page-language-ts .language-switch-button.lang-ts {
+    background-color: black;
+    color: white;
   }
 
   .language-switch-button:hover {
