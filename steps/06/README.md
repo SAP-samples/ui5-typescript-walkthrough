@@ -8,7 +8,7 @@ In OpenUI5, resources are often referred to as modules. In this step, we replace
 
 ### Preview
 
-![](https://sdk.openui5.org/docs/topics/loio2f629a95211f49afa367b60d233fb390_LowRes.png "A message toast displays the \"Hello World\" message")
+![](https://sdk.openui5.org/docs/topics/loio2f629a95211f49afa367b60d233fb390_LowRes.png "A message toast displays the &quot;Hello World&quot; message")
 
 <sup>*A message toast displays the "Hello World" message*</sup>
 

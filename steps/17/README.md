@@ -8,9 +8,9 @@ Now that we have integrated the dialog, it's time to add some user interaction. 
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loioc351bbd078824c43bf1758b0c3679cbd_LowRes.png "The dialog now has an \"OK\" button")
+![](https://sdk.openui5.org/docs/topics/loioc351bbd078824c43bf1758b0c3679cbd_LowRes.png "The dialog now has an &quot;OK&quot; button")
 
-<sup>*The dialog now has an \"OK\" button to close the dialog*</sup>
+<sup>*The dialog now has an &quot;OK&quot; button to close the dialog*</sup>
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 17](https://sap-samples.github.io/ui5-typescript-walkthrough/build/17/index-cdn.html).
 

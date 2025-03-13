@@ -1,0 +1,95 @@
+/* hide content in the non-current language */
+.page-language-ts .js-only,
+.page-language-ts .code-couple .language-js.highlighter-rouge
+{
+    display: none;
+}
+
+.page-language-js .ts-only,
+.page-language-js .code-couple .language-ts.highlighter-rouge
+{
+    display: none;
+}
+
+
+/* generic... maybe helpful... */
+.hidden {
+    display: none;
+}
+
+
+/* tabbed switchable language area */
+.code-couple-button {
+    margin-top: 8px;
+    padding: 10px 20px;
+    border: 1px solid #e1e4e8;
+    border-bottom-width: 0;
+    border-radius: 16px 16px 0 0;
+    cursor: pointer;
+}
+
+/* active */
+.code-couple-button-active {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
+
+/* inactive */
+.code-couple-button-inactive {
+    color: #586069;
+    background-color: #f6f8fa;
+}
+
+/* default state based on page language */
+.page-language-ts .code-couple-button-ts:not(.code-couple-button-active):not(.code-couple-button-inactive),
+.page-language-js .code-couple-button-js:not(.code-couple-button-active):not(.code-couple-button-inactive) {
+    color: black;
+    background-color: white;
+    font-weight: bold;
+}
+
+.page-language-ts .code-couple-button-js:not(.code-couple-button-active):not(.code-couple-button-inactive),
+.page-language-js .code-couple-button-ts:not(.code-couple-button-active):not(.code-couple-button-inactive) {
+    color: #586069;
+    background-color: #f6f8fa;
+}
+
+.code-couple-container {
+    border: 1px solid #e1e4e8;
+}
+
+
+/* overall language switch buttons */
+
+.language-switch-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+    z-index: 1000;
+  }
+
+  .language-switch-button {
+    background-color: rgba(128, 128, 128, 1);
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+    border-radius: 5px;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: opacity 0.3s, background-color 0.3s;
+    opacity: 1;
+  }
+
+  body.page-language-js .language-switch-button.lang-js,
+  body.page-language-ts .language-switch-button.lang-ts {
+    background-color: black;
+  }
+
+  .language-switch-button:hover {
+    opacity: 0.8;
+    background-color: rgba(20, 20, 20, 0.8);
+  }
