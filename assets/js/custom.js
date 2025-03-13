@@ -148,7 +148,9 @@ function getUrlParameter(name) {
 	let node;
 
 	// iterate over each text node
-	while (node = walker.nextNode()) {
+	node = walker.nextNode();
+	while (node) {
+	  const nextNode = walker.nextNode();
 	  if (node.nodeValue.includes('.?s')) {
 		const temp = document.createElement('div');
 		temp.innerHTML = node.nodeValue.replace(/\.\?s/g, replacement);
@@ -160,6 +162,7 @@ function getUrlParameter(name) {
 
 		node.parentNode.replaceChild(fragment, node);
 	  }
+	  node = nextNode;
 	}
   }
 
