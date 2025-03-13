@@ -14,11 +14,13 @@ const port = 1337;
 async function convertMarkdown(md) {
 	const converter = new showdown.Converter({
 		ghCompatibleHeaderId: true,
-		simpleLineBreaks: true,
 		ghMentions: true,
 		tables: true,
 		emoji: true,
 		parseImgDimensions: true,
+		simpleLineBreaks: false,
+		omitExtraWLInCodeBlocks: true,
+		rawHtml: true,
 		extensions: [footnotes, highlight({pre: true})]
 	});
 	converter.setFlavor('github');
@@ -35,7 +37,12 @@ async function getTemplate() {
 }
 
 async function renderStep(step) {
-	const md = readFileSync(`steps/${step}/README.md`, { encoding: "utf-8" });
+	const html = await renderFile(`steps/${step}/README.md`, step);
+	return html;
+}
+
+async function renderFile(file, step) {
+	const md = readFileSync(file, { encoding: "utf-8" });
 	const bodyContent = await convertMarkdown(md);
 	const templateFn = await getTemplate();
 	const html = templateFn({ step, title: `Step ${step}`, bodyContent });
@@ -64,12 +71,18 @@ app.get('/steps/:step', async (req, res) => {
 
 app.get('/steps/:step/README.md', async (req, res) => {
 	try {
-		const html = await renderStep(req.params.step);
+		let html;
+		if (req.params.step === "00") {
+			 html = await renderFile(join(__dirname, "dev-server", "README_AUTHORS.md"), "00");
+		} else {
+			html = await renderStep(req.params.step);
+		}
 		res.send(html);
 	} catch (error) {
 		res.status(500).send(error.message);
 	}
 });
+
 
 app.use("/assets", express.static(join(__dirname, "..", "assets")));
 

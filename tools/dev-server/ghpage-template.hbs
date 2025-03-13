@@ -34,6 +34,18 @@
 					codeBlock.classList.add('highlighter-rouge');
 				});
 
+				const allDetailsBlocks = document.querySelectorAll("details.ts-only, details.js-only");
+				allDetailsBlocks.forEach((detailsBlock) => {
+					// wrap text nodes into a <p> tag
+					detailsBlock.childNodes.forEach((child) => {
+						if (child.nodeType === Node.TEXT_NODE) {
+							const p = document.createElement("p");
+							p.appendChild(child);
+							detailsBlock.appendChild(p);
+						}
+					});
+				});
+
 			});
 		</script>
 		<style>
