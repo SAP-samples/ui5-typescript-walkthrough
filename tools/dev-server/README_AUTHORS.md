@@ -32,6 +32,14 @@ npm start
 
 Then, open http://localhost:1337/README.md in your browser.
 
+Alternatively, and even easier, run 
+
+```sh
+npm run watch
+```
+
+And the browser will automatically open (on port 3000) and automatically reload on every saved change.
+
 
 ## Writing *one* document which covers both JavaScript and TypeScript without duplication
 
