@@ -1,18 +1,38 @@
+/* color-scheme for light/default appearance */
+:root {
+    --active-bg: white;
+    --active-color: black;
+    --active-border: #0969da;
+    --inactive-bg: #eee;
+    --inactive-color: #666;
+    --inactive-border: #ccc;
+    --neutral-border: #aaa;
+}
+
+/* color-scheme for dark mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --active-bg: black;
+        --active-color: white;
+        --active-border: #0969da;
+        --inactive-bg: black;
+        --inactive-color: #aaa;
+        --inactive-border: #666;
+        --neutral-border: #666;
+    }
+}
+
 /* hide content in the non-current language */
 .page-language-ts .js-only,
-.page-language-ts .code-couple .language-js.highlighter-rouge
-{
+.page-language-ts .code-couple .language-js.highlighter-rouge {
     display: none;
 }
 
 .page-language-js .ts-only,
-.page-language-js .code-couple .language-ts.highlighter-rouge
-{
+.page-language-js .code-couple .language-ts.highlighter-rouge {
     display: none;
 }
 
-
-/* generic... maybe helpful... */
 .hidden {
     display: none;
 }
@@ -22,7 +42,8 @@
 .code-couple-button {
     margin-top: 8px;
     padding: 10px 20px;
-    border: 1px solid #e1e4e8;
+    border-width: 2px;
+    border-style: solid;
     border-bottom-width: 0;
     border-radius: 16px 16px 0 0;
     cursor: pointer;
@@ -30,33 +51,35 @@
 
 /* active */
 .code-couple-button-active {
-    color: black;
-    background-color: white;
+    color: var(--active-color);
+    background-color: var(--active-bg);
     font-weight: bold;
+    border-color: var(--active-border);
 }
 
 /* inactive */
 .code-couple-button-inactive {
-    color: #586069;
-    background-color: #f6f8fa;
+    color: var(--inactive-color);
+    background-color: var(--inactive-bg);
+    border-color: var(--inactive-border);
 }
 
 /* default state based on page language */
 .page-language-ts .code-couple-button-ts:not(.code-couple-button-active):not(.code-couple-button-inactive),
 .page-language-js .code-couple-button-js:not(.code-couple-button-active):not(.code-couple-button-inactive) {
-    color: black;
-    background-color: white;
+    color: var(--active-color);
+    background-color: var(--active-bg);
     font-weight: bold;
 }
 
 .page-language-ts .code-couple-button-js:not(.code-couple-button-active):not(.code-couple-button-inactive),
 .page-language-js .code-couple-button-ts:not(.code-couple-button-active):not(.code-couple-button-inactive) {
-    color: #586069;
-    background-color: #f6f8fa;
+    color: var(--inactive-color);
+    background-color: var(--inactive-bg);
 }
 
 .code-couple-container {
-    border: 1px solid #e1e4e8;
+    border: 1px solid var(--neutral-border);
 }
 
 
@@ -69,27 +92,45 @@
     display: flex;
     gap: 5px;
     z-index: 1000;
-  }
+}
 
-  .language-switch-button {
-    background-color: rgba(128, 128, 128, 1);
+.language-switch-button {
+    background-color: var(--inactive-bg);
+    color: var(--inactive-color);
+    border-color: var(--inactive-border);
     border-width: 2px;
     border-style: solid;
-    border-color: white;
     border-radius: 5px;
-    color: white;
     padding: 5px 10px;
     cursor: pointer;
     transition: opacity 0.3s, background-color 0.3s;
     opacity: 1;
-  }
+}
 
-  body.page-language-js .language-switch-button.lang-js,
-  body.page-language-ts .language-switch-button.lang-ts {
-    background-color: black;
-  }
+body.page-language-js .language-switch-button.lang-js,
+body.page-language-ts .language-switch-button.lang-ts {
+    background-color: var(--active-bg);
+    color: var(--active-color);
+    border-color: var(--active-border);
+}
 
-  .language-switch-button:hover {
+.language-switch-button:hover {
     opacity: 0.8;
     background-color: rgba(20, 20, 20, 0.8);
-  }
+}
+
+/* for OS dark theme */
+@media (prefers-color-scheme: dark) {
+    .language-switch-button {
+        border-color: var(--inactive-border);
+        color: var(--inactive-color);
+        background-color: var(--inactive-bg);
+    }
+
+    body.page-language-js .language-switch-button.lang-js,
+    body.page-language-ts .language-switch-button.lang-ts {
+        background-color: var(--active-bg);
+        color: var(--active-color);
+        border-color: var(--active-border);
+    }
+}
