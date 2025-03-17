@@ -3,13 +3,16 @@
   "author": "SAP SE",
   "private": true,
   "scripts": {
-    "start": "node tools/dev-server.js"
+    "start": "node tools/dev-server.js",
+    "watch": "concurrently \"node tools/dev-server.js\" \"browser-sync start --proxy 'http://localhost:1337' --files '**/*'\""
   },
   "devDependencies": {
     "@highlightjs/cdn-assets": "^11.11.1",
     "@octokit/rest": "^21.1.1",
     "anchor-js": "^5.0.0",
     "archiver": "^7.0.1",
+    "browser-sync": "^3.0.3",
+    "concurrently": "^9.1.2",
     "express": "^4.21.2",
     "fast-glob": "^3.3.3",
     "gh-pages": "^6.3.0",
