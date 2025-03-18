@@ -109,20 +109,16 @@ const i: number = 0;
 
 ### 3. File Extensions (`.js/.ts`)
 
-When the text or a section heading mentions the name of a file that will be JavaScript or TypeScript, depending on the language, then use the file extension `.?s`. It will automatically be switched to the current language.
+When the text or a section heading mentions the name of a file that will be JavaScript or TypeScript, depending on the language, then use the file extension `.\?s`. It will automatically be switched to the current language.
 
 Example:
 ```md
-In this step you create the file `Example.controller.?s`.
+In this step you create the file `Example.controller.\?s`.
 ```
-
 
 #### Resulting Appearance<span class="hidden"> in markdown view (here the extension is not replaced, the replacement only happens in the dev server and in GitHub Pages)</span>
 
 In this step you create the file `Example.controller.?s`.
-
-
-
 
 ## Converting the JS Code to TypeScript
 
