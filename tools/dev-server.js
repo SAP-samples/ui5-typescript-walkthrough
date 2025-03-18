@@ -7,6 +7,8 @@ const showdown = require('showdown');
 const footnotes = require('showdown-footnotes');
 const highlight = require("showdown-highlight");
 
+const browserSync = require("browser-sync");
+
 const express = require('express');
 const app = express();
 const port = 1337;
@@ -36,11 +38,6 @@ async function getTemplate() {
 	return templateFn;
 }
 
-async function renderStep(step) {
-	const html = await renderFile(`steps/${step}/README.md`, step);
-	return html;
-}
-
 async function renderFile(file, step) {
 	const md = readFileSync(file, { encoding: "utf-8" });
 	const bodyContent = await convertMarkdown(md);
@@ -48,45 +45,6 @@ async function renderFile(file, step) {
 	const html = templateFn({ step, title: `Step ${step}`, bodyContent });
 	return html;
 }
-
-
-/*
-
-app.get('/', async (req, res) => {
-	res.redirect(`/README.md`);
-});
-
-app.get('/README.md', async (req, res) => {
-	try {
-		const md = readFileSync(`README.md`, { encoding: "utf-8" });
-		const bodyContent = await convertMarkdown(md);
-		const templateFn = await getTemplate();
-		const html = templateFn({ title: `Walkthrough`, bodyContent });
-		res.send(html);
-	} catch (error) {
-		res.status(500).send(error.message);
-	}
-});
-
-app.get('/steps/:step', async (req, res) => {
-	res.redirect(`/steps/${req.params.step}/README.md`);
-});
-
-app.get('/steps/:step/README.md', async (req, res) => {
-	try {
-		let html;
-		if (req.params.step === "00") {
-			 html = await renderFile(join(__dirname, "dev-server", "README_AUTHORS.md"), "00");
-		} else {
-			html = await renderStep(req.params.step);
-		}
-		res.send(html);
-	} catch (error) {
-		res.status(500).send(error.message);
-	}
-});
-*/
-
 
 app.use("/assets", express.static(join(__dirname, "..", "assets")));
 
@@ -124,7 +82,8 @@ app.use(async (req, res, next) => {
 });
 
 app.listen(port, async () => {
-	console.log(`Example app listening on port ${port}`);
-	const open = (await import("open")).default;
-	await open(`http://localhost:${port}`);
+	browserSync.init({
+		proxy: `http://localhost:${port}`,
+		files: ["**/*"],
+	});
 });
