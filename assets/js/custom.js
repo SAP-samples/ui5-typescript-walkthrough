@@ -199,7 +199,6 @@ function replaceFileExtensions(lang) {
 
 			node.parentNode.replaceChild(fragment, node);
 		} else if (node.nodeValue.includes(".\\?s")) {
-			debugger;
 			node.nodeValue = node.nodeValue.replace(/\.\\\?s/g, ".?s");
 		}
 		node = nextNode;
