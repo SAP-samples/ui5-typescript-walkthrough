@@ -38,14 +38,6 @@ async function getTemplate() {
 	return templateFn;
 }
 
-async function renderFile(file, step) {
-	const md = readFileSync(file, { encoding: "utf-8" });
-	const bodyContent = await convertMarkdown(md);
-	const templateFn = await getTemplate();
-	const html = templateFn({ step, title: `Step ${step}`, bodyContent });
-	return html;
-}
-
 app.use("/assets", express.static(join(__dirname, "..", "assets")));
 
 app.use("/assets/anchor-js", express.static(join(__dirname, "..", "node_modules", "anchor-js")));
