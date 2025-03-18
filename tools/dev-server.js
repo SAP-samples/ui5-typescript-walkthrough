@@ -1,5 +1,5 @@
 const { join } = require("path");
-const { readFileSync } = require("fs");
+const { readFileSync, existsSync, statSync } = require("fs");
 
 const handlebars = require('handlebars');
 
@@ -49,6 +49,9 @@ async function renderFile(file, step) {
 	return html;
 }
 
+
+/*
+
 app.get('/', async (req, res) => {
 	res.redirect(`/README.md`);
 });
@@ -82,6 +85,7 @@ app.get('/steps/:step/README.md', async (req, res) => {
 		res.status(500).send(error.message);
 	}
 });
+*/
 
 
 app.use("/assets", express.static(join(__dirname, "..", "assets")));
@@ -90,6 +94,37 @@ app.use("/assets/anchor-js", express.static(join(__dirname, "..", "node_modules"
 app.use("/assets/highlight.js", express.static(join(__dirname, "..", "node_modules", "@highlightjs", "cdn-assets")));
 app.use("/assets/github-markdown-css", express.static(join(__dirname, "..", "node_modules", "github-markdown-css")));
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+app.use(async (req, res, next) => {
+	let file, url;
+	if (req.url.endsWith("/")) {
+		for (const index of ["index.md", "README.md"]) {
+			url = `${req.url}${index}`;
+			file = join(__dirname, "..", url);
+			if (existsSync(file) && statSync(file).isFile()) {
+				break;
+			} else {
+				file = undefined;
+			}
+		}
+	} else {
+		file = join(__dirname, "..", req.url);
+		if (!(existsSync(file) && statSync(file).isFile())) {
+			file = undefined;
+		}
+	}
+	if (file) {
+		const md = readFileSync(file, { encoding: "utf-8" });
+		const bodyContent = await convertMarkdown(md);
+		const templateFn = await getTemplate();
+		const html = templateFn({ title: req.url, bodyContent });
+		res.send(html);
+	} else {
+		next();
+	}
+});
+
+app.listen(port, async () => {
+	console.log(`Example app listening on port ${port}`);
+	const open = (await import("open")).default;
+	await open(`http://localhost:${port}`);
 });
