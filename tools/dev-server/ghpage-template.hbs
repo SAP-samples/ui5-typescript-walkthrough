@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{title}}</title>
-        <link rel="stylesheet" href="/assets/github-markdown-css/github-markdown.css">
+        <link rel="stylesheet" href="/node_modules/github-markdown-css/github-markdown.css">
 		<script>
 			// select the theme based on the user's preference
 			const theme = (function () {
@@ -17,7 +17,7 @@
 			})();
 			const link = document.createElement("link");
 			link.rel = "stylesheet";
-			link.href = `/assets/highlight.js/styles/${theme}.min.css`;
+			link.href = `/node_modules/@highlightjs/cdn-assets/styles/${theme}.min.css`;
 			document.head.appendChild(link);
 
 			// patch the code blocks to be detected by the custom.js script to introduce
@@ -67,9 +67,9 @@
             </h1>
 {{{bodyContent}}}
         </div>
-        <script src="/assets/highlight.js/highlight.min.js"></script>
+        <script src="/node_modules/@highlightjs/cdn-assets/highlight.min.js"></script>
 		<script>hljs.highlightAll();</script>
-        <script src="/assets/anchor-js/anchor.min.js"></script>
+        <script src="/node_modules/anchor-js/anchor.min.js"></script>
         <script>anchors.add();</script>
     </body>
     </html>

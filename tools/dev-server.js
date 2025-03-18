@@ -40,9 +40,7 @@ async function getTemplate() {
 
 app.use("/assets", express.static(join(__dirname, "..", "assets")));
 
-app.use("/assets/anchor-js", express.static(join(__dirname, "..", "node_modules", "anchor-js")));
-app.use("/assets/highlight.js", express.static(join(__dirname, "..", "node_modules", "@highlightjs", "cdn-assets")));
-app.use("/assets/github-markdown-css", express.static(join(__dirname, "..", "node_modules", "github-markdown-css")));
+app.use("/node_modules", express.static(join(__dirname, "..", "node_modules")));
 
 app.use(async (req, res, next) => {
 	let file, url;
