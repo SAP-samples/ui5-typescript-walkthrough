@@ -14,7 +14,7 @@ We will now add a dialog to our app. Dialogs are special, because they open on t
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loio0916080895e144ed8b31963bfb18e17f_LowRes.png "A dialog opens when the new \“Say Hello With Dialog\” button is clicked")
+![](https://sdk.openui5.org/docs/topics/loio0916080895e144ed8b31963bfb18e17f_LowRes.png "A dialog opens when the new &quot;Say Hello With Dialog\” button is clicked")
 
 <sup>*A dialog opens when the new “Say Hello With Dialog” button is clicked*</sup>
 

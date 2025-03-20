@@ -38,8 +38,6 @@ async function getTemplate() {
 	return templateFn;
 }
 
-app.use("/assets", express.static(join(__dirname, "..", "assets")));
-
 app.use("/node_modules", express.static(join(__dirname, "..", "node_modules")));
 
 app.use(async (req, res, next) => {
@@ -60,12 +58,14 @@ app.use(async (req, res, next) => {
 			file = undefined;
 		}
 	}
-	if (file) {
+	if (file && file.endsWith(".md")) {
 		const md = readFileSync(file, { encoding: "utf-8" });
 		const bodyContent = await convertMarkdown(md);
 		const templateFn = await getTemplate();
 		const html = templateFn({ title: req.url, bodyContent });
 		res.send(html);
+	} else if (file) {
+		res.sendFile(file);
 	} else {
 		next();
 	}
