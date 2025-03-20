@@ -9,7 +9,7 @@ Before we can do something with OpenUI5, we need to load and initialize it. This
 ### Preview
 
 
-![](https://sdk.openui5.org/docs/topics/loio0f6b6b9dc46a474da9287c382c8d3456_LowRes.png "An alert &quot;UI5 is ready&quot; is displayed")
+![](assets/loio0f6b6b9dc46a474da9287c382c8d3456_LowRes.png "An alert &quot;UI5 is ready&quot; is displayed")
 
 <sup>*An alert &quot;UI5 is ready&quot; is displayed*</sup>
 

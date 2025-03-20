@@ -13,7 +13,7 @@ By encapsulating our application as a component, we can seamlessly integrate it 
 
 ### Preview
 
-![](https://sdk.openui5.org/docs/topics/loiocac9bcfa902c44c496d115acd7ee7376_LowRes.png "An input field and a description displaying the value of the input field (No visual changes to last step)")
+![](assets/loiocac9bcfa902c44c496d115acd7ee7376_LowRes.png "An input field and a description displaying the value of the input field (No visual changes to last step)")
 
 <sup>*An input field and a description displaying the value of the input field \(No visual changes to last step\)*</sup>
 
@@ -21,7 +21,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 After this step your project structure will look like the figure below. We will create the `Component.ts` file now and modify the related files in the app.
 
-![](https://sdk.openui5.org/docs/topics/loio1e237a36972a44ac8522dd1a540ac062_LowRes.png "Folder Structure for this Step")
+![](assets/loio1e237a36972a44ac8522dd1a540ac062_LowRes.png "Folder Structure for this Step")
 
 <sup>*Folder Structure for this Step*</sup>
 

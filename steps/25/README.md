@@ -12,7 +12,7 @@ In the real world, data often resides on remote servers and is accessed via an O
 
 ### Preview 
 
-![](https://sdk.openui5.org/docs/topics/loio5b76bb4b15eb44e1862d0b6c1c802571_LowRes.png "Products from the OData invoices test service are now shown within our app")
+![](assets/loio5b76bb4b15eb44e1862d0b6c1c802571_LowRes.png "Products from the OData invoices test service are now shown within our app")
 
 <sup>>*Products from the OData invoices test service are now shown within our app*</sup>
 

@@ -11,7 +11,7 @@ In this step, we will use the OpenUI5 navigation features to load and show a sep
 ### Preview
   
   
-![](https://sdk.openui5.org/docs/topics/loio94152a595fe24d45b12223e0abcccb9c_LowRes.png "A second page is added to display the invoice")
+![](assets/loio94152a595fe24d45b12223e0abcccb9c_LowRes.png "A second page is added to display the invoice")
 
 <sup>*A second page is added to display the invoice*</sup>
 

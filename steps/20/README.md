@@ -8,7 +8,7 @@ The list of invoices is already looking nice, but what is an invoice without a p
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loiodc9e919119564ddab78b8d0550ecfa9b_LowRes.png "The list of invoices with prices and number units")
+![](assets/loiodc9e919119564ddab78b8d0550ecfa9b_LowRes.png "The list of invoices with prices and number units")
 
 <sup>*The list of invoices with prices and number units*</sup>
 
