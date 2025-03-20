@@ -8,7 +8,7 @@ Our dialog is still pretty much empty. Since OpenUI5 is shipped with a large ico
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loiofbc48e23cc7d45e393cc95bbbfc6e0a3_LowRes.png "An icon is now displayed in the dialog box")
+![](assets/loiofbc48e23cc7d45e393cc95bbbfc6e0a3_LowRes.png "An icon is now displayed in the dialog box")
 
 <sup>*An icon is now displayed in the dialog box*</sup>
 

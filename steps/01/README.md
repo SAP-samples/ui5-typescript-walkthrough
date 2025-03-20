@@ -9,7 +9,7 @@ As you know OpenUI5 is all about HTML5. Let's get started with building a first 
 ### Preview
 
 
-![](https://sdk.openui5.org/docs/topics/loio1dd456361379431aab7e5bcdaaeff00f_LowRes.png "The browser shows the text &quot;Hello World&quot;")
+![](assets/loio1dd456361379431aab7e5bcdaaeff00f_LowRes.png "The browser shows the text &quot;Hello World&quot;")
 
 <sup>*The browser shows the text &quot;Hello World&quot;*</sup>
 

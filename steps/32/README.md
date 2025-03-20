@@ -9,7 +9,7 @@ Now we can navigate to our detail page and display an invoice, but we cannot go 
 ### Preview
   
   
-![](https://sdk.openui5.org/docs/topics/loio33a8341077bb458685274c64d2317f6b_LowRes.png "A back button is now displayed on the detail page")
+![](assets/loio33a8341077bb458685274c64d2317f6b_LowRes.png "A back button is now displayed on the detail page")
 
 <sup>*A back button is now displayed on the detail page*</sup>
 

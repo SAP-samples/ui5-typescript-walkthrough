@@ -10,7 +10,7 @@ When working with OpenUI5, we recommend the use of XML views, as this produces t
 ### Preview
 
 
-![](https://sdk.openui5.org/docs/topics/loio05f6775a39d3409ea673f4acc3812142_LowRes.png "The &quot;Hello World&quot; text is now displayed by a OpenUI5 control  \(No visual changes to last step\)")
+![](assets/loio05f6775a39d3409ea673f4acc3812142_LowRes.png "The &quot;Hello World&quot; text is now displayed by a OpenUI5 control  \(No visual changes to last step\)")
 
 <sup>*The &quot;Hello World&quot; text is now displayed by an OpenUI5 control \(No visual changes to last step\)*</sup>
 

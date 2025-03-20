@@ -8,7 +8,7 @@ Sometimes the predefined types of OpenUI5 are not flexible enough and you want t
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loio636b7008113442c8a4765bb710dd8ea9_LowRes.png "The price is now formatted according to its number")
+![](assets/loio636b7008113442c8a4765bb710dd8ea9_LowRes.png "The price is now formatted according to its number")
 
 <sup>*The price is now formatted according to its number*</sup>
 

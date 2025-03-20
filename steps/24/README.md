@@ -9,7 +9,7 @@ To make our list of invoices even more user-friendly, we sort it alphabetically 
 ### Preview
   
 
-![](https://sdk.openui5.org/docs/topics/loio33f71b44bb644d1fa2a0ab14f1fcc02a_LowRes.png "The list is now sorted and grouped by the shipping company")
+![](assets/loio33f71b44bb644d1fa2a0ab14f1fcc02a_LowRes.png "The list is now sorted and grouped by the shipping company")
 
 <sup>*The list is now sorted and grouped by the shipping company*</sup>
 

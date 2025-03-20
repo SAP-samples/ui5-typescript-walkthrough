@@ -8,7 +8,7 @@ We now configure the visibility and properties of controls based on the device t
 
 ### Preview
 
-![](https://sdk.openui5.org/docs/topics/loio0b0d57e04e574d7fbc4b10395e6cb260_LowRes.png "On phone devices, the panel is collapsed to save screen space and a button is hidden")
+![](assets/loio0b0d57e04e574d7fbc4b10395e6cb260_LowRes.png "On phone devices, the panel is collapsed to save screen space and a button is hidden")
 
 <sup>*On phone devices, the panel is collapsed to save screen space and a button is hidden*</sup>
 
