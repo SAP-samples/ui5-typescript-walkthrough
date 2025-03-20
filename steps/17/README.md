@@ -8,7 +8,7 @@ Now that we have integrated the dialog, it's time to add some user interaction. 
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loioc351bbd078824c43bf1758b0c3679cbd_LowRes.png "The dialog now has an &quot;OK&quot; button")
+![](assets/loioc351bbd078824c43bf1758b0c3679cbd_LowRes.png "The dialog now has an &quot;OK&quot; button")
 
 <sup>*The dialog now has an &quot;OK&quot; button to close the dialog*</sup>
 

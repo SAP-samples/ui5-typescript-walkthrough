@@ -13,7 +13,7 @@ Actually, every feature that we added to the app so far, would require a separat
 
 ### Preview  
   
-![](https://sdk.openui5.org/docs/topics/loio0d29491d96574cfe8d8158d60a0a32e2_LowRes.png "A unit test for our formatters is now available")
+![](assets/loio0d29491d96574cfe8d8158d60a0a32e2_LowRes.png "A unit test for our formatters is now available")
 
 <sup>*A unit test for our formatters is now available*</sup>
 
@@ -27,7 +27,7 @@ Download solution for step 27 in [📥 TypeScript](https://sap-samples.github.io
   
 We add a new folder `unit` under the `test` folder and a `model` subfolder where we will place our formatter unit test. The folder structure matches the app structure to easily find the corresponding unit tests.
   
-![](https://sdk.openui5.org/docs/topics/loio1b5613ac3ab94757af2c7823039222a9_LowRes.png "Folder Structure for this Step")
+![](assets/loio1b5613ac3ab94757af2c7823039222a9_LowRes.png "Folder Structure for this Step")
 <sup>*Folder Structure for this Step*</sup>
 
 ***

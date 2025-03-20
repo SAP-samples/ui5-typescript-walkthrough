@@ -8,7 +8,7 @@ Now that we have established a good structure for our app, it's time to add some
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loiob05bdb47393b4abda3e1b54498959c38_LowRes.png "A list of invoices is displayed below the panel")
+![](assets/loiob05bdb47393b4abda3e1b54498959c38_LowRes.png "A list of invoices is displayed below the panel")
 
 <sup>*A list of invoices is displayed below the panel*</sup>
 

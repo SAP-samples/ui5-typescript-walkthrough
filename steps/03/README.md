@@ -8,7 +8,7 @@ Now it is time to build our first little UI by replacing the “Hello World” t
 
 ### Preview
 
-![](https://sdk.openui5.org/docs/topics/loio30a42d381b9e4388bf7fdc0b941e5381_LowRes.png "The &quot;Hello World&quot; text is now displayed by a OpenUI5 control")
+![](assets/loio30a42d381b9e4388bf7fdc0b941e5381_LowRes.png "The &quot;Hello World&quot; text is now displayed by a OpenUI5 control")
 
 <sup>*The &quot;Hello World&quot; text is now displayed by an OpenUI5 control*</sup>
 
