@@ -11,7 +11,7 @@ This system is the so-called back-end system that we will now simulate with anOp
 ### Preview
 
 
-![](https://sdk.openui5.org/docs/topics/_LowRes.png "Folder Structure for this Step")
+![](https://sdk.openui5.org/docs/topics/loiofe1403346ce9499f8bb102beaa4986d5_LowRes.png "Folder Structure for this Step")
 
 <sup>*The list of invoices is now served by the Mock Server*</sup>
 
@@ -27,7 +27,7 @@ The folder structure of our app project is clearly separating test and productiv
 
 The new `localService` folder contains a `metadata.xml` service description file for OData, the `mockserver.js` file that simulates a real service with local data, and the `mockdata` subfolder that contains the local test data \(`Invoices.json`\).
 
-![](https://sdk.openui5.org/docs/topics/_LowRes.png "Folder Structure for this Step")
+![](https://sdk.openui5.org/docs/topics/loiofe1403346ce9499f8bb102beaa4986d5_LowRes.png "Folder Structure for this Step")
 
 <sup>*Folder Structure for this Step*</sup>
 
