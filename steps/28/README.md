@@ -13,7 +13,7 @@ We haven’t thought about testing our interaction with the app yet, so in this 
 
 ### Preview
 
-![](https://sdk.openui5.org/docs/topics/loio250d5b92921d44a4b432cc0fade88cc9_LowRes.png "An OPA test opens the "Hello" dialog from step 16")
+![](https://sdk.openui5.org/docs/topics/loio250d5b92921d44a4b432cc0fade88cc9_LowRes.png "An OPA test opens the &quot;Hello&quot; dialog from step 16")
 
 <sup>*An OPA test opens the "Hello" dialog from step 16*</sup>
 
@@ -28,7 +28,7 @@ Download solution for step 28 in [📥 TypeScript](https://sap-samples.github.io
 We add a new folder `integration` below the `test` folder, where we put our new test cases. Page objects that help structuring such integration tests are put in the `pages` subfolder that we also create now.
 
 
-![](https://sdk.openui5.org/docs/topics/_LowRes.png "Folder Structure for this Step")
+![](https://sdk.openui5.org/docs/topics/loio27e84d5bd72a485498564b92894869b5_LowRes.png "Folder Structure for this Step")
 <sup>*Folder Structure for this Step*</sup>
 
 
