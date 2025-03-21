@@ -211,11 +211,11 @@ function addLanguageSwitchButtons() {
 	const buttonContainer = document.createElement("div");
 	buttonContainer.classList.add("language-switch-container");
 
-	const jsButton = createLanguageButton("JS", "js");
 	const tsButton = createLanguageButton("TS", "ts");
+	const jsButton = createLanguageButton("JS", "js");
 
-	buttonContainer.appendChild(jsButton);
 	buttonContainer.appendChild(tsButton);
+	buttonContainer.appendChild(jsButton);
 	document.body.appendChild(buttonContainer);
 }
 

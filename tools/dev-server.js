@@ -63,7 +63,7 @@ app.use(async (req, res, next) => {
 		const bodyContent = await convertMarkdown(md);
 		const templateFn = await getTemplate();
 		// get title as first line in the md file which starts with hashes, which indicates it is a title of some kind
-		const title = md.match(/^##* (.+)$/m)?.[1] || "";
+		const title = md.match(/^##* (.+)$/m)?.[1] || req.url;
 		const html = templateFn({ title, bodyContent });
 		res.send(html);
 	} else if (file) {
