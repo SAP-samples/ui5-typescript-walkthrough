@@ -13,7 +13,7 @@ To achieve this, we will add ARIA attributes. ARIA attributes are used by screen
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loiod9c6cd32743d40629bec7d77590e2c58_HiRes.png "Landmarks in our app")
+![](assets/loiob35deda1ebe1433fbf0ff066f6e3fc4b_LowRes.png "Landmarks in our app")
 
 <sup>*Landmarks in our app*</sup>
 
@@ -146,12 +146,12 @@ In the `HelloPanel` view, we already have a panel, so we just add the `accessibl
 <tr>
 <td valign="top">
 
-![](https://sdk.openui5.org/docs/topics/loio54e9bca5a5844c14b45b5405496166b1_HiRes.png)
+![](assets/loio54e9bca5a5844c14b45b5405496166b1_HiRes.png)
 
 </td>
 <td valign="top">
 
-![](https://sdk.openui5.org/docs/topics/loiof38dee2624c2437d8977de70575b3eae_HiRes.png)
+![](assets/loiof38dee2624c2437d8977de70575b3eae_HiRes.png)
 
 </td>
 </tr>

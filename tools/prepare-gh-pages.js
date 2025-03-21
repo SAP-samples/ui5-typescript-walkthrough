@@ -99,7 +99,7 @@ function zipDirectory(sourceDir, outPath) {
 						console.error("No JS file found for", source);
 					}
 				}
-			} else {
+			} else if (file !== "tsconfig.json") {
 				mkdirSync(dirname(target), { recursive: true });
 				copyFileSync(source, target);
 			}

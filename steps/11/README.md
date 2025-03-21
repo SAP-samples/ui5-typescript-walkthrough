@@ -8,7 +8,7 @@ After all the work on the app structure it’s time to improve the look of our a
 
 ### Preview
 
-![](https://sdk.openui5.org/docs/topics/loio97feb5417c89462ead5b4259f3ecfd47_LowRes.png "A panel is now displaying the controls from the previous steps")  
+![](assets/loio97feb5417c89462ead5b4259f3ecfd47_LowRes.png "A panel is now displaying the controls from the previous steps")  
 
 <sup>*A panel is now displaying the controls from the previous steps*</sup>
 

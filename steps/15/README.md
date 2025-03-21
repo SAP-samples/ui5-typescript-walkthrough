@@ -8,7 +8,7 @@ Our panel content is getting more and more complex and now it is time to move th
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loiof3724d2f97e94a78b27d8ab01ff9c37d_LowRes.png "The panel content is now refactored to a separate view \(No visual changes to last step\)")
+![](assets/loiof3724d2f97e94a78b27d8ab01ff9c37d_LowRes.png "The panel content is now refactored to a separate view \(No visual changes to last step\)")
 
 <sup>*The panel content is now refactored to a separate view \(No visual changes to last step\)*</sup>
 

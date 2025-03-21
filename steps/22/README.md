@@ -8,7 +8,7 @@ If we want to do a more complex logic for formatting properties of our data mode
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loio7aa185a90dd7495cb6ec30c96bc80a54_LowRes.png "A status is now displayed with a custom formatter")
+![](assets/loio7aa185a90dd7495cb6ec30c96bc80a54_LowRes.png "A status is now displayed with a custom formatter")
 
 <sup>*A status is now displayed with a custom formatter*</sup>
 
