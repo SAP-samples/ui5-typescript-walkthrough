@@ -39,13 +39,18 @@ function zipDirectory(sourceDir, outPath) {
 	}
 
 	mkdirSync(join(cwd, "dist"), { recursive: true });
-	mkdirSync(join(cwd, "dist/build"), { recursive: true });
 
+	console.log(`👉 Zipping TypeScript sources...`);
 	await Promise.all(steps.map((step) => {
 		return zipDirectory(join(cwd, "steps", step), join(cwd, "dist", `ui5-typescript-walkthrough-step-${step}.zip`))
 	}));
+
+	mkdirSync(join(cwd, "dist/build"), { recursive: true });
+
+	console.log(`👉 Building steps...`);
 	for (const step of steps) {
-		console.log(`npx ui5 build --dest ${join(cwd, "dist", "build", `${step}`)}`);
+		console.log(`  👉 Building step ${step}...`);
+		//console.log(`npx ui5 build --dest ${join(cwd, "dist", "build", `${step}`)}`);
 		await execute(`npx ui5 build --dest ${join(cwd, "dist", "build", `${step}`)}`, {
 			cwd: join(cwd, "steps", step)
 		});
@@ -55,24 +60,45 @@ function zipDirectory(sourceDir, outPath) {
 		let content = `---\npermalink: ${path ? `build/${path.replace(".md", ".html")}` : "index.html"}\n---\n\n${readFileSync(file, { encoding: "utf8"})}`;
 		content = content.replace(/steps\/(\d{2})/g, "build/$1");
 		content = content.replace(/\.\.\/(\d{2})/g, "../$1");
-		content = content.replace(/README\.md/g, "README.html");
+		content = content.replace(/README\.md/g, "index.html");
 		writeFileSync(file, content, { encoding: "utf8" });
 	}
 
+	console.log(`👉 Copying README.md...`);
 	copyFileSync(join(cwd, "README.md"), join(cwd, "dist/index.md"));
 	rewriteLinks(join(cwd, "dist/index.md"));
-	const readmes = fg.globSync(["steps/**/README.md"], { cwd });
+
+	console.log(`  🌅 Copying root assets....`);
+	const rootAssets = fg.globSync(["**/*"], { cwd: join(cwd, "assets") });
+	rootAssets.forEach((asset) => {
+		mkdirSync(dirname(join(cwd, `dist/assets/${asset}`)), { recursive: true });
+		copyFileSync(join(cwd, "assets", asset), join(cwd, `dist/assets/${asset}`));
+	});
+
+	console.log(`👉 Copying steps README.md files...`);
+	const readmes = fg.globSync(["steps/*/README.md"], { cwd });
 	readmes.forEach((readme) => {
 		const [, path, step] = readme.match("steps/((.*)/README.md)");
 		mkdirSync(join(cwd, `dist/build/${step}`), { recursive: true });
 		copyFileSync(join(cwd, readme), join(cwd, `dist/build/${path}`));
 		rewriteLinks(join(cwd, `dist/build/${path}`), `${path}`);
 	});
+	console.log(`  🌅 Copying steps assets....`);
+	const assets = fg.globSync(["steps/*/assets/**/*"], { cwd });
+	assets.forEach((asset) => {
+		const [, step, assetFile] = asset.match("steps/(.*)/assets/(.*)");
+		mkdirSync(dirname(join(cwd, "dist/build", step, "assets", assetFile)), { recursive: true });
+		copyFileSync(join(cwd, "steps", step, "assets", assetFile), join(cwd, "dist/build", step, "assets", assetFile));
+	});
 
+
+	console.log(`👉 Generate the JavaScript sources...`);
 	await Promise.all(steps.map((step) => {
 		const jsStepBaseDir = join(cwd, "steps", step);
 		const buildOutputDir = join(cwd, "dist", "build", `${step}`);
 		const targetDir = join(cwd, "dist", "steps", `${step}`);
+
+		console.log(`  👉 Generate sources for step ${step}...`);
 
 		// copy all files from buildOutputDir to targetDir except of TS files
 		const files = fg.sync(["**/*"], { cwd: jsStepBaseDir, dot: true });
@@ -107,7 +133,7 @@ function zipDirectory(sourceDir, outPath) {
 			}
 		});
 
-		console.log(`${jsStepBaseDir} -> ${buildOutputDir}`);
+		//console.log(`${jsStepBaseDir} -> ${buildOutputDir}`);
 		return zipDirectory(join(cwd, "dist", "steps", `${step}`), join(cwd, "dist", `ui5-typescript-walkthrough-step-${step}-js.zip`))
 	}));
 
