@@ -32,8 +32,8 @@ async function convertMarkdown(md) {
 }
 
 async function getTemplate() {
-	const headContent = readFileSync(`_includes/head-custom.html`, { encoding: "utf-8" });
-	let template = readFileSync("tools/dev-server/ghpage-template.hbs", { encoding: "utf-8" });
+	const headContent = readFileSync(join(cwd, "_includes/head-custom.html"), { encoding: "utf-8" });
+	let template = readFileSync(join(__dirname, "ghpage-template.hbs"), { encoding: "utf-8" });
 	template = template.replace("%headContent%", headContent);
 	template = template.replace(/\{\{ '([^']+)' \| relative_url \}\}/g, "/$1");
 	const templateFn = handlebars.compile(template);

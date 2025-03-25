@@ -7,6 +7,8 @@ const execute = utils.promisify(exec);
 const archiver = require("archiver");
 const fg = require('fast-glob');
 
+const cwd = process.cwd();
+
 function zipDirectory(sourceDir, outPath) {
 	const archive = archiver('zip', { zlib: { level: 9 }});
 	const stream = createWriteStream(outPath);
@@ -28,24 +30,24 @@ function zipDirectory(sourceDir, outPath) {
 
 (async function() {
 
-	let steps = readdirSync(join(process.cwd(), "steps"));
+	let steps = readdirSync(join(cwd, "steps"));
 	// only consider directories
-	steps = steps.filter((step) => statSync(join(process.cwd(), "steps", step)).isDirectory());
+	steps = steps.filter((step) => statSync(join(cwd, "steps", step)).isDirectory());
 
-	if (existsSync(join(process.cwd(), "dist"))) {
-		rmSync(join(process.cwd(), "dist"), { recursive: true });
+	if (existsSync(join(cwd, "dist"))) {
+		rmSync(join(cwd, "dist"), { recursive: true });
 	}
 
-	mkdirSync(join(process.cwd(), "dist"), { recursive: true });
-	mkdirSync(join(process.cwd(), "dist/build"), { recursive: true });
+	mkdirSync(join(cwd, "dist"), { recursive: true });
+	mkdirSync(join(cwd, "dist/build"), { recursive: true });
 
 	await Promise.all(steps.map((step) => {
-		return zipDirectory(join(process.cwd(), "steps", step), join(process.cwd(), "dist", `ui5-typescript-walkthrough-step-${step}.zip`))
+		return zipDirectory(join(cwd, "steps", step), join(cwd, "dist", `ui5-typescript-walkthrough-step-${step}.zip`))
 	}));
 	for (const step of steps) {
-		console.log(`npx ui5 build --dest ${join(process.cwd(), "dist", "build", `${step}`)}`);
-		await execute(`npx ui5 build --dest ${join(process.cwd(), "dist", "build", `${step}`)}`, {
-			cwd: join(process.cwd(), "steps", step)
+		console.log(`npx ui5 build --dest ${join(cwd, "dist", "build", `${step}`)}`);
+		await execute(`npx ui5 build --dest ${join(cwd, "dist", "build", `${step}`)}`, {
+			cwd: join(cwd, "steps", step)
 		});
 	}
 
@@ -57,20 +59,20 @@ function zipDirectory(sourceDir, outPath) {
 		writeFileSync(file, content, { encoding: "utf8" });
 	}
 
-	copyFileSync(join(process.cwd(), "README.md"), join(process.cwd(), "dist/index.md"));
-	rewriteLinks(join(process.cwd(), "dist/index.md"));
-	const readmes = fg.globSync(["steps/**/README.md"]);
+	copyFileSync(join(cwd, "README.md"), join(cwd, "dist/index.md"));
+	rewriteLinks(join(cwd, "dist/index.md"));
+	const readmes = fg.globSync(["steps/**/README.md"], { cwd });
 	readmes.forEach((readme) => {
 		const [, path, step] = readme.match("steps/((.*)/README.md)");
-		mkdirSync(join(process.cwd(), `dist/build/${step}`), { recursive: true });
-		copyFileSync(join(process.cwd(), readme), join(process.cwd(), `dist/build/${path}`));
-		rewriteLinks(join(process.cwd(), `dist/build/${path}`), `${path}`);
+		mkdirSync(join(cwd, `dist/build/${step}`), { recursive: true });
+		copyFileSync(join(cwd, readme), join(cwd, `dist/build/${path}`));
+		rewriteLinks(join(cwd, `dist/build/${path}`), `${path}`);
 	});
 
 	await Promise.all(steps.map((step) => {
-		const jsStepBaseDir = join(process.cwd(), "steps", step);
-		const buildOutputDir = join(process.cwd(), "dist", "build", `${step}`);
-		const targetDir = join(process.cwd(), "dist", "steps", `${step}`);
+		const jsStepBaseDir = join(cwd, "steps", step);
+		const buildOutputDir = join(cwd, "dist", "build", `${step}`);
+		const targetDir = join(cwd, "dist", "steps", `${step}`);
 
 		// copy all files from buildOutputDir to targetDir except of TS files
 		const files = fg.sync(["**/*"], { cwd: jsStepBaseDir, dot: true });
@@ -106,7 +108,7 @@ function zipDirectory(sourceDir, outPath) {
 		});
 
 		console.log(`${jsStepBaseDir} -> ${buildOutputDir}`);
-		return zipDirectory(join(process.cwd(), "dist", "steps", `${step}`), join(process.cwd(), "dist", `ui5-typescript-walkthrough-step-${step}-js.zip`))
+		return zipDirectory(join(cwd, "dist", "steps", `${step}`), join(cwd, "dist", `ui5-typescript-walkthrough-step-${step}-js.zip`))
 	}));
 
 }());

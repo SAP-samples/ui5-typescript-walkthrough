@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
+const cwd = process.cwd();
+
 const findMarkdownFiles = (dir) => {
     let results = [];
     const files = fs.readdirSync(dir, { withFileTypes: true });
@@ -17,7 +19,7 @@ const findMarkdownFiles = (dir) => {
     return results;
 };
 
-const markdownFiles = [path.join(process.cwd(), "README.md"), findMarkdownFiles(path.join(process.cwd(), 'steps'))].flat();
+const markdownFiles = [path.join(cwd, "README.md"), findMarkdownFiles(path.join(cwd, 'steps'))].flat();
 
 const downloadImage = async (url, outputPath) => {
 	const response = await axios({
