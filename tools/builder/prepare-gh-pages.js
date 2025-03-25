@@ -68,6 +68,13 @@ function zipDirectory(sourceDir, outPath) {
 	copyFileSync(join(cwd, "README.md"), join(cwd, "dist/index.md"));
 	rewriteLinks(join(cwd, "dist/index.md"));
 
+	console.log(`  🌅 Copying _includes....`);
+	const includes = fg.globSync(["**/*"], { cwd: join(cwd, "_includes") });
+	includes.forEach((asset) => {
+		mkdirSync(dirname(join(cwd, `dist/_includes/${asset}`)), { recursive: true });
+		copyFileSync(join(cwd, "_includes", asset), join(cwd, `dist/_includes/${asset}`));
+	});
+
 	console.log(`  🌅 Copying root assets....`);
 	const rootAssets = fg.globSync(["**/*"], { cwd: join(cwd, "assets") });
 	rootAssets.forEach((asset) => {
