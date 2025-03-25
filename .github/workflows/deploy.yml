@@ -26,7 +26,7 @@ jobs:
         run: npm install
 
       - name: Build and validate all steps
-        run: node tools/prepare-gh-pages.js
+        run: node tools/deployer
 
       - name: Deploy to GH pages
         uses: peaceiris/actions-gh-pages@v4

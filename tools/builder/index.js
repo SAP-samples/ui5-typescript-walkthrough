@@ -1,0 +1,1 @@
+require("./prepare-gh-pages");

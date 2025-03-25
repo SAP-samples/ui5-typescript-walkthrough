@@ -3,8 +3,8 @@
   "author": "SAP SE",
   "private": true,
   "scripts": {
-    "build": "node tools/prepare-gh-pages.js",
-    "start": "node tools/dev-server.js"
+    "build": "node tools/builder",
+    "start": "node tools/dev-server"
   },
   "devDependencies": {
     "@highlightjs/cdn-assets": "^11.11.1",

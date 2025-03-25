@@ -28,4 +28,4 @@ jobs:
         run: npm install
 
       - name: Build and validate all steps
-        run: node tools/prepare-gh-pages.js
+        run: node tools/builder
