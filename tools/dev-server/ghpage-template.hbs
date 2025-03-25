@@ -1,0 +1,75 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{title}}</title>
+        <link rel="stylesheet" href="/node_modules/github-markdown-css/github-markdown.css">
+		<script>
+			// select the theme based on the user's preference
+			const theme = (function () {
+				try {
+					return window.matchMedia("(prefers-color-scheme: dark)").matches ? "github-dark" : "github";
+				} catch (ex) {
+					console.warn("window.matchMedia not supported - keep default theme");
+					return "github";
+				}
+			})();
+			const link = document.createElement("link");
+			link.rel = "stylesheet";
+			link.href = `/node_modules/@highlightjs/cdn-assets/styles/${theme}.min.css`;
+			document.head.appendChild(link);
+
+			// patch the code blocks to be detected by the custom.js script to introduce
+			// the toggling of the code blocks between TS and JS
+			document.addEventListener("DOMContentLoaded", (event) => {
+
+				const allTSCodeBlocks = document.querySelectorAll('pre.language-ts');
+				allTSCodeBlocks.forEach((codeBlock) => {
+					codeBlock.classList.add('highlighter-rouge');
+				});
+
+				const allJSCodeBlocks = document.querySelectorAll('pre.language-js');
+				allJSCodeBlocks.forEach((codeBlock) => {
+					codeBlock.classList.add('highlighter-rouge');
+				});
+
+				const allDetailsBlocks = document.querySelectorAll("details.ts-only, details.js-only");
+				allDetailsBlocks.forEach((detailsBlock) => {
+					// wrap text nodes into a <p> tag
+					detailsBlock.childNodes.forEach((child) => {
+						if (child.nodeType === Node.TEXT_NODE) {
+							const p = document.createElement("p");
+							p.appendChild(child);
+							detailsBlock.appendChild(p);
+						}
+					});
+				});
+
+			});
+		</script>
+		<style>
+			body {
+				margin: 32px 16px !important;
+			}
+			.container-lg {
+				max-width: 1012px;
+				margin-right: auto;
+				margin-left: auto
+			}
+		</style>
+%headContent%
+    </head>
+    <body class="markdown-body">
+        <div class="container-lg px-3 my-5 markdown-body">
+            <h1>
+                <a href="/">ui5-typescript-walkthrough</a>
+            </h1>
+{{{bodyContent}}}
+        </div>
+        <script src="/node_modules/@highlightjs/cdn-assets/highlight.min.js"></script>
+		<script>hljs.highlightAll();</script>
+        <script src="/node_modules/anchor-js/anchor.min.js"></script>
+        <script>anchors.add();</script>
+    </body>
+    </html>

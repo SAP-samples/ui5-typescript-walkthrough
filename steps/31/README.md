@@ -11,7 +11,7 @@ To make this work, we have to pass over the information which item has been sele
 ### Preview
   
   
-![](https://sdk.openui5.org/docs/topics/loio31da9d48ae204c36a991146b90648c21_LowRes.png "The selected invoice details are now shown in the details page")
+![](assets/loio31da9d48ae204c36a991146b90648c21_LowRes.png "The selected invoice details are now shown in the details page")
 
 <sup>*The selected invoice details are now shown in the details page*</sup>
 

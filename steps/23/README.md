@@ -8,7 +8,7 @@ In this step, we add a search field for our product list and define a filter tha
 
 ### Preview
   
-![](https://sdk.openui5.org/docs/topics/loio472ab6bf88674c23ba103efd97163133_LowRes.png "A search field is displayed above the list")
+![](assets/loio472ab6bf88674c23ba103efd97163133_LowRes.png "A search field is displayed above the list")
 
 <sup>*A search field is displayed above the list*</sup>
 

@@ -8,7 +8,7 @@ In this step of our Walkthrough tutorial, we adjust the content density based on
 
 ### Preview 
 
-![](https://sdk.openui5.org/docs/topics/loiof216b131c492448d8a1df25db2b9a26d_LowRes.png "The content density is compact on desktop devices and cozy on touch-enabled devices")
+![](assets/loiof216b131c492448d8a1df25db2b9a26d_LowRes.png "The content density is compact on desktop devices and cozy on touch-enabled devices")
 
 <sup>*The content density is compact on devices without a touch screen and cozy on touch-enabled devices*</sup>
 
