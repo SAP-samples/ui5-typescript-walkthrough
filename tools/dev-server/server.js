@@ -13,6 +13,8 @@ const express = require('express');
 const app = express();
 const port = 1337;
 
+const cwd = process.cwd();
+
 async function convertMarkdown(md) {
 	const converter = new showdown.Converter({
 		ghCompatibleHeaderId: true,
@@ -38,14 +40,14 @@ async function getTemplate() {
 	return templateFn;
 }
 
-app.use("/node_modules", express.static(join(__dirname, "..", "node_modules")));
+app.use("/node_modules", express.static(join(cwd, "node_modules")));
 
 app.use(async (req, res, next) => {
 	let file, url;
 	if (req.url.endsWith("/")) {
 		for (const index of ["index.md", "README.md"]) {
 			url = `${req.url}${index}`;
-			file = join(__dirname, "..", url);
+			file = join(cwd, url);
 			if (existsSync(file) && statSync(file).isFile()) {
 				break;
 			} else {
@@ -53,7 +55,7 @@ app.use(async (req, res, next) => {
 			}
 		}
 	} else {
-		file = join(__dirname, "..", req.url);
+		file = join(cwd, req.url);
 		if (!(existsSync(file) && statSync(file).isFile())) {
 			file = undefined;
 		}
