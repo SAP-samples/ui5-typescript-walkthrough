@@ -128,6 +128,7 @@ function zipDirectory(sourceDir, outPath) {
 						// rewrite content of the JS file
 						let content = readFileSync(sourceJS, { encoding: "utf8" });
 						content = content.replaceAll(/\/\*\*.*[\n\s]+\* @namespace.*[\n\s]+\*\/[\n\s]+/g, "");
+						content = content.replaceAll(/\/\*\*.*[\n\s]+\* @name.*[\n\s]+\*\/[\n\s]+/g, "");
 						content = content.replaceAll(/\/\/# sourceMappingURL=.*[\n\s]+/g, "");
 						writeFileSync(targetJS, content, { encoding: "utf8" });
 					} else {
