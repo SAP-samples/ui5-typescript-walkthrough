@@ -1,6 +1,6 @@
 ## Step 3: Controls
 
-Now it is time to build our first little UI by replacing the “Hello World” text in the HTML body by the OpenUI5 control `sap/m/Text`. In the beginning, we will use the TypeScript control API to set up the UI, the control instance is then placed into the HTML body.
+Now it is time to build our first little UI by replacing the “Hello World” text in the HTML body by the OpenUI5 control `sap/m/Text`. In the beginning, we will create an OpenUI5 control instance and place into the HTML body.
 
 &nbsp;
 
@@ -15,13 +15,23 @@ Now it is time to build our first little UI by replacing the “Hello World” t
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 3](https://sap-samples.github.io/ui5-typescript-walkthrough/build/03/index-cdn.html).
 
-Download solution for step 3 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-03.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-03-js.zip).
-
 ***
+### Coding
+<details class="ts-only">
 
-### Tooling
+You can download the solution for this step here: [📥 Download step 3](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-03.zip).
 
-### package.json
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 3](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-03-js.zip).
+
+</details>
+
+<details class="ts-only">
+
+### UI5 Tooling
 
 To get the type definitions for OpenUI5, we need to install them to our project. We open a terminal in the root folder of our app and exectue the following command:
 
@@ -31,13 +41,32 @@ npm install @types/openui5 --save-dev
 
 ***
 
-### Coding
+</details>
 
-### webapp/index.ts
+### webapp/index.?s
 
-Now we make some changes to our `index.ts` file: We remove the alert method and instantiate an OpenUI5 text control instead. We create an instance of the text control by passing its options as a TypeScript object to the constructor. In our case, we want the text control to display the message "Hello World", so we'll set the `text` property accordingly. 
+<details class="ts-only">
 
-To place the text control to our HTML document, we chain the constructor call of the control with the `placeAt` method. This method is used to position OpenUI5 controls. In our case, we add the text control to the DOM element with the ID `content`.
+We will replace the native script in our file with the OpenUI5 Text control displaying "Hello Word". 
+For this, we will create a new instance of the Text control, setting its `text` property to "Hello World" by passing it as an object to the constructor.
+
+</details>
+
+<details class="js-only">
+
+We will replace the native script in our file with the OpenUI5 Text control displaying "Hello Word". 
+For this, we will first use OpenUI5's module definition `sap.ui.define` to create a module. To instantiate and render the Text control, we will define the `sap/m/Text` module as a dependency to this module. We will then create a new instance of the Text control and set its `text` property to "Hello World".
+
+</details>
+
+To place the text control to our HTML document, we chain the constructor call of the control with the `placeAt` method. This method is used to position OpenUI5 controls. In our case, we add the Text control to the DOM element with the ID `content`.
+
+<details class="js-only">
+
+> 📌 **Important:** <br>
+> It is best practice to use of Anynchronous Module Loading (AMD) style for defining modules and their dependencies. This ensures better performance, proper dependency tracking between modules and helps avoid issues related to loading order.
+
+</details>
 
 ```ts
 import Text from "sap/m/Text";
@@ -47,7 +76,15 @@ new Text({
 }).placeAt("content");
 ```
 
-Controls are used to define appearance and behavior of parts of the screen.
+```js
+sap.ui.define(["sap/m/Text"], function (Text) {
+  "use strict";
+
+  new Text({
+    text: "Hello World"
+  }).placeAt("content");
+});
+```
 
 All controls of OpenUI5 have a fixed set of properties, aggregations, and associations for configuration. You can find their descriptions in the Demo Kit. In addition, each control comes with a set of public functions that you can look up in the API reference.
 
@@ -112,8 +149,6 @@ ui5 add sap.m
 
 **Related Information** 
 
-[TypeScript definitions for OpenUI5](https://www.npmjs.com/package/@types/openui5)
-
 [Working with Controls](https://sdk.openui5.org/topic/91f0a22d6f4d1014b6dd926db0e91070.html "Controls are used to define the appearance and behavior of screen areas.")
 
 [API Reference: `sap.m.Text`](https://sdk.openui5.orgapi/sap.m.Text)
@@ -125,3 +160,15 @@ ui5 add sap.m
 [API Reference: `sap.ui.core.Element`](https://sdk.openui5.orgapi/sap.ui.core.Element)
 
 [API Reference: `sap.ui.base.ManagedObject`](https://sdk.openui5.orgapi/sap.ui.base.ManagedObject)
+
+<details class="ts-only">
+
+[TypeScript definitions for OpenUI5](https://www.npmjs.com/package/@types/openui5)
+
+</details>
+
+<details class="js-only">
+
+[Best Practices for Loading Modules](https://sdk.openui5.org/topic/00737d6c1b864dc3ab72ef56611491c4 "This section provides best practices for OpenUI5 module loading patterns.")
+
+</details>

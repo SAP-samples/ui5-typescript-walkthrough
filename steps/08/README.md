@@ -16,11 +16,21 @@ This way, they are all in a central place and can be easily translated into othe
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 8](https://sap-samples.github.io/ui5-typescript-walkthrough/build/08/index-cdn.html).
 
-Download solution for step 8 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-08.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-08-js.zip).
-
 ***
 
 ### Coding
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 8](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-08.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 8](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-08-js.zip).
+
+</details>
+
 
 ### webapp/i18n/i18n.properties \(New\)
 
@@ -37,7 +47,7 @@ In this tutorial we'll only have one properties file. However, in real-world pro
 
 ***
 
-### webapp/controller/App.controller.ts
+### webapp/controller/App.controller.?s
 
 In the controller, we'll create a new resource model that refers to our resource bundle file (`i18n.properties`) and link it to the view associated with the controller. This allows us to bind control properties in the view to translatable texts. We'll also modify the `onShowHello` event handler function to replace the static "Hello World" text with a dynamic greeting text.
 
@@ -65,7 +75,6 @@ export default class AppController extends Controller {
          }
       };
       const dataModel = new JSONModel(data);
-      // because of "strict" mode in tsconfig.json a null check is required for this.getView()
       this.getView()?.setModel(dataModel);
 
       // set i18n model on view
@@ -84,6 +93,43 @@ export default class AppController extends Controller {
       MessageToast.show(msg);
    }
 };
+
+```
+
+```js
+sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/resource/ResourceModel"], function (MessageToast, Controller, JSONModel, ResourceModel) {
+  "use strict";
+
+  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
+    onInit: function _onInit() {
+      // set data model on view
+      const data = {
+        recipient: {
+          name: "World"
+        }
+      };
+      const dataModel = new JSONModel(data);
+      this.getView()?.setModel(dataModel);
+
+      // set i18n model on view
+      const i18nModel = new ResourceModel({
+        bundleName: "ui5.walkthrough.i18n.i18n"
+      });
+      this.getView()?.setModel(i18nModel, "i18n");
+    },
+    onShowHello: function _onShowHello() {
+      // read msg from i18n model
+      const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
+      const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
+      const msg = resourceBundle.getText("helloMsg", [recipient]);
+      // show message
+      MessageToast.show(msg);
+    }
+  });
+  ;
+  return AppController;
+});
+
 ```
 
 The bundle name \(`ui5.walkthrough.i18n.i18n`\) consists of the application namespace `ui5.walkthrough` \(the application root as defined in the `index.html`\), the folder name `i18n`, and finally the base file name `i18n` without extension. The OpenUI5 runtime calculates the correct path to the resource, to which `.properties` is then appended.

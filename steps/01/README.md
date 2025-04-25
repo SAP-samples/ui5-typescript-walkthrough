@@ -15,11 +15,22 @@ As you know OpenUI5 is all about HTML5. Let's get started with building a first 
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 1](https://sap-samples.github.io/ui5-typescript-walkthrough/build/01/index.html).
 
-Download solution for step 1 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 1](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01.zip). 
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 1](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01-js.zip).
+
+</details>
+
 
 ### webapp \(New\)
 

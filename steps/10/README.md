@@ -15,12 +15,22 @@ Instead of relying on a local HTML file for the bootstrap, the manifest is parse
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 10](https://sap-samples.github.io/ui5-typescript-walkthrough/build/10/index-cdn.html).
 
-Download solution for step 10 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-10.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-10-js.zip).
-
 ***
 
-
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 10](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-10.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 9] [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-10-js.zip).
+
+</details>
+
 
 ### webapp/i18n/i18n.properties
 
@@ -151,7 +161,7 @@ In our current scenario, we only have one model called `i18n`, which is a resour
 
 ***
 
-### webapp/Component.ts
+### webapp/Component.?s
 
 To apply the settings specified in the manifest to the component, we need to include the manifest in the component's metadata. To do this, we add a `manifest` property to the `metadata` section of the component and set it to "json". This property acts as a reference to the `manifest.json` file, which will be loaded and used.
 
@@ -183,6 +193,36 @@ export default class Component extends UIComponent {
         this.setModel(dataModel);
     };
 };
+
+```
+
+```js
+sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"], function (UIComponent, JSONModel) {
+  "use strict";
+
+  const Component = UIComponent.extend("ui5.walkthrough.Component", {
+    metadata: {
+      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
+      "manifest": "json"
+    },
+    init: function _init() {
+      // call the init function of the parent
+      UIComponent.prototype.init.call(this);
+
+      // set data model
+      const data = {
+        recipient: {
+          name: "World"
+        }
+      };
+      const dataModel = new JSONModel(data);
+      this.setModel(dataModel);
+    }
+  });
+  ;
+  return Component;
+});
+
 ```
 
 ***
@@ -219,7 +259,7 @@ It's worth noting that the `ComponentSupport` module enforces asynchronous loadi
 </html>
 ```
 
-We can now delete our `index.ts` file, because our component is now initiated directly in the HTML markup.
+We can now delete our `index.?s` file, because our component is now initiated directly in the HTML markup.
 
 ***
 
