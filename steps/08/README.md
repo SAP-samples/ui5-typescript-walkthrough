@@ -30,7 +30,7 @@ You can download the solution for this step here: [📥 Download step 8](https:/
 You can download the solution for this step here: [📥 Download step 8](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-08-js.zip).
 
 </details>
-
+***
 
 ### webapp/i18n/i18n.properties \(New\)
 

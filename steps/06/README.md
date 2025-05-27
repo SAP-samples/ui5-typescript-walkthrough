@@ -29,7 +29,7 @@ You can download the solution for this step here: [📥 Download step 6](https:/
 You can download the solution for this step here: [📥 Download step 6](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-06-js.zip).
 
 </details>
-
+***
 
 ### webapp/controller/App.controller.?s
 

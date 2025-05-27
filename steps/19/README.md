@@ -14,11 +14,22 @@ Now that we have established a good structure for our app, it's time to add some
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 19](https://sap-samples.github.io/ui5-typescript-walkthrough/build/19/index-cdn.html).
 
-Download solution for step 19 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-19.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-19-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 19](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-19.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 19](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-19-js.zip).
+
+</details>
+***
 
 ### webapp/model/localInvoices.json \(New\)
 

@@ -14,11 +14,21 @@ In this step of our Walkthrough tutorial, we adjust the content density based on
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 36](https://sap-samples.github.io/ui5-typescript-walkthrough/build/36/test/mockServer-cdn.html).
 
-Download solution for step 36 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-36.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-36-js.zip).
-
 ***
 
 ### Coding
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 36](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-36.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 36](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-36-js.zip).
+
+</details>
+***
 
 ### webapp/Component.ts
 

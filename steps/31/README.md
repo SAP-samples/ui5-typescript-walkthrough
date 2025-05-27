@@ -17,11 +17,23 @@ To make this work, we have to pass over the information which item has been sele
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 31](https://sap-samples.github.io/ui5-typescript-walkthrough/build/31/test/mockServer-cdn.html).
 
-Download solution for step 31 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-31.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-31-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 31](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-31.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 31](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-31-js.zip).
+
+</details>
+
+***
 
 ### webapp/manifest.json
 

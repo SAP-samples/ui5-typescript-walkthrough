@@ -39,7 +39,7 @@ You can download the solution for this step here: [📥 Download step 9](https:/
 You can download the solution for this step here: [📥 Download step 9](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-09-js.zip).
 
 </details>
-
+***
 
 ### webapp/Component.?s \(New\)
 

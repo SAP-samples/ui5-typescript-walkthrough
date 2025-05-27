@@ -13,11 +13,21 @@ In this step we're going to build our application and consume the speed of a bui
 
 <sup>*The OpenUI5 application is built and served*</sup>
 
-Download solution for step 38 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-38.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-38-js.zip).
-
 ***
 
 ### Coding
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 38](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-38.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 38](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-38-js.zip).
+
+</details>
+***
 
 ### package.json
 

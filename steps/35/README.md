@@ -14,11 +14,21 @@ We now configure the visibility and properties of controls based on the device t
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 35](https://sap-samples.github.io/ui5-typescript-walkthrough/build/35/test/mockServer-cdn.html).
 
-Download solution for step 35 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-35.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-35-js.zip).
-
 ***
 
 ### Coding
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 35](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-35.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 35](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-35-js.zip).
+
+</details>
+***
 
 ### webapp/Component.ts
 

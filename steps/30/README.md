@@ -17,12 +17,23 @@ In this step, we will use the OpenUI5 navigation features to load and show a sep
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 30](https://sap-samples.github.io/ui5-typescript-walkthrough/build/30/test/mockServer-cdn.html).
 
-Download solution for step 30 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30-js.zip).
-
 ***
 
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 30](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 30](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30-js.zip).
+
+</details>
+***
 
 ### webapp/i18n/i18n.properties
 

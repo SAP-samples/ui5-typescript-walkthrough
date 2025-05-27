@@ -29,7 +29,7 @@ You can download the solution for this step here: [📥 Download step 2](https:/
 You can download the solution for this step here: [📥 Download step 2](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-02-js.zip).
 
 </details>
-
+***
 
 ### UI5 Tooling
 

@@ -31,7 +31,7 @@ You can download the solution for this step here: [📥 Download step 4](https:/
 You can download the solution for this step here: [📥 Download step 4](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-04-js.zip).
 
 </details>
-
+***
 
 ### webapp/view/App.view.xml \(New\)
 

@@ -14,11 +14,22 @@ Sometimes the predefined types of OpenUI5 are not flexible enough and you want t
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 21](https://sap-samples.github.io/ui5-typescript-walkthrough/build/21/index-cdn.html).
 
-Download solution for step 21 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-21.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-21-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 21](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-21.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 21](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-21-js.zip).
+
+</details>
+***
 
 ### webapp/view/InvoiceList.view.xml
 

@@ -4,6 +4,8 @@ In this step we're going to improve the accessibility of our app.
 
 To achieve this, we will add ARIA attributes. ARIA attributes are used by screen readers to recognize the application structure and to interpret UI elements properly. That way, we can make our app more accessible for users who are limited in their use of computers, for example visually impaired persons. The main goal here is to make our app usable for as many people as we can.
 
+One part of the ARIA attribute set are the so-called landmarks. You can compare landmarks to maps in that they help the user navigate through an app. For this step, we will use Google Chrome with a free [landmark navigation extension](https://chrome.google.com/webstore/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) We will now add meaningful landmarks to our code.
+
 > 💡 **Tip:** <br>
 > ARIA is short for **Accessible Rich Internet Applications**. It is a set of attributes that enable us to make apps more accessible by assigning semantic characteristics to certain elements. For more information, see [Accessible Rich Internet Applications \(ARIA\) – Part 1: Introduction](https://blogs.sap.com/2015/06/01/accessible-rich-internet-applications-aria-part-1-introduction/).
 
@@ -19,13 +21,22 @@ To achieve this, we will add ARIA attributes. ARIA attributes are used by screen
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 37](https://sap-samples.github.io/ui5-typescript-walkthrough/build/37/test/mockServer-cdn.html).
 
-Download solution for step 37 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-37.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-37-js.zip).
-
 ***
 
 ### Coding
 
-One part of the ARIA attribute set are the so-called landmarks. You can compare landmarks to maps in that they help the user navigate through an app. For this step, we will use Google Chrome with a free [landmark navigation extension](https://chrome.google.com/webstore/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) We will now add meaningful landmarks to our code.
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 37](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-37.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 37](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-37-js.zip).
+
+</details>
+***
 
 ### webapp/i18n/i18n.properties
 
@@ -146,24 +157,24 @@ In the `HelloPanel` view, we already have a panel, so we just add the `accessibl
 <tr>
 <td valign="top">
 
-![](assets/loio54e9bca5a5844c14b45b5405496166b1_HiRes.png)
+<img src="assets/loio54e9bca5a5844c14b45b5405496166b1_HiRes.png">
 
 </td>
 <td valign="top">
 
-![](assets/loiof38dee2624c2437d8977de70575b3eae_HiRes.png)
+<img src="assets/loiof38dee2624c2437d8977de70575b3eae_HiRes.png">
 
 </td>
 </tr>
 <tr>
 <td valign="top">
 
-**Landmarks on the overview page - before**
+<strong>Landmarks on the overview page - before</strong>
 
 </td>
 <td valign="top">
 
-**Landmarks on the overview page - after**
+<strong>Landmarks on the overview page - after</strong>
 
 </td>
 </tr>

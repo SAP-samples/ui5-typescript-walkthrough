@@ -30,7 +30,7 @@ You can download the solution for this step here: [📥 Download step 5](https:/
 You can download the solution for this step here: [📥 download step 5](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-05-js.zip).
 
 </details>
-
+***
 
 ### webapp/controller/App.controller.?s \(New\)
 First of all, we need a conroller for our app view that defines how the view should react to user inputs, such as a button press event. 

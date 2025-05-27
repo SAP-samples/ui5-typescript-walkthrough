@@ -15,11 +15,21 @@ Now we can navigate to our detail page and display an invoice, but we cannot go 
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 32](https://sap-samples.github.io/ui5-typescript-walkthrough/build/32/test/mockServer-cdn.html).
 
-Download solution for step 32 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-32.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-32-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 32](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-32.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 32](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-32-js.zip).
+
+</details>
 
 ***
 
