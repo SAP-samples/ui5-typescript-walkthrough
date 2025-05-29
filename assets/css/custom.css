@@ -114,6 +114,10 @@ body.page-language-ts .language-switch-button.lang-ts {
     border-color: var(--active-border);
 }
 
+li > section.ts-only, li > section.js-only {
+	display: inline;
+}
+
 .language-switch-button:hover {
     opacity: 0.8;
     background-color: rgba(20, 20, 20, 0.8);
