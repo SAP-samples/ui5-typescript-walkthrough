@@ -15,12 +15,22 @@ In this step, we improve the responsiveness of our app. OpenUI5 applications can
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 34](https://sap-samples.github.io/ui5-typescript-walkthrough/build/34/test/mockServer-cdn.html).
 
-Download solution for step 34 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-34.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-34-js.zip).
 
 ***
 
 ### Coding
+<details class="ts-only">
 
+You can download the solution for this step here: [📥 Download step 34](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-34.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 34](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-34-js.zip).
+
+</details>
+***
 
 ### webapp/i18n/i18n.properties
 

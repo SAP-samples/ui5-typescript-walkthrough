@@ -11,26 +11,35 @@ This system is the so-called back-end system that we will now simulate with anOp
 ### Preview
 
 
-![](assets/loiofe1403346ce9499f8bb102beaa4986d5_LowRes.png "Folder Structure for this Step")
+![](assets/loiofe1403346ce9499f8bb102beaa4986d5_LowRes.png "The list of invoices is now served by the Mock Server")
 
 <sup>*The list of invoices is now served by the Mock Server*</sup>
-
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 26](https://sap-samples.github.io/ui5-typescript-walkthrough/build/26/test/mockServer-cdn.html).
-
-Download solution for step 26 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-26.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-26-js.zip).
-
-***
-
-### Coding
 
 The folder structure of our app project is clearly separating test and productive files after this step. The new `test` folder now contains a new HTML page `mockServer.html` which will launch our application in test mode without calling the real service.
 
 The new `localService` folder contains a `metadata.xml` service description file for OData, the `mockserver.js` file that simulates a real service with local data, and the `mockdata` subfolder that contains the local test data \(`Invoices.json`\).
 
-![](assets/loiofe1403346ce9499f8bb102beaa4986d5_LowRes.png "Folder Structure for this Step")
+![](assets/loio7a5e2b02d72d40d388f5e601d7de74df_LowRes.png "Folder Structure for this Step")
 
 <sup>*Folder Structure for this Step*</sup>
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 26](https://sap-samples.github.io/ui5-typescript-walkthrough/build/26/test/mockServer-cdn.html).
+
+***
+
+### Coding
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 26](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-26.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 26](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-26-js.zip).
+
+</details>
+***
 
 ### webapp/localService/metadata.xml \(New\)
 

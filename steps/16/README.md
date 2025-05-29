@@ -20,12 +20,23 @@ We will now add a dialog to our app. Dialogs are special, because they open on t
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 16](https://sap-samples.github.io/ui5-typescript-walkthrough/build/16/index-cdn.html).
 
-Download solution for step 16 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-16.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-16-js.zip).
-
 ***
 
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 16](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-16.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 16](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-16-js.zip).
+
+</details>
+***
 
 ### webapp/view/HelloDialog.fragment.xml \(New\)
 

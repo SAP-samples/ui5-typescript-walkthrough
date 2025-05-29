@@ -17,19 +17,28 @@ Actually, every feature that we added to the app so far, would require a separat
 
 <sup>*A unit test for our formatters is now available*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/build/27/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=unit/unitTests).
-
-Download solution for step 27 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-27.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-27-js.zip).
-
-***
-
-### Coding
-  
 We add a new folder `unit` under the `test` folder and a `model` subfolder where we will place our formatter unit test. The folder structure matches the app structure to easily find the corresponding unit tests.
   
 ![](assets/loio1b5613ac3ab94757af2c7823039222a9_LowRes.png "Folder Structure for this Step")
 <sup>*Folder Structure for this Step*</sup>
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/build/27/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=unit/unitTests).
+
+***
+
+### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-27.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-27-js.zip).
+
+</details>
 ***
 
 ### webapp/test/unit/model/formatter.ts \(New\)

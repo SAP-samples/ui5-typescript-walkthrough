@@ -16,11 +16,22 @@ Instead of manually adding CSS to the controls, we will use the standard classes
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 13](https://sap-samples.github.io/ui5-typescript-walkthrough/build/13/index-cdn.html).
 
-Download solution for step 13 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-13.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-13-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 13](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-13.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 13](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-13-js.zip).
+
+</details>
+***
 
 ### webapp/view/App.view.xml
 

@@ -14,12 +14,23 @@ Our panel content is getting more and more complex and now it is time to move th
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 15](https://sap-samples.github.io/ui5-typescript-walkthrough/build/15/index-cdn.html).
 
-Download solution for step 15 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-15.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-15-js.zip).
-
 ***
 
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 15](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-15.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 15](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-15-js.zip).
+
+</details>
+***
 
 ### webapp/controller/HelloPanel.controller.ts \(New\)
 

@@ -14,11 +14,22 @@ In this step, we add a search field for our product list and define a filter tha
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 23](https://sap-samples.github.io/ui5-typescript-walkthrough/build/23/index-cdn.html).
 
-Download solution for step 23 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-23.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-23-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 23](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-23.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 23](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-23-js.zip).
+
+</details>
+***
 
 ### webapp/controller/InvoiceList.controller.ts
 

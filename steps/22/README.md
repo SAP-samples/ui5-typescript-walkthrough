@@ -14,11 +14,22 @@ If we want to do a more complex logic for formatting properties of our data mode
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 22](https://sap-samples.github.io/ui5-typescript-walkthrough/build/22/index-cdn.html).
 
-Download solution for step 22 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-22.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-22-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 22](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-22.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 22](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-22-js.zip).
+
+</details>
+***
 
 ### webapp/i18n/i18n.properties
 

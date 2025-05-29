@@ -3,7 +3,7 @@
 If we want to test interaction patterns or more visual features of our app, we can also write an integration test.
 
 We haven’t thought about testing our interaction with the app yet, so in this step we will check if the dialog actually opens when we click the “Say Hello with Dialog” button. We can easily do this with OPA5, a feature of OpenUI5 that is easy to set up and is based on JavaScript and QUnit. Using integration and unit tests and running them consistently in a continuous integration \(CI\) environment, we can make sure that we don’t accidentally break our app or introduce logical errors in existing code.
-
+&nbsp;
 > 📝 **Note:** 
 > In this tutorial, we focus on a simple use case for the test implementation. If you want to learn more about OPA tests, have a look at our [Testing Tutorial](https://sdk.openui5.org/topic/291c9121e6044ab381e0b51716f97f52.html) tutorial, especially [Step 6: A First OPA Test](https://sdk.openui5.org/topic/1b47457cbe4941ee926317d827517acb.html).
 
@@ -17,21 +17,29 @@ We haven’t thought about testing our interaction with the app yet, so in this 
 
 <sup>*An OPA test opens the "Hello" dialog from step 16*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 28](https://sap-samples.github.io/ui5-typescript-walkthrough/build/28/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=integration/opaTests).
+We add a new folder `integration` below the `test` folder, where we put our new test cases. Page objects that help structuring such integration tests are put in the `pages` subfolder that we also create now.
 
-Download solution for step 28 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-28.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-28-js.zip).
+![](assets/loio27e84d5bd72a485498564b92894869b5_LowRes.png "Folder Structure for this Step")
+<sup>*Folder Structure for this Step*</sup>
+
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 28](https://sap-samples.github.io/ui5-typescript-walkthrough/build/28/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=integration/opaTests).
 
 ***
 
 ### Coding  
   
-We add a new folder `integration` below the `test` folder, where we put our new test cases. Page objects that help structuring such integration tests are put in the `pages` subfolder that we also create now.
 
+<details class="ts-only">
 
-![](assets/loio27e84d5bd72a485498564b92894869b5_LowRes.png "Folder Structure for this Step")
-<sup>*Folder Structure for this Step*</sup>
+You can download the solution for this step here: [📥 Download step 28](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-28.zip).
 
+</details>
 
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 28](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-28-js.zip).
+
+</details>
 ***
 
 ### webapp/test/integration/pages/HelloPanelPage.ts \(New\)

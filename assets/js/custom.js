@@ -164,7 +164,10 @@ function replaceDetailSections() {
 			if (child.tagName.toLocaleUpperCase() === "SUMMARY") {
 				return;
 			}
-			sectionTag.appendChild(child);
+			// only add the child if it has content
+			if (child.innerHTML.trim()) {
+				sectionTag.appendChild(child);
+			}
 		});
 
 		// remove the detail tag
