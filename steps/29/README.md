@@ -93,7 +93,7 @@ We introduced a typo in the binding of the number attribute to simulate a freque
 </mvc:View>
 
 ```
-
+&nbsp;
 Now we call the app and notice that the price is actually missing. By entering the [shortcut](https://sdk.openui5.org/topic/154844c3ac2a4675a37aeb6259a5e034.html) [Ctrl\] + [Shift\] + [Alt\] /[Option\] + [S\]  we open the OpenUI5 support diagnostics tool and check the app.
 
 > 📝 **Note:**

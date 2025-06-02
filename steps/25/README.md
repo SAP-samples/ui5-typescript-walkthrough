@@ -49,8 +49,6 @@ In this tutorial we'll use [ui5-middleware-simpleproxy](https://bestofui5.org/#/
 
 Open a new terminal window in your app root folder and execute `npm i -D ui5-middleware-simpleproxy` to install this package as a new development dependency in your `package.json`.
 
-***
-
 ### ui5.yaml
 
 We now configure the `ui5-middleware-simpleproxy` in the `ui5.yaml` file, so the proxy is used with the UI5 Tooling when serving the app.
@@ -87,7 +85,6 @@ server:
     configuration:
       baseUri: "https://services.odata.org"
 ```
-***
 
 ### manifest.json
 

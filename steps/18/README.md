@@ -65,12 +65,11 @@ We add an icon to the button that opens the dialog. The `sap-icon://` protocol i
    </Panel>
 </mvc:View>
 ```
-
+&nbsp;
 >💡 **Tip:** <br>
 > You can look up other icons using the [Icon Explorer tool](https://sdk.openui5.org/test-resources/sap/m/demokit/iconExplorer/webapp/index.html).
 > To call any icon, use its name as listed in the *Icon Explorer* in <code>sap-icon://<i>&lt;iconname&gt;</i></code>.
 
-***
 
 ### webapp/view/HelloDialog.fragment.xml
 

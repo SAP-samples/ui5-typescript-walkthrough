@@ -53,8 +53,6 @@ columnPrice=Price
 ...
 ```
 
-***
-
 ### webapp/view/InvoiceList.view.xml
 
 On the invoice list view, we exchange the list with a table simply by replacing the tag `<List>` with `<Table>`. The table has a built-in responsiveness feature that allows us to make the app more flexible. The table and the list share the same set of properties so we can simply reuse these and also the sorter.
@@ -190,7 +188,7 @@ Instead of the `ObjectListItem` that we had before, we will now split the inform
 	</Table>
 </mvc:View>
 ```
-
+&nbsp;
 Now we have defined our table responsively and can see the results when we decrease the browsers screen size. The *Supplier* column is not shown on phone sizes and the two columns *Quantity* and *Status* will be shown below the name.
 
 We can see the results when we decrease the browser's screen size or open the app on a small device.

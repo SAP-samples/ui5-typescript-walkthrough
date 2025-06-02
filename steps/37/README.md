@@ -56,8 +56,6 @@ Overview_contentLabel=Page Content
 ...
 ```
 
-***
-
 ### webapp/view/Overview.view.xml
 
 We add the `landmarkInfo` aggregation to the page and use `sap.m.PageAccessibleLandmarkInfo` to define ARIA roles and labels for the overview page areas. In the `PageAccessibilityLandmarkInfo` control we specify a role and a title for the root, the content, and the header of the page.
@@ -87,8 +85,6 @@ For more information, see the [API Reference: `sap.m.PageAccessibleLandmarkInfo`
 	</Page>
 </mvc:View>
 ```
-
-***
 
 ### webapp/view/InvoiceList.view.xml
 
@@ -125,8 +121,6 @@ We add an `sap.m.Panel` around the invoice list and move the toolbar from the ta
 	</Panel>
 </mvc:View>
 ```
-
-***
 
 ### webapp/view/HelloPanel.view.xml
 
@@ -179,7 +173,7 @@ In the `HelloPanel` view, we already have a panel, so we just add the `accessibl
 </td>
 </tr>
 </table>
-
+&nbsp;
 As you can see, we now have four landmarks on our page. The top three landmarks structure our page:
 
 -   *Overview Page* marks the complete page.

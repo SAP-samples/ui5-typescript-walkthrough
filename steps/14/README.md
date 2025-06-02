@@ -59,7 +59,6 @@ html[dir="ltr"] .myAppDemoWT .myCustomButton.sapMBtn {
     font-weight: bold;
  }
 ```
-***
 
 ### webapp/manifest.json
 
@@ -83,8 +82,6 @@ We configure the CSS file to our app descriptor: In the `resources` section of t
     }
 }        
 ```
-
-***
 
 ### webapp/view/App.view.xml
 
@@ -130,7 +127,7 @@ To highlight the output text, we replace the text control by a `FormattedText` c
 	</Shell>
 </mvc:View>
 ```
-
+&nbsp;
 The actual color now depends on the selected theme which ensures that the color always fits to the theme and is semantically clear. For a complete list of the available CSS class names, see [CSS Classes for Theme Parameters](https://sdk.openui5.org/topic/ea08f53503da42c19afd342f4b0c9ec7.html).
 
 ***

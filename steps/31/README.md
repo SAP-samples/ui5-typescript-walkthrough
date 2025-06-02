@@ -83,9 +83,7 @@ We want to hand over the information for the selected item when navigating to th
 }
 ```
 
-***
-
-### webapp/controller/InvoiceList.controller.ts
+### webapp/controller/InvoiceList.controller.?s
 
 In the controller for the invoice list view, we extend the `onPress` event handler in such a way, it not only triggers the navigation to the detail view but also passes the selected item to the routing.
 
@@ -111,7 +109,8 @@ import UIComponent from "sap/ui/core/UIComponent";
  * @namespace ui5.walkthrough.controller
  */
 export default class App extends Controller {
-	…
+	
+    //...
 
     onPress(event: Event): void {
         const item = event.getSource() as ObjectListItem;
@@ -121,11 +120,32 @@ export default class App extends Controller {
         });
     }     
 };
+
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/core/UIComponent"], function (Controller, JSONModel, Filter, FilterOperator, UIComponent) {
+  "use strict";
 
-### webapp/controller/Detail.controller.ts \(New\)
+  const App = Controller.extend("ui5.walkthrough.controller.App", {
+    
+    //...
+
+    onPress: function _onPress(event) {
+      const item = event.getSource();
+      const router = UIComponent.getRouterFor(this);
+      router.navTo("detail", {
+        invoicePath: window.encodeURIComponent(item.getBindingContext("invoice").getPath().substring(1))
+      });
+    }
+  });
+  ;
+  return App;
+});
+
+```
+
+### webapp/controller/Detail.controller.?s \(New\)
 
 Now we need to create a new detail controller to set the content we passed in with the URL parameter `invoicePath` on the detail view. This will allow us to access the data of the selected item and display them on the view.
 
@@ -160,8 +180,30 @@ export default class Detail extends Controller {
         });
     }
 };
+
 ```
-***
+
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/UIComponent"], function (Controller, UIComponent) {
+  "use strict";
+
+  const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
+    onInit: function _onInit() {
+      const router = UIComponent.getRouterFor(this);
+      router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
+    },
+    onObjectMatched: function _onObjectMatched(event) {
+      this.getView().bindElement({
+        path: "/" + window.decodeURIComponent(event.getParameter("arguments").invoicePath),
+        model: "invoice"
+      });
+    }
+  });
+  ;
+  return Detail;
+});
+
+```
 
 ### webapp/view/Detail.view.xml
 
@@ -184,7 +226,7 @@ Our last piece to fit the puzzle together is the detail view. We replace the app
 You should now see the invoice details on a separate page when you click on an item in the list of invoices.
 
 ***
-
+&nbsp;
 ### Conventions
 
 -   Define the routing configuration in the `manifest.json` / app descriptor

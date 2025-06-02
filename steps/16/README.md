@@ -51,14 +51,12 @@ We add a new XML file to declaratively define our dialog in a fragment. The frag
       title="Hello {/recipient/name}"/>
 </core:FragmentDefinition>
 ```
-
+&nbsp;
 The syntax is similar to a view, but since fragments do not have a controller this attribute is missing. Also, the fragment does not have any footprint in the DOM tree of the app, and there is no control instance of the fragment itself (only the contained controls). It is simply a container for a set of reuse controls.
 
-***
+### webapp/controller/HelloPanel.controller.?s
 
-### webapp/controller/HelloPanel.controller.ts
-
-In the HelloPanel controller, we define a new event handler function `onOpenDialog` which calls the dialog in the HelloDialog fragment when triggered. To do so we need to import the `sap.m.Dialog` module.
+In the HelloPanel controller, we define a new event handler function `onOpenDialog` which calls the dialog in the HelloDialog fragment when triggered. To do so we need the `sap.m.Dialog` module.
 
 Using async/await, we handle the opening of the dialog asynchronously whenever the event is triggered.
 
@@ -88,8 +86,34 @@ export default class HelloPanel extends Controller {
         this.dialog.open();
     }
 };
-```
 
+```
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Controller, MessageToast) {
+  "use strict";
+
+  const HelloPanel = Controller.extend("ui5.walkthrough.controller.HelloPanel", {
+    onShowHello: function _onShowHello() {
+      // read msg from i18n model
+      const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
+      const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
+      const msg = resourceBundle.getText("helloMsg", [recipient]);
+      // show message
+      MessageToast.show(msg);
+    },
+    onOpenDialog: async function _onOpenDialog() {
+      this.dialog ??= await this.loadFragment({
+        name: "ui5.walkthrough.view.HelloDialog"
+      });
+      this.dialog.open();
+    }
+  });
+  ;
+  return HelloPanel;
+});
+
+```
+&nbsp;
 > 💡 **Tip:** <br>
 > To reuse the dialog opening and closing functionality in other controllers, you might create a new file `ui5.walkthrough.controller.controller.BaseController`, which extends `sap.ui.core.mvc.Controller`, and put all your dialog-related coding into this controller. Now, all the other controllers can extend from `ui5.walkthrough.controller.BaseController` instead of `sap.ui.core.mvc.Controller`.
 
@@ -142,7 +166,7 @@ We add a new button to the view to open the dialog and assign an unique `id`to i
    </Panel>
 </mvc:View>
 ```
-
+&nbsp;
 You will need the id of the button control `id="helloDialogButton"` in [Step 28: Integration Test with OPA](../28/README.md). 
 
 It is a good practice to set a unique ID like `helloWorldButton` to key controls of your app so that they can be identified easily. If the attribute `id` is not specified, the OpenUI5 runtime generates unique but changing ID like `\_\_button23` for the control. Inspect the DOM elements of your app in the browser to see the difference.

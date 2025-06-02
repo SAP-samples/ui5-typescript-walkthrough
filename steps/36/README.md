@@ -30,7 +30,7 @@ You can download the solution for this step here: [📥 Download step 36](https:
 </details>
 ***
 
-### webapp/Component.ts
+### webapp/Component.?s
 
 To prepare the content density feature we add a helper method `getContentDensityClass` to the app component. OpenUI5 controls can be displayed in multiple sizes, for example in a `compact` size that is optimized for desktop and non-touch devices, and in a `cozy` mode that is optimized for touch interaction. The controls look for a specific CSS class in the HTML structure of the application to adjust their size.
 
@@ -58,11 +58,33 @@ export default class Component extends UIComponent {
         return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact";
     }
 };
+
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel", "sap/ui/Device"], function (UIComponent, JSONModel, Device) {
+  "use strict";
 
-### webapp/controller/App.controller.ts
+  const Component = UIComponent.extend("ui5.walkthrough.Component", {
+    metadata: {
+      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
+      "manifest": "json"
+    },
+    init: function _init() {
+      // call the init function of the parent
+      ...
+    },
+    getContentDensityClass: function _getContentDensityClass() {
+      return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact";
+    }
+  });
+  ;
+  return Component;
+});
+
+```
+
+### webapp/controller/App.controller.?s
 
 We add the `onInit` method to the app controller that is called when the app view is instantiated. There, we query the helper function that we defined on the app component in order to set the corresponding style class on the app view. All controls inside the app view will now automatically adjust to either the compact or the cozy size, as defined by the style.
 
@@ -78,9 +100,23 @@ export default class App extends Controller {
         this.getView().addStyleClass((this.getOwnerComponent() as Component).getContentDensityClass())
     }
 };
+
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
+  "use strict";
+
+  const App = Controller.extend("ui5.walkthrough.controller.App", {
+    onInit: function _onInit() {
+      this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
+    }
+  });
+  ;
+  return App;
+});
+
+```
 
 ### webapp/manifest.json
 

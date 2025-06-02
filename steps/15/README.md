@@ -32,9 +32,9 @@ You can download the solution for this step here: [📥 Download step 15](https:
 </details>
 ***
 
-### webapp/controller/HelloPanel.controller.ts \(New\)
+### webapp/controller/HelloPanel.controller.?s \(New\)
 
-In folder `webapp/controller` we create a new `HelloPanel.controller.ts` file and move the method `onShowHello` of the app controller to it, so we get a reusable asset.
+In folder `webapp/controller` we create a new `HelloPanel.controller.?s` file and move the method `onShowHello` of the app controller to it, so we get a reusable asset.
 
 ```ts
 import Controller from "sap/ui/core/mvc/Controller";
@@ -58,6 +58,27 @@ export default class HelloPanel extends Controller {
         MessageToast.show(msg);
     }
 };
+
+```
+
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Controller, MessageToast) {
+  "use strict";
+
+  const HelloPanel = Controller.extend("ui5.walkthrough.controller.HelloPanel", {
+    onShowHello: function _onShowHello() {
+      // read msg from i18n model
+      const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
+      const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
+      const msg = resourceBundle.getText("helloMsg", [recipient]);
+      // show message
+      MessageToast.show(msg);
+    }
+  });
+  ;
+  return HelloPanel;
+});
+
 ```
 
 ### webapp/view/HelloPanel.view.xml \(New\)
@@ -89,7 +110,6 @@ We create a new `HelloPanel.view.xml` file in folder `webapp/view` and move the 
    </Panel>
 </mvc:View>
 ```
-***
 
 ### webapp/view/App.view.xml
 
@@ -115,9 +135,7 @@ In the App view, we remove the panel control and its content and put the `XMLVie
 </mvc:View>
 ```
 
-***
-
-### webapp/controller/App.controller.ts
+### webapp/controller/App.controller.?s
 
 We remove the `onShowHello` method from the App controller, as this is not needed anymore.
 
@@ -129,7 +147,20 @@ import Controller from "sap/ui/core/mvc/Controller";
 export default class App extends Controller {
 
 };
+
 ```
+
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
+  "use strict";
+
+  const App = Controller.extend("ui5.walkthrough.controller.App", {});
+  ;
+  return App;
+});
+
+```
+&nbsp;
 
 We have now moved everything out of the app view and controller. The app controller remains an empty stub for now, we will use it later to add more functionality.
 

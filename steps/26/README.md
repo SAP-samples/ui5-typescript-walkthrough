@@ -137,9 +137,9 @@ In folder `localService` we create the new folder `mockdata`. The mock server de
 This file will automatically be found and read by the mock server.
 ***
 
-### webapp/localService/mockserver.ts \(New\)
+### webapp/localService/mockserver.?s \(New\)
 
-Now we can write the code to initialize the mock server which will then simulate any OData request to the real Northwind server. For this we add a new file `mockserver.ts` to the `localService` folder.
+Now we can write the code to initialize the mock server which will then simulate any OData request to the real Northwind server. For this we add a new file `mockserver.?s` to the `localService` folder.
 
 We import the standard OpenUI5 `MockServer` module and create a helper object that defines an `init` method to start the server. The `init` method creates a `MockServer` instance with the same URL as the real service calls. The URL in the `rootUri` configuration parameter has to point to the same URL as defined in the `uri` property of the data source in the `manifest.json` descriptor file. In the `manifest.json`, OpenUI5 automatically interprets a relative URL as being relative to the application namespace. In the TypeScript code, you can ensure this by using the `sap.ui.require.toUrl` method. The `sap/ui/core/util/MockServer` then catches every request to the real service and returns a response. 
 
@@ -175,13 +175,43 @@ export default {
         mockServer.start();
     }
 };
+
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/core/util/MockServer"], function (MockServer) {
+  "use strict";
 
-### webapp/test/initMockServer.ts \(New\)
+  var __exports = {
+    init: function () {
+      // create
+      const mockServer = new MockServer({
+        rootUri: sap.ui.require.toUrl("ui5/walkthrough/V2/Northwind/Northwind.svc/")
+      });
+      const urlParams = new URLSearchParams(window.location.search);
 
-As a next step, we create a module that initializes our local `mockserver`. For this, we add the new `test` folder to our App folder where we place the new `initmockServer.ts` file.
+      // configure mock server with a delay
+      MockServer.config({
+        autoRespond: true,
+        autoRespondAfter: parseInt(urlParams.get("serverDelay") || "500")
+      });
+
+      // simulate
+      const path = sap.ui.require.toUrl("ui5/walkthrough/localService");
+      mockServer.simulate(path + "/metadata.xml", path + "/mockdata");
+
+      // start
+      mockServer.start();
+    }
+  };
+  return __exports;
+});
+
+```
+
+### webapp/test/initMockServer.?s \(New\)
+
+As a next step, we create a module that initializes our local `mockserver`. For this, we add the new `test` folder to our App folder where we place the new `initmockServer.?s` file.
 
 First, we call the `init` method of our local `mockserver`, then we initialize the app component. 
 
@@ -193,8 +223,41 @@ mockserver.init();
 
 // initialize the embedded component on the HTML page
 import("sap/ui/core/ComponentSupport");
+
 ```
-***
+
+```js
+sap.ui.define(["../localService/mockserver"], function (__mockserver) {
+  "use strict";
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule && typeof obj.default !== "undefined" ? obj.default : obj;
+  }
+  function __ui5_require_async(path) {
+    return new Promise(function (resolve, reject) {
+      sap.ui.require([path], function (module) {
+        if (!(module && module.__esModule)) {
+          module = module === null || !(typeof module === "object" && path.endsWith("/library")) ? {
+            default: module
+          } : module;
+          Object.defineProperty(module, "__esModule", {
+            value: true
+          });
+        }
+        resolve(module);
+      }, function (err) {
+        reject(err);
+      });
+    });
+  }
+  const mockserver = _interopRequireDefault(__mockserver); // initialize the mock server
+  mockserver.init();
+
+  // initialize the embedded component on the HTML page
+  __ui5_require_async("sap/ui/core/ComponentSupport");
+});
+
+```
 
 #### webapp/test/mockServer.html \(New\)
 
@@ -228,7 +291,7 @@ Instead the app component, we define that the `initMockServer` is initialized fr
 </body>
 </html>
 ```
-
+&nbsp;
 When launching the app with the `mockServer.html` file the `initMockServer` is called, that first initializes our local mock server and only then our app component. This way we catch all requests that would go to the "real" service and process them locally by our mock server instead. The component itself does not "know" that it now runs in test mode.
 
 If you switch from the `index.html` file to the `mockServer.html` file in the browser, you can now see that the test data is displayed from the local sources, but with a short delay as defined in our local mock server configuration.
@@ -236,8 +299,6 @@ If you switch from the `index.html` file to the `mockServer.html` file in the br
 This approach is perfect for local testing, even without any network connection. This way your development does not depend on the availability of a remote server, i.e. to run your tests.
 
 From this point on, we have two different entry pages: One for the real “connected” app \(`index.html`\) and one for local testing \(`test/mockServer.html`\). You can freely decide if you want to do the next steps on the real service data or on the local data within the app. Try calling the app with the `index.html` file and the `mockServer.html` file to see the difference. If the real service connection cannot be made, for example when there is no network connection, you can always fall back to the local test page.
-
-***
 
 ### UI5 Tooling
 
@@ -255,13 +316,7 @@ In case you prefer to continue with the local data, you should adjust the `start
     "start": "ui5 serve -o test/mockServer.html"
   },
   "devDependencies": {
-    "@types/openui5": "^1.132.0",
-    "@ui5/cli": "^3.7.1",
-    "typescript": "^5.2.2",	  
-    "ui5-middleware-livereload": "^3.0.2",
-    "ui5-middleware-serveframework": "^3.0.0",
-    "ui5-middleware-simpleproxy": "^3.2.8",
-    "ui5-tooling-transpile": "^3.2.7"
+...
   }
 }
 ```

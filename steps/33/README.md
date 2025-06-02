@@ -47,8 +47,6 @@ productRatingLabelFinal=Thank you for your rating!
 productRatingButton=Rate
 ```
 
-***
-
 ### webapp/css/style.css
 
 To layout our new custom control, we specify some additional css. We create a root class `myAppDemoWTProductRating` that sets the padding to `0.75rem`. We will use this class to specify some space around our inner controls. In a second rule we reset the vertical alignment of controls with the class `sapMRI` assigned to inside controls with the class `myAppDemoWTProductRating` to the initial value. We'll need this rule to align all the controls we use with our composition.
@@ -75,9 +73,7 @@ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
 
 We could also do this with more HTML in the renderer but this is the simplest way and it will only be applied inside our custom control. However, please be aware that the custom control is in your app and might have to be adjusted when the inner controls change in future versions of OpenUI5.
 
-***
-
-### webapp/control/ProductRating.ts \(New\)
+### webapp/control/ProductRating.?s \(New\)
 
 Custom controls are small reuse components that can be created within an application very easily. Due to their nature, they are sometimes also referred to as "notepad” or “on the fly” controls. A custom control is an object that has two special sections \(`metadata` and `renderer`\) and various methods that determine the control's functionality.
 
@@ -123,6 +119,24 @@ export default class ProductRating extends Control {
 };
 ```
 
+```js
+sap.ui.define(["sap/ui/core/Control"], function (Control) {
+  "use strict";
+
+  const ProductRating = Control.extend("ui5.walkthrough.control.ProductRating", {
+    renderer: {
+      apiVersion: 4,
+      render: (rm, control) => { }
+    },
+    metadata: {},
+    init: function _init() {},
+  });
+  ;
+  return ProductRating;
+});
+
+```
+&nbsp;
 > 📌 **Remember:** <br>
 > Controls always extend `sap.ui.core.Control` and render themselves. You could also extend `sap.ui.core.Element` or `sap.ui.base.ManagedObject` directly if you want to reuse life cycle features of OpenUI5 including data binding for objects that are not rendered. Please refer to the API reference to learn more about the inheritance hierarchy of controls.
 
@@ -290,8 +304,113 @@ export default class ProductRating extends Control {
 };
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/core/Control", "sap/m/Label", "sap/m/Button", "sap/m/RatingIndicator"], function (Control, Label, Button, RatingIndicator) {
+  "use strict";
 
+  const ProductRating = Control.extend("ui5.walkthrough.control.ProductRating", {
+    renderer: {
+      apiVersion: 4,
+      render: (rm, control) => {
+        const tooltip = control.getTooltip_AsString();
+        rm.openStart("div", control);
+        rm.class("myAppDemoWTProductRating");
+        if (tooltip) {
+          rm.attr("title", tooltip);
+        }
+        rm.openEnd();
+        rm.renderControl(control.getAggregation("_rating"));
+        rm.renderControl(control.getAggregation("_label"));
+        rm.renderControl(control.getAggregation("_button"));
+        rm.close("div");
+      }
+    },
+    metadata: {
+      properties: {
+        value: {
+          type: "float",
+          defaultValue: 0
+        }
+      },
+      aggregations: {
+        _rating: {
+          type: "sap.m.RatingIndicator",
+          multiple: false,
+          visibility: "hidden"
+        },
+        _label: {
+          type: "sap.m.Label",
+          multiple: false,
+          visibility: "hidden"
+        },
+        _button: {
+          type: "sap.m.Button",
+          multiple: false,
+          visibility: "hidden"
+        }
+      },
+      events: {
+        change: {
+          parameters: {
+            "value": "float"
+          }
+        }
+      }
+    },
+    constructor: function _constructor(id, settings) {
+      Control.prototype.constructor.call(this, id, settings);
+    },
+    init: function _init() {
+      this.setAggregation("_rating", new RatingIndicator({
+        value: this.getValue(),
+        iconSize: "2rem",
+        liveChange: this._onRate.bind(this)
+      }));
+      this.setAggregation("_label", new Label({
+        text: "{i18n>productRatingLabelInitial}"
+      }).addStyleClass("sapUiSmallMargin"));
+      this.setAggregation("_button", new Button({
+        text: "{i18n>productRatingButton}",
+        press: this._onSubmit.bind(this)
+      }).addStyleClass("sapUiTinyMarginTopBottom"));
+    },
+    setValue: function _setValue(value) {
+      this.setProperty("value", value, true);
+      this.getAggregation("_rating").setValue(value);
+      return this;
+    },
+    reset: function _reset() {
+      const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
+      this.setValue(0);
+      this.getAggregation("_label").setDesign("Standard");
+      this.getAggregation("_rating").setEnabled(true);
+      this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelInitial"));
+      this.getAggregation("_button").setEnabled(true);
+    },
+    _onRate: function _onRate(event) {
+      const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
+      const value = event.getParameter("value");
+      this.setProperty("value", value, true);
+      this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelIndicator", [value, event.getSource().getMaxValue()]));
+      this.getAggregation("_label").setDesign("Bold");
+    },
+    _onSubmit: function _onSubmit(event) {
+      const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
+      this.getAggregation("_rating").setEnabled(false);
+      this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelFinal"));
+      this.getAggregation("_button").setEnabled(false);
+      this.fireEvent("change", {
+        value: this.getValue()
+      });
+    }
+  });
+  ;
+  return ProductRating;
+});
+
+```
+
+<details class="ts-only">
 ### Generate Control Interfaces to Resolve the TypeScript Errors
 
 While the application would run successfully, the editor still displays an error in the `ProductRating.ts` renderer.
@@ -308,9 +427,9 @@ As a result, the TypeScript error message related to the new `ProductRating` con
 
 You can now stop the interface generator again, as no further control API changes will be done in this tutorial. For continuous control development with frequent API changes, you would likely add a "watch" script to `package.json` for starting this generator.
 
-***
+</details>
 
-### webapp/controller/Detail.controller.ts
+### webapp/controller/Detail.controller.?s
 
 In the `Detail` controller we implement a new `onRatingChange` event that reads the value of our coustom change event that is fired when a rating has been submitted. This requires to import our new control, as well as the `ProductRating$ChangeEvent` type we just defined to the detail controller. To keep the sample simple we only display a message message instead of sending the rating to the backend. We therefore load the `MessageToast` module from the `sap.m` namespace to our script. In addition we need the `ResourceBundle` module from the `sap/base/i18n` namespace as well as the `ResourceModel` module from the `sap/ui/model/resource` namespace as we want to display the confirmation message we specified in our resource bundle in the message toast.
 
@@ -366,9 +485,46 @@ export default class Detail extends Controller {
         MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]));
     }    
 };
+
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/m/MessageToast", "sap/ui/core/UIComponent"], function (Controller, History, MessageToast, UIComponent) {
+  "use strict";
+
+  const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
+    onInit: function _onInit() {
+      const router = UIComponent.getRouterFor(this);
+      router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
+    },
+    onObjectMatched: function _onObjectMatched(event) {
+      this.byId("rating").reset();
+      this.getView().bindElement({
+        path: "/" + window.decodeURIComponent(event.getParameter("arguments").invoicePath),
+        model: "invoice"
+      });
+    },
+    onNavBack: function _onNavBack() {
+      const history = History.getInstance();
+      const previousHash = history.getPreviousHash();
+      if (previousHash !== undefined) {
+        window.history.go(-1);
+      } else {
+        const router = UIComponent.getRouterFor(this);
+        router.navTo("overview", {}, true);
+      }
+    },
+    onRatingChange: function _onRatingChange(event) {
+      const value = event.getParameter("value");
+      const resourceBundle = this?.getView().getModel("i18n")?.getResourceBundle();
+      MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]));
+    }
+  });
+  ;
+  return Detail;
+});
+
+```
 
 ### webapp/view/Detail.view.xml
 
@@ -395,10 +551,10 @@ All we need now is to add our new control to the detail view. To do so we must a
 	</Page>
 </mvc:View>
 ```
-
+&nbsp;
 We can now rate a product on the detail page with our brand new control.
 
-***
+<details class="ts-only">
 
 ### webapp/control/ProductRating.ts
 
@@ -440,8 +596,9 @@ export default class ProductRating extends Control {
     ...
 }
 ```
-
+&nbsp;
 Adding the block between the BEGIN and END line into the `ProductRating` class body in the file `webapp/control/ProductRating.ts` provides the constructors and the structure of the constructor settings object. As result, the constructor signatures with and without control ID are available. Furthermore, TypeScript checks the settings you give in the constructor and suggests the available ones, like the direction property.
+</details>
 
 ***
 

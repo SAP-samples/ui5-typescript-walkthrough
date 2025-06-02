@@ -59,8 +59,6 @@ By default, the sorting is ascending, but you could also add a property `descend
   
 If we run the app now we can see a list of invoices sorted by the name of the products.
 
-***
-
 ### webapp/view/InvoiceList.view.xml
 
 We modify the view and change the sorter so the path addresses to the `ShipperName` data field instead of `ProductName`. This groups the invoice items by the shipping company. In addition set the sorter attribute `group` to true.

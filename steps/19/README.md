@@ -1,7 +1,6 @@
 ## Step 19: Aggregation Binding
 
 Now that we have established a good structure for our app, it's time to add some more functionality. We start exploring more features of data binding by adding some invoice data in JSON format that we display in a list below the panel.
-
 &nbsp;
 
 ***
@@ -81,15 +80,12 @@ We create a new folder `model` in our app project and place the new `localInvoic
   ]
 }
 ```
-
+&nbsp;
 The `localinvoices` file simply contains five invoices in a JSON format that we can use to bind controls against them in the app. JSON is a very lightweight format for storing data and can be directly used as a data source for OpenUI5 applications.
-
-***
 
 ### webapp/manifest.json
 
 We add a new named model `invoice` to the `sap.ui5` section of the descriptor. This time we want a JSONModel, so we set the type to `sap.ui.model.json.JSONModel`. The `uri` key is the path to our data relative to the component.
-
 
 ```json
 {
@@ -122,10 +118,8 @@ We add a new named model `invoice` to the `sap.ui5` section of the descriptor. T
   }
 }  
 ```
-
+&nbsp;
 With this little configuration our component will automatically instantiate a new `JSONModel` which loads the invoice data from the `localInvoices.json` file. Finally, the instantiated `JSONModel` is put onto the component as a named model invoice. The named model is then visible throughout our app.
-
-***
 
 ### webapp/i18n/i18n.properties
 
@@ -167,10 +161,8 @@ In the `items` aggregation, we define the template for the list that will be aut
    </List>
 </mvc:View>
 ```
-
+&nbsp;
 The binding in the list item works, because we have bound the `items` aggregation via `items={invoice>/Invoices}` to the invoices.
-
-***
 
 ### webapp/view/App.view.xml
 
@@ -228,5 +220,3 @@ In the app view we add a second view and assign it to our newly created InvoiceL
 [API Reference: sap.m.List](https://sdk.openui5.org/#/api/sap.m.List)
 
 [Samples: sap.m.List](https://sdk.openui5.org/#/entity/sap.m.List)
-
-

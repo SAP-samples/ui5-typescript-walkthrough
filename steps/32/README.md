@@ -33,12 +33,12 @@ You can download the solution for this step here: [📥 Download step 32](https:
 
 ***
 
-### webapp/controller/Detail.controller.ts
+### webapp/controller/Detail.controller.?s
 
 To be able to navigate from the detail view back to the view we came from we implement a new event handler function in the controller of the detail view. 
 For a start we load a new class called `History` from the `sap.ui.core.routing` namespace. This class provides methods for navigating through the history of the application.
 
-In the event handler we access the navigation history and try to determine the previous hash. In contrast to the browser history, we will get a valid result only if a navigation step inside our app has already happened. The `History.getInstance()` method returns a singleton instance of the "History" class. Then, we use the `getPreviousHash` method to get the hash of the previous page. If there's a previous page (i.e., `previousHash` isn't `undefined`), we will simply use the browser history to go back to the previous page. 
+In the event handler we access the navigation history and try to determine the previous hash. In contrast to the browser history, we will get a valid result only if a navigation step inside our app has already happened. The `History.getInstance()` method returns a singleton instance of the `History` class. Then, we use the `getPreviousHash` method to get the hash of the previous page. If there's a previous page (i.e., `previousHash` isn't `undefined`), we will simply use the browser history to go back to the previous page. 
 
 If no navigation has happened before, we get a reference to the router and use the `navTo` method to navigate to the "overview" route. As a second parameter we specify an empty array \(`{}`\) as we do not pass any additional parameters to the route. The third parameter is set to `true`. This tells the router to replace the current history state with the new one since we actually do a back navigation by ourselves and we do not want to have an entry in the browser history.
 
@@ -53,17 +53,7 @@ import UIComponent from "sap/ui/core/UIComponent";
  */
 export default class Detail extends Controller {
     
-    onInit(): void {
-        const router = UIComponent.getRouterFor(this);
-        router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
-    }
-
-    onObjectMatched(event: Route$PatternMatchedEvent): void {
-        this.getView().bindElement({
-            path: "/" + window.decodeURIComponent( (event.getParameter("arguments") as any).invoicePath),
-            model: "invoice"
-        });
-    }
+    //...
 
     onNavBack(): void {
         const history = History.getInstance();
@@ -77,11 +67,33 @@ export default class Detail extends Controller {
         }
     }    
 };
+
+```
+
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/ui/core/UIComponent"], function (Controller, History, UIComponent) {
+  "use strict";
+
+  const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
+    //...
+    onNavBack: function _onNavBack() {
+      const history = History.getInstance();
+      const previousHash = history.getPreviousHash();
+      if (previousHash !== undefined) {
+        window.history.go(-1);
+      } else {
+        const router = UIComponent.getRouterFor(this);
+        router.navTo("overview", {}, true);
+      }
+    }
+  });
+  ;
+  return Detail;
+});
+
 ```
 
 This implementation is a bit better than the browser’s back button for our use case. The browser would simply go back one step in the history even though we were on another page outside of the app. In the app, we always want to go back to the overview page even if we came from another link or opened the detail page directly with a bookmark. You can try it by loading the detail page in a new tab directly and clicking on the back button in the app, it will still go back to the overview page.
-
-***
 
 ### webapp/view/Detail.view.xml
 
@@ -102,7 +114,7 @@ Now only the back button is missing on the detail page. We do this by telling th
 	</Page>
 </mvc:View>
 ```
-
+&nbsp;
 You should now see a back button when navigating to the detail page and being able to get back to the overview when clicking on it.
 
 ***
