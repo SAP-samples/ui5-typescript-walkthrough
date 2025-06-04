@@ -52,6 +52,7 @@ The `ui5 add` command adds specific libraries as dependency to the projects UI5 
 
 <details class="ts-only">
 
+### TypeScript Setup
 
 To work with TypeScript, we must install it in our project. To do this, we execute the following command in the terminal:
 
@@ -119,10 +120,6 @@ Let's go through the compiler options specified in the file:
 ### webapp/index.?s \(New\)
 
 Now let's move on to the UI work. We create a new `index.?s` script in the webapp folder. In this script, we add a native `alert()` method with the message "UI5 is ready".
-
-```ts
-alert("UI5 is ready");
-```
 
 ```js
 alert("UI5 is ready");
