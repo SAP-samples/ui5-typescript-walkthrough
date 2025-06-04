@@ -32,7 +32,7 @@ You can download the solution for this step here: [📥 Download step 17](https:
 
 ### webapp/controller/HelloPanel.controller.?s
 
-We add an event handler function into the HelloPanel controller file that closes the dialog when triggered. To get the dialog instance we use the `byId` function and then call the `close` function of the dialog.
+We add an `onCloseDialog` event handler function into the HelloPanel controller file that closes the dialog when triggered. To get the dialog instance we use the `byId` function and then call the `close` function of the dialog.
 
 ```ts
 import Controller from "sap/ui/core/mvc/Controller";
@@ -133,7 +133,7 @@ In the fragment definition, we add a button to the `beginButton` aggregation of 
 </core:FragmentDefinition>
 ```
 &nbsp;
-By using the `loadFragment` function to create the fragment content in the controller of the panel’s content view, the method will be invoked there when the button is pressed. The dialog has an aggregation named `beginButton` as well as `endButton`. Placing buttons in both of these aggregations makes sure that the `beginButton` is placed before the `endButton` on the UI. What `before` means, however, depends on the text direction of the current language. We therefore use the terms `begin` and `end` as a synonym to “left” and “right". In languages with left-to-right direction, the `beginButton` will be rendered left, the `endButton` on the right side of the dialog footer; in right-to-left mode for specific languages the order is switched.
+By using the `loadFragment` function to create the fragment content in the controller of the panel’s content view, the method will be invoked there when the button is pressed. The dialog has an aggregation named `beginButton` as well as `endButton`. Placing buttons in both of these aggregations makes sure that the `beginButton` is placed before the `endButton` on the UI. What `before` means, however, depends on the text direction of the current language. We therefore use the terms `begin` and `end` as a synonym to "left" and "right". In languages with left-to-right direction, the `beginButton` will be rendered left, the `endButton` on the right side; in right-to-left mode for specific languages the order is switched.
 
 &nbsp;
 
