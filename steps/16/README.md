@@ -4,9 +4,9 @@ In this step, we will take a closer look at another element which can be used to
 
 Fragments are light-weight UI parts \(UI subtrees\) which can be reused but do not have any controller. This means, whenever you want to define a certain part of your UI to be reusable across multiple views, or when you want to exchange some parts of a view against one another under certain circumstances \(different user roles, edit mode vs read-only mode\), a fragment is a good candidate, especially where no additional controller logic is required.
 
-A fragment can consist of 1 to n controls. At runtime, fragments placed in a view behave similar to "normal" view content, which means controls inside the fragment will just be included into the view’s DOM when rendered. There are of course controls that are not designed to become part of a view, for example, dialogs. But even for these controls, fragments can be particularly useful, as you will see in a minute.
+A fragment can consist of any number of controls. At runtime, fragments placed in a view behave similar to "normal" view content, which means controls inside the fragment will just be included into the view’s DOM when rendered. There are controls that are not designed to become part of a view, for example, dialogs. But even for these controls, fragments can be particularly useful, as you will see in a minute.
 
-We will now add a dialog to our app. Dialogs are special, because they open on top of the regular app content and thus do not belong to a specific view. That means the dialog must be instantiated somewhere in the controller code, but since we want to stick with the declarative approach and create reusable artifacts to be as flexible as possible, we will create an XML fragment containing the dialog. A dialog, after all, can be used in more than one view of your app.
+We will now add a dialog to our app. Dialogs are special, because they open on top of the regular app content and thus are not part of a specific view. That means the dialog must be instantiated somewhere in the controller code, but since we want to stick with the declarative approach and create reusable artifacts to be as flexible as possible, we will create an XML fragment containing the dialog. A dialog, after all, can be used in more than one view of your app.
 
 &nbsp;
 
@@ -20,16 +20,27 @@ We will now add a dialog to our app. Dialogs are special, because they open on t
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 16](https://sap-samples.github.io/ui5-typescript-walkthrough/build/16/index-cdn.html).
 
-Download solution for step 16 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-16.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-16-js.zip).
-
 ***
 
 
 ### Coding
 
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 16](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-16.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 16](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-16-js.zip).
+
+</details>
+***
+
 ### webapp/view/HelloDialog.fragment.xml \(New\)
 
-We add a new XML file to declaratively define our dialog in a fragment. The fragment assets are located in the `core` namespace, so we add an `xml` namespace for it inside the `FragmentDefinition` tag.
+We add a new XML file to declaratively define our dialog in a fragment. The FragmentDefinition element is located in the `sap.ui.core` library, so we add an `xml` namespace for it inside the `FragmentDefinition` tag.
 
 ```xml
 <core:FragmentDefinition
@@ -40,14 +51,12 @@ We add a new XML file to declaratively define our dialog in a fragment. The frag
       title="Hello {/recipient/name}"/>
 </core:FragmentDefinition>
 ```
-
+&nbsp;
 The syntax is similar to a view, but since fragments do not have a controller this attribute is missing. Also, the fragment does not have any footprint in the DOM tree of the app, and there is no control instance of the fragment itself (only the contained controls). It is simply a container for a set of reuse controls.
 
-***
+### webapp/controller/HelloPanel.controller.?s
 
-### webapp/controller/HelloPanel.controller.ts
-
-In the HelloPanel controller, we define a new event handler function `onOpenDialog` which calls the dialog in the HelloDialog fragment when triggered. To do so we need to import the `sap.m.Dialog` module.
+In the HelloPanel controller, we define a new event handler function `onOpenDialog` which calls the dialog in the HelloDialog fragment when triggered. To do so we need the `sap.m.Dialog` module.
 
 Using async/await, we handle the opening of the dialog asynchronously whenever the event is triggered.
 
@@ -77,8 +86,29 @@ export default class HelloPanel extends Controller {
         this.dialog.open();
     }
 };
-```
 
+```
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Controller, MessageToast) {
+  "use strict";
+
+  const HelloPanel = Controller.extend("ui5.walkthrough.controller.HelloPanel", {
+    onShowHello: function _onShowHello() {
+      ...
+    },
+    onOpenDialog: async function _onOpenDialog() {
+      this.dialog ??= await this.loadFragment({
+        name: "ui5.walkthrough.view.HelloDialog"
+      });
+      this.dialog.open();
+    }
+  });
+  ;
+  return HelloPanel;
+});
+
+```
+&nbsp;
 > 💡 **Tip:** <br>
 > To reuse the dialog opening and closing functionality in other controllers, you might create a new file `ui5.walkthrough.controller.controller.BaseController`, which extends `sap.ui.core.mvc.Controller`, and put all your dialog-related coding into this controller. Now, all the other controllers can extend from `ui5.walkthrough.controller.BaseController` instead of `sap.ui.core.mvc.Controller`.
 
@@ -131,10 +161,10 @@ We add a new button to the view to open the dialog and assign an unique `id`to i
    </Panel>
 </mvc:View>
 ```
-
+&nbsp;
 You will need the id of the button control `id="helloDialogButton"` in [Step 28: Integration Test with OPA](../28/README.md). 
 
-It is a good practice to set a unique ID like `helloWorldButton` to key controls of your app so that they can be identified easily. If the attribute `id` is not specified, the OpenUI5 runtime generates unique but changing ID like `\_\_button23` for the control. Inspect the DOM elements of your app in the browser to see the difference.
+It is a good practice to set a unique ID like `helloWorldButton` to key controls of your app so that they can be identified easily. If the attribute `id` is not specified, the OpenUI5 runtime generates unique but changing ID like `__button23` for the control. Inspect the DOM elements of your app in the browser to see the difference.
 
 &nbsp;
 

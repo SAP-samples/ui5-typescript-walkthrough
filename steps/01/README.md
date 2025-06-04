@@ -1,6 +1,6 @@
 ## Step 1: Hello World!
 
-As you know OpenUI5 is all about HTML5. Let's get started with building a first "Hello World" with only HTML. In addition we'll initialize the UI5 Tooling, so we can benefit from it from the beginning.
+As you know, OpenUI5 is all about HTML5. Let's get started with building a first "Hello World" with only HTML. In addition we'll initialize the UI5 Tooling, so we can benefit from it from the beginning.
 
 &nbsp;
 
@@ -15,11 +15,22 @@ As you know OpenUI5 is all about HTML5. Let's get started with building a first 
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 1](https://sap-samples.github.io/ui5-typescript-walkthrough/build/01/index.html).
 
-Download solution for step 1 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 1](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01.zip). 
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 1](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-01-js.zip).
+
+</details>
+***
 
 ### webapp \(New\)
 
@@ -154,7 +165,7 @@ This will open a new browser window hosting your newly created `index.html`.
 
 ### Conventions
 
--   The `index.html` file is located in the `webapp` folder if it is used productively.
+-   The `index.html` file is located in the `webapp` folder.
 
 &nbsp;
 

@@ -14,10 +14,23 @@ After all the work on the app structure it’s time to improve the look of our a
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 11](https://sap-samples.github.io/ui5-typescript-walkthrough/build/11/index-cdn.html).
 
-Download solution for step 11 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-11.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-11-js.zip).
+
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 11](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-11.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 11](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-11-js.zip).
+
+</details>
+***
 
 ### webapp/i18n/i18n.properties
 
