@@ -138,3 +138,8 @@ li > section.ts-only, li > section.js-only {
         border-color: var(--active-border);
     }
 }
+
+#__bs_notify__ {
+    background-color: rgba(27, 32, 50, 0.3) !important;
+    top: 40px !important;
+}
