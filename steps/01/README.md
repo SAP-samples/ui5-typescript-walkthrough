@@ -1,6 +1,6 @@
 ## Step 1: Hello World!
 
-As you know OpenUI5 is all about HTML5. Let's get started with building a first "Hello World" with only HTML. In addition we'll initialize the UI5 Tooling, so we can benefit from it from the beginning.
+As you know, OpenUI5 is all about HTML5. Let's get started with building a first "Hello World" with only HTML. In addition we'll initialize the UI5 Tooling, so we can benefit from it from the beginning.
 
 &nbsp;
 
@@ -165,7 +165,7 @@ This will open a new browser window hosting your newly created `index.html`.
 
 ### Conventions
 
--   The `index.html` file is located in the `webapp` folder if it is used productively.
+-   The `index.html` file is located in the `webapp` folder.
 
 &nbsp;
 
