@@ -18,7 +18,7 @@ Please edit this file as it is the primary description file for your project. Yo
 
 # OpenUI5 TypeScript Walkthrough
 
-In this tutorial we'll introduce you to all major development paradigms of OpenUI5. We'll demonstrate the use of TypeScript with OpenUI5 and highlight the specific characteristics of this approach.
+In this tutorial we'll introduce you to all major development paradigms of OpenUI5. <details class="ts-only" markdown="1"><summary>This section is relevant for TypeScript only</summary>We'll also demonstrate the use of TypeScript with OpenUI5 and highlight the specific characteristics of this approach.</details>
 
 ## Description
 
@@ -80,13 +80,15 @@ The tutorial consists of the following steps. To start, just open the first link
 
 ## Requirements
 
-The project uses npm workspaces and requires a [Node.js](https://nodejs.org/) version  >= `20.11.0` to be installed.
+Running the content of this repository locally (as opposed to following the tutorial steps) requires a [Node.js](https://nodejs.org/) version  >= `20.11.0` to be installed.
 
-### Getting Started
+## Download and Installation
 
-The project is setup as monorepo. All steps are located inside the `steps` folder and labelled with their step number. The monorepo uses `npm` workspaces to manage all steps together. But you can also run `npm` inside each individual step.
+> This section describes how to run the content of the repository locally and is *not* required for following the tutorial. For following the tutorial, simply start with Step 1 in the list of steps above. From there, you can also download and run the result of each step locally.
 
-To setup the monorepo you first need to install all depenedencies:
+The project is set up as monorepo. All steps are located inside the `steps` folder and labelled with their step number. The monorepo uses `npm` workspaces to manage all steps together. But you can also run `npm` inside each individual step.
+
+To set up the monorepo you first need to install all depenedencies:
 
 ```sh
 npm install
@@ -102,15 +104,6 @@ npm start -w ui5.walkthrough.step01
 cd steps/01 
 npm start
 ```
-
-## Download and Installation
-
-<!--
-TODO
-
-* create GitHub pages to showcase the built examples
-* create ZIP files for each step which can be downloaded
--->
 
 ## Known Issues
 
@@ -128,4 +121,4 @@ If you wish to contribute code, offer fixes or improvements, please send a pull 
 
 ## License
 
-Copyright (c) 2024 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.

@@ -24,13 +24,15 @@ To immediately preview the markdown document you are writing *including* the two
 npm i
 ```
 
-in the root folder of this project once for the setup, then to actually run the server, run
+in the root folder of this project once for the setup.
+
+Then, to actually start the server, run
 
 ```sh
 npm start
 ```
 
-Then, open http://localhost:1337/README.md in your browser and the browser will automatically open (on port 3000 or the next free port) and automatically reload on every saved change.
+A browser window will automatically open (on port 3000 or the next free port) and automatically reload on every saved change.
 
 
 ## Writing *one* document which covers both JavaScript and TypeScript without duplication
