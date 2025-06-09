@@ -15,17 +15,27 @@ In this step, we replace the text with a button and show the “Hello World” m
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 5](https://sap-samples.github.io/ui5-typescript-walkthrough/build/05/index-cdn.html).
 
-Download solution for step 5 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-05.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-05-js.zip).
-
 ***
 
 ### Coding
 
-### webapp/controller/App.controller.ts \(New\)
+<details class="ts-only">
 
+You can download the solution for this step here: [📥 Download step 5](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-05.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 download step 5](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-05-js.zip).
+
+</details>
+***
+
+### webapp/controller/App.controller.?s \(New\)
 First of all, we need a conroller for our app view that defines how the view should react to user inputs, such as a button press event. 
 
-We create a new folder called `controller` inside the `webapp` folder. This folder will hold all our controller files. Inside the `controller` folder, we create a new file called `App.view.xml`. We define the app controller in its own file by extending the OpenUI5-provided `sap/ui/core/mvc/Controller`. In the beginning, it holds only a single function called `onShowHello` that shows an alert with the static text "Hello World".
+We create a new folder called `controller` inside the `webapp` folder. This folder will hold all our controller files. Inside the `controller` folder, we create a new file called `App.controller.?s`. We define the app controller in its own file by extending the OpenUI5-provided `sap/ui/core/mvc/Controller`. In the beginning, it holds only a single function called `onShowHello` that shows an alert with the static text "Hello World".
 
 
 ```ts
@@ -43,9 +53,27 @@ export default class AppController extends Controller {
 
 ```
 
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
+  "use strict";
+
+  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
+    onShowHello: function _onShowHello() {
+      // show a native JavaScript alert
+      alert("Hello World");
+    }
+  });
+  ;
+  return AppController;
+});
+
+```
+<details class="ts-only">
+
 > 📝 **Note:** <br>
 > The comment `@name ui5.walkthrough.controller.App` is a JSDoc comment that names this controller. It can be used by documentation generators and IDEs to provide more information about this class.
 
+</details>
 ***
 
 ### webapp/view/App.view.xml
@@ -80,7 +108,7 @@ A view does not necessarily need an explicitly assigned controller. You do not h
 
 -   Event handlers are prefixed with `on`
 
--   Controller names always end with `*.controller.js` \(in JavaScript\) or `*.controller.ts` \(in TypeScript\) 
+-   Controller names always end with `*.controller.?s`
 
 &nbsp;
 

@@ -164,7 +164,10 @@ function replaceDetailSections() {
 			if (child.tagName.toLocaleUpperCase() === "SUMMARY") {
 				return;
 			}
-			sectionTag.appendChild(child);
+			// only add the child if it has content
+			if (child.innerHTML.trim()) {
+				sectionTag.appendChild(child);
+			}
 		});
 
 		// remove the detail tag
@@ -205,6 +208,27 @@ function replaceFileExtensions(lang) {
 	}
 }
 
+function updatePrevNextLinks(lang) {
+    const links = document.querySelectorAll('a[href$="README.md"], a[href$="/"], a[href$="README.md?lang=js"], a[href$="/?lang=js"]');
+    links.forEach(link => {
+		// Only handle relative links (not starting with http://, https://, or //)
+        if (/^(https?:)?\/\//.test(link.getAttribute("href"))) {
+            return;
+        }
+
+        let url = new URL(link.href, window.location.origin);
+
+        // Remove any existing lang param
+        url.searchParams.delete("lang");
+
+        if (lang === "js") {
+            url.searchParams.set("lang", "js");
+        }
+
+        link.href = url.pathname + url.search + url.hash;
+    });
+}
+
 // dynamic overall language switching
 
 function addLanguageSwitchButtons() {
@@ -233,6 +257,7 @@ function switchLanguage(newLang) {
 	replaceFileExtensions(lang);
 	resetCodeCoupleButtons();
 	updateAllCodeCouples(lang);
+	updatePrevNextLinks(lang);
 }
 
 function updateAllCodeCouples(globalLang) {
@@ -252,5 +277,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		replaceFileExtensions(lang);
 		addLanguageSwitchButtons();
 		updateAllCodeCouples(lang);
+		updatePrevNextLinks(lang);
 	});
 });
