@@ -14,11 +14,22 @@ Now we use a shell control as container for our app and use it as our new root e
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 12](https://sap-samples.github.io/ui5-typescript-walkthrough/build/12/index-cdn.html).
 
-Download solution for step 12 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-12.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-12-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 12](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-12.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 12](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-12-js.zip).
+
+</details>
+***
 
 ### webapp/view/App.view.xml
 

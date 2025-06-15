@@ -14,15 +14,26 @@ If we want to do a more complex logic for formatting properties of our data mode
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 22](https://sap-samples.github.io/ui5-typescript-walkthrough/build/22/index-cdn.html).
 
-Download solution for step 22 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-22.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-22-js.zip).
-
 ***
 
 ### Coding
 
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 22](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-22.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 22](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-22-js.zip).
+
+</details>
+***
+
 ### webapp/i18n/i18n.properties
 
-We add three new entries to the resource bundle that reflect translated status texts 'New', 'In Progess', and 'Done'. We will use these texts to format the status values 'A', 'B', and 'C' of our invoices when displayed in the invoice list view.
+We will add three new entries to the resource bundle that reflect translated status texts 'New', 'In Progess', and 'Done'. We will use these texts to format the status values 'A', 'B', and 'C' of our invoices when displayed in the invoice list view.
 
 
 ### webapp/i18n/i18n.properties
@@ -36,11 +47,11 @@ invoiceStatusB=In Progress
 invoiceStatusC=Done
 ```
 
-***
+### webapp/model/formatter.?s \(New\)
 
-### webapp/model/formatter.ts \(New\)
+We will create a formatter function to transform status codes into user-friendly text labels. 
 
-We place a new `formatter.ts` in the model folder of the app. This time we do not need to extend from any base object, but just return an object with our `formatter` functions in it. We add a `statusText` function, that gets a status as input parameter and returns a human-readable text that is read from the `resourceBundle` file.
+We create a file named `formatter.?s` within the `model` folder. This module contains the `statusText` function which takes a status code as input, retrieves the corresponding descriptive text from the resource bundle, and returns it. If no matching text is found in the resource bundle, or if the resource bundle can't be found, the function returns the original status code itself.
 
 ```ts
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
@@ -65,8 +76,35 @@ export default  {
 
 ```
 
-The new `formatter` file is placed in the model folder of the app, because formatters are working on data properties and format them for display on the UI. This time we do not extend from any base object but just return an object with our `formatter` functions inside.
+```js
+sap.ui.define([], function () {
+  "use strict";
 
+  var __exports = {
+    statusText: function (status) {
+      const resourceBundle = this?.getOwnerComponent()?.getModel("i18n")?.getResourceBundle();
+      switch (status) {
+        case "A":
+          return resourceBundle.getText("invoiceStatusA");
+        case "B":
+          return resourceBundle.getText("invoiceStatusB");
+        case "C":
+          return resourceBundle.getText("invoiceStatusC");
+        default:
+          return status;
+      }
+    }
+  };
+  return __exports;
+});
+
+```
+&nbsp;
+This time we do not extend from any base object but just return an object with our `formatter` functions inside.
+
+The new `formatter` file is placed in the model folder of the app, because formatters are working on data properties and format them for display on the UI. 
+
+&nbsp;
 
 >📌 **Important:** <br>
 > In the above example, `this` refers to the controller instance as soon as the formatter gets called. We access the resource bundle via the component using `this.getOwnerComponent().getModel()` instead of using `this.getView().getModel()`. The latter call might return `undefined`, because the view might not have been attached to the component yet, and thus the view can't inherit a model from the component.
@@ -76,13 +114,9 @@ The new `formatter` file is placed in the model folder of the app, because forma
 -   [API Reference: `sap.ui.core.mvc.Controller#getOwnerComponent`](https://sdk.openui5.org/#/api/sap.ui.core.mvc.Controller/methods/getOwnerComponent). 
 -   [API Reference: `sap.ui.core.mvc.Controller#onInit`](https://sdk.openui5.org/#/api/sap.ui.core.mvc.Controller/methods/onInit). 
 
-***
-
 ### webapp/view/InvoiceList.view.xml
 
-To load our formatter functions, we use the `require` attribute with the namespace URI `sap.ui.core`, for which the prefix `core` is already defined in our XML view. This allows us to write the attribute as `core:require`. We then add our custom formatter module to the list of required modules and assign it the alias `Formatter`, making it available for use within the view.
-
-We add a status using the `firstStatus` aggregation to our `ObjectListItem` that will display the status of our invoice. There we defined our alias `Formatter` that holds our formatter functions, so we can access it by `Formatter.statusText`. When called, we want the `this` context to be set to the controller instance of the current view. To achieve this, we use `.bind($controller)`.
+We add the `ObjectStatus` control to our `ObjectListItem` using the `firstStatus` aggregation. We bind the control not only to the technical status but also to the `statusText` function in our formatter to displaly the human-readable texts per invoice we specified in our resource bundle.
 
 ```xml
 <mvc:View
@@ -129,8 +163,10 @@ We add a status using the `firstStatus` aggregation to our `ObjectListItem` that
    </List>
 </mvc:View>
 ```
+&nbsp;
+We used the `require` attribute with the namespace URI `sap.ui.core`, for which the prefix `core` is already defined in our XML view. This allows us to write the attribute as `core:require`. We then added our custom formatter module to the list of required modules and assigned it the alias `Formatter`, making it available for use within the view.
 
-Instead of a technical status we get now the human-readable texts per invoice we specified in our resource bundle below the `number` attribute of the `ObjectListItem`.
+in the `ObjectStatus` control we defined our alias `Formatter` that holds our formatter functions, so we can access our function by `Formatter.statusText`. When called, we want the `this` context to be set to the controller instance of the current view. To achieve this, we used `.bind($controller)`.
 
 &nbsp; 
  
@@ -147,3 +183,5 @@ Instead of a technical status we get now the human-readable texts per invoice we
 [Formatting, Parsing, and Validating Data](https://sdk.openui5.org/topic/07e4b920f5734fd78fdaa236f26236d8.html "Data that is presented on the UI often has to be converted so that is human readable and fits to the locale of the user. On the other hand, data entered by the user has to be parsed and validated to be understood by the data source. For this purpose, you use formatters and data types.")
 
 [Require Modules in XML View and Fragment](https://sdk.openui5.org/topic/b11d853a8e784db6b2d210ef57b0f7d7.html "Modules can be required in XML views and fragments and assigned to aliases which can be used as variables in properties, event handlers, and bindings.")
+
+[API Reference: `sap.ui.base.ManagedObject.PropertyBindingInfo`](https://sdk.openui5.org/api/sap.ui.base.ManagedObject.PropertyBindingInfo#overview)

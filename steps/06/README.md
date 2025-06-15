@@ -14,15 +14,27 @@ In OpenUI5, resources are often referred to as modules. In this step, we replace
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 6](https://sap-samples.github.io/ui5-typescript-walkthrough/build/06/index-cdn.html).
 
-Download solution for step 5 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-06.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-06-js.zip).
-
 ***
 
 ### Coding
 
-### webapp/controller/App.controller.ts
+<details class="ts-only">
 
-We now replace the native `alert` function with the `show` method of the `sap.m.MessageToast` control of OpenUI5. For this we extend the imports  with the `sap/m/MessageToast` module. 
+You can download the solution for this step here: [📥 Download step 6](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-06.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 6](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-06-js.zip).
+
+</details>
+***
+
+### webapp/controller/App.controller.?s
+
+We now replace the native `alert` function with the `show` method of the `sap.m.MessageToast` control of OpenUI5. 
+
 
 ```ts
 import MessageToast from "sap/m/MessageToast";
@@ -36,6 +48,24 @@ export default class AppController extends Controller {
         MessageToast.show("Hello World");
      }
 };
+
+```
+
+```js
+sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller"], function (MessageToast, Controller) {
+  "use strict";
+
+  /**
+   * @name ui5.walkthrough.controller.App
+   */
+  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
+    onShowHello: function _onShowHello() {
+      MessageToast.show("Hello World");
+    }
+  });
+  ;
+  return AppController;
+});
 
 ```
 

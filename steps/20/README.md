@@ -13,14 +13,28 @@ The list of invoices is already looking nice, but what is an invoice without a p
 <sup>*The list of invoices with prices and number units*</sup>
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 20](https://sap-samples.github.io/ui5-typescript-walkthrough/build/20/index-cdn.html).
-
-Download solution for step 20 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-20.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-20-js.zip).
+***
 
 ### Coding
 
-### webapp/controller/InvoiceList.controller.js \(New\)
+<details class="ts-only">
 
-We want to display in our list view the price in Euro, and typically the currency is part of our data model on the back end. In our case this is not the case, so we need to define it directly in the app. We therefore create a controller for the invoice list and define a view model for the currency code for Euro. It is a simple JSON model with just one key `currency` and the value `EUR`.
+You can download the solution for this step here: [📥 Download step 20](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-20.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 20](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-20-js.zip).
+
+</details>
+***
+
+### webapp/controller/InvoiceList.controller.?s \(New\)
+
+We want to display in our list view the price in Euro. Since currency information isn't available in our backend data model, we'll handle the currency formatting within the application.
+
+We'll create a controller for the InvoiceList view and use a JSON model (`sap/ui/model/json/JSONModel`) to store the currency code. This model will contain a single property, `currency: "EUR"`, which will be used for formatting the prices in the view.
 
 ```ts
 import Controller from "sap/ui/core/mvc/Controller";
@@ -38,9 +52,26 @@ export default class App extends Controller {
         this.getView()?.setModel(viewModel, "view");        
     } 
 };
+
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"], function (Controller, JSONModel) {
+  "use strict";
+
+  const App = Controller.extend("ui5.walkthrough.controller.App", {
+    onInit: function _onInit() {
+      const viewModel = new JSONModel({
+        currency: "EUR"
+      });
+      this.getView()?.setModel(viewModel, "view");
+    }
+  });
+  ;
+  return App;
+});
+
+```
 
 ### webapp/view/InvoiceList.view.xml
 

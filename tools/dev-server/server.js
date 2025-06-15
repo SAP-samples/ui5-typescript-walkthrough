@@ -44,9 +44,10 @@ app.use("/node_modules", express.static(join(cwd, "node_modules")));
 
 app.use(async (req, res, next) => {
 	let file, url;
-	if (req.url.endsWith("/")) {
+	const reqUrlWithoutParams = req.url.split("?")[0];
+	if (reqUrlWithoutParams.endsWith("/")) {
 		for (const index of ["index.md", "README.md"]) {
-			url = `${req.url}${index}`;
+			url = `${reqUrlWithoutParams}${index}`;
 			file = join(cwd, url);
 			if (existsSync(file) && statSync(file).isFile()) {
 				break;
@@ -55,7 +56,7 @@ app.use(async (req, res, next) => {
 			}
 		}
 	} else {
-		file = join(cwd, req.url);
+		file = join(cwd, reqUrlWithoutParams);
 		if (!(existsSync(file) && statSync(file).isFile())) {
 			file = undefined;
 		}
@@ -65,7 +66,7 @@ app.use(async (req, res, next) => {
 		const bodyContent = await convertMarkdown(md);
 		const templateFn = await getTemplate();
 		// get title as first line in the md file which starts with hashes, which indicates it is a title of some kind
-		const title = md.match(/^##* (.+)$/m)?.[1] || req.url;
+		const title = md.match(/^##* (.+)$/m)?.[1] || reqUrlWithoutParams;
 		const html = templateFn({ title, bodyContent });
 		res.send(html);
 	} else if (file) {

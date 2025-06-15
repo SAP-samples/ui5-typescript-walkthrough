@@ -15,12 +15,22 @@ In this step, we improve the responsiveness of our app. OpenUI5 applications can
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 34](https://sap-samples.github.io/ui5-typescript-walkthrough/build/34/test/mockServer-cdn.html).
 
-Download solution for step 34 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-34.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-34-js.zip).
 
 ***
 
 ### Coding
+<details class="ts-only">
 
+You can download the solution for this step here: [📥 Download step 34](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-34.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 34](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-34-js.zip).
+
+</details>
+***
 
 ### webapp/i18n/i18n.properties
 
@@ -42,8 +52,6 @@ columnPrice=Price
 # Detail Page
 ...
 ```
-
-***
 
 ### webapp/view/InvoiceList.view.xml
 
@@ -180,7 +188,7 @@ Instead of the `ObjectListItem` that we had before, we will now split the inform
 	</Table>
 </mvc:View>
 ```
-
+&nbsp;
 Now we have defined our table responsively and can see the results when we decrease the browsers screen size. The *Supplier* column is not shown on phone sizes and the two columns *Quantity* and *Status* will be shown below the name.
 
 We can see the results when we decrease the browser's screen size or open the app on a small device.
