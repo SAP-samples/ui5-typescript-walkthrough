@@ -13,14 +13,26 @@ Now that we have integrated the dialog, it's time to add some user interaction. 
 <sup>*The dialog now has an &quot;OK&quot; button to close the dialog*</sup>
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 17](https://sap-samples.github.io/ui5-typescript-walkthrough/build/17/index-cdn.html).
-
-Download solution for step 17 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-17.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-17-js.zip).
+***
 
 ### Coding
 
-### webapp/controller/HelloPanel.controller.ts
+<details class="ts-only">
 
-We add an event handler function into the HelloPanel controller file that closes the dialog when triggered. To get the dialog instance we use the `byId` function and then call the `close` function of the dialog.
+You can download the solution for this step here: [📥 Download step 17](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-17.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 17](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-17-js.zip).
+
+</details>
+***
+
+### webapp/controller/HelloPanel.controller.?s
+
+We add an `onCloseDialog` event handler function into the HelloPanel controller file that closes the dialog when triggered. To get the dialog instance we use the `byId` function and then call the `close` function of the dialog.
 
 ```ts
 import Controller from "sap/ui/core/mvc/Controller";
@@ -34,23 +46,56 @@ import Dialog from "sap/m/Dialog";
  * @namespace ui5.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
-    
-
+    private dialog: Dialog;
     onShowHello(): void {
-        ...
+        // read msg from i18n model
+        const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
+        const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+        const msg = resourceBundle.getText("helloMsg", [recipient]);
+        // show message
+        MessageToast.show(msg);
     }
     async onOpenDialog(): Promise<void> {
-        ...
+        this.dialog ??= await this.loadFragment({
+             name: "ui5.walkthrough.view.HelloDialog"
+        }) as Dialog;
+        this.dialog.open();
     }
     onCloseDialog(): void {
-        // note: We don't need to chain to the pDialog promise, since this event-handler
-        // is only called from within the loaded dialog itself.
         (this.byId("helloDialog") as Dialog)?.close();
-    }         
+    }
 };
+
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Controller, MessageToast) {
+  "use strict";
+
+  const HelloPanel = Controller.extend("ui5.walkthrough.controller.HelloPanel", {
+    onShowHello: function _onShowHello() {
+      // read msg from i18n model
+      const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
+      const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
+      const msg = resourceBundle.getText("helloMsg", [recipient]);
+      // show message
+      MessageToast.show(msg);
+    },
+    onOpenDialog: async function _onOpenDialog() {
+      this.dialog ??= await this.loadFragment({
+        name: "ui5.walkthrough.view.HelloDialog"
+      });
+      this.dialog.open();
+    },
+    onCloseDialog: function _onCloseDialog() {
+      this.byId("helloDialog")?.close();
+    }
+  });
+  ;
+  return HelloPanel;
+});
+
+```
 
 ### webapp/i18n/i18n.properties
 
@@ -67,8 +112,6 @@ helloPanelTitle=Hello World
 openDialogButtonText=Say Hello With Dialog
 dialogCloseButtonText=Ok
 ```
-
-***
 
 ### webapp/view/HelloDialog.fragment.xml
 
@@ -89,8 +132,8 @@ In the fragment definition, we add a button to the `beginButton` aggregation of 
    </Dialog>
 </core:FragmentDefinition>
 ```
-
-By using the `loadFragment` function to create the fragment content in the controller of the panel’s content view, the method will be invoked there when the button is pressed. The dialog has an aggregation named `beginButton` as well as `endButton`. Placing buttons in both of these aggregations makes sure that the `beginButton` is placed before the `endButton` on the UI. What `before` means, however, depends on the text direction of the current language. We therefore use the terms `begin` and `end` as a synonym to “left” and “right". In languages with left-to-right direction, the `beginButton` will be rendered left, the `endButton` on the right side of the dialog footer; in right-to-left mode for specific languages the order is switched.
+&nbsp;
+By using the `loadFragment` function to create the fragment content in the controller of the panel’s content view, the method will be invoked there when the button is pressed. The dialog has an aggregation named `beginButton` as well as `endButton`. Placing buttons in both of these aggregations makes sure that the `beginButton` is placed before the `endButton` on the UI. What `before` means, however, depends on the text direction of the current language. We therefore use the terms `begin` and `end` as a synonym to "left" and "right". In languages with left-to-right direction, the `beginButton` will be rendered left, the `endButton` on the right side; in right-to-left mode for specific languages the order is switched.
 
 &nbsp;
 

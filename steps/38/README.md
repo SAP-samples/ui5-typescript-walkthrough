@@ -13,11 +13,21 @@ In this step we're going to build our application and consume the speed of a bui
 
 <sup>*The OpenUI5 application is built and served*</sup>
 
-Download solution for step 38 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-38.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-38-js.zip).
-
 ***
 
 ### Coding
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 38](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-38.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 38](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-38-js.zip).
+
+</details>
+***
 
 ### package.json
 
@@ -33,19 +43,10 @@ Now we create a production-ready version of our OpenUI5 application that can be 
     "start": "ui5 serve -o test/mockServer.html",
     "build": "ui5 build --all --clean-dest"
   },
-  "devDependencies": {
-    "@types/openui5": "^1.132.0",
-    "@ui5/cli": "^3.7.1",
-    "@ui5/ts-interface-generator": "^0.8.1",
-    "typescript": "^5.2.2",
-    "ui5-middleware-livereload": "^3.0.2",
-    "ui5-middleware-serveframework": "^3.0.0",
-    "ui5-middleware-simpleproxy": "^3.2.8",
-    "ui5-tooling-transpile": "^3.2.7"
-  }
+  ...
 }
 ```
-
+&nbsp;
 Now that we added this script to our project configuration, we can also execute it:
 
 Open a terminal and execute `npm run build` in the project root folder.
@@ -75,20 +76,10 @@ To actually use the newly added web server, we have to add a new script to our `
     "build": "ui5 build --all --clean-dest",
     "serve-dist": "ws --compress -d dist --open"
   },
-  "devDependencies": {
-    "@types/openui5": "^1.132.0",
-    "@ui5/cli": "^3.7.1",
-    "@ui5/ts-interface-generator": "^0.8.1",
-    "typescript": "^5.2.2",
-    "local-web-server": "^5.3.0",
-    "ui5-middleware-livereload": "^3.0.2",
-    "ui5-middleware-serveframework": "^3.0.0",
-    "ui5-middleware-simpleproxy": "^3.2.8",
-    "ui5-tooling-transpile": "^3.2.7"
-  }
+  ...
 }
 ```
-
+&nbsp;
 Now it's time to start the server by executing `npm run serve-dist` in a terminal in the project root folder. Your default browser opens automatically and the built application is hosted. The `local-web-server` does not offer proxy capabilities so far, nor does it allow to open a specific HTML file in the browser. To display any actual data, it is therefore necessary to open the `test/mockServer.html` file in the browser instead of the `index.html`.
 
 ***

@@ -114,6 +114,10 @@ body.page-language-ts .language-switch-button.lang-ts {
     border-color: var(--active-border);
 }
 
+li > section.ts-only, li > section.js-only {
+	display: inline;
+}
+
 .language-switch-button:hover {
     opacity: 0.8;
     background-color: rgba(20, 20, 20, 0.8);
@@ -133,4 +137,9 @@ body.page-language-ts .language-switch-button.lang-ts {
         color: var(--active-color);
         border-color: var(--active-border);
     }
+}
+
+#__bs_notify__ {
+    background-color: rgba(27, 32, 50, 0.3) !important;
+    top: 40px !important;
 }
