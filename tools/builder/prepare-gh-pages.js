@@ -7,6 +7,8 @@ const execute = utils.promisify(exec);
 const archiver = require("archiver");
 const fg = require('fast-glob');
 
+const sanitize = require("./sanitze");
+
 const cwd = process.cwd();
 
 function zipDirectory(sourceDir, outPath) {
@@ -127,9 +129,7 @@ function zipDirectory(sourceDir, outPath) {
 						mkdirSync(dirname(targetJS), { recursive: true });
 						// rewrite content of the JS file
 						let content = readFileSync(sourceJS, { encoding: "utf8" });
-						content = content.replaceAll(/\/\*\*.*[\n\s]+\* @namespace.*[\n\s]+\*\/[\n\s]+/g, "");
-						content = content.replaceAll(/\/\*\*.*[\n\s]+\* @name.*[\n\s]+\*\/[\n\s]+/g, "");
-						content = content.replaceAll(/\/\/# sourceMappingURL=.*[\n\s]+/g, "");
+						content = sanitize(content);
 						writeFileSync(targetJS, content, { encoding: "utf8" });
 					} else {
 						console.error("No JS file found for", source);
