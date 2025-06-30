@@ -84,7 +84,7 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel", "sap/ui
       "interfaces": ["sap.ui.core.IAsyncContentCreation"],
       "manifest": "json"
     },
-    init: function _init() {
+    init() {
       // call the init function of the parent
       UIComponent.prototype.init.call(this);
 
@@ -196,7 +196,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap
   "use strict";
 
   const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
-    onInit: function _onInit() {
+    onInit() {
       const viewModel = new JSONModel({
         currency: "EUR"
       });

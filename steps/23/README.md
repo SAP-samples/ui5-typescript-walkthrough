@@ -85,13 +85,13 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap
   "use strict";
 
   const App = Controller.extend("ui5.walkthrough.controller.App", {
-    onInit: function _onInit() {
+    onInit() {
       const viewModel = new JSONModel({
         currency: "EUR"
       });
       this.getView()?.setModel(viewModel, "view");
     },
-    onFilterInvoices: function _onFilterInvoices(event) {
+    onFilterInvoices(event) {
       // build filter array
       const filter = [];
       const query = event.getParameter("query");

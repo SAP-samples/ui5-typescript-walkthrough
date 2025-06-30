@@ -226,7 +226,7 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"], functi
       "interfaces": ["sap.ui.core.IAsyncContentCreation"],
       "manifest": "json"
     },
-    init: function _init() {
+    init() {
       // call the init function of the parent
       UIComponent.prototype.init.call(this);
 
@@ -290,7 +290,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap
     
     //...
 
-    onPress: function _onPress() {
+    onPress() {
       const router = UIComponent.getRouterFor(this);
       router.navTo("detail");
     }

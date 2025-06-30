@@ -76,7 +76,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap
 
   const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
     //...
-    onNavBack: function _onNavBack() {
+    onNavBack() {
       const history = History.getInstance();
       const previousHash = history.getPreviousHash();
       if (previousHash !== undefined) {

@@ -167,13 +167,9 @@ opaTest("Should open the Hello dialog", function () {
 ```
 
 ```js
-sap.ui.define(["sap/ui/test/opaQunit", "./pages/HelloPanelPage"], function (opaTest, __HelloPanelPage) {
+sap.ui.define(["sap/ui/test/opaQunit", "./pages/HelloPanelPage"], function (opaTest, HelloPanelPage) {
   "use strict";
 
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule && typeof obj.default !== "undefined" ? obj.default : obj;
-  }
-  const HelloPanelPage = _interopRequireDefault(__HelloPanelPage);
   const onTheHelloPanelPage = new HelloPanelPage();
   QUnit.module("Navigation");
   opaTest("Should open the Hello dialog", function () {
@@ -248,7 +244,6 @@ sap.ui.define([], function () {
       }
     }
   };
-  return __exports;
 });
 
 ```

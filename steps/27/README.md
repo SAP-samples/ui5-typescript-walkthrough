@@ -91,13 +91,9 @@ QUnit.test("Should return the translated texts", (assert) => {
 ```
 
 ```js
-sap.ui.define(["sap/ui/model/resource/ResourceModel", "ui5/walkthrough/model/formatter"], function (ResourceModel, __formatter) {
+sap.ui.define(["sap/ui/model/resource/ResourceModel", "ui5/walkthrough/model/formatter"], function (ResourceModel, formatter) {
   "use strict";
 
-  function _interopRequireDefault(obj) {
-    return obj && obj.__esModule && typeof obj.default !== "undefined" ? obj.default : obj;
-  }
-  const formatter = _interopRequireDefault(__formatter);
   QUnit.module("Formatting function", {});
   QUnit.test("Should return the translated texts", assert => {
     const resourceModel = new ResourceModel({
@@ -223,7 +219,7 @@ export default {
 sap.ui.define([], function () {
   "use strict";
 
-  var __exports = {
+  return {
     name: "QUnit test suite for UI5 TypeScript Walkthrough",
     defaults: {
       page: "ui5://test-resources/ui5/walkthrough/Test.qunit.html?testsuite={suite}&test={name}",
@@ -245,7 +241,6 @@ sap.ui.define([], function () {
       }
     }
   };
-  return __exports;
 });
 
 ```

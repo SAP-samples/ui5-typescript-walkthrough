@@ -101,7 +101,7 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/core/mvc/XMLView", "sap/ui/mod
     metadata: {
       "interfaces": ["sap.ui.core.IAsyncContentCreation"]
     },
-    init: function _init() {
+    init() {
       // call the init function of the parent
       UIComponent.prototype.init.call(this);
       // set data model
@@ -119,7 +119,7 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/core/mvc/XMLView", "sap/ui/mod
       });
       this.setModel(i18nModel, "i18n");
     },
-    createContent: function _createContent() {
+    createContent() {
       return XMLView.create({
         "viewName": "ui5.walkthrough.view.App",
         "id": "app"
@@ -170,7 +170,7 @@ sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller"], function (Me
    * @name ui5.walkthrough.controller.App
    */
   const AppController = Controller.extend("ui5.walkthrough.controller.App", {
-    onShowHello: function _onShowHello() {
+    onShowHello() {
       // read msg from i18n model
       // functions with generic return values require casting
       const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
