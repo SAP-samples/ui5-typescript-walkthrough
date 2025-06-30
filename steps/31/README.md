@@ -131,7 +131,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap
     
     //...
 
-    onPress: function _onPress(event) {
+    onPress(event) {
       const item = event.getSource();
       const router = UIComponent.getRouterFor(this);
       router.navTo("detail", {
@@ -188,11 +188,11 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/UIComponent"], functio
   "use strict";
 
   const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
-    onInit: function _onInit() {
+    onInit() {
       const router = UIComponent.getRouterFor(this);
       router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
     },
-    onObjectMatched: function _onObjectMatched(event) {
+    onObjectMatched(event) {
       this.getView().bindElement({
         path: "/" + window.decodeURIComponent(event.getParameter("arguments").invoicePath),
         model: "invoice"

@@ -205,7 +205,7 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"], functi
       "interfaces": ["sap.ui.core.IAsyncContentCreation"],
       "manifest": "json"
     },
-    init: function _init() {
+    init() {
       // call the init function of the parent
       UIComponent.prototype.init.call(this);
 

@@ -60,7 +60,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"], fun
   "use strict";
 
   const App = Controller.extend("ui5.walkthrough.controller.App", {
-    onInit: function _onInit() {
+    onInit() {
       const viewModel = new JSONModel({
         currency: "EUR"
       });

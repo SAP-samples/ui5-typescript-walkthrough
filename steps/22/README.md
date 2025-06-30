@@ -80,7 +80,7 @@ export default  {
 sap.ui.define([], function () {
   "use strict";
 
-  var __exports = {
+  return {
     statusText: function (status) {
       const resourceBundle = this?.getOwnerComponent()?.getModel("i18n")?.getResourceBundle();
       switch (status) {
@@ -95,7 +95,6 @@ sap.ui.define([], function () {
       }
     }
   };
-  return __exports;
 });
 
 ```

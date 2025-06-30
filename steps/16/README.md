@@ -93,10 +93,10 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Co
   "use strict";
 
   const HelloPanel = Controller.extend("ui5.walkthrough.controller.HelloPanel", {
-    onShowHello: function _onShowHello() {
+    onShowHello() {
       ...
     },
-    onOpenDialog: async function _onOpenDialog() {
+    async onOpenDialog() {
       this.dialog ??= await this.loadFragment({
         name: "ui5.walkthrough.view.HelloDialog"
       });

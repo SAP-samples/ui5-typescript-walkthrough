@@ -70,11 +70,11 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel", "sap/ui
       "interfaces": ["sap.ui.core.IAsyncContentCreation"],
       "manifest": "json"
     },
-    init: function _init() {
+    init() {
       // call the init function of the parent
       ...
     },
-    getContentDensityClass: function _getContentDensityClass() {
+    getContentDensityClass() {
       return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact";
     }
   });
@@ -108,7 +108,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
   "use strict";
 
   const App = Controller.extend("ui5.walkthrough.controller.App", {
-    onInit: function _onInit() {
+    onInit() {
       this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
     }
   });

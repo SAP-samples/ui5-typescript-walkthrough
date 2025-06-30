@@ -129,7 +129,7 @@ sap.ui.define(["sap/ui/core/Control"], function (Control) {
       render: (rm, control) => { }
     },
     metadata: {},
-    init: function _init() {},
+    init() {},
   });
   ;
   return ProductRating;
@@ -357,10 +357,10 @@ sap.ui.define(["sap/ui/core/Control", "sap/m/Label", "sap/m/Button", "sap/m/Rati
         }
       }
     },
-    constructor: function _constructor(id, settings) {
+    constructor(id, settings) {
       Control.prototype.constructor.call(this, id, settings);
     },
-    init: function _init() {
+    init() {
       this.setAggregation("_rating", new RatingIndicator({
         value: this.getValue(),
         iconSize: "2rem",
@@ -374,12 +374,12 @@ sap.ui.define(["sap/ui/core/Control", "sap/m/Label", "sap/m/Button", "sap/m/Rati
         press: this._onSubmit.bind(this)
       }).addStyleClass("sapUiTinyMarginTopBottom"));
     },
-    setValue: function _setValue(value) {
+    setValue(value) {
       this.setProperty("value", value, true);
       this.getAggregation("_rating").setValue(value);
       return this;
     },
-    reset: function _reset() {
+    reset() {
       const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
       this.setValue(0);
       this.getAggregation("_label").setDesign("Standard");
@@ -387,14 +387,14 @@ sap.ui.define(["sap/ui/core/Control", "sap/m/Label", "sap/m/Button", "sap/m/Rati
       this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelInitial"));
       this.getAggregation("_button").setEnabled(true);
     },
-    _onRate: function _onRate(event) {
+    _onRate(event) {
       const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
       const value = event.getParameter("value");
       this.setProperty("value", value, true);
       this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelIndicator", [value, event.getSource().getMaxValue()]));
       this.getAggregation("_label").setDesign("Bold");
     },
-    _onSubmit: function _onSubmit(event) {
+    _onSubmit(event) {
       const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
       this.getAggregation("_rating").setEnabled(false);
       this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelFinal"));
@@ -493,18 +493,18 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap
   "use strict";
 
   const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
-    onInit: function _onInit() {
+    onInit() {
       const router = UIComponent.getRouterFor(this);
       router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
     },
-    onObjectMatched: function _onObjectMatched(event) {
+    onObjectMatched(event) {
       this.byId("rating").reset();
       this.getView().bindElement({
         path: "/" + window.decodeURIComponent(event.getParameter("arguments").invoicePath),
         model: "invoice"
       });
     },
-    onNavBack: function _onNavBack() {
+    onNavBack() {
       const history = History.getInstance();
       const previousHash = history.getPreviousHash();
       if (previousHash !== undefined) {
@@ -514,7 +514,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap
         router.navTo("overview", {}, true);
       }
     },
-    onRatingChange: function _onRatingChange(event) {
+    onRatingChange(event) {
       const value = event.getParameter("value");
       const resourceBundle = this?.getView().getModel("i18n")?.getResourceBundle();
       MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]));
