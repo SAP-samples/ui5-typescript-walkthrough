@@ -13,12 +13,22 @@ Our dialog is still pretty much empty. Since OpenUI5 is shipped with a large ico
 <sup>*An icon is now displayed in the dialog box*</sup>
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 18](https://sap-samples.github.io/ui5-typescript-walkthrough/build/18/index-cdn.html).
-
-Download solution for step 15 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-18.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-18-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 18](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-18.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 18](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-18-js.zip).
+
+</details>
+***
 
 ### webapp/view/HelloPanel.view.xml
 
@@ -55,12 +65,11 @@ We add an icon to the button that opens the dialog. The `sap-icon://` protocol i
    </Panel>
 </mvc:View>
 ```
-
+&nbsp;
 >💡 **Tip:** <br>
 > You can look up other icons using the [Icon Explorer tool](https://sdk.openui5.org/test-resources/sap/m/demokit/iconExplorer/webapp/index.html).
 > To call any icon, use its name as listed in the *Icon Explorer* in <code>sap-icon://<i>&lt;iconname&gt;</i></code>.
 
-***
 
 ### webapp/view/HelloDialog.fragment.xml
 

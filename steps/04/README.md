@@ -16,11 +16,22 @@ When working with OpenUI5, we recommend the use of XML views, as this produces t
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 4](https://sap-samples.github.io/ui5-typescript-walkthrough/build/04/index-cdn.html).
 
-Download solution for step 4 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-04.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-04-js.zip).
-
 ***
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 4](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-04.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 4](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-04-js.zip).
+
+</details>
+***
 
 ### webapp/view/App.view.xml \(New\)
 
@@ -46,9 +57,9 @@ We have created an XML view that displays a text control with the text "Hello Wo
 
 ***
 
-### webapp/index.ts
+### webapp/index.?s
 
-As a next step, we are going to replace the `sap/m/Text` control in our `index.ts` file with the app view that we've just created. To do this, we utilize the `XMLView.create` function, which is a part of the `sap/ui/core/mvc/View` module. This function needs a `viewName` property, which indicates the resource that needs to be loaded. The `viewName` is a combination of the namespace defined in the bootstrap and the path to the app view, but without the ".view.xml" extension. In addition, we set the `id` property to "app". Providing a stable ID is beneficial as it offers an easy and consistent way to identify and refer to specific views and elements in your code, thus helping to keep your code organized.
+As a next step, we are going to replace the `sap/m/Text` control in our `index.?s` file with the app view that we've just created. To do this, we utilize the `XMLView.create` function, which is a part of the `sap/ui/core/mvc/View` module. This function needs a `viewName` property, which indicates the resource that needs to be loaded. The `viewName` is a combination of the namespace defined in the bootstrap and the path to the app view, but without the ".view.xml" extension. In addition, we set the `id` property to "app". Providing a stable ID is beneficial as it offers an easy and consistent way to identify and refer to specific views and elements in your code, thus helping to keep your code organized.
 
 ```ts
 import XMLView from "sap/ui/core/mvc/XMLView";
@@ -61,6 +72,21 @@ XMLView.create({
 });
 
 ```
+
+```js
+sap.ui.define(["sap/ui/core/mvc/XMLView"], function (XMLView) {
+  "use strict";
+
+  XMLView.create({
+    viewName: "ui5.walkthrough.view.App",
+    id: "app"
+  }).then(function (view) {
+    view.placeAt("content");
+  });
+});
+
+```
+
 We have now embed our app view to the body of the HTML document.
 
 > 💡 **Tip:**  <br>

@@ -17,12 +17,23 @@ In this step, we will use the OpenUI5 navigation features to load and show a sep
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 30](https://sap-samples.github.io/ui5-typescript-walkthrough/build/30/test/mockServer-cdn.html).
 
-Download solution for step 30 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30-js.zip).
-
 ***
 
 
 ### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 30](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 30](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-30-js.zip).
+
+</details>
+***
 
 ### webapp/i18n/i18n.properties
 
@@ -40,8 +51,6 @@ invoiceStatusC=Done
 detailPageTitle=UI5 TypeScript Walkthrough - Details
 ```
 
-***
-
 ### webapp/view/Detail.view.xml \(New\)
 
 Now we add the new `Detail.view.xml` file to our view folder. Beside of the the root node of the XML structure and the required namespaces, it only contains a `Page` control that displays the title we just defined in our resource boundle and an `ObjectHeader` control with a static text *Invoice* assigned to the `title` attribute (this we will change in the next step).
@@ -57,8 +66,6 @@ Now we add the new `Detail.view.xml` file to our view folder. Beside of the the 
 	</Page>
 </mvc:View>
 ```
-
-***
 
 ### webapp/view/Overview.view.xml \(New\)
 
@@ -80,10 +87,8 @@ For simplicity, we reuse the controller `ui5.walkthrough.controller.App` for our
     </Page>
 </mvc:View>
 ```
-
+&nbsp;
 As we reuse the controller `ui5.walkthrough.controller.App` for two different views \(for the new overview and for the app view\), two instances of that controller are instantiated at runtime. In general, one instance of a controller is instantiated for each view that references the controller.
-
-***
 
 ### webapp/view/App.view.xml
 
@@ -102,8 +107,6 @@ In the app view, we now remove everything and between the control aggregation `p
     </Shell>
 </mvc:View>
 ```
-
-***
 
 ### webapp/manifest.json
 
@@ -170,7 +173,7 @@ We add a new “routing" section to the `sap.ui5` part of the descriptor. There 
     }
 }
 ```
-
+&nbsp;
 The router will automatically add the view that corresponds to the current URL into the app control. The router identifies the app control with the ID that corresponds to the property `controlId: “app”` in the `AppDescriptor`.
 
 The overview view is always shown when the hash is empty. The detail view is shown when the hash matches the pattern `detail`.
@@ -178,9 +181,7 @@ The overview view is always shown when the hash is empty. The detail view is sho
 > 📌 **Important:** <br>
 > The sequence of the routes in the routes definition is important. As soon as a pattern is matched, the following patterns are ignored. To prevent this for a specific route, you use the `greedy` parameter. If set to `true`, the route is always taken into account.
 
-***
-
-### webapp/Component.ts
+### webapp/Component.?s
 
 In the component initialization method, we now add a call to initialize the router. 
 
@@ -213,15 +214,48 @@ export default class Component extends UIComponent {
         this.getRouter().initialize();
     };
 };
+
 ```
 
+```js
+sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"], function (UIComponent, JSONModel) {
+  "use strict";
+
+  const Component = UIComponent.extend("ui5.walkthrough.Component", {
+    metadata: {
+      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
+      "manifest": "json"
+    },
+    init: function _init() {
+      // call the init function of the parent
+      UIComponent.prototype.init.call(this);
+
+      // set data model
+      const data = {
+        recipient: {
+          name: "World"
+        }
+      };
+      const model = new JSONModel(data);
+      this.setModel(model);
+
+      // create the views based on the url/hash
+      this.getRouter().initialize();
+    }
+  });
+  ;
+  return Component;
+});
+
+```
+&nbsp;
 We do not need to instantiate the router manually, it is automatically instantiated based on our configuration in the app descriptor and assigned to the component.
 
 Initializing the router will evaluate the current URL and load the corresponding view automatically. This is done with the help of the routes and targets that have been configured in the `manifest.json`. If a route has been hit, the view of its corresponding target is loaded and displayed.
 
 ***
 
-### webapp/controller/InvoiceList.controller.ts
+### webapp/controller/InvoiceList.controller.?s
 
 What is still missing is the event handler that performs a navigation to the detail page by clicking an item in the invoice list: To access the router instance for our app use the static method `getRouterFor()` on the `UIComponent` module. On the router we call the `navTo` method passing the pattern name we defined in our app descriptor for routing to the details page.
 
@@ -238,7 +272,8 @@ import UIComponent from "sap/ui/core/UIComponent";
  * @namespace ui5.walkthrough.controller
  */
 export default class App extends Controller {
-		…
+	
+    //...
 
     onPress(): void {
         const router = UIComponent.getRouterFor(this);
@@ -247,8 +282,24 @@ export default class App extends Controller {
 };
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/core/UIComponent"], function (Controller, JSONModel, Filter, FilterOperator, UIComponent) {
+  "use strict";
 
+  const App = Controller.extend("ui5.walkthrough.controller.App", {
+    
+    //...
+
+    onPress: function _onPress() {
+      const router = UIComponent.getRouterFor(this);
+      router.navTo("detail");
+    }
+  });
+  ;
+  return App;
+});
+
+```
 
 ### webapp/view/InvoiceList.view.xml
 
@@ -293,7 +344,7 @@ In the invoice list view we finally add the press event to the list item we just
     </List>
 </mvc:View>
 ```
-
+&nbsp;
 If you now open the app, you should now see the detail page when clicking an item in the list of invoices.
 
 ***

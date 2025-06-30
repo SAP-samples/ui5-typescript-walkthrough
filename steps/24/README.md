@@ -15,12 +15,22 @@ To make our list of invoices even more user-friendly, we sort it alphabetically 
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 24](https://sap-samples.github.io/ui5-typescript-walkthrough/build/24/index-cdn.html).
 
-Download solution for step 24 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-24.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-24-js.zip).
-
 ***
 
 ### Coding
 
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 24](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-24.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 24](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-24-js.zip).
+
+</details>
+***
 
 ### webapp/view/InvoiceList.view.xml
 
@@ -48,8 +58,6 @@ We add a declarative sorter to the binding syntax of the list control. Therefore
 By default, the sorting is ascending, but you could also add a property `descending` with the value `true` inside the sorter property to change the sorting order.
   
 If we run the app now we can see a list of invoices sorted by the name of the products.
-
-***
 
 ### webapp/view/InvoiceList.view.xml
 

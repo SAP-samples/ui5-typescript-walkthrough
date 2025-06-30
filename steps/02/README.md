@@ -15,11 +15,23 @@ Before we can do something with OpenUI5, we need to load and initialize it. This
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 2](https://sap-samples.github.io/ui5-typescript-walkthrough/build/02/index-cdn.html).
 
-Download solution for step 2 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-02.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-02-js.zip).
+***
+### Coding
 
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 2](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-02.zip).
+
+</details> 
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 2](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-02-js.zip).
+
+</details>
 ***
 
-### Tooling
+### UI5 Tooling
 
 First, let's set up our UI5 Tooling to use the OpenUI5 framework for our project. We also need to add the necessary OpenUI5 libraries as dependencies to the project's UI5 Tooling configuration.
 
@@ -37,11 +49,13 @@ ui5 add sap.ui.core themelib_sap_horizon
 
 The `ui5 add` command adds specific libraries as dependency to the projects UI5 Tooling configuration. In this case, we'e adding the `sap.ui.core` library, which provides core functionality of the OpenUI5 framework. This library is essential for bootstrapping OpenUI5. Additionally, we're adding the `themelib_sap_horizon` library which provides the visual styles for the Horizon theme. We'll use this theme with our application. 
 
-***
 
-### package.json
+<details class="ts-only">
+
+### TypeScript Setup
 
 To work with TypeScript, we must install it in our project. To do this, we execute the following command in the terminal:
+
 
 ```sh
 npm install typescript --save-dev
@@ -49,13 +63,13 @@ npm install typescript --save-dev
 
 By running this command, npm will download the TypeScript package from the npm registry and install it in our project's "node_modules" directory. It will also add an entry for TypeScript in the "devDependencies" section of our package.json file, so that other developers working on the project can easily install the same version of TypeScript.
 
-***
 
 ### tsconfig.json \(New\)
 
 As a next step, we need to create the file `tsconfig.json` in the app root directory to indicate that this folder is the root of a TypeScript project. This file specifies various compiler options and project settings that affect how TypeScript code is compiled into JavaScript.
 
 We specify the compiler options as follow:
+
 
 ```json
 {
@@ -101,17 +115,15 @@ Let's go through the compiler options specified in the file:
 
 ***
 
-### Coding
+</details>
 
-### webapp/index.ts \(New\)
+### webapp/index.?s \(New\)
 
-Now let's move on to the UI work. We create a new `index.ts` script in the webapp folder. In this script, we add a native `alert()` method with the message "UI5 is ready".
+Now let's move on to the UI work. We create a new `index.?s` script in the webapp folder. In this script, we add a native `alert()` method with the message "UI5 is ready".
 
-```ts
+```js
 alert("UI5 is ready");
 ```
-
-***
 
 ### webapp/index.html
 
@@ -157,22 +169,30 @@ We initialize the core modules with the following configuration options:
 </html>
 ```
 
-> 📝 **Note:**
+> 📝 **Note:**<br>
 > The namespace is a unique identifier for your application file. It helps prevent naming conflicts with other modules or libraries.
 
 ***
 
-### Tooling
-
-### package.json
+### UI5 Tooling
 
 Let's enhance our tooling setup once again by installing some custom middleware for the ui5-server. This will help us handle our development project more efficiently.
 
 We open a terminal and navigate to the root folder of our app. Then, we execute the following command:
 
+<details class="ts-only">
+
 ```sh
 npm install ui5-middleware-livereload ui5-middleware-serveframework ui5-tooling-transpile --save-dev
 ```
+</details>
+
+<details class="js-only">
+
+```sh
+npm install ui5-middleware-livereload ui5-middleware-serveframework --save-dev
+```
+</details>
 
 When you run the command, npm will download the specified packages from the npm registry and store them in a folder called `node_modules` within your project directory. The `--save-dev` flag instructs npm to save these packages as development dependencies in the `devDependencies` section of the `package.json` file. Development dependencies are packages that are only needed during development and not in production. By separating them from production dependencies, we can keep our project clean and ensure that only the required packages are included when deploying the application.
 
@@ -182,20 +202,27 @@ Let's break down what each package does:
 
 -	`ui5-middleware-serveframework` is another middleware plugin for the UI5 Tooling that provides a web server to serve your OpenUI5 project during development. It allows you to easily serve the necessary OpenUI5 libraries and resources required by your application from your development environment.
 
+<details class="ts-only">
+
 - `ui5-tooling-transpile` is a plugin for the UI5 Tooling that transpiles modern JavaScript (ES6+) and TypeScript into a compatible version for OpenUI5. OpenUI5 is based on older versions of JavaScript, so this plugin allows you to take advantage of the latest language features and syntax while ensuring that your code remains compatible with OpenUI5.
 
-***
+</details>
 
 ### ui5.yaml
 
 Next,  we have to configure the tooling extension we installed from npm to our UI5 Tooling setup, so we can use them in our project. To hook a custom task into a certain build phase of a project, it needs to reference another task that will get executed before or after it. The same applies for a custom middleware:
+<details class="ts-only">
 
 -   For the `ui5-tooling-transpile-task` we specify that this should happen after the`replaceVersion` task.
+
+</details>
 
 -   All our custom middleware extensions will be called after the `compression` middleware.
 
 > 📌 **Important:** <br>
 > Middleware configurations are applied in the order in which they are defined. 
+
+<details class="ts-only">
 
 ```yaml
 framework:
@@ -219,7 +246,31 @@ server:
 ```
 Now you can benefit from live reload on changes, built framework resources at development time, and make use of TypeScript in OpenUI5.
 
-> 📝 **Note:** <br>
+</details>
+
+<details class="js-only">
+
+```yaml
+framework:
+  name: OpenUI5
+  version: "1.132.1"
+  libraries:
+    - name: sap.ui.core
+    - name: themelib_sap_horizon
+builder:
+server:
+  customMiddleware:
+  - name: ui5-middleware-serveframework
+    afterMiddleware: compression
+  - name: ui5-middleware-livereload
+    afterMiddleware: compression
+```
+Now you can benefit from live reload on changes and built framework resources at development time.
+
+</details>
+
+<br>
+> 📝 **Note:**<br>
 > During its initial run, the `ui5-middleware-serveframework` middleware will build the framework, which can take a while. In all following steps, the build will not happen again and the framework is served from the built resources.
 
 &nbsp;

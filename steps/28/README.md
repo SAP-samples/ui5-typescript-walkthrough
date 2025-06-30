@@ -3,7 +3,7 @@
 If we want to test interaction patterns or more visual features of our app, we can also write an integration test.
 
 We haven’t thought about testing our interaction with the app yet, so in this step we will check if the dialog actually opens when we click the “Say Hello with Dialog” button. We can easily do this with OPA5, a feature of OpenUI5 that is easy to set up and is based on JavaScript and QUnit. Using integration and unit tests and running them consistently in a continuous integration \(CI\) environment, we can make sure that we don’t accidentally break our app or introduce logical errors in existing code.
-
+&nbsp;
 > 📝 **Note:** 
 > In this tutorial, we focus on a simple use case for the test implementation. If you want to learn more about OPA tests, have a look at our [Testing Tutorial](https://sdk.openui5.org/topic/291c9121e6044ab381e0b51716f97f52.html) tutorial, especially [Step 6: A First OPA Test](https://sdk.openui5.org/topic/1b47457cbe4941ee926317d827517acb.html).
 
@@ -17,24 +17,32 @@ We haven’t thought about testing our interaction with the app yet, so in this 
 
 <sup>*An OPA test opens the "Hello" dialog from step 16*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 28](https://sap-samples.github.io/ui5-typescript-walkthrough/build/28/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=integration/opaTests).
+We add a new folder `integration` below the `test` folder, where we put our new test cases. Page objects that help structuring such integration tests are put in the `pages` subfolder that we also create now.
 
-Download solution for step 28 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-28.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-28-js.zip).
+![](assets/loio27e84d5bd72a485498564b92894869b5_LowRes.png "Folder Structure for this Step")
+<sup>*Folder Structure for this Step*</sup>
+
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 28](https://sap-samples.github.io/ui5-typescript-walkthrough/build/28/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=integration/opaTests).
 
 ***
 
 ### Coding  
   
-We add a new folder `integration` below the `test` folder, where we put our new test cases. Page objects that help structuring such integration tests are put in the `pages` subfolder that we also create now.
 
+<details class="ts-only">
 
-![](assets/loio27e84d5bd72a485498564b92894869b5_LowRes.png "Folder Structure for this Step")
-<sup>*Folder Structure for this Step*</sup>
+You can download the solution for this step here: [📥 Download step 28](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-28.zip).
 
+</details>
 
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 28](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-28-js.zip).
+
+</details>
 ***
 
-### webapp/test/integration/pages/HelloPanelPage.ts \(New\)
+### webapp/test/integration/pages/HelloPanelPage.?s \(New\)
 
 We create a new `HelloPanelPage.ts` file under `webapp/test/integration/pages`.
 
@@ -73,11 +81,44 @@ export default class HelloPanelPage extends Opa5 {
 		});
 	}
 };
+
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/test/Opa5", "sap/ui/test/actions/Press"], function (Opa5, Press) {
+  "use strict";
 
-### webapp/test/integration/NavigationJourney.ts \(New\)
+  const viewName = "ui5.walkthrough.view.HelloPanel";
+  class HelloPanelPage extends Opa5 {
+    // Actions
+    iPressTheSayHelloWithDialogButton() {
+      return this.waitFor({
+        id: "helloDialogButton",
+        viewName,
+        actions: new Press(),
+        errorMessage: "Did not find the 'Say Hello With Dialog' button on the HelloPanel view"
+      });
+    }
+
+    // Assertions
+    iShouldSeeTheHelloDialog() {
+      return this.waitFor({
+        controlType: "sap.m.Dialog",
+        success: function () {
+          // we set the view busy, so we need to query the parent of the app
+          Opa5.assert.ok(true, "The dialog is open");
+        },
+        errorMessage: "Did not find the dialog control"
+      });
+    }
+  }
+  ;
+  return HelloPanelPage;
+});
+
+```
+
+### webapp/test/integration/NavigationJourney.?s \(New\)
 
 We create a new `NavigationJourney` file under `webapp/test/integration/`.
 
@@ -122,26 +163,62 @@ opaTest("Should open the Hello dialog", function () {
 	// Cleanup
 	onTheHelloPanelPage.iTeardownMyApp();
 });
+
 ```
 
+```js
+sap.ui.define(["sap/ui/test/opaQunit", "./pages/HelloPanelPage"], function (opaTest, __HelloPanelPage) {
+  "use strict";
+
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule && typeof obj.default !== "undefined" ? obj.default : obj;
+  }
+  const HelloPanelPage = _interopRequireDefault(__HelloPanelPage);
+  const onTheHelloPanelPage = new HelloPanelPage();
+  QUnit.module("Navigation");
+  opaTest("Should open the Hello dialog", function () {
+    // Arrangements
+    onTheHelloPanelPage.iStartMyUIComponent({
+      componentConfig: {
+        name: "ui5.walkthrough"
+      }
+    });
+
+    // Actions
+    onTheHelloPanelPage.iPressTheSayHelloWithDialogButton();
+
+    // Assertions
+    onTheHelloPanelPage.iShouldSeeTheHelloDialog();
+
+    // Cleanup
+    onTheHelloPanelPage.iTeardownMyApp();
+  });
+});
+
+```
+&nbsp;
 As you can see, the test case reads like a user story, we actually do not need the implementation of the methods yet to understand the meaning of the test case. This approach is called "Behavior Driven Development" or simply BDD and is popular in "Agile Software Development".
 
-***
+### webapp/test/integration/opaTests.qunit.?s \(New\)
 
-### webapp/test/integration/opaTests.qunit.ts \(New\)
-
-We create a new `opaTests.qunit.ts` file under `webapp/test/integration/`. 
+We create a new `opaTests.qunit.?s` file under `webapp/test/integration/`. 
 This module imports our `NavigationJourney` and is the entrypoint for all integration tests in the project.
 
 ```ts
 import "./NavigationJourney";
+
 ```
 
-***
+```js
+sap.ui.define(["./NavigationJourney"], function (___NavigationJourney) {
+  "use strict";
+});
 
-### webapp/test/testsuite.qunit.ts
+```
 
-Finally we reference the new `integration/opaTests.qunit.ts` in the `testsuite.qunit.ts` file. The `.qunit.ts` extension is omitted and will be added automatically during runtime.
+### webapp/test/testsuite.qunit.?s
+
+Finally we reference the new `integration/opaTests.qunit.?s` in the `testsuite.qunit.?s` file. The `.qunit.?s` extension is omitted and will be added automatically during runtime.
 
 ```ts
 export default {
@@ -155,8 +232,27 @@ export default {
 		}
 	}
 };
+
 ```
 
+```js
+sap.ui.define([], function () {
+  "use strict";
+	//...
+    tests: {
+      "unit/unitTests": {
+        title: "UI5 TypeScript Walkthrough - Unit Tests"
+      },
+      "integration/opaTests": {
+        title: "UI5 TypeScript Walkthrough - Integration Tests"
+      }
+    }
+  };
+  return __exports;
+});
+
+```
+&nbsp;
 If we now open the `webapp/test/testsuite.qunit.html` file in the browser and select `integration/opaTests`, the QUnit layout should appear and a test “Should see the Hello dialog” will run immediately. This action will load the app component on the right side of the page. There you can see the operations the test is performing on the app. If everything works correctly, a button click will be triggered, then a dialog will be displayed and the test case will be green.
 
 ***

@@ -17,24 +17,33 @@ Actually, every feature that we added to the app so far, would require a separat
 
 <sup>*A unit test for our formatters is now available*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/build/27/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=unit/unitTests).
-
-Download solution for step 27 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-27.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-27-js.zip).
-
-***
-
-### Coding
-  
 We add a new folder `unit` under the `test` folder and a `model` subfolder where we will place our formatter unit test. The folder structure matches the app structure to easily find the corresponding unit tests.
   
 ![](assets/loio1b5613ac3ab94757af2c7823039222a9_LowRes.png "Folder Structure for this Step")
 <sup>*Folder Structure for this Step*</sup>
 
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/build/27/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=unit/unitTests).
+
 ***
 
-### webapp/test/unit/model/formatter.ts \(New\)
+### Coding
 
-We create a new `formatter.ts` file under `webapp/test/unit/model` where the unit test for the custom formatter is implemented. The formatter function that we want to test is from the `formatter.ts` file located in the `webapp/model` folder.
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-27.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 27](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-27-js.zip).
+
+</details>
+***
+
+### webapp/test/unit/model/formatter.?s \(New\)
+
+We create a new `formatter.?s` file under `webapp/test/unit/model` where the unit test for the custom formatter is implemented. The formatter function that we want to test is from the `formatter.ts` file located in the `webapp/model` folder.
 
 The new formatter file just contains one QUnit module for our formatter function and one unit test for the formatter function. In the implementation of the `statusText` function that we created in Step 23, we use the translated texts when calling the formatter. As we do not want to test the OpenUI5 binding functionality, we just use text in the test instead of a `ResourceBundle`.
 
@@ -78,22 +87,65 @@ QUnit.test("Should return the translated texts", (assert) => {
     assert.strictEqual(fnIsolatedFormatter("C"), "Done", "The long text for status C is correct");
     assert.strictEqual(fnIsolatedFormatter("Foo"), "Foo", "The long text for status Foo is correct");
 });
+
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/model/resource/ResourceModel", "ui5/walkthrough/model/formatter"], function (ResourceModel, __formatter) {
+  "use strict";
 
-### webapp/test/unit/unitTests.qunit.ts \(New\)
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule && typeof obj.default !== "undefined" ? obj.default : obj;
+  }
+  const formatter = _interopRequireDefault(__formatter);
+  QUnit.module("Formatting function", {});
+  QUnit.test("Should return the translated texts", assert => {
+    const resourceModel = new ResourceModel({
+      bundleUrl: sap.ui.require.toUrl("ui5/walkthrough/i18n/i18n.properties"),
+      supportedLocales: [""],
+      fallbackLocale: ""
+    });
+    const controllerMock = {
+      getOwnerComponent() {
+        return {
+          getModel() {
+            return resourceModel;
+          }
+        };
+      }
+    };
 
-We create a new `unitTests.qunit.ts` file under `webapp/test/unit/`.
+    // System under test
+    const fnIsolatedFormatter = formatter.statusText.bind(controllerMock);
+
+    // Assert
+    assert.strictEqual(fnIsolatedFormatter("A"), "New", "The long text for status A is correct");
+    assert.strictEqual(fnIsolatedFormatter("B"), "In Progress", "The long text for status B is correct");
+    assert.strictEqual(fnIsolatedFormatter("C"), "Done", "The long text for status C is correct");
+    assert.strictEqual(fnIsolatedFormatter("Foo"), "Foo", "The long text for status Foo is correct");
+  });
+});
+
+```
+
+### webapp/test/unit/unitTests.qunit.?s \(New\)
+
+We create a new `unitTests.qunit.?s` file under `webapp/test/unit/`.
 This module will serve as the entry point for all our unit tests. It will be referenced in the test suite that we will set up later on.
 
-Inside the `unitTests.qunit.ts` file, we import the unit test for the custom formatter. This ensures that any tests related to the custom formatter functionality will be included when running our unit tests.
+Inside the `unitTests.qunit.?s` file, we import the unit test for the custom formatter. This ensures that any tests related to the custom formatter functionality will be included when running our unit tests.
 
 ```ts
 import "./model/formatter";
+
 ```
 
-***
+```js
+sap.ui.define(["./model/formatter"], function (___model_formatter) {
+  "use strict";
+});
+
+```
 
 ### webapp/test/Test.qunit.html \(New\)
 
@@ -122,13 +174,13 @@ The page will be referenced in the test suite that we will create next.
 	<div id="qunit-fixture"></div>
 </body>
 </html>
+
 ```
 
-***
 
-### webapp/test/testsuite.qunit.ts \(New\)
+### webapp/test/testsuite.qunit.js \(New\)
 
-The `testsuite.qunit.ts` file contains the configuration for our test suite.
+The `testsuite.qunit.js` file contains the configuration for our test suite.
 Although it comes with a set of defaults, we recommend specifying the used QUnit version to prevent potential future updates from breaking our tests.
 Additionally, the `sap_horizon` theme is configured in the `ui5` section, where you can provide the UI5 runtime configuration.
 
@@ -164,9 +216,39 @@ export default {
 		}
 	}
 };
+
 ```
 
-***
+```js
+sap.ui.define([], function () {
+  "use strict";
+
+  var __exports = {
+    name: "QUnit test suite for UI5 TypeScript Walkthrough",
+    defaults: {
+      page: "ui5://test-resources/ui5/walkthrough/Test.qunit.html?testsuite={suite}&test={name}",
+      qunit: {
+        version: 2
+      },
+      ui5: {
+        theme: "sap_horizon"
+      },
+      loader: {
+        paths: {
+          "ui5/walkthrough": "../"
+        }
+      }
+    },
+    tests: {
+      "unit/unitTests": {
+        title: "UI5 TypeScript Walkthrough - Unit Tests"
+      }
+    }
+  };
+  return __exports;
+});
+
+```
 
 ### webapp/test/testsuite.qunit.html \(New\)
 
@@ -192,6 +274,7 @@ It registers a resource root mapping for the test resources of our project and r
 <body>
 </body>
 </html>
+
 ```
 
 If we now open the `webapp/test/testsuite.qunit.html` file in the browser and select `unit/unitTests`, we should see our test running and verifying the formatter logic.

@@ -19,25 +19,37 @@ By encapsulating our application as a component, we can seamlessly integrate it 
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 9](https://sap-samples.github.io/ui5-typescript-walkthrough/build/09/index-cdn.html).
 
-After this step your project structure will look like the figure below. We will create the `Component.ts` file now and modify the related files in the app.
+After this step your project structure will look like the figure below. We will create the `Component.?s` file now and modify the related files in the app.
 
 ![](assets/loio1e237a36972a44ac8522dd1a540ac062_LowRes.png "Folder Structure for this Step")
 
 <sup>*Folder Structure for this Step*</sup>
 
-Download solution for step 9 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-09.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-09-js.zip).
+***
+### Coding
+
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 9](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-09.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 9](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-09-js.zip).
+
+</details>
 ***
 
+### webapp/Component.?s \(New\)
 
-### webapp/Component.ts \(New\)
-
-We navigate to the `webapp` folder and place the `Component.ts` file to it. This file is commonly referred to as the component controller. A component is organized in a unique namespace \(which is synonymous with the application namespace\). All required and optional resources of the component have to be organized in the namespace of the component.
+We navigate to the `webapp` folder and place the `Component.?s` file to it. This file is commonly referred to as the component controller. A component is organized in a unique namespace \(which is synonymous with the application namespace\). All required and optional resources of the component have to be organized in the namespace of the component.
 
 We define the component by extending `sap/ui/core/UIComponent` and supplement the component with additional metadata. Within the `interfaces` settings, we specify that the component should implement the `sap/ui/core/IAsyncContentCreation` interface. This allows the component to be generated asynchronously, which in turn sets the component's rootView and router configuration to async.
 
-When the component is instantiated, OpenUI5 automatically calls the `init` function of the component. It's important to include a call to the `init` function of the base class by using the `super` keyword. In this section, we also instantiate our data model and the `i18n` model, similar to what we did earlier in the `onInit` function of our app controller.
+When the component is instantiated, OpenUI5 automatically calls the `init` function of the component. It's obligatory to make the super call to the `init` function of the base class in the overridden `init` method. In this section, we also instantiate our data model and the `i18n` model, similar to what we did earlier in the `onInit` function of our app controller.
 
-Finally we call the `createContent` hook method of the component. This method creates the content \(UI Control Tree\) of this component. Here, we create the view as we did in the `index.ts` file to set our app view as the root view of the component.
+Finally we call the `createContent` hook method of the component. This method creates the content \(UI Control Tree\) of this component. Here, we create the view as we did in the `index.?s` file to set our app view as the root view of the component.
 
 ```ts
 import Control from "sap/ui/core/Control";
@@ -78,13 +90,52 @@ export default class Component extends UIComponent {
         });
     };
 };
+
 ```
 
+```js
+sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/core/mvc/XMLView", "sap/ui/model/json/JSONModel", "sap/ui/model/resource/ResourceModel"], function (UIComponent, XMLView, JSONModel, ResourceModel) {
+  "use strict";
+
+  const Component = UIComponent.extend("ui5.walkthrough.Component", {
+    metadata: {
+      "interfaces": ["sap.ui.core.IAsyncContentCreation"]
+    },
+    init: function _init() {
+      // call the init function of the parent
+      UIComponent.prototype.init.call(this);
+      // set data model
+      const data = {
+        recipient: {
+          name: "World"
+        }
+      };
+      const dataModel = new JSONModel(data);
+      this.setModel(dataModel);
+
+      // set i18n model
+      const i18nModel = new ResourceModel({
+        bundleName: "ui5.walkthrough.i18n.i18n"
+      });
+      this.setModel(i18nModel, "i18n");
+    },
+    createContent: function _createContent() {
+      return XMLView.create({
+        "viewName": "ui5.walkthrough.view.App",
+        "id": "app"
+      });
+    }
+  });
+  ;
+  return Component;
+});
+
+```
 Be aware that the models are set directly on the component and not on the root view of the component. However, as nested controls automatically inherit the models from their parent controls, the models are available on the view as well.
 
 ***
 
-### webapp/controller/App.controller.ts
+### webapp/controller/App.controller.?s
 
 We delete the `onInit` function from the app controller; this is now done in the component controller. 
 
@@ -111,9 +162,32 @@ export default class AppController extends Controller {
 
 ```
 
+```js
+sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller"], function (MessageToast, Controller) {
+  "use strict";
+
+  /**
+   * @name ui5.walkthrough.controller.App
+   */
+  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
+    onShowHello: function _onShowHello() {
+      // read msg from i18n model
+      // functions with generic return values require casting
+      const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
+      const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
+      const msg = resourceBundle.getText("helloMsg", [recipient]);
+      // show message
+      MessageToast.show(msg);
+    }
+  });
+  ;
+  return AppController;
+});
+
+```
 ***
 
-#### webapp/index.ts
+#### webapp/index.?s
 
 We'll replace the view with a UI component. To do this, we use a control called `ComponentContainer`. This control allows us to wrap a UI Component and place it in our HTML document. We configure this instance by providing the following options:
 
@@ -141,13 +215,30 @@ new ComponentContainer({
     autoPrefixId: true,
     async: true
 }).placeAt("content");
+
 ```
 
+```js
+sap.ui.define(["sap/ui/core/ComponentContainer"], function (ComponentContainer) {
+  "use strict";
+
+  new ComponentContainer({
+    id: "container",
+    name: "ui5.walkthrough",
+    settings: {
+      id: "walkthrough"
+    },
+    autoPrefixId: true,
+    async: true
+  }).placeAt("content");
+});
+
+```
 ***
 
 ### Conventions
 
--   The component is named `Component.js` or rather `Component.ts`.
+-   The component is named `Component.?s`.
 
 -   Together with all UI assets of the app, the component is located in the `webapp` folder.
 

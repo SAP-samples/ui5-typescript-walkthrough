@@ -21,6 +21,19 @@ Luckily, OpenUI5 provides a couple of debugging tools that we can use within the
 
 ### Coding
 
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 29](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-29.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 29](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-29-js.zip).
+
+</details>
+
+***
 
 ### webapp/view/InvoiceList.view.xml
 
@@ -80,7 +93,7 @@ We introduced a typo in the binding of the number attribute to simulate a freque
 </mvc:View>
 
 ```
-
+&nbsp;
 Now we call the app and notice that the price is actually missing. By entering the [shortcut](https://sdk.openui5.org/topic/154844c3ac2a4675a37aeb6259a5e034.html) [Ctrl\] + [Shift\] + [Alt\] /[Option\] + [S\]  we open the OpenUI5 support diagnostics tool and check the app.
 
 > 📝 **Note:**

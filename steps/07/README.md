@@ -16,13 +16,24 @@ We'll create a view model in our controller, add an input field to our app, bind
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 7](https://sap-samples.github.io/ui5-typescript-walkthrough/build/07/index-cdn.html).
 
-Download solution for step 7 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-07.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-07-js.zip).
-
 ***
 
 ### Coding
 
-### webapp/controller/App.controller.ts
+<details class="ts-only">
+
+You can download the solution for this step here: [📥 Download step 7](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-07.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 7](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-07-js.zip).
+
+</details>
+***
+
+### webapp/controller/App.controller.?s
 
 In the controller, we'll create a new data model and link it to the view that is related to the controller. The best time to create a model is during the `onInit` method. This is a special method in the Controller class that is automatically invoked by the framework when the controller is first set up.
 
@@ -55,6 +66,31 @@ export default class AppController extends Controller {
        MessageToast.show("Hello World");
      }
 };
+
+```
+
+```js
+sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"], function (MessageToast, Controller, JSONModel) {
+  "use strict";
+
+  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
+    onInit: function _onInit() {
+      // set data model on view
+      const data = {
+        recipient: {
+          name: "World"
+        }
+      };
+      const dataModel = new JSONModel(data);
+      this.getView()?.setModel(dataModel);
+    },
+    onShowHello: function _onShowHello() {
+      MessageToast.show("Hello World");
+    }
+  });
+  ;
+  return AppController;
+});
 
 ```
 

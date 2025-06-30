@@ -14,13 +14,23 @@ We now configure the visibility and properties of controls based on the device t
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 35](https://sap-samples.github.io/ui5-typescript-walkthrough/build/35/test/mockServer-cdn.html).
 
-Download solution for step 35 in [📥 TypeScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-35.zip) or [📥 JavaScript](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-35-js.zip).
-
 ***
 
 ### Coding
+<details class="ts-only">
 
-### webapp/Component.ts
+You can download the solution for this step here: [📥 Download step 35](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-35.zip).
+
+</details>
+
+<details class="js-only">
+
+You can download the solution for this step here: [📥 Download step 35](https://sap-samples.github.io/ui5-typescript-walkthrough/ui5-typescript-walkthrough-step-35-js.zip).
+
+</details>
+***
+
+### webapp/Component.?s
 
 In the `app` component we import the `Device` module from the `sap.ui` namespace and initialize the device model in the `init` method. We can simply pass the loaded dependency `Device` to the constructor function of the JSONModel. This will make most properties of the OpenUI5 device API available as a JSON model. The model is then set on the component as a named model so that we can reference it in data binding.
 
@@ -62,9 +72,45 @@ export default class Component extends UIComponent {
         this.getRouter().initialize();
     };
 };
+
 ```
 
-***
+```js
+sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel", "sap/ui/Device"], function (UIComponent, JSONModel, Device) {
+  "use strict";
+
+  const Component = UIComponent.extend("ui5.walkthrough.Component", {
+    metadata: {
+      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
+      "manifest": "json"
+    },
+    init: function _init() {
+      // call the init function of the parent
+      UIComponent.prototype.init.call(this);
+
+      // set data model
+      const data = {
+        recipient: {
+          name: "World"
+        }
+      };
+      const model = new JSONModel(data);
+      this.setModel(model);
+
+      // set device model
+      const deviceModel = new JSONModel(Device);
+      deviceModel.setDefaultBindingMode("OneWay");
+      this.setModel(deviceModel, "device");
+
+      // create the views based on the url/hash
+      this.getRouter().initialize();
+    }
+  });
+  ;
+  return Component;
+});
+
+```
 
 ### webapp/view/HelloPanel.view.xml
 
@@ -105,15 +151,13 @@ We can also hide single controls by device type when we set a CSS class like `sa
 	</Panel>
 </mvc:View>
 ```
-
+&nbsp;
 The device API of OpenUI5 offers more functionality to detect various device-specific settings, please have a look at the [documentation](https://sdk.openui5.org/api/sap.ui.Device) for more details.
 
 > 📌 **Important:** <br>
 > The `sap.ui.Device` API detects the device type \(Phone, Tablet, Desktop\) based on the user agent and many other properties of the device. Therefore simply reducing the screen size will not change the device type. To test this feature, you will have to enable device emulation in your browser or open it on a real device.
 
-***
-
-### webapp/controller/Detail.controller.ts
+### webapp/controller/Detail.controller.?s
 
 In the `Detail` controller we simply add the view model with our currency definition to display the number properly. It is the same code as in the `InvoiceList` controller file.
 
@@ -142,8 +186,30 @@ export default class Detail extends Controller {
         const router = UIComponent.getRouterFor(this);
         router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
     }
-		…
+	//...
 };
+
+```
+
+```js
+sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/m/MessageToast", "sap/ui/model/json/JSONModel", "sap/ui/core/UIComponent"], function (Controller, History, MessageToast, JSONModel, UIComponent) {
+  "use strict";
+
+  const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
+    onInit: function _onInit() {
+      const viewModel = new JSONModel({
+        currency: "EUR"
+      });
+      this.getView().setModel(viewModel, "view");
+      const router = UIComponent.getRouterFor(this);
+      router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
+    },
+    //...
+  });
+  ;
+  return Detail;
+});
+
 ```
 
 ### webapp/i18n/i18n.properties
@@ -157,8 +223,6 @@ ratingConfirmation=You have rated this product with {0} stars
 dateTitle=Shipped date
 quantityTitle=Quantity
 ```
-
-***
 
 ### webapp/view/Detail.view.xml
 
@@ -223,7 +287,7 @@ We add the `number` and `numberUnit` field from the list of the previous steps a
 </mvc:View>
 ```
 
-***
+&nbsp;
 
 We can see the results when we decrease the browser's screen size or open the app on a small device.
 
