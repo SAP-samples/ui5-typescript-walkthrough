@@ -31,9 +31,9 @@ You can download the solution for this step here: [📥 Download step 2](https:/
 </details>
 ***
 
-### UI5 Tooling
+### Development Environment
 
-First, let's set up our UI5 Tooling to use the OpenUI5 framework for our project. We also need to add the necessary OpenUI5 libraries as dependencies to the project's UI5 Tooling configuration.
+First, let's set up our UI5 CLI to use the OpenUI5 framework for our project. We also need to add the necessary OpenUI5 libraries as dependencies to the project's UI5 CLI configuration.
 
 We open a terminal in the root folder of our app and execute the following command:
 
@@ -41,13 +41,13 @@ We open a terminal in the root folder of our app and execute the following comma
 ui5 use OpenUI5
 ```
 
-This command tells the UI5 Tooling to use the OpenUI5 framework to build and run the application. Next, we configure some runtime dependencies by executing the following command:
+This command tells the UI5 CLI to use the OpenUI5 framework to build and run the application. Next, we configure some runtime dependencies by executing the following command:
 
 ```sh
 ui5 add sap.ui.core themelib_sap_horizon
 ```
 
-The `ui5 add` command adds specific libraries as dependency to the projects UI5 Tooling configuration. In this case, we'e adding the `sap.ui.core` library, which provides core functionality of the OpenUI5 framework. This library is essential for bootstrapping OpenUI5. Additionally, we're adding the `themelib_sap_horizon` library which provides the visual styles for the Horizon theme. We'll use this theme with our application. 
+The `ui5 add` command adds specific libraries as dependency to the projects UI5 CLI configuration. In this case, we'e adding the `sap.ui.core` library, which provides core functionality of the OpenUI5 framework. This library is essential for bootstrapping OpenUI5. Additionally, we're adding the `themelib_sap_horizon` library which provides the visual styles for the Horizon theme. We'll use this theme with our application. 
 
 
 <details class="ts-only">
@@ -174,7 +174,7 @@ We initialize the core modules with the following configuration options:
 
 ***
 
-### UI5 Tooling
+### Development Environment
 
 Let's enhance our tooling setup once again by installing some custom middleware for the ui5-server. This will help us handle our development project more efficiently.
 
@@ -198,19 +198,19 @@ When you run the command, npm will download the specified packages from the npm 
 
 Let's break down what each package does:
 
--	`ui5-middleware-livereload` is a middleware plugin for the UI5 Tooling that enables live reloading of your application in the browser. Live-reloading means that whenever you make changes to your code, the browser automatically refreshes and displays the updated version without requiring manual refreshes (e.g. upon *Save*).
+-	`ui5-middleware-livereload` is a middleware plugin for the UI5 CLI that enables live reloading of your application in the browser. Live-reloading means that whenever you make changes to your code, the browser automatically refreshes and displays the updated version without requiring manual refreshes (e.g. upon *Save*).
 
--	`ui5-middleware-serveframework` is another middleware plugin for the UI5 Tooling that provides a web server to serve your OpenUI5 project during development. It allows you to easily serve the necessary OpenUI5 libraries and resources required by your application from your development environment.
+-	`ui5-middleware-serveframework` is another middleware plugin for the UI5 CLI that provides a web server to serve your OpenUI5 project during development. It allows you to easily serve the necessary OpenUI5 libraries and resources required by your application from your development environment.
 
 <details class="ts-only">
 
-- `ui5-tooling-transpile` is a plugin for the UI5 Tooling that transpiles modern JavaScript (ES6+) and TypeScript into a compatible version for OpenUI5. OpenUI5 is based on older versions of JavaScript, so this plugin allows you to take advantage of the latest language features and syntax while ensuring that your code remains compatible with OpenUI5.
+- `ui5-tooling-transpile` is a plugin for the UI5 CLI that transpiles modern JavaScript (ES6+) and TypeScript into a compatible version for OpenUI5. OpenUI5 is based on older versions of JavaScript, so this plugin allows you to take advantage of the latest language features and syntax while ensuring that your code remains compatible with OpenUI5.
 
 </details>
 
 ### ui5.yaml
 
-Next,  we have to configure the tooling extension we installed from npm to our UI5 Tooling setup, so we can use them in our project. To hook a custom task into a certain build phase of a project, it needs to reference another task that will get executed before or after it. The same applies for a custom middleware:
+Next,  we have to configure the tooling extension we installed from npm to our UI5 CLI setup, so we can use them in our project. To hook a custom task into a certain build phase of a project, it needs to reference another task that will get executed before or after it. The same applies for a custom middleware:
 <details class="ts-only">
 
 -   For the `ui5-tooling-transpile-task` we specify that this should happen after the`replaceVersion` task.
@@ -279,13 +279,13 @@ Now you can benefit from live reload on changes and built framework resources at
 
 **Next:** [Step 3: Controls](../03/README.md "Now it's time to build our first little UI by replacing the Hello World text in the HTML body by the OpenUI5 control sap.m.Text. In the beginning, we will use the TypeScript control API to set up the UI, the control instance is then placed into the HTML body‚")
 
-**Previous:** [Step 1: Hello World!](../01/README.md "As you know OpenUI5 is all about HTML5. Let's get started with building a first Hello World with only HTML. In addition we will initialize the UI5 Tooling, so we can benefit from it from the beginning.")
+**Previous:** [Step 1: Hello World!](../01/README.md "As you know OpenUI5 is all about HTML5. Let's get started with building a first Hello World with only HTML. In addition we will initialize the UI5 CLI, so we can benefit from it from the beginning.")
 
 ***
 
 **Related Information** 
 
-[UI5 Tooling: Consuming OpenUI5 Libaries](https://sap.github.io/ui5-tooling/v3/pages/OpenUI5/)
+[UI5 CLI: Consuming OpenUI5 Libaries](https://ui5.github.io/cli/stable/pages/OpenUI5/)
 
 [SAP Fiori with Horizon](https://experience.sap.com/fiori-design-web/sap-fiori/#sap-fiori-with-horizon)
 
@@ -301,6 +301,6 @@ Now you can benefit from live reload on changes and built framework resources at
 
 [NPM Package: `ui5-tooling-transpile`](https://www.npmjs.com/package/ui5-tooling-transpile)
 
-[UI5 Tooling: Custom Tasks](https://sap.github.io/ui5-tooling/v3/pages/extensibility/CustomTasks/)
+[UI5 CLI: Custom Tasks](https://ui5.github.io/cli/stable/pages/extensibility/CustomTasks/)
 
-[UI5 Tooling: Custom Server Middleware](https://sap.github.io/ui5-tooling/v3/pages/extensibility/CustomServerMiddleware/)
+[UI5 CLI: Custom Server Middleware](https://ui5.github.io/cli/stable/pages/extensibility/CustomServerMiddleware/)

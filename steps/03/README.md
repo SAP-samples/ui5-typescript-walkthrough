@@ -32,7 +32,7 @@ You can download the solution for this step here: [📥 Download step 3](https:/
 
 <details class="ts-only">
 
-### UI5 Tooling
+### Development Environment
 
 To get the type definitions for OpenUI5, we need to install them to our project. We open a terminal in the root folder of our app and exectue the following command:
 
@@ -128,9 +128,9 @@ In the example above, the callback of the `on-init` event is where we now instan
 ***
 
 
-### UI5 Tooling
+### Development Environment
 
-As we now use the `sap.m` library with our app, we need to add the dependency to this library to our UI5 Tooling setup. 
+As we now use the `sap.m` library with our app, we need to add the dependency to this library to our UI5 CLI setup. 
 
 We open a terminal in the root folder of our app and exectue the following command:
 

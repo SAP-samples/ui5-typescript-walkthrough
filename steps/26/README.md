@@ -279,7 +279,7 @@ This approach is perfect for local testing, even without any network connection.
 
 From this point on, we have two different entry pages: One for the real “connected” app \(`index.html`\) and one for local testing \(`test/mockServer.html`\). You can freely decide if you want to do the next steps on the real service data or on the local data within the app. Try calling the app with the `index.html` file and the `mockServer.html` file to see the difference. If the real service connection cannot be made, for example when there is no network connection, you can always fall back to the local test page.
 
-### UI5 Tooling
+### Development Environment
 
 ### package.json (optional)
 

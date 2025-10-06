@@ -1,6 +1,6 @@
 ## Step 1: Hello World!
 
-As you know, OpenUI5 is all about HTML5. Let's get started with building a first "Hello World" with only HTML. In addition we'll initialize the UI5 Tooling, so we can benefit from it from the beginning.
+As you know, OpenUI5 is all about HTML5. Let's get started with building a first "Hello World" with only HTML. In addition we'll initialize the UI5 CLI, so we can benefit from it from the beginning.
 
 &nbsp;
 
@@ -68,7 +68,7 @@ In our webapp folder, we create a new HTML file named `index.html` and copy the 
 
 ### webapp/manifest.json \(New\)
 
-The manifest serves as a crucial configuration file for applications, components, and libraries. For applications, the manifest file is stored in the `webapp` folder and is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: Component Configuration](../09/README.md)), creating the manifest now is necessary due to the UI5 Tooling requirements for development.
+The manifest serves as a crucial configuration file for applications, components, and libraries. For applications, the manifest file is stored in the `webapp` folder and is read by OpenUI5 to instantiate a component. Although we haven't created a component yet (which is part of [Step 9: Component Configuration](../09/README.md)), creating the manifest now is necessary due to the UI5 CLI requirements for development.
 
 Let's start by creating a new file named `manifest.json` in the webapp folder and define its essential attributes:
 
@@ -113,9 +113,9 @@ Since we want our app to support not only the latest OpenUI5 version but rather 
 
 ***
 
-### UI5 Tooling
+### Development Environment
 
-The following steps are tailored for using this project with [UI5 Tooling](https://sap.github.io/ui5-tooling/stable/pages/CLI/#local-vs-global-installation).
+The following steps are tailored for using this project with [UI5 CLI](https://ui5.github.io/cli/stable/pages/CLI/#local-vs-global-installation).
 
 ***
 
@@ -144,13 +144,13 @@ Next, we install the UI5 CLI and add it as development dependency to our project
 npm install --save-dev @ui5/cli
 ```
 
-Finally, we initialize the UI5 Tooling configuration for our project by executing the following command on the app root folder: 
+Finally, we initialize the UI5 CLI configuration for our project by executing the following command on the app root folder: 
 
 ```sh
 ui5 init
 ```
 
-This will generate a `ui5.yaml` file in the app root directory, which is essential for using UI5 Tooling with our project.
+This will generate a `ui5.yaml` file in the app root directory, which is essential for using UI5 CLI with our project.
 &nbsp;
 
 To start the web server, execute the following command:
@@ -185,4 +185,4 @@ This will open a new browser window hosting your newly created `index.html`.
 
 [App Development](https://sdk.openui5.org/topic/b1fbe1a22f8d4a5bbb601591e27b68d1 "There are several ways to develop OpenUI5 applications. Select the one that meets the requirements of your projects and your expectations best.")
 
-[UI5 Tooling: Getting Started](https://sap.github.io/ui5-tooling/stable/pages/GettingStarted/)
+[UI5 CLI: Getting Started](https://ui5.github.io/cli/stable/pages/GettingStarted/)
