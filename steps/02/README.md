@@ -227,7 +227,7 @@ Next,  we have to configure the tooling extension we installed from npm to our U
 ```yaml
 framework:
   name: OpenUI5
-  version: "1.132.1"
+  version: "1.136.7"
   libraries:
     - name: sap.ui.core
     - name: themelib_sap_horizon
@@ -253,7 +253,7 @@ Now you can benefit from live reload on changes, built framework resources at de
 ```yaml
 framework:
   name: OpenUI5
-  version: "1.132.1"
+  version: "1.136.7"
   libraries:
     - name: sap.ui.core
     - name: themelib_sap_horizon
