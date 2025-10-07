@@ -25,7 +25,9 @@ export default class Component extends UIComponent {
 
         // set i18n model
         const i18nModel = new ResourceModel({
-            bundleName: "ui5.walkthrough.i18n.i18n"
+            "bundleName": "ui5.walkthrough.i18n.i18n",
+            "supportedLocales": [""],
+            "fallbackLocale": ""
         });
         this.setModel(i18nModel, "i18n");
     };
