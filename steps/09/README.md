@@ -47,7 +47,7 @@ We navigate to the `webapp` folder and place the `Component.?s` file to it. This
 
 We define the component by extending `sap/ui/core/UIComponent` and supplement the component with additional metadata. Within the `interfaces` settings, we specify that the component should implement the `sap/ui/core/IAsyncContentCreation` interface. This allows the component to be generated asynchronously, which in turn sets the component's rootView and router configuration to async.
 
-When the component is instantiated, OpenUI5 automatically calls the `init` function of the component. It's obligatory to make the super call to the `init` function of the base class in the overridden `init` method. In this section, we also instantiate our data model and the `i18n` model, similar to what we did earlier in the `onInit` function of our app controller.
+When the component is instantiated, OpenUI5 automatically calls the `init` function of the component. It's obligatory to make the super call to the `init` function of the base class in the overridden `init` method. In this section, we also instantiate our data model and the `i18n` model, similar to what we did earlier in the `onInit` function of our app controller (*Hint: besides the `bundleName` we also specifiy the `supportedLocales` with an empty string as value in an array and an empty `fallbackLocale` to ensure that just the default `messagebundle.properties` is loaded without a language suffix to avoid 404s during development!*).
 
 Finally we call the `createContent` hook method of the component. This method creates the content \(UI Control Tree\) of this component. Here, we create the view as we did in the `index.?s` file to set our app view as the root view of the component.
 
@@ -79,7 +79,9 @@ export default class Component extends UIComponent {
 
         // set i18n model
         const i18nModel = new ResourceModel({
-            bundleName: "ui5.walkthrough.i18n.i18n"
+            "bundleName": "ui5.walkthrough.i18n.i18n",
+            "supportedLocales": [""],
+            "fallbackLocale": ""
         });
         this.setModel(i18nModel, "i18n");
     };
@@ -115,7 +117,9 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/core/mvc/XMLView", "sap/ui/mod
 
       // set i18n model
       const i18nModel = new ResourceModel({
-        bundleName: "ui5.walkthrough.i18n.i18n"
+        "bundleName": "ui5.walkthrough.i18n.i18n",
+        "supportedLocales": [""],
+        "fallbackLocale": ""
       });
       this.setModel(i18nModel, "i18n");
     },
