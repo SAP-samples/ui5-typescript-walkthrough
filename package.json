@@ -8,7 +8,7 @@
   },
   "devDependencies": {
     "@highlightjs/cdn-assets": "^11.11.1",
-    "@octokit/rest": "^22.0.0",
+    "@octokit/rest": "^22.0.1",
     "anchor-js": "^5.0.0",
     "archiver": "^7.0.1",
     "axios": "^1.12.2",
