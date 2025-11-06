@@ -44,7 +44,6 @@ Finally we apply the filter to the items binding of the invoice list in our view
 ```ts
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
-import formatter from "../model/formatter";
 import { SearchField$SearchEvent } from "sap/m/SearchField";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
@@ -54,13 +53,11 @@ import ListBinding from "sap/ui/model/ListBinding";
  * @namespace ui5.walkthrough.controller
  */
 export default class App extends Controller {
-    public formatter = formatter;
-
     onInit(): void {
         const viewModel = new JSONModel({
             currency: "EUR"
         });
-        this.getView()?.setModel(viewModel, "view");        
+        this.getView()?.setModel(viewModel, "view");
     }
 
     onFilterInvoices(event: SearchField$SearchEvent): void {
@@ -136,6 +133,7 @@ In addition, we remove the `headerText` property in the list control and use `he
 <mvc:View
    controllerName="ui5.walkthrough.controller.InvoiceList"
    xmlns="sap.m"
+   xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
    <List
       id="invoiceList"
