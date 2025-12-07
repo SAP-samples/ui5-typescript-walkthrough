@@ -14,7 +14,7 @@
     "axios": "^1.13.2",
     "browser-sync": "^3.0.4",
     "concurrently": "^9.2.1",
-    "express": "^5.1.0",
+    "express": "^5.2.1",
     "fast-glob": "^3.3.3",
     "github-markdown-css": "^5.8.1",
     "handlebars": "^4.7.8",
