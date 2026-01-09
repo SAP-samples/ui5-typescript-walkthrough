@@ -217,6 +217,7 @@ sap.ui.define(["./NavigationJourney"], function (___NavigationJourney) {
 Finally we reference the new `integration/opaTests.qunit.?s` in the `testsuite.qunit.?s` file. The `.qunit.?s` extension is omitted and will be added automatically during runtime.
 
 ```ts
+import type {SuiteConfiguration} from "sap/ui/test/starter/config";
 export default {
   // ...
 	tests: {
@@ -227,7 +228,7 @@ export default {
 			title: "UI5 TypeScript Walkthrough - Integration Tests"
 		}
 	}
-};
+} satisfies SuiteConfiguration;
 
 ```
 
