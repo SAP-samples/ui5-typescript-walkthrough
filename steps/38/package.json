@@ -10,11 +10,11 @@
     "serve-dist": "ws --compress -d dist --open"
   },
   "devDependencies": {
-    "@types/openui5": "^1.132.0",
+    "@types/openui5": "^1.142.0",
     "@ui5/cli": "^4.0.39",
     "@ui5/ts-interface-generator": "^0.10.4",
-    "typescript": "^5.9.3",
     "local-web-server": "^5.4.0",
+    "typescript": "^5.9.3",
     "ui5-middleware-livereload": "^3.2.1",
     "ui5-middleware-serveframework": "^3.7.1",
     "ui5-middleware-simpleproxy": "^3.6.2",
