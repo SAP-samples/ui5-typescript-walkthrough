@@ -12,7 +12,7 @@
     "@ui5/cli": "^4.0.39",
     "typescript": "^5.9.3",
     "ui5-middleware-livereload": "^3.2.1",
-    "ui5-middleware-serveframework": "^3.7.0",
+    "ui5-middleware-serveframework": "^3.7.1",
     "ui5-tooling-transpile": "^3.10.1"
   }
 }
