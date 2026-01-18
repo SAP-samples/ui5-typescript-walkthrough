@@ -13,7 +13,7 @@
     "typescript": "^5.9.3",
     "ui5-middleware-livereload": "^3.2.0",
     "ui5-middleware-serveframework": "^3.7.0",
-    "ui5-middleware-simpleproxy": "^3.6.1",
+    "ui5-middleware-simpleproxy": "^3.6.2",
     "ui5-tooling-transpile": "^3.10.0"
   }
 }
