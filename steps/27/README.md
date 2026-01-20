@@ -186,10 +186,8 @@ The previously created generic `Test.qunit.html` file is referenced as the test 
 
 For more information, read [Test Starter - Concept and Basic Setup](https://sdk.openui5.org/#/topic/22f50c0f0b104bf3ba84620880793d3f).
 
-> 📝 **Note:** <br>
-> There are currently no types available for the test suite configuration. Please refer to [Test Starter - Configuration Options](https://sdk.openui5.org/topic/738ed025b36e484fa99046d0f80552fd) to see all available options.
-
 ```ts
+import type {SuiteConfiguration} from "sap/ui/test/starter/config";
 export default {
 	name: "QUnit test suite for UI5 TypeScript Walkthrough",
 	defaults: {
@@ -211,7 +209,7 @@ export default {
 			title: "UI5 TypeScript Walkthrough - Unit Tests"
 		}
 	}
-};
+} satisfies SuiteConfiguration;
 
 ```
 
