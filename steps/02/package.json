@@ -1,0 +1,17 @@
+{
+  "name": "ui5.walkthrough.step02",
+  "version": "1.0.0",
+  "author": "SAP SE",
+  "description": "OpenUI5 TypeScript Walkthrough: Step 2 - Bootstrap",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve -o index.html"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^4.0.39",
+    "typescript": "^5.9.3",
+    "ui5-middleware-livereload": "^3.2.1",
+    "ui5-middleware-serveframework": "^3.7.1",
+    "ui5-tooling-transpile": "^3.10.1"
+  }
+}
