@@ -114,7 +114,7 @@ Additionally, we set the formatting option `showMeasure` to `false`. This hides 
 </mvc:View>
 ```
 
-As you can see above, we are using a special binding syntax for the `number` property of the `ObjectListItem`. This binding syntax makes use of so-called "Calculated Fields", which allows the binding of multiple properties from different models to a single property of a control. The properties bound from different models are called “parts”. In the example above, the property of the control is `number` and the bound properties \(“parts”\) retrieved from two different models are `invoice>ExtendedPrice` and `view>/currency`.
+As you can see above, the example uses a special binding syntax for the `number` property of the `ObjectListItem`. This binding syntax uses [Composite Binding](https://sdk.openui5.org/topic/a2fe8e763014477e87990ff50657a0d0), which allows you to bind multiple properties from different models to a single control property. The properties bound from different models are called parts. In the example above, the control property is `number` and the bound properties \(parts\) are retrieved from two different models: `invoice>ExtendedPrice` and `view>/currency`.
 
 ***
 
