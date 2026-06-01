@@ -209,6 +209,10 @@ function removeTSfromUI5YAML(ui5yaml) {
 				} else if(file.endsWith(".yaml")) {
 					const ui5yaml = removeTSfromUI5YAML(yaml.load(readFileSync(source, { encoding: "utf8" })));
 					writeFileSync(target, yaml.dump(ui5yaml));
+				} else if (file.endsWith("README.md")) {
+					let content = escapeCodeBlocks(readFileSync(source, { encoding: "utf8"}));
+					mkdirSync(dirname(target), { recursive: true });
+					writeFileSync(target, content, { encoding: "utf8" });
 				} else if (file !== "tsconfig.json") {
 					mkdirSync(dirname(target), { recursive: true });
 					copyFileSync(source, target);
