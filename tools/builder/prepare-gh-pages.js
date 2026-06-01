@@ -70,6 +70,24 @@ function removeTSfromUI5YAML(ui5yaml) {
 	mkdirSync(join(cwd, "dist"), { recursive: true });
 
 	console.log(`👉 Copying root README.md...`);
+	function escapeCodeBlocks(content) {
+		// Jekyll/Liquid (used by GitHub Pages) interprets `{{ ... }}` and `{% ... %}`
+		// inside the markdown. Code snippets (fenced blocks and inline code) often
+		// contain handlebars-style placeholders like `{{appTitle}}` that must be
+		// preserved verbatim. Wrap them in `{% raw %}` / `{% endraw %}` so Liquid
+		// leaves them untouched.
+		// Fenced code blocks (``` ... ``` or ~~~ ... ~~~).
+		content = content.replace(/(^|\n)(```|~~~)([^\n]*)\n([\s\S]*?)\n\2(?=\n|$)/g,
+			(match, lead, fence, info, body) => `${lead}{% raw %}\n${fence}${info}\n${body}\n${fence}\n{% endraw %}`);
+		// Inline code spans (single or double backticks) on a single line.
+		content = content.replace(/(`+)(?!`)([^\n`][^\n]*?)\1/g, (match, ticks, body) => {
+			if (!body.includes("{{") && !body.includes("{%")) {
+				return match;
+			}
+			return `{% raw %}${ticks}${body}${ticks}{% endraw %}`;
+		});
+		return content;
+	}
 	function rewriteLinks(file) {
 		let permalink = file.split("dist/")[1].replace(".md", ".html");
 		const title = "UI5 Tutorials";
@@ -77,6 +95,7 @@ function removeTSfromUI5YAML(ui5yaml) {
 		content = content.replace(/README\.md/g, "index.html");
 		content = content.replace(/\.\/packages\//g, "./");
 		content = content.replace(/\[LICENSE\]\([\.\/\w]*\)/g, "[LICENSE](https://github.com/UI5/tutorials/blob/-/LICENSE)");
+		content = escapeCodeBlocks(content);
 		writeFileSync(file, content, { encoding: "utf8" });
 	}
 
