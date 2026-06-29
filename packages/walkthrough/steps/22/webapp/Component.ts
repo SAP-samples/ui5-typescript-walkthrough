@@ -2,7 +2,7 @@ import UIComponent from "sap/ui/core/UIComponent";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
 /**
- * @namespace ui5.walkthrough
+ * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
     public static metadata = {

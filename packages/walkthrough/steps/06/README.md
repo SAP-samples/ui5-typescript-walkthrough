@@ -41,7 +41,7 @@ import MessageToast from "sap/m/MessageToast";
 import Controller from "sap/ui/core/mvc/Controller";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
     onShowHello(): void {
@@ -56,9 +56,9 @@ sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller"], function (Me
   "use strict";
 
   /**
-   * @name ui5.walkthrough.controller.App
+   * @name ui5.tutorial.walkthrough.controller.App
    */
-  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
+  const AppController = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
     onShowHello() {
       MessageToast.show("Hello World");
     }

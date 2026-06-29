@@ -5,7 +5,7 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
     onShowHello() : void {

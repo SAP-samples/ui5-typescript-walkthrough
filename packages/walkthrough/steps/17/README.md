@@ -43,7 +43,7 @@ import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import Dialog from "sap/m/Dialog";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
     private dialog: Dialog;
@@ -57,7 +57,7 @@ export default class HelloPanel extends Controller {
     }
     async onOpenDialog(): Promise<void> {
         this.dialog ??= await this.loadFragment({
-             name: "ui5.walkthrough.view.HelloDialog"
+             name: "ui5.tutorial.walkthrough.view.HelloDialog"
         }) as Dialog;
         this.dialog.open();
     }
@@ -72,7 +72,7 @@ export default class HelloPanel extends Controller {
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Controller, MessageToast) {
   "use strict";
 
-  const HelloPanel = Controller.extend("ui5.walkthrough.controller.HelloPanel", {
+  const HelloPanel = Controller.extend("ui5.tutorial.walkthrough.controller.HelloPanel", {
     onShowHello() {
       // read msg from i18n model
       const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
@@ -83,7 +83,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Co
     },
     async onOpenDialog() {
       this.dialog ??= await this.loadFragment({
-        name: "ui5.walkthrough.view.HelloDialog"
+        name: "ui5.tutorial.walkthrough.view.HelloDialog"
       });
       this.dialog.open();
     },

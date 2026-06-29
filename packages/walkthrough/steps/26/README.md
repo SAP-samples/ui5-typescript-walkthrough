@@ -156,7 +156,7 @@ export default {
     init: function () {
         // create
         const mockServer = new MockServer({
-            rootUri: sap.ui.require.toUrl("ui5/walkthrough/V2/Northwind/Northwind.svc/")
+            rootUri: sap.ui.require.toUrl("ui5/tutorial/walkthrough/V2/Northwind/Northwind.svc/")
         });
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -168,7 +168,7 @@ export default {
         });
 
         // simulate
-        const path = sap.ui.require.toUrl("ui5/walkthrough/localService");
+        const path = sap.ui.require.toUrl("ui5/tutorial/walkthrough/localService");
         mockServer.simulate(path + "/metadata.xml", path + "/mockdata");
 
         // start
@@ -186,7 +186,7 @@ sap.ui.define(["sap/ui/core/util/MockServer"], function (MockServer) {
     init: function () {
       // create
       const mockServer = new MockServer({
-        rootUri: sap.ui.require.toUrl("ui5/walkthrough/V2/Northwind/Northwind.svc/")
+        rootUri: sap.ui.require.toUrl("ui5/tutorial/walkthrough/V2/Northwind/Northwind.svc/")
       });
       const urlParams = new URLSearchParams(window.location.search);
 
@@ -197,7 +197,7 @@ sap.ui.define(["sap/ui/core/util/MockServer"], function (MockServer) {
       });
 
       // simulate
-      const path = sap.ui.require.toUrl("ui5/walkthrough/localService");
+      const path = sap.ui.require.toUrl("ui5/tutorial/walkthrough/localService");
       mockServer.simulate(path + "/metadata.xml", path + "/mockdata");
 
       // start
@@ -258,15 +258,15 @@ Instead the app component, we define that the `initMockServer` is initialized fr
 		data-sap-ui-theme="sap_horizon"
 		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true"
-		data-sap-ui-on-init="module:ui5/walkthrough/test/initMockServer"
+		data-sap-ui-on-init="module:ui5/tutorial/walkthrough/test/initMockServer"
 		data-sap-ui-resource-roots='{
-			"ui5.walkthrough": "../"
+			"ui5.tutorial.walkthrough": "../"
 		}'>
 
 	</script>
 </head>
 <body class="sapUiBody" id="content">
-	<div data-sap-ui-component data-name="ui5.walkthrough" data-id="container" data-settings='{"id" : "walkthrough"}'></div>
+	<div data-sap-ui-component data-name="ui5.tutorial.walkthrough" data-id="container" data-settings='{"id" : "walkthrough"}'></div>
 </body>
 </html>
 ```
@@ -287,7 +287,7 @@ In case you prefer to continue with the local data, you should adjust the `start
 
 ```json
 {
-  "name": "ui5.walkthrough",
+  "name": "ui5.tutorial.walkthrough",
   "version": "1.0.0",
   "description": "OpenUI5 TypeScript Walkthrough",
   "private": true,

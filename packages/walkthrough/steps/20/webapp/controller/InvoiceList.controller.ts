@@ -2,7 +2,7 @@ import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
     

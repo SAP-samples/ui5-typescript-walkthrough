@@ -36,7 +36,7 @@ We add an icon to the button that opens the dialog. The `sap-icon://` protocol i
 
 ```xml
 <mvc:View
-   controllerName="ui5.walkthrough.controller.HelloPanel"
+   controllerName="ui5.tutorial.walkthrough.controller.HelloPanel"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <Panel
@@ -66,7 +66,7 @@ We add an icon to the button that opens the dialog. The `sap-icon://` protocol i
 </mvc:View>
 ```
 &nbsp;
->💡 **Tip:** <br>
+> :tip:
 > You can look up other icons using the [Icon Explorer tool](https://sdk.openui5.org/test-resources/sap/m/demokit/iconExplorer/webapp/index.html).
 > To call any icon, use its name as listed in the *Icon Explorer* in <code>sap-icon://<i>&lt;iconname&gt;</i></code>.
 

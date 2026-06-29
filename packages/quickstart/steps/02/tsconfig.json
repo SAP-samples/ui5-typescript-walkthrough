@@ -10,7 +10,7 @@
     "strictPropertyInitialization": false,
     "rootDir": "./webapp",
     "paths": {
-      "ui5/quickstart/*": [
+      "ui5/tutorial/quickstart/*": [
         "./webapp/*"
       ]
     }

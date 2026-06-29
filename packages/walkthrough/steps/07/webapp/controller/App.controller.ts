@@ -3,7 +3,7 @@ import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
     onInit(): void {

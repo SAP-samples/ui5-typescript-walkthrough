@@ -49,7 +49,7 @@ import History from "sap/ui/core/routing/History";
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class Detail extends Controller {
     
@@ -74,7 +74,7 @@ export default class Detail extends Controller {
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/ui/core/UIComponent"], function (Controller, History, UIComponent) {
   "use strict";
 
-  const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
+  const Detail = Controller.extend("ui5.tutorial.walkthrough.controller.Detail", {
     //...
     onNavBack() {
       const history = History.getInstance();
@@ -100,7 +100,7 @@ Now only the back button is missing on the detail page. We do this by telling th
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.Detail"
+	controllerName="ui5.tutorial.walkthrough.controller.Detail"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Page

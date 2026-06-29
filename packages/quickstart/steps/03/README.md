@@ -48,9 +48,9 @@ Let's spice up our app by adding some more UI controls. We add two more librarie
 		data-sap-ui-libs="sap.m, sap.ui.layout, sap.tnt"
 		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true"
-		data-sap-ui-on-init="module:ui5/quickstart/index"
+		data-sap-ui-on-init="module:ui5/tutorial/quickstart/index"
 		data-sap-ui-resource-roots='{
-			"ui5.quickstart": "./"
+			"ui5.tutorial.quickstart": "./"
 		}'>
 	</script>
 </head>
@@ -58,7 +58,7 @@ Let's spice up our app by adding some more UI controls. We add two more librarie
 </html>
 ```
 
-> 💡 **Tip:**  <br>
+> :tip:
 > To browse all available controls and libraries, see the [Samples](https://sdk.openui5.org/#/controls). 
 
 ### webapp/App.view.xml
@@ -73,7 +73,7 @@ Don't worry too much about the details, we will explain them in the next tutoria
 
 ```xml
 <mvc:View
-	controllerName="ui5.quickstart.App"
+	controllerName="ui5.tutorial.quickstart.App"
 	displayBlock="true"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
@@ -176,7 +176,7 @@ sap.ui.define([
 ], (Controller, MessageToast, JSONModel) => {
 	"use strict";
 
-	return Controller.extend("ui5.quickstart.App", {
+	return Controller.extend("ui5.tutorial.quickstart.App", {
 		onPress() {
 			MessageToast.show("Hello UI5!");
 			this.byId("app").to(this.byId("intro"));

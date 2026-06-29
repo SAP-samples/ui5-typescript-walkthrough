@@ -1,7 +1,7 @@
 import Opa5 from "sap/ui/test/Opa5";
 import Press from "sap/ui/test/actions/Press";
 
-const viewName = "ui5.walkthrough.view.HelloPanel";
+const viewName = "ui5.tutorial.walkthrough.view.HelloPanel";
 
 export default class HelloPanelPage extends Opa5 {
 	// Actions

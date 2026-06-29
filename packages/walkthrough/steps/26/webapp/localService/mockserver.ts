@@ -4,7 +4,7 @@ export default {
     init: function () {
         // create
         const mockServer = new MockServer({
-            rootUri: sap.ui.require.toUrl("ui5/walkthrough/V2/Northwind/Northwind.svc/")
+            rootUri: sap.ui.require.toUrl("ui5/tutorial/walkthrough/V2/Northwind/Northwind.svc/")
         });
 
         const urlParams = new URLSearchParams(window.location.search);
@@ -16,7 +16,7 @@ export default {
         });
 
         // simulate
-        const path = sap.ui.require.toUrl("ui5/walkthrough/localService");
+        const path = sap.ui.require.toUrl("ui5/tutorial/walkthrough/localService");
         mockServer.simulate(path + "/metadata.xml", path + "/mockdata");
 
         // start

@@ -8,7 +8,7 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class Detail extends Controller {
 

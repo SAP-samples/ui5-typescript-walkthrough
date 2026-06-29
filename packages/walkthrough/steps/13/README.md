@@ -45,7 +45,7 @@ To format the output text individually, we remove the description from the input
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.App"
+	controllerName="ui5.tutorial.walkthrough.controller.App"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true">

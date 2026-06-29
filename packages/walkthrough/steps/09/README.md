@@ -59,7 +59,7 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
- * @namespace ui5.walkthrough
+ * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
     public static metadata = {
@@ -79,7 +79,7 @@ export default class Component extends UIComponent {
 
         // set i18n model
         const i18nModel = new ResourceModel({
-            "bundleName": "ui5.walkthrough.i18n.i18n",
+            "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
             "supportedLocales": [""],
             "fallbackLocale": ""
         });
@@ -87,7 +87,7 @@ export default class Component extends UIComponent {
     };
     createContent(): Control | Promise<Control | null> | null {
         return XMLView.create({
-            "viewName": "ui5.walkthrough.view.App",
+            "viewName": "ui5.tutorial.walkthrough.view.App",
             "id": "app"
         });
     };
@@ -99,7 +99,7 @@ export default class Component extends UIComponent {
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/core/mvc/XMLView", "sap/ui/model/json/JSONModel", "sap/ui/model/resource/ResourceModel"], function (UIComponent, XMLView, JSONModel, ResourceModel) {
   "use strict";
 
-  const Component = UIComponent.extend("ui5.walkthrough.Component", {
+  const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
     metadata: {
       "interfaces": ["sap.ui.core.IAsyncContentCreation"]
     },
@@ -117,7 +117,7 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/core/mvc/XMLView", "sap/ui/mod
 
       // set i18n model
       const i18nModel = new ResourceModel({
-        "bundleName": "ui5.walkthrough.i18n.i18n",
+        "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
         "supportedLocales": [""],
         "fallbackLocale": ""
       });
@@ -125,7 +125,7 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/core/mvc/XMLView", "sap/ui/mod
     },
     createContent() {
       return XMLView.create({
-        "viewName": "ui5.walkthrough.view.App",
+        "viewName": "ui5.tutorial.walkthrough.view.App",
         "id": "app"
       });
     }
@@ -151,7 +151,7 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
     onShowHello(): void {
@@ -171,9 +171,9 @@ sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller"], function (Me
   "use strict";
 
   /**
-   * @name ui5.walkthrough.controller.App
+   * @name ui5.tutorial.walkthrough.controller.App
    */
-  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
+  const AppController = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
     onShowHello() {
       // read msg from i18n model
       // functions with generic return values require casting
@@ -212,7 +212,7 @@ import ComponentContainer from "sap/ui/core/ComponentContainer";
 
 new ComponentContainer({
     id: "container",
-    name: "ui5.walkthrough",
+    name: "ui5.tutorial.walkthrough",
     settings: {
         id: "walkthrough"
     },
@@ -228,7 +228,7 @@ sap.ui.define(["sap/ui/core/ComponentContainer"], function (ComponentContainer) 
 
   new ComponentContainer({
     id: "container",
-    name: "ui5.walkthrough",
+    name: "ui5.tutorial.walkthrough",
     settings: {
       id: "walkthrough"
     },

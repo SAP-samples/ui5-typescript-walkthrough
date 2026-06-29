@@ -1,0 +1,19 @@
+{
+  "name": "ui5.tutorial.odatav4.step05",
+  "version": "1.0.0",
+  "author": "SAP SE",
+  "description": "OpenUI5 TypeScript Tutorial — OData V4: Step 5 — Batch Groups",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve -o index.html",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/openui5": "^1.147.0",
+    "@ui5/cli": "^4.0.53",
+    "typescript": "^6.0.3",
+    "ui5-middleware-livereload": "^3.3.1",
+    "ui5-middleware-serveframework": "^3.8.1",
+    "ui5-tooling-transpile": "^3.11.0"
+  }
+}

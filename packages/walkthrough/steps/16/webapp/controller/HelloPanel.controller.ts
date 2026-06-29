@@ -6,7 +6,7 @@ import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import Dialog from "sap/m/Dialog";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
     private dialog : Dialog;
@@ -20,7 +20,7 @@ export default class HelloPanel extends Controller {
     }
     async onOpenDialog(): Promise<void> {
         this.dialog ??= await this.loadFragment({
-             name: "ui5.walkthrough.view.HelloDialog"
+             name: "ui5.tutorial.walkthrough.view.HelloDialog"
         }) as Dialog;
         this.dialog.open();
     }

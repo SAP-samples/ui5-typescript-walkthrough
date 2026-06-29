@@ -42,7 +42,7 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import Device from "sap/ui/Device";
 
 /**
- * @namespace ui5.walkthrough
+ * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
     public static metadata = {
@@ -65,7 +65,7 @@ export default class Component extends UIComponent {
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel", "sap/ui/Device"], function (UIComponent, JSONModel, Device) {
   "use strict";
 
-  const Component = UIComponent.extend("ui5.walkthrough.Component", {
+  const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
     metadata: {
       "interfaces": ["sap.ui.core.IAsyncContentCreation"],
       "manifest": "json"
@@ -93,7 +93,7 @@ import Controller from "sap/ui/core/mvc/Controller";
 import Component from "../Component";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
 	onInit(): void {
@@ -107,7 +107,7 @@ export default class App extends Controller {
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
   "use strict";
 
-  const App = Controller.extend("ui5.walkthrough.controller.App", {
+  const App = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
     onInit() {
       this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
     }

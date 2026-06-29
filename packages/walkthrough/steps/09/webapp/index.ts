@@ -2,7 +2,7 @@ import ComponentContainer from "sap/ui/core/ComponentContainer";
 
 new ComponentContainer({
     id: "container",
-    name: "ui5.walkthrough",
+    name: "ui5.tutorial.walkthrough",
     settings: {
         id: "walkthrough"
     },

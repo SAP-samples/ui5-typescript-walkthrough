@@ -8,7 +8,7 @@ import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 
 /**
- * @namespace ui5.walkthrough.control
+ * @namespace ui5.tutorial.walkthrough.control
  */
 export default class ProductRating extends Control {
 	// The following three lines were generated and should remain as-is to make TypeScript aware of the constructor signatures

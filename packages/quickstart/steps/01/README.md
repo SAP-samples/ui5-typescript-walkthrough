@@ -58,9 +58,9 @@ In our webapp folder, we create a new HTML file named `index.html` and copy the 
       data-sap-ui-libs="sap.m"
       data-sap-ui-compat-version="edge"
       data-sap-ui-async="true"
-      data-sap-ui-on-init="module:ui5/quickstart/index"
+      data-sap-ui-on-init="module:ui5/tutorial/quickstart/index"
       data-sap-ui-resource-roots='{
-        "ui5.quickstart": "./"
+        "ui5.tutorial.quickstart": "./"
       }'>
     </script>
   </head>
@@ -117,12 +117,12 @@ Create a new file named `manifest.json` in the webapp folder; it's also known as
 {
     "_version": "1.60.0",
     "sap.app": {
-        "id": "ui5.quickstart"
+        "id": "ui5.tutorial.quickstart"
     }
 }
 ```
 
-> 📝 **Note:** <br>
+> :note:
 > In this tutorial step, we focus on adding the absolute minimum configuration to the app descriptor file. In certain development environments you might encounter validation errors due to missing settings. However, for the purposes of this tutorial you can safely ignore these errors. In [Step 10: Descriptor for Applications](../10/README.md) we'll examine the purpose of the file in detail and configure some further options.
 
 ***
@@ -141,7 +141,7 @@ Enter the following content:
 
 ```json
 {
-    "name": "ui5.quickstart",
+    "name": "ui5.tutorial.quickstart",
     "version": "1.0.0",
     "description": "The UI5 quickstart tutorial",
     "scripts": {
@@ -185,7 +185,7 @@ We specify the compiler options as follow:
     "strictPropertyInitialization": false,
     "rootDir": "./webapp",
     "paths": {
-      "ui5/quickstart/*": [
+      "ui5/tutorial/quickstart/*": [
         "./webapp/*"
       ]
     }
@@ -212,7 +212,7 @@ Let's go through the compiler options specified in the file:
 
 - `"rootDir": "./webapp"`: The `rootDir` parameter specifies the root directory of the TypeScript source files. The compiler considers this directory as the starting point for resolving file paths. We set it to our `webapp` folder.
 
-- `"paths": { "ui5/quickstart/*": ["./webapp/**/*"] }`: The `path` paramter specifies path mappings for module resolution. It allows you to define custom module paths that map to specific directories or files. In this case, it maps the module path `ui5/quickstart/*`.
+- `"paths": { "ui5/tutorial/quickstart/*": ["./webapp/**/*"] }`: The `path` paramter specifies path mappings for module resolution. It allows you to define custom module paths that map to specific directories or files. In this case, it maps the module path `ui5/tutorial/quickstart/*`.
 
 - `"include": [ "./webapp/**/*" ]`: Specifies an array of filenames or patterns to include in TypeScript compilation. 
 
@@ -292,7 +292,7 @@ Next,  we have to configure the tooling extension we installed from npm to our U
 
 -   All our custom middleware extensions will be called after the `compression` middleware.
 
-> 📌 **Important:** <br>
+> :info:
 > Middleware configurations are applied in the order in which they are defined. 
 
 <details class="ts-only" markdown="1">
@@ -330,7 +330,7 @@ Now you can benefit from live reload on changes and built framework resources at
 </details>
 
 <br>
-> 📝 **Note:**<br>
+> :note:
 > During its initial run, the `ui5-middleware-serveframework` middleware will build the framework, which can take a while. In all following steps, the build will not happen again and the framework is served from the built resources.
 
 &nbsp;

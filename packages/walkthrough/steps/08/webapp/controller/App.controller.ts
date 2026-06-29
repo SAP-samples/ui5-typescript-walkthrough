@@ -5,7 +5,7 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
    onInit(): void {
@@ -21,7 +21,7 @@ export default class AppController extends Controller {
 
       // set i18n model on view
       const i18nModel = new ResourceModel({
-         bundleName: "ui5.walkthrough.i18n.i18n"
+         bundleName: "ui5.tutorial.walkthrough.i18n.i18n"
       });
       this.getView()?.setModel(i18nModel, "i18n");
    }

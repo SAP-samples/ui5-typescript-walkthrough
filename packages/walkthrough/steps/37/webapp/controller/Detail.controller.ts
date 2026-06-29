@@ -9,7 +9,7 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class Detail extends Controller {
 

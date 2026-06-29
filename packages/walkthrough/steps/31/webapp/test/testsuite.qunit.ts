@@ -2,7 +2,7 @@ import type {SuiteConfiguration} from "sap/ui/test/starter/config";
 export default {
 	name: "QUnit test suite for UI5 TypeScript Walkthrough",
 	defaults: {
-		page: "ui5://test-resources/ui5/walkthrough/Test.qunit.html?testsuite={suite}&test={name}",
+		page: "ui5://test-resources/ui5/tutorial/walkthrough/Test.qunit.html?testsuite={suite}&test={name}",
 		qunit: {
 			version: 2
 		},
@@ -11,7 +11,7 @@ export default {
 		},
 		loader: {
 			paths: {
-				"ui5/walkthrough": "../"
+				"ui5/tutorial/walkthrough": "../"
 			}
 		}
 	},

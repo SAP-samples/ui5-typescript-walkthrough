@@ -1,12 +1,12 @@
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import Controller from "sap/ui/core/mvc/Controller";
-import formatter from "ui5/walkthrough/model/formatter";
+import formatter from "ui5/tutorial/walkthrough/model/formatter";
 
 QUnit.module("Formatting function", {});
 
 QUnit.test("Should return the translated texts", (assert) => {
     const resourceModel = new ResourceModel({
-        bundleUrl: sap.ui.require.toUrl("ui5/walkthrough/i18n/i18n.properties"),
+        bundleUrl: sap.ui.require.toUrl("ui5/tutorial/walkthrough/i18n/i18n.properties"),
         supportedLocales: [
             ""
         ],

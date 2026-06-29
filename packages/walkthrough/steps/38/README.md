@@ -35,7 +35,7 @@ Now we create a production-ready version of our OpenUI5 application that can be 
 
 ```json
 {
-  "name": "ui5.walkthrough",
+  "name": "ui5.tutorial.walkthrough",
   "version": "1.0.0",
   "description": "OpenUI5 TypeScript Walkthrough",
   "private": true,
@@ -67,7 +67,7 @@ To actually use the newly added web server, we have to add a new script to our `
 
 ```json
 {
-  "name": "ui5.walkthrough",
+  "name": "ui5.tutorial.walkthrough",
   "version": "1.0.0",
   "description": "OpenUI5 TypeScript Walkthrough",
   "private": true,

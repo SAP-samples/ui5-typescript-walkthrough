@@ -93,7 +93,7 @@ To highlight the output text, we replace the text control by a `FormattedText` c
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.App"
+	controllerName="ui5.tutorial.walkthrough.controller.App"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true">

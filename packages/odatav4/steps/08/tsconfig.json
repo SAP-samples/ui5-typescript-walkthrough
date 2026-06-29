@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "types": [
+      "node",
+      "@types/openui5"
+    ],
+    "skipLibCheck": true,
+    "allowJs": true,
+    "strictPropertyInitialization": false,
+    "rootDir": "./webapp",
+    "paths": {
+      "ui5/tutorial/odatav4/*": [
+        "./webapp/*"
+      ]
+    },
+    "strict": false,
+    "strictNullChecks": false
+  },
+  "include": [
+    "./webapp/**/*"
+  ]
+}

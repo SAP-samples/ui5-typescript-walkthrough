@@ -44,7 +44,7 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
     
@@ -65,7 +65,7 @@ export default class HelloPanel extends Controller {
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Controller, MessageToast) {
   "use strict";
 
-  const HelloPanel = Controller.extend("ui5.walkthrough.controller.HelloPanel", {
+  const HelloPanel = Controller.extend("ui5.tutorial.walkthrough.controller.HelloPanel", {
     onShowHello() {
       // read msg from i18n model
       const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
@@ -87,7 +87,7 @@ We create a new `HelloPanel.view.xml` file in folder `webapp/view` and move the 
 
 ```xml
 <mvc:View
-   controllerName="ui5.walkthrough.controller.HelloPanel"
+   controllerName="ui5.tutorial.walkthrough.controller.HelloPanel"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <Panel
@@ -113,11 +113,11 @@ We create a new `HelloPanel.view.xml` file in folder `webapp/view` and move the 
 
 ### webapp/view/App.view.xml
 
-In the App view, we remove the panel control and its content and put the `XMLView` control to the content of the page instead. We add the `viewName` attribute with the value `ui5.walkthrough.view.HelloPanel` to reference the new view that now contains the panel.
+In the App view, we remove the panel control and its content and put the `XMLView` control to the content of the page instead. We add the `viewName` attribute with the value `ui5.tutorial.walkthrough.view.HelloPanel` to reference the new view that now contains the panel.
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.App"
+	controllerName="ui5.tutorial.walkthrough.controller.App"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true">
@@ -126,7 +126,7 @@ In the App view, we remove the panel control and its content and put the `XMLVie
 			<pages>
 				<Page title="{i18n>homePageTitle}">
 					<content>
-						<mvc:XMLView viewName="ui5.walkthrough.view.HelloPanel"/>
+						<mvc:XMLView viewName="ui5.tutorial.walkthrough.view.HelloPanel"/>
 					</content>
 				</Page>
 			</pages>
@@ -142,7 +142,7 @@ We remove the `onShowHello` method from the App controller, as this is not neede
 ```ts
 import Controller from "sap/ui/core/mvc/Controller";
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
 
@@ -154,7 +154,7 @@ export default class App extends Controller {
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
   "use strict";
 
-  const App = Controller.extend("ui5.walkthrough.controller.App", {});
+  const App = Controller.extend("ui5.tutorial.walkthrough.controller.App", {});
   ;
   return App;
 });

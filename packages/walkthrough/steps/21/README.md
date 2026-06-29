@@ -37,7 +37,7 @@ We add the `numberState` attribute to the `ObjectListItem` control in our invoic
 
 ```xml
 <mvc:View
-   controllerName="ui5.walkthrough.controller.InvoiceList"
+   controllerName="ui5.tutorial.walkthrough.controller.InvoiceList"
    xmlns="sap.m"
    xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">

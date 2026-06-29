@@ -5,7 +5,7 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 
 /**
- * @namespace ui5.walkthrough
+ * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
     public static metadata = {
@@ -25,7 +25,7 @@ export default class Component extends UIComponent {
 
         // set i18n model
         const i18nModel = new ResourceModel({
-            "bundleName": "ui5.walkthrough.i18n.i18n",
+            "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
             "supportedLocales": [""],
             "fallbackLocale": ""
         });
@@ -33,7 +33,7 @@ export default class Component extends UIComponent {
     };
     createContent(): Control | Promise<Control | null> | null {
         return XMLView.create({
-            "viewName": "ui5.walkthrough.view.App",
+            "viewName": "ui5.tutorial.walkthrough.view.App",
             "id": "app"
         });
     };

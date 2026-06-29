@@ -6,7 +6,7 @@ To achieve this, we will add ARIA attributes. ARIA attributes are used by screen
 
 One part of the ARIA attribute set are the so-called landmarks. You can compare landmarks to maps in that they help the user navigate through an app. For this step, we will use Google Chrome with a free [landmark navigation extension](https://chrome.google.com/webstore/detail/landmark-navigation-via-k/ddpokpbjopmeeiiolheejjpkonlkklgp) We will now add meaningful landmarks to our code.
 
-> 💡 **Tip:** <br>
+> :tip:
 > ARIA is short for **Accessible Rich Internet Applications**. It is a set of attributes that enable us to make apps more accessible by assigning semantic characteristics to certain elements. For more information, see [Accessible Rich Internet Applications \(ARIA\) – Part 1: Introduction](https://blogs.sap.com/2015/06/01/accessible-rich-internet-applications-aria-part-1-introduction/).
 
 &nbsp;
@@ -64,7 +64,7 @@ For more information, see the [API Reference: `sap.m.PageAccessibleLandmarkInfo`
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.App"
+	controllerName="ui5.tutorial.walkthrough.controller.App"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true">
@@ -79,8 +79,8 @@ For more information, see the [API Reference: `sap.m.PageAccessibleLandmarkInfo`
 				headerLabel="{i18n>Overview_headerLabel}"/>
 		</landmarkInfo>
 		<content>
-			<mvc:XMLView viewName="ui5.walkthrough.view.HelloPanel"/>
-			<mvc:XMLView viewName="ui5.walkthrough.view.InvoiceList"/>
+			<mvc:XMLView viewName="ui5.tutorial.walkthrough.view.HelloPanel"/>
+			<mvc:XMLView viewName="ui5.tutorial.walkthrough.view.InvoiceList"/>
 		</content>
 	</Page>
 </mvc:View>
@@ -92,7 +92,7 @@ We add an `sap.m.Panel` around the invoice list and move the toolbar from the ta
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.InvoiceList"
+	controllerName="ui5.tutorial.walkthrough.controller.InvoiceList"
 	xmlns="sap.m"
   xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc">
@@ -129,7 +129,7 @@ In the `HelloPanel` view, we already have a panel, so we just add the `accessibl
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.HelloPanel"
+	controllerName="ui5.tutorial.walkthrough.controller.HelloPanel"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc">
 	<Panel

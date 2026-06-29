@@ -6,7 +6,7 @@ import HorizontalLayout from "sap/ui/layout/HorizontalLayout";
 import { Switch$ChangeEvent } from "sap/m/Switch";
 
 /**
- * @namespace ui5.quickstart
+ * @namespace ui5.tutorial.quickstart
  */
 export default class AppController extends Controller {
 	onPress(): void {

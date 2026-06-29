@@ -4,7 +4,7 @@ import UIComponent from "sap/ui/core/UIComponent";
 import Route, { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class Detail extends Controller {
 

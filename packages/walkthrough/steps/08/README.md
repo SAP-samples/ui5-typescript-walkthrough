@@ -64,7 +64,7 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
    onInit(): void {
@@ -79,7 +79,7 @@ export default class AppController extends Controller {
 
       // set i18n model on view
       const i18nModel = new ResourceModel({
-         bundleName: "ui5.walkthrough.i18n.i18n"
+         bundleName: "ui5.tutorial.walkthrough.i18n.i18n"
       });
       this.getView()?.setModel(i18nModel, "i18n");
    }
@@ -100,7 +100,7 @@ export default class AppController extends Controller {
 sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/resource/ResourceModel"], function (MessageToast, Controller, JSONModel, ResourceModel) {
   "use strict";
 
-  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
+  const AppController = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
     onInit() {
       // set data model on view
       const data = {
@@ -113,7 +113,7 @@ sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller", "sap/ui/model
 
       // set i18n model on view
       const i18nModel = new ResourceModel({
-        bundleName: "ui5.walkthrough.i18n.i18n"
+        bundleName: "ui5.tutorial.walkthrough.i18n.i18n"
       });
       this.getView()?.setModel(i18nModel, "i18n");
     },
@@ -132,7 +132,7 @@ sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller", "sap/ui/model
 
 ```
 
-The bundle name \(`ui5.walkthrough.i18n.i18n`\) consists of the application namespace `ui5.walkthrough` \(the application root as defined in the `index.html`\), the folder name `i18n`, and finally the base file name `i18n` without extension. The OpenUI5 runtime calculates the correct path to the resource, to which `.properties` is then appended.
+The bundle name \(`ui5.tutorial.walkthrough.i18n.i18n`\) consists of the application namespace `ui5.tutorial.walkthrough` \(the application root as defined in the `index.html`\), the folder name `i18n`, and finally the base file name `i18n` without extension. The OpenUI5 runtime calculates the correct path to the resource, to which `.properties` is then appended.
 
 During runtime, OpenUI5 tries to load the correct`i18n_*.properties` file based on your browser settings and your locale. In our case we have only created the base `i18n.properties` file to make it simple. However, you can see in the network traffic of your browser’s developer tools that OpenUI5 tries to load one or more `i18n_*.properties` files before falling back to the default `i18n.properties` file.
 
@@ -147,7 +147,7 @@ To correctly reference the model, the binding path should start with the model n
 A resource bundle is a flat structure, therefore the preceding slash \(/\) can be omitted for the path to the text.
 
 ```xml
-<mvc:View controllerName="ui5.walkthrough.controller.App"
+<mvc:View controllerName="ui5.tutorial.walkthrough.controller.App"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <Button
@@ -161,7 +161,7 @@ A resource bundle is a flat structure, therefore the preceding slash \(/\) can b
 </mvc:View>
 ```
 
-> 📝 **Note:** <br>
+> :note:
 > The description text is not completely localized in this example for illustration purposes. To be on the safe side, we would have to use a similar mechanism as in the controller to use a string from the resource bundle and replace parts of it. This can be done with the `sap/base/strings/formatMessage` formatter.
 > 
 > Furthermore, `i18n` files only impact client-side application texts. Texts that are loaded from back-end systems can appear in all languages that are supported by the back-end system.

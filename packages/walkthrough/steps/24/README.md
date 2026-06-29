@@ -38,7 +38,7 @@ We add a declarative sorter to the binding syntax of the list control. Therefore
 
 ```xml
 <mvc:View
-   controllerName="ui5.walkthrough.controller.InvoiceList"
+   controllerName="ui5.tutorial.walkthrough.controller.InvoiceList"
    xmlns="sap.m"
    xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
@@ -68,7 +68,7 @@ As with the sorter, no further action is required. The list and the data binding
 
 ```xml
 <mvc:View
-   controllerName="ui5.walkthrough.controller.InvoiceList"
+   controllerName="ui5.tutorial.walkthrough.controller.InvoiceList"
    xmlns="sap.m"
    xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">

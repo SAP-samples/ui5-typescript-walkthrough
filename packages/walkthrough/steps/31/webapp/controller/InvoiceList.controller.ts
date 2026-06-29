@@ -10,7 +10,7 @@ import ObjectListItem from "sap/m/ObjectListItem";
 import Context from "sap/ui/model/Context";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
     onInit(): void {

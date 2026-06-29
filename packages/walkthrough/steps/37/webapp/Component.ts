@@ -3,7 +3,7 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import Device from "sap/ui/Device";
 
 /**
- * @namespace ui5.walkthrough
+ * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
     public static metadata = {

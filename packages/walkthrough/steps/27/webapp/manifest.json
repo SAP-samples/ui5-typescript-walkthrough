@@ -1,10 +1,10 @@
 {
     "_version": "1.60.0",
     "sap.app": {
-        "id": "ui5.walkthrough",
+        "id": "ui5.tutorial.walkthrough",
         "type": "application",
         "i18n": {
-            "bundleName": "ui5.walkthrough.i18n.i18n",
+            "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
             "supportedLocales": [
                 ""
             ],
@@ -42,7 +42,7 @@
             }
         },
         "rootView": {
-            "viewName": "ui5.walkthrough.view.App",
+            "viewName": "ui5.tutorial.walkthrough.view.App",
             "type": "XML",
             "id": "app"
         },
@@ -50,7 +50,7 @@
             "i18n": {
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
-                    "bundleName": "ui5.walkthrough.i18n.i18n",
+                    "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
                     "supportedLocales": [
                         ""
                     ],

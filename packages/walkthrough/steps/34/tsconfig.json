@@ -7,7 +7,7 @@
       "strictPropertyInitialization": false,
       "rootDir": "./webapp",
       "paths": {
-        "ui5/walkthrough/*": ["./webapp/*"]
+        "ui5/tutorial/walkthrough/*": ["./webapp/*"]
       }
     },
     "include": ["./webapp/**/*"]

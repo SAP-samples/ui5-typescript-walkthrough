@@ -4,7 +4,7 @@ If we want to test interaction patterns or more visual features of our app, we c
 
 We haven’t thought about testing our interaction with the app yet, so in this step we will check if the dialog actually opens when we click the “Say Hello with Dialog” button. We can easily do this with OPA5, a feature of OpenUI5 that is easy to set up and is based on JavaScript and QUnit. Using integration and unit tests and running them consistently in a continuous integration \(CI\) environment, we can make sure that we don’t accidentally break our app or introduce logical errors in existing code.
 &nbsp;
-> 📝 **Note:** 
+> :note:
 > In this tutorial, we focus on a simple use case for the test implementation. If you want to learn more about OPA tests, have a look at our [Testing Tutorial](https://sdk.openui5.org/topic/291c9121e6044ab381e0b51716f97f52.html) tutorial, especially [Step 6: A First OPA Test](https://sdk.openui5.org/topic/1b47457cbe4941ee926317d827517acb.html).
 
 &nbsp;
@@ -22,7 +22,7 @@ We add a new folder `integration` below the `test` folder, where we put our new 
 ![](assets/loio27e84d5bd72a485498564b92894869b5_LowRes.png "Folder Structure for this Step")
 <sup>*Folder Structure for this Step*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 28](https://ui5.github.io/tutorials/walkthrough/build/28/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=integration/opaTests).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 28](https://ui5.github.io/tutorials/walkthrough/build/28/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/tutorial/walkthrough/testsuite.cdn.qunit&test=integration/opaTests).
 
 ***
 
@@ -56,7 +56,7 @@ In the assertions section we define a `waitFor` statement that checks if a `sap.
 import Opa5 from "sap/ui/test/Opa5";
 import Press from "sap/ui/test/actions/Press";
 
-const viewName = "ui5.walkthrough.view.HelloPanel";
+const viewName = "ui5.tutorial.walkthrough.view.HelloPanel";
 
 export default class HelloPanelPage extends Opa5 {
 	// Actions
@@ -88,7 +88,7 @@ export default class HelloPanelPage extends Opa5 {
 sap.ui.define(["sap/ui/test/Opa5", "sap/ui/test/actions/Press"], function (Opa5, Press) {
   "use strict";
 
-  const viewName = "ui5.walkthrough.view.HelloPanel";
+  const viewName = "ui5.tutorial.walkthrough.view.HelloPanel";
   class HelloPanelPage extends Opa5 {
     // Actions
     iPressTheSayHelloWithDialogButton() {
@@ -150,7 +150,7 @@ opaTest("Should open the Hello dialog", function () {
 	// Arrangements
 	onTheHelloPanelPage.iStartMyUIComponent({
 		componentConfig: {
-			name: "ui5.walkthrough"
+			name: "ui5.tutorial.walkthrough"
 		}
 	});
 
@@ -176,7 +176,7 @@ sap.ui.define(["sap/ui/test/opaQunit", "./pages/HelloPanelPage"], function (opaT
     // Arrangements
     onTheHelloPanelPage.iStartMyUIComponent({
       componentConfig: {
-        name: "ui5.walkthrough"
+        name: "ui5.tutorial.walkthrough"
       }
     });
 

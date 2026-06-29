@@ -1,7 +1,7 @@
 {
   "_version": "1.60.0",
   "sap.app": {
-    "id": "ui5.quickstart",
+    "id": "ui5.tutorial.quickstart",
     "type": "application",
     "title": "OpenUI5 Quickstart",
     "applicationVersion": {

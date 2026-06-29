@@ -102,7 +102,7 @@ Instead of the `ObjectListItem` that we had before, we will now split the inform
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.InvoiceList"
+	controllerName="ui5.tutorial.walkthrough.controller.InvoiceList"
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core"
 	xmlns:mvc="sap.ui.core.mvc">
@@ -194,7 +194,7 @@ Now we have defined our table responsively and can see the results when we decre
 
 We can see the results when we decrease the browser's screen size or open the app on a small device.
 
-> 💡 **Tip:** <br>
+> :tip:
 > You can test the device specific features of your app with the developer tools of your browser. For example in Google Chrome, you can emulate a tablet or a phone easily and see the effects. Some responsive options of OpenUI5 are only set initially when loading the app, so you might have to reload your page to see the results.
 
 ***

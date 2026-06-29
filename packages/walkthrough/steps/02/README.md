@@ -81,7 +81,7 @@ We specify the compiler options as follow:
       "strictPropertyInitialization": false,
       "rootDir": "./webapp",
       "paths": {
-        "ui5/walkthrough/*": ["./webapp/*"]
+        "ui5/tutorial/walkthrough/*": ["./webapp/*"]
       }
     },
     "include": ["./webapp/**/*"]
@@ -102,7 +102,7 @@ Let's go through the compiler options specified in the file:
 
 - `"rootDir": "./webapp"`: The `rootDir` parameter specifies the root directory of the TypeScript source files. The compiler considers this directory as the starting point for resolving file paths. We set it to our `webapp` folder.
 
-- `"paths": { "ui5/walkthrough/*": ["./webapp/*"] }`: The `path` paramter specifies path mappings for module resolution. It allows you to define custom module paths that map to specific directories or files. In this case, it maps the module path `ui5/walkthrough/*`.
+- `"paths": { "ui5/tutorial/walkthrough/*": ["./webapp/*"] }`: The `path` paramter specifies path mappings for module resolution. It allows you to define custom module paths that map to specific directories or files. In this case, it maps the module path `ui5/tutorial/walkthrough/*`.
 
 - `"include": [ "./webapp/**/*" ]`: Specifies an array of filenames or patterns to include in TypeScript compilation. 
 
@@ -136,7 +136,7 @@ We initialize the core modules with the following configuration options:
 
 -    The `data-sap-ui-on-init` attribute is used in OpenUI5 to specify the name of a module that should be executed when the framework is fully loaded and initialized. This approach provides a way to avoid directly including executable JavaScript code in the HTML file, which improves the security of our application. To specify the name of the module, you need to provide the module name as the value of the `data-sap-ui-on-init` attribute. The module name should be in the format of a module path, which is a dot-separated string that represents the location of the module within the application's folder structure. When specifying the path to a module within the current project, it's important to include the namespace (explained below) and omit the file extension. We specify the `index.ts` script to the `data-sap-ui-on-init` attribute.
 
--   The `data-sap-ui-resource-roots` attribute lets you map a namespace to a specific path. We define the `ui5.walkthrough` namespace and map it relative to the location of `index.html`. This way, we tell OpenUI5 core that resources in the `ui5.walkthrough` namespace are located in the same folder as `index.html`.
+-   The `data-sap-ui-resource-roots` attribute lets you map a namespace to a specific path. We define the `ui5.tutorial.walkthrough` namespace and map it relative to the location of `index.html`. This way, we tell OpenUI5 core that resources in the `ui5.tutorial.walkthrough` namespace are located in the same folder as `index.html`.
 
 ```html
 <!DOCTYPE html>
@@ -150,9 +150,9 @@ We initialize the core modules with the following configuration options:
 		data-sap-ui-theme="sap_horizon"
 		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true"
-		data-sap-ui-on-init="module:ui5/walkthrough/index"
+		data-sap-ui-on-init="module:ui5/tutorial/walkthrough/index"
 		data-sap-ui-resource-roots='{
-			"ui5.walkthrough": "./"
+			"ui5.tutorial.walkthrough": "./"
 		}'>
 	</script>
 </head>
@@ -162,7 +162,7 @@ We initialize the core modules with the following configuration options:
 </html>
 ```
 
-> 📝 **Note:**<br>
+> :note:
 > The namespace is a unique identifier for your application file. It helps prevent naming conflicts with other modules or libraries.
 
 ***
@@ -212,7 +212,7 @@ Next,  we have to configure the tooling extension we installed from npm to our U
 
 -   All our custom middleware extensions will be called after the `compression` middleware.
 
-> 📌 **Important:** <br>
+> :info:
 > Middleware configurations are applied in the order in which they are defined. 
 
 <details class="ts-only" markdown="1">
@@ -250,7 +250,7 @@ Now you can benefit from live reload on changes and built framework resources at
 </details>
 
 <br>
-> 📝 **Note:**<br>
+> :note:
 > During its initial run, the `ui5-middleware-serveframework` middleware will build the framework, which can take a while. In all following steps, the build will not happen again and the framework is served from the built resources.
 
 &nbsp;

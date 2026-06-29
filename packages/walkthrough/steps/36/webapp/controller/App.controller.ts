@@ -2,7 +2,7 @@ import Controller from "sap/ui/core/mvc/Controller";
 import Component from "../Component";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
 	onInit(): void {

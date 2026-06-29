@@ -37,7 +37,7 @@ In your App view, we put the `App` control inside a `sap/m/Shell` control.
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.App"
+	controllerName="ui5.tutorial.walkthrough.controller.App"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	displayBlock="true">
