@@ -1,14 +1,17 @@
 {
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
-		"config:recommended",
+		"config:best-practices",
 		"github>ui5/renovate-config"
 	],
 	"ignorePresets": [":ignoreModulesAndTests"],
-	"rangeStrategy": "bump",
+	"minimumReleaseAge": "3 days",
+	"rangeStrategy": "pin",
+	"prCreation": "immediate",
 	"lockFileMaintenance": {
 		"enabled": true,
 		"automerge": true,
+		"minimumReleaseAge": "3 days",
 		"commitMessagePrefix": "build:",
 		"commitMessageAction": "In-range update of npm dependencies",
 		"schedule": [
@@ -17,9 +20,11 @@
 	},
 	"packageRules": [
 		{
+			"description": "Auto-merge minor and patch updates",
 			"matchDepNames": [
 				"*"
 			],
+			"matchUpdateTypes": ["minor", "patch"],
 			"automerge": true,
 			"commitMessagePrefix": "build(deps-dev):",
 			"commitMessageAction": "Bump",
@@ -45,18 +50,19 @@
 			],
 			"enabled": false
 		},
-    {
-      "matchDepNames": [
-        "openui5",
-        "@types/openui5"
-      ],
-      "automerge": false,
-      "groupName": "openui5",
-      "commitMessagePrefix": "deps:",
-      "commitMessageAction": "Update",
-      "schedule": [
-        "* 8-16 * * 1"
-      ]
-    }
+		{
+			"matchDepNames": [
+				"openui5",
+				"@types/openui5"
+			],
+			"automerge": false,
+			"groupName": "openui5",
+			"commitMessagePrefix": "deps:",
+			"commitMessageAction": "Update",
+			"minimumReleaseAge": "0 days",
+			"schedule": [
+				"* 8-16 * * 1"
+			]
+		}
 	]
 }
