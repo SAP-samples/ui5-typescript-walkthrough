@@ -57,13 +57,13 @@ Now we add the new `Detail.view.xml` file to our view folder. Beside of the the 
 
 ```xml
 <mvc:View
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
-	<Page
-		title="{i18n>detailPageTitle}">
-		<ObjectHeader
-			title="Invoice"/>
-	</Page>
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    title="{i18n>detailPageTitle}">
+    <ObjectHeader
+      title="Invoice"/>
+  </Page>
 </mvc:View>
 ```
 
@@ -75,16 +75,16 @@ For simplicity, we reuse the controller `ui5.tutorial.walkthrough.controller.App
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.walkthrough.controller.App"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true">
-    <Page title="{i18n>homePageTitle}">
-        <content>
-            <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.HelloPanel" />
-            <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.InvoiceList" />
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.walkthrough.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Page title="{i18n>homePageTitle}">
+    <content>
+      <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.HelloPanel" />
+      <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.InvoiceList" />
+    </content>
+  </Page>
 </mvc:View>
 ```
 &nbsp;
@@ -96,15 +96,15 @@ In the app view, we now remove everything and between the control aggregation `p
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.walkthrough.controller.App"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true">
-    <Shell>
-        <App
-            class="myAppDemoWT"
-            id="app"/>
-    </Shell>
+  controllerName="ui5.tutorial.walkthrough.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Shell>
+    <App
+      class="myAppDemoWT"
+      id="app"/>
+  </Shell>
 </mvc:View>
 ```
 
@@ -128,49 +128,49 @@ We add a new “routing" section to the `sap.ui5` part of the descriptor. There 
     
 ```json
 {
+  ...
+  "sap.ui5": {
     ...
-    "sap.ui5": {
-        ...
-        "resources": {
-            "css": [
-              {
-                "uri": "css/style.css"
-              }
-            ]
-        },          
-        "routing": {
-          "config": {
-            "routerClass": "sap.m.routing.Router",
-            "type": "View",
-            "viewType": "XML",
-            "path": "ui5.tutorial.walkthrough.view",
-            "controlId": "app",
-            "controlAggregation": "pages"
-          },
-          "routes": [
-            {
-              "pattern": "",
-              "name": "overview",
-              "target": "overview"
-            },
-            {
-              "pattern": "detail",
-              "name": "detail",
-              "target": "detail"
-            }
-          ],
-          "targets": {
-            "overview": {
-              "id": "overview",
-              "name": "Overview"
-            },
-            "detail": {
-              "id": "detail",
-              "name": "Detail"
-            }
-          }
+    "resources": {
+      "css": [
+        {
+        "uri": "css/style.css"
         }
+      ]
+    },          
+    "routing": {
+      "config": {
+      "routerClass": "sap.m.routing.Router",
+      "type": "View",
+      "viewType": "XML",
+      "path": "ui5.tutorial.walkthrough.view",
+      "controlId": "app",
+      "controlAggregation": "pages"
+      },
+      "routes": [
+      {
+        "pattern": "",
+        "name": "overview",
+        "target": "overview"
+      },
+      {
+        "pattern": "detail",
+        "name": "detail",
+        "target": "detail"
+      }
+      ],
+      "targets": {
+      "overview": {
+        "id": "overview",
+        "name": "Overview"
+      },
+      "detail": {
+        "id": "detail",
+        "name": "Detail"
+      }
+      }
     }
+  }
 }
 ```
 &nbsp;
@@ -193,58 +193,58 @@ import JSONModel from "sap/ui/model/json/JSONModel";
  * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
-    public static metadata = {
-        "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-        "manifest": "json"
-    };
-    init(): void {
-        // call the init function of the parent
-        super.init();
-        
-        // set data model
-        const data = {
-            recipient: {
-                name: "World"
-            }
-        };
-        const model = new JSONModel(data);
-        this.setModel(model);
+	public static metadata = {
+		"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+		"manifest": "json"
+	};
+	init(): void {
+		// call the init function of the parent
+		super.init();
+		
+		// set data model
+		const data = {
+			recipient: {
+				name: "World"
+			}
+		};
+		const model = new JSONModel(data);
+		this.setModel(model);
 
-        // create the views based on the url/hash
-        this.getRouter().initialize();
-    };
+		// create the views based on the url/hash
+		this.getRouter().initialize();
+	};
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"], function (UIComponent, JSONModel) {
-  "use strict";
+	"use strict";
 
-  const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
-    metadata: {
-      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-      "manifest": "json"
-    },
-    init() {
-      // call the init function of the parent
-      UIComponent.prototype.init.call(this);
+	const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
+		metadata: {
+			"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+			"manifest": "json"
+		},
+		init() {
+			// call the init function of the parent
+			UIComponent.prototype.init.call(this);
 
-      // set data model
-      const data = {
-        recipient: {
-          name: "World"
-        }
-      };
-      const model = new JSONModel(data);
-      this.setModel(model);
+			// set data model
+			const data = {
+				recipient: {
+					name: "World"
+				}
+			};
+			const model = new JSONModel(data);
+			this.setModel(model);
 
-      // create the views based on the url/hash
-      this.getRouter().initialize();
-    }
-  });
-  ;
-  return Component;
+			// create the views based on the url/hash
+			this.getRouter().initialize();
+		}
+	});
+	;
+	return Component;
 });
 
 ```
@@ -273,30 +273,30 @@ import UIComponent from "sap/ui/core/UIComponent";
  */
 export default class App extends Controller {
 	
-    //...
+	//...
 
-    onPress(): void {
-        const router = UIComponent.getRouterFor(this);
-        router.navTo("detail");
-    }    
+	onPress(): void {
+		const router = UIComponent.getRouterFor(this);
+		router.navTo("detail");
+	}    
 };
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/core/UIComponent"], function (Controller, JSONModel, Filter, FilterOperator, UIComponent) {
-  "use strict";
+	"use strict";
 
-  const App = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
-    
-    //...
+	const App = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		
+		//...
 
-    onPress() {
-      const router = UIComponent.getRouterFor(this);
-      router.navTo("detail");
-    }
-  });
-  ;
-  return App;
+		onPress() {
+			const router = UIComponent.getRouterFor(this);
+			router.navTo("detail");
+		}
+	});
+	;
+	return App;
 });
 
 ```
@@ -307,41 +307,41 @@ In the invoice list view we finally add the press event to the list item we just
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.walkthrough.controller.InvoiceList"
-    xmlns="sap.m"
-    xmlns:core="sap.ui.core"
-    xmlns:mvc="sap.ui.core.mvc">
-    ...
-        <items>
-            <ObjectListItem
-                core:require="{
-                    Currency: 'sap/ui/model/type/Currency'
-                }"
-                title="{invoice>Quantity} x {invoice>ProductName}"
-                number="{
-                    parts: [
-                        'invoice>ExtendedPrice',
-                        'view>/currency'
-                    ],
-                    type: 'Currency',
-                    formatOptions: {
-                        showMeasure: false
-                    }
-                }"
-                numberUnit="{view>/currency}"
-                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
-                type="Navigation"
-                press=".onPress">
-                <firstStatus>
-                    <ObjectStatus
-                        text="{
-                            path: 'invoice>Status',
-                            formatter: '.formatter.statusText'
-                        }"/>
-                </firstStatus>
-            </ObjectListItem>
-        </items>
-    </List>
+  controllerName="ui5.tutorial.walkthrough.controller.InvoiceList"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc">
+  ...
+    <items>
+      <ObjectListItem
+        core:require="{
+          Currency: 'sap/ui/model/type/Currency'
+        }"
+        title="{invoice>Quantity} x {invoice>ProductName}"
+        number="{
+          parts: [
+            'invoice>ExtendedPrice',
+            'view>/currency'
+          ],
+          type: 'Currency',
+          formatOptions: {
+            showMeasure: false
+          }
+        }"
+        numberUnit="{view>/currency}"
+        numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+        type="Navigation"
+        press=".onPress">
+        <firstStatus>
+          <ObjectStatus
+            text="{
+              path: 'invoice>Status',
+              formatter: '.formatter.statusText'
+            }"/>
+        </firstStatus>
+      </ObjectListItem>
+    </items>
+  </List>
 </mvc:View>
 ```
 &nbsp;

@@ -46,49 +46,49 @@ We introduced a typo in the binding of the number attribute to simulate a freque
    xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
    <List
-      id="invoiceList"
-      class="sapUiResponsiveMargin"
-      width="auto"
-      items="{
-         path : 'invoice>/Invoices',
-         sorter : {
-				path : 'ShipperName',
-				group : true
+    id="invoiceList"
+    class="sapUiResponsiveMargin"
+    width="auto"
+    items="{
+     path : 'invoice>/Invoices',
+     sorter : {
+  path : 'ShipperName',
+  group : true
 			}
-      }" >
-      <headerToolbar>
-         <Toolbar>
-            <Title text="{i18n>invoiceListTitle}"/>
-            <ToolbarSpacer/>
-            <SearchField width="50%" search=".onFilterInvoices"/>
-         </Toolbar>
-      </headerToolbar>      
-      <items>
-         <ObjectListItem
-            core:require="{
-               Currency: 'sap/ui/model/type/Currency'
-            }"
-            title="{invoice>Quantity} x {invoice>ProductName}"
-            number="{
-                parts: [
-                    'invoice>ExTendedPrice',
-                    'view>/currency'
-                ],
-                type: 'Currency',
-                formatOptions: {
-                    showMeasure: false
-                }
-            }"
-            numberUnit="{view>/currency}"
-            numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
-            <firstStatus>
-                <ObjectStatus text="{
-                    path: 'invoice>Status',
-                    formatter: '.formatter.statusText'
-                }"/>
-            </firstStatus>
-        </ObjectListItem>
-      </items>
+    }" >
+    <headerToolbar>
+     <Toolbar>
+      <Title text="{i18n>invoiceListTitle}"/>
+      <ToolbarSpacer/>
+      <SearchField width="50%" search=".onFilterInvoices"/>
+     </Toolbar>
+    </headerToolbar>      
+    <items>
+     <ObjectListItem
+      core:require="{
+         Currency: 'sap/ui/model/type/Currency'
+      }"
+      title="{invoice>Quantity} x {invoice>ProductName}"
+      number="{
+        parts: [
+          'invoice>ExTendedPrice',
+          'view>/currency'
+        ],
+        type: 'Currency',
+        formatOptions: {
+          showMeasure: false
+        }
+      }"
+      numberUnit="{view>/currency}"
+      numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }">
+      <firstStatus>
+        <ObjectStatus text="{
+          path: 'invoice>Status',
+          formatter: '.formatter.statusText'
+        }"/>
+      </firstStatus>
+    </ObjectListItem>
+    </items>
    </List>
 </mvc:View>
 

@@ -45,23 +45,23 @@ You can view this step live: [🔗 Live Preview of Step 4](https://ui5.github.io
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.NotFound"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:core="sap.ui.core"
-    core:require="{
-        IllustratedMessageType: 'sap/m/IllustratedMessageType'
-    }">
-    <Page
-        title="{i18n>NotFound}"
-        titleAlignment="Center"
-        showNavButton="true"
-        navButtonPress=".onNavBack">
-        <IllustratedMessage
-            title="{i18n>NotFound.text}"
-            description="{i18n>NotFound.description}"
-            illustrationType="{= IllustratedMessageType.PageNotFound}"/>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.NotFound"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  core:require="{
+    IllustratedMessageType: 'sap/m/IllustratedMessageType'
+  }">
+  <Page
+    title="{i18n>NotFound}"
+    titleAlignment="Center"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+    <IllustratedMessage
+      title="{i18n>NotFound.text}"
+      description="{i18n>NotFound.description}"
+      illustrationType="{= IllustratedMessageType.PageNotFound}"/>
+  </Page>
 </mvc:View>
 ```
 
@@ -80,42 +80,42 @@ import UIComponent from "sap/ui/core/UIComponent";
  */
 export default class BaseController extends Controller {
 
-    public getRouter(): Router {
-        return UIComponent.getRouterFor(this);
-    }
+	public getRouter(): Router {
+		return UIComponent.getRouterFor(this);
+	}
 
-    public onNavBack(): void {
-        const history = History.getInstance();
-        const previousHash = history.getPreviousHash();
+	public onNavBack(): void {
+		const history = History.getInstance();
+		const previousHash = history.getPreviousHash();
 
-        if (previousHash !== undefined) {
-            window.history.go(-1);
-        } else {
-            this.getRouter().navTo("appHome", {}, true /*no history*/);
-        }
-    }
+		if (previousHash !== undefined) {
+			window.history.go(-1);
+		} else {
+			this.getRouter().navTo("appHome", {}, true /*no history*/);
+		}
+	}
 }
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/ui/core/UIComponent"], function (Controller, History, UIComponent) {
-  "use strict";
+	"use strict";
 
-  const BaseController = Controller.extend("ui5.tutorial.navigation.controller.BaseController", {
-    getRouter() {
-      return UIComponent.getRouterFor(this);
-    },
-    onNavBack() {
-      const history = History.getInstance();
-      const previousHash = history.getPreviousHash();
-      if (previousHash !== undefined) {
-        window.history.go(-1);
-      } else {
-        this.getRouter().navTo("appHome", {}, true /*no history*/);
-      }
-    }
-  });
-  return BaseController;
+	const BaseController = Controller.extend("ui5.tutorial.navigation.controller.BaseController", {
+		getRouter() {
+			return UIComponent.getRouterFor(this);
+		},
+		onNavBack() {
+			const history = History.getInstance();
+			const previousHash = history.getPreviousHash();
+			if (previousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				this.getRouter().navTo("appHome", {}, true /*no history*/);
+			}
+		}
+	});
+	return BaseController;
 });
 ```
 
@@ -138,20 +138,20 @@ import BaseController from "ui5/tutorial/navigation/controller/BaseController";
  */
 export default class NotFound extends BaseController {
 
-    public onInit(): void {
+	public onInit(): void {
 
-    }
+	}
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const NotFound = BaseController.extend("ui5.tutorial.navigation.controller.NotFound", {
-    onInit() {}
-  });
-  return NotFound;
+	const NotFound = BaseController.extend("ui5.tutorial.navigation.controller.NotFound", {
+		onInit() {}
+	});
+	return NotFound;
 });
 ```
 
@@ -169,20 +169,20 @@ import BaseController from "ui5/tutorial/navigation/controller/BaseController";
  */
 export default class App extends BaseController {
 
-    public onInit(): void {
+	public onInit(): void {
 
-    }
+	}
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const App = BaseController.extend("ui5.tutorial.navigation.controller.App", {
-    onInit() {}
-  });
-  return App;
+	const App = BaseController.extend("ui5.tutorial.navigation.controller.App", {
+		onInit() {}
+	});
+	return App;
 });
 ```
 
@@ -203,10 +203,10 @@ export default class Home extends BaseController {
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const Home = BaseController.extend("ui5.tutorial.navigation.controller.Home", {});
-  return Home;
+	const Home = BaseController.extend("ui5.tutorial.navigation.controller.Home", {});
+	return Home;
 });
 ```
 

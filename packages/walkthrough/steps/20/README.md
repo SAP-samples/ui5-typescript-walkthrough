@@ -44,31 +44,31 @@ import JSONModel from "sap/ui/model/json/JSONModel";
  * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
-    
-    onInit(): void {
-        const viewModel = new JSONModel({
-            currency: "EUR"
-        });
-        this.getView()?.setModel(viewModel, "view");        
-    } 
+	
+	onInit(): void {
+		const viewModel = new JSONModel({
+			currency: "EUR"
+		});
+		this.getView()?.setModel(viewModel, "view");        
+	} 
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"], function (Controller, JSONModel) {
-  "use strict";
+	"use strict";
 
-  const App = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
-    onInit() {
-      const viewModel = new JSONModel({
-        currency: "EUR"
-      });
-      this.getView()?.setModel(viewModel, "view");
-    }
-  });
-  ;
-  return App;
+	const App = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		onInit() {
+			const viewModel = new JSONModel({
+				currency: "EUR"
+			});
+			this.getView()?.setModel(viewModel, "view");
+		}
+	});
+	;
+	return App;
 });
 
 ```

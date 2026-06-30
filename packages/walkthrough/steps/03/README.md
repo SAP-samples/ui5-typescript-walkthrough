@@ -73,17 +73,17 @@ To place the text control to our HTML document, we chain the constructor call of
 import Text from "sap/m/Text";
 
 new Text({
-    text: "Hello World"
+	text: "Hello World"
 }).placeAt("content");
 ```
 
 ```js
 sap.ui.define(["sap/m/Text"], function (Text) {
-  "use strict";
+	"use strict";
 
-  new Text({
-    text: "Hello World"
-  }).placeAt("content");
+	new Text({
+		text: "Hello World"
+	}).placeAt("content");
 });
 ```
 

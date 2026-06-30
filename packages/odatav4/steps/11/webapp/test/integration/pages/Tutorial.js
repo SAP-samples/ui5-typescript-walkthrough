@@ -8,7 +8,7 @@ sap.ui.define([
 ], function (Opa5, AggregationLengthEquals, PropertyStrictEquals, BindingPath, Press, EnterText) {
 	"use strict";
 
-	var sViewName = "App",
+	var view = "App",
 		sTableId = "peopleList";
 
 	function getListBinding(oTable) {
@@ -26,7 +26,7 @@ sap.ui.define([
 					// Press action hits the "more" trigger on a table
 					return this.waitFor({
 						id : sTableId,
-						viewName : sViewName,
+						viewName : view,
 						actions : new Press(),
 						errorMessage : "Table not found or it does not have a 'See More' trigger"
 					});
@@ -35,7 +35,7 @@ sap.ui.define([
 				iPressOnSort : function () {
 					return this.waitFor({
 						id : "sortUsersButton",
-						viewName : sViewName,
+						viewName : view,
 						actions : new Press(),
 						errorMessage : "Could not find the 'Sort' button"
 					});
@@ -44,7 +44,7 @@ sap.ui.define([
 				iPressOnAdd : function () {
 					return this.waitFor({
 						id : "addUserButton",
-						viewName : sViewName,
+						viewName : view,
 						actions : new Press(),
 						errorMessage : "Could not find the 'Add' button"
 					});
@@ -53,7 +53,7 @@ sap.ui.define([
 				iPressOnDelete : function () {
 					return this.waitFor({
 						id : "deleteUserButton",
-						viewName : sViewName,
+						viewName : view,
 						actions : new Press(),
 						errorMessage : "Could not find the 'Delete' button"
 					});
@@ -62,7 +62,7 @@ sap.ui.define([
 				iPressOnSave : function () {
 					return this.waitFor({
 						id : "saveButton",
-						viewName : sViewName,
+						viewName : view,
 						actions : new Press(),
 						errorMessage : "Could not find the 'Save' button"
 					});
@@ -71,7 +71,7 @@ sap.ui.define([
 				iPressOnCancel : function () {
 					return this.waitFor({
 						id : "doneButton",
-						viewName : sViewName,
+						viewName : view,
 						actions : new Press(),
 						errorMessage : "Could not find the 'Cancel' button"
 					});
@@ -80,7 +80,7 @@ sap.ui.define([
 				iEnterSomeData : function (sValue) {
 					return this.waitFor({
 						controlType : "sap.m.Input",
-						viewName : sViewName,
+						viewName : view,
 						matchers : [
 							// Find the input fields for the new entry
 							function (oControl) {
@@ -101,7 +101,7 @@ sap.ui.define([
 				iSearchFor : function (sSearchString) {
 					return this.waitFor({
 						id : "searchField",
-						viewName : sViewName,
+						viewName : view,
 						actions : new EnterText({
 							text : sSearchString
 						}),
@@ -112,7 +112,7 @@ sap.ui.define([
 				iSelectUser : function (sKey) {
 					return this.waitFor({
 						controlType : "sap.m.ColumnListItem",
-						viewName : sViewName,
+						viewName : view,
 						matchers : new BindingPath({
 							path : "/People('" + sKey + "')"
 						}),
@@ -126,7 +126,7 @@ sap.ui.define([
 				iChangeAUserKey : function (sOldKey, sNewKey) {
 					return this.waitFor({
 						controlType : "sap.m.Input",
-						viewName : sViewName,
+						viewName : view,
 						matchers : new PropertyStrictEquals({
 							name : "value",
 							value : sOldKey
@@ -158,7 +158,7 @@ sap.ui.define([
 					return this.waitFor({
 						controlType : "sap.m.Table",
 						id : sTableId,
-						viewName : sViewName,
+						viewName : view,
 						actions : function (oTable) {
 							oTable.fireSelectionChange({listItem : oTable.getSelectedItem()});
 						},
@@ -170,7 +170,7 @@ sap.ui.define([
 				theTableShouldHavePagination : function () {
 					return this.waitFor({
 						id : sTableId,
-						viewName : sViewName,
+						viewName : view,
 						matchers : new PropertyStrictEquals({
 							name : "growing",
 							value : true
@@ -185,7 +185,7 @@ sap.ui.define([
 				theTableShouldShowUsers : function (iNumber) {
 					return this.waitFor({
 						id : sTableId,
-						viewName : sViewName,
+						viewName : view,
 						matchers : new AggregationLengthEquals({
 							name : "items",
 							length : iNumber
@@ -202,11 +202,11 @@ sap.ui.define([
 				theTableShouldShowTotalUsers : function (iNumber) {
 					return this.waitFor({
 						id : sTableId,
-						viewName : sViewName,
+						viewName : view,
 						matchers : function (oTable) {
-							var oListBinding = getListBinding(oTable);
+							var listBinding = getListBinding(oTable);
 
-							return oListBinding && oListBinding.getLength() === iNumber;
+							return listBinding && listBinding.getLength() === iNumber;
 						},
 						success : function () {
 							Opa5.assert.ok(true, "The table shows a total of " + iNumber
@@ -220,7 +220,7 @@ sap.ui.define([
 				theTableShouldStartWith : function (sLastName) {
 					return this.waitFor({
 						id : sTableId,
-						viewName : sViewName,
+						viewName : view,
 						matchers : function (oTable) {
 							var oFirstItem = getFirstTableEntry(oTable);
 
@@ -238,7 +238,7 @@ sap.ui.define([
 
 					return this.waitFor({
 						controlType : "sap.m.Toolbar",
-						viewName : sViewName,
+						viewName : view,
 						visible : false,
 						matchers : new PropertyStrictEquals({
 							name : "visible",
@@ -256,7 +256,7 @@ sap.ui.define([
 
 					return this.waitFor({
 						id : /searchField$|refreshUsersButton$|sortUsersButton$/,
-						viewName : sViewName,
+						viewName : view,
 						autoWait : false, // Needed because we want to find disabled controls, too
 						matchers : new PropertyStrictEquals({
 							name : "enabled",
@@ -279,7 +279,7 @@ sap.ui.define([
 					return this.waitFor({
 						autoWait : false,
 						id : sTableId,
-						viewName : sViewName,
+						viewName : view,
 						check : function (oControl) {
 							// Locate the message toast using its CSS class name and content
 							var sText = oControl.getModel("i18n").getResourceBundle()
@@ -312,7 +312,7 @@ sap.ui.define([
 
 					return this.waitFor({
 						controlType : "sap.f.semantic.SemanticPage",
-						viewName : sViewName,
+						viewName : view,
 						visible : false,
 						matchers : new PropertyStrictEquals({
 							name : "visible",

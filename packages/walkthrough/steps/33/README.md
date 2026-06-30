@@ -121,18 +121,18 @@ export default class ProductRating extends Control {
 
 ```js
 sap.ui.define(["sap/ui/core/Control"], function (Control) {
-  "use strict";
+	"use strict";
 
-  const ProductRating = Control.extend("ui5.tutorial.walkthrough.control.ProductRating", {
-    renderer: {
-      apiVersion: 4,
-      render: (rm, control) => { }
-    },
-    metadata: {},
-    init() {},
-  });
-  ;
-  return ProductRating;
+	const ProductRating = Control.extend("ui5.tutorial.walkthrough.control.ProductRating", {
+		renderer: {
+			apiVersion: 4,
+			render: (rm, control) => { }
+		},
+		metadata: {},
+		init() {},
+	});
+	;
+	return ProductRating;
 });
 
 ```
@@ -306,106 +306,106 @@ export default class ProductRating extends Control {
 
 ```js
 sap.ui.define(["sap/ui/core/Control", "sap/m/Label", "sap/m/Button", "sap/m/RatingIndicator"], function (Control, Label, Button, RatingIndicator) {
-  "use strict";
+	"use strict";
 
-  const ProductRating = Control.extend("ui5.tutorial.walkthrough.control.ProductRating", {
-    renderer: {
-      apiVersion: 4,
-      render: (rm, control) => {
-        const tooltip = control.getTooltip_AsString();
-        rm.openStart("div", control);
-        rm.class("myAppDemoWTProductRating");
-        if (tooltip) {
-          rm.attr("title", tooltip);
-        }
-        rm.openEnd();
-        rm.renderControl(control.getAggregation("_rating"));
-        rm.renderControl(control.getAggregation("_label"));
-        rm.renderControl(control.getAggregation("_button"));
-        rm.close("div");
-      }
-    },
-    metadata: {
-      properties: {
-        value: {
-          type: "float",
-          defaultValue: 0
-        }
-      },
-      aggregations: {
-        _rating: {
-          type: "sap.m.RatingIndicator",
-          multiple: false,
-          visibility: "hidden"
-        },
-        _label: {
-          type: "sap.m.Label",
-          multiple: false,
-          visibility: "hidden"
-        },
-        _button: {
-          type: "sap.m.Button",
-          multiple: false,
-          visibility: "hidden"
-        }
-      },
-      events: {
-        change: {
-          parameters: {
-            "value": "float"
-          }
-        }
-      }
-    },
-    constructor(id, settings) {
-      Control.prototype.constructor.call(this, id, settings);
-    },
-    init() {
-      this.setAggregation("_rating", new RatingIndicator({
-        value: this.getValue(),
-        iconSize: "2rem",
-        liveChange: this._onRate.bind(this)
-      }));
-      this.setAggregation("_label", new Label({
-        text: "{i18n>productRatingLabelInitial}"
-      }).addStyleClass("sapUiSmallMargin"));
-      this.setAggregation("_button", new Button({
-        text: "{i18n>productRatingButton}",
-        press: this._onSubmit.bind(this)
-      }).addStyleClass("sapUiTinyMarginTopBottom"));
-    },
-    setValue(value) {
-      this.setProperty("value", value, true);
-      this.getAggregation("_rating").setValue(value);
-      return this;
-    },
-    reset() {
-      const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
-      this.setValue(0);
-      this.getAggregation("_label").setDesign("Standard");
-      this.getAggregation("_rating").setEnabled(true);
-      this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelInitial"));
-      this.getAggregation("_button").setEnabled(true);
-    },
-    _onRate(event) {
-      const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
-      const value = event.getParameter("value");
-      this.setProperty("value", value, true);
-      this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelIndicator", [value, event.getSource().getMaxValue()]));
-      this.getAggregation("_label").setDesign("Bold");
-    },
-    _onSubmit(event) {
-      const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
-      this.getAggregation("_rating").setEnabled(false);
-      this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelFinal"));
-      this.getAggregation("_button").setEnabled(false);
-      this.fireEvent("change", {
-        value: this.getValue()
-      });
-    }
-  });
-  ;
-  return ProductRating;
+	const ProductRating = Control.extend("ui5.tutorial.walkthrough.control.ProductRating", {
+		renderer: {
+			apiVersion: 4,
+			render: (rm, control) => {
+				const tooltip = control.getTooltip_AsString();
+				rm.openStart("div", control);
+				rm.class("myAppDemoWTProductRating");
+				if (tooltip) {
+					rm.attr("title", tooltip);
+				}
+				rm.openEnd();
+				rm.renderControl(control.getAggregation("_rating"));
+				rm.renderControl(control.getAggregation("_label"));
+				rm.renderControl(control.getAggregation("_button"));
+				rm.close("div");
+			}
+		},
+		metadata: {
+			properties: {
+				value: {
+					type: "float",
+					defaultValue: 0
+				}
+			},
+			aggregations: {
+				_rating: {
+					type: "sap.m.RatingIndicator",
+					multiple: false,
+					visibility: "hidden"
+				},
+				_label: {
+					type: "sap.m.Label",
+					multiple: false,
+					visibility: "hidden"
+				},
+				_button: {
+					type: "sap.m.Button",
+					multiple: false,
+					visibility: "hidden"
+				}
+			},
+			events: {
+				change: {
+					parameters: {
+						"value": "float"
+					}
+				}
+			}
+		},
+		constructor(id, settings) {
+			Control.prototype.constructor.call(this, id, settings);
+		},
+		init() {
+			this.setAggregation("_rating", new RatingIndicator({
+				value: this.getValue(),
+				iconSize: "2rem",
+				liveChange: this._onRate.bind(this)
+			}));
+			this.setAggregation("_label", new Label({
+				text: "{i18n>productRatingLabelInitial}"
+			}).addStyleClass("sapUiSmallMargin"));
+			this.setAggregation("_button", new Button({
+				text: "{i18n>productRatingButton}",
+				press: this._onSubmit.bind(this)
+			}).addStyleClass("sapUiTinyMarginTopBottom"));
+		},
+		setValue(value) {
+			this.setProperty("value", value, true);
+			this.getAggregation("_rating").setValue(value);
+			return this;
+		},
+		reset() {
+			const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
+			this.setValue(0);
+			this.getAggregation("_label").setDesign("Standard");
+			this.getAggregation("_rating").setEnabled(true);
+			this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelInitial"));
+			this.getAggregation("_button").setEnabled(true);
+		},
+		_onRate(event) {
+			const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
+			const value = event.getParameter("value");
+			this.setProperty("value", value, true);
+			this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelIndicator", [value, event.getSource().getMaxValue()]));
+			this.getAggregation("_label").setDesign("Bold");
+		},
+		_onSubmit(event) {
+			const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
+			this.getAggregation("_rating").setEnabled(false);
+			this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelFinal"));
+			this.getAggregation("_button").setEnabled(false);
+			this.fireEvent("change", {
+				value: this.getValue()
+			});
+		}
+	});
+	;
+	return ProductRating;
 });
 
 ```
@@ -452,75 +452,75 @@ import UIComponent from "sap/ui/core/UIComponent";
  */
 export default class Detail extends Controller {
 
-    onInit(): void {
-        const router = UIComponent.getRouterFor(this);
-        (router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
-    }
+	onInit(): void {
+		const router = UIComponent.getRouterFor(this);
+		(router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
+	}
 
-    onObjectMatched(event: Route$PatternMatchedEvent): void {
-    
-        (this.byId("rating") as ProductRating).reset();
-        this.getView()?.bindElement({
-            path: "/" + window.decodeURIComponent((event.getParameter("arguments") as any).invoicePath),
-            model: "invoice"
-        });
-    }
+	onObjectMatched(event: Route$PatternMatchedEvent): void {
+	
+		(this.byId("rating") as ProductRating).reset();
+		this.getView()?.bindElement({
+			path: "/" + window.decodeURIComponent((event.getParameter("arguments") as any).invoicePath),
+			model: "invoice"
+		});
+	}
 
-    onNavBack(): void {
-        const history = History.getInstance();
-        const previousHash = history.getPreviousHash();
+	onNavBack(): void {
+		const history = History.getInstance();
+		const previousHash = history.getPreviousHash();
 
-        if (previousHash !== undefined) {
-            window.history.go(-1);
-        } else {
-            const router = UIComponent.getRouterFor(this);
-            router.navTo("overview", {}, true);
-        }
-    }    
-    
-    onRatingChange(event: ProductRating$ChangeEvent): void {
-        const value = event.getParameter("value");
-        const resourceBundle = (this?.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+		if (previousHash !== undefined) {
+			window.history.go(-1);
+		} else {
+			const router = UIComponent.getRouterFor(this);
+			router.navTo("overview", {}, true);
+		}
+	}    
+	
+	onRatingChange(event: ProductRating$ChangeEvent): void {
+		const value = event.getParameter("value");
+		const resourceBundle = (this?.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
 
-        MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]) as string);
-    }    
+		MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]) as string);
+	}    
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/m/MessageToast", "sap/ui/core/UIComponent"], function (Controller, History, MessageToast, UIComponent) {
-  "use strict";
+	"use strict";
 
-  const Detail = Controller.extend("ui5.tutorial.walkthrough.controller.Detail", {
-    onInit() {
-      const router = UIComponent.getRouterFor(this);
-      router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
-    },
-    onObjectMatched(event) {
-      this.byId("rating").reset();
-      this.getView().bindElement({
-        path: "/" + window.decodeURIComponent(event.getParameter("arguments").invoicePath),
-        model: "invoice"
-      });
-    },
-    onNavBack() {
-      const history = History.getInstance();
-      const previousHash = history.getPreviousHash();
-      if (previousHash !== undefined) {
-        window.history.go(-1);
-      } else {
-        const router = UIComponent.getRouterFor(this);
-        router.navTo("overview", {}, true);
-      }
-    },
-    onRatingChange(event) {
-      const value = event.getParameter("value");
-      const resourceBundle = this?.getView().getModel("i18n")?.getResourceBundle();
-      MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]));
-    }
-  });
-  return Detail;
+	const Detail = Controller.extend("ui5.tutorial.walkthrough.controller.Detail", {
+		onInit() {
+			const router = UIComponent.getRouterFor(this);
+			router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
+		},
+		onObjectMatched(event) {
+			this.byId("rating").reset();
+			this.getView().bindElement({
+				path: "/" + window.decodeURIComponent(event.getParameter("arguments").invoicePath),
+				model: "invoice"
+			});
+		},
+		onNavBack() {
+			const history = History.getInstance();
+			const previousHash = history.getPreviousHash();
+			if (previousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				const router = UIComponent.getRouterFor(this);
+				router.navTo("overview", {}, true);
+			}
+		},
+		onRatingChange(event) {
+			const value = event.getParameter("value");
+			const resourceBundle = this?.getView().getModel("i18n")?.getResourceBundle();
+			MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]));
+		}
+	});
+	return Detail;
 });
 
 ```
@@ -531,23 +531,23 @@ All we need now is to add our new control to the detail view. To do so we must a
 
 ```xml
 <mvc:View
-	controllerName="ui5.tutorial.walkthrough.controller.Detail"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:wt="ui5.tutorial.walkthrough.control">
-	<Page
-		title="{i18n>detailPageTitle}"
-		showNavButton="true"
-		navButtonPress=".onNavBack">
-		<ObjectHeader
-			intro="{invoice>ShipperName}"
-			title="{invoice>ProductName}"/>
-		<wt:ProductRating 
-			id="rating"
-			tooltip="{invoice>ProductName}"
-			class="sapUiSmallMarginBeginEnd" 
-			change=".onRatingChange"/>
-	</Page>
+  controllerName="ui5.tutorial.walkthrough.controller.Detail"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:wt="ui5.tutorial.walkthrough.control">
+  <Page
+    title="{i18n>detailPageTitle}"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+    <ObjectHeader
+      intro="{invoice>ShipperName}"
+      title="{invoice>ProductName}"/>
+    <wt:ProductRating 
+      id="rating"
+      tooltip="{invoice>ProductName}"
+      class="sapUiSmallMarginBeginEnd" 
+      change=".onRatingChange"/>
+  </Page>
 </mvc:View>
 ```
 &nbsp;

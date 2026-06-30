@@ -13,7 +13,9 @@
       "ui5/tutorial/quickstart/*": [
         "./webapp/*"
       ]
-    }
+    },
+    "strict": false,
+    "strictNullChecks": false
   },
   "include": [
     "./webapp/**/*"

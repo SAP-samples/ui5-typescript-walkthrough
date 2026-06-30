@@ -22,17 +22,17 @@ You can view this step live: [🔗 Live Preview of Step 5](https://ui5.github.io
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.Home"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page
-        title="{i18n>homePageTitle}"
-        titleAlignment="Center"
-        class="sapUiResponsiveContentPadding">
-        <content>
-            <Button id="displayNotFoundBtn" text="{i18n>DisplayNotFound}" press=".onDisplayNotFound" class="sapUiTinyMarginEnd"/>
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.Home"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    title="{i18n>homePageTitle}"
+    titleAlignment="Center"
+    class="sapUiResponsiveContentPadding">
+    <content>
+      <Button id="displayNotFoundBtn" text="{i18n>DisplayNotFound}" press=".onDisplayNotFound" class="sapUiTinyMarginEnd"/>
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -48,26 +48,26 @@ import BaseController from "ui5/tutorial/navigation/controller/BaseController";
  */
 export default class Home extends BaseController {
 
-    public onDisplayNotFound(): void {
-        // display the "notFound" target without changing the hash
-        this.getRouter().getTargets().display("notFound");
-    }
+	public onDisplayNotFound(): void {
+		// display the "notFound" target without changing the hash
+		this.getRouter().getTargets().display("notFound");
+	}
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const Home = BaseController.extend("ui5.tutorial.navigation.controller.Home", {
-    onDisplayNotFound() {
-      // display the "notFound" target without changing the hash
-      this.getRouter().getTargets().display("notFound", {
-        fromTarget: "home"
-      });
-    }
-  });
-  return Home;
+	const Home = BaseController.extend("ui5.tutorial.navigation.controller.Home", {
+		onDisplayNotFound() {
+			// display the "notFound" target without changing the hash
+			this.getRouter().getTargets().display("notFound", {
+				fromTarget: "home"
+			});
+		}
+	});
+	return Home;
 });
 ```
 
@@ -92,28 +92,28 @@ import BaseController from "ui5/tutorial/navigation/controller/BaseController";
  */
 export default class Home extends BaseController {
 
-    public onDisplayNotFound(): void {
-        // display the "notFound" target without changing the hash
-        this.getRouter().getTargets().display("notFound", {
-            fromTarget: "home"
-        });
-    }
+	public onDisplayNotFound(): void {
+		// display the "notFound" target without changing the hash
+		this.getRouter().getTargets().display("notFound", {
+			fromTarget: "home"
+		});
+	}
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const Home = BaseController.extend("ui5.tutorial.navigation.controller.Home", {
-    onDisplayNotFound() {
-      // display the "notFound" target without changing the hash
-      this.getRouter().getTargets().display("notFound", {
-        fromTarget: "home"
-      });
-    }
-  });
-  return Home;
+	const Home = BaseController.extend("ui5.tutorial.navigation.controller.Home", {
+		onDisplayNotFound() {
+			// display the "notFound" target without changing the hash
+			this.getRouter().getTargets().display("notFound", {
+				fromTarget: "home"
+			});
+		}
+	});
+	return Home;
 });
 ```
 
@@ -130,60 +130,60 @@ import Target, { Target$DisplayEvent } from "sap/ui/core/routing/Target";
  */
 export default class NotFound extends BaseController {
 
-    private data: any;
+	private data: any;
 
-    public onInit(): void {
-        const router = this.getRouter();
-        const target = (<Target> router.getTarget("notFound"));
+	public onInit(): void {
+		const router = this.getRouter();
+		const target = (<Target> router.getTarget("notFound"));
 
-        target.attachDisplay((event: Target$DisplayEvent) => {
-            this.data = event.getParameter("data"); // store the data
-        }, this);
-    }
+		target.attachDisplay((event: Target$DisplayEvent) => {
+			this.data = event.getParameter("data"); // store the data
+		}, this);
+	}
 
-    // override the parent's onNavBack (inherited from BaseController)
-    public onNavBack(): void {
+	// override the parent's onNavBack (inherited from BaseController)
+	public onNavBack(): void {
 
-        // in some cases we could display a certain target when the back button is pressed
-        if (this.data?.fromTarget) {
-            this.getRouter().getTargets().display(this.data.fromTarget);
-            delete this.data.fromTarget;
+		// in some cases we could display a certain target when the back button is pressed
+		if (this.data?.fromTarget) {
+			this.getRouter().getTargets().display(this.data.fromTarget);
+			delete this.data.fromTarget;
 
-            return;
-        }
+			return;
+		}
 
-        // call the parent's onNavBack
-        super.onNavBack();
-    }
+		// call the parent's onNavBack
+		super.onNavBack();
+	}
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const NotFound = BaseController.extend("ui5.tutorial.navigation.controller.NotFound", {
-    onInit() {
-      const router = this.getRouter();
-      const target = router.getTarget("notFound");
-      target.attachDisplay(event => {
-        this.data = event.getParameter("data"); // store the data
-      }, this);
-    },
-    // override the parent's onNavBack (inherited from BaseController)
-    onNavBack() {
-      // in some cases we could display a certain target when the back button is pressed
-      if (this.data?.fromTarget) {
-        this.getRouter().getTargets().display(this.data.fromTarget);
-        delete this.data.fromTarget;
-        return;
-      }
+	const NotFound = BaseController.extend("ui5.tutorial.navigation.controller.NotFound", {
+		onInit() {
+			const router = this.getRouter();
+			const target = router.getTarget("notFound");
+			target.attachDisplay(event => {
+				this.data = event.getParameter("data"); // store the data
+			}, this);
+		},
+		// override the parent's onNavBack (inherited from BaseController)
+		onNavBack() {
+			// in some cases we could display a certain target when the back button is pressed
+			if (this.data?.fromTarget) {
+				this.getRouter().getTargets().display(this.data.fromTarget);
+				delete this.data.fromTarget;
+				return;
+			}
 
-      // call the parent's onNavBack
-      BaseController.prototype.onNavBack.call(this);
-    }
-  });
-  return NotFound;
+			// call the parent's onNavBack
+			BaseController.prototype.onNavBack.call(this);
+		}
+	});
+	return NotFound;
 });
 ```
 

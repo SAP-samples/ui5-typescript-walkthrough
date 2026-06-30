@@ -42,50 +42,50 @@ webapp/
 
 ```json
 {
-    "_version": "1.12.0",
-    "sap.app": {
-        ...
-    },
-    "sap.ui": {
-        ...
-    },
-    "sap.ui5": {
+  "_version": "1.12.0",
+  "sap.app": {
+    ...
+  },
+  "sap.ui": {
+    ...
+  },
+  "sap.ui5": {
 
-        "rootView": {
-            "viewName": "ui5.tutorial.navigation.view.App",
-            "type": "XML",
-            "id": "app"
-        },
-        "dependencies": {
-            ...
-        },
-        "models": {
-            ...
-        },
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "type": "View",
-                "viewType": "XML",
-                "path": "ui5.tutorial.navigation.view",
-                "controlId": "app",
-                "controlAggregation": "pages",
-                "transition": "slide"
-            },
-            "routes": [{
-                "pattern": "",
-                "name": "appHome",
-                "target": "home"
-            }],
-            "targets": {
-                "home": {
-                    "id": "home",
-                    "name": "Home",
-                    "level": 1
-                }
-            }
+    "rootView": {
+      "viewName": "ui5.tutorial.navigation.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "dependencies": {
+      ...
+    },
+    "models": {
+      ...
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5.tutorial.navigation.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide"
+      },
+      "routes": [{
+        "pattern": "",
+        "name": "appHome",
+        "target": "home"
+      }],
+      "targets": {
+        "home": {
+          "id": "home",
+          "name": "Home",
+          "level": 1
         }
+      }
     }
+  }
 }
 
 ```
@@ -122,36 +122,36 @@ import UIComponent from "sap/ui/core/UIComponent";
  */
 export default class Component extends UIComponent {
 
-    public static metadata = {
-        manifest: "json"
-    };
+	public static metadata = {
+		manifest: "json"
+	};
 
-    public init(): void {
-        super.init();
+	public init(): void {
+		super.init();
 
-        // create the views based on the url/hash
-        this.getRouter().initialize();
-    }
+		// create the views based on the url/hash
+		this.getRouter().initialize();
+	}
 }
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/UIComponent"], function (UIComponent) {
-  "use strict";
+	"use strict";
 
-  const Component = UIComponent.extend("ui5.tutorial.navigation.Component", {
-    metadata: {
-      interfaces: ["sap.ui.core.IAsyncContentCreation"],
-      manifest: "json"
-    },
-    init: function _init() {
-      UIComponent.prototype.init.call(this);
+	const Component = UIComponent.extend("ui5.tutorial.navigation.Component", {
+		metadata: {
+			interfaces: ["sap.ui.core.IAsyncContentCreation"],
+			manifest: "json"
+		},
+		init: function _init() {
+			UIComponent.prototype.init.call(this);
 
-      // create the views based on the url/hash
-      this.getRouter().initialize();
-    }
-  });
-  return Component;
+			// create the views based on the url/hash
+			this.getRouter().initialize();
+		}
+	});
+	return Component;
 });
 ```
 
@@ -161,13 +161,13 @@ We override the `init` function and call the parent’s `init` function first. W
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.App"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true">
-    <Shell>
-        <App id="app"/>
-    </Shell>
+  controllerName="ui5.tutorial.navigation.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Shell>
+    <App id="app"/>
+  </Shell>
 </mvc:View>
 
 ```
@@ -178,17 +178,17 @@ In the `App` view, we remove the content of `App` control. The pages will be add
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.Home"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page
-        title="{i18n>homePageTitle}"
-        titleAlignment="Center"
-        class="sapUiResponsiveContentPadding">
-        <content>
-            <Button text="{i18n>iWantToNavigate}" class="sapUiTinyMarginEnd"/>
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.Home"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    title="{i18n>homePageTitle}"
+    titleAlignment="Center"
+    class="sapUiResponsiveContentPadding">
+    <content>
+      <Button text="{i18n>iWantToNavigate}" class="sapUiTinyMarginEnd"/>
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -209,10 +209,10 @@ export default class Home extends Controller {
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
-  "use strict";
+	"use strict";
 
-  const Home = Controller.extend("ui5.tutorial.navigation.controller.Home", {});
-  return Home;
+	const Home = Controller.extend("ui5.tutorial.navigation.controller.Home", {});
+	return Home;
 });
 ```
 

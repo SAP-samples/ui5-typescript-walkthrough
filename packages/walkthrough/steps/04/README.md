@@ -65,24 +65,24 @@ As a next step, we are going to replace the `sap/m/Text` control in our `index.?
 import XMLView from "sap/ui/core/mvc/XMLView";
 
 XMLView.create({
-    viewName: "ui5.tutorial.walkthrough.view.App",
-    id: "app"
+	viewName: "ui5.tutorial.walkthrough.view.App",
+	id: "app"
 }).then(function (view) {
-    view.placeAt("content");
+	view.placeAt("content");
 });
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/XMLView"], function (XMLView) {
-  "use strict";
+	"use strict";
 
-  XMLView.create({
-    viewName: "ui5.tutorial.walkthrough.view.App",
-    id: "app"
-  }).then(function (view) {
-    view.placeAt("content");
-  });
+	XMLView.create({
+		viewName: "ui5.tutorial.walkthrough.view.App",
+		id: "app"
+	}).then(function (view) {
+		view.placeAt("content");
+	});
 });
 
 ```

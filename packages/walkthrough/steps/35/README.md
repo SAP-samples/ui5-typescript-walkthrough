@@ -46,68 +46,68 @@ import Device from "sap/ui/Device";
  * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
-    public static metadata = {
-        "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-        "manifest": "json"
-    };
-    init(): void {
-        // call the init function of the parent
-        super.init();
-        
-        // set data model
-        const data = {
-            recipient: {
-                name: "World"
-            }
-        };
-        const model = new JSONModel(data);
-        this.setModel(model);
+	public static metadata = {
+		"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+		"manifest": "json"
+	};
+	init(): void {
+		// call the init function of the parent
+		super.init();
+		
+		// set data model
+		const data = {
+			recipient: {
+				name: "World"
+			}
+		};
+		const model = new JSONModel(data);
+		this.setModel(model);
 
-        // set device model
-        const deviceModel = new JSONModel(Device);
-        deviceModel.setDefaultBindingMode("OneWay");
-        this.setModel(deviceModel, "device");
+		// set device model
+		const deviceModel = new JSONModel(Device);
+		deviceModel.setDefaultBindingMode("OneWay");
+		this.setModel(deviceModel, "device");
 
-        // create the views based on the url/hash
-        this.getRouter().initialize();
-    };
+		// create the views based on the url/hash
+		this.getRouter().initialize();
+	};
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel", "sap/ui/Device"], function (UIComponent, JSONModel, Device) {
-  "use strict";
+	"use strict";
 
-  const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
-    metadata: {
-      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-      "manifest": "json"
-    },
-    init() {
-      // call the init function of the parent
-      UIComponent.prototype.init.call(this);
+	const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
+		metadata: {
+			"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+			"manifest": "json"
+		},
+		init() {
+			// call the init function of the parent
+			UIComponent.prototype.init.call(this);
 
-      // set data model
-      const data = {
-        recipient: {
-          name: "World"
-        }
-      };
-      const model = new JSONModel(data);
-      this.setModel(model);
+			// set data model
+			const data = {
+				recipient: {
+					name: "World"
+				}
+			};
+			const model = new JSONModel(data);
+			this.setModel(model);
 
-      // set device model
-      const deviceModel = new JSONModel(Device);
-      deviceModel.setDefaultBindingMode("OneWay");
-      this.setModel(deviceModel, "device");
+			// set device model
+			const deviceModel = new JSONModel(Device);
+			deviceModel.setDefaultBindingMode("OneWay");
+			this.setModel(deviceModel, "device");
 
-      // create the views based on the url/hash
-      this.getRouter().initialize();
-    }
-  });
-  ;
-  return Component;
+			// create the views based on the url/hash
+			this.getRouter().initialize();
+		}
+	});
+	;
+	return Component;
 });
 
 ```
@@ -120,35 +120,35 @@ We can also hide single controls by device type when we set a CSS class like `sa
 
 ```xml
 <mvc:View
-	controllerName="ui5.tutorial.walkthrough.controller.HelloPanel"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
-	<Panel
-		headerText="{i18n>helloPanelTitle}"
-		class="sapUiResponsiveMargin"
-		width="auto"
-		expandable="{device>/system/phone}"
-		expanded="{= !${device>/system/phone} }">
-		<content>
-			<Button
-				id="helloDialogButton"
-				icon="sap-icon://world"
-				text="{i18n>openDialogButtonText}"
-				press=".onOpenDialog"
-				class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"/>
-			<Button
-				text="{i18n>showHelloButtonText}"
-				press=".onShowHello"
-				class="myCustomButton"/>
-			<Input
-				value="{/recipient/name}"
-				valueLiveUpdate="true"
-				width="60%"/>
-			<FormattedText
-				htmlText="Hello {/recipient/name}"
-				class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
-		</content>
-	</Panel>
+  controllerName="ui5.tutorial.walkthrough.controller.HelloPanel"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Panel
+    headerText="{i18n>helloPanelTitle}"
+    class="sapUiResponsiveMargin"
+    width="auto"
+    expandable="{device>/system/phone}"
+    expanded="{= !${device>/system/phone} }">
+    <content>
+      <Button
+        id="helloDialogButton"
+        icon="sap-icon://world"
+        text="{i18n>openDialogButtonText}"
+        press=".onOpenDialog"
+        class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"/>
+      <Button
+        text="{i18n>showHelloButtonText}"
+        press=".onShowHello"
+        class="myCustomButton"/>
+      <Input
+        value="{/recipient/name}"
+        valueLiveUpdate="true"
+        width="60%"/>
+      <FormattedText
+        htmlText="Hello {/recipient/name}"
+        class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+    </content>
+  </Panel>
 </mvc:View>
 ```
 &nbsp;
@@ -177,15 +177,15 @@ import UIComponent from "sap/ui/core/UIComponent";
  */
 export default class Detail extends Controller {
 
-    onInit(): void {
-        const viewModel = new JSONModel({
-            currency: "EUR"
-        });
-        this.getView()?.setModel(viewModel, "view");
-        
-        const router = UIComponent.getRouterFor(this);
-        (router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
-    }
+	onInit(): void {
+		const viewModel = new JSONModel({
+			currency: "EUR"
+		});
+		this.getView()?.setModel(viewModel, "view");
+		
+		const router = UIComponent.getRouterFor(this);
+		(router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
+	}
 	//...
 };
 
@@ -193,20 +193,20 @@ export default class Detail extends Controller {
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/m/MessageToast", "sap/ui/model/json/JSONModel", "sap/ui/core/UIComponent"], function (Controller, History, MessageToast, JSONModel, UIComponent) {
-  "use strict";
+	"use strict";
 
-  const Detail = Controller.extend("ui5.tutorial.walkthrough.controller.Detail", {
-    onInit() {
-      const viewModel = new JSONModel({
-        currency: "EUR"
-      });
-      this.getView().setModel(viewModel, "view");
-      const router = UIComponent.getRouterFor(this);
-      router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
-    },
-    //...
-  });
-  return Detail;
+	const Detail = Controller.extend("ui5.tutorial.walkthrough.controller.Detail", {
+		onInit() {
+			const viewModel = new JSONModel({
+				currency: "EUR"
+			});
+			this.getView().setModel(viewModel, "view");
+			const router = UIComponent.getRouterFor(this);
+			router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
+		},
+		//...
+	});
+	return Detail;
 });
 
 ```
@@ -231,58 +231,58 @@ We add the `number` and `numberUnit` field from the list of the previous steps a
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.walkthrough.controller.Detail"
-    xmlns="sap.m"
-    xmlns:core="sap.ui.core"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:wt="ui5.tutorial.walkthrough.control">
-    <Page
-        title="{i18n>detailPageTitle}"
-        showNavButton="true"
-        navButtonPress=".onNavBack">
-        <ObjectHeader
-            core:require="{
-                Date: 'sap/ui/model/type/Date',
-                Currency: 'sap/ui/model/type/Currency'
-            }"
-            responsive="true"
-            fullScreenOptimized="true"
-            number="{
-                parts: [
-                    'invoice>ExtendedPrice',
-                    'view>/currency'
-                ],
-                type: 'Currency',
-                formatOptions: {
-                    showMeasure: false
-                }
-            }"
-            numberUnit="{view>/currency}"
-            intro="{invoice>ShipperName}"
-            title="{invoice>ProductName}">
-            <attributes>
-                <ObjectAttribute
-                    title="{i18n>quantityTitle}"
-                    text="{invoice>Quantity}"/>
-                <ObjectAttribute
-                    title="{i18n>dateTitle}"
-                    text="{
-                        path: 'invoice>OrderDate',
-                        type: 'Date',
-                        formatOptions: {
-                            style: 'long',
-                            source: {
-                                pattern: 'yyyy-MM-ddTHH:mm:ss'
-                            }
-                        }
-                    }"/>
-            </attributes>
-        </ObjectHeader>
-        <wt:ProductRating
-            id="rating"
-            class="sapUiSmallMarginBeginEnd"
-            change=".onRatingChange"/>
-    </Page>
+  controllerName="ui5.tutorial.walkthrough.controller.Detail"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:wt="ui5.tutorial.walkthrough.control">
+  <Page
+    title="{i18n>detailPageTitle}"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+    <ObjectHeader
+      core:require="{
+        Date: 'sap/ui/model/type/Date',
+        Currency: 'sap/ui/model/type/Currency'
+      }"
+      responsive="true"
+      fullScreenOptimized="true"
+      number="{
+        parts: [
+          'invoice>ExtendedPrice',
+          'view>/currency'
+        ],
+        type: 'Currency',
+        formatOptions: {
+          showMeasure: false
+        }
+      }"
+      numberUnit="{view>/currency}"
+      intro="{invoice>ShipperName}"
+      title="{invoice>ProductName}">
+      <attributes>
+        <ObjectAttribute
+          title="{i18n>quantityTitle}"
+          text="{invoice>Quantity}"/>
+        <ObjectAttribute
+          title="{i18n>dateTitle}"
+          text="{
+            path: 'invoice>OrderDate',
+            type: 'Date',
+            formatOptions: {
+              style: 'long',
+              source: {
+                pattern: 'yyyy-MM-ddTHH:mm:ss'
+              }
+            }
+          }"/>
+      </attributes>
+    </ObjectHeader>
+    <wt:ProductRating
+      id="rating"
+      class="sapUiSmallMarginBeginEnd"
+      change=".onRatingChange"/>
+  </Page>
 </mvc:View>
 ```
 

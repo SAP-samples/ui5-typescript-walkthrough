@@ -53,18 +53,18 @@ webapp/
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.Home"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page
-        title="{i18n>homePageTitle}"
-        titleAlignment="Center"
-        class="sapUiResponsiveContentPadding">
-        <content>
-            <Button id="displayNotFoundBtn" text="{i18n>DisplayNotFound}" press=".onDisplayNotFound" class="sapUiTinyMarginEnd"/>
-            <Button id="employeeListBtn" text="{i18n>ShowEmployeeList}" press=".onNavToEmployees" class="sapUiTinyMarginEnd"/>
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.Home"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    title="{i18n>homePageTitle}"
+    titleAlignment="Center"
+    class="sapUiResponsiveContentPadding">
+    <content>
+      <Button id="displayNotFoundBtn" text="{i18n>DisplayNotFound}" press=".onDisplayNotFound" class="sapUiTinyMarginEnd"/>
+      <Button id="employeeListBtn" text="{i18n>ShowEmployeeList}" press=".onNavToEmployees" class="sapUiTinyMarginEnd"/>
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -80,35 +80,35 @@ import BaseController from "ui5/tutorial/navigation/controller/BaseController";
  */
 export default class Home extends BaseController {
 
-    public onDisplayNotFound(): void {
-        // display the "notFound" target without changing the hash
-        this.getRouter().getTargets().display("notFound", {
-            fromTarget: "home"
-        });
-    }
+	public onDisplayNotFound(): void {
+		// display the "notFound" target without changing the hash
+		this.getRouter().getTargets().display("notFound", {
+			fromTarget: "home"
+		});
+	}
 
-    public onNavToEmployees(): void {
-        this.getRouter().navTo("employeeList");
-    }
+	public onNavToEmployees(): void {
+		this.getRouter().navTo("employeeList");
+	}
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const Home = BaseController.extend("ui5.tutorial.navigation.controller.Home", {
-    onDisplayNotFound() {
-      // display the "notFound" target without changing the hash
-      this.getRouter().getTargets().display("notFound", {
-        fromTarget: "home"
-      });
-    },
-    onNavToEmployees() {
-      this.getRouter().navTo("employeeList");
-    }
-  });
-  return Home;
+	const Home = BaseController.extend("ui5.tutorial.navigation.controller.Home", {
+		onDisplayNotFound() {
+			// display the "notFound" target without changing the hash
+			this.getRouter().getTargets().display("notFound", {
+				fromTarget: "home"
+			});
+		},
+		onNavToEmployees() {
+			this.getRouter().navTo("employeeList");
+		}
+	});
+	return Home;
 });
 ```
 
@@ -118,58 +118,58 @@ The new event handler `onNavToEmployees` calls `navTo("employeeList")` on the ro
 
 ```json
 {
-    "_version": "1.12.0",
-    "sap.app": {
-        ...
-    },
-    "sap.ui": {
-        ...
-    },
-    "sap.ui5": {
-        ...
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "type": "View",
-                "viewType": "XML",
-                "path": "ui5.tutorial.navigation.view",
-                "controlId": "app",
-                "controlAggregation": "pages",
-                "transition": "slide",
-                "bypassed": {
-                    "target": "notFound"
-                }
-            },
-            "routes": [{
-                "pattern": "",
-                "name": "appHome",
-                "target": "home"
-            }, {
-                "pattern": "employees",
-                "name": "employeeList",
-                "target": "employees"
-            }],
-            "targets": {
-                "home": {
-                    "id": "home",
-                    "name": "Home",
-                    "level": 1
-                },
-                "notFound": {
-                    "id": "notFound",
-                    "name": "NotFound",
-                    "transition": "show"
-                },
-                "employees": {
-                    "id": "employeeList",
-                    "path": "ui5.tutorial.navigation.view.employee",
-                    "name": "EmployeeList",
-                    "level": 2
-                }
-
-            }
+  "_version": "1.12.0",
+  "sap.app": {
+    ...
+  },
+  "sap.ui": {
+    ...
+  },
+  "sap.ui5": {
+    ...
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5.tutorial.navigation.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
         }
+      },
+      "routes": [{
+        "pattern": "",
+        "name": "appHome",
+        "target": "home"
+      }, {
+        "pattern": "employees",
+        "name": "employeeList",
+        "target": "employees"
+      }],
+      "targets": {
+        "home": {
+          "id": "home",
+          "name": "Home",
+          "level": 1
+        },
+        "notFound": {
+          "id": "notFound",
+          "name": "NotFound",
+          "transition": "show"
+        },
+        "employees": {
+          "id": "employeeList",
+          "path": "ui5.tutorial.navigation.view.employee",
+          "name": "EmployeeList",
+          "level": 2
+        }
+
+      }
     }
+  }
 }
 ```
 
@@ -190,27 +190,27 @@ Setting the `level` to `2` helps the router to determine how to animate the \(in
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.employee.EmployeeList"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page
-        id="employeeListPage"
-        title="{i18n>EmployeeList}"
-        titleAlignment="Center"
-        showNavButton="true"
-        navButtonPress=".onNavBack"
-        class="sapUiResponsiveContentPadding">
-        <content>
-            <List id="employeeList" headerText="{i18n>ListOfAllEmployees}" items="{/Employees}">
-                <items>
-                    <StandardListItem
-                        title="{FirstName} {LastName}"
-                        iconDensityAware="false"
-                        iconInset="false"/>
-                </items>
-            </List>
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.employee.EmployeeList"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    id="employeeListPage"
+    title="{i18n>EmployeeList}"
+    titleAlignment="Center"
+    showNavButton="true"
+    navButtonPress=".onNavBack"
+    class="sapUiResponsiveContentPadding">
+    <content>
+      <List id="employeeList" headerText="{i18n>ListOfAllEmployees}" items="{/Employees}">
+        <items>
+          <StandardListItem
+            title="{FirstName} {LastName}"
+            iconDensityAware="false"
+            iconInset="false"/>
+        </items>
+      </List>
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -237,10 +237,10 @@ export default class EmployeeList extends BaseController {
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const EmployeeList = BaseController.extend("ui5.tutorial.navigation.controller.employee.EmployeeList", {});
-  return EmployeeList;
+	const EmployeeList = BaseController.extend("ui5.tutorial.navigation.controller.employee.EmployeeList", {});
+	return EmployeeList;
 });
 ```
 

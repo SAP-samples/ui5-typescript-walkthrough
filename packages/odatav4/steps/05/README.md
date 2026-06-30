@@ -28,13 +28,13 @@ You can view this step live: [🔗 Live Preview of Step 5](https://ui5.github.io
 
 ```json
 ...
-				"": {
-				"dataSource": "default",
-				"settings": {
-					"autoExpandSelect": true,
-					"operationMode": "Server",
-					"groupId": "$auto"
-				}
+        "": {
+        "dataSource": "default",
+        "settings": {
+          "autoExpandSelect": true,
+          "operationMode": "Server",
+          "groupId": "$auto"
+        }
 ...
 ```
 

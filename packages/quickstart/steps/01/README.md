@@ -50,21 +50,21 @@ In our webapp folder, we create a new HTML file named `index.html` and copy the 
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Quickstart Tutorial</title>
-    <script id="sap-ui-bootstrap"
-      src="resources/sap-ui-core.js"
-      data-sap-ui-libs="sap.m"
-      data-sap-ui-compat-version="edge"
-      data-sap-ui-async="true"
-      data-sap-ui-on-init="module:ui5/tutorial/quickstart/index"
-      data-sap-ui-resource-roots='{
-        "ui5.tutorial.quickstart": "./"
-      }'>
-    </script>
-  </head>
-  <body class="sapUiBody" id="content"></body>
+	<head>
+		<meta charset="utf-8">
+		<title>Quickstart Tutorial</title>
+		<script id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-compat-version="edge"
+			data-sap-ui-async="true"
+			data-sap-ui-on-init="module:ui5/tutorial/quickstart/index"
+			data-sap-ui-resource-roots='{
+				"ui5.tutorial.quickstart": "./"
+			}'>
+		</script>
+	</head>
+	<body class="sapUiBody" id="content"></body>
 </html>
 ```
 
@@ -93,17 +93,17 @@ new Button({
 ```
 ```js
 sap.ui.define([
-  "sap/m/Button",
-  "sap/m/MessageToast"
+	"sap/m/Button",
+	"sap/m/MessageToast"
 ], (Button, MessageToast) => {
-  "use strict";
+	"use strict";
 
-  new Button({
-    text: "Ready...",
-    press() {
-      MessageToast.show("Hello World!");
-    }
-  }).placeAt("content");
+	new Button({
+		text: "Ready...",
+		press() {
+			MessageToast.show("Hello World!");
+		}
+	}).placeAt("content");
 });
 ```
 
@@ -115,10 +115,10 @@ Create a new file named `manifest.json` in the webapp folder; it's also known as
 
 ```json
 {
-    "_version": "1.60.0",
-    "sap.app": {
-        "id": "ui5.tutorial.quickstart"
-    }
+  "_version": "2.8.0",
+  "sap.app": {
+    "id": "ui5.tutorial.quickstart"
+  }
 }
 ```
 
@@ -141,12 +141,12 @@ Enter the following content:
 
 ```json
 {
-    "name": "ui5.tutorial.quickstart",
-    "version": "1.0.0",
-    "description": "The UI5 quickstart tutorial",
-    "scripts": {
-        "start": "ui5 serve -o index.html"
-    }
+  "name": "ui5.tutorial.quickstart",
+  "version": "1.0.0",
+  "description": "The UI5 quickstart tutorial",
+  "scripts": {
+    "start": "ui5 serve -o index.html"
+  }
 }
 
 ```
@@ -175,23 +175,23 @@ We specify the compiler options as follow:
 ```json
 {
   "compilerOptions": {
-    "target": "es2023",
-    "types": [
-      "node",
-      "@types/openui5"
-    ],
-    "skipLibCheck": true,
-    "allowJs": true,
-    "strictPropertyInitialization": false,
-    "rootDir": "./webapp",
-    "paths": {
-      "ui5/tutorial/quickstart/*": [
-        "./webapp/*"
-      ]
-    }
+  "target": "es2023",
+  "types": [
+    "node",
+    "@types/openui5"
+  ],
+  "skipLibCheck": true,
+  "allowJs": true,
+  "strictPropertyInitialization": false,
+  "rootDir": "./webapp",
+  "paths": {
+    "ui5/tutorial/quickstart/*": [
+    "./webapp/*"
+    ]
+  }
   },
   "include": [
-    "./webapp/**/*"
+  "./webapp/**/*"
   ]
 }
 ```

@@ -37,33 +37,33 @@ In your App view, we put the `App` control inside a `sap/m/Shell` control.
 
 ```xml
 <mvc:View
-	controllerName="ui5.tutorial.walkthrough.controller.App"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true">
-	<Shell>
-		<App>
-			<pages>
-				<Page title="{i18n>homePageTitle}">
-					<content>
-						<Panel
-							headerText="{i18n>helloPanelTitle}">
-							<content>
-								<Button
-									text="{i18n>showHelloButtonText}"
-									press=".onShowHello"/>
-								<Input
-									value="{/recipient/name}"
-									description="Hello {/recipient/name}"
-									valueLiveUpdate="true"
-									width="60%"/>
-							</content>
-						</Panel>
-					</content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+  controllerName="ui5.tutorial.walkthrough.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Shell>
+    <App>
+      <pages>
+        <Page title="{i18n>homePageTitle}">
+          <content>
+            <Panel
+              headerText="{i18n>helloPanelTitle}">
+              <content>
+                <Button
+                  text="{i18n>showHelloButtonText}"
+                  press=".onShowHello"/>
+                <Input
+                  value="{/recipient/name}"
+                  description="Hello {/recipient/name}"
+                  valueLiveUpdate="true"
+                  width="60%"/>
+              </content>
+            </Panel>
+          </content>
+        </Page>
+      </pages>
+    </App>
+  </Shell>
 </mvc:View>
 ```
 

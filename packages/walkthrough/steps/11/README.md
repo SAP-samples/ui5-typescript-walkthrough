@@ -62,25 +62,25 @@ In order to make the fullscreen height of the view work properly, we add the `di
    xmlns:mvc="sap.ui.core.mvc"
    displayBlock="true">
    <App>
-      <pages>
-         <Page title="{i18n>homePageTitle}">
-            <content>
-               <Panel
-                  headerText="{i18n>helloPanelTitle}">
-                  <content>
-                     <Button
-                        text="{i18n>showHelloButtonText}"
-                        press=".onShowHello"/>
-                     <Input
-                        value="{/recipient/name}"
-                        description="Hello {/recipient/name}"
-                        valueLiveUpdate="true"
-                        width="60%"/>
-                  </content>
-               </Panel>
-            </content>
-         </Page>
-      </pages>
+    <pages>
+     <Page title="{i18n>homePageTitle}">
+      <content>
+         <Panel
+          headerText="{i18n>helloPanelTitle}">
+          <content>
+           <Button
+            text="{i18n>showHelloButtonText}"
+            press=".onShowHello"/>
+           <Input
+            value="{/recipient/name}"
+            description="Hello {/recipient/name}"
+            valueLiveUpdate="true"
+            width="60%"/>
+          </content>
+         </Panel>
+      </content>
+     </Page>
+    </pages>
    </App>
 </mvc:View>
 

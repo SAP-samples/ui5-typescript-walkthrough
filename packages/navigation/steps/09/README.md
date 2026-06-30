@@ -20,50 +20,50 @@ You can view this step live: [🔗 Live Preview of Step 9](https://ui5.github.io
 
 ```json
 {
-    "_version": "1.12.0",
-    "sap.app": {
-        ...
-    },
-    "sap.ui": {
-        ...
-    },
-    "sap.ui5": {
-        ...
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "type": "View",
-                "viewType": "XML",
-                "path": "ui5.tutorial.navigation.view",
-                "controlId": "app",
-                "controlAggregation": "pages",
-                "transition": "slide",
-                "bypassed": {
-                    "target": "notFound"
-                }
-            },
-            "routes": [{
-                "pattern": "",
-                "name": "appHome",
-                "target": "home"
-            }, {
-                "pattern": "employees",
-                "name": "employeeList",
-                "target": "employees"
-            }, {
-                "pattern": "employees/{employeeId}",
-                "name": "employee",
-                "target": "employee"
-            }, {
-                "pattern": "employees/{employeeId}/resume:?query:",
-                "name": "employeeResume",
-                "target": "employeeResume"
-            }],
-            "targets": {
-                ...
-            }
+  "_version": "1.12.0",
+  "sap.app": {
+    ...
+  },
+  "sap.ui": {
+    ...
+  },
+  "sap.ui5": {
+    ...
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5.tutorial.navigation.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
         }
+      },
+      "routes": [{
+        "pattern": "",
+        "name": "appHome",
+        "target": "home"
+      }, {
+        "pattern": "employees",
+        "name": "employeeList",
+        "target": "employees"
+      }, {
+        "pattern": "employees/{employeeId}",
+        "name": "employee",
+        "target": "employee"
+      }, {
+        "pattern": "employees/{employeeId}/resume:?query:",
+        "name": "employeeResume",
+        "target": "employeeResume"
+      }],
+      "targets": {
+        ...
+      }
     }
+  }
 }
 ```
 
@@ -77,40 +77,40 @@ The `:?query:` parameter starts and ends with `:`, which means that it is option
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.employee.Resume"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page
-        title="{i18n>ResumeOf} {FirstName} {LastName}"
-        titleAlignment="Center"
-        id="employeeResumePage"
-        showNavButton="true"
-        navButtonPress=".onNavBack">
-        <content>
-            <IconTabBar
-                id="iconTabBar"
-                headerBackgroundDesign="Transparent"
-                class="sapUiResponsiveContentPadding"
-                binding="{Resume}"
-                select=".onTabSelect"
-                selectedKey="{view>/selectedTabKey}">
-                <items>
-                    <IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
-                        <Text text="{Information}"/>
-                    </IconTabFilter>
-                    <IconTabFilter id="projectsTab" text="{i18n>tabProjects}" key="Projects">
-                        <mvc:XMLView viewName="ui5.tutorial.navigation.view.employee.ResumeProjects"></mvc:XMLView>
-                    </IconTabFilter>
-                    <IconTabFilter id="hobbiesTab" text="{i18n>tabHobbies}" key="Hobbies">
-                        <Text text="{Hobbies}"/>
-                    </IconTabFilter>
-                    <IconTabFilter id="notesTab" text="{i18n>tabNotes}" key="Notes">
-                        <Text text="{Notes}"/>
-                    </IconTabFilter>
-                </items>
-            </IconTabBar>
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.employee.Resume"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    title="{i18n>ResumeOf} {FirstName} {LastName}"
+    titleAlignment="Center"
+    id="employeeResumePage"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+    <content>
+      <IconTabBar
+        id="iconTabBar"
+        headerBackgroundDesign="Transparent"
+        class="sapUiResponsiveContentPadding"
+        binding="{Resume}"
+        select=".onTabSelect"
+        selectedKey="{view>/selectedTabKey}">
+        <items>
+          <IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
+            <Text text="{Information}"/>
+          </IconTabFilter>
+          <IconTabFilter id="projectsTab" text="{i18n>tabProjects}" key="Projects">
+            <mvc:XMLView viewName="ui5.tutorial.navigation.view.employee.ResumeProjects"></mvc:XMLView>
+          </IconTabFilter>
+          <IconTabFilter id="hobbiesTab" text="{i18n>tabHobbies}" key="Hobbies">
+            <Text text="{Hobbies}"/>
+          </IconTabFilter>
+          <IconTabFilter id="notesTab" text="{i18n>tabNotes}" key="Notes">
+            <Text text="{Notes}"/>
+          </IconTabFilter>
+        </items>
+      </IconTabBar>
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -131,130 +131,130 @@ const validTabKeys = ["Info", "Projects", "Hobbies", "Notes"];
  */
 export default class Resume extends BaseController {
 
-    public onInit(): void {
-        const router = this.getRouter();
+	public onInit(): void {
+		const router = this.getRouter();
 
-        this.getView().setModel(new JSONModel(), "view");
-        router.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
-    }
+		this.getView().setModel(new JSONModel(), "view");
+		router.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
+	}
 
-    private _onRouteMatched(event: Route$MatchedEvent): void {
-        const eventArguments = (<any> event.getParameter("arguments"));
-        const view = this.getView();
+	private _onRouteMatched(event: Route$MatchedEvent): void {
+		const eventArguments = (<any> event.getParameter("arguments"));
+		const view = this.getView();
 
-        view.bindElement({
-            path: "/Employees(" + eventArguments.employeeId + ")",
-            events: {
-                change: this._onBindingChange.bind(this),
-                dataRequested: () => {
-                    view.setBusy(true);
-                },
-                dataReceived: () => {
-                    view.setBusy(false);
-                }
-            }
-        });
+		view.bindElement({
+			path: "/Employees(" + eventArguments.employeeId + ")",
+			events: {
+				change: this._onBindingChange.bind(this),
+				dataRequested: () => {
+					view.setBusy(true);
+				},
+				dataReceived: () => {
+					view.setBusy(false);
+				}
+			}
+		});
 
-        const query = eventArguments["?query"];
+		const query = eventArguments["?query"];
 
-        if (query && validTabKeys.includes(query.tab)) {
-            (<JSONModel> view.getModel("view")).setProperty("/selectedTabKey", query.tab);
-        } else {
-            // the default query param should be visible at all time
-            this.getRouter().navTo("employeeResume", {
-                employeeId: eventArguments.employeeId,
-                "?query": {
-                    tab: validTabKeys[0]
-                }
-            }, true /*no history*/);
-        }
-    }
+		if (query && validTabKeys.includes(query.tab)) {
+			(<JSONModel> view.getModel("view")).setProperty("/selectedTabKey", query.tab);
+		} else {
+			// the default query param should be visible at all time
+			this.getRouter().navTo("employeeResume", {
+				employeeId: eventArguments.employeeId,
+				"?query": {
+					tab: validTabKeys[0]
+				}
+			}, true /*no history*/);
+		}
+	}
 
-    private _onBindingChange(): void {
-        // No data for the binding
-        if (!this.getView().getBindingContext()) {
-            this.getRouter().getTargets().display("notFound");
-        }
-    }
+	private _onBindingChange(): void {
+		// No data for the binding
+		if (!this.getView().getBindingContext()) {
+			this.getRouter().getTargets().display("notFound");
+		}
+	}
 
-    /**
-     * We use this event handler to update the hash in case a new tab is selected.
-     * @param event
-     */
-    public onTabSelect(event: IconTabBar$SelectEvent): void {
-        const context = this.getView().getBindingContext();
+	/**
+	 * We use this event handler to update the hash in case a new tab is selected.
+	 * @param event
+	 */
+	public onTabSelect(event: IconTabBar$SelectEvent): void {
+		const context = this.getView().getBindingContext();
 
-        this.getRouter().navTo("employeeResume", {
-            employeeId: context.getProperty("EmployeeID"),
-            "?query": {
-                tab: event.getParameter("selectedKey")
-            }
-        }, true /*without history*/);
-    }
+		this.getRouter().navTo("employeeResume", {
+			employeeId: context.getProperty("EmployeeID"),
+			"?query": {
+				tab: event.getParameter("selectedKey")
+			}
+		}, true /*without history*/);
+	}
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController", "sap/ui/model/json/JSONModel"], function (BaseController, JSONModel) {
-  "use strict";
+	"use strict";
 
-  const validTabKeys = ["Info", "Projects", "Hobbies", "Notes"];
+	const validTabKeys = ["Info", "Projects", "Hobbies", "Notes"];
 
-  const Resume = BaseController.extend("ui5.tutorial.navigation.controller.employee.Resume", {
-    onInit() {
-      const router = this.getRouter();
-      this.getView().setModel(new JSONModel(), "view");
-      router.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
-    },
-    _onRouteMatched(event) {
-      const eventArguments = event.getParameter("arguments");
-      const view = this.getView();
-      view.bindElement({
-        path: "/Employees(" + eventArguments.employeeId + ")",
-        events: {
-          change: this._onBindingChange.bind(this),
-          dataRequested: () => {
-            view.setBusy(true);
-          },
-          dataReceived: () => {
-            view.setBusy(false);
-          }
-        }
-      });
-      const query = eventArguments["?query"];
-      if (query && validTabKeys.includes(query.tab)) {
-        view.getModel("view").setProperty("/selectedTabKey", query.tab);
-      } else {
-        // the default query param should be visible at all time
-        this.getRouter().navTo("employeeResume", {
-          employeeId: eventArguments.employeeId,
-          "?query": {
-            tab: validTabKeys[0]
-          }
-        }, true /*no history*/);
-      }
-    },
-    _onBindingChange() {
-      // No data for the binding
-      if (!this.getView().getBindingContext()) {
-        this.getRouter().getTargets().display("notFound");
-      }
-    },
-    /**
-     * We use this event handler to update the hash in case a new tab is selected.
-     * @param event
-     */
-    onTabSelect(event) {
-      const context = this.getView().getBindingContext();
-      this.getRouter().navTo("employeeResume", {
-        employeeId: context.getProperty("EmployeeID"),
-        "?query": {
-          tab: event.getParameter("selectedKey")
-        }
-      }, true /*without history*/);
-    }
-  });
-  return Resume;
+	const Resume = BaseController.extend("ui5.tutorial.navigation.controller.employee.Resume", {
+		onInit() {
+			const router = this.getRouter();
+			this.getView().setModel(new JSONModel(), "view");
+			router.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
+		},
+		_onRouteMatched(event) {
+			const eventArguments = event.getParameter("arguments");
+			const view = this.getView();
+			view.bindElement({
+				path: "/Employees(" + eventArguments.employeeId + ")",
+				events: {
+					change: this._onBindingChange.bind(this),
+					dataRequested: () => {
+						view.setBusy(true);
+					},
+					dataReceived: () => {
+						view.setBusy(false);
+					}
+				}
+			});
+			const query = eventArguments["?query"];
+			if (query && validTabKeys.includes(query.tab)) {
+				view.getModel("view").setProperty("/selectedTabKey", query.tab);
+			} else {
+				// the default query param should be visible at all time
+				this.getRouter().navTo("employeeResume", {
+					employeeId: eventArguments.employeeId,
+					"?query": {
+						tab: validTabKeys[0]
+					}
+				}, true /*no history*/);
+			}
+		},
+		_onBindingChange() {
+			// No data for the binding
+			if (!this.getView().getBindingContext()) {
+				this.getRouter().getTargets().display("notFound");
+			}
+		},
+		/**
+		 * We use this event handler to update the hash in case a new tab is selected.
+		 * @param event
+		 */
+		onTabSelect(event) {
+			const context = this.getView().getBindingContext();
+			this.getRouter().navTo("employeeResume", {
+				employeeId: context.getProperty("EmployeeID"),
+				"?query": {
+					tab: event.getParameter("selectedKey")
+				}
+			}, true /*without history*/);
+		}
+	});
+	return Resume;
 });
 ```
 

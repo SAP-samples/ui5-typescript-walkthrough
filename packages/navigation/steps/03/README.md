@@ -44,41 +44,41 @@ webapp/
 
 ```json
 {
+  ...
+  "sap.ui5": {
     ...
-    "sap.ui5": {
-        ...
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "type": "View",
-                "viewType": "XML",
-                "path": "ui5.tutorial.navigation.view",
-                "controlId": "app",
-                "controlAggregation": "pages",
-                "transition": "slide",
-                "bypassed": {
-                    "target": "notFound"
-                }
-            },
-            "routes": [{
-                "pattern": "",
-                "name": "appHome",
-                "target": "home"
-            }],
-            "targets": {
-                "home": {
-                    "id": "home",
-                    "name": "Home",
-                    "level": 1
-                },
-                "notFound": {
-                    "id": "notFound",
-                    "name": "NotFound",
-                    "transition": "show"
-                }
-            }
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5.tutorial.navigation.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
         }
+      },
+      "routes": [{
+        "pattern": "",
+        "name": "appHome",
+        "target": "home"
+      }],
+      "targets": {
+        "home": {
+          "id": "home",
+          "name": "Home",
+          "level": 1
+        },
+        "notFound": {
+          "id": "notFound",
+          "name": "NotFound",
+          "transition": "show"
+        }
+      }
     }
+  }
 }
 ```
 
@@ -88,21 +88,21 @@ Let’s extend the routing configuration in the descriptor by adding a `bypassed
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.NotFound"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:core="sap.ui.core"
-    core:require="{
-        IllustratedMessageType: 'sap/m/IllustratedMessageType'
-    }">
-    <Page
-        title="{i18n>NotFound}"
-        titleAlignment="Center">
-        <IllustratedMessage
-            title="{i18n>NotFound.text}"
-            description="{i18n>NotFound.description}"
-            illustrationType="{= IllustratedMessageType.PageNotFound}"/>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.NotFound"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  core:require="{
+    IllustratedMessageType: 'sap/m/IllustratedMessageType'
+  }">
+  <Page
+    title="{i18n>NotFound}"
+    titleAlignment="Center">
+    <IllustratedMessage
+      title="{i18n>NotFound.text}"
+      description="{i18n>NotFound.description}"
+      illustrationType="{= IllustratedMessageType.PageNotFound}"/>
+  </Page>
 </mvc:View>
 ```
 
@@ -118,20 +118,20 @@ import Controller from "sap/ui/core/mvc/Controller";
  */
 export default class NotFound extends Controller {
 
-    public onInit(): void {
+	public onInit(): void {
 
-    }
+	}
 }
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
-  "use strict";
+	"use strict";
 
-  const NotFound = Controller.extend("ui5.tutorial.navigation.controller.NotFound", {
-    onInit() {}
-  });
-  return NotFound;
+	const NotFound = Controller.extend("ui5.tutorial.navigation.controller.NotFound", {
+		onInit() {}
+	});
+	return NotFound;
 });
 ```
 

@@ -27,8 +27,8 @@ export default class AppController extends Controller {
 		}));
 	}
 
-	onChange(oEvent: Switch$ChangeEvent): void {
-		const bState = oEvent.getParameter("state");
-		(this.byId("ready") as HorizontalLayout).setVisible(bState);
+	onChange(event: Switch$ChangeEvent): void {
+		const state = event.getParameter("state");
+		(this.byId("ready") as HorizontalLayout).setVisible(state);
 	}
 }

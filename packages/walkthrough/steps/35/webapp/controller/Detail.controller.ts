@@ -13,41 +13,41 @@ import UIComponent from "sap/ui/core/UIComponent";
  */
 export default class Detail extends Controller {
 
-    onInit(): void {
-        const viewModel = new JSONModel({
-            currency: "EUR"
-        });
-        this.getView()?.setModel(viewModel, "view");
+	onInit(): void {
+		const viewModel = new JSONModel({
+			currency: "EUR"
+		});
+		this.getView()?.setModel(viewModel, "view");
 
-        const router = UIComponent.getRouterFor(this);
-        (router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
-    }
+		const router = UIComponent.getRouterFor(this);
+		(router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
+	}
 
-    onObjectMatched(event: Route$PatternMatchedEvent): void {
+	onObjectMatched(event: Route$PatternMatchedEvent): void {
 
-        (this.byId("rating") as ProductRating).reset();
-        this.getView()?.bindElement({
-            path: "/" + window.decodeURIComponent((event.getParameter("arguments") as any).invoicePath),
-            model: "invoice"
-        });
-    }
+		(this.byId("rating") as ProductRating).reset();
+		this.getView()?.bindElement({
+			path: "/" + window.decodeURIComponent((event.getParameter("arguments") as any).invoicePath),
+			model: "invoice"
+		});
+	}
 
-    onNavBack(): void {
-        const history = History.getInstance();
-        const previousHash = history.getPreviousHash();
+	onNavBack(): void {
+		const history = History.getInstance();
+		const previousHash = history.getPreviousHash();
 
-        if (previousHash !== undefined) {
-            window.history.go(-1);
-        } else {
-            const router = UIComponent.getRouterFor(this);
-            router.navTo("overview", {}, true);
-        }
-    }
+		if (previousHash !== undefined) {
+			window.history.go(-1);
+		} else {
+			const router = UIComponent.getRouterFor(this);
+			router.navTo("overview", {}, true);
+		}
+	}
 
-    onRatingChange(event: ProductRating$ChangeEvent): void {
-        const value = event.getParameter("value");
-        const resourceBundle = (this?.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+	onRatingChange(event: ProductRating$ChangeEvent): void {
+		const value = event.getParameter("value");
+		const resourceBundle = (this?.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
 
-        MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]) as string);
-    }
+		MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]) as string);
+	}
 };

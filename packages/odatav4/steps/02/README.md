@@ -95,44 +95,44 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast", "sap/m/Messag
   "use strict";
 
   const App = Controller.extend("ui5.tutorial.odatav4.controller.App", {
-    /**
-     *  Hook for initializing the controller
-     */
-    onInit() {
-      const jSONData = {
-        busy: false
-      };
-      const model = new JSONModel(jSONData);
-      this.getView().setModel(model, "appView");
-    },
-    /* =========================================================== */
-    /*           begin: event handlers                             */
-    /* =========================================================== */
-    /**
-     * Refresh the data.
-     */
-    onRefresh() {
-      const binding = this.byId("peopleList").getBinding("items");
-      if (binding.hasPendingChanges()) {
-        MessageBox.error(this._getText("refreshNotPossibleMessage"));
-        return;
-      }
-      binding.refresh();
-      MessageToast.show(this._getText("refreshSuccessMessage"));
-    },
-    /* =========================================================== */
-    /*           end: event handlers                               */
-    /* =========================================================== */
-    /**
-     * Convenience method for retrieving a translatable text.
-     * @param sTextId - the ID of the text to be retrieved.
-     * @param aArgs - optional array of texts for placeholders.
-     * @returns the text belonging to the given ID.
-     */
-    _getText(textId, args) {
-      const bundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
-      return bundle.getText(textId, args);
-    }
+	/**
+	 *  Hook for initializing the controller
+	 */
+	onInit() {
+	  const jSONData = {
+		busy: false
+	  };
+	  const model = new JSONModel(jSONData);
+	  this.getView().setModel(model, "appView");
+	},
+	/* =========================================================== */
+	/*           begin: event handlers                             */
+	/* =========================================================== */
+	/**
+	 * Refresh the data.
+	 */
+	onRefresh() {
+	  const binding = this.byId("peopleList").getBinding("items");
+	  if (binding.hasPendingChanges()) {
+		MessageBox.error(this._getText("refreshNotPossibleMessage"));
+		return;
+	  }
+	  binding.refresh();
+	  MessageToast.show(this._getText("refreshSuccessMessage"));
+	},
+	/* =========================================================== */
+	/*           end: event handlers                               */
+	/* =========================================================== */
+	/**
+	 * Convenience method for retrieving a translatable text.
+	 * @param sTextId - the ID of the text to be retrieved.
+	 * @param aArgs - optional array of texts for placeholders.
+	 * @returns the text belonging to the given ID.
+	 */
+	_getText(textId, args) {
+	  const bundle = this.getOwnerComponent().getModel("i18n").getResourceBundle();
+	  return bundle.getText(textId, args);
+	}
   });
   return App;
 });
@@ -150,28 +150,28 @@ We also add the private method `_getText` to retrieve translatable texts from th
 ```xml
 ...
 <Page title="{i18n>peoplePageTitle}">
-	<content>
-		<Table
-			id="peopleList"
-			growing="true"
-			growingThreshold="10"
-			items="{
-				path: '/People'
-			}">
-			<headerToolbar>
-				<OverflowToolbar>
-					<content>
-						<ToolbarSpacer/>
-						<Button
-							id="refreshUsersButton"
-							icon="sap-icon://refresh"
-							tooltip="{i18n>refreshButtonText}"
-							press=".onRefresh"/>
-						</content>
-					</OverflowToolbar>
-				</headerToolbar>
+  <content>
+    <Table
+      id="peopleList"
+      growing="true"
+      growingThreshold="10"
+      items="{
+        path: '/People'
+      }">
+      <headerToolbar>
+        <OverflowToolbar>
+          <content>
+            <ToolbarSpacer/>
+            <Button
+              id="refreshUsersButton"
+              icon="sap-icon://refresh"
+              tooltip="{i18n>refreshButtonText}"
+              press=".onRefresh"/>
+            </content>
+          </OverflowToolbar>
+        </headerToolbar>
 
-				<columns>
+        <columns>
 ...
 ```
 

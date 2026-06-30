@@ -68,19 +68,19 @@ We outsource the controller logic to an app controller. The `.onPress` event now
 
 ```xml
 <mvc:View
-	controllerName="ui5.tutorial.quickstart.App"
-	displayBlock="true"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
-	<App>
-		<Page title="My App">
-			<Button
-				text="Steady..."
-				press=".onPress"
-				type="Emphasized"
-				class="sapUiSmallMargin"/>
-		</Page>
-	</App>
+  controllerName="ui5.tutorial.quickstart.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <App>
+    <Page title="My App">
+      <Button
+        text="Steady..."
+        press=".onPress"
+        type="Emphasized"
+        class="sapUiSmallMargin"/>
+    </Page>
+  </App>
 </mvc:View>
 ```
 

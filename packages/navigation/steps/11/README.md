@@ -30,19 +30,19 @@ You can view this step live: [🔗 Live Preview of Step 11](https://ui5.github.i
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.Home"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page
-        title="{i18n>homePageTitle}"
-        titleAlignment="Center"
-        class="sapUiResponsiveContentPadding">
-        <content>
-            <Button id="displayNotFoundBtn" text="{i18n>DisplayNotFound}" press=".onDisplayNotFound" class="sapUiTinyMarginEnd"/>
-            <Button id="employeeListBtn" text="{i18n>ShowEmployeeList}" press=".onNavToEmployees" class="sapUiTinyMarginEnd"/>
-            <Button id="employeeOverviewBtn" text="{i18n>ShowEmployeeOverview}" press=".onNavToEmployeeOverview" class="sapUiTinyMarginEnd"/>
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.Home"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    title="{i18n>homePageTitle}"
+    titleAlignment="Center"
+    class="sapUiResponsiveContentPadding">
+    <content>
+      <Button id="displayNotFoundBtn" text="{i18n>DisplayNotFound}" press=".onDisplayNotFound" class="sapUiTinyMarginEnd"/>
+      <Button id="employeeListBtn" text="{i18n>ShowEmployeeList}" press=".onNavToEmployees" class="sapUiTinyMarginEnd"/>
+      <Button id="employeeOverviewBtn" text="{i18n>ShowEmployeeOverview}" press=".onNavToEmployeeOverview" class="sapUiTinyMarginEnd"/>
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -57,36 +57,36 @@ import BaseController from "ui5/tutorial/navigation/controller/BaseController";
  * @namespace ui5.tutorial.navigation.controller
  */
 export default class Home extends BaseController {
-    ...
-    public onNavToEmployees(): void {
-        this.getRouter().navTo("employeeList");
-    }
+	...
+	public onNavToEmployees(): void {
+		this.getRouter().navTo("employeeList");
+	}
 
-    public onNavToEmployeeOverview(): void {
-        this.getRouter().navTo("employeeOverview");
-    }
+	public onNavToEmployeeOverview(): void {
+		this.getRouter().navTo("employeeOverview");
+	}
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const Home = BaseController.extend("ui5.tutorial.navigation.controller.Home", {
-    onDisplayNotFound() {
-      // display the "notFound" target without changing the hash
-      this.getRouter().getTargets().display("notFound", {
-        fromTarget: "home"
-      });
-    },
-    onNavToEmployees() {
-      this.getRouter().navTo("employeeList");
-    },
-    onNavToEmployeeOverview() {
-      this.getRouter().navTo("employeeOverview");
-    }
-  });
-  return Home;
+	const Home = BaseController.extend("ui5.tutorial.navigation.controller.Home", {
+		onDisplayNotFound() {
+			// display the "notFound" target without changing the hash
+			this.getRouter().getTargets().display("notFound", {
+				fromTarget: "home"
+			});
+		},
+		onNavToEmployees() {
+			this.getRouter().navTo("employeeList");
+		},
+		onNavToEmployeeOverview() {
+			this.getRouter().navTo("employeeOverview");
+		}
+	});
+	return Home;
 });
 ```
 
@@ -96,85 +96,85 @@ As you know already from the previous steps, we add the `press` event handler `o
 
 ```json
 {
-    "_version": "1.12.0",
-    "sap.app": {
-        ...
-    },
-    "sap.ui": {
-        ...
-    },
-    "sap.ui5": {
-        ...
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "type": "View",
-                "viewType": "XML",
-                "path": "ui5.tutorial.navigation.view",
-                "controlId": "app",
-                "controlAggregation": "pages",
-                "transition": "slide",
-                "bypassed": {
-                    "target": "notFound"
-                }
-            },
-            "routes": [{
-                "pattern": "",
-                "name": "appHome",
-                "target": "home"
-            }, {
-                "pattern": "employees",
-                "name": "employeeList",
-                "target": "employees"
-            }, {
-                "pattern": "employees/overview",
-                "name": "employeeOverview",
-                "target": ["employeeOverviewTop", "employeeOverviewContent"]
-            }, {
-                "pattern": "employees/{employeeId}",
-                "name": "employee",
-                "target": "employee"
-            }, {
-                "pattern": "employees/{employeeId}/resume:?query:",
-                "name": "employeeResume",
-                "target": "employeeResume"
-            }],
-            "targets": {
-                ...
-                "resumeTabNotes": {
-                    "id": "resumeNotes",
-                    "parent": "employeeResume",
-                    "path": "ui5.tutorial.navigation.view.employee",
-                    "name": "ResumeNotes",
-                    "controlId": "notesTab",
-                    "controlAggregation": "content"
-                },
-                "employeeOverview": {
-                    "id": "employeeOverview",
-                    "path": "ui5.tutorial.navigation.view.employee.overview",
-                    "name": "EmployeeOverview",
-                    "level": 2
-                },
-                "employeeOverviewTop": {
-                    "id": "employeeOverviewTop",
-                    "parent": "employeeOverview",
-                    "path": "ui5.tutorial.navigation.view.employee.overview",
-                    "name": "EmployeeOverviewTop",
-                    "controlId": "EmployeeOverviewParent",
-                    "controlAggregation": "content"
-                },
-                "employeeOverviewContent": {
-                    "id": "employeeOverviewContent",
-                    "parent": "employeeOverview",
-                    "path": "ui5.tutorial.navigation.view.employee.overview",
-                    "name": "EmployeeOverviewContent",
-                    "controlId": "EmployeeOverviewParent",
-                    "controlAggregation": "content"
-                }
-
-            }
+  "_version": "1.12.0",
+  "sap.app": {
+    ...
+  },
+  "sap.ui": {
+    ...
+  },
+  "sap.ui5": {
+    ...
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5.tutorial.navigation.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
         }
+      },
+      "routes": [{
+        "pattern": "",
+        "name": "appHome",
+        "target": "home"
+      }, {
+        "pattern": "employees",
+        "name": "employeeList",
+        "target": "employees"
+      }, {
+        "pattern": "employees/overview",
+        "name": "employeeOverview",
+        "target": ["employeeOverviewTop", "employeeOverviewContent"]
+      }, {
+        "pattern": "employees/{employeeId}",
+        "name": "employee",
+        "target": "employee"
+      }, {
+        "pattern": "employees/{employeeId}/resume:?query:",
+        "name": "employeeResume",
+        "target": "employeeResume"
+      }],
+      "targets": {
+        ...
+        "resumeTabNotes": {
+          "id": "resumeNotes",
+          "parent": "employeeResume",
+          "path": "ui5.tutorial.navigation.view.employee",
+          "name": "ResumeNotes",
+          "controlId": "notesTab",
+          "controlAggregation": "content"
+        },
+        "employeeOverview": {
+          "id": "employeeOverview",
+          "path": "ui5.tutorial.navigation.view.employee.overview",
+          "name": "EmployeeOverview",
+          "level": 2
+        },
+        "employeeOverviewTop": {
+          "id": "employeeOverviewTop",
+          "parent": "employeeOverview",
+          "path": "ui5.tutorial.navigation.view.employee.overview",
+          "name": "EmployeeOverviewTop",
+          "controlId": "EmployeeOverviewParent",
+          "controlAggregation": "content"
+        },
+        "employeeOverviewContent": {
+          "id": "employeeOverviewContent",
+          "parent": "employeeOverview",
+          "path": "ui5.tutorial.navigation.view.employee.overview",
+          "name": "EmployeeOverviewContent",
+          "controlId": "EmployeeOverviewParent",
+          "controlAggregation": "content"
+        }
+
+      }
     }
+  }
 }
 ```
 
@@ -199,20 +199,20 @@ The router makes sure that the parent view is loaded in addition to the target v
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.employee.overview.EmployeeOverview"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page
-        id="EmployeeOverviewParent"
-        title="{i18n>EmployeeOverview}"
-        titleAlignment="Center"
-        showNavButton="true"
-        navButtonPress=".onNavBack"
-        class="sapUiResponsiveContentPadding">
-        <content>
-            <!-- inserted by routing -->
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.employee.overview.EmployeeOverview"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    id="EmployeeOverviewParent"
+    title="{i18n>EmployeeOverview}"
+    titleAlignment="Center"
+    showNavButton="true"
+    navButtonPress=".onNavBack"
+    class="sapUiResponsiveContentPadding">
+    <content>
+      <!-- inserted by routing -->
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -233,10 +233,10 @@ export default class EmployeeOverview extends BaseController {
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const EmployeeOverview = BaseController.extend("ui5.tutorial.navigation.controller.employee.overview.EmployeeOverview", {});
-  return EmployeeOverview;
+	const EmployeeOverview = BaseController.extend("ui5.tutorial.navigation.controller.employee.overview.EmployeeOverview", {});
+	return EmployeeOverview;
 });
 ```
 
@@ -246,7 +246,7 @@ The controller does not contain any logic yet, but we will add back navigation f
 
 ```xml
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" class="sapUiMediumMarginBottom">
-    <Title text="{i18n>EmployeeOverviewTop}"/>
+  <Title text="{i18n>EmployeeOverviewTop}"/>
 </mvc:View>
 ```
 
@@ -256,46 +256,46 @@ Create the file `EmployeeOverviewTop.view.xml` and place it in the `webapp/view/
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.employee.overview.EmployeeOverviewContent"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Table id="employeesTable"
-        items="{/Employees}">
-        <headerToolbar>
-            <Toolbar>
-                <Title text="{i18n>Employees}" level="H2"/>
-                <ToolbarSpacer />
-                <SearchField id="searchField" search=".onSearchEmployeesTable" width="50%"/>
-                <Button icon="sap-icon://sort" press=".onSortButtonPressed"/>
-            </Toolbar>
-        </headerToolbar>
-        <columns>
-            <Column id="employeeIDCol"><Text text="{i18n>EmployeeID}"/></Column>
-            <Column id="firstNameCol" demandPopin="true"><Text text="{i18n>FirstName}"/></Column>
-            <Column id="lastNameCol" demandPopin="true"><Text text="{i18n>LastName}"/></Column>
-            <Column id="addressCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>Address}"/></Column>
-            <Column id="cityCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>City}"/></Column>
-            <Column id="regionCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>Region}"/></Column>
-            <Column id="postalCodeCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>PostalCode}"/></Column>
-            <Column id="countryCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>Country}"/></Column>
-            <Column id="homePhoneCol" minScreenWidth="Tablet" demandPopin="true" hAlign="Right"><Text text="{i18n>Phone}"/></Column>
-        </columns>
-        <items>
-            <ColumnListItem>
-                <cells>
-                    <Text text="{EmployeeID}"/>
-                    <Text text="{FirstName}"/>
-                    <Text text="{LastName}"/>
-                    <Text text="{Address}"/>
-                    <Text text="{City}"/>
-                    <Text text="{Region}"/>
-                    <Text text="{PostalCode}"/>
-                    <Text text="{Country}"/>
-                    <Text text="{HomePhone}"/>
-                </cells>
-            </ColumnListItem>
-        </items>
-    </Table>
+  controllerName="ui5.tutorial.navigation.controller.employee.overview.EmployeeOverviewContent"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Table id="employeesTable"
+    items="{/Employees}">
+    <headerToolbar>
+      <Toolbar>
+        <Title text="{i18n>Employees}" level="H2"/>
+        <ToolbarSpacer />
+        <SearchField id="searchField" search=".onSearchEmployeesTable" width="50%"/>
+        <Button icon="sap-icon://sort" press=".onSortButtonPressed"/>
+      </Toolbar>
+    </headerToolbar>
+    <columns>
+      <Column id="employeeIDCol"><Text text="{i18n>EmployeeID}"/></Column>
+      <Column id="firstNameCol" demandPopin="true"><Text text="{i18n>FirstName}"/></Column>
+      <Column id="lastNameCol" demandPopin="true"><Text text="{i18n>LastName}"/></Column>
+      <Column id="addressCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>Address}"/></Column>
+      <Column id="cityCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>City}"/></Column>
+      <Column id="regionCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>Region}"/></Column>
+      <Column id="postalCodeCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>PostalCode}"/></Column>
+      <Column id="countryCol" minScreenWidth="Tablet" demandPopin="true"><Text text="{i18n>Country}"/></Column>
+      <Column id="homePhoneCol" minScreenWidth="Tablet" demandPopin="true" hAlign="Right"><Text text="{i18n>Phone}"/></Column>
+    </columns>
+    <items>
+      <ColumnListItem>
+        <cells>
+          <Text text="{EmployeeID}"/>
+          <Text text="{FirstName}"/>
+          <Text text="{LastName}"/>
+          <Text text="{Address}"/>
+          <Text text="{City}"/>
+          <Text text="{Region}"/>
+          <Text text="{PostalCode}"/>
+          <Text text="{Country}"/>
+          <Text text="{HomePhone}"/>
+        </cells>
+      </ColumnListItem>
+    </items>
+  </Table>
 </mvc:View>
 ```
 
@@ -319,121 +319,121 @@ import Sorter from "sap/ui/model/Sorter";
  */
 export default class EmployeeOverviewContent extends BaseController {
 
-    private table: Table;
-    private viewSettingsDialog: ViewSettingsDialog;
-    private sortField: string | null = null;
-    private sortDescending: boolean = false;
-    private validSortFields: string[] = ["EmployeeID", "FirstName", "LastName"];
-    private searchQuery: string | null = null;
+	private table: Table;
+	private viewSettingsDialog: ViewSettingsDialog;
+	private sortField: string | null = null;
+	private sortDescending: boolean = false;
+	private validSortFields: string[] = ["EmployeeID", "FirstName", "LastName"];
+	private searchQuery: string | null = null;
 
-    public onInit(): void {
-        this.table = (<Table> this.byId("employeesTable"));
-        this._initViewSettingsDialog();
-    }
+	public onInit(): void {
+		this.table = (<Table> this.byId("employeesTable"));
+		this._initViewSettingsDialog();
+	}
 
-    public onSortButtonPressed(): void {
-        this.viewSettingsDialog.open();
-    }
+	public onSortButtonPressed(): void {
+		this.viewSettingsDialog.open();
+	}
 
-    public onSearchEmployeesTable(event: SearchField$SearchEvent): void {
-        this._applySearchFilter(event.getSource().getValue());
-    }
+	public onSearchEmployeesTable(event: SearchField$SearchEvent): void {
+		this._applySearchFilter(event.getSource().getValue());
+	}
 
-    private _initViewSettingsDialog(): void {
-        this.viewSettingsDialog = new ViewSettingsDialog("vsd", {
-            confirm: (event: ViewSettingsDialog$ConfirmEvent) => {
-                const sortItem = event.getParameter("sortItem");
-                this._applySorter(sortItem.getKey(), event.getParameter("sortDescending"));
-            }
-        });
+	private _initViewSettingsDialog(): void {
+		this.viewSettingsDialog = new ViewSettingsDialog("vsd", {
+			confirm: (event: ViewSettingsDialog$ConfirmEvent) => {
+				const sortItem = event.getParameter("sortItem");
+				this._applySorter(sortItem.getKey(), event.getParameter("sortDescending"));
+			}
+		});
 
-        // init sorting (with simple sorters as custom data for all fields)
-        this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
-            key: "EmployeeID",
-            text: "Employee ID",
-            selected: true // by default the MockData is sorted by EmployeeID
-        }));
+		// init sorting (with simple sorters as custom data for all fields)
+		this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
+			key: "EmployeeID",
+			text: "Employee ID",
+			selected: true // by default the MockData is sorted by EmployeeID
+		}));
 
-        this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
-            key: "FirstName",
-            text: "First Name",
-            selected: false
-        }));
+		this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
+			key: "FirstName",
+			text: "First Name",
+			selected: false
+		}));
 
-        this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
-            key: "LastName",
-            text: "Last Name",
-            selected: false
-        }));
-    }
+		this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
+			key: "LastName",
+			text: "Last Name",
+			selected: false
+		}));
+	}
 
-    private _applySearchFilter(searchQuery: string): void {
-        // first check if we already have this search value
-        if (this.searchQuery === searchQuery) {
-            return;
-        }
-        this.searchQuery = searchQuery;
-        (<SearchField> this.byId("searchField")).setValue(searchQuery);
+	private _applySearchFilter(searchQuery: string): void {
+		// first check if we already have this search value
+		if (this.searchQuery === searchQuery) {
+			return;
+		}
+		this.searchQuery = searchQuery;
+		(<SearchField> this.byId("searchField")).setValue(searchQuery);
 
-        let filter: Filter | null = null;
+		let filter: Filter | null = null;
 
-        // add filters for search
-        if (searchQuery?.length > 0) {
-            const filters: Filter[] = [];
+		// add filters for search
+		if (searchQuery?.length > 0) {
+			const filters: Filter[] = [];
 
-            aFilters.push(new Filter("FirstName", FilterOperator.Contains, searchQuery));
-            aFilters.push(new Filter("LastName", FilterOperator.Contains, searchQuery));
-            oFilter = new Filter({ filters: aFilters, and: false }); // OR filter
-        }
+			aFilters.push(new Filter("FirstName", FilterOperator.Contains, searchQuery));
+			aFilters.push(new Filter("LastName", FilterOperator.Contains, searchQuery));
+			oFilter = new Filter({ filters: aFilters, and: false }); // OR filter
+		}
 
-        // update list binding
-        const binding = (<ListBinding> this.table.getBinding("items"));
-        binding.filter(oFilter, "Application");
-    }
+		// update list binding
+		const binding = (<ListBinding> this.table.getBinding("items"));
+		binding.filter(oFilter, "Application");
+	}
 
-    /**
-     * Applies sorting on our table control.
-     * @param {string} fieldName the name of the field used for sorting
-     * @param {string} sortDescending true or false as a string or boolean value to specify a descending sorting
-     * @private
-     */
-    private _applySorter(fieldName: string, sortDescending: string | boolean): void {
-        // only continue if we have a valid sort field
-        if (fieldName && this.validSortFields.includes(fieldName)) {
-            let descending: boolean;
+	/**
+	 * Applies sorting on our table control.
+	 * @param {string} fieldName the name of the field used for sorting
+	 * @param {string} sortDescending true or false as a string or boolean value to specify a descending sorting
+	 * @private
+	 */
+	private _applySorter(fieldName: string, sortDescending: string | boolean): void {
+		// only continue if we have a valid sort field
+		if (fieldName && this.validSortFields.includes(fieldName)) {
+			let descending: boolean;
 
-            // convert the sort order to a boolean value
-            if (typeof sortDescending === "string") {
-                descending = sortDescending === "true";
-            } else if (typeof sortDescending === "boolean") {
-                descending = sortDescending;
-            } else {
-                descending = false;
-            }
+			// convert the sort order to a boolean value
+			if (typeof sortDescending === "string") {
+				descending = sortDescending === "true";
+			} else if (typeof sortDescending === "boolean") {
+				descending = sortDescending;
+			} else {
+				descending = false;
+			}
 
-            // sort only if the sorter has changed
-            if (this.sortField && this.sortField === fieldName && this.sortDescending === descending) {
-                return;
-            }
+			// sort only if the sorter has changed
+			if (this.sortField && this.sortField === fieldName && this.sortDescending === descending) {
+				return;
+			}
 
-            this.sortField = fieldName;
-            this.sortDescending = descending;
-            const sorter = new Sorter(fieldName, descending);
+			this.sortField = fieldName;
+			this.sortDescending = descending;
+			const sorter = new Sorter(fieldName, descending);
 
-            // sync with View Settings Dialog
-            this._syncViewSettingsDialogSorter(fieldName, descending);
+			// sync with View Settings Dialog
+			this._syncViewSettingsDialogSorter(fieldName, descending);
 
-            const binding = (<ListBinding> this.table.getBinding("items"));
-            binding.sort(sorter);
-        }
-    }
+			const binding = (<ListBinding> this.table.getBinding("items"));
+			binding.sort(sorter);
+		}
+	}
 
-    private _syncViewSettingsDialogSorter(sortField: string, sortDescending: boolean): void {
-        // the possible keys are: "EmployeeID" | "FirstName" | "LastName"
-        // Note: no input validation is implemented here
-        this.viewSettingsDialog.setSelectedSortItem(sortField);
-        this.viewSettingsDialog.setSortDescending(sortDescending);
-    }
+	private _syncViewSettingsDialogSorter(sortField: string, sortDescending: boolean): void {
+		// the possible keys are: "EmployeeID" | "FirstName" | "LastName"
+		// Note: no input validation is implemented here
+		this.viewSettingsDialog.setSelectedSortItem(sortField);
+		this.viewSettingsDialog.setSortDescending(sortDescending);
+	}
 }
 ```
 
@@ -442,112 +442,112 @@ sap.ui.define(["sap/m/ViewSettingsDialog", "sap/m/ViewSettingsItem", "ui5/tutori
   "use strict";
 
   const EmployeeOverviewContent = BaseController.extend("ui5.tutorial.navigation.controller.employee.overview.EmployeeOverviewContent", {
-    constructor() {
-      BaseController.prototype.constructor.apply(this, arguments);
-      this.sortField = null;
-      this.sortDescending = false;
-      this.validSortFields = ["EmployeeID", "FirstName", "LastName"];
-      this.searchQuery = null;
-    },
-    onInit() {
-      this.table = this.byId("employeesTable");
-      this._initViewSettingsDialog();
-    },
-    onSortButtonPressed() {
-      this.viewSettingsDialog.open();
-    },
-    onSearchEmployeesTable(event) {
-      this._applySearchFilter(event.getSource().getValue());
-    },
-    _initViewSettingsDialog() {
-      this.viewSettingsDialog = new ViewSettingsDialog("vsd", {
-        confirm: event => {
-          const sortItem = event.getParameter("sortItem");
-          this._applySorter(sortItem.getKey(), event.getParameter("sortDescending"));
-        }
-      });
+	constructor() {
+	  BaseController.prototype.constructor.apply(this, arguments);
+	  this.sortField = null;
+	  this.sortDescending = false;
+	  this.validSortFields = ["EmployeeID", "FirstName", "LastName"];
+	  this.searchQuery = null;
+	},
+	onInit() {
+	  this.table = this.byId("employeesTable");
+	  this._initViewSettingsDialog();
+	},
+	onSortButtonPressed() {
+	  this.viewSettingsDialog.open();
+	},
+	onSearchEmployeesTable(event) {
+	  this._applySearchFilter(event.getSource().getValue());
+	},
+	_initViewSettingsDialog() {
+	  this.viewSettingsDialog = new ViewSettingsDialog("vsd", {
+		confirm: event => {
+		  const sortItem = event.getParameter("sortItem");
+		  this._applySorter(sortItem.getKey(), event.getParameter("sortDescending"));
+		}
+	  });
 
-      // init sorting (with simple sorters as custom data for all fields)
-      this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
-        key: "EmployeeID",
-        text: "Employee ID",
-        selected: true // by default the MockData is sorted by EmployeeID
-      }));
-      this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
-        key: "FirstName",
-        text: "First Name",
-        selected: false
-      }));
-      this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
-        key: "LastName",
-        text: "Last Name",
-        selected: false
-      }));
-    },
-    _applySearchFilter(searchQuery) {
-      // first check if we already have this search value
-      if (this.searchQuery === searchQuery) {
-        return;
-      }
-      this.searchQuery = searchQuery;
-      this.byId("searchField").setValue(searchQuery);
-      let filter = null;
+	  // init sorting (with simple sorters as custom data for all fields)
+	  this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
+		key: "EmployeeID",
+		text: "Employee ID",
+		selected: true // by default the MockData is sorted by EmployeeID
+	  }));
+	  this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
+		key: "FirstName",
+		text: "First Name",
+		selected: false
+	  }));
+	  this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
+		key: "LastName",
+		text: "Last Name",
+		selected: false
+	  }));
+	},
+	_applySearchFilter(searchQuery) {
+	  // first check if we already have this search value
+	  if (this.searchQuery === searchQuery) {
+		return;
+	  }
+	  this.searchQuery = searchQuery;
+	  this.byId("searchField").setValue(searchQuery);
+	  let filter = null;
 
-      // add filters for search
-      if (searchQuery?.length > 0) {
-        const filters = [];
-        filters.push(new Filter("FirstName", FilterOperator.Contains, searchQuery));
-        filters.push(new Filter("LastName", FilterOperator.Contains, searchQuery));
-        filter = new Filter({
-          filters: filters,
-          and: false
-        }); // OR filter
-      }
+	  // add filters for search
+	  if (searchQuery?.length > 0) {
+		const filters = [];
+		filters.push(new Filter("FirstName", FilterOperator.Contains, searchQuery));
+		filters.push(new Filter("LastName", FilterOperator.Contains, searchQuery));
+		filter = new Filter({
+		  filters: filters,
+		  and: false
+		}); // OR filter
+	  }
 
-      // update list binding
-      const binding = this.table.getBinding("items");
-      binding.filter(filter, "Application");
-    },
-    /**
-     * Applies sorting on our table control.
-     * @param {string} fieldName the name of the field used for sorting
-     * @param {string | boolean} sortDescending true or false as a string or boolean value to specify a descending sorting
-     * @private
-     */
-    _applySorter(fieldName, sortDescending) {
-      // only continue if we have a valid sort field
-      if (fieldName && this.validSortFields.includes(fieldName)) {
-        let descending;
+	  // update list binding
+	  const binding = this.table.getBinding("items");
+	  binding.filter(filter, "Application");
+	},
+	/**
+	 * Applies sorting on our table control.
+	 * @param {string} fieldName the name of the field used for sorting
+	 * @param {string | boolean} sortDescending true or false as a string or boolean value to specify a descending sorting
+	 * @private
+	 */
+	_applySorter(fieldName, sortDescending) {
+	  // only continue if we have a valid sort field
+	  if (fieldName && this.validSortFields.includes(fieldName)) {
+		let descending;
 
-        // convert the sort order to a boolean value
-        if (typeof sortDescending === "string") {
-          descending = sortDescending === "true";
-        } else if (typeof sortDescending === "boolean") {
-          descending = sortDescending;
-        } else {
-          descending = false;
-        }
+		// convert the sort order to a boolean value
+		if (typeof sortDescending === "string") {
+		  descending = sortDescending === "true";
+		} else if (typeof sortDescending === "boolean") {
+		  descending = sortDescending;
+		} else {
+		  descending = false;
+		}
 
-        // sort only if the sorter has changed
-        if (this.sortField && this.sortField === fieldName && this.sortDescending === descending) {
-          return;
-        }
-        this.sortField = fieldName;
-        this.sortDescending = descending;
-        const sorter = new Sorter(fieldName, descending);
+		// sort only if the sorter has changed
+		if (this.sortField && this.sortField === fieldName && this.sortDescending === descending) {
+		  return;
+		}
+		this.sortField = fieldName;
+		this.sortDescending = descending;
+		const sorter = new Sorter(fieldName, descending);
 
-        // sync with View Settings Dialog
-        this._syncViewSettingsDialogSorter(fieldName, descending);
-        const binding = this.table.getBinding("items");
-        binding.sort(sorter);
-      }
-    },
-    _syncViewSettingsDialogSorter(sortField, sortDescending) {
-      // the possible keys are: "EmployeeID" | "FirstName" | "LastName"
-      // Note: no input validation is implemented here
-      this.viewSettingsDialog.setSelectedSortItem(sortField);
-      this.viewSettingsDialog.setSortDescending(sortDescending);
-    }
+		// sync with View Settings Dialog
+		this._syncViewSettingsDialogSorter(fieldName, descending);
+		const binding = this.table.getBinding("items");
+		binding.sort(sorter);
+	  }
+	},
+	_syncViewSettingsDialogSorter(sortField, sortDescending) {
+	  // the possible keys are: "EmployeeID" | "FirstName" | "LastName"
+	  // Note: no input validation is implemented here
+	  this.viewSettingsDialog.setSelectedSortItem(sortField);
+	  this.viewSettingsDialog.setSortDescending(sortDescending);
+	}
   });
   return EmployeeOverviewContent;
 });

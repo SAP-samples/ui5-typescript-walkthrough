@@ -76,13 +76,13 @@ The `manifest.json` descriptor file contains the app configuration. In the `sap.
 
 ```json
 "dataSources": {
-	"default": {
-		"uri": "https://services.odata.org/TripPinRESTierService/(S(id))/",
-		"type": "OData",
-		"settings": {
-			"odataVersion": "4.0"
-		}
-	}
+  "default": {
+    "uri": "https://services.odata.org/TripPinRESTierService/(S(id))/",
+    "type": "OData",
+    "settings": {
+      "odataVersion": "4.0"
+    }
+  }
 }
 
 ```

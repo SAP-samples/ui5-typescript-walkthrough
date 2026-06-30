@@ -4,7 +4,7 @@ sap.ui.define([
 ], function (opaTest) {
 	"use strict";
 
-	var iGrowingBy = 10, // Must equal the 'growingThreshold' setting of the table
+	var growingBy = 10, // Must equal the 'growingThreshold' setting of the table
 		iTotalUsers = 20; // Must equal the total number of users
 
 	QUnit.module("Posts");
@@ -14,7 +14,7 @@ sap.ui.define([
 		Given.iStartMyApp();
 		// Assertions
 		Then.onTheTutorialPage.theTableShouldHavePagination()
-			.and.theTableShouldShowUsers(iGrowingBy)
+			.and.theTableShouldShowUsers(growingBy)
 			.and.theTableShouldShowTotalUsers(iTotalUsers);
 	});
 
@@ -22,7 +22,7 @@ sap.ui.define([
 		//Actions
 		When.onTheTutorialPage.iPressOnMoreData();
 		// Assertions
-		Then.onTheTutorialPage.theTableShouldShowUsers(iGrowingBy * 2);
+		Then.onTheTutorialPage.theTableShouldShowUsers(growingBy * 2);
 	});
 
 	opaTest("Should be able to sort users", function (_Given, When, Then) {
@@ -133,13 +133,13 @@ sap.ui.define([
 				.and.iPressOnDelete();
 			//Assertion
 			Then.onTheTutorialPage.theDetailAreaShouldBeVisible(false)
-				.and.theTableShouldShowUsers(iGrowingBy - 1);
+				.and.theTableShouldShowUsers(growingBy - 1);
 			//Action
 			When.onTheTutorialPage.iPressOnCancel();
 			//Assertion
 			Then.onTheTutorialPage.theDetailAreaShouldBeVisible(true)
 				.and.theMessageToastShouldShow("deletionRestoredMessage", "javieralfred")
-				.and.theTableShouldShowUsers(iGrowingBy);
+				.and.theTableShouldShowUsers(growingBy);
 			//Cleanup
 			Then.iTeardownMyApp();
 		}

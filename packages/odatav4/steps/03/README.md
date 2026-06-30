@@ -30,33 +30,33 @@ You can view this step live: [🔗 Live Preview of Step 3](https://ui5.github.io
 
 ```json
 {
-	"_version": "1.12.0",
-	"sap.app": {...
-	},
-	"sap.ui": {
-		"technology": "UI5",
-		"deviceTypes": {
+  "_version": "1.12.0",
+  "sap.app": {...
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
 
-		}
-	},
-	"sap.ui5": {
-		"rootView": {
-		...
-		},
-		"dependencies": {
-			...
-			}
-		},
-		"contentDensities": {
-			...
-		},
-		"handleValidation": true,
+    }
+  },
+  "sap.ui5": {
+    "rootView": {
+    ...
+    },
+    "dependencies": {
+      ...
+      }
+    },
+    "contentDensities": {
+      ...
+    },
+    "handleValidation": true,
 
-		"models": {
-			...
-		}
-	},
-	...
+    "models": {
+      ...
+    }
+  },
+  ...
 }
 
 ```
@@ -72,16 +72,16 @@ We now run the app using the `index.html` file and enter values that don't match
 
 ```xml
 <EntityType Name="Person">
-	<Key>
-		<PropertyRef Name="UserName"/>
-	</Key>
-	<Property Name="UserName" Type="Edm.String" Nullable="false" />
-	<Property Name="FirstName" Type="Edm.String" />
-	<Property Name="LastName" Type="Edm.String"/>
-	<Property Name="MiddleName" Type="Edm.String"/>
-	<Property Name="Gender" Type="Microsoft.OData.Service.Sample.TrippinInMemory.Models.PersonGender"
-			  Nullable="false"/>
-	<Property Name="Age" Type="Edm.Int64" />
+  <Key>
+    <PropertyRef Name="UserName"/>
+  </Key>
+  <Property Name="UserName" Type="Edm.String" Nullable="false" />
+  <Property Name="FirstName" Type="Edm.String" />
+  <Property Name="LastName" Type="Edm.String"/>
+  <Property Name="MiddleName" Type="Edm.String"/>
+  <Property Name="Gender" Type="Microsoft.OData.Service.Sample.TrippinInMemory.Models.PersonGender"
+        Nullable="false"/>
+  <Property Name="Age" Type="Edm.Int64" />
 
 ```
 

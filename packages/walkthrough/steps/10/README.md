@@ -84,7 +84,7 @@ The **`sap.ui5`** namespace adds OpenUI5-specific configuration parameters that 
 
 -   `dependencies`\(mandatory\): This section defines the dependencies of the component. It comes with the following sub-settings:
 
-    -   The `minUI5Version` property is mandatory as it specifies the minimum version of OpenUI5 that the component requires to function properly. Following the guideline discussed in step 1, our component should be designed to work with the long-term support (LTS) version 1.120 of OpenUI5.
+    -   The `minUI5Version` property is mandatory as it specifies the minimum version of OpenUI5 that the component requires to function properly. Following the guideline discussed in step 1, our component should be designed to work with the long-term support (LTS) version 1.148 of OpenUI5.
     
     -    The `libs` settings is used to declare all OpenUI5 libraries that the component depends on. It's crucial to list every library within the component here for correct dependency management.<br>
     In our component we currenetly only use the `sap.ui.core` and `sap.m` liibraries. The `sap.ui.core` library provides the basic framework functionality and is required for any OpenUI5 application.<br>
@@ -102,57 +102,57 @@ In our current scenario, we only have one model called `i18n`, which is a resour
 
 ```json
 {
-    "_version": "1.60.0",
-    "sap.app": {
-        "id": "ui5.tutorial.walkthrough",
-        "type": "application",
-        "i18n": {
-            "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
-            "supportedLocales": [
-                ""
-            ],
-            "fallbackLocale": ""
-        },
-        "title": "{{appTitle}}",
-        "description": "{{appDescription}}",
-        "applicationVersion": {
-            "version": "1.0.0"
-        }
+  "_version": "2.8.0",
+  "sap.app": {
+    "id": "ui5.tutorial.walkthrough",
+    "type": "application",
+    "i18n": {
+      "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
+      "supportedLocales": [
+        ""
+      ],
+      "fallbackLocale": ""
     },
-    "sap.ui": {
-        "technology": "UI5",
-        "deviceTypes": {
-            "desktop": true,
-            "tablet": true,
-            "phone": true
-        }
-    },
-    "sap.ui5": {
-        "dependencies": {
-            "minUI5Version": "1.132",
-            "libs": {
-                "sap.ui.core": {},
-                "sap.m": {}
-            }
-        },
-        "rootView": {
-            "viewName": "ui5.tutorial.walkthrough.view.App",
-            "type": "XML",
-            "id": "app"
-        },
-        "models": {
-            "i18n": {
-                "type": "sap.ui.model.resource.ResourceModel",
-                "settings": {
-                    "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
-                    "supportedLocales": [
-                        ""
-                    ],
-                    "fallbackLocale": ""
-                }
-            }
-        }
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
     }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.148",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {}
+      }
+    },
+    "rootView": {
+      "viewName": "ui5.tutorial.walkthrough.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
+          "supportedLocales": [
+            ""
+          ],
+          "fallbackLocale": ""
+        }
+      }
+    }
+  }
 }
 ```   
 
@@ -175,52 +175,52 @@ import JSONModel from "sap/ui/model/json/JSONModel";
  * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
-    public static metadata = {
-        "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-        "manifest": "json" 
-    };
-    init(): void {
-        // call the init function of the parent
-        super.init();
-        
-        // set data model
-        const data = {
-            recipient: {
-                name: "World"
-            }
-        };
-        const dataModel = new JSONModel(data);
-        this.setModel(dataModel);
-    };
+	public static metadata = {
+		"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+		"manifest": "json" 
+	};
+	init(): void {
+		// call the init function of the parent
+		super.init();
+		
+		// set data model
+		const data = {
+			recipient: {
+				name: "World"
+			}
+		};
+		const dataModel = new JSONModel(data);
+		this.setModel(dataModel);
+	};
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"], function (UIComponent, JSONModel) {
-  "use strict";
+	"use strict";
 
-  const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
-    metadata: {
-      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-      "manifest": "json"
-    },
-    init() {
-      // call the init function of the parent
-      UIComponent.prototype.init.call(this);
+	const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
+		metadata: {
+			"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+			"manifest": "json"
+		},
+		init() {
+			// call the init function of the parent
+			UIComponent.prototype.init.call(this);
 
-      // set data model
-      const data = {
-        recipient: {
-          name: "World"
-        }
-      };
-      const dataModel = new JSONModel(data);
-      this.setModel(dataModel);
-    }
-  });
-  ;
-  return Component;
+			// set data model
+			const data = {
+				recipient: {
+					name: "World"
+				}
+			};
+			const dataModel = new JSONModel(data);
+			this.setModel(dataModel);
+		}
+	});
+	;
+	return Component;
 });
 
 ```

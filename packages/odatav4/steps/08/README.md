@@ -88,23 +88,23 @@ The invocation is asynchronous; the `invoke` method therefore returns a `Promise
 
 ```xml
 <mvc:View
-	controllerName="ui5.tutorial.odatav4.controller.App"
-	displayBlock="true"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
-	<Shell>
-		<App busy="{appView>/busy}" class="sapUiSizeCompact">
-			<pages>
-				<Page title="{i18n>peoplePageTitle}">
-					<headerContent>
-						<Button
-							id="resetChangesButton"
-							text="{i18n>resetChangesButtonText}"
-							enabled="{= !${appView>/hasUIChanges}}"
-							press="onResetDataSource"
-							type="Emphasized">
-						</Button>
-					</headerContent>
+  controllerName="ui5.tutorial.odatav4.controller.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Shell>
+    <App busy="{appView>/busy}" class="sapUiSizeCompact">
+      <pages>
+        <Page title="{i18n>peoplePageTitle}">
+          <headerContent>
+            <Button
+              id="resetChangesButton"
+              text="{i18n>resetChangesButtonText}"
+              enabled="{= !${appView>/hasUIChanges}}"
+              press="onResetDataSource"
+              type="Emphasized">
+            </Button>
+          </headerContent>
 ...
 ```
 

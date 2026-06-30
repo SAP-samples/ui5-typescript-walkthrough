@@ -51,33 +51,33 @@ For simplicity, we remove all content from the original Northwind OData metadata
 
 ```xml
 <edmx:Edmx Version="1.0"
-	xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
-	<edmx:DataServices m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0"
-		xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
-		<Schema Namespace="NorthwindModel"
-			xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-			<EntityType Name="Invoice">
-				<Key>
-					<PropertyRef Name="ProductName"/>
-					<PropertyRef Name="Quantity"/>
-					<PropertyRef Name="ShipperName"/>
-				</Key>
-				<Property Name="ProductName" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
-				<Property Name="Quantity" Type="Edm.Int16" Nullable="false"/>
-				<Property Name="ExtendedPrice" Type="Edm.Decimal" Precision="19" Scale="4"/>
-				<Property Name="ShipperName" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
-				<Property Name="ShippedDate" Type="Edm.DateTime"/>
-				<Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true"/>
-			</EntityType>
-		</Schema>
-		<Schema Namespace="ODataWebV2.Northwind.Model"
-			xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-			<EntityContainer Name="NorthwindEntities" m:IsDefaultEntityContainer="true" p6:LazyLoadingEnabled="true"
-				xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
-				<EntitySet Name="Invoices" EntityType="NorthwindModel.Invoice"/>
-			</EntityContainer>
-		</Schema>
-	</edmx:DataServices>
+  xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <edmx:DataServices m:DataServiceVersion="1.0" m:MaxDataServiceVersion="3.0"
+    xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata">
+    <Schema Namespace="NorthwindModel"
+      xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityType Name="Invoice">
+        <Key>
+          <PropertyRef Name="ProductName"/>
+          <PropertyRef Name="Quantity"/>
+          <PropertyRef Name="ShipperName"/>
+        </Key>
+        <Property Name="ProductName" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
+        <Property Name="Quantity" Type="Edm.Int16" Nullable="false"/>
+        <Property Name="ExtendedPrice" Type="Edm.Decimal" Precision="19" Scale="4"/>
+        <Property Name="ShipperName" Type="Edm.String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true"/>
+        <Property Name="ShippedDate" Type="Edm.DateTime"/>
+        <Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true"/>
+      </EntityType>
+    </Schema>
+    <Schema Namespace="ODataWebV2.Northwind.Model"
+      xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <EntityContainer Name="NorthwindEntities" m:IsDefaultEntityContainer="true" p6:LazyLoadingEnabled="true"
+        xmlns:p6="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntitySet Name="Invoices" EntityType="NorthwindModel.Invoice"/>
+      </EntityContainer>
+    </Schema>
+  </edmx:DataServices>
 </edmx:Edmx>
 ```
 
@@ -92,44 +92,44 @@ In folder `localService` we create the new folder `mockdata`. The mock server de
 ```json
 [
   {
-    "ProductName": "Pineapple",
-    "Quantity": 21,
-    "ExtendedPrice": 87.2,
-    "ShipperName": "Fun Inc.",
-    "ShippedDate": "/Date(1427839200000)/",
-    "Status": "A"
+  "ProductName": "Pineapple",
+  "Quantity": 21,
+  "ExtendedPrice": 87.2,
+  "ShipperName": "Fun Inc.",
+  "ShippedDate": "/Date(1427839200000)/",
+  "Status": "A"
   },
   {
-    "ProductName": "Milk",
-    "Quantity": 4,
-    "ExtendedPrice": 10,
-    "ShipperName": "ACME",
-    "ShippedDate": "/Date(1424214000000)/",
-    "Status": "B"
+  "ProductName": "Milk",
+  "Quantity": 4,
+  "ExtendedPrice": 10,
+  "ShipperName": "ACME",
+  "ShippedDate": "/Date(1424214000000)/",
+  "Status": "B"
   },
   {
-    "ProductName": "Canned Beans",
-    "Quantity": 3,
-    "ExtendedPrice": 6.85,
-    "ShipperName": "ACME",
-    "ShippedDate": "/Date(1425250800000)/",
-    "Status": "B"
+  "ProductName": "Canned Beans",
+  "Quantity": 3,
+  "ExtendedPrice": 6.85,
+  "ShipperName": "ACME",
+  "ShippedDate": "/Date(1425250800000)/",
+  "Status": "B"
   },
   {
-    "ProductName": "Salad",
-    "Quantity": 2,
-    "ExtendedPrice": 8.8,
-    "ShipperName": "ACME",
-    "ShippedDate": "/Date(1428789600000)/",
-    "Status": "C"
+  "ProductName": "Salad",
+  "Quantity": 2,
+  "ExtendedPrice": 8.8,
+  "ShipperName": "ACME",
+  "ShippedDate": "/Date(1428789600000)/",
+  "Status": "C"
   },
   {
-    "ProductName": "Bread",
-    "Quantity": 1,
-    "ExtendedPrice": 2.71,
-    "ShipperName": "Fun Inc.",
-    "ShippedDate": "/Date(1422313200000)/",
-    "Status": "A"
+  "ProductName": "Bread",
+  "Quantity": 1,
+  "ExtendedPrice": 2.71,
+  "ShipperName": "Fun Inc.",
+  "ShippedDate": "/Date(1422313200000)/",
+  "Status": "A"
   }
 ]
 ```
@@ -153,57 +153,57 @@ Finally, we call the `start` method on the `MockServer`. From this point, each r
 import MockServer from "sap/ui/core/util/MockServer";
 
 export default {
-    init: function () {
-        // create
-        const mockServer = new MockServer({
-            rootUri: sap.ui.require.toUrl("ui5/tutorial/walkthrough/V2/Northwind/Northwind.svc/")
-        });
+	init: function () {
+		// create
+		const mockServer = new MockServer({
+			rootUri: sap.ui.require.toUrl("ui5/tutorial/walkthrough/V2/Northwind/Northwind.svc/")
+		});
 
-        const urlParams = new URLSearchParams(window.location.search);
+		const urlParams = new URLSearchParams(window.location.search);
 
-        // configure mock server with a delay
-        MockServer.config({
-            autoRespond: true,
-            autoRespondAfter: parseInt(urlParams.get("serverDelay") || "500")
-        });
+		// configure mock server with a delay
+		MockServer.config({
+			autoRespond: true,
+			autoRespondAfter: parseInt(urlParams.get("serverDelay") || "500")
+		});
 
-        // simulate
-        const path = sap.ui.require.toUrl("ui5/tutorial/walkthrough/localService");
-        mockServer.simulate(path + "/metadata.xml", path + "/mockdata");
+		// simulate
+		const path = sap.ui.require.toUrl("ui5/tutorial/walkthrough/localService");
+		mockServer.simulate(path + "/metadata.xml", path + "/mockdata");
 
-        // start
-        mockServer.start();
-    }
+		// start
+		mockServer.start();
+	}
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/util/MockServer"], function (MockServer) {
-  "use strict";
+	"use strict";
 
-  return {
-    init: function () {
-      // create
-      const mockServer = new MockServer({
-        rootUri: sap.ui.require.toUrl("ui5/tutorial/walkthrough/V2/Northwind/Northwind.svc/")
-      });
-      const urlParams = new URLSearchParams(window.location.search);
+	return {
+		init: function () {
+			// create
+			const mockServer = new MockServer({
+				rootUri: sap.ui.require.toUrl("ui5/tutorial/walkthrough/V2/Northwind/Northwind.svc/")
+			});
+			const urlParams = new URLSearchParams(window.location.search);
 
-      // configure mock server with a delay
-      MockServer.config({
-        autoRespond: true,
-        autoRespondAfter: parseInt(urlParams.get("serverDelay") || "500")
-      });
+			// configure mock server with a delay
+			MockServer.config({
+				autoRespond: true,
+				autoRespondAfter: parseInt(urlParams.get("serverDelay") || "500")
+			});
 
-      // simulate
-      const path = sap.ui.require.toUrl("ui5/tutorial/walkthrough/localService");
-      mockServer.simulate(path + "/metadata.xml", path + "/mockdata");
+			// simulate
+			const path = sap.ui.require.toUrl("ui5/tutorial/walkthrough/localService");
+			mockServer.simulate(path + "/metadata.xml", path + "/mockdata");
 
-      // start
-      mockServer.start();
-    }
-  };
+			// start
+			mockServer.start();
+		}
+	};
 });
 
 ```
@@ -227,13 +227,13 @@ import("sap/ui/core/ComponentSupport");
 
 ```js
 sap.ui.define(["../localService/mockserver"], function (mockserver) {
-  "use strict";
+	"use strict";
 
 // initialize the mock server
-  mockserver.init();
+	mockserver.init();
 
-  // initialize the embedded component on the HTML page
-  sap.ui.require(["sap/ui/core/ComponentSupport"]);
+	// initialize the embedded component on the HTML page
+	sap.ui.require(["sap/ui/core/ComponentSupport"]);
 });
 
 ```

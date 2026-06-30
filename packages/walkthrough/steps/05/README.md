@@ -45,26 +45,26 @@ import Controller from "sap/ui/core/mvc/Controller";
  * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
-    onShowHello(): void {
-        // show a native JavaScript alert
-        alert("Hello World");
-     }
+	onShowHello(): void {
+		// show a native JavaScript alert
+		alert("Hello World");
+	 }
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
-  "use strict";
+	"use strict";
 
-  const AppController = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
-    onShowHello() {
-      // show a native JavaScript alert
-      alert("Hello World");
-    }
-  });
-  ;
-  return AppController;
+	const AppController = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		onShowHello() {
+			// show a native JavaScript alert
+			alert("Hello World");
+		}
+	});
+	;
+	return AppController;
 });
 
 ```

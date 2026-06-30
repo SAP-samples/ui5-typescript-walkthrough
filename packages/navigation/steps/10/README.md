@@ -22,40 +22,40 @@ You can view this step live: [🔗 Live Preview of Step 10](https://ui5.github.i
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.employee.Resume"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page
-        title="{i18n>ResumeOf} {FirstName} {LastName}"
-        titleAlignment="Center"
-        id="employeeResumePage"
-        showNavButton="true"
-        navButtonPress=".onNavBack">
-        <content>
-            <IconTabBar
-                id="iconTabBar"
-                headerBackgroundDesign="Transparent"
-                class="sapUiResponsiveContentPadding"
-                binding="{Resume}"
-                select=".onTabSelect"
-                selectedKey="{view>/selectedTabKey}">
-                <items>
-                    <IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
-                        <Text text="{Information}"/>
-                    </IconTabFilter>
-                    <IconTabFilter id="projectsTab" text="{i18n>tabProjects}" key="Projects">
-                        <mvc:XMLView viewName="ui5.tutorial.navigation.view.employee.ResumeProjects"></mvc:XMLView>
-                    </IconTabFilter>
-                    <IconTabFilter id="hobbiesTab" text="{i18n>tabHobbies}" key="Hobbies">
-                        <!-- place content via lazy loading -->
-                    </IconTabFilter>
-                    <IconTabFilter id="notesTab" text="{i18n>tabNotes}" key="Notes">
-                        <!-- place content via lazy loading -->
-                    </IconTabFilter>
-                </items>
-            </IconTabBar>
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.employee.Resume"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    title="{i18n>ResumeOf} {FirstName} {LastName}"
+    titleAlignment="Center"
+    id="employeeResumePage"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+    <content>
+      <IconTabBar
+        id="iconTabBar"
+        headerBackgroundDesign="Transparent"
+        class="sapUiResponsiveContentPadding"
+        binding="{Resume}"
+        select=".onTabSelect"
+        selectedKey="{view>/selectedTabKey}">
+        <items>
+          <IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
+            <Text text="{Information}"/>
+          </IconTabFilter>
+          <IconTabFilter id="projectsTab" text="{i18n>tabProjects}" key="Projects">
+            <mvc:XMLView viewName="ui5.tutorial.navigation.view.employee.ResumeProjects"></mvc:XMLView>
+          </IconTabFilter>
+          <IconTabFilter id="hobbiesTab" text="{i18n>tabHobbies}" key="Hobbies">
+            <!-- place content via lazy loading -->
+          </IconTabFilter>
+          <IconTabFilter id="notesTab" text="{i18n>tabNotes}" key="Notes">
+            <!-- place content via lazy loading -->
+          </IconTabFilter>
+        </items>
+      </IconTabBar>
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -67,7 +67,7 @@ In the `resume` view we remove the content of the *Hobbies* and *Notes* tabs as 
 
 ```xml
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
-    <Text text="{Hobbies}"/>
+  <Text text="{Hobbies}"/>
 </mvc:View>
 ```
 
@@ -77,7 +77,7 @@ Create the file `ResumeHobbies.view.xml` in the `webapp/view/employee` folder. M
 
 ```xml
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
-    <Text text="{Notes}"/>
+  <Text text="{Notes}"/>
 </mvc:View>
 ```
 
@@ -97,113 +97,113 @@ const validTabKeys = ["Info", "Projects", "Hobbies", "Notes"];
  * @namespace ui5.tutorial.navigation.controller.employee
  */
 export default class Resume extends BaseController {
-    ...
-    private _onRouteMatched(event: Route$MatchedEvent): void {
-        const eventArguments = (<any> event.getParameter("arguments"));
-        const view = this.getView();
+	...
+	private _onRouteMatched(event: Route$MatchedEvent): void {
+		const eventArguments = (<any> event.getParameter("arguments"));
+		const view = this.getView();
 
-        view.bindElement({
-            path: "/Employees(" + eventArguments.employeeId + ")",
-            events: {
-                change: this._onBindingChange.bind(this),
-                dataRequested: function (): void {
-                    view.setBusy(true);
-                },
-                dataReceived: function (): void {
-                    view.setBusy(false);
-                }
-            }
-        });
+		view.bindElement({
+			path: "/Employees(" + eventArguments.employeeId + ")",
+			events: {
+				change: this._onBindingChange.bind(this),
+				dataRequested: function (): void {
+					view.setBusy(true);
+				},
+				dataReceived: function (): void {
+					view.setBusy(false);
+				}
+			}
+		});
 
-        const query = eventArguments["?query"];
+		const query = eventArguments["?query"];
 
-        if (query && validTabKeys.includes(query.tab)) {
-            (<JSONModel> view.getModel("view")).setProperty("/selectedTabKey", query.tab);
-            // support lazy loading for the hobbies and notes tab
-            if (query.tab === "Hobbies" || query.tab === "Notes") {
-                // the target is either "resumeTabHobbies" or "resumeTabNotes"
-                this.getRouter().getTargets().display("resumeTab" + query.tab);
-            }
-        } else {
-            // the default query param should be visible at all time
-            this.getRouter().navTo("employeeResume", {
-                employeeId: eventArguments.employeeId,
-                "?query": {
-                    tab: validTabKeys[0]
-                }
-            }, true /*no history*/);
-        }
-    }
-    ...
+		if (query && validTabKeys.includes(query.tab)) {
+			(<JSONModel> view.getModel("view")).setProperty("/selectedTabKey", query.tab);
+			// support lazy loading for the hobbies and notes tab
+			if (query.tab === "Hobbies" || query.tab === "Notes") {
+				// the target is either "resumeTabHobbies" or "resumeTabNotes"
+				this.getRouter().getTargets().display("resumeTab" + query.tab);
+			}
+		} else {
+			// the default query param should be visible at all time
+			this.getRouter().navTo("employeeResume", {
+				employeeId: eventArguments.employeeId,
+				"?query": {
+					tab: validTabKeys[0]
+				}
+			}, true /*no history*/);
+		}
+	}
+	...
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController", "sap/ui/model/json/JSONModel"], function (BaseController, JSONModel) {
-  "use strict";
+	"use strict";
 
-  const validTabKeys = ["Info", "Projects", "Hobbies", "Notes"];
+	const validTabKeys = ["Info", "Projects", "Hobbies", "Notes"];
 
-  const Resume = BaseController.extend("ui5.tutorial.navigation.controller.employee.Resume", {
-    onInit() {
-      const router = this.getRouter();
-      this.getView().setModel(new JSONModel(), "view");
-      router.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
-    },
-    _onRouteMatched(event) {
-      const eventArguments = event.getParameter("arguments");
-      const view = this.getView();
-      view.bindElement({
-        path: "/Employees(" + eventArguments.employeeId + ")",
-        events: {
-          change: this._onBindingChange.bind(this),
-          dataRequested: function () {
-            view.setBusy(true);
-          },
-          dataReceived: function () {
-            view.setBusy(false);
-          }
-        }
-      });
-      const query = eventArguments["?query"];
-      if (query && validTabKeys.includes(query.tab)) {
-        view.getModel("view").setProperty("/selectedTabKey", query.tab);
-        // support lazy loading for the hobbies and notes tab
-        if (query.tab === "Hobbies" || query.tab === "Notes") {
-          // the target is either "resumeTabHobbies" or "resumeTabNotes"
-          this.getRouter().getTargets().display("resumeTab" + query.tab);
-        }
-      } else {
-        // the default query param should be visible at all time
-        this.getRouter().navTo("employeeResume", {
-          employeeId: eventArguments.employeeId,
-          "?query": {
-            tab: validTabKeys[0]
-          }
-        }, true /*no history*/);
-      }
-    },
-    _onBindingChange() {
-      // No data for the binding
-      if (!this.getView().getBindingContext()) {
-        this.getRouter().getTargets().display("notFound");
-      }
-    },
-    /**
-     * We use this event handler to update the hash in case a new tab is selected.
-     * @param event
-     */
-    onTabSelect(event) {
-      const context = this.getView().getBindingContext();
-      this.getRouter().navTo("employeeResume", {
-        employeeId: context.getProperty("EmployeeID"),
-        "?query": {
-          tab: event.getParameter("selectedKey")
-        }
-      }, true /*without history*/);
-    }
-  });
-  return Resume;
+	const Resume = BaseController.extend("ui5.tutorial.navigation.controller.employee.Resume", {
+		onInit() {
+			const router = this.getRouter();
+			this.getView().setModel(new JSONModel(), "view");
+			router.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
+		},
+		_onRouteMatched(event) {
+			const eventArguments = event.getParameter("arguments");
+			const view = this.getView();
+			view.bindElement({
+				path: "/Employees(" + eventArguments.employeeId + ")",
+				events: {
+					change: this._onBindingChange.bind(this),
+					dataRequested: function () {
+						view.setBusy(true);
+					},
+					dataReceived: function () {
+						view.setBusy(false);
+					}
+				}
+			});
+			const query = eventArguments["?query"];
+			if (query && validTabKeys.includes(query.tab)) {
+				view.getModel("view").setProperty("/selectedTabKey", query.tab);
+				// support lazy loading for the hobbies and notes tab
+				if (query.tab === "Hobbies" || query.tab === "Notes") {
+					// the target is either "resumeTabHobbies" or "resumeTabNotes"
+					this.getRouter().getTargets().display("resumeTab" + query.tab);
+				}
+			} else {
+				// the default query param should be visible at all time
+				this.getRouter().navTo("employeeResume", {
+					employeeId: eventArguments.employeeId,
+					"?query": {
+						tab: validTabKeys[0]
+					}
+				}, true /*no history*/);
+			}
+		},
+		_onBindingChange() {
+			// No data for the binding
+			if (!this.getView().getBindingContext()) {
+				this.getRouter().getTargets().display("notFound");
+			}
+		},
+		/**
+		 * We use this event handler to update the hash in case a new tab is selected.
+		 * @param event
+		 */
+		onTabSelect(event) {
+			const context = this.getView().getBindingContext();
+			this.getRouter().navTo("employeeResume", {
+				employeeId: context.getProperty("EmployeeID"),
+				"?query": {
+					tab: event.getParameter("selectedKey")
+				}
+			}, true /*without history*/);
+		}
+	});
+	return Resume;
 });
 ```
 
@@ -215,63 +215,63 @@ These lines of code make sure that the targets are only loaded when they are nee
 
 ```json
 {
-    "_version": "1.12.0",
-    "sap.app": {
-        ...
-    },
-    "sap.ui": {
-        ...
-    },
-    "sap.ui5": {
-        ...
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "type": "View",
-                "viewType": "XML",
-                "path": "ui5.tutorial.navigation.view",
-                "controlId": "app",
-                "controlAggregation": "pages",
-                "transition": "slide",
-                "bypassed": {
-                    "target": "notFound"
-                }
-            },
-            "routes": [{
-                ...
-            }, {
-                "pattern": "employees/{employeeId}/resume:?query:",
-                "name": "employeeResume",
-                "target": "employeeResume"
-            }],
-            "targets": {
-                ...
-                "employeeResume": {
-                    "id": "resume",
-                    "path": "ui5.tutorial.navigation.view.employee",
-                    "name": "Resume",
-                    "level": 4,
-                    "transition": "flip"
-                },
-                "resumeTabHobbies": {
-                    "id": "resumeHobbies",
-                    "parent": "employeeResume",
-                    "path": "ui5.tutorial.navigation.view.employee",
-                    "name": "ResumeHobbies",
-                    "controlId": "hobbiesTab",
-                    "controlAggregation": "content"
-                },
-                "resumeTabNotes": {
-                    "id": "resumeNotes",
-                    "parent": "employeeResume",
-                    "path": "ui5.tutorial.navigation.view.employee",
-                    "name": "ResumeNotes",
-                    "controlId": "notesTab",
-                    "controlAggregation": "content"
-                }
-            }
+  "_version": "1.12.0",
+  "sap.app": {
+    ...
+  },
+  "sap.ui": {
+    ...
+  },
+  "sap.ui5": {
+    ...
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5.tutorial.navigation.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
         }
+      },
+      "routes": [{
+        ...
+      }, {
+        "pattern": "employees/{employeeId}/resume:?query:",
+        "name": "employeeResume",
+        "target": "employeeResume"
+      }],
+      "targets": {
+        ...
+        "employeeResume": {
+          "id": "resume",
+          "path": "ui5.tutorial.navigation.view.employee",
+          "name": "Resume",
+          "level": 4,
+          "transition": "flip"
+        },
+        "resumeTabHobbies": {
+          "id": "resumeHobbies",
+          "parent": "employeeResume",
+          "path": "ui5.tutorial.navigation.view.employee",
+          "name": "ResumeHobbies",
+          "controlId": "hobbiesTab",
+          "controlAggregation": "content"
+        },
+        "resumeTabNotes": {
+          "id": "resumeNotes",
+          "parent": "employeeResume",
+          "path": "ui5.tutorial.navigation.view.employee",
+          "name": "ResumeNotes",
+          "controlId": "notesTab",
+          "controlAggregation": "content"
+        }
+      }
     }
+  }
 }
 ```
 

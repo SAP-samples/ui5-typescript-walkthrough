@@ -18,55 +18,55 @@ You can view this step live: [🔗 Live Preview of Step 12](https://ui5.github.i
 
 ```json
 {
-    "_version": "1.12.0",
-    "sap.app": {
-        ...
-    },
-    "sap.ui": {
-        ...
-    },
-    "sap.ui5": {
-        ...
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "type": "View",
-                "viewType": "XML",
-                "path": "ui5.tutorial.navigation.view",
-                "controlId": "app",
-                "controlAggregation": "pages",
-                "transition": "slide",
-                "bypassed": {
-                    "target": "notFound"
-                }
-            },
-            "routes": [{
-                "pattern": "",
-                "name": "appHome",
-                "target": "home"
-            }, {
-                "pattern": "employees",
-                "name": "employeeList",
-                "target": "employees"
-            }, {
-                "pattern": "employees/overview:?query:",
-                "name": "employeeOverview",
-                "target": ["employeeOverviewTop", "employeeOverviewContent"]
-
-            }, {
-                "pattern": "employees/{employeeId}",
-                "name": "employee",
-                "target": "employee"
-            }, {
-                "pattern": "employees/{employeeId}/resume:?query:",
-                "name": "employeeResume",
-                "target": "employeeResume"
-            }],
-            "targets": {
-                ...
-            }
+  "_version": "1.12.0",
+  "sap.app": {
+    ...
+  },
+  "sap.ui": {
+    ...
+  },
+  "sap.ui5": {
+    ...
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5.tutorial.navigation.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
         }
+      },
+      "routes": [{
+        "pattern": "",
+        "name": "appHome",
+        "target": "home"
+      }, {
+        "pattern": "employees",
+        "name": "employeeList",
+        "target": "employees"
+      }, {
+        "pattern": "employees/overview:?query:",
+        "name": "employeeOverview",
+        "target": ["employeeOverviewTop", "employeeOverviewContent"]
+
+      }, {
+        "pattern": "employees/{employeeId}",
+        "name": "employee",
+        "target": "employee"
+      }, {
+        "pattern": "employees/{employeeId}/resume:?query:",
+        "name": "employeeResume",
+        "target": "employeeResume"
+      }],
+      "targets": {
+        ...
+      }
     }
+  }
 }
 ```
 
@@ -91,178 +91,178 @@ import { Route$MatchedEvent } from "sap/ui/core/routing/Route";
  */
 export default class EmployeeOverviewContent extends BaseController {
 
-    private table: Table;
-    private viewSettingsDialog: ViewSettingsDialog;
-    private sortField: string | null = null;
-    private sortDescending: boolean = false;
-    private validSortFields: string[] = ["EmployeeID", "FirstName", "LastName"];
-    private searchQuery: string | null = null;
-    private routerArgs: any = null;
+	private table: Table;
+	private viewSettingsDialog: ViewSettingsDialog;
+	private sortField: string | null = null;
+	private sortDescending: boolean = false;
+	private validSortFields: string[] = ["EmployeeID", "FirstName", "LastName"];
+	private searchQuery: string | null = null;
+	private routerArgs: any = null;
 
-    public onInit(): void {
-        const router = this.getRouter();
+	public onInit(): void {
+		const router = this.getRouter();
 
-        this.table = (<Table> this.byId("employeesTable"));
-        this._initViewSettingsDialog();
+		this.table = (<Table> this.byId("employeesTable"));
+		this._initViewSettingsDialog();
 
-        // make the search bookmarkable
-        router.getRoute("employeeOverview").attachMatched(this._onRouteMatched, this);
-    }
+		// make the search bookmarkable
+		router.getRoute("employeeOverview").attachMatched(this._onRouteMatched, this);
+	}
 
-    private _onRouteMatched(event: Route$MatchedEvent): void {
-        // save the current query state
-        this.routerArgs = event.getParameter("arguments");
-        this.routerArgs["?query"] ||= {};
+	private _onRouteMatched(event: Route$MatchedEvent): void {
+		// save the current query state
+		this.routerArgs = event.getParameter("arguments");
+		this.routerArgs["?query"] ||= {};
 
-        // search/filter via URL hash
-        this._applySearchFilter(this.routerArgs["?query"].search);
-    }
+		// search/filter via URL hash
+		this._applySearchFilter(this.routerArgs["?query"].search);
+	}
 
-    public onSortButtonPressed(): void {
-        this.viewSettingsDialog.open();
-    }
+	public onSortButtonPressed(): void {
+		this.viewSettingsDialog.open();
+	}
 
-    public onSearchEmployeesTable(event: SearchField$SearchEvent): void {
-        const router = this.getRouter();
+	public onSearchEmployeesTable(event: SearchField$SearchEvent): void {
+		const router = this.getRouter();
 
-        // update the hash with the current search term
-        this.routerArgs["?query"].search = event.getSource().getValue();
-        router.navTo("employeeOverview", this.routerArgs, true /*no history*/);
-    }
-    ...
+		// update the hash with the current search term
+		this.routerArgs["?query"].search = event.getSource().getValue();
+		router.navTo("employeeOverview", this.routerArgs, true /*no history*/);
+	}
+	...
 }
 ```
 
 ```js
 sap.ui.define(["sap/m/ViewSettingsDialog", "sap/m/ViewSettingsItem", "ui5/tutorial/navigation/controller/BaseController", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/model/Sorter"], function (ViewSettingsDialog, ViewSettingsItem, BaseController, Filter, FilterOperator, Sorter) {
-  "use strict";
+	"use strict";
 
-  const EmployeeOverviewContent = BaseController.extend("ui5.tutorial.navigation.controller.employee.overview.EmployeeOverviewContent", {
-    constructor() {
-      BaseController.prototype.constructor.apply(this, arguments);
-      this.sortField = null;
-      this.sortDescending = false;
-      this.validSortFields = ["EmployeeID", "FirstName", "LastName"];
-      this.searchQuery = null;
-      this.routerArgs = null;
-    },
-    onInit() {
-      const router = this.getRouter();
-      this.table = this.byId("employeesTable");
-      this._initViewSettingsDialog();
+	const EmployeeOverviewContent = BaseController.extend("ui5.tutorial.navigation.controller.employee.overview.EmployeeOverviewContent", {
+		constructor() {
+			BaseController.prototype.constructor.apply(this, arguments);
+			this.sortField = null;
+			this.sortDescending = false;
+			this.validSortFields = ["EmployeeID", "FirstName", "LastName"];
+			this.searchQuery = null;
+			this.routerArgs = null;
+		},
+		onInit() {
+			const router = this.getRouter();
+			this.table = this.byId("employeesTable");
+			this._initViewSettingsDialog();
 
-      // make the search bookmarkable
-      router.getRoute("employeeOverview").attachMatched(this._onRouteMatched, this);
-    },
-    _onRouteMatched(event) {
-      // save the current query state
-      this.routerArgs = event.getParameter("arguments");
-      this.routerArgs["?query"] ||= {};
+			// make the search bookmarkable
+			router.getRoute("employeeOverview").attachMatched(this._onRouteMatched, this);
+		},
+		_onRouteMatched(event) {
+			// save the current query state
+			this.routerArgs = event.getParameter("arguments");
+			this.routerArgs["?query"] ||= {};
 
-      // search/filter via URL hash
-      this._applySearchFilter(this.routerArgs["?query"].search);
-    },
-    onSortButtonPressed() {
-      this.viewSettingsDialog.open();
-    },
-    onSearchEmployeesTable(event) {
-      const router = this.getRouter();
+			// search/filter via URL hash
+			this._applySearchFilter(this.routerArgs["?query"].search);
+		},
+		onSortButtonPressed() {
+			this.viewSettingsDialog.open();
+		},
+		onSearchEmployeesTable(event) {
+			const router = this.getRouter();
 
-      // update the hash with the current search term
-      this.routerArgs["?query"].search = event.getSource().getValue();
-      router.navTo("employeeOverview", this.routerArgs, true /*no history*/);
-    },
-    _initViewSettingsDialog() {
-      this.viewSettingsDialog = new ViewSettingsDialog("vsd", {
-        confirm: event => {
-          const sortItem = event.getParameter("sortItem");
-          this._applySorter(sortItem.getKey(), event.getParameter("sortDescending"));
-        }
-      });
+			// update the hash with the current search term
+			this.routerArgs["?query"].search = event.getSource().getValue();
+			router.navTo("employeeOverview", this.routerArgs, true /*no history*/);
+		},
+		_initViewSettingsDialog() {
+			this.viewSettingsDialog = new ViewSettingsDialog("vsd", {
+				confirm: event => {
+					const sortItem = event.getParameter("sortItem");
+					this._applySorter(sortItem.getKey(), event.getParameter("sortDescending"));
+				}
+			});
 
-      // init sorting (with simple sorters as custom data for all fields)
-      this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
-        key: "EmployeeID",
-        text: "Employee ID",
-        selected: true // by default the MockData is sorted by EmployeeID
-      }));
-      this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
-        key: "FirstName",
-        text: "First Name",
-        selected: false
-      }));
-      this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
-        key: "LastName",
-        text: "Last Name",
-        selected: false
-      }));
-    },
-    _applySearchFilter(searchQuery) {
-      // first check if we already have this search value
-      if (this.searchQuery === searchQuery) {
-        return;
-      }
-      this.searchQuery = searchQuery;
-      this.byId("searchField").setValue(searchQuery);
-      let filter = null;
+			// init sorting (with simple sorters as custom data for all fields)
+			this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
+				key: "EmployeeID",
+				text: "Employee ID",
+				selected: true // by default the MockData is sorted by EmployeeID
+			}));
+			this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
+				key: "FirstName",
+				text: "First Name",
+				selected: false
+			}));
+			this.viewSettingsDialog.addSortItem(new ViewSettingsItem({
+				key: "LastName",
+				text: "Last Name",
+				selected: false
+			}));
+		},
+		_applySearchFilter(searchQuery) {
+			// first check if we already have this search value
+			if (this.searchQuery === searchQuery) {
+				return;
+			}
+			this.searchQuery = searchQuery;
+			this.byId("searchField").setValue(searchQuery);
+			let filter = null;
 
-      // add filters for search
-      if (searchQuery?.length > 0) {
-        const filters = [];
-        filters.push(new Filter("FirstName", FilterOperator.Contains, searchQuery));
-        filters.push(new Filter("LastName", FilterOperator.Contains, searchQuery));
-        filter = new Filter({
-          filters: filters,
-          and: false
-        }); // OR filter
-      }
+			// add filters for search
+			if (searchQuery?.length > 0) {
+				const filters = [];
+				filters.push(new Filter("FirstName", FilterOperator.Contains, searchQuery));
+				filters.push(new Filter("LastName", FilterOperator.Contains, searchQuery));
+				filter = new Filter({
+					filters: filters,
+					and: false
+				}); // OR filter
+			}
 
-      // update list binding
-      const binding = this.table.getBinding("items");
-      binding.filter(filter, "Application");
-    },
-    /**
-     * Applies sorting on our table control.
-     * @param {string} fieldName the name of the field used for sorting
-     * @param {string | boolean} sortDescending true or false as a string or boolean value to specify a descending sorting
-     * @private
-     */
-    _applySorter(fieldName, sortDescending) {
-      // only continue if we have a valid sort field
-      if (fieldName && this.validSortFields.includes(fieldName)) {
-        let descending;
+			// update list binding
+			const binding = this.table.getBinding("items");
+			binding.filter(filter, "Application");
+		},
+		/**
+		 * Applies sorting on our table control.
+		 * @param {string} fieldName the name of the field used for sorting
+		 * @param {string | boolean} sortDescending true or false as a string or boolean value to specify a descending sorting
+		 * @private
+		 */
+		_applySorter(fieldName, sortDescending) {
+			// only continue if we have a valid sort field
+			if (fieldName && this.validSortFields.includes(fieldName)) {
+				let descending;
 
-        // convert the sort order to a boolean value
-        if (typeof sortDescending === "string") {
-          descending = sortDescending === "true";
-        } else if (typeof sortDescending === "boolean") {
-          descending = sortDescending;
-        } else {
-          descending = false;
-        }
+				// convert the sort order to a boolean value
+				if (typeof sortDescending === "string") {
+					descending = sortDescending === "true";
+				} else if (typeof sortDescending === "boolean") {
+					descending = sortDescending;
+				} else {
+					descending = false;
+				}
 
-        // sort only if the sorter has changed
-        if (this.sortField && this.sortField === fieldName && this.sortDescending === descending) {
-          return;
-        }
-        this.sortField = fieldName;
-        this.sortDescending = descending;
-        const sorter = new Sorter(fieldName, descending);
+				// sort only if the sorter has changed
+				if (this.sortField && this.sortField === fieldName && this.sortDescending === descending) {
+					return;
+				}
+				this.sortField = fieldName;
+				this.sortDescending = descending;
+				const sorter = new Sorter(fieldName, descending);
 
-        // sync with View Settings Dialog
-        this._syncViewSettingsDialogSorter(fieldName, descending);
-        const binding = this.table.getBinding("items");
-        binding.sort(sorter);
-      }
-    },
-    _syncViewSettingsDialogSorter(sortField, sortDescending) {
-      // the possible keys are: "EmployeeID" | "FirstName" | "LastName"
-      // Note: no input validation is implemented here
-      this.viewSettingsDialog.setSelectedSortItem(sortField);
-      this.viewSettingsDialog.setSortDescending(sortDescending);
-    }
-  });
-  return EmployeeOverviewContent;
+				// sync with View Settings Dialog
+				this._syncViewSettingsDialogSorter(fieldName, descending);
+				const binding = this.table.getBinding("items");
+				binding.sort(sorter);
+			}
+		},
+		_syncViewSettingsDialogSorter(sortField, sortDescending) {
+			// the possible keys are: "EmployeeID" | "FirstName" | "LastName"
+			// Note: no input validation is implemented here
+			this.viewSettingsDialog.setSelectedSortItem(sortField);
+			this.viewSettingsDialog.setSortDescending(sortDescending);
+		}
+	});
+	return EmployeeOverviewContent;
 });
 ```
 

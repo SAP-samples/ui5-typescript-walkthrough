@@ -44,27 +44,27 @@ import Controller from "sap/ui/core/mvc/Controller";
  * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
-    onShowHello(): void {
-        MessageToast.show("Hello World");
-     }
+	onShowHello(): void {
+		MessageToast.show("Hello World");
+	 }
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller"], function (MessageToast, Controller) {
-  "use strict";
+	"use strict";
 
-  /**
-   * @name ui5.tutorial.walkthrough.controller.App
-   */
-  const AppController = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
-    onShowHello() {
-      MessageToast.show("Hello World");
-    }
-  });
-  ;
-  return AppController;
+	/**
+	 * @name ui5.tutorial.walkthrough.controller.App
+	 */
+	const AppController = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		onShowHello() {
+			MessageToast.show("Hello World");
+		}
+	});
+	;
+	return AppController;
 });
 
 ```

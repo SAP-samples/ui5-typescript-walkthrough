@@ -60,32 +60,32 @@ import formatter from "ui5/tutorial/walkthrough/model/formatter";
 QUnit.module("Formatting function", {});
 
 QUnit.test("Should return the translated texts", (assert) => {
-    const resourceModel = new ResourceModel({
-        bundleUrl: sap.ui.require.toUrl("ui5/tutorial/walkthrough/i18n/i18n.properties"),
-        supportedLocales: [
-            ""
-        ],
-        fallbackLocale: ""
-    });
+	const resourceModel = new ResourceModel({
+		bundleUrl: sap.ui.require.toUrl("ui5/tutorial/walkthrough/i18n/i18n.properties"),
+		supportedLocales: [
+			""
+		],
+		fallbackLocale: ""
+	});
 
-    const controllerMock = {
-        getOwnerComponent() {
-            return {
-                getModel() {
-                    return resourceModel;
-                }
-            };
-        }
-    } as any as Controller;
+	const controllerMock = {
+		getOwnerComponent() {
+			return {
+				getModel() {
+					return resourceModel;
+				}
+			};
+		}
+	} as any as Controller;
 
-    // System under test
-    const fnIsolatedFormatter = formatter.statusText.bind(controllerMock);
+	// System under test
+	const fnIsolatedFormatter = formatter.statusText.bind(controllerMock);
 
-    // Assert
-    assert.strictEqual(fnIsolatedFormatter("A"), "New", "The long text for status A is correct");
-    assert.strictEqual(fnIsolatedFormatter("B"), "In Progress", "The long text for status B is correct");
-    assert.strictEqual(fnIsolatedFormatter("C"), "Done", "The long text for status C is correct");
-    assert.strictEqual(fnIsolatedFormatter("Foo"), "Foo", "The long text for status Foo is correct");
+	// Assert
+	assert.strictEqual(fnIsolatedFormatter("A"), "New", "The long text for status A is correct");
+	assert.strictEqual(fnIsolatedFormatter("B"), "In Progress", "The long text for status B is correct");
+	assert.strictEqual(fnIsolatedFormatter("C"), "Done", "The long text for status C is correct");
+	assert.strictEqual(fnIsolatedFormatter("Foo"), "Foo", "The long text for status Foo is correct");
 });
 
 ```
@@ -96,29 +96,29 @@ sap.ui.define(["sap/ui/model/resource/ResourceModel", "ui5/tutorial/walkthrough/
 
   QUnit.module("Formatting function", {});
   QUnit.test("Should return the translated texts", assert => {
-    const resourceModel = new ResourceModel({
-      bundleUrl: sap.ui.require.toUrl("ui5/tutorial/walkthrough/i18n/i18n.properties"),
-      supportedLocales: [""],
-      fallbackLocale: ""
-    });
-    const controllerMock = {
-      getOwnerComponent() {
-        return {
-          getModel() {
-            return resourceModel;
-          }
-        };
-      }
-    };
+	const resourceModel = new ResourceModel({
+	  bundleUrl: sap.ui.require.toUrl("ui5/tutorial/walkthrough/i18n/i18n.properties"),
+	  supportedLocales: [""],
+	  fallbackLocale: ""
+	});
+	const controllerMock = {
+	  getOwnerComponent() {
+		return {
+		  getModel() {
+			return resourceModel;
+		  }
+		};
+	  }
+	};
 
-    // System under test
-    const fnIsolatedFormatter = formatter.statusText.bind(controllerMock);
+	// System under test
+	const fnIsolatedFormatter = formatter.statusText.bind(controllerMock);
 
-    // Assert
-    assert.strictEqual(fnIsolatedFormatter("A"), "New", "The long text for status A is correct");
-    assert.strictEqual(fnIsolatedFormatter("B"), "In Progress", "The long text for status B is correct");
-    assert.strictEqual(fnIsolatedFormatter("C"), "Done", "The long text for status C is correct");
-    assert.strictEqual(fnIsolatedFormatter("Foo"), "Foo", "The long text for status Foo is correct");
+	// Assert
+	assert.strictEqual(fnIsolatedFormatter("A"), "New", "The long text for status A is correct");
+	assert.strictEqual(fnIsolatedFormatter("B"), "In Progress", "The long text for status B is correct");
+	assert.strictEqual(fnIsolatedFormatter("C"), "Done", "The long text for status C is correct");
+	assert.strictEqual(fnIsolatedFormatter("Foo"), "Foo", "The long text for status Foo is correct");
   });
 });
 
@@ -138,7 +138,7 @@ import "./model/formatter";
 
 ```js
 sap.ui.define(["./model/formatter"], function (___model_formatter) {
-  "use strict";
+	"use strict";
 });
 
 ```
@@ -215,30 +215,30 @@ export default {
 
 ```js
 sap.ui.define([], function () {
-  "use strict";
+	"use strict";
 
-  return {
-    name: "QUnit test suite for UI5 TypeScript Walkthrough",
-    defaults: {
-      page: "ui5://test-resources/ui5/tutorial/walkthrough/Test.qunit.html?testsuite={suite}&test={name}",
-      qunit: {
-        version: 2
-      },
-      ui5: {
-        theme: "sap_horizon"
-      },
-      loader: {
-        paths: {
-          "ui5/tutorial/walkthrough": "../"
-        }
-      }
-    },
-    tests: {
-      "unit/unitTests": {
-        title: "UI5 TypeScript Walkthrough - Unit Tests"
-      }
-    }
-  };
+	return {
+		name: "QUnit test suite for UI5 TypeScript Walkthrough",
+		defaults: {
+			page: "ui5://test-resources/ui5/tutorial/walkthrough/Test.qunit.html?testsuite={suite}&test={name}",
+			qunit: {
+				version: 2
+			},
+			ui5: {
+				theme: "sap_horizon"
+			},
+			loader: {
+				paths: {
+					"ui5/tutorial/walkthrough": "../"
+				}
+			}
+		},
+		tests: {
+			"unit/unitTests": {
+				title: "UI5 TypeScript Walkthrough - Unit Tests"
+			}
+		}
+	};
 });
 
 ```

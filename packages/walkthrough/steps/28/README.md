@@ -90,27 +90,27 @@ sap.ui.define(["sap/ui/test/Opa5", "sap/ui/test/actions/Press"], function (Opa5,
 
   const viewName = "ui5.tutorial.walkthrough.view.HelloPanel";
   class HelloPanelPage extends Opa5 {
-    // Actions
-    iPressTheSayHelloWithDialogButton() {
-      return this.waitFor({
-        id: "helloDialogButton",
-        viewName,
-        actions: new Press(),
-        errorMessage: "Did not find the 'Say Hello With Dialog' button on the HelloPanel view"
-      });
-    }
+	// Actions
+	iPressTheSayHelloWithDialogButton() {
+	  return this.waitFor({
+		id: "helloDialogButton",
+		viewName,
+		actions: new Press(),
+		errorMessage: "Did not find the 'Say Hello With Dialog' button on the HelloPanel view"
+	  });
+	}
 
-    // Assertions
-    iShouldSeeTheHelloDialog() {
-      return this.waitFor({
-        controlType: "sap.m.Dialog",
-        success: function () {
-          // we set the view busy, so we need to query the parent of the app
-          Opa5.assert.ok(true, "The dialog is open");
-        },
-        errorMessage: "Did not find the dialog control"
-      });
-    }
+	// Assertions
+	iShouldSeeTheHelloDialog() {
+	  return this.waitFor({
+		controlType: "sap.m.Dialog",
+		success: function () {
+		  // we set the view busy, so we need to query the parent of the app
+		  Opa5.assert.ok(true, "The dialog is open");
+		},
+		errorMessage: "Did not find the dialog control"
+	  });
+	}
   }
   ;
   return HelloPanelPage;
@@ -173,21 +173,21 @@ sap.ui.define(["sap/ui/test/opaQunit", "./pages/HelloPanelPage"], function (opaT
   const onTheHelloPanelPage = new HelloPanelPage();
   QUnit.module("Navigation");
   opaTest("Should open the Hello dialog", function () {
-    // Arrangements
-    onTheHelloPanelPage.iStartMyUIComponent({
-      componentConfig: {
-        name: "ui5.tutorial.walkthrough"
-      }
-    });
+	// Arrangements
+	onTheHelloPanelPage.iStartMyUIComponent({
+	  componentConfig: {
+		name: "ui5.tutorial.walkthrough"
+	  }
+	});
 
-    // Actions
-    onTheHelloPanelPage.iPressTheSayHelloWithDialogButton();
+	// Actions
+	onTheHelloPanelPage.iPressTheSayHelloWithDialogButton();
 
-    // Assertions
-    onTheHelloPanelPage.iShouldSeeTheHelloDialog();
+	// Assertions
+	onTheHelloPanelPage.iShouldSeeTheHelloDialog();
 
-    // Cleanup
-    onTheHelloPanelPage.iTeardownMyApp();
+	// Cleanup
+	onTheHelloPanelPage.iTeardownMyApp();
   });
 });
 
@@ -207,7 +207,7 @@ import "./NavigationJourney";
 
 ```js
 sap.ui.define(["./NavigationJourney"], function (___NavigationJourney) {
-  "use strict";
+	"use strict";
 });
 
 ```
@@ -234,17 +234,17 @@ export default {
 
 ```js
 sap.ui.define([], function () {
-  "use strict";
+	"use strict";
 	//...
-    tests: {
-      "unit/unitTests": {
-        title: "UI5 TypeScript Walkthrough - Unit Tests"
-      },
-      "integration/opaTests": {
-        title: "UI5 TypeScript Walkthrough - Integration Tests"
-      }
-    }
-  };
+		tests: {
+			"unit/unitTests": {
+				title: "UI5 TypeScript Walkthrough - Unit Tests"
+			},
+			"integration/opaTests": {
+				title: "UI5 TypeScript Walkthrough - Integration Tests"
+			}
+		}
+	};
 });
 
 ```

@@ -67,19 +67,19 @@ We configure the CSS file to our app descriptor: In the `resources` section of t
 ```json
 {
 ...
-    "sap.ui5": {
-        ...
-        "models": {
-            ...
-        },
-        "resources": {
-            "css": [
-              {
-                "uri": "css/style.css"
-              }
-            ]
-        }     
-    }
+  "sap.ui5": {
+    ...
+    "models": {
+      ...
+    },
+    "resources": {
+      "css": [
+        {
+        "uri": "css/style.css"
+        }
+      ]
+    }     
+  }
 }        
 ```
 
@@ -93,38 +93,38 @@ To highlight the output text, we replace the text control by a `FormattedText` c
 
 ```xml
 <mvc:View
-	controllerName="ui5.tutorial.walkthrough.controller.App"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true">
-	<Shell>
-		<App class="myAppDemoWT">
-			<pages>
-				<Page title="{i18n>homePageTitle}">
-					<content>
-						<Panel
-							headerText="{i18n>helloPanelTitle}"
-							class="sapUiResponsiveMargin"
-							width="auto">
-							<content>
-								<Button
-									text="{i18n>showHelloButtonText}"
-									press=".onShowHello"
-									class="myCustomButton"/>
-								<Input
-									value="{/recipient/name}"
-									valueLiveUpdate="true"
-									width="60%"/>
-								<FormattedText
-									htmlText="Hello {/recipient/name}"
-									class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>	
-							</content>
-						</Panel>
-					</content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+  controllerName="ui5.tutorial.walkthrough.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Shell>
+    <App class="myAppDemoWT">
+      <pages>
+        <Page title="{i18n>homePageTitle}">
+          <content>
+            <Panel
+              headerText="{i18n>helloPanelTitle}"
+              class="sapUiResponsiveMargin"
+              width="auto">
+              <content>
+                <Button
+                  text="{i18n>showHelloButtonText}"
+                  press=".onShowHello"
+                  class="myCustomButton"/>
+                <Input
+                  value="{/recipient/name}"
+                  valueLiveUpdate="true"
+                  width="60%"/>
+                <FormattedText
+                  htmlText="Hello {/recipient/name}"
+                  class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>	
+              </content>
+            </Panel>
+          </content>
+        </Page>
+      </pages>
+    </App>
+  </Shell>
 </mvc:View>
 ```
 &nbsp;

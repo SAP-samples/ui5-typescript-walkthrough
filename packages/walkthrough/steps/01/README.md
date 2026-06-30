@@ -48,11 +48,11 @@ In our webapp folder, we create a new HTML file named `index.html` and copy the 
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>UI5 TypeScript Walkthrough</title>
+	<meta charset="utf-8">
+	<title>UI5 TypeScript Walkthrough</title>
 </head>
 <body>
-  <div>Hello World</div>
+	<div>Hello World</div>
 </body>
 </html>
 ```
@@ -74,7 +74,7 @@ Let's start by creating a new file named `manifest.json` in the webapp folder an
 
 -   The `_version` attribute in the root is mandatory in the manifest. It indicates the format version of the manifest, which is crucial for identifying application settings whenever the file is read by various tools. As new features or changes are introduced in future versions, maintaining the correct version number ensures compatibility and precise interpretation of the manifest's contents. 
 
-Since we want our app to support not only the latest OpenUI5 version but rather the latest long-term maintenance version, which is OpenUI5 1.120, we set the format version to `1.60.0`.
+Since we want our app to support not only the latest OpenUI5 version but rather the latest long-term maintenance version, which is OpenUI5 1.148, we set the format version to `2.8.0`.
 
   > :note:
   > The manifest version should not necessarily align directly with the OpenUI5 version being used. Instead, choose the descriptor version that matches the requirements or supports the features you intend to use in your application. 
@@ -96,15 +96,15 @@ Since we want our app to support not only the latest OpenUI5 version but rather 
 
 ```json
 {
-    "_version": "1.60.0",
-    "sap.app": {
-        "id": "ui5.tutorial.walkthrough",
-        "type": "application",
-        "title": "OpenUI5 TypeScript Walkthrough",
-        "applicationVersion": {
-            "version": "1.0.0"
-        }
+  "_version": "2.8.0",
+  "sap.app": {
+    "id": "ui5.tutorial.walkthrough",
+    "type": "application",
+    "title": "OpenUI5 TypeScript Walkthrough",
+    "applicationVersion": {
+      "version": "1.0.0"
     }
+  }
 }
 ```
 

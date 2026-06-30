@@ -33,41 +33,41 @@ You can view this step live: [🔗 Live Preview of Step 10](https://ui5.github.i
 		},
 
 		onSelectionChange(oEvent) {
-            this._setDetailArea(oEvent.getParameter("listItem").getBindingContext());
-        },
+			this._setDetailArea(oEvent.getParameter("listItem").getBindingContext());
+		},
 ...
-        /**
-         * Toggles the visibility of the detail area
-         *
-         * @param {object} [oUserContext] - the current user context
-         */
-        _setDetailArea(oUserContext) {
-            const oDetailArea = this.byId("detailArea"),
-                oLayout = this.byId("defaultLayout"),
-                oOldContext,
-                oSearchField = this.byId("searchField");
+		/**
+		 * Toggles the visibility of the detail area
+		 *
+		 * @param {object} [oUserContext] - the current user context
+		 */
+		_setDetailArea(oUserContext) {
+			const oDetailArea = this.byId("detailArea"),
+				oLayout = this.byId("defaultLayout"),
+				oOldContext,
+				oSearchField = this.byId("searchField");
 
-            if (!oDetailArea) {
-                return; // do nothing when running within view destruction
-            }
+			if (!oDetailArea) {
+				return; // do nothing when running within view destruction
+			}
 
-            oOldContext = oDetailArea.getBindingContext();
-            if (oOldContext) {
-                oOldContext.setKeepAlive(false);
-            }
-            if (oUserContext) {
-                oUserContext.setKeepAlive(true,
-                    // hide details if kept entity was refreshed but does not exists any more
-                    this._setDetailArea.bind(this));
+			oOldContext = oDetailArea.getBindingContext();
+			if (oOldContext) {
+				oOldContext.setKeepAlive(false);
+			}
+			if (oUserContext) {
+				oUserContext.setKeepAlive(true,
+					// hide details if kept entity was refreshed but does not exists any more
+					this._setDetailArea.bind(this));
 
-            }
-            oDetailArea.setBindingContext(oUserContext || null);
-            // resize view
-            oDetailArea.setVisible(!!oUserContext);
-            oLayout.setSize(oUserContext ? "60%" : "100%");
-            oLayout.setResizable(!!oUserContext);
-            oSearchField.setWidth(oUserContext ? "40%" : "20%");
-        }
+			}
+			oDetailArea.setBindingContext(oUserContext || null);
+			// resize view
+			oDetailArea.setVisible(!!oUserContext);
+			oLayout.setSize(oUserContext ? "60%" : "100%");
+			oLayout.setResizable(!!oUserContext);
+			oSearchField.setWidth(oUserContext ? "40%" : "20%");
+		}
  ...
 ```
 
@@ -78,41 +78,41 @@ You can view this step live: [🔗 Live Preview of Step 10](https://ui5.github.i
 		},
 
 		onSelectionChange : function (oEvent) {
-            this._setDetailArea(oEvent.getParameter("listItem").getBindingContext());
-        },
+			this._setDetailArea(oEvent.getParameter("listItem").getBindingContext());
+		},
 ...
-        /**
-         * Toggles the visibility of the detail area
-         *
-         * @param {object} [oUserContext] - the current user context
-         */
-        _setDetailArea : function (oUserContext) {
-            var oDetailArea = this.byId("detailArea"),
-                oLayout = this.byId("defaultLayout"),
-                oOldContext,
-                oSearchField = this.byId("searchField");
+		/**
+		 * Toggles the visibility of the detail area
+		 *
+		 * @param {object} [oUserContext] - the current user context
+		 */
+		_setDetailArea : function (oUserContext) {
+			var oDetailArea = this.byId("detailArea"),
+				oLayout = this.byId("defaultLayout"),
+				oOldContext,
+				oSearchField = this.byId("searchField");
 
-            if (!oDetailArea) {
-                return; // do nothing when running within view destruction
-            }
+			if (!oDetailArea) {
+				return; // do nothing when running within view destruction
+			}
 
-            oOldContext = oDetailArea.getBindingContext();
-            if (oOldContext) {
-                oOldContext.setKeepAlive(false);
-            }
-            if (oUserContext) {
-                oUserContext.setKeepAlive(true,
-                    // hide details if kept entity was refreshed but does not exists any more
-                    this._setDetailArea.bind(this));
+			oOldContext = oDetailArea.getBindingContext();
+			if (oOldContext) {
+				oOldContext.setKeepAlive(false);
+			}
+			if (oUserContext) {
+				oUserContext.setKeepAlive(true,
+					// hide details if kept entity was refreshed but does not exists any more
+					this._setDetailArea.bind(this));
 
-            }
-            oDetailArea.setBindingContext(oUserContext || null);
-            // resize view
-            oDetailArea.setVisible(!!oUserContext);
-            oLayout.setSize(oUserContext ? "60%" : "100%");
-            oLayout.setResizable(!!oUserContext);
-            oSearchField.setWidth(oUserContext ? "40%" : "20%");
-        }
+			}
+			oDetailArea.setBindingContext(oUserContext || null);
+			// resize view
+			oDetailArea.setVisible(!!oUserContext);
+			oLayout.setSize(oUserContext ? "60%" : "100%");
+			oLayout.setResizable(!!oUserContext);
+			oSearchField.setWidth(oUserContext ? "40%" : "20%");
+		}
  ...
 ```
 

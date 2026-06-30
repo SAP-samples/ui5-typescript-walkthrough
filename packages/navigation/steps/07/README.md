@@ -61,67 +61,67 @@ webapp/
 
 ```json
 {
-    "_version": "1.12.0",
-    "sap.app": {
-        ...
-    },
-    "sap.ui": {
-        ...
-    },
-    "sap.ui5": {
-        ...
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "type": "View",
-                "viewType": "XML",
-                "path": "ui5.tutorial.navigation.view",
-                "controlId": "app",
-                "controlAggregation": "pages",
-                "transition": "slide",
-                "bypassed": {
-                    "target": "notFound"
-                }
-            },
-            "routes": [{
-                "pattern": "",
-                "name": "appHome",
-                "target": "home"
-            }, {
-                "pattern": "employees",
-                "name": "employeeList",
-                "target": "employees"
-            }, {
-                "pattern": "employees/{employeeId}",
-                "name": "employee",
-                "target": "employee"
-            }],
-            "targets": {
-                "home": {
-                    "id": "home",
-                    "name": "Home",
-                    "level": 1
-                },
-                "notFound": {
-                    "id": "notFound",
-                    "name": "NotFound",
-                    "transition": "show"
-                },
-                "employees": {
-                    "id": "employeeList",
-                    "path": "ui5.tutorial.navigation.view.employee",
-                    "name": "EmployeeList",
-                    "level": 2
-                },
-                "employee": {
-                    "id": "employee",
-                    "path": "ui5.tutorial.navigation.view.employee",
-                    "name": "Employee",
-                    "level": 3
-                }
-            }
+  "_version": "1.12.0",
+  "sap.app": {
+    ...
+  },
+  "sap.ui": {
+    ...
+  },
+  "sap.ui5": {
+    ...
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5.tutorial.navigation.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
         }
+      },
+      "routes": [{
+        "pattern": "",
+        "name": "appHome",
+        "target": "home"
+      }, {
+        "pattern": "employees",
+        "name": "employeeList",
+        "target": "employees"
+      }, {
+        "pattern": "employees/{employeeId}",
+        "name": "employee",
+        "target": "employee"
+      }],
+      "targets": {
+        "home": {
+          "id": "home",
+          "name": "Home",
+          "level": 1
+        },
+        "notFound": {
+          "id": "notFound",
+          "name": "NotFound",
+          "transition": "show"
+        },
+        "employees": {
+          "id": "employeeList",
+          "path": "ui5.tutorial.navigation.view.employee",
+          "name": "EmployeeList",
+          "level": 2
+        },
+        "employee": {
+          "id": "employee",
+          "path": "ui5.tutorial.navigation.view.employee",
+          "name": "Employee",
+          "level": 3
+        }
+      }
     }
+  }
 }
 ```
 
@@ -137,58 +137,58 @@ Next, we have to create the view `employees.Employee`; for better illustration t
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.employee.Employee"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:f="sap.ui.layout.form"
-    xmlns:core="sap.ui.core"
-    core:require="{ColumnLayout:'sap/ui/layout/form/ResponsiveGridLayout'}"
-    busyIndicatorDelay="0">
-    <Page
-        id="employeePage"
-        title="{i18n>EmployeeDetailsOf} {FirstName} {LastName}"
-        titleAlignment="Center"
-        showNavButton="true"
-        navButtonPress=".onNavBack"
-        class="sapUiResponsiveContentPadding">
+  controllerName="ui5.tutorial.navigation.controller.employee.Employee"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"
+  core:require="{ColumnLayout:'sap/ui/layout/form/ResponsiveGridLayout'}"
+  busyIndicatorDelay="0">
+  <Page
+    id="employeePage"
+    title="{i18n>EmployeeDetailsOf} {FirstName} {LastName}"
+    titleAlignment="Center"
+    showNavButton="true"
+    navButtonPress=".onNavBack"
+    class="sapUiResponsiveContentPadding">
+    <content>
+      <Panel
+        id="employeePanel"
+        width="auto"
+        class="sapUiNoContentPadding">
+        <headerToolbar>
+          <Toolbar>
+            <Title text="{i18n>EmployeeIDColon} {EmployeeID}" level="H2"/>
+            <ToolbarSpacer />
+          </Toolbar>
+        </headerToolbar>
         <content>
-            <Panel
-                id="employeePanel"
-                width="auto"
-                class="sapUiNoContentPadding">
-                <headerToolbar>
-                    <Toolbar>
-                        <Title text="{i18n>EmployeeIDColon} {EmployeeID}" level="H2"/>
-                        <ToolbarSpacer />
-                    </Toolbar>
-                </headerToolbar>
-                <content>
-                    <f:SimpleForm
-                        editable="false"
-                        layout="ResponsiveGridLayout"
-                        labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
-                        columnsL="1" columnsM="1">
-                        <f:content>
-                            <Label text="{i18n>FirstName}"/>
-                            <Text text="{FirstName}"/>
-                            <Label text="{i18n>LastName}"/>
-                            <Text text="{LastName}"/>
-                            <Label text="{i18n>Address}"/>
-                            <Text text="{Address}"/>
-                            <Label text="{i18n>City}"/>
-                            <Text text="{City}, {Region}"/>
-                            <Label text="{i18n>PostalCode}"/>
-                            <Text text="{PostalCode}"/>
-                            <Label text="{i18n>PhoneHome}"/>
-                            <Text text="{HomePhone}"/>
-                            <Label text="{i18n>Country}"/>
-                            <Text text="{Country}"/>
-                        </f:content>
-                    </f:SimpleForm>
-                </content>
-            </Panel>
+          <f:SimpleForm
+            editable="false"
+            layout="ResponsiveGridLayout"
+            labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+            columnsL="1" columnsM="1">
+            <f:content>
+              <Label text="{i18n>FirstName}"/>
+              <Text text="{FirstName}"/>
+              <Label text="{i18n>LastName}"/>
+              <Text text="{LastName}"/>
+              <Label text="{i18n>Address}"/>
+              <Text text="{Address}"/>
+              <Label text="{i18n>City}"/>
+              <Text text="{City}, {Region}"/>
+              <Label text="{i18n>PostalCode}"/>
+              <Text text="{PostalCode}"/>
+              <Label text="{i18n>PhoneHome}"/>
+              <Text text="{HomePhone}"/>
+              <Label text="{i18n>Country}"/>
+              <Text text="{Country}"/>
+            </f:content>
+          </f:SimpleForm>
         </content>
-    </Page>
+      </Panel>
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -209,72 +209,72 @@ import { Route$MatchedEvent } from "sap/ui/core/routing/Route";
  */
 export default class Employee extends BaseController {
 
-    public onInit(): void {
-        const router = this.getRouter();
+	public onInit(): void {
+		const router = this.getRouter();
 
-        router.getRoute("employee").attachMatched(this._onRouteMatched, this);
-    }
+		router.getRoute("employee").attachMatched(this._onRouteMatched, this);
+	}
 
-    private _onRouteMatched(event: Route$MatchedEvent): void {
-        const eventArguments = (<any> event.getParameter("arguments"));
-        const view = this.getView();
+	private _onRouteMatched(event: Route$MatchedEvent): void {
+		const eventArguments = (<any> event.getParameter("arguments"));
+		const view = this.getView();
 
-        view.bindElement({
-            path: "/Employees(" + eventArguments.employeeId + ")",
-            events: {
-                change: this._onBindingChange.bind(this),
-                dataRequested: () => {
-                    view.setBusy(true);
-                },
-                dataReceived: () => {
-                    view.setBusy(false);
-                }
-            }
-        });
-    }
+		view.bindElement({
+			path: "/Employees(" + eventArguments.employeeId + ")",
+			events: {
+				change: this._onBindingChange.bind(this),
+				dataRequested: () => {
+					view.setBusy(true);
+				},
+				dataReceived: () => {
+					view.setBusy(false);
+				}
+			}
+		});
+	}
 
-    private _onBindingChange(): void {
-        // No data for the binding
-        if (!this.getView().getBindingContext()) {
-            this.getRouter().getTargets().display("notFound");
-        }
-    }
+	private _onBindingChange(): void {
+		// No data for the binding
+		if (!this.getView().getBindingContext()) {
+			this.getRouter().getTargets().display("notFound");
+		}
+	}
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const Employee = BaseController.extend("ui5.tutorial.navigation.controller.employee.Employee", {
-    onInit() {
-      const router = this.getRouter();
-      router.getRoute("employee").attachMatched(this._onRouteMatched, this);
-    },
-    _onRouteMatched(event) {
-      const eventArguments = event.getParameter("arguments");
-      const view = this.getView();
-      view.bindElement({
-        path: "/Employees(" + eventArguments.employeeId + ")",
-        events: {
-          change: this._onBindingChange.bind(this),
-          dataRequested: () => {
-            view.setBusy(true);
-          },
-          dataReceived: () => {
-            view.setBusy(false);
-          }
-        }
-      });
-    },
-    _onBindingChange() {
-      // No data for the binding
-      if (!this.getView().getBindingContext()) {
-        this.getRouter().getTargets().display("notFound");
-      }
-    }
-  });
-  return Employee;
+	const Employee = BaseController.extend("ui5.tutorial.navigation.controller.employee.Employee", {
+		onInit() {
+			const router = this.getRouter();
+			router.getRoute("employee").attachMatched(this._onRouteMatched, this);
+		},
+		_onRouteMatched(event) {
+			const eventArguments = event.getParameter("arguments");
+			const view = this.getView();
+			view.bindElement({
+				path: "/Employees(" + eventArguments.employeeId + ")",
+				events: {
+					change: this._onBindingChange.bind(this),
+					dataRequested: () => {
+						view.setBusy(true);
+					},
+					dataReceived: () => {
+						view.setBusy(false);
+					}
+				}
+			});
+		},
+		_onBindingChange() {
+			// No data for the binding
+			if (!this.getView().getBindingContext()) {
+				this.getRouter().getTargets().display("notFound");
+			}
+		}
+	});
+	return Employee;
 });
 ```
 
@@ -293,29 +293,29 @@ We also add an event handler to the `change` event as a private function `_onBin
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.employee.EmployeeList"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page
-        id="employeeListPage"
-        title="{i18n>EmployeeList}"
-        titleAlignment="Center"
-        showNavButton="true"
-        navButtonPress=".onNavBack"
-        class="sapUiResponsiveContentPadding">
-        <content>
-            <List id="employeeList" headerText="{i18n>ListOfAllEmployees}" items="{/Employees}">
-                <items>
-                    <StandardListItem
-                        title="{FirstName} {LastName}"
-                        iconDensityAware="false"
-                        iconInset="false"
-                        type="Navigation"
-                        press=".onListItemPressed"/>
-                </items>
-            </List>
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.employee.EmployeeList"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    id="employeeListPage"
+    title="{i18n>EmployeeList}"
+    titleAlignment="Center"
+    showNavButton="true"
+    navButtonPress=".onNavBack"
+    class="sapUiResponsiveContentPadding">
+    <content>
+      <List id="employeeList" headerText="{i18n>ListOfAllEmployees}" items="{/Employees}">
+        <items>
+          <StandardListItem
+            title="{FirstName} {LastName}"
+            iconDensityAware="false"
+            iconInset="false"
+            type="Navigation"
+            press=".onListItemPressed"/>
+        </items>
+      </List>
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -334,30 +334,30 @@ import Event from "sap/ui/base/Event";
 export default class EmployeeList extends BaseController {
 
   public onListItemPressed(event: Event): void {
-    const listItem = (<StandardListItem> event.getSource());
-    const context = listItem.getBindingContext();
+	const listItem = (<StandardListItem> event.getSource());
+	const context = listItem.getBindingContext();
 
-    this.getRouter().navTo("employee", {
-      employeeId: context.getProperty("EmployeeID")
-    });
+	this.getRouter().navTo("employee", {
+	  employeeId: context.getProperty("EmployeeID")
+	});
   }
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const EmployeeList = BaseController.extend("ui5.tutorial.navigation.controller.employee.EmployeeList", {
-    onListItemPressed(event) {
-      const listItem = event.getSource();
-      const context = listItem.getBindingContext();
-      this.getRouter().navTo("employee", {
-        employeeId: context.getProperty("EmployeeID")
-      });
-    }
-  });
-  return EmployeeList;
+	const EmployeeList = BaseController.extend("ui5.tutorial.navigation.controller.employee.EmployeeList", {
+		onListItemPressed(event) {
+			const listItem = event.getSource();
+			const context = listItem.getBindingContext();
+			this.getRouter().navTo("employee", {
+				employeeId: context.getProperty("EmployeeID")
+			});
+		}
+	});
+	return EmployeeList;
 });
 ```
 

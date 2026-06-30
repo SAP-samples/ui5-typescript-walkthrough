@@ -62,38 +62,38 @@ webapp/
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.employee.Employee"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:f="sap.ui.layout.form"
-    xmlns:core="sap.ui.core"
-    core:require="{ColumnLayout:'sap/ui/layout/form/ResponsiveGridLayout'}"
-    busyIndicatorDelay="0">
-    <Page
-        id="employeePage"
-        title="{i18n>EmployeeDetailsOf} {FirstName} {LastName}"
-        titleAlignment="Center"
-        showNavButton="true"
-        navButtonPress=".onNavBack"
-        class="sapUiResponsiveContentPadding">
+  controllerName="ui5.tutorial.navigation.controller.employee.Employee"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"
+  core:require="{ColumnLayout:'sap/ui/layout/form/ResponsiveGridLayout'}"
+  busyIndicatorDelay="0">
+  <Page
+    id="employeePage"
+    title="{i18n>EmployeeDetailsOf} {FirstName} {LastName}"
+    titleAlignment="Center"
+    showNavButton="true"
+    navButtonPress=".onNavBack"
+    class="sapUiResponsiveContentPadding">
+    <content>
+      <Panel
+        id="employeePanel"
+        width="auto"
+        class="sapUiNoContentPadding">
+        <headerToolbar>
+          <Toolbar>
+            <Title text="{i18n>EmployeeIDColon} {EmployeeID}" level="H2"/>
+            <ToolbarSpacer />
+            <Link text="{i18n>FlipToResume}" tooltip="{i18n>FlipToResume.tooltip}" press=".onShowResume"/>
+          </Toolbar>
+        </headerToolbar>
         <content>
-            <Panel
-                id="employeePanel"
-                width="auto"
-                class="sapUiNoContentPadding">
-                <headerToolbar>
-                    <Toolbar>
-                        <Title text="{i18n>EmployeeIDColon} {EmployeeID}" level="H2"/>
-                        <ToolbarSpacer />
-                        <Link text="{i18n>FlipToResume}" tooltip="{i18n>FlipToResume.tooltip}" press=".onShowResume"/>
-                    </Toolbar>
-                </headerToolbar>
-                <content>
-                    ...
-                </content>
-            </Panel>
+          ...
         </content>
-    </Page>
+      </Panel>
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -109,63 +109,63 @@ import { Route$MatchedEvent } from "sap/ui/core/routing/Route";
  * @namespace ui5.tutorial.navigation.controller.employee
  */
 export default class Employee extends BaseController {
-    ...
-    private _onBindingChange(): void {
-        // No data for the binding
-        if (!this.getView().getBindingContext()) {
-            this.getRouter().getTargets().display("notFound");
-        }
-    }
+	...
+	private _onBindingChange(): void {
+		// No data for the binding
+		if (!this.getView().getBindingContext()) {
+			this.getRouter().getTargets().display("notFound");
+		}
+	}
 
-    public onShowResume(): void {
-        const context = this.getView().getBindingContext();
+	public onShowResume(): void {
+		const context = this.getView().getBindingContext();
 
-        this.getRouter().navTo("employeeResume", {
-            employeeId: context.getProperty("EmployeeID")
-        });
-    }
+		this.getRouter().navTo("employeeResume", {
+			employeeId: context.getProperty("EmployeeID")
+		});
+	}
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const Employee = BaseController.extend("ui5.tutorial.navigation.controller.employee.Employee", {
-    onInit() {
-      const router = this.getRouter();
-      router.getRoute("employee").attachMatched(this._onRouteMatched, this);
-    },
-    _onRouteMatched(event) {
-      const eventArguments = event.getParameter("arguments");
-      const view = this.getView();
-      view.bindElement({
-        path: "/Employees(" + eventArguments.employeeId + ")",
-        events: {
-          change: this._onBindingChange.bind(this),
-          dataRequested: () => {
-            view.setBusy(true);
-          },
-          dataReceived: () => {
-            view.setBusy(false);
-          }
-        }
-      });
-    },
-    _onBindingChange() {
-      // No data for the binding
-      if (!this.getView().getBindingContext()) {
-        this.getRouter().getTargets().display("notFound");
-      }
-    },
-    onShowResume() {
-      const context = this.getView().getBindingContext();
-      this.getRouter().navTo("employeeResume", {
-        employeeId: context.getProperty("EmployeeID")
-      });
-    }
-  });
-  return Employee;
+	const Employee = BaseController.extend("ui5.tutorial.navigation.controller.employee.Employee", {
+		onInit() {
+			const router = this.getRouter();
+			router.getRoute("employee").attachMatched(this._onRouteMatched, this);
+		},
+		_onRouteMatched(event) {
+			const eventArguments = event.getParameter("arguments");
+			const view = this.getView();
+			view.bindElement({
+				path: "/Employees(" + eventArguments.employeeId + ")",
+				events: {
+					change: this._onBindingChange.bind(this),
+					dataRequested: () => {
+						view.setBusy(true);
+					},
+					dataReceived: () => {
+						view.setBusy(false);
+					}
+				}
+			});
+		},
+		_onBindingChange() {
+			// No data for the binding
+			if (!this.getView().getBindingContext()) {
+				this.getRouter().getTargets().display("notFound");
+			}
+		},
+		onShowResume() {
+			const context = this.getView().getBindingContext();
+			this.getRouter().navTo("employeeResume", {
+				employeeId: context.getProperty("EmployeeID")
+			});
+		}
+	});
+	return Employee;
 });
 ```
 
@@ -175,78 +175,78 @@ Then we change the `Employee.controller.ts` file by adding the press handler `on
 
 ```json
 {
-    "_version": "1.12.0",
-    "sap.app": {
-        ...
-    },
-    "sap.ui": {
-        ...
-    },
-    "sap.ui5": {
-        ...
-        "routing": {
-            "config": {
-                "routerClass": "sap.m.routing.Router",
-                "type": "View",
-                "viewType": "XML",
-                "path": "ui5.tutorial.navigation.view",
-                "controlId": "app",
-                "controlAggregation": "pages",
-                "transition": "slide",
-                "bypassed": {
-                    "target": "notFound"
-                }
-            },
-            "routes": [{
-                "pattern": "",
-                "name": "appHome",
-                "target": "home"
-            }, {
-                "pattern": "employees",
-                "name": "employeeList",
-                "target": "employees"
-            }, {
-                "pattern": "employees/{employeeId}",
-                "name": "employee",
-                "target": "employee"
-            }, {
-                "pattern": "employees/{employeeId}/resume",
-                "name": "employeeResume",
-                "target": "employeeResume"
-            }],
-            "targets": {
-                "home": {
-                    "id": "home",
-                    "name": "Home",
-                    "level": 1
-                },
-                "notFound": {
-                    "id": "notFound",
-                    "name": "NotFound",
-                    "transition": "show"
-                },
-                "employees": {
-                    "id": "employees",
-                    "path": "ui5.tutorial.navigation.view.employee",
-                    "name": "EmployeeList",
-                    "level": 2
-                },
-                "employee": {
-                    "id": "employee",
-                    "path": "ui5.tutorial.navigation.view.employee",
-                    "name": "Employee",
-                    "level": 3
-                },
-                "employeeResume": {
-                    "id": "resume",
-                    "path": "ui5.tutorial.navigation.view.employee",
-                    "name": "Resume",
-                    "level": 4,
-                    "transition": "flip"
-                }
-            }
+  "_version": "1.12.0",
+  "sap.app": {
+    ...
+  },
+  "sap.ui": {
+    ...
+  },
+  "sap.ui5": {
+    ...
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "type": "View",
+        "viewType": "XML",
+        "path": "ui5.tutorial.navigation.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "transition": "slide",
+        "bypassed": {
+          "target": "notFound"
         }
+      },
+      "routes": [{
+        "pattern": "",
+        "name": "appHome",
+        "target": "home"
+      }, {
+        "pattern": "employees",
+        "name": "employeeList",
+        "target": "employees"
+      }, {
+        "pattern": "employees/{employeeId}",
+        "name": "employee",
+        "target": "employee"
+      }, {
+        "pattern": "employees/{employeeId}/resume",
+        "name": "employeeResume",
+        "target": "employeeResume"
+      }],
+      "targets": {
+        "home": {
+          "id": "home",
+          "name": "Home",
+          "level": 1
+        },
+        "notFound": {
+          "id": "notFound",
+          "name": "NotFound",
+          "transition": "show"
+        },
+        "employees": {
+          "id": "employees",
+          "path": "ui5.tutorial.navigation.view.employee",
+          "name": "EmployeeList",
+          "level": 2
+        },
+        "employee": {
+          "id": "employee",
+          "path": "ui5.tutorial.navigation.view.employee",
+          "name": "Employee",
+          "level": 3
+        },
+        "employeeResume": {
+          "id": "resume",
+          "path": "ui5.tutorial.navigation.view.employee",
+          "name": "Resume",
+          "level": 4,
+          "transition": "flip"
+        }
+      }
     }
+  }
 }
 ```
 
@@ -272,38 +272,38 @@ The target `employeeResume` references the view `employee.Resume` that we are ab
 
 ```xml
 <mvc:View
-    controllerName="ui5.tutorial.navigation.controller.employee.Resume"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc">
-    <Page
-        title="{i18n>ResumeOf} {FirstName} {LastName}"
-        titleAlignment="Center"
-        id="employeeResumePage"
-        showNavButton="true"
-        navButtonPress=".onNavBack">
-        <content>
-            <IconTabBar
-                id="iconTabBar"
-                headerBackgroundDesign="Transparent"
-                class="sapUiResponsiveContentPadding"
-                binding="{Resume}">
-                <items>
-                    <IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
-                        <Text text="{Information}"/>
-                    </IconTabFilter>
-                    <IconTabFilter id="projectsTab" text="{i18n>tabProjects}" key="Projects">
-                        <mvc:XMLView viewName="ui5.tutorial.navigation.view.employee.ResumeProjects"></mvc:XMLView>
-                    </IconTabFilter>
-                    <IconTabFilter id="hobbiesTab" text="{i18n>tabHobbies}" key="Hobbies">
-                        <Text text="{Hobbies}"/>
-                    </IconTabFilter>
-                    <IconTabFilter id="notesTab" text="{i18n>tabNotes}" key="Notes">
-                        <Text text="{Notes}"/>
-                    </IconTabFilter>
-                </items>
-            </IconTabBar>
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.navigation.controller.employee.Resume"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    title="{i18n>ResumeOf} {FirstName} {LastName}"
+    titleAlignment="Center"
+    id="employeeResumePage"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+    <content>
+      <IconTabBar
+        id="iconTabBar"
+        headerBackgroundDesign="Transparent"
+        class="sapUiResponsiveContentPadding"
+        binding="{Resume}">
+        <items>
+          <IconTabFilter id="infoTab" text="{i18n>tabInfo}" key="Info">
+            <Text text="{Information}"/>
+          </IconTabFilter>
+          <IconTabFilter id="projectsTab" text="{i18n>tabProjects}" key="Projects">
+            <mvc:XMLView viewName="ui5.tutorial.navigation.view.employee.ResumeProjects"></mvc:XMLView>
+          </IconTabFilter>
+          <IconTabFilter id="hobbiesTab" text="{i18n>tabHobbies}" key="Hobbies">
+            <Text text="{Hobbies}"/>
+          </IconTabFilter>
+          <IconTabFilter id="notesTab" text="{i18n>tabNotes}" key="Notes">
+            <Text text="{Notes}"/>
+          </IconTabFilter>
+        </items>
+      </IconTabBar>
+    </content>
+  </Page>
 </mvc:View>
 ```
 
@@ -322,72 +322,72 @@ import { Route$MatchedEvent } from "sap/ui/core/routing/Route";
  */
 export default class Resume extends BaseController {
 
-    public onInit(): void {
-        const router = this.getRouter();
+	public onInit(): void {
+		const router = this.getRouter();
 
-        router.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
-    }
+		router.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
+	}
 
-    private _onRouteMatched(event: Route$MatchedEvent): void {
-        const eventArguments = (<any> event.getParameter("arguments"));
-        const view = this.getView();
+	private _onRouteMatched(event: Route$MatchedEvent): void {
+		const eventArguments = (<any> event.getParameter("arguments"));
+		const view = this.getView();
 
-        view.bindElement({
-            path: "/Employees(" + eventArguments.employeeId + ")",
-            events: {
-                change: this._onBindingChange.bind(this),
-                dataRequested: () => {
-                    view.setBusy(true);
-                },
-                dataReceived: () => {
-                    view.setBusy(false);
-                }
-            }
-        });
-    }
+		view.bindElement({
+			path: "/Employees(" + eventArguments.employeeId + ")",
+			events: {
+				change: this._onBindingChange.bind(this),
+				dataRequested: () => {
+					view.setBusy(true);
+				},
+				dataReceived: () => {
+					view.setBusy(false);
+				}
+			}
+		});
+	}
 
-    private _onBindingChange(): void {
-        // No data for the binding
-        if (!this.getView().getBindingContext()) {
-            this.getRouter().getTargets().display("notFound");
-        }
-    }
+	private _onBindingChange(): void {
+		// No data for the binding
+		if (!this.getView().getBindingContext()) {
+			this.getRouter().getTargets().display("notFound");
+		}
+	}
 }
 ```
 
 ```js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
-  "use strict";
+	"use strict";
 
-  const Resume = BaseController.extend("ui5.tutorial.navigation.controller.employee.Resume", {
-    onInit() {
-      const router = this.getRouter();
-      router.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
-    },
-    _onRouteMatched(event) {
-      const eventArguments = event.getParameter("arguments");
-      const view = this.getView();
-      view.bindElement({
-        path: "/Employees(" + eventArguments.employeeId + ")",
-        events: {
-          change: this._onBindingChange.bind(this),
-          dataRequested: () => {
-            view.setBusy(true);
-          },
-          dataReceived: () => {
-            view.setBusy(false);
-          }
-        }
-      });
-    },
-    _onBindingChange() {
-      // No data for the binding
-      if (!this.getView().getBindingContext()) {
-        this.getRouter().getTargets().display("notFound");
-      }
-    }
-  });
-  return Resume;
+	const Resume = BaseController.extend("ui5.tutorial.navigation.controller.employee.Resume", {
+		onInit() {
+			const router = this.getRouter();
+			router.getRoute("employeeResume").attachMatched(this._onRouteMatched, this);
+		},
+		_onRouteMatched(event) {
+			const eventArguments = event.getParameter("arguments");
+			const view = this.getView();
+			view.bindElement({
+				path: "/Employees(" + eventArguments.employeeId + ")",
+				events: {
+					change: this._onBindingChange.bind(this),
+					dataRequested: () => {
+						view.setBusy(true);
+					},
+					dataReceived: () => {
+						view.setBusy(false);
+					}
+				}
+			});
+		},
+		_onBindingChange() {
+			// No data for the binding
+			if (!this.getView().getBindingContext()) {
+				this.getRouter().getTargets().display("notFound");
+			}
+		}
+	});
+	return Resume;
 });
 ```
 
@@ -397,7 +397,7 @@ Create a file `Resume.controller.ts` in the `webapp/controller/employee` folder.
 
 ```xml
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
-    <Text text="{Projects}"/>
+  <Text text="{Projects}"/>
 </mvc:View>
 ```
 

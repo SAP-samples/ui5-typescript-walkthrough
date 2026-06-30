@@ -13,32 +13,32 @@ import Context from "sap/ui/model/Context";
  * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
-    onInit(): void {
-        const viewModel = new JSONModel({
-            currency: "EUR"
-        });
-        this.getView()?.setModel(viewModel, "view");
-    }
+	onInit(): void {
+		const viewModel = new JSONModel({
+			currency: "EUR"
+		});
+		this.getView()?.setModel(viewModel, "view");
+	}
 
-    onFilterInvoices(event: SearchField$SearchEvent): void {
-        // build filter array
-        const filter = [];
-        const query = event.getParameter("query");
-        if (query) {
-            filter.push(new Filter("ProductName", FilterOperator.Contains, query));
-        }
+	onFilterInvoices(event: SearchField$SearchEvent): void {
+		// build filter array
+		const filter = [];
+		const query = event.getParameter("query");
+		if (query) {
+			filter.push(new Filter("ProductName", FilterOperator.Contains, query));
+		}
 
-        // filter binding
-        const list = this.byId("invoiceList");
-        const binding = list?.getBinding("items") as ListBinding;
-        binding?.filter(filter);
-    }
+		// filter binding
+		const list = this.byId("invoiceList");
+		const binding = list?.getBinding("items") as ListBinding;
+		binding?.filter(filter);
+	}
 
-    onPress(event: Event): void {
-        const item = event.getSource() as ObjectListItem;
-        const router = UIComponent.getRouterFor(this);
-        router.navTo("detail", {
-            invoicePath: window.encodeURIComponent((item.getBindingContext("invoice") as Context).getPath().substring(1))
-        });
-    }
+	onPress(event: Event): void {
+		const item = event.getSource() as ObjectListItem;
+		const router = UIComponent.getRouterFor(this);
+		router.navTo("detail", {
+			invoicePath: window.encodeURIComponent((item.getBindingContext("invoice") as Context).getPath().substring(1))
+		});
+	}
 };

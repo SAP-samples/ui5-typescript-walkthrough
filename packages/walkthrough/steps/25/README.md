@@ -85,33 +85,33 @@ In the `models` section, we replace the content of the `invoice` model. This key
   
 ```json
 {
-	...
-	"sap.app": {
-		...
+  ...
+  "sap.app": {
+    ...
     "applicationVersion": {
             "version": "1.0.0"
     },		
-		"dataSources": {
-			"invoiceRemote": {
-				"uri": "V2/Northwind/Northwind.svc/",
-				"type": "OData",
-				"settings": {
-					"odataVersion": "2.0"
-				}
-			}
-		}
-	},
-	...
-	"sap.ui5": {
-		...	
-		"models": {
+    "dataSources": {
+      "invoiceRemote": {
+        "uri": "V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  ...
+  "sap.ui5": {
+    ...	
+    "models": {
             "i18n": {
                 ...
             },
-			"invoice": {
-				"dataSource": "invoiceRemote"
-			}
-		},
+      "invoice": {
+        "dataSource": "invoiceRemote"
+      }
+    },
     "resources": {
         "css": [
           {
