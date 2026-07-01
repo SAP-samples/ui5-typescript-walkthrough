@@ -731,8 +731,8 @@ export default {
 	init(): Promise<unknown> {
 		// Load sinon lazily from the UI5 third-party shim
 		return new Promise((resolve, reject) => {
-			sap.ui.require(["sap/ui/thirdparty/sinon"], (sinon: any) => {
-				sinon = sinon;
+			sap.ui.require(["sap/ui/thirdparty/sinon"], (lazySinon: any) => {
+				sinon = lazySinon;
 				sandbox = sinon.sandbox.create();
 
 				// Read the mock data
