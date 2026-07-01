@@ -111,5 +111,3 @@ In this tutorial, we only use the entity type `Person` of the *TripPin* service.
 ***
 
 **Next:** [Step 2: Data Access and Client-Server Communication](../02/README.md)
-
-**Previous:** [Step 11: Add Table with :n Navigation to Detail Area](../11/README.md)

@@ -20,7 +20,7 @@ You can view this step live: [🔗 Live Preview of Step 9](https://ui5.github.io
 
 ```json
 {
-  "_version": "1.12.0",
+  "_version": "2.8.0",
   "sap.app": {
     ...
   },

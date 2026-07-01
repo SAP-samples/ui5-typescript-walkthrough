@@ -215,7 +215,7 @@ These lines of code make sure that the targets are only loaded when they are nee
 
 ```json
 {
-  "_version": "1.12.0",
+  "_version": "2.8.0",
   "sap.app": {
     ...
   },

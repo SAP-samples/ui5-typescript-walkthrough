@@ -175,7 +175,7 @@ Then we change the `Employee.controller.ts` file by adding the press handler `on
 
 ```json
 {
-  "_version": "1.12.0",
+  "_version": "2.8.0",
   "sap.app": {
     ...
   },
