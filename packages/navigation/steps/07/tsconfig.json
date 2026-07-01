@@ -3,7 +3,7 @@
     "target": "es2023",
     "types": [
       "node",
-      "@types/openui5"
+      "@openui5/types"
     ],
     "skipLibCheck": true,
     "allowJs": true,

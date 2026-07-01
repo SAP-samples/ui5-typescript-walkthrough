@@ -75,7 +75,7 @@ We specify the compiler options as follow:
 {
     "compilerOptions": {
       "target": "es2023",
-      "types": ["node", "@types/openui5"],
+      "types": ["node", "@openui5/types"],
       "skipLibCheck": true,
       "allowJs": true,
       "strictPropertyInitialization": false,
@@ -92,7 +92,7 @@ Let's go through the compiler options specified in the file:
 
 - `"target": "es2023"`: The `target` parameter sets the JavaScript language level that the TypeScript code should be compiled down to. We set it to `es2023`, which means the generated JavaScript code is compatible with ECMAScript 2023.
 
-- `"types": [ "node", "@types/openui5"]`: The `types` parameter defines the types used for TypeScript code. We configure this parameter to use the built-in Node.js types and the OpenUI5 types delivered by the `@types/openui5` package. 
+- `"types": [ "node", "@openui5/types"]`: The `types` parameter defines the types used for TypeScript code. We configure this parameter to use the built-in Node.js types and the OpenUI5 types delivered by the `@openui5/types` package. 
 
 - `"skipLibCheck": true`: When the `skipLibCheck` parameter is set to `true`, it tells the compiler to skip type checking of declaration files (`.d.ts` files) that are part of external libraries. This can improve compilation speed.
 

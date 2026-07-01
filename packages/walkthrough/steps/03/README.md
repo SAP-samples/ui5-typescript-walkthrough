@@ -37,7 +37,7 @@ You can download the solution for this step here: [📥 Download step 3](https:/
 To get the type definitions for OpenUI5, we need to install them to our project. We open a terminal in the root folder of our app and exectue the following command:
 
 ```sh
-npm install @types/openui5 --save-dev
+npm install @openui5/types --save-dev
 ```
 
 ***
@@ -164,7 +164,7 @@ ui5 add sap.m
 
 <details class="ts-only" markdown="1">
 
-[TypeScript definitions for OpenUI5](https://www.npmjs.com/package/@types/openui5)
+[TypeScript definitions for OpenUI5](https://www.npmjs.com/package/@openui5/types)
 
 </details>
 
