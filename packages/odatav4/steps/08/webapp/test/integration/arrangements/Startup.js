@@ -1,10 +1,10 @@
 sap.ui.define([
 	"sap/ui/test/Opa5",
-	"sap/ui/core/tutorial/odatav4/localService/mockserver"
+	"ui5/tutorial/odatav4/localService/mockserver"
 ], function (Opa5, mockserver) {
 	"use strict";
 
-	return Opa5.extend("sap.ui.core.tutorial.odatav4.test.integration.arrangements.Startup", {
+	return Opa5.extend("ui5.tutorial.odatav4.test.integration.arrangements.Startup", {
 
 		iStartMyApp : function () {
 			// start the mock server
@@ -13,7 +13,7 @@ sap.ui.define([
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig : {
-					name : "sap.ui.core.tutorial.odatav4",
+					name : "ui5.tutorial.odatav4",
 					async : true
 				},
 				autoWait : true,
