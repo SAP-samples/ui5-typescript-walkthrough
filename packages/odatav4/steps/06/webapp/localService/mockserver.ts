@@ -39,7 +39,7 @@ const rBaseUrl = /services.odata.org\/TripPinRESTierService/;
 
 /**
  * Returns the base URL from a given URL.
- * @param sUrl - the complete URL
+ * @param url - the complete URL
  * @returns the base URL
  */
 function getBaseUrl(url: string): string {
@@ -54,7 +54,7 @@ function getBaseUrl(url: string): string {
 
 /**
  * Looks for a user with a given user name and returns its index in the user array.
- * @param sUserName - the user name to look for.
+ * @param userName - the user name to look for.
  * @returns index of that user in the array, or -1 if the user was not found.
  */
 function findUserIndex(userName: string): number {
@@ -68,7 +68,7 @@ function findUserIndex(userName: string): number {
 
 /**
  * Retrieves any user data from a given http request body.
- * @param sBody - the http request body.
+ * @param body - the http request body.
  * @returns the parsed user data.
  */
 function getUserDataFromRequestBody(body: string): MockUser {
@@ -82,7 +82,7 @@ function getUserDataFromRequestBody(body: string): MockUser {
 
 /**
  * Retrieves a user name from a given request URL.
- * @param sUrl - the request URL.
+ * @param url - the request URL.
  * @returns the user name or undefined if no user was found.
  */
 function getUserKeyFromUrl(url: string): string | undefined {
@@ -92,7 +92,7 @@ function getUserKeyFromUrl(url: string): string | undefined {
 
 /**
  * Checks if a given UserName is unique or already used
- * @param sUserName - the UserName to be checked
+ * @param userName - the UserName to be checked
  * @returns True if the UserName is unique (not used), false otherwise
  */
 function isUnique(userName: string): boolean {
@@ -101,7 +101,7 @@ function isUnique(userName: string): boolean {
 
 /**
  * Returns a proper HTTP response body for "duplicate key" errors
- * @param sKey - the duplicate key
+ * @param key - the duplicate key
  * @returns the proper response body
  */
 function duplicateKeyError(key: string): string {
