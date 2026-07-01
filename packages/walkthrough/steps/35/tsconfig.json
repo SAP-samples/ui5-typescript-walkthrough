@@ -2,8 +2,8 @@
   "compilerOptions": {
     "target": "es2023",
     "types": [
-      "node",
-      "@openui5/types"
+      "@openui5/types",
+      "@types/qunit"
     ],
     "skipLibCheck": true,
     "allowJs": true,

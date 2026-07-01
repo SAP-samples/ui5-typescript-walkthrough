@@ -2,7 +2,6 @@
   "compilerOptions": {
     "target": "es2023",
     "types": [
-      "node",
       "@openui5/types"
     ],
     "skipLibCheck": true,
