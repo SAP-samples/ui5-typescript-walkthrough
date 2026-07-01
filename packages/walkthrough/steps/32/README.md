@@ -49,45 +49,45 @@ import History from "sap/ui/core/routing/History";
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class Detail extends Controller {
-    
-    //...
+	
+	//...
 
-    onNavBack(): void {
-        const history = History.getInstance();
-        const previousHash = history.getPreviousHash();
+	onNavBack(): void {
+		const history = History.getInstance();
+		const previousHash = history.getPreviousHash();
 
-        if (previousHash !== undefined) {
-            window.history.go(-1);
-        } else {
-            const router = UIComponent.getRouterFor(this);
-            router.navTo("overview", {}, true);
-        }
-    }    
+		if (previousHash !== undefined) {
+			window.history.go(-1);
+		} else {
+			const router = UIComponent.getRouterFor(this);
+			router.navTo("overview", {}, true);
+		}
+	}    
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/ui/core/UIComponent"], function (Controller, History, UIComponent) {
-  "use strict";
+	"use strict";
 
-  const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
-    //...
-    onNavBack() {
-      const history = History.getInstance();
-      const previousHash = history.getPreviousHash();
-      if (previousHash !== undefined) {
-        window.history.go(-1);
-      } else {
-        const router = UIComponent.getRouterFor(this);
-        router.navTo("overview", {}, true);
-      }
-    }
-  });
-  return Detail;
+	const Detail = Controller.extend("ui5.tutorial.walkthrough.controller.Detail", {
+		//...
+		onNavBack() {
+			const history = History.getInstance();
+			const previousHash = history.getPreviousHash();
+			if (previousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				const router = UIComponent.getRouterFor(this);
+				router.navTo("overview", {}, true);
+			}
+		}
+	});
+	return Detail;
 });
 
 ```
@@ -100,17 +100,17 @@ Now only the back button is missing on the detail page. We do this by telling th
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.Detail"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
-	<Page
-		title="{i18n>detailPageTitle}"
-		showNavButton="true"
-		navButtonPress=".onNavBack">
-		<ObjectHeader
-			intro="{invoice>ShipperName}"
-			title="{invoice>ProductName}"/>
-	</Page>
+  controllerName="ui5.tutorial.walkthrough.controller.Detail"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    title="{i18n>detailPageTitle}"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+    <ObjectHeader
+      intro="{invoice>ShipperName}"
+      title="{invoice>ProductName}"/>
+  </Page>
 </mvc:View>
 ```
 &nbsp;

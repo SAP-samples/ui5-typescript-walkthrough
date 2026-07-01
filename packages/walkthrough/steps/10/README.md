@@ -77,20 +77,20 @@ The **`sap.ui`** namespace is used for UI-specific attributes and comes with the
 
 -   `deviceTypes` \(mandatory\): This property defines the supported device types for the application. It is an object that contains three boolean properties: `desktop`, `tablet`, and `phone`. Each property indicates whether the application is designed to be used on that particular device type. We define all three device types as "true", which means that our application is intended to be used on desktops, tablets, and phones.
         
-> 📝 **Note:** <br>
+> :note:
 > By configuring the `deviceTypes` property, developers can ensure that the application's user interface is optimized for different device types, providing a consistent and responsive experience across various devices.
 
 The **`sap.ui5`** namespace adds OpenUI5-specific configuration parameters that are automatically processed by OpenUI5. The following parameters are important:
 
 -   `dependencies`\(mandatory\): This section defines the dependencies of the component. It comes with the following sub-settings:
 
-    -   The `minUI5Version` property is mandatory as it specifies the minimum version of OpenUI5 that the component requires to function properly. Following the guideline discussed in step 1, our component should be designed to work with the long-term support (LTS) version 1.120 of OpenUI5.
+    -   The `minUI5Version` property is mandatory as it specifies the minimum version of OpenUI5 that the component requires to function properly. Following the guideline discussed in step 1, our component should be designed to work with the long-term support (LTS) version 1.148 of OpenUI5.
     
     -    The `libs` settings is used to declare all OpenUI5 libraries that the component depends on. It's crucial to list every library within the component here for correct dependency management.<br>
     In our component we currenetly only use the `sap.ui.core` and `sap.m` liibraries. The `sap.ui.core` library provides the basic framework functionality and is required for any OpenUI5 application.<br>
     By default, loading of libraries is set to `"lazy": false`, which means they are loaded immediately when the component initializes. For libraries that are essential for your app to function from the start, like `sap.ui.core` and in our case also `sap.m` (since it is used in the root view), we can keep the default setting of `"lazy": false`.
 
-    > 📌 **Important:** <br>
+    > :info:
     > It is crucial to be mindful of the lazy loading configuration for libraries. Only libraries that are absolutely necessary for your component to start should be declared with `"lazy": false`. For libraries that are not required immediately, it is recommended to override the default setting and set `"lazy": true`. This approach allows for better performance and faster initial loading of the component by deferring the loading of non-essential libraries until they are actually needed. 
     > For more information on loading libraries, refer to the [sap.ui.core.Lib.load](https://sdk.openui5.org/api/sap.ui.core.Lib#methods/sap.ui.core.Lib.load) API reference. 
     > If your component requires a minimum version of the library, you need to specify the `minVersion` for information purposes.
@@ -102,61 +102,61 @@ In our current scenario, we only have one model called `i18n`, which is a resour
 
 ```json
 {
-    "_version": "1.60.0",
-    "sap.app": {
-        "id": "ui5.walkthrough",
-        "type": "application",
-        "i18n": {
-            "bundleName": "ui5.walkthrough.i18n.i18n",
-            "supportedLocales": [
-                ""
-            ],
-            "fallbackLocale": ""
-        },
-        "title": "{{appTitle}}",
-        "description": "{{appDescription}}",
-        "applicationVersion": {
-            "version": "1.0.0"
-        }
+  "_version": "2.8.0",
+  "sap.app": {
+    "id": "ui5.tutorial.walkthrough",
+    "type": "application",
+    "i18n": {
+      "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
+      "supportedLocales": [
+        ""
+      ],
+      "fallbackLocale": ""
     },
-    "sap.ui": {
-        "technology": "UI5",
-        "deviceTypes": {
-            "desktop": true,
-            "tablet": true,
-            "phone": true
-        }
-    },
-    "sap.ui5": {
-        "dependencies": {
-            "minUI5Version": "1.132",
-            "libs": {
-                "sap.ui.core": {},
-                "sap.m": {}
-            }
-        },
-        "rootView": {
-            "viewName": "ui5.walkthrough.view.App",
-            "type": "XML",
-            "id": "app"
-        },
-        "models": {
-            "i18n": {
-                "type": "sap.ui.model.resource.ResourceModel",
-                "settings": {
-                    "bundleName": "ui5.walkthrough.i18n.i18n",
-                    "supportedLocales": [
-                        ""
-                    ],
-                    "fallbackLocale": ""
-                }
-            }
-        }
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": {
+      "version": "1.0.0"
     }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "dependencies": {
+      "minUI5Version": "1.148",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {}
+      }
+    },
+    "rootView": {
+      "viewName": "ui5.tutorial.walkthrough.view.App",
+      "type": "XML",
+      "id": "app"
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
+          "supportedLocales": [
+            ""
+          ],
+          "fallbackLocale": ""
+        }
+      }
+    }
+  }
 }
 ```   
 
-> 📝 **Note:** <br>
+> :note:
 > In this tutorial, we only introduce the most important settings and parameters of the manifest. In some development environments you may get validation errors because some settings are missing - you can ignore those in this context.
 
 ***
@@ -172,55 +172,55 @@ import UIComponent from "sap/ui/core/UIComponent";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
 /**
- * @namespace ui5.walkthrough
+ * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
-    public static metadata = {
-        "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-        "manifest": "json" 
-    };
-    init(): void {
-        // call the init function of the parent
-        super.init();
-        
-        // set data model
-        const data = {
-            recipient: {
-                name: "World"
-            }
-        };
-        const dataModel = new JSONModel(data);
-        this.setModel(dataModel);
-    };
+	public static metadata = {
+		"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+		"manifest": "json" 
+	};
+	init(): void {
+		// call the init function of the parent
+		super.init();
+		
+		// set data model
+		const data = {
+			recipient: {
+				name: "World"
+			}
+		};
+		const dataModel = new JSONModel(data);
+		this.setModel(dataModel);
+	};
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"], function (UIComponent, JSONModel) {
-  "use strict";
+	"use strict";
 
-  const Component = UIComponent.extend("ui5.walkthrough.Component", {
-    metadata: {
-      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-      "manifest": "json"
-    },
-    init() {
-      // call the init function of the parent
-      UIComponent.prototype.init.call(this);
+	const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
+		metadata: {
+			"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+			"manifest": "json"
+		},
+		init() {
+			// call the init function of the parent
+			UIComponent.prototype.init.call(this);
 
-      // set data model
-      const data = {
-        recipient: {
-          name: "World"
-        }
-      };
-      const dataModel = new JSONModel(data);
-      this.setModel(dataModel);
-    }
-  });
-  ;
-  return Component;
+			// set data model
+			const data = {
+				recipient: {
+					name: "World"
+				}
+			};
+			const dataModel = new JSONModel(data);
+			this.setModel(dataModel);
+		}
+	});
+	;
+	return Component;
 });
 
 ```
@@ -231,7 +231,7 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"], functi
 
 Let's explore how we can create a component in a simple and straightforward way directly in the HTML markup of our `index.html` file. To do this, we need to make a few changes in our HTML document.
 
-First, we need to remove the reference to the `ui5/walkthrough/index` module from the `data-sap-ui-on-init` attribute. Instead, we set it to the `sap/ui/core/ComponentSupport` module. Next, we add a `div` tag to the body of our HTML file. Inside this `div` tag, we add a special data attribute called `data-sap-ui-component`. This attribute is important because the `sap/ui/core/ComponentSupport` module scans the HTML elements with this attribute. Any element marked with this attribute will be considered a container element into which a `sap/ui/core/ComponentContainer` is inserted. We can also use additional data attributes to define the constructor arguments for the `ComponentContainer` instance. We transfer the arguments used to configure the `CompontentContainer `instance in the `index.ts` file to data attributes on our `div` tag. 
+First, we need to remove the reference to the `ui5/tutorial/walkthrough/index` module from the `data-sap-ui-on-init` attribute. Instead, we set it to the `sap/ui/core/ComponentSupport` module. Next, we add a `div` tag to the body of our HTML file. Inside this `div` tag, we add a special data attribute called `data-sap-ui-component`. This attribute is important because the `sap/ui/core/ComponentSupport` module scans the HTML elements with this attribute. Any element marked with this attribute will be considered a container element into which a `sap/ui/core/ComponentContainer` is inserted. We can also use additional data attributes to define the constructor arguments for the `ComponentContainer` instance. We transfer the arguments used to configure the `CompontentContainer `instance in the `index.ts` file to data attributes on our `div` tag. 
 
 It's worth noting that the `ComponentSupport` module enforces asynchronous loading of the respective component, so we don't need to set the `async` attribute to "true" in this case. It also sets the `autoPrefixId` property to "true" by default, so we don't need to set this attribute here either.
 
@@ -249,12 +249,12 @@ It's worth noting that the `ComponentSupport` module enforces asynchronous loadi
 		data-sap-ui-async="true"
 		data-sap-ui-on-init="module:sap/ui/core/ComponentSupport"
 		data-sap-ui-resource-roots='{
-			"ui5.walkthrough": "./"
+			"ui5.tutorial.walkthrough": "./"
 		}'>
 	</script>
 </head>
 <body class="sapUiBody" id="content">
-	<div data-sap-ui-component data-name="ui5.walkthrough" data-id="container" data-settings='{"id" : "walkthrough"}'></div>	
+	<div data-sap-ui-component data-name="ui5.tutorial.walkthrough" data-id="container" data-settings='{"id" : "walkthrough"}'></div>	
 </body>
 </html>
 ```

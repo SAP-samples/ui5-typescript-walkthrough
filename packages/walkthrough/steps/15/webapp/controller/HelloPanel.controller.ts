@@ -5,16 +5,16 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
 
-    onShowHello(): void {
-        // read msg from i18n model
-        const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
-        const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
-        const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
-        // show message
-        MessageToast.show(msg);
-    }
+	onShowHello(): void {
+		// read msg from i18n model
+		const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
+		const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+		const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
+		// show message
+		MessageToast.show(msg);
+	}
 };

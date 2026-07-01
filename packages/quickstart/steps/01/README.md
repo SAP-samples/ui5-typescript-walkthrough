@@ -50,21 +50,21 @@ In our webapp folder, we create a new HTML file named `index.html` and copy the 
 ```html
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Quickstart Tutorial</title>
-    <script id="sap-ui-bootstrap"
-      src="resources/sap-ui-core.js"
-      data-sap-ui-libs="sap.m"
-      data-sap-ui-compat-version="edge"
-      data-sap-ui-async="true"
-      data-sap-ui-on-init="module:ui5/quickstart/index"
-      data-sap-ui-resource-roots='{
-        "ui5.quickstart": "./"
-      }'>
-    </script>
-  </head>
-  <body class="sapUiBody" id="content"></body>
+	<head>
+		<meta charset="utf-8">
+		<title>Quickstart Tutorial</title>
+		<script id="sap-ui-bootstrap"
+			src="resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-compat-version="edge"
+			data-sap-ui-async="true"
+			data-sap-ui-on-init="module:ui5/tutorial/quickstart/index"
+			data-sap-ui-resource-roots='{
+				"ui5.tutorial.quickstart": "./"
+			}'>
+		</script>
+	</head>
+	<body class="sapUiBody" id="content"></body>
 </html>
 ```
 
@@ -93,17 +93,17 @@ new Button({
 ```
 ```js
 sap.ui.define([
-  "sap/m/Button",
-  "sap/m/MessageToast"
+	"sap/m/Button",
+	"sap/m/MessageToast"
 ], (Button, MessageToast) => {
-  "use strict";
+	"use strict";
 
-  new Button({
-    text: "Ready...",
-    press() {
-      MessageToast.show("Hello World!");
-    }
-  }).placeAt("content");
+	new Button({
+		text: "Ready...",
+		press() {
+			MessageToast.show("Hello World!");
+		}
+	}).placeAt("content");
 });
 ```
 
@@ -115,14 +115,14 @@ Create a new file named `manifest.json` in the webapp folder; it's also known as
 
 ```json
 {
-    "_version": "1.60.0",
-    "sap.app": {
-        "id": "ui5.quickstart"
-    }
+  "_version": "2.8.0",
+  "sap.app": {
+    "id": "ui5.tutorial.quickstart"
+  }
 }
 ```
 
-> 📝 **Note:** <br>
+> :note:
 > In this tutorial step, we focus on adding the absolute minimum configuration to the app descriptor file. In certain development environments you might encounter validation errors due to missing settings. However, for the purposes of this tutorial you can safely ignore these errors. In [Step 10: Descriptor for Applications](../10/README.md) we'll examine the purpose of the file in detail and configure some further options.
 
 ***
@@ -141,12 +141,12 @@ Enter the following content:
 
 ```json
 {
-    "name": "ui5.quickstart",
-    "version": "1.0.0",
-    "description": "The UI5 quickstart tutorial",
-    "scripts": {
-        "start": "ui5 serve -o index.html"
-    }
+  "name": "ui5.tutorial.quickstart",
+  "version": "1.0.0",
+  "description": "The UI5 quickstart tutorial",
+  "scripts": {
+    "start": "ui5 serve -o index.html"
+  }
 }
 
 ```
@@ -175,23 +175,22 @@ We specify the compiler options as follow:
 ```json
 {
   "compilerOptions": {
-    "target": "es2023",
-    "types": [
-      "node",
-      "@types/openui5"
-    ],
-    "skipLibCheck": true,
-    "allowJs": true,
-    "strictPropertyInitialization": false,
-    "rootDir": "./webapp",
-    "paths": {
-      "ui5/quickstart/*": [
-        "./webapp/*"
-      ]
-    }
+  "target": "es2023",
+  "types": [
+    "@openui5/types"
+  ],
+  "skipLibCheck": true,
+  "allowJs": true,
+  "strictPropertyInitialization": false,
+  "rootDir": "./webapp",
+  "paths": {
+    "ui5/tutorial/quickstart/*": [
+    "./webapp/*"
+    ]
+  }
   },
   "include": [
-    "./webapp/**/*"
+  "./webapp/**/*"
   ]
 }
 ```
@@ -202,7 +201,7 @@ Let's go through the compiler options specified in the file:
 
 - `"target": "es2023"`: The `target` parameter sets the JavaScript language level that the TypeScript code should be compiled down to. We set it to `es2023`, which means the generated JavaScript code is compatible with ECMAScript 2023.
 
-- `"types": [ "node", "@types/openui5"]`: The `types` parameter defines the types used for TypeScript code. We configure this parameter to use the built-in Node.js types and the OpenUI5 types delivered by the `@types/openui5` package. 
+- `"types": ["@openui5/types"]`: The `types` parameter defines the types used for TypeScript code. We configure this parameter to use the OpenUI5 types delivered by the `@openui5/types` package.
 
 - `"skipLibCheck": true`: When the `skipLibCheck` parameter is set to `true`, it tells the compiler to skip type checking of declaration files (`.d.ts` files) that are part of external libraries. This can improve compilation speed.
 
@@ -212,7 +211,7 @@ Let's go through the compiler options specified in the file:
 
 - `"rootDir": "./webapp"`: The `rootDir` parameter specifies the root directory of the TypeScript source files. The compiler considers this directory as the starting point for resolving file paths. We set it to our `webapp` folder.
 
-- `"paths": { "ui5/quickstart/*": ["./webapp/**/*"] }`: The `path` paramter specifies path mappings for module resolution. It allows you to define custom module paths that map to specific directories or files. In this case, it maps the module path `ui5/quickstart/*`.
+- `"paths": { "ui5/tutorial/quickstart/*": ["./webapp/**/*"] }`: The `path` paramter specifies path mappings for module resolution. It allows you to define custom module paths that map to specific directories or files. In this case, it maps the module path `ui5/tutorial/quickstart/*`.
 
 - `"include": [ "./webapp/**/*" ]`: Specifies an array of filenames or patterns to include in TypeScript compilation. 
 
@@ -292,7 +291,7 @@ Next,  we have to configure the tooling extension we installed from npm to our U
 
 -   All our custom middleware extensions will be called after the `compression` middleware.
 
-> 📌 **Important:** <br>
+> :info:
 > Middleware configurations are applied in the order in which they are defined. 
 
 <details class="ts-only" markdown="1">
@@ -330,7 +329,7 @@ Now you can benefit from live reload on changes and built framework resources at
 </details>
 
 <br>
-> 📝 **Note:**<br>
+> :note:
 > During its initial run, the `ui5-middleware-serveframework` middleware will build the framework, which can take a while. In all following steps, the build will not happen again and the framework is served from the built resources.
 
 &nbsp;

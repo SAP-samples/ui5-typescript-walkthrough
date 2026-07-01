@@ -1,5 +1,5 @@
 {
-  "name": "ui5.walkthrough.step03",
+  "name": "ui5.tutorial.walkthrough.step03",
   "version": "1.0.0",
   "author": "SAP SE",
   "description": "OpenUI5 TypeScript Walkthrough: Step 3 - Controls",
@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/openui5": "^1.147.0",
+    "@openui5/types": "^1.148.1",
     "@ui5/cli": "^4.0.53",
     "typescript": "^6.0.3",
     "ui5-middleware-livereload": "^3.3.1",

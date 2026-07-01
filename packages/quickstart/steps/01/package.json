@@ -1,5 +1,5 @@
 {
-  "name": "ui5.quickstart.step01",
+  "name": "ui5.tutorial.quickstart.step01",
   "private": true,
   "version": "1.0.0",
   "author": "SAP SE",
@@ -9,7 +9,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/openui5": "^1.147.0",
+    "@openui5/types": "^1.148.1",
     "@ui5/cli": "^4.0.53",
     "typescript": "^6.0.3",
     "ui5-middleware-livereload": "^3.3.1",

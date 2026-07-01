@@ -71,46 +71,46 @@ import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import Dialog from "sap/m/Dialog";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
-    private dialog : Dialog;
+	private dialog : Dialog;
 
-    onShowHello(): void {
-        ...
-    }
-    async onOpenDialog(): Promise<void> {
-        this.dialog ??= await this.loadFragment({
-             name: "ui5.walkthrough.view.HelloDialog"
-        }) as Dialog;
-        this.dialog.open();
-    }
+	onShowHello(): void {
+		...
+	}
+	async onOpenDialog(): Promise<void> {
+		this.dialog ??= await this.loadFragment({
+			 name: "ui5.tutorial.walkthrough.view.HelloDialog"
+		}) as Dialog;
+		this.dialog.open();
+	}
 };
 
 ```
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Controller, MessageToast) {
-  "use strict";
+	"use strict";
 
-  const HelloPanel = Controller.extend("ui5.walkthrough.controller.HelloPanel", {
-    onShowHello() {
-      ...
-    },
-    async onOpenDialog() {
-      this.dialog ??= await this.loadFragment({
-        name: "ui5.walkthrough.view.HelloDialog"
-      });
-      this.dialog.open();
-    }
-  });
-  ;
-  return HelloPanel;
+	const HelloPanel = Controller.extend("ui5.tutorial.walkthrough.controller.HelloPanel", {
+		onShowHello() {
+			...
+		},
+		async onOpenDialog() {
+			this.dialog ??= await this.loadFragment({
+				name: "ui5.tutorial.walkthrough.view.HelloDialog"
+			});
+			this.dialog.open();
+		}
+	});
+	;
+	return HelloPanel;
 });
 
 ```
 &nbsp;
-> 💡 **Tip:** <br>
-> To reuse the dialog opening and closing functionality in other controllers, you might create a new file `ui5.walkthrough.controller.controller.BaseController`, which extends `sap.ui.core.mvc.Controller`, and put all your dialog-related coding into this controller. Now, all the other controllers can extend from `ui5.walkthrough.controller.BaseController` instead of `sap.ui.core.mvc.Controller`.
+> :tip:
+> To reuse the dialog opening and closing functionality in other controllers, you might create a new file `ui5.tutorial.walkthrough.controller.controller.BaseController`, which extends `sap.ui.core.mvc.Controller`, and put all your dialog-related coding into this controller. Now, all the other controllers can extend from `ui5.tutorial.walkthrough.controller.BaseController` instead of `sap.ui.core.mvc.Controller`.
 
 
 ### webapp/i18n/i18n.properties
@@ -133,31 +133,31 @@ We add a new button to the view to open the dialog and assign an unique `id`to i
 
 ```xml
 <mvc:View
-   controllerName="ui5.walkthrough.controller.HelloPanel"
+   controllerName="ui5.tutorial.walkthrough.controller.HelloPanel"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <Panel
-      headerText="{i18n>helloPanelTitle}"
-      class="sapUiResponsiveMargin"
-      width="auto" >
-      <content>
-         <Button
-            id="helloDialogButton"
-            text="{i18n>openDialogButtonText}"
-            press=".onOpenDialog"
-            class="sapUiSmallMarginEnd"/>
-         <Button
-            text="{i18n>showHelloButtonText}"
-            press=".onShowHello"
-            class="myCustomButton"/>
-         <Input
-            value="{/recipient/name}"
-            valueLiveUpdate="true"
-            width="60%"/>
-         <FormattedText
-            htmlText="Hello {/recipient/name}"
-            class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
-      </content>
+    headerText="{i18n>helloPanelTitle}"
+    class="sapUiResponsiveMargin"
+    width="auto" >
+    <content>
+     <Button
+      id="helloDialogButton"
+      text="{i18n>openDialogButtonText}"
+      press=".onOpenDialog"
+      class="sapUiSmallMarginEnd"/>
+     <Button
+      text="{i18n>showHelloButtonText}"
+      press=".onShowHello"
+      class="myCustomButton"/>
+     <Input
+      value="{/recipient/name}"
+      valueLiveUpdate="true"
+      width="60%"/>
+     <FormattedText
+      htmlText="Hello {/recipient/name}"
+      class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+    </content>
    </Panel>
 </mvc:View>
 ```

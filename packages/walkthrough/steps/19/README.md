@@ -96,7 +96,7 @@ We add a new named model `invoice` to the `sap.ui5` section of the descriptor. T
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "ui5.walkthrough.i18n.i18n",
+          "bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
           "supportedLocales": [
             ""
           ],
@@ -171,22 +171,22 @@ In the app view we add a second view and assign it to our newly created InvoiceL
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.App"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true">
-	<Shell>
-		<App class="myAppDemoWT">
-			<pages>
-				<Page title="{i18n>homePageTitle}">
-					<content>
-						<mvc:XMLView viewName="ui5.walkthrough.view.HelloPanel"/>
-						<mvc:XMLView viewName="ui5.walkthrough.view.InvoiceList"/>
-					</content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+  controllerName="ui5.tutorial.walkthrough.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Shell>
+    <App class="myAppDemoWT">
+      <pages>
+        <Page title="{i18n>homePageTitle}">
+          <content>
+            <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.HelloPanel"/>
+            <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.InvoiceList"/>
+          </content>
+        </Page>
+      </pages>
+    </App>
+  </Shell>
 </mvc:View>
 ```
 

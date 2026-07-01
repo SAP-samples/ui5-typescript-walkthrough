@@ -87,7 +87,7 @@ The `init` function is a lifecycle function that is automatically called by the 
 
 The static `renderer` property expects an object that defines how the control is rendered. It is invoked initially by the OpenUI5 framework and each time a property of the control is changed. The `renderer` object has two properties: `apiVersion` and `render`. The `apiVersion` property specifies the API version of the RenderManager that is used in this renderer. The `render` property is a method that takes two parameters: a `RenderManager` object and the control instance itself. We'll delve into the implementation of our control's rendering within this method at a later stage.
 
-> 📝 **Note:** <br>
+> :note:
 > The RenderManager is an important component in OpenUI5 that is responsible for converting abstract representations of controls into actual HTML elements that can be displayed in the browser. There are different versions of the RenderManager API, each representing an evolution of the RenderManager with specific sets of APIs and rendering techniques. These different API versions are important to ensure compatibility between different versions of OpenUI5.
 >
 > The latest version of the RenderManager API is version 4, which introduces new features and improvements compared to previous versions. It also includes performance enhancements, making your applications run faster and more efficiently. For example, version 4 avoids re-rendering of child controls unless they are invalidated, which can save processing time.
@@ -99,7 +99,7 @@ import Control from "sap/ui/core/Control";
 import RenderManager from "sap/ui/core/RenderManager";
 
 /**
- * @namespace ui5.walkthrough.control
+ * @namespace ui5.tutorial.walkthrough.control
  */
 export default class ProductRating extends Control {
 
@@ -121,23 +121,23 @@ export default class ProductRating extends Control {
 
 ```js
 sap.ui.define(["sap/ui/core/Control"], function (Control) {
-  "use strict";
+	"use strict";
 
-  const ProductRating = Control.extend("ui5.walkthrough.control.ProductRating", {
-    renderer: {
-      apiVersion: 4,
-      render: (rm, control) => { }
-    },
-    metadata: {},
-    init() {},
-  });
-  ;
-  return ProductRating;
+	const ProductRating = Control.extend("ui5.tutorial.walkthrough.control.ProductRating", {
+		renderer: {
+			apiVersion: 4,
+			render: (rm, control) => { }
+		},
+		metadata: {},
+		init() {},
+	});
+	;
+	return ProductRating;
 });
 
 ```
 &nbsp;
-> 📌 **Remember:** <br>
+> :info:
 > Controls always extend `sap.ui.core.Control` and render themselves. You could also extend `sap.ui.core.Element` or `sap.ui.base.ManagedObject` directly if you want to reuse life cycle features of OpenUI5 including data binding for objects that are not rendered. Please refer to the API reference to learn more about the inheritance hierarchy of controls.
 
 We now enhance our new custom control with the custom functionality that we need. In our case we want to create an interactive product rating feature. We utilize three controls provided by the sap.m library to compose our custom control: A `RatingIndicator` control to collect user input on a product, a `Label` control to display additional information, and a `Button` control that allows users to submit their rating.
@@ -152,7 +152,7 @@ In the `metadata` section we therefore define several properties that we make us
 
 	As described in the first paragraph, we need three internal controls to realize our rating functionality. We therefore create three “hidden aggregations” by setting the `visibility` attribute to `hidden`. This way, we can use the models that are set on the view also in the inner controls and OpenUI5 will take care of the lifecycle management and destroy the controls when they are not needed anymore. Aggregations can also be used to hold arrays of controls but we just want a single control in each of the aggregations so we need to adjust the cardinality by setting the attribute `multiple` to `false`.
 
-	> 📝 **Note:** <br>
+	> :note:
 	> You can define `aggregations` and `associations`
 	> 
 	> -   An **`aggregation`** is a strong relation that also manages the lifecycle of the related control, for example, when the parent is destroyed, the related control is also destroyed. Also, a control can only be assigned to one single aggregation, if it is assigned to a second aggregation, it is removed from the previous aggregation automatically.
@@ -167,7 +167,7 @@ In the `init` function we instantiate the three controls and store them in the i
 
 Let’s ignore the other internal helper functions and event handlers for now and define our renderer. By using the APIs of the RenderManager and the control instance that are passed as references, we can describe the necessary HTML for our control. To open a new HTML tag we use the `openStart` method and pass `"div"` as the HTML element to be created. We also pass our control instance (ProductRating) to be associated with the HTML tag. The RenderManager will automatically generate the properties for the control and assign it to the `div` tag. After calling `openStart`, we can chain additional methods to set attributes or styles for the element. To set our custom CSS class `myAppDemoWTProductRating` for the `div` element, we use the `class` method. If a `tooltip` exists, we call the `attr` method to set the `title` attribute with the value of the tooltip for the div element. Finally, we close the surrounding `div` tag by calling `openEnd`.
 
-> 📌 **Remember:**  <br>
+> :info:
 > Since our custom control extends the `sap.ui.core.Control` class, it also inherits its properties and aggregations from it. In this case, the `tooltip` property is defined in the `sap.ui.core.Element` class, which is inherited by the `sap.ui.core.Control` class. Therefore, your custom control also inherits this aggregation. However, controls must explicitly support tooltips as they have to render them.
 
 Next, we render the three child controls we defined in the aggregation of our ProductRating control. We retrieve the child controls using the `getAggregation` method with the aggregation name as the parameter. The `renderControl` method is then called on each child control to render them. Finally, we close the element by calling the `close` method on the RenderManager and passing the `"div"` element name as argument. This completes the rendering of the custom control.
@@ -191,7 +191,7 @@ import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 
 /**
- * @namespace ui5.walkthrough.control
+ * @namespace ui5.tutorial.walkthrough.control
  */
 export default class ProductRating extends Control {
 	// The following three lines were generated and should remain as-is to make TypeScript aware of the constructor signatures
@@ -306,106 +306,106 @@ export default class ProductRating extends Control {
 
 ```js
 sap.ui.define(["sap/ui/core/Control", "sap/m/Label", "sap/m/Button", "sap/m/RatingIndicator"], function (Control, Label, Button, RatingIndicator) {
-  "use strict";
+	"use strict";
 
-  const ProductRating = Control.extend("ui5.walkthrough.control.ProductRating", {
-    renderer: {
-      apiVersion: 4,
-      render: (rm, control) => {
-        const tooltip = control.getTooltip_AsString();
-        rm.openStart("div", control);
-        rm.class("myAppDemoWTProductRating");
-        if (tooltip) {
-          rm.attr("title", tooltip);
-        }
-        rm.openEnd();
-        rm.renderControl(control.getAggregation("_rating"));
-        rm.renderControl(control.getAggregation("_label"));
-        rm.renderControl(control.getAggregation("_button"));
-        rm.close("div");
-      }
-    },
-    metadata: {
-      properties: {
-        value: {
-          type: "float",
-          defaultValue: 0
-        }
-      },
-      aggregations: {
-        _rating: {
-          type: "sap.m.RatingIndicator",
-          multiple: false,
-          visibility: "hidden"
-        },
-        _label: {
-          type: "sap.m.Label",
-          multiple: false,
-          visibility: "hidden"
-        },
-        _button: {
-          type: "sap.m.Button",
-          multiple: false,
-          visibility: "hidden"
-        }
-      },
-      events: {
-        change: {
-          parameters: {
-            "value": "float"
-          }
-        }
-      }
-    },
-    constructor(id, settings) {
-      Control.prototype.constructor.call(this, id, settings);
-    },
-    init() {
-      this.setAggregation("_rating", new RatingIndicator({
-        value: this.getValue(),
-        iconSize: "2rem",
-        liveChange: this._onRate.bind(this)
-      }));
-      this.setAggregation("_label", new Label({
-        text: "{i18n>productRatingLabelInitial}"
-      }).addStyleClass("sapUiSmallMargin"));
-      this.setAggregation("_button", new Button({
-        text: "{i18n>productRatingButton}",
-        press: this._onSubmit.bind(this)
-      }).addStyleClass("sapUiTinyMarginTopBottom"));
-    },
-    setValue(value) {
-      this.setProperty("value", value, true);
-      this.getAggregation("_rating").setValue(value);
-      return this;
-    },
-    reset() {
-      const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
-      this.setValue(0);
-      this.getAggregation("_label").setDesign("Standard");
-      this.getAggregation("_rating").setEnabled(true);
-      this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelInitial"));
-      this.getAggregation("_button").setEnabled(true);
-    },
-    _onRate(event) {
-      const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
-      const value = event.getParameter("value");
-      this.setProperty("value", value, true);
-      this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelIndicator", [value, event.getSource().getMaxValue()]));
-      this.getAggregation("_label").setDesign("Bold");
-    },
-    _onSubmit(event) {
-      const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
-      this.getAggregation("_rating").setEnabled(false);
-      this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelFinal"));
-      this.getAggregation("_button").setEnabled(false);
-      this.fireEvent("change", {
-        value: this.getValue()
-      });
-    }
-  });
-  ;
-  return ProductRating;
+	const ProductRating = Control.extend("ui5.tutorial.walkthrough.control.ProductRating", {
+		renderer: {
+			apiVersion: 4,
+			render: (rm, control) => {
+				const tooltip = control.getTooltip_AsString();
+				rm.openStart("div", control);
+				rm.class("myAppDemoWTProductRating");
+				if (tooltip) {
+					rm.attr("title", tooltip);
+				}
+				rm.openEnd();
+				rm.renderControl(control.getAggregation("_rating"));
+				rm.renderControl(control.getAggregation("_label"));
+				rm.renderControl(control.getAggregation("_button"));
+				rm.close("div");
+			}
+		},
+		metadata: {
+			properties: {
+				value: {
+					type: "float",
+					defaultValue: 0
+				}
+			},
+			aggregations: {
+				_rating: {
+					type: "sap.m.RatingIndicator",
+					multiple: false,
+					visibility: "hidden"
+				},
+				_label: {
+					type: "sap.m.Label",
+					multiple: false,
+					visibility: "hidden"
+				},
+				_button: {
+					type: "sap.m.Button",
+					multiple: false,
+					visibility: "hidden"
+				}
+			},
+			events: {
+				change: {
+					parameters: {
+						"value": "float"
+					}
+				}
+			}
+		},
+		constructor(id, settings) {
+			Control.prototype.constructor.call(this, id, settings);
+		},
+		init() {
+			this.setAggregation("_rating", new RatingIndicator({
+				value: this.getValue(),
+				iconSize: "2rem",
+				liveChange: this._onRate.bind(this)
+			}));
+			this.setAggregation("_label", new Label({
+				text: "{i18n>productRatingLabelInitial}"
+			}).addStyleClass("sapUiSmallMargin"));
+			this.setAggregation("_button", new Button({
+				text: "{i18n>productRatingButton}",
+				press: this._onSubmit.bind(this)
+			}).addStyleClass("sapUiTinyMarginTopBottom"));
+		},
+		setValue(value) {
+			this.setProperty("value", value, true);
+			this.getAggregation("_rating").setValue(value);
+			return this;
+		},
+		reset() {
+			const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
+			this.setValue(0);
+			this.getAggregation("_label").setDesign("Standard");
+			this.getAggregation("_rating").setEnabled(true);
+			this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelInitial"));
+			this.getAggregation("_button").setEnabled(true);
+		},
+		_onRate(event) {
+			const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
+			const value = event.getParameter("value");
+			this.setProperty("value", value, true);
+			this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelIndicator", [value, event.getSource().getMaxValue()]));
+			this.getAggregation("_label").setDesign("Bold");
+		},
+		_onSubmit(event) {
+			const resourceBundle = this?.getModel("i18n")?.getResourceBundle();
+			this.getAggregation("_rating").setEnabled(false);
+			this.getAggregation("_label").setText(resourceBundle.getText("productRatingLabelFinal"));
+			this.getAggregation("_button").setEnabled(false);
+			this.fireEvent("change", {
+				value: this.getValue()
+			});
+		}
+	});
+	;
+	return ProductRating;
 });
 
 ```
@@ -448,79 +448,79 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class Detail extends Controller {
 
-    onInit(): void {
-        const router = UIComponent.getRouterFor(this);
-        (router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
-    }
+	onInit(): void {
+		const router = UIComponent.getRouterFor(this);
+		(router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
+	}
 
-    onObjectMatched(event: Route$PatternMatchedEvent): void {
-    
-        (this.byId("rating") as ProductRating).reset();
-        this.getView()?.bindElement({
-            path: "/" + window.decodeURIComponent((event.getParameter("arguments") as any).invoicePath),
-            model: "invoice"
-        });
-    }
+	onObjectMatched(event: Route$PatternMatchedEvent): void {
+	
+		(this.byId("rating") as ProductRating).reset();
+		this.getView()?.bindElement({
+			path: "/" + window.decodeURIComponent((event.getParameter("arguments") as any).invoicePath),
+			model: "invoice"
+		});
+	}
 
-    onNavBack(): void {
-        const history = History.getInstance();
-        const previousHash = history.getPreviousHash();
+	onNavBack(): void {
+		const history = History.getInstance();
+		const previousHash = history.getPreviousHash();
 
-        if (previousHash !== undefined) {
-            window.history.go(-1);
-        } else {
-            const router = UIComponent.getRouterFor(this);
-            router.navTo("overview", {}, true);
-        }
-    }    
-    
-    onRatingChange(event: ProductRating$ChangeEvent): void {
-        const value = event.getParameter("value");
-        const resourceBundle = (this?.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+		if (previousHash !== undefined) {
+			window.history.go(-1);
+		} else {
+			const router = UIComponent.getRouterFor(this);
+			router.navTo("overview", {}, true);
+		}
+	}    
+	
+	onRatingChange(event: ProductRating$ChangeEvent): void {
+		const value = event.getParameter("value");
+		const resourceBundle = (this?.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
 
-        MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]) as string);
-    }    
+		MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]) as string);
+	}    
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/m/MessageToast", "sap/ui/core/UIComponent"], function (Controller, History, MessageToast, UIComponent) {
-  "use strict";
+	"use strict";
 
-  const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
-    onInit() {
-      const router = UIComponent.getRouterFor(this);
-      router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
-    },
-    onObjectMatched(event) {
-      this.byId("rating").reset();
-      this.getView().bindElement({
-        path: "/" + window.decodeURIComponent(event.getParameter("arguments").invoicePath),
-        model: "invoice"
-      });
-    },
-    onNavBack() {
-      const history = History.getInstance();
-      const previousHash = history.getPreviousHash();
-      if (previousHash !== undefined) {
-        window.history.go(-1);
-      } else {
-        const router = UIComponent.getRouterFor(this);
-        router.navTo("overview", {}, true);
-      }
-    },
-    onRatingChange(event) {
-      const value = event.getParameter("value");
-      const resourceBundle = this?.getView().getModel("i18n")?.getResourceBundle();
-      MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]));
-    }
-  });
-  return Detail;
+	const Detail = Controller.extend("ui5.tutorial.walkthrough.controller.Detail", {
+		onInit() {
+			const router = UIComponent.getRouterFor(this);
+			router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
+		},
+		onObjectMatched(event) {
+			this.byId("rating").reset();
+			this.getView().bindElement({
+				path: "/" + window.decodeURIComponent(event.getParameter("arguments").invoicePath),
+				model: "invoice"
+			});
+		},
+		onNavBack() {
+			const history = History.getInstance();
+			const previousHash = history.getPreviousHash();
+			if (previousHash !== undefined) {
+				window.history.go(-1);
+			} else {
+				const router = UIComponent.getRouterFor(this);
+				router.navTo("overview", {}, true);
+			}
+		},
+		onRatingChange(event) {
+			const value = event.getParameter("value");
+			const resourceBundle = this?.getView().getModel("i18n")?.getResourceBundle();
+			MessageToast.show(resourceBundle.getText("ratingConfirmation", [value]));
+		}
+	});
+	return Detail;
 });
 
 ```
@@ -531,23 +531,23 @@ All we need now is to add our new control to the detail view. To do so we must a
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.Detail"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:wt="ui5.walkthrough.control">
-	<Page
-		title="{i18n>detailPageTitle}"
-		showNavButton="true"
-		navButtonPress=".onNavBack">
-		<ObjectHeader
-			intro="{invoice>ShipperName}"
-			title="{invoice>ProductName}"/>
-		<wt:ProductRating 
-			id="rating"
-			tooltip="{invoice>ProductName}"
-			class="sapUiSmallMarginBeginEnd" 
-			change=".onRatingChange"/>
-	</Page>
+  controllerName="ui5.tutorial.walkthrough.controller.Detail"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:wt="ui5.tutorial.walkthrough.control">
+  <Page
+    title="{i18n>detailPageTitle}"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+    <ObjectHeader
+      intro="{invoice>ShipperName}"
+      title="{invoice>ProductName}"/>
+    <wt:ProductRating 
+      id="rating"
+      tooltip="{invoice>ProductName}"
+      class="sapUiSmallMarginBeginEnd" 
+      change=".onRatingChange"/>
+  </Page>
 </mvc:View>
 ```
 &nbsp;
@@ -584,7 +584,7 @@ import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 
 /**
- * @namespace ui5.walkthrough.control
+ * @namespace ui5.tutorial.walkthrough.control
  */
 export default class ProductRating extends Control {
 	// The following three lines were generated and should remain as-is to make TypeScript aware of the constructor signatures

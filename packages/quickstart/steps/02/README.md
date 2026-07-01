@@ -35,7 +35,7 @@ You can download the solution for this step here: [📥 Download step 2](https:/
 
 ### webapp/index.?s
 
-Now we replace most of the code in this file: We remove the inline button from the previous step, and introduce a proper XML view to separate the presentation from the controller logic. We prefix the view name `ui5.quickstart.App` with our newly defined namespace. The view is loaded asynchronously.
+Now we replace most of the code in this file: We remove the inline button from the previous step, and introduce a proper XML view to separate the presentation from the controller logic. We prefix the view name `ui5.tutorial.quickstart.App` with our newly defined namespace. The view is loaded asynchronously.
 
 Similar to the step before, the view is placed in the element with the `content` ID after it has finished loading.
 
@@ -43,7 +43,7 @@ Similar to the step before, the view is placed in the element with the `content`
 import XMLView from "sap/ui/core/mvc/XMLView";
 
 XMLView.create({
-	viewName: "ui5.quickstart.App"
+	viewName: "ui5.tutorial.quickstart.App"
 }).then((oView) => oView.placeAt("content"));
 ```
 ```js
@@ -53,7 +53,7 @@ sap.ui.define([
 	"use strict";
 
 	XMLView.create({
-		viewName: "ui5.quickstart.App"
+		viewName: "ui5.tutorial.quickstart.App"
 	}).then((oView) => oView.placeAt("content"));
 });
 ```
@@ -68,19 +68,19 @@ We outsource the controller logic to an app controller. The `.onPress` event now
 
 ```xml
 <mvc:View
-	controllerName="ui5.quickstart.App"
-	displayBlock="true"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
-	<App>
-		<Page title="My App">
-			<Button
-				text="Steady..."
-				press=".onPress"
-				type="Emphasized"
-				class="sapUiSmallMargin"/>
-		</Page>
-	</App>
+  controllerName="ui5.tutorial.quickstart.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <App>
+    <Page title="My App">
+      <Button
+        text="Steady..."
+        press=".onPress"
+        type="Emphasized"
+        class="sapUiSmallMargin"/>
+    </Page>
+  </App>
 </mvc:View>
 ```
 
@@ -105,7 +105,7 @@ sap.ui.define([
 ], (Controller, MessageToast) => {
 	"use strict";
 
-	return Controller.extend("ui5.quickstart.App", {
+	return Controller.extend("ui5.tutorial.quickstart.App", {
 		onPress() {
 			MessageToast.show("Hello App!");
 		}

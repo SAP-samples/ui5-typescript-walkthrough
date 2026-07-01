@@ -4,7 +4,7 @@ Now that we have a test folder in the app, we can start to increase our test cov
 
 Actually, every feature that we added to the app so far, would require a separate test case. We have totally neglected this so far, so let’s add a simple unit test for our custom formatter function from Step 23. We will test if the long text for our status is correct by comparing it with the texts from our resource bundle.
 
-> 📝 **Note:** <br>  
+> :note:
 > In this tutorial, we focus on a simple use case for the test implementation. If you want to learn more about QUnit tests, have a look at the [Testing Tutorial](https://sdk.openui5.org/topic/291c9121e6044ab381e0b51716f97f52.html) tutorial, especially [Step 2: A First Unit Test](https://sdk.openui5.org/topic/b81736e0fcb246efb3b0cf0ca422f8fd.html).
 
 &nbsp;
@@ -22,7 +22,7 @@ We add a new folder `unit` under the `test` folder and a `model` subfolder where
 ![](assets/loio1b5613ac3ab94757af2c7823039222a9_LowRes.png "Folder Structure for this Step")
 <sup>*Folder Structure for this Step*</sup>
 
-You can access the live preview by clicking on this link: [🔗 Live Preview of Step 27](https://ui5.github.io/tutorials/walkthrough/build/27/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/walkthrough/testsuite.cdn.qunit&test=unit/unitTests).
+You can access the live preview by clicking on this link: [🔗 Live Preview of Step 27](https://ui5.github.io/tutorials/walkthrough/build/27/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/tutorial/walkthrough/testsuite.cdn.qunit&test=unit/unitTests).
 
 ***
 
@@ -49,76 +49,76 @@ The new formatter file just contains one QUnit module for our formatter function
 
 Finally, we perform our assertions. We check each branch of the formatter logic by invoking the isolated formatter function with the values that we expect in the data model \(`A`, `B`, `C`, and everything else\). We strictly compare the result of the formatter function with the hard-coded strings that we expect from the resource bundle and give a meaningful error message if the test should fail.
 
-> 📝 **Note:** <br>  
-> Test code needs to import the modules under test (i.e. productive code) using their full namespace (in our case `ui5/walkthrough/`), rather than using relative paths. This is because the test code uses a different namespace (`test-resources/ui5/walkthrough/`).
+> :note:
+> Test code needs to import the modules under test (i.e. productive code) using their full namespace (in our case `ui5/tutorial/walkthrough/`), rather than using relative paths. This is because the test code uses a different namespace (`test-resources/ui5/tutorial/walkthrough/`).
 
 ```ts
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import Controller from "sap/ui/core/mvc/Controller";
-import formatter from "ui5/walkthrough/model/formatter";
+import formatter from "ui5/tutorial/walkthrough/model/formatter";
 
 QUnit.module("Formatting function", {});
 
 QUnit.test("Should return the translated texts", (assert) => {
-    const resourceModel = new ResourceModel({
-        bundleUrl: sap.ui.require.toUrl("ui5/walkthrough/i18n/i18n.properties"),
-        supportedLocales: [
-            ""
-        ],
-        fallbackLocale: ""
-    });
+	const resourceModel = new ResourceModel({
+		bundleUrl: sap.ui.require.toUrl("ui5/tutorial/walkthrough/i18n/i18n.properties"),
+		supportedLocales: [
+			""
+		],
+		fallbackLocale: ""
+	});
 
-    const controllerMock = {
-        getOwnerComponent() {
-            return {
-                getModel() {
-                    return resourceModel;
-                }
-            };
-        }
-    } as any as Controller;
+	const controllerMock = {
+		getOwnerComponent() {
+			return {
+				getModel() {
+					return resourceModel;
+				}
+			};
+		}
+	} as any as Controller;
 
-    // System under test
-    const fnIsolatedFormatter = formatter.statusText.bind(controllerMock);
+	// System under test
+	const fnIsolatedFormatter = formatter.statusText.bind(controllerMock);
 
-    // Assert
-    assert.strictEqual(fnIsolatedFormatter("A"), "New", "The long text for status A is correct");
-    assert.strictEqual(fnIsolatedFormatter("B"), "In Progress", "The long text for status B is correct");
-    assert.strictEqual(fnIsolatedFormatter("C"), "Done", "The long text for status C is correct");
-    assert.strictEqual(fnIsolatedFormatter("Foo"), "Foo", "The long text for status Foo is correct");
+	// Assert
+	assert.strictEqual(fnIsolatedFormatter("A"), "New", "The long text for status A is correct");
+	assert.strictEqual(fnIsolatedFormatter("B"), "In Progress", "The long text for status B is correct");
+	assert.strictEqual(fnIsolatedFormatter("C"), "Done", "The long text for status C is correct");
+	assert.strictEqual(fnIsolatedFormatter("Foo"), "Foo", "The long text for status Foo is correct");
 });
 
 ```
 
 ```js
-sap.ui.define(["sap/ui/model/resource/ResourceModel", "ui5/walkthrough/model/formatter"], function (ResourceModel, formatter) {
+sap.ui.define(["sap/ui/model/resource/ResourceModel", "ui5/tutorial/walkthrough/model/formatter"], function (ResourceModel, formatter) {
   "use strict";
 
   QUnit.module("Formatting function", {});
   QUnit.test("Should return the translated texts", assert => {
-    const resourceModel = new ResourceModel({
-      bundleUrl: sap.ui.require.toUrl("ui5/walkthrough/i18n/i18n.properties"),
-      supportedLocales: [""],
-      fallbackLocale: ""
-    });
-    const controllerMock = {
-      getOwnerComponent() {
-        return {
-          getModel() {
-            return resourceModel;
-          }
-        };
-      }
-    };
+	const resourceModel = new ResourceModel({
+	  bundleUrl: sap.ui.require.toUrl("ui5/tutorial/walkthrough/i18n/i18n.properties"),
+	  supportedLocales: [""],
+	  fallbackLocale: ""
+	});
+	const controllerMock = {
+	  getOwnerComponent() {
+		return {
+		  getModel() {
+			return resourceModel;
+		  }
+		};
+	  }
+	};
 
-    // System under test
-    const fnIsolatedFormatter = formatter.statusText.bind(controllerMock);
+	// System under test
+	const fnIsolatedFormatter = formatter.statusText.bind(controllerMock);
 
-    // Assert
-    assert.strictEqual(fnIsolatedFormatter("A"), "New", "The long text for status A is correct");
-    assert.strictEqual(fnIsolatedFormatter("B"), "In Progress", "The long text for status B is correct");
-    assert.strictEqual(fnIsolatedFormatter("C"), "Done", "The long text for status C is correct");
-    assert.strictEqual(fnIsolatedFormatter("Foo"), "Foo", "The long text for status Foo is correct");
+	// Assert
+	assert.strictEqual(fnIsolatedFormatter("A"), "New", "The long text for status A is correct");
+	assert.strictEqual(fnIsolatedFormatter("B"), "In Progress", "The long text for status B is correct");
+	assert.strictEqual(fnIsolatedFormatter("C"), "Done", "The long text for status C is correct");
+	assert.strictEqual(fnIsolatedFormatter("Foo"), "Foo", "The long text for status Foo is correct");
   });
 });
 
@@ -138,7 +138,7 @@ import "./model/formatter";
 
 ```js
 sap.ui.define(["./model/formatter"], function (___model_formatter) {
-  "use strict";
+	"use strict";
 });
 
 ```
@@ -161,7 +161,7 @@ The page will be referenced in the test suite that we will create next.
 	<script
 		src="../resources/sap/ui/test/starter/runTest.js"
 		data-sap-ui-resource-roots='{
-			"test-resources.ui5.walkthrough": "./"
+			"test-resources.ui5.tutorial.walkthrough": "./"
 		}'
 	></script>
 </head>
@@ -191,7 +191,7 @@ import type {SuiteConfiguration} from "sap/ui/test/starter/config";
 export default {
 	name: "QUnit test suite for UI5 TypeScript Walkthrough",
 	defaults: {
-		page: "ui5://test-resources/ui5/walkthrough/Test.qunit.html?testsuite={suite}&test={name}",
+		page: "ui5://test-resources/ui5/tutorial/walkthrough/Test.qunit.html?testsuite={suite}&test={name}",
 		qunit: {
 			version: 2
 		},
@@ -200,7 +200,7 @@ export default {
 		},
 		loader: {
 			paths: {
-				"ui5/walkthrough": "../"
+				"ui5/tutorial/walkthrough": "../"
 			}
 		}
 	},
@@ -215,30 +215,30 @@ export default {
 
 ```js
 sap.ui.define([], function () {
-  "use strict";
+	"use strict";
 
-  return {
-    name: "QUnit test suite for UI5 TypeScript Walkthrough",
-    defaults: {
-      page: "ui5://test-resources/ui5/walkthrough/Test.qunit.html?testsuite={suite}&test={name}",
-      qunit: {
-        version: 2
-      },
-      ui5: {
-        theme: "sap_horizon"
-      },
-      loader: {
-        paths: {
-          "ui5/walkthrough": "../"
-        }
-      }
-    },
-    tests: {
-      "unit/unitTests": {
-        title: "UI5 TypeScript Walkthrough - Unit Tests"
-      }
-    }
-  };
+	return {
+		name: "QUnit test suite for UI5 TypeScript Walkthrough",
+		defaults: {
+			page: "ui5://test-resources/ui5/tutorial/walkthrough/Test.qunit.html?testsuite={suite}&test={name}",
+			qunit: {
+				version: 2
+			},
+			ui5: {
+				theme: "sap_horizon"
+			},
+			loader: {
+				paths: {
+					"ui5/tutorial/walkthrough": "../"
+				}
+			}
+		},
+		tests: {
+			"unit/unitTests": {
+				title: "UI5 TypeScript Walkthrough - Unit Tests"
+			}
+		}
+	};
 });
 
 ```
@@ -258,9 +258,9 @@ It registers a resource root mapping for the test resources of our project and r
 	<meta charset="utf-8">
 	<script
 		src="../resources/sap/ui/test/starter/createSuite.js"
-		data-sap-ui-testsuite="test-resources/ui5/walkthrough/testsuite.qunit"
+		data-sap-ui-testsuite="test-resources/ui5/tutorial/walkthrough/testsuite.qunit"
 		data-sap-ui-resource-roots='{
-			"test-resources.ui5.walkthrough": "./"
+			"test-resources.ui5.tutorial.walkthrough": "./"
 		}'
 	></script>
 </head>

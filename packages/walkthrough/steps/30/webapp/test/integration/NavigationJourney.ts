@@ -10,7 +10,7 @@ opaTest("Should open the Hello dialog", function () {
 	// Arrangements
 	onTheHelloPanelPage.iStartMyUIComponent({
 		componentConfig: {
-			name: "ui5.walkthrough"
+			name: "ui5.tutorial.walkthrough"
 		}
 	});
 

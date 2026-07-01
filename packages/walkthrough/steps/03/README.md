@@ -37,7 +37,7 @@ You can download the solution for this step here: [📥 Download step 3](https:/
 To get the type definitions for OpenUI5, we need to install them to our project. We open a terminal in the root folder of our app and exectue the following command:
 
 ```sh
-npm install @types/openui5 --save-dev
+npm install @openui5/types --save-dev
 ```
 
 ***
@@ -64,7 +64,7 @@ To place the text control to our HTML document, we chain the constructor call of
 
 <details class="js-only" markdown="1">
 
-> 📌 **Important:** <br>
+> :info:
 > It is best practice to use of Anynchronous Module Loading (AMD) style for defining modules and their dependencies. This ensures better performance, proper dependency tracking between modules and helps avoid issues related to loading order.
 
 </details>
@@ -73,23 +73,23 @@ To place the text control to our HTML document, we chain the constructor call of
 import Text from "sap/m/Text";
 
 new Text({
-    text: "Hello World"
+	text: "Hello World"
 }).placeAt("content");
 ```
 
 ```js
 sap.ui.define(["sap/m/Text"], function (Text) {
-  "use strict";
+	"use strict";
 
-  new Text({
-    text: "Hello World"
-  }).placeAt("content");
+	new Text({
+		text: "Hello World"
+	}).placeAt("content");
 });
 ```
 
 All controls of OpenUI5 have a fixed set of properties, aggregations, and associations for configuration. You can find their descriptions in the Demo Kit. In addition, each control comes with a set of public functions that you can look up in the API reference.
 
-> 📌 **Important:** <br>
+> :info:
 > Only instances of `sap.ui.core.Control` or their subclasses can be rendered stand-alone and have a `placeAt` function. Each control extends `sap.ui.core.Element` that can only be rendered inside controls. Check the API reference to learn more about the inheritance hierarchy of controls. The API documentation of each control refers to the directly known subclasses.
 
 ***
@@ -112,9 +112,9 @@ We also add the `sapUiBody` class, which provides additional theme-dependent sty
 		data-sap-ui-theme="sap_horizon"
 		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true"
-		data-sap-ui-on-init="module:ui5/walkthrough/index"
+		data-sap-ui-on-init="module:ui5/tutorial/walkthrough/index"
 		data-sap-ui-resource-roots='{
-            "ui5.walkthrough": "./"
+            "ui5.tutorial.walkthrough": "./"
 		}'>
 	</script>
 </head>
@@ -164,7 +164,7 @@ ui5 add sap.m
 
 <details class="ts-only" markdown="1">
 
-[TypeScript definitions for OpenUI5](https://www.npmjs.com/package/@types/openui5)
+[TypeScript definitions for OpenUI5](https://www.npmjs.com/package/@openui5/types)
 
 </details>
 

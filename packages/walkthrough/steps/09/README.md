@@ -59,79 +59,79 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
- * @namespace ui5.walkthrough
+ * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
-    public static metadata = {
-        "interfaces": ["sap.ui.core.IAsyncContentCreation"]
-    };
-    init(): void {
-        // call the init function of the parent
-        super.init();
-        // set data model
-        const data = {
-            recipient: {
-                name: "World"
-            }
-        };
-        const dataModel = new JSONModel(data);
-        this.setModel(dataModel);
+	public static metadata = {
+		"interfaces": ["sap.ui.core.IAsyncContentCreation"]
+	};
+	init(): void {
+		// call the init function of the parent
+		super.init();
+		// set data model
+		const data = {
+			recipient: {
+				name: "World"
+			}
+		};
+		const dataModel = new JSONModel(data);
+		this.setModel(dataModel);
 
-        // set i18n model
-        const i18nModel = new ResourceModel({
-            "bundleName": "ui5.walkthrough.i18n.i18n",
-            "supportedLocales": [""],
-            "fallbackLocale": ""
-        });
-        this.setModel(i18nModel, "i18n");
-    };
-    createContent(): Control | Promise<Control | null> | null {
-        return XMLView.create({
-            "viewName": "ui5.walkthrough.view.App",
-            "id": "app"
-        });
-    };
+		// set i18n model
+		const i18nModel = new ResourceModel({
+			"bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
+			"supportedLocales": [""],
+			"fallbackLocale": ""
+		});
+		this.setModel(i18nModel, "i18n");
+	};
+	createContent(): Control | Promise<Control | null> | null {
+		return XMLView.create({
+			"viewName": "ui5.tutorial.walkthrough.view.App",
+			"id": "app"
+		});
+	};
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/core/mvc/XMLView", "sap/ui/model/json/JSONModel", "sap/ui/model/resource/ResourceModel"], function (UIComponent, XMLView, JSONModel, ResourceModel) {
-  "use strict";
+	"use strict";
 
-  const Component = UIComponent.extend("ui5.walkthrough.Component", {
-    metadata: {
-      "interfaces": ["sap.ui.core.IAsyncContentCreation"]
-    },
-    init() {
-      // call the init function of the parent
-      UIComponent.prototype.init.call(this);
-      // set data model
-      const data = {
-        recipient: {
-          name: "World"
-        }
-      };
-      const dataModel = new JSONModel(data);
-      this.setModel(dataModel);
+	const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
+		metadata: {
+			"interfaces": ["sap.ui.core.IAsyncContentCreation"]
+		},
+		init() {
+			// call the init function of the parent
+			UIComponent.prototype.init.call(this);
+			// set data model
+			const data = {
+				recipient: {
+					name: "World"
+				}
+			};
+			const dataModel = new JSONModel(data);
+			this.setModel(dataModel);
 
-      // set i18n model
-      const i18nModel = new ResourceModel({
-        "bundleName": "ui5.walkthrough.i18n.i18n",
-        "supportedLocales": [""],
-        "fallbackLocale": ""
-      });
-      this.setModel(i18nModel, "i18n");
-    },
-    createContent() {
-      return XMLView.create({
-        "viewName": "ui5.walkthrough.view.App",
-        "id": "app"
-      });
-    }
-  });
-  ;
-  return Component;
+			// set i18n model
+			const i18nModel = new ResourceModel({
+				"bundleName": "ui5.tutorial.walkthrough.i18n.i18n",
+				"supportedLocales": [""],
+				"fallbackLocale": ""
+			});
+			this.setModel(i18nModel, "i18n");
+		},
+		createContent() {
+			return XMLView.create({
+				"viewName": "ui5.tutorial.walkthrough.view.App",
+				"id": "app"
+			});
+		}
+	});
+	;
+	return Component;
 });
 
 ```
@@ -151,41 +151,41 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
-    onShowHello(): void {
-        // read msg from i18n model
-        const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
-        const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
-        const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
-        // show message
-        MessageToast.show(msg);
-    }
+	onShowHello(): void {
+		// read msg from i18n model
+		const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
+		const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+		const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
+		// show message
+		MessageToast.show(msg);
+	}
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller"], function (MessageToast, Controller) {
-  "use strict";
+	"use strict";
 
-  /**
-   * @name ui5.walkthrough.controller.App
-   */
-  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
-    onShowHello() {
-      // read msg from i18n model
-      // functions with generic return values require casting
-      const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
-      const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
-      const msg = resourceBundle.getText("helloMsg", [recipient]);
-      // show message
-      MessageToast.show(msg);
-    }
-  });
-  ;
-  return AppController;
+	/**
+	 * @name ui5.tutorial.walkthrough.controller.App
+	 */
+	const AppController = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		onShowHello() {
+			// read msg from i18n model
+			// functions with generic return values require casting
+			const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
+			const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
+			const msg = resourceBundle.getText("helloMsg", [recipient]);
+			// show message
+			MessageToast.show(msg);
+		}
+	});
+	;
+	return AppController;
 });
 
 ```
@@ -211,13 +211,13 @@ Finally, we position our newly created `ComponentContainer` control within the H
 import ComponentContainer from "sap/ui/core/ComponentContainer";
 
 new ComponentContainer({
-    id: "container",
-    name: "ui5.walkthrough",
-    settings: {
-        id: "walkthrough"
-    },
-    autoPrefixId: true,
-    async: true
+	id: "container",
+	name: "ui5.tutorial.walkthrough",
+	settings: {
+		id: "walkthrough"
+	},
+	autoPrefixId: true,
+	async: true
 }).placeAt("content");
 
 ```
@@ -227,13 +227,13 @@ sap.ui.define(["sap/ui/core/ComponentContainer"], function (ComponentContainer) 
   "use strict";
 
   new ComponentContainer({
-    id: "container",
-    name: "ui5.walkthrough",
-    settings: {
-      id: "walkthrough"
-    },
-    autoPrefixId: true,
-    async: true
+	id: "container",
+	name: "ui5.tutorial.walkthrough",
+	settings: {
+	  id: "walkthrough"
+	},
+	autoPrefixId: true,
+	async: true
   }).placeAt("content");
 });
 

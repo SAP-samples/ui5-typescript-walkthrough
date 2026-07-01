@@ -42,44 +42,44 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import Device from "sap/ui/Device";
 
 /**
- * @namespace ui5.walkthrough
+ * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
-    public static metadata = {
-        "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-        "manifest": "json"
-    };
-    init(): void {
-        // call the init function of the parent
-        ...
-    };
-    
-    getContentDensityClass(): string {
-        return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact";
-    }
+	public static metadata = {
+		"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+		"manifest": "json"
+	};
+	init(): void {
+		// call the init function of the parent
+		...
+	};
+	
+	getContentDensityClass(): string {
+		return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact";
+	}
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel", "sap/ui/Device"], function (UIComponent, JSONModel, Device) {
-  "use strict";
+	"use strict";
 
-  const Component = UIComponent.extend("ui5.walkthrough.Component", {
-    metadata: {
-      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-      "manifest": "json"
-    },
-    init() {
-      // call the init function of the parent
-      ...
-    },
-    getContentDensityClass() {
-      return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact";
-    }
-  });
-  ;
-  return Component;
+	const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
+		metadata: {
+			"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+			"manifest": "json"
+		},
+		init() {
+			// call the init function of the parent
+			...
+		},
+		getContentDensityClass() {
+			return Device.support.touch ? "sapUiSizeCozy" : "sapUiSizeCompact";
+		}
+	});
+	;
+	return Component;
 });
 
 ```
@@ -93,7 +93,7 @@ import Controller from "sap/ui/core/mvc/Controller";
 import Component from "../Component";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
 	onInit(): void {
@@ -105,15 +105,15 @@ export default class App extends Controller {
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
-  "use strict";
+	"use strict";
 
-  const App = Controller.extend("ui5.walkthrough.controller.App", {
-    onInit() {
-      this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
-    }
-  });
-  ;
-  return App;
+	const App = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		onInit() {
+			this.getView().addStyleClass(this.getOwnerComponent().getContentDensityClass());
+		}
+	});
+	;
+	return App;
 });
 
 ```
@@ -128,18 +128,18 @@ As we have just enabled the app to run in both modes depending on the devices ca
 {
 ...
   "sap.ui5": {
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    },
-    "dependencies": {
-        "minUI5Version": "1.132",
-        "libs": {
-            "sap.ui.core": {},
-            "sap.m": {}
-        }
-    },    
-    ...
+  "contentDensities": {
+    "compact": true,
+    "cozy": true
+  },
+  "dependencies": {
+    "minUI5Version": "1.148",
+    "libs": {
+      "sap.ui.core": {},
+      "sap.m": {}
+    }
+  },    
+  ...
   }
 }
 ```

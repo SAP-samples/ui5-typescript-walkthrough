@@ -44,39 +44,39 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class HelloPanel extends Controller {
-    
-    onShowHello(): void {
-        // read msg from i18n model
-        // functions with generic return values require casting 
-        const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
-        const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
-        const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
-        // show message
-        MessageToast.show(msg);
-    }
+	
+	onShowHello(): void {
+		// read msg from i18n model
+		// functions with generic return values require casting 
+		const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+		const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
+		const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
+		// show message
+		MessageToast.show(msg);
+	}
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Controller, MessageToast) {
-  "use strict";
+	"use strict";
 
-  const HelloPanel = Controller.extend("ui5.walkthrough.controller.HelloPanel", {
-    onShowHello() {
-      // read msg from i18n model
-      const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
-      const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
-      const msg = resourceBundle.getText("helloMsg", [recipient]);
-      // show message
-      MessageToast.show(msg);
-    }
-  });
-  ;
-  return HelloPanel;
+	const HelloPanel = Controller.extend("ui5.tutorial.walkthrough.controller.HelloPanel", {
+		onShowHello() {
+			// read msg from i18n model
+			const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
+			const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
+			const msg = resourceBundle.getText("helloMsg", [recipient]);
+			// show message
+			MessageToast.show(msg);
+		}
+	});
+	;
+	return HelloPanel;
 });
 
 ```
@@ -87,51 +87,51 @@ We create a new `HelloPanel.view.xml` file in folder `webapp/view` and move the 
 
 ```xml
 <mvc:View
-   controllerName="ui5.walkthrough.controller.HelloPanel"
+   controllerName="ui5.tutorial.walkthrough.controller.HelloPanel"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <Panel
-      headerText="{i18n>helloPanelTitle}"
-      class="sapUiResponsiveMargin"
-      width="auto" >
-      <content>
-         <Button
-            text="{i18n>showHelloButtonText}"
-            press=".onShowHello"
-            class="myCustomButton"/>
-         <Input
-            value="{/recipient/name}"
-            valueLiveUpdate="true"
-            width="60%"/>
-         <FormattedText
-            htmlText="Hello {/recipient/name}"
-            class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
-      </content>
+    headerText="{i18n>helloPanelTitle}"
+    class="sapUiResponsiveMargin"
+    width="auto" >
+    <content>
+     <Button
+      text="{i18n>showHelloButtonText}"
+      press=".onShowHello"
+      class="myCustomButton"/>
+     <Input
+      value="{/recipient/name}"
+      valueLiveUpdate="true"
+      width="60%"/>
+     <FormattedText
+      htmlText="Hello {/recipient/name}"
+      class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+    </content>
    </Panel>
 </mvc:View>
 ```
 
 ### webapp/view/App.view.xml
 
-In the App view, we remove the panel control and its content and put the `XMLView` control to the content of the page instead. We add the `viewName` attribute with the value `ui5.walkthrough.view.HelloPanel` to reference the new view that now contains the panel.
+In the App view, we remove the panel control and its content and put the `XMLView` control to the content of the page instead. We add the `viewName` attribute with the value `ui5.tutorial.walkthrough.view.HelloPanel` to reference the new view that now contains the panel.
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.App"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	displayBlock="true">
-	<Shell>
-		<App class="myAppDemoWT">
-			<pages>
-				<Page title="{i18n>homePageTitle}">
-					<content>
-						<mvc:XMLView viewName="ui5.walkthrough.view.HelloPanel"/>
-					</content>
-				</Page>
-			</pages>
-		</App>
-	</Shell>
+  controllerName="ui5.tutorial.walkthrough.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Shell>
+    <App class="myAppDemoWT">
+      <pages>
+        <Page title="{i18n>homePageTitle}">
+          <content>
+            <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.HelloPanel"/>
+          </content>
+        </Page>
+      </pages>
+    </App>
+  </Shell>
 </mvc:View>
 ```
 
@@ -142,7 +142,7 @@ We remove the `onShowHello` method from the App controller, as this is not neede
 ```ts
 import Controller from "sap/ui/core/mvc/Controller";
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
 
@@ -152,11 +152,11 @@ export default class App extends Controller {
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
-  "use strict";
+	"use strict";
 
-  const App = Controller.extend("ui5.walkthrough.controller.App", {});
-  ;
-  return App;
+	const App = Controller.extend("ui5.tutorial.walkthrough.controller.App", {});
+	;
+	return App;
 });
 
 ```

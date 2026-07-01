@@ -39,47 +39,47 @@ You can download the solution for this step here: [📥 Download step 31](https:
 
 We want to hand over the information for the selected item when navigating to the detail view. To achieve that, we add the navigation parameter `invoicePath` to the detail route in the app descriptor. There, we add a navigation parameter `invoicePath` to the detail route so that we can hand over the information for the selected item to the detail page.
 
-> 📝 **Note:** <br>
+> :note:
 > Mandatory navigation parameters are defined with curly brackets.
 
 ```json
 {
   	…
-    "sap.ui5": {
+  "sap.ui5": {
 		…
-        "routing": {
-          "config": {
-            "routerClass": "sap.m.routing.Router",
-            "type": "View",
-            "viewType": "XML",
-            "path": "ui5.walkthrough.view",
-            "controlId": "app",
-            "controlAggregation": "pages"
-          },
-          "routes": [
-            {
-              "pattern": "",
-              "name": "overview",
-              "target": "overview"
-            },
-            {
-              "pattern": "detail/{invoicePath}",
-              "name": "detail",
-              "target": "detail"
-            }
-          ],
-          "targets": {
-            "overview": {
-              "id": "overview",
-              "name": "Overview"
-            },
-            "detail": {
-              "id": "detail",
-              "name": "Detail"
-            }
-          }
-        }
+    "routing": {
+      "config": {
+      "routerClass": "sap.m.routing.Router",
+      "type": "View",
+      "viewType": "XML",
+      "path": "ui5.tutorial.walkthrough.view",
+      "controlId": "app",
+      "controlAggregation": "pages"
+      },
+      "routes": [
+      {
+        "pattern": "",
+        "name": "overview",
+        "target": "overview"
+      },
+      {
+        "pattern": "detail/{invoicePath}",
+        "name": "detail",
+        "target": "detail"
+      }
+      ],
+      "targets": {
+      "overview": {
+        "id": "overview",
+        "name": "Overview"
+      },
+      "detail": {
+        "id": "detail",
+        "name": "Detail"
+      }
+      }
     }
+  }
 }
 ```
 
@@ -107,41 +107,41 @@ import UIComponent from "sap/ui/core/UIComponent";
 import Context from "sap/ui/model/Context";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
 	
-    //...
+	//...
 
-    onPress(event: Event): void {
-        const item = event.getSource() as ObjectListItem;
-        const router = UIComponent.getRouterFor(this);
-        router.navTo("detail", {
-            invoicePath: window.encodeURIComponent(((item.getBindingContext("invoice") as Context).getPath() as string).substring(1))
-        });
-    }     
+	onPress(event: Event): void {
+		const item = event.getSource() as ObjectListItem;
+		const router = UIComponent.getRouterFor(this);
+		router.navTo("detail", {
+			invoicePath: window.encodeURIComponent(((item.getBindingContext("invoice") as Context).getPath() as string).substring(1))
+		});
+	}     
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/core/UIComponent"], function (Controller, JSONModel, Filter, FilterOperator, UIComponent) {
-  "use strict";
+	"use strict";
 
-  const App = Controller.extend("ui5.walkthrough.controller.App", {
-    
-    //...
+	const App = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		
+		//...
 
-    onPress(event) {
-      const item = event.getSource();
-      const router = UIComponent.getRouterFor(this);
-      router.navTo("detail", {
-        invoicePath: window.encodeURIComponent(item.getBindingContext("invoice").getPath().substring(1))
-      });
-    }
-  });
+		onPress(event) {
+			const item = event.getSource();
+			const router = UIComponent.getRouterFor(this);
+			router.navTo("detail", {
+				invoicePath: window.encodeURIComponent(item.getBindingContext("invoice").getPath().substring(1))
+			});
+		}
+	});
 
-  return App;
+	return App;
 });
 
 ```
@@ -165,42 +165,42 @@ import UIComponent from "sap/ui/core/UIComponent";
 import Route, { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class Detail extends Controller {
 
-    onInit(): void {
-        const router = UIComponent.getRouterFor(this);
-        (router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
-    }
+	onInit(): void {
+		const router = UIComponent.getRouterFor(this);
+		(router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
+	}
 
-    onObjectMatched(event: Route$PatternMatchedEvent): void {
-        this.getView()?.bindElement({
-            path: "/" + window.decodeURIComponent( (event.getParameter("arguments") as any).invoicePath),
-            model: "invoice"
-        });
-    }
+	onObjectMatched(event: Route$PatternMatchedEvent): void {
+		this.getView()?.bindElement({
+			path: "/" + window.decodeURIComponent( (event.getParameter("arguments") as any).invoicePath),
+			model: "invoice"
+		});
+	}
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/UIComponent"], function (Controller, UIComponent) {
-  "use strict";
+	"use strict";
 
-  const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
-    onInit() {
-      const router = UIComponent.getRouterFor(this);
-      router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
-    },
-    onObjectMatched(event) {
-      this.getView().bindElement({
-        path: "/" + window.decodeURIComponent(event.getParameter("arguments").invoicePath),
-        model: "invoice"
-      });
-    }
-  });
-  return Detail;
+	const Detail = Controller.extend("ui5.tutorial.walkthrough.controller.Detail", {
+		onInit() {
+			const router = UIComponent.getRouterFor(this);
+			router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
+		},
+		onObjectMatched(event) {
+			this.getView().bindElement({
+				path: "/" + window.decodeURIComponent(event.getParameter("arguments").invoicePath),
+				model: "invoice"
+			});
+		}
+	});
+	return Detail;
 });
 
 ```
@@ -211,15 +211,15 @@ Our last piece to fit the puzzle together is the detail view. We replace the app
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.Detail"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
-	<Page
-		title="{i18n>detailPageTitle}">
-		<ObjectHeader
-			intro="{invoice>ShipperName}"
-			title="{invoice>ProductName}"/>
-	</Page>
+  controllerName="ui5.tutorial.walkthrough.controller.Detail"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    title="{i18n>detailPageTitle}">
+    <ObjectHeader
+      intro="{invoice>ShipperName}"
+      title="{invoice>ProductName}"/>
+  </Page>
 </mvc:View>
 ```
 

@@ -49,10 +49,10 @@ Inside the `<mvc:View>` tag, we add the `<Text>` tag from the default XML namesp
 
 We have created an XML view that displays a text control with the text "Hello World".
 
-> 💡 **Tip:** <br>
+> :tip:
 > XML tags are mapped to UI controls, and attributes are mapped to the properties of the control. In this case, the `<Text>` tag represents the `Text` control in the sap.m library, and the `text` attribute sets the `text` property of the control.
 
-> 📝 **Note:**  <br>
+> :note:
 > The namespace identifies all resources of the project and has to be unique. If you develop your own application code or library, you cannot use the namespace prefix `sap`, because this namespace is reserved for SAP resources. Instead, simply define your own unique namespace \(for example, `myCompany.myApp`\).
 
 ***
@@ -65,31 +65,31 @@ As a next step, we are going to replace the `sap/m/Text` control in our `index.?
 import XMLView from "sap/ui/core/mvc/XMLView";
 
 XMLView.create({
-    viewName: "ui5.walkthrough.view.App",
-    id: "app"
+	viewName: "ui5.tutorial.walkthrough.view.App",
+	id: "app"
 }).then(function (view) {
-    view.placeAt("content");
+	view.placeAt("content");
 });
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/XMLView"], function (XMLView) {
-  "use strict";
+	"use strict";
 
-  XMLView.create({
-    viewName: "ui5.walkthrough.view.App",
-    id: "app"
-  }).then(function (view) {
-    view.placeAt("content");
-  });
+	XMLView.create({
+		viewName: "ui5.tutorial.walkthrough.view.App",
+		id: "app"
+	}).then(function (view) {
+		view.placeAt("content");
+	});
 });
 
 ```
 
 We have now embed our app view to the body of the HTML document.
 
-> 💡 **Tip:**  <br>
+> :tip:
 >Although setting an ID is not mandatory, it greatly improves the maintainability and flexibility of your code. With a stable ID, you can easily locate and update specific parts of your application.
 
 ***

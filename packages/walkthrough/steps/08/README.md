@@ -64,75 +64,75 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
-   onInit(): void {
-      // set data model on view
-      const data = {
-         recipient: {
-            name: "World"
-         }
-      };
-      const dataModel = new JSONModel(data);
-      this.getView()?.setModel(dataModel);
+	 onInit(): void {
+			// set data model on view
+			const data = {
+				 recipient: {
+						name: "World"
+				 }
+			};
+			const dataModel = new JSONModel(data);
+			this.getView()?.setModel(dataModel);
 
-      // set i18n model on view
-      const i18nModel = new ResourceModel({
-         bundleName: "ui5.walkthrough.i18n.i18n"
-      });
-      this.getView()?.setModel(i18nModel, "i18n");
-   }
+			// set i18n model on view
+			const i18nModel = new ResourceModel({
+				 bundleName: "ui5.tutorial.walkthrough.i18n.i18n"
+			});
+			this.getView()?.setModel(i18nModel, "i18n");
+	 }
 
-   onShowHello(): void {
-      // read msg from i18n model
-      const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
-      const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
-      const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
-      // show message
-      MessageToast.show(msg);
-   }
+	 onShowHello(): void {
+			// read msg from i18n model
+			const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
+			const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+			const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
+			// show message
+			MessageToast.show(msg);
+	 }
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/resource/ResourceModel"], function (MessageToast, Controller, JSONModel, ResourceModel) {
-  "use strict";
+	"use strict";
 
-  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
-    onInit() {
-      // set data model on view
-      const data = {
-        recipient: {
-          name: "World"
-        }
-      };
-      const dataModel = new JSONModel(data);
-      this.getView()?.setModel(dataModel);
+	const AppController = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		onInit() {
+			// set data model on view
+			const data = {
+				recipient: {
+					name: "World"
+				}
+			};
+			const dataModel = new JSONModel(data);
+			this.getView()?.setModel(dataModel);
 
-      // set i18n model on view
-      const i18nModel = new ResourceModel({
-        bundleName: "ui5.walkthrough.i18n.i18n"
-      });
-      this.getView()?.setModel(i18nModel, "i18n");
-    },
-    onShowHello() {
-      // read msg from i18n model
-      const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
-      const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
-      const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
-      // show message
-      MessageToast.show(msg);
-    }
-  });
-  ;
-  return AppController;
+			// set i18n model on view
+			const i18nModel = new ResourceModel({
+				bundleName: "ui5.tutorial.walkthrough.i18n.i18n"
+			});
+			this.getView()?.setModel(i18nModel, "i18n");
+		},
+		onShowHello() {
+			// read msg from i18n model
+			const recipient = this.getView()?.getModel()?.getProperty("/recipient/name");
+			const resourceBundle = this.getView()?.getModel("i18n")?.getResourceBundle();
+			const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
+			// show message
+			MessageToast.show(msg);
+		}
+	});
+	;
+	return AppController;
 });
 
 ```
 
-The bundle name \(`ui5.walkthrough.i18n.i18n`\) consists of the application namespace `ui5.walkthrough` \(the application root as defined in the `index.html`\), the folder name `i18n`, and finally the base file name `i18n` without extension. The OpenUI5 runtime calculates the correct path to the resource, to which `.properties` is then appended.
+The bundle name \(`ui5.tutorial.walkthrough.i18n.i18n`\) consists of the application namespace `ui5.tutorial.walkthrough` \(the application root as defined in the `index.html`\), the folder name `i18n`, and finally the base file name `i18n` without extension. The OpenUI5 runtime calculates the correct path to the resource, to which `.properties` is then appended.
 
 During runtime, OpenUI5 tries to load the correct`i18n_*.properties` file based on your browser settings and your locale. In our case we have only created the base `i18n.properties` file to make it simple. However, you can see in the network traffic of your browser’s developer tools that OpenUI5 tries to load one or more `i18n_*.properties` files before falling back to the default `i18n.properties` file.
 
@@ -147,7 +147,7 @@ To correctly reference the model, the binding path should start with the model n
 A resource bundle is a flat structure, therefore the preceding slash \(/\) can be omitted for the path to the text.
 
 ```xml
-<mvc:View controllerName="ui5.walkthrough.controller.App"
+<mvc:View controllerName="ui5.tutorial.walkthrough.controller.App"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <Button
@@ -161,7 +161,7 @@ A resource bundle is a flat structure, therefore the preceding slash \(/\) can b
 </mvc:View>
 ```
 
-> 📝 **Note:** <br>
+> :note:
 > The description text is not completely localized in this example for illustration purposes. To be on the safe side, we would have to use a similar mechanism as in the controller to use a string from the resource bundle and replace parts of it. This can be done with the `sap/base/strings/formatMessage` formatter.
 > 
 > Furthermore, `i18n` files only impact client-side application texts. Texts that are loaded from back-end systems can appear in all languages that are supported by the back-end system.

@@ -13,6 +13,31 @@ We first introduce you to the basic development paradigms like *Model-View-Contr
 This repository contains following tutorials:
 - [Quickstart](./packages/quickstart/)
 - [Walkthrough](./packages/walkthrough/)
+- [Navigation and Routing](./packages/navigation/)
+- [OData V4](./packages/odatav4/)
+
+## Running locally
+
+The repository is set up as an npm workspaces monorepo. Each tutorial step under `packages/*/steps/*` is a self-contained app you can run standalone, and the root build orchestrator produces a unified preview that mirrors the published GitHub Pages site.
+
+```sh
+# 1) install dependencies for every step
+npm install
+
+# 2) build every tutorial step (produces dist/<tutorial>/build/NN/ apps + ZIP downloads)
+npm run build
+
+# 3) serve the rendered tutorial pages with working Live Preview links
+npm start
+```
+
+After `npm start`, open <http://localhost:1337/packages/walkthrough/> (or any other tutorial's `packages/<name>/`). The dev server renders the markdown overview, rewrites the published `https://ui5.github.io/tutorials/...` URLs to point at the local `dist/`, and serves the built apps from the same origin.
+
+To run a single step directly without going through the build:
+
+```sh
+npm start -w ui5.tutorial.walkthrough.step15
+```
 
 ## How to obtain support
 
@@ -26,4 +51,4 @@ If you wish to contribute code, offer fixes or improvements, please send a pull 
 
 ## License
 
-Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.
+Copyright (c) 2026 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](LICENSE) file.

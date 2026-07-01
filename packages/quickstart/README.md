@@ -10,7 +10,7 @@ We first introduce you to the basic development paradigms like *Model-View-Contr
 
 ![Preview of the OpenUI5 application that is going to be built in this tutorial. Contains a Hello World upper part with buttons and a text input. The lower part shows list of invoices with details, grouped by vendor names.](steps/03/assets/loio79e1157d948c488c9717ef840fa9b396_LowRes.png).
 
-> 💡 **Tip:** <br>
+> :tip:
 > You don't have to do all tutorial steps sequentially, you can also jump directly to any step you want. Just download the code from the previous step and make sure that the application runs as intended.
 > 
 > You can view the samples for all steps here in this repository.
@@ -26,4 +26,4 @@ The tutorial consists of the following steps. To start, just open the first link
 
 ## License
 
-Copyright (c) 2025 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](../../LICENSE) file.
+Copyright (c) 2026 SAP SE or an SAP affiliate company. All rights reserved. This project is licensed under the Apache Software License, version 2.0 except as noted otherwise in the [LICENSE](../../LICENSE) file.

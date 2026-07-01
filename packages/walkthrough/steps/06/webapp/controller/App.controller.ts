@@ -2,10 +2,10 @@ import MessageToast from "sap/m/MessageToast";
 import Controller from "sap/ui/core/mvc/Controller";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
-    onShowHello(): void {
-        MessageToast.show("Hello World");
-     }
+	onShowHello(): void {
+		MessageToast.show("Hello World");
+	 }
 };

@@ -1,5 +1,5 @@
 {
-  "name": "ui5.walkthrough.step38",
+  "name": "ui5.tutorial.walkthrough.step38",
   "version": "1.0.0",
   "author": "SAP SE",
   "description": "OpenUI5 TypeScript Walkthrough: Step 38 - Build Your Application",
@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/openui5": "^1.147.0",
+    "@openui5/types": "^1.148.1",
+    "@types/qunit": "2.5.4",
     "@ui5/cli": "^4.0.53",
     "@ui5/ts-interface-generator": "^0.11.0",
     "local-web-server": "^5.4.0",

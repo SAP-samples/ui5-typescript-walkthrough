@@ -34,7 +34,7 @@ You can download the solution for this step here: [📥 Download step 35](https:
 
 In the `app` component we import the `Device` module from the `sap.ui` namespace and initialize the device model in the `init` method. We can simply pass the loaded dependency `Device` to the constructor function of the JSONModel. This will make most properties of the OpenUI5 device API available as a JSON model. The model is then set on the component as a named model so that we can reference it in data binding.
 
-> 📌 **Important:** <br>
+> :info:
 > We have to set the binding mode to `OneWay` as the device model is read-only and we want to avoid changing the model accidentally when we bind properties of a control to it. By default, models in OpenUI5 are bidirectional \(`TwoWay`\). When the property changes, the bound model value is updated as well.
 
 ```ts
@@ -43,71 +43,71 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import Device from "sap/ui/Device";
 
 /**
- * @namespace ui5.walkthrough
+ * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
-    public static metadata = {
-        "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-        "manifest": "json"
-    };
-    init(): void {
-        // call the init function of the parent
-        super.init();
-        
-        // set data model
-        const data = {
-            recipient: {
-                name: "World"
-            }
-        };
-        const model = new JSONModel(data);
-        this.setModel(model);
+	public static metadata = {
+		"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+		"manifest": "json"
+	};
+	init(): void {
+		// call the init function of the parent
+		super.init();
+		
+		// set data model
+		const data = {
+			recipient: {
+				name: "World"
+			}
+		};
+		const model = new JSONModel(data);
+		this.setModel(model);
 
-        // set device model
-        const deviceModel = new JSONModel(Device);
-        deviceModel.setDefaultBindingMode("OneWay");
-        this.setModel(deviceModel, "device");
+		// set device model
+		const deviceModel = new JSONModel(Device);
+		deviceModel.setDefaultBindingMode("OneWay");
+		this.setModel(deviceModel, "device");
 
-        // create the views based on the url/hash
-        this.getRouter().initialize();
-    };
+		// create the views based on the url/hash
+		this.getRouter().initialize();
+	};
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel", "sap/ui/Device"], function (UIComponent, JSONModel, Device) {
-  "use strict";
+	"use strict";
 
-  const Component = UIComponent.extend("ui5.walkthrough.Component", {
-    metadata: {
-      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-      "manifest": "json"
-    },
-    init() {
-      // call the init function of the parent
-      UIComponent.prototype.init.call(this);
+	const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
+		metadata: {
+			"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+			"manifest": "json"
+		},
+		init() {
+			// call the init function of the parent
+			UIComponent.prototype.init.call(this);
 
-      // set data model
-      const data = {
-        recipient: {
-          name: "World"
-        }
-      };
-      const model = new JSONModel(data);
-      this.setModel(model);
+			// set data model
+			const data = {
+				recipient: {
+					name: "World"
+				}
+			};
+			const model = new JSONModel(data);
+			this.setModel(model);
 
-      // set device model
-      const deviceModel = new JSONModel(Device);
-      deviceModel.setDefaultBindingMode("OneWay");
-      this.setModel(deviceModel, "device");
+			// set device model
+			const deviceModel = new JSONModel(Device);
+			deviceModel.setDefaultBindingMode("OneWay");
+			this.setModel(deviceModel, "device");
 
-      // create the views based on the url/hash
-      this.getRouter().initialize();
-    }
-  });
-  ;
-  return Component;
+			// create the views based on the url/hash
+			this.getRouter().initialize();
+		}
+	});
+	;
+	return Component;
 });
 
 ```
@@ -120,41 +120,41 @@ We can also hide single controls by device type when we set a CSS class like `sa
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.HelloPanel"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
-	<Panel
-		headerText="{i18n>helloPanelTitle}"
-		class="sapUiResponsiveMargin"
-		width="auto"
-		expandable="{device>/system/phone}"
-		expanded="{= !${device>/system/phone} }">
-		<content>
-			<Button
-				id="helloDialogButton"
-				icon="sap-icon://world"
-				text="{i18n>openDialogButtonText}"
-				press=".onOpenDialog"
-				class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"/>
-			<Button
-				text="{i18n>showHelloButtonText}"
-				press=".onShowHello"
-				class="myCustomButton"/>
-			<Input
-				value="{/recipient/name}"
-				valueLiveUpdate="true"
-				width="60%"/>
-			<FormattedText
-				htmlText="Hello {/recipient/name}"
-				class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
-		</content>
-	</Panel>
+  controllerName="ui5.tutorial.walkthrough.controller.HelloPanel"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Panel
+    headerText="{i18n>helloPanelTitle}"
+    class="sapUiResponsiveMargin"
+    width="auto"
+    expandable="{device>/system/phone}"
+    expanded="{= !${device>/system/phone} }">
+    <content>
+      <Button
+        id="helloDialogButton"
+        icon="sap-icon://world"
+        text="{i18n>openDialogButtonText}"
+        press=".onOpenDialog"
+        class="sapUiSmallMarginEnd sapUiVisibleOnlyOnDesktop"/>
+      <Button
+        text="{i18n>showHelloButtonText}"
+        press=".onShowHello"
+        class="myCustomButton"/>
+      <Input
+        value="{/recipient/name}"
+        valueLiveUpdate="true"
+        width="60%"/>
+      <FormattedText
+        htmlText="Hello {/recipient/name}"
+        class="sapUiSmallMargin sapThemeHighlight-asColor myCustomText"/>
+    </content>
+  </Panel>
 </mvc:View>
 ```
 &nbsp;
 The device API of OpenUI5 offers more functionality to detect various device-specific settings, please have a look at the [documentation](https://sdk.openui5.org/api/sap.ui.Device) for more details.
 
-> 📌 **Important:** <br>
+> :info:
 > The `sap.ui.Device` API detects the device type \(Phone, Tablet, Desktop\) based on the user agent and many other properties of the device. Therefore simply reducing the screen size will not change the device type. To test this feature, you will have to enable device emulation in your browser or open it on a real device.
 
 ### webapp/controller/Detail.controller.?s
@@ -173,19 +173,19 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class Detail extends Controller {
 
-    onInit(): void {
-        const viewModel = new JSONModel({
-            currency: "EUR"
-        });
-        this.getView()?.setModel(viewModel, "view");
-        
-        const router = UIComponent.getRouterFor(this);
-        (router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
-    }
+	onInit(): void {
+		const viewModel = new JSONModel({
+			currency: "EUR"
+		});
+		this.getView()?.setModel(viewModel, "view");
+		
+		const router = UIComponent.getRouterFor(this);
+		(router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
+	}
 	//...
 };
 
@@ -193,20 +193,20 @@ export default class Detail extends Controller {
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/m/MessageToast", "sap/ui/model/json/JSONModel", "sap/ui/core/UIComponent"], function (Controller, History, MessageToast, JSONModel, UIComponent) {
-  "use strict";
+	"use strict";
 
-  const Detail = Controller.extend("ui5.walkthrough.controller.Detail", {
-    onInit() {
-      const viewModel = new JSONModel({
-        currency: "EUR"
-      });
-      this.getView().setModel(viewModel, "view");
-      const router = UIComponent.getRouterFor(this);
-      router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
-    },
-    //...
-  });
-  return Detail;
+	const Detail = Controller.extend("ui5.tutorial.walkthrough.controller.Detail", {
+		onInit() {
+			const viewModel = new JSONModel({
+				currency: "EUR"
+			});
+			this.getView().setModel(viewModel, "view");
+			const router = UIComponent.getRouterFor(this);
+			router.getRoute("detail").attachPatternMatched(this.onObjectMatched, this);
+		},
+		//...
+	});
+	return Detail;
 });
 
 ```
@@ -231,58 +231,58 @@ We add the `number` and `numberUnit` field from the list of the previous steps a
 
 ```xml
 <mvc:View
-    controllerName="ui5.walkthrough.controller.Detail"
-    xmlns="sap.m"
-    xmlns:core="sap.ui.core"
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns:wt="ui5.walkthrough.control">
-    <Page
-        title="{i18n>detailPageTitle}"
-        showNavButton="true"
-        navButtonPress=".onNavBack">
-        <ObjectHeader
-            core:require="{
-                Date: 'sap/ui/model/type/Date',
-                Currency: 'sap/ui/model/type/Currency'
-            }"
-            responsive="true"
-            fullScreenOptimized="true"
-            number="{
-                parts: [
-                    'invoice>ExtendedPrice',
-                    'view>/currency'
-                ],
-                type: 'Currency',
-                formatOptions: {
-                    showMeasure: false
-                }
-            }"
-            numberUnit="{view>/currency}"
-            intro="{invoice>ShipperName}"
-            title="{invoice>ProductName}">
-            <attributes>
-                <ObjectAttribute
-                    title="{i18n>quantityTitle}"
-                    text="{invoice>Quantity}"/>
-                <ObjectAttribute
-                    title="{i18n>dateTitle}"
-                    text="{
-                        path: 'invoice>OrderDate',
-                        type: 'Date',
-                        formatOptions: {
-                            style: 'long',
-                            source: {
-                                pattern: 'yyyy-MM-ddTHH:mm:ss'
-                            }
-                        }
-                    }"/>
-            </attributes>
-        </ObjectHeader>
-        <wt:ProductRating
-            id="rating"
-            class="sapUiSmallMarginBeginEnd"
-            change=".onRatingChange"/>
-    </Page>
+  controllerName="ui5.tutorial.walkthrough.controller.Detail"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:wt="ui5.tutorial.walkthrough.control">
+  <Page
+    title="{i18n>detailPageTitle}"
+    showNavButton="true"
+    navButtonPress=".onNavBack">
+    <ObjectHeader
+      core:require="{
+        Date: 'sap/ui/model/type/Date',
+        Currency: 'sap/ui/model/type/Currency'
+      }"
+      responsive="true"
+      fullScreenOptimized="true"
+      number="{
+        parts: [
+          'invoice>ExtendedPrice',
+          'view>/currency'
+        ],
+        type: 'Currency',
+        formatOptions: {
+          showMeasure: false
+        }
+      }"
+      numberUnit="{view>/currency}"
+      intro="{invoice>ShipperName}"
+      title="{invoice>ProductName}">
+      <attributes>
+        <ObjectAttribute
+          title="{i18n>quantityTitle}"
+          text="{invoice>Quantity}"/>
+        <ObjectAttribute
+          title="{i18n>dateTitle}"
+          text="{
+            path: 'invoice>OrderDate',
+            type: 'Date',
+            formatOptions: {
+              style: 'long',
+              source: {
+                pattern: 'yyyy-MM-ddTHH:mm:ss'
+              }
+            }
+          }"/>
+      </attributes>
+    </ObjectHeader>
+    <wt:ProductRating
+      id="rating"
+      class="sapUiSmallMarginBeginEnd"
+      change=".onRatingChange"/>
+  </Page>
 </mvc:View>
 ```
 
@@ -290,7 +290,7 @@ We add the `number` and `numberUnit` field from the list of the previous steps a
 
 We can see the results when we decrease the browser's screen size or open the app on a small device.
 
-> 📝 **Note:** <br>
+> :note:
 > You can test the device specific features of your app with the developer tools of your browser. For example in Google Chrome, you can emulate a tablet or a phone easily and see the effects. Some responsive options of OpenUI5 are only set initially when loading the app, so you might have to reload your page to see the results.
 
 ***

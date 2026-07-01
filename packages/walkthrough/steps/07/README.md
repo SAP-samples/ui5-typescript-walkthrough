@@ -48,48 +48,48 @@ import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
    onInit(): void {
-      // set data model on view
-        const data = {
-           recipient: {
-              name: "World"
-           }
-        };
-        const dataModel = new JSONModel(data);
-        this.getView()?.setModel(dataModel);
-    }
+	  // set data model on view
+		const data = {
+		   recipient: {
+			  name: "World"
+		   }
+		};
+		const dataModel = new JSONModel(data);
+		this.getView()?.setModel(dataModel);
+	}
 
-    onShowHello(): void {
-       MessageToast.show("Hello World");
-     }
+	onShowHello(): void {
+	   MessageToast.show("Hello World");
+	 }
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"], function (MessageToast, Controller, JSONModel) {
-  "use strict";
+	"use strict";
 
-  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
-    onInit() {
-      // set data model on view
-      const data = {
-        recipient: {
-          name: "World"
-        }
-      };
-      const dataModel = new JSONModel(data);
-      this.getView()?.setModel(dataModel);
-    },
-    onShowHello() {
-      MessageToast.show("Hello World");
-    }
-  });
-  ;
-  return AppController;
+	const AppController = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		onInit() {
+			// set data model on view
+			const data = {
+				recipient: {
+					name: "World"
+				}
+			};
+			const dataModel = new JSONModel(data);
+			this.getView()?.setModel(dataModel);
+		},
+		onShowHello() {
+			MessageToast.show("Hello World");
+		}
+	});
+	;
+	return AppController;
 });
 
 ```
@@ -106,7 +106,7 @@ We add an `sap/m/Input` control to our view, allowing the user to enter a name f
 
 To make this work, we connect, or 'bind', the value of the input control to the `name` attribute of the 'recipient' object in our JSON data model. We do this using a simple binding syntax, which is a straightforward way to link data between the model and the view. 
 
-> 📌 **Important:** <br>
+> :info:
 > To bind a control property to your view model data you need to specify a [`sap.ui.base.ManagedObject.PropertyBindingInfo`](https://sdk.openui5.org/api/sap.ui.base.ManagedObject.PropertyBindingInfo) for the property. A binding info is always initiated by enclosing it in curly brackets `{…}`, and the properties defined in the BindingInfos API are placed within the brackets.
 >
 > You can omit all properties of the binding info and just provide the binding path as a simple string. A binding path consists of path segments separated by a slash (`/`) which point to a property in the model that you want to bind to. This applies all OpenUI5 provided models.
@@ -116,7 +116,7 @@ To make this work, we connect, or 'bind', the value of the input control to the 
 In addition to this, we create a greeting message. We combine the static text "Hello" with the `name` attribute from our data model, and assign it to the `description` property of the input field. This means that the greeting message will dynamically update with whatever name the user enters. To ensure that the greeting message updates in real time as the user types, we set the `valueLiveUpdate` attribute of the input control to "true".
 
 ```xml
-<mvc:View controllerName="ui5.walkthrough.controller.App"
+<mvc:View controllerName="ui5.tutorial.walkthrough.controller.App"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <Button

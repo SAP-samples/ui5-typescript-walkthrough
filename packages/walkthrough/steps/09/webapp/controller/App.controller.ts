@@ -5,16 +5,16 @@ import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
-    onShowHello() : void {
-        // read msg from i18n model
-        // functions with generic return values require casting
-        const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
-        const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
-        const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
-        // show message
-        MessageToast.show(msg);
-    }
+	onShowHello() : void {
+		// read msg from i18n model
+		// functions with generic return values require casting
+		const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+		const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
+		const msg = resourceBundle.getText("helloMsg", [recipient]) as string;
+		// show message
+		MessageToast.show(msg);
+	}
 };

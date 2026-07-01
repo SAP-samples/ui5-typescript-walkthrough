@@ -48,9 +48,9 @@ Let's spice up our app by adding some more UI controls. We add two more librarie
 		data-sap-ui-libs="sap.m, sap.ui.layout, sap.tnt"
 		data-sap-ui-compat-version="edge"
 		data-sap-ui-async="true"
-		data-sap-ui-on-init="module:ui5/quickstart/index"
+		data-sap-ui-on-init="module:ui5/tutorial/quickstart/index"
 		data-sap-ui-resource-roots='{
-			"ui5.quickstart": "./"
+			"ui5.tutorial.quickstart": "./"
 		}'>
 	</script>
 </head>
@@ -58,7 +58,7 @@ Let's spice up our app by adding some more UI controls. We add two more librarie
 </html>
 ```
 
-> 💡 **Tip:**  <br>
+> :tip:
 > To browse all available controls and libraries, see the [Samples](https://sdk.openui5.org/#/controls). 
 
 ### webapp/App.view.xml
@@ -73,53 +73,53 @@ Don't worry too much about the details, we will explain them in the next tutoria
 
 ```xml
 <mvc:View
-	controllerName="ui5.quickstart.App"
-	displayBlock="true"
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:l="sap.ui.layout"
-	xmlns:core="sap.ui.core"
-	xmlns:tnt="sap.tnt">
-	<App id="app">
-		<Page title="My App">
-			<Button
-				icon="sap-icon://sap-ui5"
-				text="Go!"
-				press=".onPress"
-				type="Emphasized"
-				class="sapUiSmallMargin"/>
-		</Page>
-		<Page id="intro" title="Create Enterprise-Ready Web Apps with Ease">
-			<l:BlockLayout background="Light">
-				<l:BlockLayoutRow>
-					<l:BlockLayoutCell>
-						<core:Icon color="#1873B4" src="sap-icon://sap-ui5" size="20rem" class="sapUiMediumMarginBottom" width="100%"/>
-						<Title level="H1" titleStyle="H1" text="This is UI5!" width="100%" textAlign="Center"/>
-					</l:BlockLayoutCell>
-				</l:BlockLayoutRow>
-				<l:BlockLayoutRow>
-					<l:BlockLayoutCell>
-						<FlexBox items="{/features}" justifyContent="Center" wrap="Wrap" class="sapUiSmallMarginBottom">
-							<tnt:InfoLabel text="{}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
-						</FlexBox>
-					</l:BlockLayoutCell>
-				</l:BlockLayoutRow>
+  controllerName="ui5.tutorial.quickstart.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:l="sap.ui.layout"
+  xmlns:core="sap.ui.core"
+  xmlns:tnt="sap.tnt">
+  <App id="app">
+    <Page title="My App">
+      <Button
+        icon="sap-icon://sap-ui5"
+        text="Go!"
+        press=".onPress"
+        type="Emphasized"
+        class="sapUiSmallMargin"/>
+    </Page>
+    <Page id="intro" title="Create Enterprise-Ready Web Apps with Ease">
+      <l:BlockLayout background="Light">
+        <l:BlockLayoutRow>
+          <l:BlockLayoutCell>
+            <core:Icon color="#1873B4" src="sap-icon://sap-ui5" size="20rem" class="sapUiMediumMarginBottom" width="100%"/>
+            <Title level="H1" titleStyle="H1" text="This is UI5!" width="100%" textAlign="Center"/>
+          </l:BlockLayoutCell>
+        </l:BlockLayoutRow>
+        <l:BlockLayoutRow>
+          <l:BlockLayoutCell>
+            <FlexBox items="{/features}" justifyContent="Center" wrap="Wrap" class="sapUiSmallMarginBottom">
+              <tnt:InfoLabel text="{}" class="sapUiSmallMarginTop sapUiSmallMarginEnd"/>
+            </FlexBox>
+          </l:BlockLayoutCell>
+        </l:BlockLayoutRow>
 
-				<l:BlockLayoutRow>
-					<l:BlockLayoutCell>
-						<Panel headerText="Are you ready?" expandable="true">
-							<Switch change=".onChange" customTextOn="yes" customTextOff="no"/>
-							<l:HorizontalLayout id="ready" visible="false" class="sapUiSmallMargin">
-								<Text text="Ok, let's get you started!" class="sapUiTinyMarginEnd"/>
-								<Link text="Learn more" href="https://sdk.openui5.org/"/>
-							</l:HorizontalLayout>
-						</Panel>
-					</l:BlockLayoutCell>
-				</l:BlockLayoutRow>
-			</l:BlockLayout>
-		</Page>
+        <l:BlockLayoutRow>
+          <l:BlockLayoutCell>
+            <Panel headerText="Are you ready?" expandable="true">
+              <Switch change=".onChange" customTextOn="yes" customTextOff="no"/>
+              <l:HorizontalLayout id="ready" visible="false" class="sapUiSmallMargin">
+                <Text text="Ok, let's get you started!" class="sapUiTinyMarginEnd"/>
+                <Link text="Learn more" href="https://sdk.openui5.org/"/>
+              </l:HorizontalLayout>
+            </Panel>
+          </l:BlockLayoutCell>
+        </l:BlockLayoutRow>
+      </l:BlockLayout>
+    </Page>
 
-	</App>
+  </App>
 </mvc:View>
 ```
 
@@ -176,7 +176,7 @@ sap.ui.define([
 ], (Controller, MessageToast, JSONModel) => {
 	"use strict";
 
-	return Controller.extend("ui5.quickstart.App", {
+	return Controller.extend("ui5.tutorial.quickstart.App", {
 		onPress() {
 			MessageToast.show("Hello UI5!");
 			this.byId("app").to(this.byId("intro"));

@@ -41,34 +41,34 @@ import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
-    
-    onInit(): void {
-        const viewModel = new JSONModel({
-            currency: "EUR"
-        });
-        this.getView()?.setModel(viewModel, "view");        
-    } 
+	
+	onInit(): void {
+		const viewModel = new JSONModel({
+			currency: "EUR"
+		});
+		this.getView()?.setModel(viewModel, "view");        
+	} 
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"], function (Controller, JSONModel) {
-  "use strict";
+	"use strict";
 
-  const App = Controller.extend("ui5.walkthrough.controller.App", {
-    onInit() {
-      const viewModel = new JSONModel({
-        currency: "EUR"
-      });
-      this.getView()?.setModel(viewModel, "view");
-    }
-  });
-  ;
-  return App;
+	const App = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		onInit() {
+			const viewModel = new JSONModel({
+				currency: "EUR"
+			});
+			this.getView()?.setModel(viewModel, "view");
+		}
+	});
+	;
+	return App;
 });
 
 ```
@@ -83,7 +83,7 @@ Additionally, we set the formatting option `showMeasure` to `false`. This hides 
 
 ```xml
 <mvc:View
-   controllerName="ui5.walkthrough.controller.InvoiceList"
+   controllerName="ui5.tutorial.walkthrough.controller.InvoiceList"
    xmlns="sap.m"
    xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">

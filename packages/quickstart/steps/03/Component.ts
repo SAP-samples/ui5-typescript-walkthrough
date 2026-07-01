@@ -1,10 +1,11 @@
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
- * @namespace sap.m.tutorial.quickstart.03
+ * @namespace ui5.tutorial.quickstart
  */
 export default class Component extends UIComponent {
-	static readonly metadata = {
+	public static metadata = {
+		interfaces: ["sap.ui.core.IAsyncContentCreation"],
 		manifest: "json"
 	};
 }

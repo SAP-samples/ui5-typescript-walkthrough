@@ -42,36 +42,36 @@ We create a new folder called `controller` inside the `webapp` folder. This fold
 import Controller from "sap/ui/core/mvc/Controller";
 
 /**
- * @name ui5.walkthrough.controller.App
+ * @name ui5.tutorial.walkthrough.controller.App
  */
 export default class AppController extends Controller {
-    onShowHello(): void {
-        // show a native JavaScript alert
-        alert("Hello World");
-     }
+	onShowHello(): void {
+		// show a native JavaScript alert
+		alert("Hello World");
+	 }
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
-  "use strict";
+	"use strict";
 
-  const AppController = Controller.extend("ui5.walkthrough.controller.App", {
-    onShowHello() {
-      // show a native JavaScript alert
-      alert("Hello World");
-    }
-  });
-  ;
-  return AppController;
+	const AppController = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		onShowHello() {
+			// show a native JavaScript alert
+			alert("Hello World");
+		}
+	});
+	;
+	return AppController;
 });
 
 ```
 <details class="ts-only" markdown="1">
 
-> 📝 **Note:** <br>
-> The comment `@name ui5.walkthrough.controller.App` is a JSDoc comment that names this controller. It can be used by documentation generators and IDEs to provide more information about this class.
+> :note:
+> The comment `@name ui5.tutorial.walkthrough.controller.App` is a JSDoc comment that names this controller. It can be used by documentation generators and IDEs to provide more information about this class.
 
 </details>
 ***
@@ -84,7 +84,7 @@ In addition, we replace the `<text>` tag with a `<button>` tag. We set the `text
 
 ```xml
 <mvc:View
-   controllerName="ui5.walkthrough.controller.App"
+   controllerName="ui5.tutorial.walkthrough.controller.App"
    xmlns="sap.m"
    xmlns:mvc="sap.ui.core.mvc">
    <Button

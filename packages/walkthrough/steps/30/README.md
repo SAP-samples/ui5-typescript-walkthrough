@@ -57,13 +57,13 @@ Now we add the new `Detail.view.xml` file to our view folder. Beside of the the 
 
 ```xml
 <mvc:View
-	xmlns="sap.m"
-	xmlns:mvc="sap.ui.core.mvc">
-	<Page
-		title="{i18n>detailPageTitle}">
-		<ObjectHeader
-			title="Invoice"/>
-	</Page>
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Page
+    title="{i18n>detailPageTitle}">
+    <ObjectHeader
+      title="Invoice"/>
+  </Page>
 </mvc:View>
 ```
 
@@ -71,24 +71,24 @@ Now we add the new `Detail.view.xml` file to our view folder. Beside of the the 
 
 Next, we create another view in the view folder, called `Overview.view.xml`. We add the root node of the XML structure including the required namespaces to it. Then we copy and paste from the app view everything between and including the `Page` control to our new view.
 
-For simplicity, we reuse the controller `ui5.walkthrough.controller.App` for our new view as it only contains our helper method to open the dialog.
+For simplicity, we reuse the controller `ui5.tutorial.walkthrough.controller.App` for our new view as it only contains our helper method to open the dialog.
 
 ```xml
 <mvc:View
-    controllerName="ui5.walkthrough.controller.App"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true">
-    <Page title="{i18n>homePageTitle}">
-        <content>
-            <mvc:XMLView viewName="ui5.walkthrough.view.HelloPanel" />
-            <mvc:XMLView viewName="ui5.walkthrough.view.InvoiceList" />
-        </content>
-    </Page>
+  controllerName="ui5.tutorial.walkthrough.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Page title="{i18n>homePageTitle}">
+    <content>
+      <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.HelloPanel" />
+      <mvc:XMLView viewName="ui5.tutorial.walkthrough.view.InvoiceList" />
+    </content>
+  </Page>
 </mvc:View>
 ```
 &nbsp;
-As we reuse the controller `ui5.walkthrough.controller.App` for two different views \(for the new overview and for the app view\), two instances of that controller are instantiated at runtime. In general, one instance of a controller is instantiated for each view that references the controller.
+As we reuse the controller `ui5.tutorial.walkthrough.controller.App` for two different views \(for the new overview and for the app view\), two instances of that controller are instantiated at runtime. In general, one instance of a controller is instantiated for each view that references the controller.
 
 ### webapp/view/App.view.xml
 
@@ -96,15 +96,15 @@ In the app view, we now remove everything and between the control aggregation `p
 
 ```xml
 <mvc:View
-    controllerName="ui5.walkthrough.controller.App"
-    xmlns="sap.m"
-    xmlns:mvc="sap.ui.core.mvc"
-    displayBlock="true">
-    <Shell>
-        <App
-            class="myAppDemoWT"
-            id="app"/>
-    </Shell>
+  controllerName="ui5.tutorial.walkthrough.controller.App"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true">
+  <Shell>
+    <App
+      class="myAppDemoWT"
+      id="app"/>
+  </Shell>
 </mvc:View>
 ```
 
@@ -117,7 +117,7 @@ We add a new “routing" section to the `sap.ui5` part of the descriptor. There 
 -   `config`
     This section contains the global router configuration and default values that apply for all routes and targets. The property routerClass is special as it determines the router implementation. The default value is `sap.ui.core.routing.Router`. Here, we set the `routerClass` to `sap.m.routing.Router`, because our app is based on `sap.m`. All other properties in config are given to the router instance. For example, we define in `path` where our views are located in the app. As we want to specify view to view navigation and we only use XML views in our app we preset also the paramter `type` and `viewType`. To load and display views automatically, we also specify the `controlId` of the control that will contain the views and the aggregation (`controlAggregation`) of the control where the views will be added. Here we specify that the views are loaded into the `pages` aggregation of the control with the id we provided in the app view. 
 
-    > 📌 **Important:**
+    > :info:
     > The possible values for `routerClass` are `sap.ui.core.routing.Router`, `sap.m.routing.Router`, or any other subclasses of `sap.ui.core.routing.Router`. Compared to `sap.ui.core.routing.Router` the `sap.m.routing.Router` is optimized for mobile apps and adds the properties `level`, `transition` and `transitionParameters` which can be specified for each route or target created by the `sap.m.routing.Router`. 
 
 -   `routes`
@@ -128,49 +128,49 @@ We add a new “routing" section to the `sap.ui5` part of the descriptor. There 
     
 ```json
 {
+  ...
+  "sap.ui5": {
     ...
-    "sap.ui5": {
-        ...
-        "resources": {
-            "css": [
-              {
-                "uri": "css/style.css"
-              }
-            ]
-        },          
-        "routing": {
-          "config": {
-            "routerClass": "sap.m.routing.Router",
-            "type": "View",
-            "viewType": "XML",
-            "path": "ui5.walkthrough.view",
-            "controlId": "app",
-            "controlAggregation": "pages"
-          },
-          "routes": [
-            {
-              "pattern": "",
-              "name": "overview",
-              "target": "overview"
-            },
-            {
-              "pattern": "detail",
-              "name": "detail",
-              "target": "detail"
-            }
-          ],
-          "targets": {
-            "overview": {
-              "id": "overview",
-              "name": "Overview"
-            },
-            "detail": {
-              "id": "detail",
-              "name": "Detail"
-            }
-          }
+    "resources": {
+      "css": [
+        {
+        "uri": "css/style.css"
         }
+      ]
+    },          
+    "routing": {
+      "config": {
+      "routerClass": "sap.m.routing.Router",
+      "type": "View",
+      "viewType": "XML",
+      "path": "ui5.tutorial.walkthrough.view",
+      "controlId": "app",
+      "controlAggregation": "pages"
+      },
+      "routes": [
+      {
+        "pattern": "",
+        "name": "overview",
+        "target": "overview"
+      },
+      {
+        "pattern": "detail",
+        "name": "detail",
+        "target": "detail"
+      }
+      ],
+      "targets": {
+      "overview": {
+        "id": "overview",
+        "name": "Overview"
+      },
+      "detail": {
+        "id": "detail",
+        "name": "Detail"
+      }
+      }
     }
+  }
 }
 ```
 &nbsp;
@@ -178,7 +178,7 @@ The router will automatically add the view that corresponds to the current URL i
 
 The overview view is always shown when the hash is empty. The detail view is shown when the hash matches the pattern `detail`.
 
-> 📌 **Important:** <br>
+> :info:
 > The sequence of the routes in the routes definition is important. As soon as a pattern is matched, the following patterns are ignored. To prevent this for a specific route, you use the `greedy` parameter. If set to `true`, the route is always taken into account.
 
 ### webapp/Component.?s
@@ -190,61 +190,61 @@ import UIComponent from "sap/ui/core/UIComponent";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
 /**
- * @namespace ui5.walkthrough
+ * @namespace ui5.tutorial.walkthrough
  */
 export default class Component extends UIComponent {
-    public static metadata = {
-        "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-        "manifest": "json"
-    };
-    init(): void {
-        // call the init function of the parent
-        super.init();
-        
-        // set data model
-        const data = {
-            recipient: {
-                name: "World"
-            }
-        };
-        const model = new JSONModel(data);
-        this.setModel(model);
+	public static metadata = {
+		"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+		"manifest": "json"
+	};
+	init(): void {
+		// call the init function of the parent
+		super.init();
+		
+		// set data model
+		const data = {
+			recipient: {
+				name: "World"
+			}
+		};
+		const model = new JSONModel(data);
+		this.setModel(model);
 
-        // create the views based on the url/hash
-        this.getRouter().initialize();
-    };
+		// create the views based on the url/hash
+		this.getRouter().initialize();
+	};
 };
 
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"], function (UIComponent, JSONModel) {
-  "use strict";
+	"use strict";
 
-  const Component = UIComponent.extend("ui5.walkthrough.Component", {
-    metadata: {
-      "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-      "manifest": "json"
-    },
-    init() {
-      // call the init function of the parent
-      UIComponent.prototype.init.call(this);
+	const Component = UIComponent.extend("ui5.tutorial.walkthrough.Component", {
+		metadata: {
+			"interfaces": ["sap.ui.core.IAsyncContentCreation"],
+			"manifest": "json"
+		},
+		init() {
+			// call the init function of the parent
+			UIComponent.prototype.init.call(this);
 
-      // set data model
-      const data = {
-        recipient: {
-          name: "World"
-        }
-      };
-      const model = new JSONModel(data);
-      this.setModel(model);
+			// set data model
+			const data = {
+				recipient: {
+					name: "World"
+				}
+			};
+			const model = new JSONModel(data);
+			this.setModel(model);
 
-      // create the views based on the url/hash
-      this.getRouter().initialize();
-    }
-  });
-  ;
-  return Component;
+			// create the views based on the url/hash
+			this.getRouter().initialize();
+		}
+	});
+	;
+	return Component;
 });
 
 ```
@@ -269,34 +269,34 @@ import ListBinding from "sap/ui/model/ListBinding";
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
- * @namespace ui5.walkthrough.controller
+ * @namespace ui5.tutorial.walkthrough.controller
  */
 export default class App extends Controller {
 	
-    //...
+	//...
 
-    onPress(): void {
-        const router = UIComponent.getRouterFor(this);
-        router.navTo("detail");
-    }    
+	onPress(): void {
+		const router = UIComponent.getRouterFor(this);
+		router.navTo("detail");
+	}    
 };
 ```
 
 ```js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/core/UIComponent"], function (Controller, JSONModel, Filter, FilterOperator, UIComponent) {
-  "use strict";
+	"use strict";
 
-  const App = Controller.extend("ui5.walkthrough.controller.App", {
-    
-    //...
+	const App = Controller.extend("ui5.tutorial.walkthrough.controller.App", {
+		
+		//...
 
-    onPress() {
-      const router = UIComponent.getRouterFor(this);
-      router.navTo("detail");
-    }
-  });
-  ;
-  return App;
+		onPress() {
+			const router = UIComponent.getRouterFor(this);
+			router.navTo("detail");
+		}
+	});
+	;
+	return App;
 });
 
 ```
@@ -307,41 +307,41 @@ In the invoice list view we finally add the press event to the list item we just
 
 ```xml
 <mvc:View
-    controllerName="ui5.walkthrough.controller.InvoiceList"
-    xmlns="sap.m"
-    xmlns:core="sap.ui.core"
-    xmlns:mvc="sap.ui.core.mvc">
-    ...
-        <items>
-            <ObjectListItem
-                core:require="{
-                    Currency: 'sap/ui/model/type/Currency'
-                }"
-                title="{invoice>Quantity} x {invoice>ProductName}"
-                number="{
-                    parts: [
-                        'invoice>ExtendedPrice',
-                        'view>/currency'
-                    ],
-                    type: 'Currency',
-                    formatOptions: {
-                        showMeasure: false
-                    }
-                }"
-                numberUnit="{view>/currency}"
-                numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
-                type="Navigation"
-                press=".onPress">
-                <firstStatus>
-                    <ObjectStatus
-                        text="{
-                            path: 'invoice>Status',
-                            formatter: '.formatter.statusText'
-                        }"/>
-                </firstStatus>
-            </ObjectListItem>
-        </items>
-    </List>
+  controllerName="ui5.tutorial.walkthrough.controller.InvoiceList"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc">
+  ...
+    <items>
+      <ObjectListItem
+        core:require="{
+          Currency: 'sap/ui/model/type/Currency'
+        }"
+        title="{invoice>Quantity} x {invoice>ProductName}"
+        number="{
+          parts: [
+            'invoice>ExtendedPrice',
+            'view>/currency'
+          ],
+          type: 'Currency',
+          formatOptions: {
+            showMeasure: false
+          }
+        }"
+        numberUnit="{view>/currency}"
+        numberState="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"
+        type="Navigation"
+        press=".onPress">
+        <firstStatus>
+          <ObjectStatus
+            text="{
+              path: 'invoice>Status',
+              formatter: '.formatter.statusText'
+            }"/>
+        </firstStatus>
+      </ObjectListItem>
+    </items>
+  </List>
 </mvc:View>
 ```
 &nbsp;

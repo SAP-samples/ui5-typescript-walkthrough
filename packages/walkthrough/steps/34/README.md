@@ -102,91 +102,91 @@ Instead of the `ObjectListItem` that we had before, we will now split the inform
 
 ```xml
 <mvc:View
-	controllerName="ui5.walkthrough.controller.InvoiceList"
-	xmlns="sap.m"
-	xmlns:core="sap.ui.core"
-	xmlns:mvc="sap.ui.core.mvc">
-	<Table
-		id="invoiceList"
-		class="sapUiResponsiveMargin"
-		width="auto"
-		items="{
-				path : 'invoice>/Invoices',
-				sorter : {
-					path : 'ShipperName',
-					group : true
-				}
-			}">
-		<headerToolbar>
-			<Toolbar>
-				<Title text="{i18n>invoiceListTitle}" />
-				<ToolbarSpacer />
-				<SearchField
-					width="50%"
-					search=".onFilterInvoices"/>
-			</Toolbar>
-		</headerToolbar>
-		<columns>
-			<Column
-				hAlign="End"
-				minScreenWidth="Small"
-				demandPopin="true"
-				width="5em">
-				<Text text="{i18n>columnQuantity}" />
-			</Column>
-			<Column>
-				<Text text="{i18n>columnName}" />
-			</Column>
-			<Column
-				minScreenWidth="Small"
-				demandPopin="true">
-				<Text text="{i18n>columnStatus}" />
-			</Column>
-			<Column
-				minScreenWidth="Tablet"
-				demandPopin="false">
-				<Text text="{i18n>columnSupplier}" />
-			</Column>
-			<Column hAlign="End">
-				<Text text="{i18n>columnPrice}" />
-			</Column>
-		</columns>
-		<items>
-			<ColumnListItem
-				type="Navigation"
-				press=".onPress">
-				<cells>
-					<ObjectNumber
-						number="{invoice>Quantity}"
-						emphasized="false"/>
-					<ObjectIdentifier 
-					  title="{invoice>ProductName}" />
-					<Text
-						text="{
-					    path: 'invoice>Status',
-							formatter: '.formatter.statusText'
-						}"/>
-					<Text text="{invoice>ShipperName}" />
-					<ObjectNumber
-						core:require="{
-							Currency: 'sap/ui/model/type/Currency'
+  controllerName="ui5.tutorial.walkthrough.controller.InvoiceList"
+  xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:mvc="sap.ui.core.mvc">
+  <Table
+    id="invoiceList"
+    class="sapUiResponsiveMargin"
+    width="auto"
+    items="{
+        path : 'invoice>/Invoices',
+        sorter : {
+          path : 'ShipperName',
+          group : true
+        }
+      }">
+    <headerToolbar>
+      <Toolbar>
+        <Title text="{i18n>invoiceListTitle}" />
+        <ToolbarSpacer />
+        <SearchField
+          width="50%"
+          search=".onFilterInvoices"/>
+      </Toolbar>
+    </headerToolbar>
+    <columns>
+      <Column
+        hAlign="End"
+        minScreenWidth="Small"
+        demandPopin="true"
+        width="5em">
+        <Text text="{i18n>columnQuantity}" />
+      </Column>
+      <Column>
+        <Text text="{i18n>columnName}" />
+      </Column>
+      <Column
+        minScreenWidth="Small"
+        demandPopin="true">
+        <Text text="{i18n>columnStatus}" />
+      </Column>
+      <Column
+        minScreenWidth="Tablet"
+        demandPopin="false">
+        <Text text="{i18n>columnSupplier}" />
+      </Column>
+      <Column hAlign="End">
+        <Text text="{i18n>columnPrice}" />
+      </Column>
+    </columns>
+    <items>
+      <ColumnListItem
+        type="Navigation"
+        press=".onPress">
+        <cells>
+          <ObjectNumber
+            number="{invoice>Quantity}"
+            emphasized="false"/>
+          <ObjectIdentifier 
+            title="{invoice>ProductName}" />
+          <Text
+            text="{
+              path: 'invoice>Status',
+              formatter: '.formatter.statusText'
+            }"/>
+          <Text text="{invoice>ShipperName}" />
+          <ObjectNumber
+            core:require="{
+              Currency: 'sap/ui/model/type/Currency'
             }"
-						number="{
-							parts: [
-								'invoice>ExtendedPrice',
-								'view>/currency'
-							],
-							type: 'Currency',
-							formatOptions: {
-								showMeasure: false
-							}
-						}"
-						unit="{view>/currency}"
-						state="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"/>
-				</cells>
-			</ColumnListItem>
-		</items>
-	</Table>
+            number="{
+              parts: [
+                'invoice>ExtendedPrice',
+                'view>/currency'
+              ],
+              type: 'Currency',
+              formatOptions: {
+                showMeasure: false
+              }
+            }"
+            unit="{view>/currency}"
+            state="{= ${invoice>ExtendedPrice} > 50 ? 'Error' : 'Success' }"/>
+        </cells>
+      </ColumnListItem>
+    </items>
+  </Table>
 </mvc:View>
 ```
 &nbsp;
@@ -194,7 +194,7 @@ Now we have defined our table responsively and can see the results when we decre
 
 We can see the results when we decrease the browser's screen size or open the app on a small device.
 
-> 💡 **Tip:** <br>
+> :tip:
 > You can test the device specific features of your app with the developer tools of your browser. For example in Google Chrome, you can emulate a tablet or a phone easily and see the effects. Some responsive options of OpenUI5 are only set initially when loading the app, so you might have to reload your page to see the results.
 
 ***

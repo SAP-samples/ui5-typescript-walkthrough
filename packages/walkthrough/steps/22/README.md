@@ -59,42 +59,42 @@ import Controller from "sap/ui/core/mvc/Controller";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 
 export default  {
-    statusText: function (this: Controller, status: string): string | undefined {
-        const resourceBundle = (this?.getOwnerComponent()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
-        switch (status) {
-            case "A":
-                return resourceBundle.getText("invoiceStatusA");
-            case "B":
-                return resourceBundle.getText("invoiceStatusB");
-            case "C":
-                return resourceBundle.getText("invoiceStatusC");
-            default:
-                return status;
-        }
-    }
+	statusText: function (this: Controller, status: string): string | undefined {
+		const resourceBundle = (this?.getOwnerComponent()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+		switch (status) {
+			case "A":
+				return resourceBundle.getText("invoiceStatusA");
+			case "B":
+				return resourceBundle.getText("invoiceStatusB");
+			case "C":
+				return resourceBundle.getText("invoiceStatusC");
+			default:
+				return status;
+		}
+	}
 };
 
 ```
 
 ```js
 sap.ui.define([], function () {
-  "use strict";
+	"use strict";
 
-  return {
-    statusText: function (status) {
-      const resourceBundle = this?.getOwnerComponent()?.getModel("i18n")?.getResourceBundle();
-      switch (status) {
-        case "A":
-          return resourceBundle.getText("invoiceStatusA");
-        case "B":
-          return resourceBundle.getText("invoiceStatusB");
-        case "C":
-          return resourceBundle.getText("invoiceStatusC");
-        default:
-          return status;
-      }
-    }
-  };
+	return {
+		statusText: function (status) {
+			const resourceBundle = this?.getOwnerComponent()?.getModel("i18n")?.getResourceBundle();
+			switch (status) {
+				case "A":
+					return resourceBundle.getText("invoiceStatusA");
+				case "B":
+					return resourceBundle.getText("invoiceStatusB");
+				case "C":
+					return resourceBundle.getText("invoiceStatusC");
+				default:
+					return status;
+			}
+		}
+	};
 });
 
 ```
@@ -105,7 +105,7 @@ The new `formatter` file is placed in the model folder of the app, because forma
 
 &nbsp;
 
->📌 **Important:** <br>
+> :info:
 > In the above example, `this` refers to the controller instance as soon as the formatter gets called. We access the resource bundle via the component using `this.getOwnerComponent().getModel()` instead of using `this.getView().getModel()`. The latter call might return `undefined`, because the view might not have been attached to the component yet, and thus the view can't inherit a model from the component.
 
 **Additional Information:**
@@ -119,7 +119,7 @@ We add the `ObjectStatus` control to our `ObjectListItem` using the `firstStatus
 
 ```xml
 <mvc:View
-   controllerName="ui5.walkthrough.controller.InvoiceList"
+   controllerName="ui5.tutorial.walkthrough.controller.InvoiceList"
    xmlns="sap.m"
    xmlns:core="sap.ui.core"
    xmlns:mvc="sap.ui.core.mvc">
@@ -149,7 +149,7 @@ We add the `ObjectStatus` control to our `ObjectListItem` using the `firstStatus
             <firstStatus>
                <ObjectStatus
                   core:require="{
-                     Formatter: 'ui5/walkthrough/model/formatter'
+                     Formatter: 'ui5/tutorial/walkthrough/model/formatter'
                   }"
                   text="{
                      path: 'invoice>Status',
