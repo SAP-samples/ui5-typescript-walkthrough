@@ -2,7 +2,7 @@
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"extends": [
 		"config:best-practices",
-		"github>ui5/renovate-config"
+		"github>ui5/renovate-config:lts#v1.2.1"
 	],
 	"ignorePresets": [":ignoreModulesAndTests"],
 	"minimumReleaseAge": "3 days",
