@@ -11,7 +11,7 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@types/openui5": "^1.147.0",
+    "@types/openui5": "1.149.0",
     "@ui5/cli": "^4.0.53",
     "@ui5/ts-interface-generator": "^0.11.0",
     "local-web-server": "^5.4.0",
