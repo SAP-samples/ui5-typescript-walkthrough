@@ -9,7 +9,7 @@ Now we can navigate to our detail page and display an invoice, but we cannot go 
 ### Preview
   
   
-![](assets/loio33a8341077bb458685274c64d2317f6b_LowRes.png "A back button is now displayed on the detail page")
+![A back button is now displayed on the detail page](assets/loio33a8341077bb458685274c64d2317f6b_LowRes.png "A back button is now displayed on the detail page")
 
 <sup>*A back button is now displayed on the detail page*</sup>
 
@@ -19,21 +19,11 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 32](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-32.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 32](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-32-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 32](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-32.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 32](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-32-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ***
 
-### webapp/controller/Detail.controller.?s
+### webapp/controller/Detail.controller.ts/.js
 
 To be able to navigate from the detail view back to the view we came from we implement a new event handler function in the controller of the detail view. 
 For a start we load a new class called `History` from the `sap.ui.core.routing` namespace. This class provides methods for navigating through the history of the application.
@@ -43,6 +33,7 @@ In the event handler we access the navigation history and try to determine the p
 If no navigation has happened before, we get a reference to the router and use the `navTo` method to navigate to the "overview" route. As a second parameter we specify an empty array \(`{}`\) as we do not pass any additional parameters to the route. The third parameter is set to `true`. This tells the router to replace the current history state with the new one since we actually do a back navigation by ourselves and we do not want to have an entry in the browser history.
 
 ```ts
+// webapp/controller/Detail.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 import History from "sap/ui/core/routing/History";
@@ -71,6 +62,7 @@ export default class Detail extends Controller {
 ```
 
 ```js
+// webapp/controller/Detail.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/ui/core/UIComponent"], function (Controller, History, UIComponent) {
 	"use strict";
 

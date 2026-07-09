@@ -1,5 +1,3 @@
-<!-- loio877d57e3b5654b19a2d2e5190dc43b0d -->
-
 # Step 15: Reuse an Existing Route
 
 The *Employees* table displays employee data. However, the resumes of the employees are not accessible from this view yet. We could create a new route and a new view to visualize the resume again, but we could also simply reuse an existing route to cross-link the resume of a certain employee. In this step, we will add a feature that allows users to directly navigate to the resume of a certain employee. We will reuse the *Resume* page that we have created in an earlier step. This example illustrates that there can be multiple navigation paths that direct to the same page.
@@ -43,9 +41,10 @@ You can view this step live: [🔗 Live Preview of Step 15](https://ui5.github.i
 
 In the `EmployeeOverviewContent` view we register an event handler for the `itemPress` event and set the type attribute of the `ColumnListItem` to `Active` so that we can choose an item and trigger the navigation.
 
-## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.?s`
+## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js`
 
 ```ts
+// webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts
 import { ListBase$ItemPressEvent } from "sap/m/ListBase";
 import SearchField, { SearchField$SearchEvent } from "sap/m/SearchField";
 import Table from "sap/m/Table";
@@ -79,6 +78,7 @@ export default class EmployeeOverviewContent extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/overview/EmployeeOverviewContent.controller.js
 sap.ui.define(["sap/m/ViewSettingsDialog", "sap/m/ViewSettingsItem", "ui5/tutorial/navigation/controller/BaseController", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/model/Sorter"], function (ViewSettingsDialog, ViewSettingsItem, BaseController, Filter, FilterOperator, Sorter) {
 	"use strict";
 

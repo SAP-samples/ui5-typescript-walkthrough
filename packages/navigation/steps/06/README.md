@@ -1,5 +1,3 @@
-<!-- loio782aac08f2de4003a2fcbdd39d27f374 -->
-
 # Step 6: Navigate to Routes with Hard-Coded Patterns
 
 In this step, we'll create a second button on the home page, with which we can navigate to a simple list of employees. This example illustrates how to navigate to a route that has a hard-coded pattern.
@@ -24,11 +22,11 @@ You can view this step live: [🔗 Live Preview of Step 6](https://ui5.github.io
 webapp/
 ├── controller/
 │   ├── employee/
-│   │   └── EmployeeList.controller.?s
-│   ├── App.controller.?s
-│   ├── BaseController.?s
-│   ├── Home.controller.?s
-│   └── NotFound.controller.?s
+│   │   └── EmployeeList.controller.ts/.js
+│   ├── App.controller.ts/.js
+│   ├── BaseController.ts/.js
+│   ├── Home.controller.ts/.js
+│   └── NotFound.controller.ts/.js
 ├── i18n/
 │   └── i18n.properties
 ├── localService/
@@ -36,16 +34,16 @@ webapp/
 │   │   ├── Employees.json
 │   │   └── Resumes.json
 │   ├── metadata.xml
-│   └── mockserver.?s
+│   └── mockserver.ts/.js
 ├── view/
 │   ├── employee/
 │   │   └── EmployeeList.view.xml
 │   ├── App.view.xml
 │   ├── Home.view.xml
 │   └── NotFound.view.xml
-├── Component.?s
+├── Component.ts/.js
 ├── index.html
-├── initMockServer.?s
+├── initMockServer.ts/.js
 └── manifest.json
 ```
 
@@ -70,9 +68,10 @@ webapp/
 
 First, we change the `Home` view by adding the *Show Employee List* button. We register an event handler `onNavToEmployees` for the press event.
 
-## `webapp/controller/Home.controller.?s`
+## `webapp/controller/Home.controller.ts/.js`
 
 ```ts
+// webapp/controller/Home.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 
 /**
@@ -94,6 +93,7 @@ export default class Home extends BaseController {
 ```
 
 ```js
+// webapp/controller/Home.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 
@@ -222,9 +222,10 @@ In the view, we use a `sap.m.List` control and bind its items to the data from o
 
 This view can be referenced by `ui5.tutorial.navigation.view.employee.EmployeeList`.
 
-## `webapp/controller/employee/EmployeeList.controller.?s` \(New\)
+## `webapp/controller/employee/EmployeeList.controller.ts/.js` \(New\)
 
 ```ts
+// webapp/controller/employee/EmployeeList.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 
 /**
@@ -236,6 +237,7 @@ export default class EmployeeList extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/EmployeeList.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 

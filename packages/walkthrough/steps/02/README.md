@@ -9,7 +9,7 @@ Before we can do something with OpenUI5, we need to load and initialize it. This
 ### Preview
 
 
-![](assets/loio0f6b6b9dc46a474da9287c382c8d3456_LowRes.png "An alert &quot;UI5 is ready&quot; is displayed")
+![An alert &quot;UI5 is ready&quot; is displayed](assets/loio0f6b6b9dc46a474da9287c382c8d3456_LowRes.png "An alert &quot;UI5 is ready&quot; is displayed")
 
 <sup>*An alert &quot;UI5 is ready&quot; is displayed*</sup>
 
@@ -18,17 +18,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 ***
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 2](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-02.zip).
-
-</details> 
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 2](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-02-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 2](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-02.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 2](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-02-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### Development Environment
@@ -110,11 +100,12 @@ Let's go through the compiler options specified in the file:
 
 </details>
 
-### webapp/index.?s \(New\)
+### webapp/index.ts/.js \(New\)
 
-Now let's move on to the UI work. We create a new `index.?s` script in the webapp folder. In this script, we add a native `alert()` method with the message "UI5 is ready".
+Now let's move on to the UI work. We create a new `index.ts/.js` script in the webapp folder. In this script, we add a native `alert()` method with the message "UI5 is ready".
 
 ```js
+// webapp/index.js
 alert("UI5 is ready");
 ```
 

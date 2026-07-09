@@ -15,7 +15,7 @@ One part of the ARIA attribute set are the so-called landmarks. You can compare 
 
 ### Preview
   
-![](assets/loiob35deda1ebe1433fbf0ff066f6e3fc4b_LowRes.png "Landmarks in our app")
+![Landmarks in our app](assets/loiob35deda1ebe1433fbf0ff066f6e3fc4b_LowRes.png "Landmarks in our app")
 
 <sup>*Landmarks in our app*</sup>
 
@@ -25,17 +25,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 37](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-37.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 37](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-37-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 37](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-37.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 37](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-37-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/i18n/i18n.properties

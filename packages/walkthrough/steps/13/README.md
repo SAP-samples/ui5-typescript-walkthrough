@@ -10,7 +10,7 @@ Instead of manually adding CSS to the controls, we will use the standard classes
 
 ### Preview
   
-![](assets/loio0becf3ee81f5486a864e3b39ba036402_LowRes.png "The layout of the panel and its content now has margins and padding")
+![The layout of the panel and its content now has margins and padding](assets/loio0becf3ee81f5486a864e3b39ba036402_LowRes.png "The layout of the panel and its content now has margins and padding")
 
 <sup>*The layout of the panel and its content now has margins and padding*</sup>
 
@@ -20,17 +20,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 13](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-13.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 13](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-13-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 13](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-13.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 13](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-13-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/view/App.view.xml

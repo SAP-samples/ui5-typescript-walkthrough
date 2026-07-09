@@ -12,7 +12,7 @@ In the real world, data often resides on remote servers and is accessed via an O
 
 ### Preview 
 
-![](assets/loio5b76bb4b15eb44e1862d0b6c1c802571_LowRes.png "Products from the OData invoices test service are now shown within our app")
+![Products from the OData invoices test service are now shown within our app](assets/loio5b76bb4b15eb44e1862d0b6c1c802571_LowRes.png "Products from the OData invoices test service are now shown within our app")
 
 <sup>*Products from the OData invoices test service are now shown within our app*</sup>
 
@@ -22,17 +22,7 @@ In the real world, data often resides on remote servers and is accessed via an O
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 25](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-25.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 25](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-25-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 25](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-25.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 25](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-25-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### Development Environment

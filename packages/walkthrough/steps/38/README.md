@@ -9,24 +9,14 @@ In this step we're going to build our application and consume the speed of a bui
 ### Preview
   
   
-![](assets/loiofb12cea5ac9b45bb9007aac5a1a8689f_LowRes.png "The UI5 application is built and served")
+![The UI5 application is built and served](assets/loiofb12cea5ac9b45bb9007aac5a1a8689f_LowRes.png "The UI5 application is built and served")
 
 <sup>*The OpenUI5 application is built and served*</sup>
 
 ***
 
 ### Coding
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 38](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-38.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 38](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-38-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 38](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-38.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 38](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-38-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### package.json

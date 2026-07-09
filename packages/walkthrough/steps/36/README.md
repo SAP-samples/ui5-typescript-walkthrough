@@ -8,7 +8,7 @@ In this step of our Walkthrough tutorial, we adjust the content density based on
 
 ### Preview 
 
-![](assets/loiof216b131c492448d8a1df25db2b9a26d_LowRes.png "The content density is compact on desktop devices and cozy on touch-enabled devices")
+![The content density is compact on desktop devices and cozy on touch-enabled devices](assets/loiof216b131c492448d8a1df25db2b9a26d_LowRes.png "The content density is compact on desktop devices and cozy on touch-enabled devices")
 
 <sup>*The content density is compact on devices without a touch screen and cozy on touch-enabled devices*</sup>
 
@@ -17,26 +17,17 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 ***
 
 ### Coding
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 36](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-36.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 36](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-36-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 36](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-36.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 36](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-36-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/Component.?s
+### webapp/Component.ts/.js
 
 To prepare the content density feature we add a helper method `getContentDensityClass` to the app component. OpenUI5 controls can be displayed in multiple sizes, for example in a `compact` size that is optimized for desktop and non-touch devices, and in a `cozy` mode that is optimized for touch interaction. The controls look for a specific CSS class in the HTML structure of the application to adjust their size.
 
 This helper method queries the `Device` API directly for touch support of the client and returns the CSS class `sapUiSizeCompact` if touch interaction is not supported and `sapUiSizeCozy` for all other cases. We will use it throughout the application coding to set the proper content density CSS class.
 
 ```ts
+// webapp/Component.ts
 import UIComponent from "sap/ui/core/UIComponent";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import Device from "sap/ui/Device";
@@ -62,6 +53,7 @@ export default class Component extends UIComponent {
 ```
 
 ```js
+// webapp/Component.js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel", "sap/ui/Device"], function (UIComponent, JSONModel, Device) {
 	"use strict";
 
@@ -84,11 +76,12 @@ sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel", "sap/ui
 
 ```
 
-### webapp/controller/App.controller.?s
+### webapp/controller/App.controller.ts/.js
 
 We add the `onInit` method to the app controller that is called when the app view is instantiated. There, we query the helper function that we defined on the app component in order to set the corresponding style class on the app view. All controls inside the app view will now automatically adjust to either the compact or the cozy size, as defined by the style.
 
 ```ts
+// webapp/controller/App.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import Component from "../Component";
 
@@ -104,6 +97,7 @@ export default class App extends Controller {
 ```
 
 ```js
+// webapp/controller/App.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 	"use strict";
 

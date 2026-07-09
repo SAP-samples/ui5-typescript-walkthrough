@@ -9,7 +9,7 @@ Finally, we add a second page to our app showcasing some of the key OpenUI5 conc
 ### Preview
 
 
-![](assets/loio79e1157d948c488c9717ef840fa9b396_LowRes.png "The second page shows plenty of UI controls and concepts to explore")
+![The second page shows plenty of UI controls and concepts to explore](assets/loio79e1157d948c488c9717ef840fa9b396_LowRes.png "The second page shows plenty of UI controls and concepts to explore")
 
 <sup>*The second page shows plenty of UI controls and concepts to explore*</sup>
 
@@ -19,17 +19,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 3](https://ui5.github.io/tutorials/quickstart-step-03.zip). 
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 3](https://ui5.github.io/tutorials/quickstart-step-03-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 3](https://ui5.github.io/tutorials/quickstart-step-03.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 3](https://ui5.github.io/tutorials/quickstart-step-03-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 
@@ -135,6 +125,7 @@ We display these texts on the second page using data binding. The `InfoLabel` ta
 Finally, we make the Panel in the lower part of the view interactive by attaching an `onChange` event to the switch defined there. OpenUI5 comes with a large set of feature-rich controls that you can combine as you need.
 
 ```ts
+// webapp/App.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import MessageToast from "sap/m/MessageToast";
 import JSONModel from "sap/ui/model/json/JSONModel";
@@ -169,6 +160,7 @@ export default class AppController extends Controller {
 
 ```
 ```js
+// webapp/App.controller.js
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast",

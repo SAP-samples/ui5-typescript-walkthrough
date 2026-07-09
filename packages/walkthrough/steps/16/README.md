@@ -14,7 +14,7 @@ We will now add a dialog to our app. Dialogs are special, because they open on t
 
 ### Preview
   
-![](assets/loio0916080895e144ed8b31963bfb18e17f_LowRes.png "A dialog opens when the new &quot;Say Hello With Dialog&quot; button is clicked")
+![A dialog opens when the new &quot;Say Hello With Dialog&quot; button is clicked](assets/loio0916080895e144ed8b31963bfb18e17f_LowRes.png "A dialog opens when the new &quot;Say Hello With Dialog&quot; button is clicked")
 
 <sup>*A dialog opens when the new “Say Hello With Dialog” button is clicked*</sup>
 
@@ -25,17 +25,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 16](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-16.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 16](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-16-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 16](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-16.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 16](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-16-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/view/HelloDialog.fragment.xml \(New\)
@@ -54,7 +44,7 @@ We add a new XML file to declaratively define our dialog in a fragment. The Frag
 &nbsp;
 The syntax is similar to a view, but since fragments do not have a controller this attribute is missing. Also, the fragment does not have any footprint in the DOM tree of the app, and there is no control instance of the fragment itself (only the contained controls). It is simply a container for a set of reuse controls.
 
-### webapp/controller/HelloPanel.controller.?s
+### webapp/controller/HelloPanel.controller.ts/.js
 
 In the HelloPanel controller, we define a new event handler function `onOpenDialog` which calls the dialog in the HelloDialog fragment when triggered. To do so we need the `sap.m.Dialog` module.
 
@@ -63,6 +53,7 @@ Using async/await, we handle the opening of the dialog asynchronously whenever t
 If the dialog fragment does not exist yet, the fragment is instantiated by calling the `loadFragment` API. We then store the dialog on the controller instance. This allows us to reuse the dialog every time the event is triggered again.
 
 ```ts
+// webapp/controller/HelloPanel.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import MessageToast from "sap/m/MessageToast";
 import JSONModel from "sap/ui/model/json/JSONModel";
@@ -89,6 +80,7 @@ export default class HelloPanel extends Controller {
 
 ```
 ```js
+// webapp/controller/HelloPanel.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Controller, MessageToast) {
 	"use strict";
 

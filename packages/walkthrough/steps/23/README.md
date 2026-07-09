@@ -8,7 +8,7 @@ In this step, we add a search field for our product list and define a filter tha
 
 ### Preview
   
-![](assets/loio472ab6bf88674c23ba103efd97163133_LowRes.png "A search field is displayed above the list")
+![A search field is displayed above the list](assets/loio472ab6bf88674c23ba103efd97163133_LowRes.png "A search field is displayed above the list")
 
 <sup>*A search field is displayed above the list*</sup>
 
@@ -18,20 +18,10 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 23](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-23.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 23](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-23-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 23](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-23.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 23](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-23-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/controller/InvoiceList.controller.?s
+### webapp/controller/InvoiceList.controller.ts/.js
 
 We will implement a new `onFilterInvoices` event handler function to our controller. This function will enable users to filter the invoice list based on a search term entered in a `sap/m/SearchField` control.
 
@@ -42,6 +32,7 @@ If the query is empty, we filter the binding with an empty array. This will make
 Finally we apply the filter to the items binding of the invoice list in our view, updating the displayed items.
 
 ```ts
+// webapp/controller/InvoiceList.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import { SearchField$SearchEvent } from "sap/m/SearchField";
@@ -78,6 +69,7 @@ export default class App extends Controller {
 ```
 
 ```js
+// webapp/controller/InvoiceList.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/Filter", "sap/ui/model/FilterOperator"], function (Controller, JSONModel, Filter, FilterOperator) {
 	"use strict";
 

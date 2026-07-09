@@ -1,5 +1,3 @@
-<!-- loiocf3c57c89ef0491793d1ce327ab4f9b2 -->
-
 # Step 2: Enable Routing
 
 In this step we will modify the app and introduce routing. Instead of having the home page of the app hard coded we will configure a router to wire multiple views together when our app is called. The routing configuration controls the application flow when the user triggers a navigation action or opens a link to the application directly.
@@ -19,8 +17,8 @@ You can view this step live: [🔗 Live Preview of Step 2](https://ui5.github.io
 ```text
 webapp/
 ├── controller/
-│   ├── App.controller.?s
-│   └── Home.controller.?s
+│   ├── App.controller.ts/.js
+│   └── Home.controller.ts/.js
 ├── i18n/
 │   └── i18n.properties
 ├── localService/
@@ -28,13 +26,13 @@ webapp/
 │   │   ├── Employees.json
 │   │   └── Resumes.json
 │   ├── metadata.xml
-│   └── mockserver.?s
+│   └── mockserver.ts/.js
 ├── view/
 │   ├── App.view.xml
 │   └── Home.view.xml
-├── Component.?s
+├── Component.ts/.js
 ├── index.html
-├── initMockServer.?s
+├── initMockServer.ts/.js
 └── manifest.json
 ```
 
@@ -112,9 +110,10 @@ Single-page applications based on SAPUI5 can use a so-called “router” to dis
 > :note:
 > As of SAPUI5 version 1.30, we recommend that you define the routing in the `manifest.json` descriptor file using routes and targets. In older versions of SAPUI5, the routing configuration had to be done directly in the metadata section of the component, and with different syntax.
 
-## `webapp/Component.?s`
+## `webapp/Component.ts/.js`
 
 ```ts
+// webapp/Component.ts
 import UIComponent from "sap/ui/core/UIComponent";
 
 /**
@@ -136,6 +135,7 @@ export default class Component extends UIComponent {
 ```
 
 ```js
+// webapp/Component.js
 sap.ui.define(["sap/ui/core/UIComponent"], function (UIComponent) {
 	"use strict";
 
@@ -194,9 +194,10 @@ In the `App` view, we remove the content of `App` control. The pages will be add
 
 Create a file `Home.view.xml` in the `webapp/view` folder. The home view only contains a page control that displays a button. For illustration, we bind the title of the page to the `i18n>homePageTitle`, you can use data binding just the way you are used to it.
 
-## `webapp/controller/Home.controller.?s` \(New\)
+## `webapp/controller/Home.controller.ts/.js` \(New\)
 
 ```ts
+// webapp/controller/Home.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 
 /**
@@ -208,6 +209,7 @@ export default class Home extends Controller {
 ```
 
 ```js
+// webapp/controller/Home.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 	"use strict";
 

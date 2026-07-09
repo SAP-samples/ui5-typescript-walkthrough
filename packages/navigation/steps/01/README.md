@@ -1,5 +1,3 @@
-<!-- loiodf245bd449a7470c8c2a0926ca8d78de -->
-
 # Step 1: Set Up the Initial App
 
 We start by setting up a simple app for this tutorial. The app displays mock data only and mimics real OData back-end calls with the mock server as you have seen in the *Walkthrough* tutorial.
@@ -14,13 +12,16 @@ The structure and data model created in this step will be used throughout the re
 
 ## Setup
 
-1. To set up your project for this tutorial, download the files at [Navigation and Routing - Step 1](https://ui5.github.io/tutorials/navigation/navigation-step-01.zip).
+The initial code for this step ships with the repository at [packages/navigation/steps/01/](./). Open it and run:
 
-2. Extract the downloaded `.zip` file at the desired location on your local machine.
+```sh
+npm install
+npm start
+```
 
-3. Open a shell in the extracted folder and execute `npm install`.
+This starts the local web server and opens a browser window hosting `index.html`.
 
-4. Execute `npm start` to start the web server and to open a new browser window hosting your newly created `index.html`.
+If you prefer to work outside the monorepo, download the standalone bundle at <span class="ts-only">[Navigation and Routing - Step 1](https://ui5.github.io/tutorials/navigation/navigation-step-01.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[Navigation and Routing - Step 1](https://ui5.github.io/tutorials/navigation/navigation-step-01-js.zip)<span class="lang-suffix"> (JS)</span></span>, extract it, and run the same two commands from the extracted folder.
 
 You should have the same files as displayed in the following figure:
 
@@ -28,20 +29,20 @@ You should have the same files as displayed in the following figure:
 
 ```text
 webapp/
-├── Component.?s
+├── Component.ts/.js
 ├── controller/
-│   └── App.controller.?s
+│   └── App.controller.ts/.js
 ├── i18n/
 │   └── i18n.properties
 ├── index-cdn.html
 ├── index.html
-├── initMockServer.?s
+├── initMockServer.ts/.js
 ├── localService/
 │   ├── metadata.xml
 │   ├── mockdata/
 │   │   ├── Employees.json
 │   │   └── Resumes.json
-│   └── mockserver.?s
+│   └── mockserver.ts/.js
 ├── manifest.json
 └── view/
     └── App.view.xml

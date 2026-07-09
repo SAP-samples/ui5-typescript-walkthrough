@@ -7,7 +7,7 @@ Now that we have established a good structure for our app, it's time to add some
 
 ### Preview
   
-![](assets/loiob05bdb47393b4abda3e1b54498959c38_LowRes.png "A list of invoices is displayed below the panel")
+![A list of invoices is displayed below the panel](assets/loiob05bdb47393b4abda3e1b54498959c38_LowRes.png "A list of invoices is displayed below the panel")
 
 <sup>*A list of invoices is displayed below the panel*</sup>
 
@@ -17,17 +17,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 19](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-19.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 19](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-19-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 19](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-19.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 19](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-19-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/model/localInvoices.json \(New\)
