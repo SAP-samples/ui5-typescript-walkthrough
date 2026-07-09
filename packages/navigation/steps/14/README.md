@@ -1,5 +1,3 @@
-<!-- loio5cc3147afc8d4854b5d3c5fc20923f77 -->
-
 # Step 14: Make Dialogs Bookmarkable
 
 In this step, we want to allow bookmarking of the dialog box that is opened when the user clicks the *Sort* button. The dialog should automatically open when the URL contains the query parameter `showDialog`.
@@ -17,6 +15,7 @@ You can view this step live: [🔗 Live Preview of Step 14](https://ui5.github.i
 ## /controller/employee/overview/EmployeeOverviewContent.controller.ts
 
 ```ts
+// /controller/employee/overview/EmployeeOverviewContent.controller.ts
 import SearchField, { SearchField$SearchEvent } from "sap/m/SearchField";
 import Table from "sap/m/Table";
 import ViewSettingsDialog, { ViewSettingsDialog$ConfirmEvent, ViewSettingsDialog$CancelEvent } from "sap/m/ViewSettingsDialog";
@@ -82,6 +81,7 @@ export default class EmployeeOverviewContent extends BaseController {
 ```
 
 ```js
+// /controller/employee/overview/EmployeeOverviewContent.controller.js
 sap.ui.define(["sap/m/ViewSettingsDialog", "sap/m/ViewSettingsItem", "ui5/tutorial/navigation/controller/BaseController", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/model/Sorter"], function (ViewSettingsDialog, ViewSettingsItem, BaseController, Filter, FilterOperator, Sorter) {
 	"use strict";
 

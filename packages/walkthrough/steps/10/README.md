@@ -9,7 +9,7 @@ Instead of relying on a local HTML file for the bootstrap, the manifest is parse
 ***
 
 ### Preview
-![](assets/loio7b2aef85c016485da4a31c087bf4c0f0_LowRes.png "An input field and a description displaying the value of the input field \(No visual changes to last step\)")  
+![An input field and a description displaying the value of the input field \(No visual changes to last step\)](assets/loio7b2aef85c016485da4a31c087bf4c0f0_LowRes.png "An input field and a description displaying the value of the input field \(No visual changes to last step\)")  
 
 <sup>*An input field and a description displaying the value of the input field \(No visual changes to last step\)*</sub>
 
@@ -19,17 +19,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 10](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-10.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 10](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-10-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 10](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-10.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 10](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-10-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/i18n/i18n.properties
@@ -161,13 +151,14 @@ In our current scenario, we only have one model called `i18n`, which is a resour
 
 ***
 
-### webapp/Component.?s
+### webapp/Component.ts/.js
 
 To apply the settings specified in the manifest to the component, we need to include the manifest in the component's metadata. To do this, we add a `manifest` property to the `metadata` section of the component and set it to "json". This property acts as a reference to the `manifest.json` file, which will be loaded and used.
 
 Now that the resource model is automatically instantiated based on the configuration in the manifest, we can safely remove the corresponding code block from the `init` method in our component controller. This also means that we can remove the import statement for the `ResourceModel` module from `sap/ui/model/resource/ResourceModel`, as it is no longer needed. Additionally, we can remove the `createContent` call since the configuration of the rootView is specified in the manifest and therefore makes the implementation in this method unnecessary.
 
 ```ts
+// webapp/Component.ts
 import UIComponent from "sap/ui/core/UIComponent";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
@@ -197,6 +188,7 @@ export default class Component extends UIComponent {
 ```
 
 ```js
+// webapp/Component.js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"], function (UIComponent, JSONModel) {
 	"use strict";
 
@@ -259,7 +251,7 @@ It's worth noting that the `ComponentSupport` module enforces asynchronous loadi
 </html>
 ```
 
-We can now delete our `index.?s` file, because our component is now initiated directly in the HTML markup.
+We can now delete our `index.ts/.js` file, because our component is now initiated directly in the HTML markup.
 
 ***
 

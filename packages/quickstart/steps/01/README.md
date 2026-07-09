@@ -9,7 +9,7 @@ Let's get you ready for your journey! We bootstrap OpenUI5 in an HTML page and i
 ### Preview
 
 
-![](assets/loio9c157e9764b846fea7de519d141c33ac_LowRes.png "The browser shows a "Ready" button that triggers a "Hello World" message")
+![The browser shows a "Ready" button that triggers a "Hello World" message](assets/loio9c157e9764b846fea7de519d141c33ac_LowRes.png "The browser shows a Ready button that triggers a Hello World message")
 
 <sup>*The browser shows a "Ready" button that triggers a "Hello World" message*</sup>
 
@@ -19,17 +19,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 1](https://ui5.github.io/tutorials/quickstart-step-01.zip). 
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 1](https://ui5.github.io/tutorials/quickstart-step-01-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 1](https://ui5.github.io/tutorials/quickstart-step-01.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 1](https://ui5.github.io/tutorials/quickstart-step-01-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 
@@ -75,11 +65,12 @@ With the `script` tag, we load and initialize OpenUI5 with typical bootstrap par
 
 ***
 
-### webapp/index.?s \(New\)
+### webapp/index.ts/.js \(New\)
 
 In your `webapp` folder, create a new file `index.js` that will be called as soon as OpenUI5 is loaded and initialized. We load two UI controls - a button and a message toast - and place the button in the element with the `content` ID. The button is defined with a `text` property and a callback attached to its `press` event.
 
 ```ts
+// webapp/index.ts
 import Button from "sap/m/Button";
 import MessageToast from "sap/m/MessageToast";
 
@@ -92,6 +83,7 @@ new Button({
 
 ```
 ```js
+// webapp/index.js
 sap.ui.define([
 	"sap/m/Button",
 	"sap/m/MessageToast"

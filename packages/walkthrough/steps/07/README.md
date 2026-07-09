@@ -10,7 +10,7 @@ We'll create a view model in our controller, add an input field to our app, bind
 
 ### Preview
 
-![](assets/loioafc105517a644407bd90662e3d94ea01_LowRes.png "An input field and a description displaying the value of the input field")
+![An input field and a description displaying the value of the input field](assets/loioafc105517a644407bd90662e3d94ea01_LowRes.png "An input field and a description displaying the value of the input field")
 
 <sup>*An input field and a description displaying the value of the input field*</sup>
 
@@ -20,20 +20,10 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 7](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-07.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 7](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-07-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 7](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-07.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 7](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-07-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/controller/App.controller.?s
+### webapp/controller/App.controller.ts/.js
 
 In the controller, we'll create a new data model and link it to the view that is related to the controller. The best time to create a model is during the `onInit` method. This is a special method in the Controller class that is automatically invoked by the framework when the controller is first set up.
 
@@ -43,6 +33,7 @@ Next, we need to link this data model to our view. We do this by first obtaining
 
 
 ```ts
+// webapp/controller/App.controller.ts
 import MessageToast from "sap/m/MessageToast";
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
@@ -70,6 +61,7 @@ export default class AppController extends Controller {
 ```
 
 ```js
+// webapp/controller/App.controller.js
 sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"], function (MessageToast, Controller, JSONModel) {
 	"use strict";
 

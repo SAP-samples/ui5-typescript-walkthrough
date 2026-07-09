@@ -135,6 +135,10 @@ function removeTSfromUI5YAML(ui5yaml) {
 			rewriteLinks(join(distTutorialDir, "index.md"));
 		}
 
+		if (existsSync(join(tutorialDir, "steps.json"))) {
+			copyFileSync(join(tutorialDir, "steps.json"), join(distTutorialDir, "steps.json"));
+		}
+
 		console.log(`  👉 Zipping TypeScript sources...`);
 		await Promise.all(steps.map((step) => {
 			return zipDirectory(

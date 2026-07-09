@@ -1,16 +1,6 @@
 # Step 2: Data Access and Client-Server Communication
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 2](https://ui5.github.io/tutorials/odatav4/odatav4-step-02.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 2](https://ui5.github.io/tutorials/odatav4/odatav4-step-02-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 2](https://ui5.github.io/tutorials/odatav4/odatav4-step-02.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 2](https://ui5.github.io/tutorials/odatav4/odatav4-step-02-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 In this step, we see how the `Table` that is bound to the `People` entity set initially requests its data, and how the data can be refreshed. We use the *Console* tab in the browser developer tools to monitor the communication between the browser and the server. We see the initial request as well as the requests for refreshing the data.
 
@@ -18,16 +8,18 @@ In this step, we see how the `Table` that is bound to the `People` entity set in
 
 **App with a toolbar that contains a Refresh button**
 
-![](assets/Tutorial_OData_V4_Step_2_0abcbb6.png "App with a toolbar that contains a Refresh
+![App with a toolbar that contains a Refresh
+					button](assets/Tutorial_OData_V4_Step_2_0abcbb6.png "App with a toolbar that contains a Refresh
 					button")
 
 ## Coding
 
 You can view this step live: [🔗 Live Preview of Step 2](https://ui5.github.io/tutorials/odatav4/build/02/index-cdn.html).
 
-## `webapp/controller/App.controller.?s`
+## `webapp/controller/App.controller.ts/.js`
 
 ```ts
+// webapp/controller/App.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import MessageToast from "sap/m/MessageToast";
 import MessageBox from "sap/m/MessageBox";
@@ -91,6 +83,7 @@ export default class App extends Controller {
 ```
 
 ```js
+// webapp/controller/App.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast", "sap/m/MessageBox", "sap/ui/model/json/JSONModel"], function (Controller, MessageToast, MessageBox, JSONModel) {
   "use strict";
 
@@ -234,7 +227,7 @@ We search for the following mock server requests:
 
 **Related Information**
 
-[Bindings](../04_Essentials/bindings-54e0ddf.md "Bindings connect SAPUI5 view elements to model data, allowing changes in the model to be reflected in the view element and vice versa.")
+[Bindings](https://sdk.openui5.org/topic/54e0ddf "Bindings connect SAPUI5 view elements to model data, allowing changes in the model to be reflected in the view element and vice versa.")
 
 [API Reference: `sap.ui.model.odata.v4.ODataMetaModel`](https://ui5.sap.com/#/api/sap.ui.model.odata.v4.ODataMetaModel)
 

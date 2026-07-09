@@ -1,16 +1,6 @@
 # Step 3: Automatic Data Type Detection
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 3](https://ui5.github.io/tutorials/odatav4/odatav4-step-03.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 3](https://ui5.github.io/tutorials/odatav4/odatav4-step-03-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 3](https://ui5.github.io/tutorials/odatav4/odatav4-step-03.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 3](https://ui5.github.io/tutorials/odatav4/odatav4-step-03-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 In this step, we use the automatic data type detection of the OData V4 model to parse, validate, and format user entries. The service metadata contains type information for the properties of each entity.
 
@@ -20,13 +10,13 @@ The OData V4 Model utilizes this information to compute the corresponding SAPUI5
 
 **Input does not match the underlying data type**
 
-![](assets/Tutorial_OData_V4_Step_3_8320fcf.png "Input does not match the underlying data type")
+![Input does not match the underlying data type](assets/Tutorial_OData_V4_Step_3_8320fcf.png "Input does not match the underlying data type")
 
 ## Coding
 
 You can view this step live: [🔗 Live Preview of Step 3](https://ui5.github.io/tutorials/odatav4/build/03/index-cdn.html).
 
-## `webapp/manifest.?s`on
+## `webapp/manifest.ts/.js`on
 
 ```json
 {
@@ -92,7 +82,7 @@ To make the *User Name* optional, we remove the parameter `Nullable="false"` fro
 
 **Related Information**
 
-[Type Determination](../04_Essentials/type-determination-53cdd55.md "")
+[Type Determination](https://sdk.openui5.org/topic/53cdd55 "")
 
 [API Reference: `sap.ui.model.odata.type`](https://ui5.sap.com/#/api/sap.ui.model.odata.type)
 

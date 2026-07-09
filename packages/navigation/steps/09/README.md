@@ -1,5 +1,3 @@
-<!-- loiob8561ff6f4c34c85a91ed06d20814cd3 -->
-
 # Step 9: Allow Bookmarkable Tabs with Optional Query Parameters
 
 The `resume` view contains four tabs as we have seen in the previous step of this tutorial. However, when the user navigates to the `resume` page, only the first tab is displayed initially. Navigating directly to a specific tab or bookmarking a tab is not yet supported in our current app.
@@ -116,9 +114,10 @@ The `:?query:` parameter starts and ends with `:`, which means that it is option
 
 To update the currently selected tab in the URL we listen to the select event of the `IconTabBar` by setting `select=".onTabSelect"` in the resume view. The `selectedKey` is bound to a view model. This allows to easily change the `selectedKey` according to the selected tab in the URL.
 
-## `webapp/controller/employee/Resume.controller.?s`
+## `webapp/controller/employee/Resume.controller.ts/.js`
 
 ```ts
+// webapp/controller/employee/Resume.controller.ts
 import { IconTabBar$SelectEvent } from "sap/m/IconTabBar";
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 import { Route$MatchedEvent } from "sap/ui/core/routing/Route";
@@ -195,6 +194,7 @@ export default class Resume extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/Resume.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController", "sap/ui/model/json/JSONModel"], function (BaseController, JSONModel) {
 	"use strict";
 

@@ -8,7 +8,7 @@ Now we use a shell control as container for our app and use it as our new root e
 
 ### Preview
   
-![](assets/loio0becf3ee81f5486a864e3b39ba036402_LowRes.png "The app is now run in a shall that limits the app width")
+![The app is now run in a shall that limits the app width](assets/loio0becf3ee81f5486a864e3b39ba036402_LowRes.png "The app is now run in a shall that limits the app width")
 
 <sup>*The app is now run in a shell that limits the app width*</sup>
 
@@ -18,17 +18,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 12](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-12.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 12](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-12-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 12](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-12.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 12](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-12-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/view/App.view.xml

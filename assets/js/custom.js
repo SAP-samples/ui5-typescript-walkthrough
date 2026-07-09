@@ -191,9 +191,9 @@ function replaceFileExtensions(lang) {
 	// iterate over each text node
 	while (node) {
 		let nextNode = walker.nextNode();
-		if (node.nodeValue.includes(".?s")) {
+		if (node.nodeValue.includes(".ts/.js")) {
 			const temp = document.createElement("div");
-			temp.innerHTML = node.nodeValue.replace(/\.\?s/g, replacement);
+			temp.innerHTML = node.nodeValue.replace(/\.ts\/\.js/g, replacement);
 
 			const fragment = document.createDocumentFragment();
 			while (temp.firstChild) {
@@ -201,8 +201,8 @@ function replaceFileExtensions(lang) {
 			}
 
 			node.parentNode.replaceChild(fragment, node);
-		} else if (node.nodeValue.includes(".\\?s")) {
-			node.nodeValue = node.nodeValue.replace(/\.\\\?s/g, ".?s");
+		} else if (node.nodeValue.includes(".\\ts\\/\\.js")) {
+			node.nodeValue = node.nodeValue.replace(/\.\\ts\\\/\\\.js/g, ".ts/.js");
 		}
 		node = nextNode;
 	}

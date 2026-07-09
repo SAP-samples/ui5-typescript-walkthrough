@@ -13,13 +13,13 @@ Actually, every feature that we added to the app so far, would require a separat
 
 ### Preview  
   
-![](assets/loio0d29491d96574cfe8d8158d60a0a32e2_LowRes.png "A unit test for our formatters is now available")
+![A unit test for our formatters is now available](assets/loio0d29491d96574cfe8d8158d60a0a32e2_LowRes.png "A unit test for our formatters is now available")
 
 <sup>*A unit test for our formatters is now available*</sup>
 
 We add a new folder `unit` under the `test` folder and a `model` subfolder where we will place our formatter unit test. The folder structure matches the app structure to easily find the corresponding unit tests.
   
-![](assets/loio1b5613ac3ab94757af2c7823039222a9_LowRes.png "Folder Structure for this Step")
+![Folder Structure for this Step](assets/loio1b5613ac3ab94757af2c7823039222a9_LowRes.png "Folder Structure for this Step")
 <sup>*Folder Structure for this Step*</sup>
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 27](https://ui5.github.io/tutorials/walkthrough/build/27/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/tutorial/walkthrough/testsuite.cdn.qunit&test=unit/unitTests).
@@ -28,22 +28,12 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 27](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-27.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 27](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-27-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 27](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-27.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 27](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-27-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/test/unit/model/formatter.?s \(New\)
+### webapp/test/unit/model/formatter.ts/.js \(New\)
 
-We create a new `formatter.?s` file under `webapp/test/unit/model` where the unit test for the custom formatter is implemented. The formatter function that we want to test is from the `formatter.ts` file located in the `webapp/model` folder.
+We create a new `formatter.ts/.js` file under `webapp/test/unit/model` where the unit test for the custom formatter is implemented. The formatter function that we want to test is from the `formatter.ts` file located in the `webapp/model` folder.
 
 The new formatter file just contains one QUnit module for our formatter function and one unit test for the formatter function. In the implementation of the `statusText` function that we created in Step 23, we use the translated texts when calling the formatter. As we do not want to test the OpenUI5 binding functionality, we just use text in the test instead of a `ResourceBundle`.
 
@@ -53,6 +43,7 @@ Finally, we perform our assertions. We check each branch of the formatter logic 
 > Test code needs to import the modules under test (i.e. productive code) using their full namespace (in our case `ui5/tutorial/walkthrough/`), rather than using relative paths. This is because the test code uses a different namespace (`test-resources/ui5/tutorial/walkthrough/`).
 
 ```ts
+// webapp/test/unit/model/formatter.ts
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import Controller from "sap/ui/core/mvc/Controller";
 import formatter from "ui5/tutorial/walkthrough/model/formatter";
@@ -91,6 +82,7 @@ QUnit.test("Should return the translated texts", (assert) => {
 ```
 
 ```js
+// webapp/test/unit/model/formatter.js
 sap.ui.define(["sap/ui/model/resource/ResourceModel", "ui5/tutorial/walkthrough/model/formatter"], function (ResourceModel, formatter) {
   "use strict";
 
@@ -124,19 +116,21 @@ sap.ui.define(["sap/ui/model/resource/ResourceModel", "ui5/tutorial/walkthrough/
 
 ```
 
-### webapp/test/unit/unitTests.qunit.?s \(New\)
+### webapp/test/unit/unitTests.qunit.ts/.js \(New\)
 
-We create a new `unitTests.qunit.?s` file under `webapp/test/unit/`.
+We create a new `unitTests.qunit.ts/.js` file under `webapp/test/unit/`.
 This module will serve as the entry point for all our unit tests. It will be referenced in the test suite that we will set up later on.
 
-Inside the `unitTests.qunit.?s` file, we import the unit test for the custom formatter. This ensures that any tests related to the custom formatter functionality will be included when running our unit tests.
+Inside the `unitTests.qunit.ts/.js` file, we import the unit test for the custom formatter. This ensures that any tests related to the custom formatter functionality will be included when running our unit tests.
 
 ```ts
+// webapp/test/unit/unitTests.qunit.ts
 import "./model/formatter";
 
 ```
 
 ```js
+// webapp/test/unit/unitTests.qunit.js
 sap.ui.define(["./model/formatter"], function (___model_formatter) {
 	"use strict";
 });
@@ -187,6 +181,7 @@ The previously created generic `Test.qunit.html` file is referenced as the test 
 For more information, read [Test Starter - Concept and Basic Setup](https://sdk.openui5.org/#/topic/22f50c0f0b104bf3ba84620880793d3f).
 
 ```ts
+// webapp/test/testsuite.qunit.ts
 import type {SuiteConfiguration} from "sap/ui/test/starter/config";
 export default {
 	name: "QUnit test suite for UI5 TypeScript Walkthrough",
@@ -214,6 +209,7 @@ export default {
 ```
 
 ```js
+// webapp/test/testsuite.qunit.js
 sap.ui.define([], function () {
 	"use strict";
 

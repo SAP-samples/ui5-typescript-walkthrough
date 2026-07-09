@@ -8,7 +8,7 @@ We now configure the visibility and properties of controls based on the device t
 
 ### Preview
 
-![](assets/loio0b0d57e04e574d7fbc4b10395e6cb260_LowRes.png "On phone devices, the panel is collapsed to save screen space and a button is hidden")
+![On phone devices, the panel is collapsed to save screen space and a button is hidden](assets/loio0b0d57e04e574d7fbc4b10395e6cb260_LowRes.png "On phone devices, the panel is collapsed to save screen space and a button is hidden")
 
 <sup>*On phone devices, the panel is collapsed to save screen space and a button is hidden*</sup>
 
@@ -17,20 +17,10 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 ***
 
 ### Coding
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 35](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-35.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 35](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-35-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 35](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-35.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 35](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-35-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/Component.?s
+### webapp/Component.ts/.js
 
 In the `app` component we import the `Device` module from the `sap.ui` namespace and initialize the device model in the `init` method. We can simply pass the loaded dependency `Device` to the constructor function of the JSONModel. This will make most properties of the OpenUI5 device API available as a JSON model. The model is then set on the component as a named model so that we can reference it in data binding.
 
@@ -38,6 +28,7 @@ In the `app` component we import the `Device` module from the `sap.ui` namespace
 > We have to set the binding mode to `OneWay` as the device model is read-only and we want to avoid changing the model accidentally when we bind properties of a control to it. By default, models in OpenUI5 are bidirectional \(`TwoWay`\). When the property changes, the bound model value is updated as well.
 
 ```ts
+// webapp/Component.ts
 import UIComponent from "sap/ui/core/UIComponent";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import Device from "sap/ui/Device";
@@ -76,6 +67,7 @@ export default class Component extends UIComponent {
 ```
 
 ```js
+// webapp/Component.js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel", "sap/ui/Device"], function (UIComponent, JSONModel, Device) {
 	"use strict";
 
@@ -157,11 +149,12 @@ The device API of OpenUI5 offers more functionality to detect various device-spe
 > :info:
 > The `sap.ui.Device` API detects the device type \(Phone, Tablet, Desktop\) based on the user agent and many other properties of the device. Therefore simply reducing the screen size will not change the device type. To test this feature, you will have to enable device emulation in your browser or open it on a real device.
 
-### webapp/controller/Detail.controller.?s
+### webapp/controller/Detail.controller.ts/.js
 
 In the `Detail` controller we simply add the view model with our currency definition to display the number properly. It is the same code as in the `InvoiceList` controller file.
 
 ```ts
+// webapp/controller/Detail.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import Route, { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 import History from "sap/ui/core/routing/History";
@@ -192,6 +185,7 @@ export default class Detail extends Controller {
 ```
 
 ```js
+// webapp/controller/Detail.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/m/MessageToast", "sap/ui/model/json/JSONModel", "sap/ui/core/UIComponent"], function (Controller, History, MessageToast, JSONModel, UIComponent) {
 	"use strict";
 

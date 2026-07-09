@@ -9,7 +9,7 @@ Now we extend our minimalist HTML page to a basic app with a view and a controll
 ### Preview
 
 
-![](assets/loio240ef5357d7f4d36955092cdaf1884a2_LowRes.png "The browser shows a Steady button in an app")
+![The browser shows a Steady button in an app](assets/loio240ef5357d7f4d36955092cdaf1884a2_LowRes.png "The browser shows a Steady button in an app")
 
 <sup>*The browser shows a Steady button in an app*</sup>
 
@@ -19,27 +19,18 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 2](https://ui5.github.io/tutorials/quickstart-step-02.zip). 
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 2](https://ui5.github.io/tutorials/quickstart-step-02-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 2](https://ui5.github.io/tutorials/quickstart-step-02.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 2](https://ui5.github.io/tutorials/quickstart-step-02-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 
-### webapp/index.?s
+### webapp/index.ts/.js
 
 Now we replace most of the code in this file: We remove the inline button from the previous step, and introduce a proper XML view to separate the presentation from the controller logic. We prefix the view name `ui5.tutorial.quickstart.App` with our newly defined namespace. The view is loaded asynchronously.
 
 Similar to the step before, the view is placed in the element with the `content` ID after it has finished loading.
 
 ```ts
+// webapp/index.ts
 import XMLView from "sap/ui/core/mvc/XMLView";
 
 XMLView.create({
@@ -47,6 +38,7 @@ XMLView.create({
 }).then((oView) => oView.placeAt("content"));
 ```
 ```js
+// webapp/index.js
 sap.ui.define([
 	"sap/ui/core/mvc/XMLView"
 ], (XMLView) => {
@@ -89,6 +81,7 @@ We outsource the controller logic to an app controller. The `.onPress` event now
 In our controller, we load the `Controller` base class and extend it to define the behavior of our app. We also add the event handler for our button. The `MessageToast` is also loaded as a dependency. When the button is pressed, we now display a "Hello App" message.
 
 ```ts
+// webapp/App.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import MessageToast from "sap/m/MessageToast";
 
@@ -99,6 +92,7 @@ export default class App extends Controller {
 }
 ```
 ```js
+// webapp/App.controller.js
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast"

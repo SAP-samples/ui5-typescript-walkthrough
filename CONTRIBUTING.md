@@ -43,11 +43,11 @@ Readers of the tutorial can freely switch the programming language of code snipp
 Main features of the two-language support are:
 1. Content meant only for *one* of the programming languages can be hidden in the other by enclosing it in a specific block.
 2. Two adjacent code sections in different languages are automatically converted to a tab container which allows switching between languages.
-3. File extensions writen as `.?s` appear automatically as `.js` or `.ts` depending on the current language.
+3. File extensions writen as `.ts/.js` appear automatically as `.js` or `.ts` depending on the current language.
 
 ### Limitations
 
-The feature 3. above does not work inside code blocks (yet).
+Feature 3 above (`.ts/.js` extension substitution) does not apply inside code blocks. That is intentional: inside a code fence the fence itself already carries the language, and each ts/js fence pair also starts with a first-line path comment naming the concrete file (see *Path comments in code fences* below). No further substitution is needed there.
 
 
 ### Running the preview/dev server
@@ -106,6 +106,25 @@ The `markdown="1"` part is required for markdown parsing within HTML and the `<s
 </details>
 
 
+#### 1a. Inline TS/JS link pairs (`<span>`)
+
+The `<details>` pattern above is for *block-level* content (a paragraph, a list, a code block). For a paired inline element that differs only by language — the canonical case is the download-solution link — use adjacent `<span>` tags instead:
+
+```md
+<span class="ts-only">[📥 Download Solution](…step-NN.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download Solution](…step-NN-js.zip)<span class="lang-suffix"> (JS)</span></span>
+```
+
+Rules:
+
+- `<span>` is inline; do **not** add `markdown="1"` (that attribute is only meaningful on block-level HTML).
+- The nested `<span class="lang-suffix"> (TS)</span>` / `<span class="lang-suffix"> (JS)</span>` sits *outside* the markdown link (`](…)`) but *inside* the outer `.ts-only` / `.js-only` span. Placing the suffix outside the link text avoids nested-HTML-in-link-text quirks with both kramdown (GitHub Pages) and showdown (dev server).
+- The CSS in [assets/css/custom.css](assets/css/custom.css) hides `.ts-only` / `.js-only` on any element based on the active language, and `.lang-suffix { display: none }` drops the `(TS)` / `(JS)` marker on the rendered site. Result: both links visible in raw markdown with distinct labels; only one visible on the rendered site, without the language suffix.
+
+##### Resulting Appearance<span class="hidden"> in markdown view (both links visible; on the rendered site only the current-language one shows and without the (TS)/(JS) suffix)</span>
+
+<span class="ts-only">[📥 Download Solution](…step-NN.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download Solution](…step-NN-js.zip)<span class="lang-suffix"> (JS)</span></span>
+
+
 #### 2. Switchable code blocks in both languages
 
 When a piece of code should be displayed in either JS or TS, whatever is current, then simply create two adjacent markdown-fenced code blocks. They are automatically recognized as language-specific alternatives.
@@ -135,18 +154,39 @@ const i = 0;
 const i: number = 0;
 ```
 
+##### Path comments in code fences
+
+Every adjacent ts/js code-fence pair whose content is real source code should start with a first-line comment naming the concrete file. This makes the raw markdown legible to readers and to AI tools that index snippets independently of surrounding headings — each fence carries the filename it belongs to, without duplicating the surrounding prose.
+
+Use the comment syntax that matches the fence language:
+
+```md
+
+    ```ts
+    // webapp/controller/App.controller.ts
+    …
+    ```
+
+    ```js
+    // webapp/controller/App.controller.js
+    …
+    ```
+```
+
+For other fence languages that appear as ts/js pairs elsewhere: `<!-- path -->` for `xml` / `html`, `# path` for `ini` / `properties`. Fences used for folder-tree diagrams (`text` or unlabeled) are exempt.
+
 #### 3. File Extensions (`.js/.ts`)
 
-When the text or a section heading mentions the name of a file that will be JavaScript or TypeScript, depending on the language, then use the file extension `.\?s`. It will automatically be switched to the current language.
+When the text or a section heading mentions the name of a file that will be JavaScript or TypeScript, depending on the language, then use the file extension `.\ts\/\.js`. It will automatically be switched to the current language.
 
 Example:
 ```md
-In this step you create the file `Example.controller.\?s`.
+In this step you create the file `Example.controller.\ts\/\.js`.
 ```
 
 ##### Resulting Appearance<span class="hidden"> in markdown view (here the extension is not replaced, the replacement only happens in the dev server and in GitHub Pages)</span>
 
-In this step you create the file `Example.controller.?s`.
+In this step you create the file `Example.controller.ts/.js`.
 
 ### Converting the JS Code to TypeScript
 

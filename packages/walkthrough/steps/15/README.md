@@ -8,7 +8,7 @@ Our panel content is getting more and more complex and now it is time to move th
 
 ### Preview
   
-![](assets/loiof3724d2f97e94a78b27d8ab01ff9c37d_LowRes.png "The panel content is now refactored to a separate view \(No visual changes to last step\)")
+![The panel content is now refactored to a separate view \(No visual changes to last step\)](assets/loiof3724d2f97e94a78b27d8ab01ff9c37d_LowRes.png "The panel content is now refactored to a separate view \(No visual changes to last step\)")
 
 <sup>*The panel content is now refactored to a separate view \(No visual changes to last step\)*</sup>
 
@@ -19,24 +19,15 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 15](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-15.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 15](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-15-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 15](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-15.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 15](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-15-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/controller/HelloPanel.controller.?s \(New\)
+### webapp/controller/HelloPanel.controller.ts/.js \(New\)
 
-In folder `webapp/controller` we create a new `HelloPanel.controller.?s` file and move the method `onShowHello` of the app controller to it, so we get a reusable asset.
+In folder `webapp/controller` we create a new `HelloPanel.controller.ts/.js` file and move the method `onShowHello` of the app controller to it, so we get a reusable asset.
 
 ```ts
+// webapp/controller/HelloPanel.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import MessageToast from "sap/m/MessageToast";
 import JSONModel from "sap/ui/model/json/JSONModel";
@@ -62,6 +53,7 @@ export default class HelloPanel extends Controller {
 ```
 
 ```js
+// webapp/controller/HelloPanel.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Controller, MessageToast) {
 	"use strict";
 
@@ -135,11 +127,12 @@ In the App view, we remove the panel control and its content and put the `XMLVie
 </mvc:View>
 ```
 
-### webapp/controller/App.controller.?s
+### webapp/controller/App.controller.ts/.js
 
 We remove the `onShowHello` method from the App controller, as this is not needed anymore.
 
 ```ts
+// webapp/controller/App.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 /**
  * @namespace ui5.tutorial.walkthrough.controller
@@ -151,6 +144,7 @@ export default class App extends Controller {
 ```
 
 ```js
+// webapp/controller/App.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 	"use strict";
 

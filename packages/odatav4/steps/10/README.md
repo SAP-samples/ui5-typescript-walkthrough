@@ -1,16 +1,6 @@
 # Step 10: Enable Data Reuse
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 10](https://ui5.github.io/tutorials/odatav4/odatav4-step-10.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 10](https://ui5.github.io/tutorials/odatav4/odatav4-step-10-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 10](https://ui5.github.io/tutorials/odatav4/odatav4-step-10.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 10](https://ui5.github.io/tutorials/odatav4/odatav4-step-10-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 In this step we avoid unnecessary back-end requests by preventing the destruction of data shown in the detail area when sorting or filtering the list.
 
@@ -24,9 +14,10 @@ In this step we avoid unnecessary back-end requests by preventing the destructio
 
 You can view this step live: [🔗 Live Preview of Step 10](https://ui5.github.io/tutorials/odatav4/build/10/index-cdn.html).
 
-## `webapp/controller/App.controller.?s`
+## `webapp/controller/App.controller.ts/.js`
 
 ```ts
+// webapp/controller/App.controller.ts
 ...
 		onMessageBindingChange(oEvent) {
 			...
@@ -72,6 +63,7 @@ You can view this step live: [🔗 Live Preview of Step 10](https://ui5.github.i
 ```
 
 ```js
+// webapp/controller/App.controller.js
 ...
 		onMessageBindingChange : function (oEvent) {
 			...
@@ -124,7 +116,7 @@ You can use the `Context#setKeepAlive` method to prevent the destruction of info
 
 **Related Information**
 
-[Extending the Lifetime of a Context that is not Used Exclusively by a Table Collection](../04_Essentials/data-reuse-648e360.md#loio648e360fa22d46248ca783dc6eb44531__section_ELC)
+[Extending the Lifetime of a Context that is not Used Exclusively by a Table Collection](https://sdk.openui5.org/topic/648e360#loio648e360fa22d46248ca783dc6eb44531__section_ELC)
 
 ***
 

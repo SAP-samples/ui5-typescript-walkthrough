@@ -11,7 +11,7 @@ This system is the so-called back-end system that we will now simulate with anOp
 ### Preview
 
 
-![](assets/loiofe1403346ce9499f8bb102beaa4986d5_LowRes.png "The list of invoices is now served by the Mock Server")
+![The list of invoices is now served by the Mock Server](assets/loiofe1403346ce9499f8bb102beaa4986d5_LowRes.png "The list of invoices is now served by the Mock Server")
 
 <sup>*The list of invoices is now served by the Mock Server*</sup>
 
@@ -19,7 +19,7 @@ The folder structure of our app project is clearly separating test and productiv
 
 The new `localService` folder contains a `metadata.xml` service description file for OData, the `mockserver.js` file that simulates a real service with local data, and the `mockdata` subfolder that contains the local test data \(`Invoices.json`\).
 
-![](assets/loio7a5e2b02d72d40d388f5e601d7de74df_LowRes.png "Folder Structure for this Step")
+![Folder Structure for this Step](assets/loio7a5e2b02d72d40d388f5e601d7de74df_LowRes.png "Folder Structure for this Step")
 
 <sup>*Folder Structure for this Step*</sup>
 
@@ -28,17 +28,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 ***
 
 ### Coding
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 26](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-26.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 26](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-26-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 26](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-26.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 26](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-26-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/localService/metadata.xml \(New\)
@@ -137,9 +127,9 @@ In folder `localService` we create the new folder `mockdata`. The mock server de
 This file will automatically be found and read by the mock server.
 ***
 
-### webapp/localService/mockserver.?s \(New\)
+### webapp/localService/mockserver.ts/.js \(New\)
 
-Now we can write the code to initialize the mock server which will then simulate any OData request to the real Northwind server. For this we add a new file `mockserver.?s` to the `localService` folder.
+Now we can write the code to initialize the mock server which will then simulate any OData request to the real Northwind server. For this we add a new file `mockserver.ts/.js` to the `localService` folder.
 
 We import the standard OpenUI5 `MockServer` module and create a helper object that defines an `init` method to start the server. The `init` method creates a `MockServer` instance with the same URL as the real service calls. The URL in the `rootUri` configuration parameter has to point to the same URL as defined in the `uri` property of the data source in the `manifest.json` descriptor file. In the `manifest.json`, OpenUI5 automatically interprets a relative URL as being relative to the application namespace. In the TypeScript code, you can ensure this by using the `sap.ui.require.toUrl` method. The `sap/ui/core/util/MockServer` then catches every request to the real service and returns a response. 
 
@@ -150,6 +140,7 @@ To simulate a service, we can simply call the `simulate` method on the `MockServ
 Finally, we call the `start` method on the `MockServer`. From this point, each request to the URL pattern `rootUri` will be processed by the `MockServer`.
 
 ```ts
+// webapp/localService/mockserver.ts
 import MockServer from "sap/ui/core/util/MockServer";
 
 export default {
@@ -179,6 +170,7 @@ export default {
 ```
 
 ```js
+// webapp/localService/mockserver.js
 sap.ui.define(["sap/ui/core/util/MockServer"], function (MockServer) {
 	"use strict";
 
@@ -208,13 +200,14 @@ sap.ui.define(["sap/ui/core/util/MockServer"], function (MockServer) {
 
 ```
 
-### webapp/test/initMockServer.?s \(New\)
+### webapp/test/initMockServer.ts/.js \(New\)
 
-As a next step, we create a module that initializes our local `mockserver`. For this, we add the new `test` folder to our App folder where we place the new `initmockServer.?s` file.
+As a next step, we create a module that initializes our local `mockserver`. For this, we add the new `test` folder to our App folder where we place the new `initmockServer.ts/.js` file.
 
 First, we call the `init` method of our local `mockserver`, then we initialize the app component. 
 
 ```ts
+// webapp/test/initMockServer.ts
 import mockserver from "../localService/mockserver";
 
 // initialize the mock server
@@ -226,6 +219,7 @@ import("sap/ui/core/ComponentSupport");
 ```
 
 ```js
+// webapp/test/initMockServer.js
 sap.ui.define(["../localService/mockserver"], function (mockserver) {
 	"use strict";
 

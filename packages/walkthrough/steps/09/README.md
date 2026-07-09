@@ -13,45 +13,36 @@ By encapsulating our application as a component, we can seamlessly integrate it 
 
 ### Preview
 
-![](assets/loiocac9bcfa902c44c496d115acd7ee7376_LowRes.png "An input field and a description displaying the value of the input field (No visual changes to last step)")
+![An input field and a description displaying the value of the input field (No visual changes to last step)](assets/loiocac9bcfa902c44c496d115acd7ee7376_LowRes.png "An input field and a description displaying the value of the input field (No visual changes to last step)")
 
 <sup>*An input field and a description displaying the value of the input field \(No visual changes to last step\)*</sup>
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 9](https://ui5.github.io/tutorials/walkthrough/build/09/index-cdn.html).
 
-After this step your project structure will look like the figure below. We will create the `Component.?s` file now and modify the related files in the app.
+After this step your project structure will look like the figure below. We will create the `Component.ts/.js` file now and modify the related files in the app.
 
-![](assets/loio1e237a36972a44ac8522dd1a540ac062_LowRes.png "Folder Structure for this Step")
+![Folder Structure for this Step](assets/loio1e237a36972a44ac8522dd1a540ac062_LowRes.png "Folder Structure for this Step")
 
 <sup>*Folder Structure for this Step*</sup>
 
 ***
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 9](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-09.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 9](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-09-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 9](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-09.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 9](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-09-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/Component.?s \(New\)
+### webapp/Component.ts/.js \(New\)
 
-We navigate to the `webapp` folder and place the `Component.?s` file to it. This file is commonly referred to as the component controller. A component is organized in a unique namespace \(which is synonymous with the application namespace\). All required and optional resources of the component have to be organized in the namespace of the component.
+We navigate to the `webapp` folder and place the `Component.ts/.js` file to it. This file is commonly referred to as the component controller. A component is organized in a unique namespace \(which is synonymous with the application namespace\). All required and optional resources of the component have to be organized in the namespace of the component.
 
 We define the component by extending `sap/ui/core/UIComponent` and supplement the component with additional metadata. Within the `interfaces` settings, we specify that the component should implement the `sap/ui/core/IAsyncContentCreation` interface. This allows the component to be generated asynchronously, which in turn sets the component's rootView and router configuration to async.
 
 When the component is instantiated, OpenUI5 automatically calls the `init` function of the component. It's obligatory to make the super call to the `init` function of the base class in the overridden `init` method. In this section, we also instantiate our data model and the `i18n` model, similar to what we did earlier in the `onInit` function of our app controller (*Hint: besides the `bundleName` we also specifiy the `supportedLocales` with an empty string as value in an array and an empty `fallbackLocale` to ensure that just the default `messagebundle.properties` is loaded without a language suffix to avoid 404s during development!*).
 
-Finally we call the `createContent` hook method of the component. This method creates the content \(UI Control Tree\) of this component. Here, we create the view as we did in the `index.?s` file to set our app view as the root view of the component.
+Finally we call the `createContent` hook method of the component. This method creates the content \(UI Control Tree\) of this component. Here, we create the view as we did in the `index.ts/.js` file to set our app view as the root view of the component.
 
 ```ts
+// webapp/Component.ts
 import Control from "sap/ui/core/Control";
 import XMLView from "sap/ui/core/mvc/XMLView";
 import JSONModel from "sap/ui/model/json/JSONModel";
@@ -96,6 +87,7 @@ export default class Component extends UIComponent {
 ```
 
 ```js
+// webapp/Component.js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/core/mvc/XMLView", "sap/ui/model/json/JSONModel", "sap/ui/model/resource/ResourceModel"], function (UIComponent, XMLView, JSONModel, ResourceModel) {
 	"use strict";
 
@@ -139,11 +131,12 @@ Be aware that the models are set directly on the component and not on the root v
 
 ***
 
-### webapp/controller/App.controller.?s
+### webapp/controller/App.controller.ts/.js
 
 We delete the `onInit` function from the app controller; this is now done in the component controller. 
 
 ```ts
+// webapp/controller/App.controller.ts
 import MessageToast from "sap/m/MessageToast";
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
@@ -167,6 +160,7 @@ export default class AppController extends Controller {
 ```
 
 ```js
+// webapp/controller/App.controller.js
 sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller"], function (MessageToast, Controller) {
 	"use strict";
 
@@ -191,7 +185,7 @@ sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller"], function (Me
 ```
 ***
 
-#### webapp/index.?s
+#### webapp/index.ts/.js
 
 We'll replace the view with a UI component. To do this, we use a control called `ComponentContainer`. This control allows us to wrap a UI Component and place it in our HTML document. We configure this instance by providing the following options:
 
@@ -208,6 +202,7 @@ We'll replace the view with a UI component. To do this, we use a control called 
 Finally, we position our newly created `ComponentContainer` control within the HTML element with the id `content`.
 
 ```ts
+// webapp/index.ts
 import ComponentContainer from "sap/ui/core/ComponentContainer";
 
 new ComponentContainer({
@@ -223,6 +218,7 @@ new ComponentContainer({
 ```
 
 ```js
+// webapp/index.js
 sap.ui.define(["sap/ui/core/ComponentContainer"], function (ComponentContainer) {
   "use strict";
 
@@ -242,7 +238,7 @@ sap.ui.define(["sap/ui/core/ComponentContainer"], function (ComponentContainer) 
 
 ### Conventions
 
--   The component is named `Component.?s`.
+-   The component is named `Component.ts/.js`.
 
 -   Together with all UI assets of the app, the component is located in the `webapp` folder.
 

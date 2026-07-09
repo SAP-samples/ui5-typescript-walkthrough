@@ -9,7 +9,7 @@ In this step, we replace the text with a button and show the “Hello World” m
 ### Preview
 
 
-![](assets/loiocedfdf89b30643ddbfcab1fe50bfa892_LowRes.png "A Say Hello button is added")
+![A Say Hello button is added](assets/loiocedfdf89b30643ddbfcab1fe50bfa892_LowRes.png "A Say Hello button is added")
 
 <sup>*A Say Hello button is added*</sup>
 
@@ -19,26 +19,17 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 5](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-05.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 download step 5](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-05-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 5](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-05.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 5](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-05-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/controller/App.controller.?s \(New\)
+### webapp/controller/App.controller.ts/.js \(New\)
 First of all, we need a controller for our app view that defines how the view should react to user inputs, such as a button press event. 
 
-We create a new folder called `controller` inside the `webapp` folder. This folder will hold all our controller files. Inside the `controller` folder, we create a new file called `App.controller.?s`. We define the app controller in its own file by extending the OpenUI5-provided `sap/ui/core/mvc/Controller`. In the beginning, it holds only a single function called `onShowHello` that shows an alert with the static text "Hello World".
+We create a new folder called `controller` inside the `webapp` folder. This folder will hold all our controller files. Inside the `controller` folder, we create a new file called `App.controller.ts/.js`. We define the app controller in its own file by extending the OpenUI5-provided `sap/ui/core/mvc/Controller`. In the beginning, it holds only a single function called `onShowHello` that shows an alert with the static text "Hello World".
 
 
 ```ts
+// webapp/controller/App.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 
 /**
@@ -54,6 +45,7 @@ export default class AppController extends Controller {
 ```
 
 ```js
+// webapp/controller/App.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 	"use strict";
 
@@ -108,7 +100,7 @@ A view does not necessarily need an explicitly assigned controller. You do not h
 
 -   Event handlers are prefixed with `on`
 
--   Controller names always end with `*.controller.?s`
+-   Controller names always end with `*.controller.ts/.js`
 
 &nbsp;
 

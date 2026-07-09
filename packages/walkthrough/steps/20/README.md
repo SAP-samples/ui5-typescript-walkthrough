@@ -8,7 +8,7 @@ The list of invoices is already looking nice, but what is an invoice without a p
 
 ### Preview
   
-![](assets/loiodc9e919119564ddab78b8d0550ecfa9b_LowRes.png "The list of invoices with prices and number units")
+![The list of invoices with prices and number units](assets/loiodc9e919119564ddab78b8d0550ecfa9b_LowRes.png "The list of invoices with prices and number units")
 
 <sup>*The list of invoices with prices and number units*</sup>
 
@@ -17,26 +17,17 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 20](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-20.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 20](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-20-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 20](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-20.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 20](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-20-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/controller/InvoiceList.controller.?s \(New\)
+### webapp/controller/InvoiceList.controller.ts/.js \(New\)
 
 We want to display in our list view the price in Euro. Since currency information isn't available in our backend data model, we'll handle the currency formatting within the application.
 
 We'll create a controller for the InvoiceList view and use a JSON model (`sap/ui/model/json/JSONModel`) to store the currency code. This model will contain a single property, `currency: "EUR"`, which will be used for formatting the prices in the view.
 
 ```ts
+// webapp/controller/InvoiceList.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
@@ -56,6 +47,7 @@ export default class App extends Controller {
 ```
 
 ```js
+// webapp/controller/InvoiceList.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel"], function (Controller, JSONModel) {
 	"use strict";
 

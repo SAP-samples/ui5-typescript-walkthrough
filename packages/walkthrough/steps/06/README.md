@@ -8,7 +8,7 @@ In OpenUI5, resources are often referred to as modules. In this step, we replace
 
 ### Preview
 
-![](assets/loio2f629a95211f49afa367b60d233fb390_LowRes.png "A message toast displays the &quot;Hello World&quot; message")
+![A message toast displays the &quot;Hello World&quot; message](assets/loio2f629a95211f49afa367b60d233fb390_LowRes.png "A message toast displays the &quot;Hello World&quot; message")
 
 <sup>*A message toast displays the "Hello World" message*</sup>
 
@@ -18,25 +18,16 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 6](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-06.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 6](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-06-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 6](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-06.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 6](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-06-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/controller/App.controller.?s
+### webapp/controller/App.controller.ts/.js
 
 We now replace the native `alert` function with the `show` method of the `sap.m.MessageToast` control of OpenUI5. 
 
 
 ```ts
+// webapp/controller/App.controller.ts
 import MessageToast from "sap/m/MessageToast";
 import Controller from "sap/ui/core/mvc/Controller";
 
@@ -52,6 +43,7 @@ export default class AppController extends Controller {
 ```
 
 ```js
+// webapp/controller/App.controller.js
 sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller"], function (MessageToast, Controller) {
 	"use strict";
 

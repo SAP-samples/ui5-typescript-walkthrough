@@ -1,5 +1,3 @@
-<!-- loiod9efab307ecc42b180b12cc8956e22d7 -->
-
 # Step 5: Display a Target Without Changing the Hash
 
 In this step, you will learn more about targets and how to display a target from the routing configuration manually.
@@ -38,9 +36,10 @@ You can view this step live: [🔗 Live Preview of Step 5](https://ui5.github.io
 
 We start by changing the `Button` control from the home view. When the button is pressed, the `onDisplayNotFound` handler is called.
 
-## `webapp/controller/Home.controller.?s`
+## `webapp/controller/Home.controller.ts/.js`
 
 ```ts
+// webapp/controller/Home.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 
 /**
@@ -56,6 +55,7 @@ export default class Home extends BaseController {
 ```
 
 ```js
+// webapp/controller/Home.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 
@@ -82,9 +82,10 @@ If you now call the app and press the *Display Not Found* button you see that th
 
 When pressing the app’s *Back* button, the `onNavBack` from the previous step is called. It detects that there is no previous hash and therefore tries to navigate to the `appHome` route again. The router is smart enough to detect that the current hash did not change and therefore skips the navigation to the route. Fortunately, there is an easy workaround for us. However, we need to touch the `Home` controller again.
 
-## `webapp/controller/Home.controller.?s` \(Changed Again\)
+## `webapp/controller/Home.controller.ts/.js` \(Changed Again\)
 
 ```ts
+// webapp/controller/Home.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 
 /**
@@ -102,6 +103,7 @@ export default class Home extends BaseController {
 ```
 
 ```js
+// webapp/controller/Home.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 
@@ -119,9 +121,10 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (B
 
 This time we pass on a data object as the second parameter for the display method which contains the name of the current target; the one from which we navigate to the `notFound` target. We decide to choose the key `fromTarget` but since it is a custom configuration object any other key would be fine as well.
 
-## `webapp/controller/NotFound.controller.?s`
+## `webapp/controller/NotFound.controller.ts/.js`
 
 ```ts
+// webapp/controller/NotFound.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 import Target, { Target$DisplayEvent } from "sap/ui/core/routing/Target";
 
@@ -159,6 +162,7 @@ export default class NotFound extends BaseController {
 ```
 
 ```js
+// webapp/controller/NotFound.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 
