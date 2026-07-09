@@ -11,7 +11,7 @@ In this step, we will use the OpenUI5 navigation features to load and show a sep
 ### Preview
   
   
-![](assets/loio94152a595fe24d45b12223e0abcccb9c_LowRes.png "A second page is added to display the invoice")
+![A second page is added to display the invoice](assets/loio94152a595fe24d45b12223e0abcccb9c_LowRes.png "A second page is added to display the invoice")
 
 <sup>*A second page is added to display the invoice*</sup>
 
@@ -22,17 +22,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 30](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-30.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 30](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-30-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 30](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-30.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 30](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-30-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/i18n/i18n.properties
@@ -181,11 +171,12 @@ The overview view is always shown when the hash is empty. The detail view is sho
 > :info:
 > The sequence of the routes in the routes definition is important. As soon as a pattern is matched, the following patterns are ignored. To prevent this for a specific route, you use the `greedy` parameter. If set to `true`, the route is always taken into account.
 
-### webapp/Component.?s
+### webapp/Component.ts/.js
 
 In the component initialization method, we now add a call to initialize the router. 
 
 ```ts
+// webapp/Component.ts
 import UIComponent from "sap/ui/core/UIComponent";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
@@ -218,6 +209,7 @@ export default class Component extends UIComponent {
 ```
 
 ```js
+// webapp/Component.js
 sap.ui.define(["sap/ui/core/UIComponent", "sap/ui/model/json/JSONModel"], function (UIComponent, JSONModel) {
 	"use strict";
 
@@ -255,11 +247,12 @@ Initializing the router will evaluate the current URL and load the corresponding
 
 ***
 
-### webapp/controller/InvoiceList.controller.?s
+### webapp/controller/InvoiceList.controller.ts/.js
 
 What is still missing is the event handler that performs a navigation to the detail page by clicking an item in the invoice list: To access the router instance for our app use the static method `getRouterFor()` on the `UIComponent` module. On the router we call the `navTo` method passing the pattern name we defined in our app descriptor for routing to the details page.
 
 ```ts
+// webapp/controller/InvoiceList.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import { SearchField$SearchEvent } from "sap/m/SearchField";
@@ -283,6 +276,7 @@ export default class App extends Controller {
 ```
 
 ```js
+// webapp/controller/InvoiceList.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/core/UIComponent"], function (Controller, JSONModel, Filter, FilterOperator, UIComponent) {
 	"use strict";
 

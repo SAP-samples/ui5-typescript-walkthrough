@@ -8,7 +8,7 @@ If we want to do a more complex logic for formatting properties of our data mode
 
 ### Preview
   
-![](assets/loio7aa185a90dd7495cb6ec30c96bc80a54_LowRes.png "A status is now displayed with a custom formatter")
+![A status is now displayed with a custom formatter](assets/loio7aa185a90dd7495cb6ec30c96bc80a54_LowRes.png "A status is now displayed with a custom formatter")
 
 <sup>*A status is now displayed with a custom formatter*</sup>
 
@@ -18,17 +18,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 22](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-22.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 22](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-22-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 22](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-22.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 22](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-22-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/i18n/i18n.properties
@@ -47,13 +37,14 @@ invoiceStatusB=In Progress
 invoiceStatusC=Done
 ```
 
-### webapp/model/formatter.?s \(New\)
+### webapp/model/formatter.ts/.js \(New\)
 
 We will create a formatter function to transform status codes into user-friendly text labels. 
 
-We create a file named `formatter.?s` within the `model` folder. This module contains the `statusText` function which takes a status code as input, retrieves the corresponding descriptive text from the resource bundle, and returns it. If no matching text is found in the resource bundle, or if the resource bundle can't be found, the function returns the original status code itself.
+We create a file named `formatter.ts/.js` within the `model` folder. This module contains the `statusText` function which takes a status code as input, retrieves the corresponding descriptive text from the resource bundle, and returns it. If no matching text is found in the resource bundle, or if the resource bundle can't be found, the function returns the original status code itself.
 
 ```ts
+// webapp/model/formatter.ts
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import Controller from "sap/ui/core/mvc/Controller";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
@@ -77,6 +68,7 @@ export default  {
 ```
 
 ```js
+// webapp/model/formatter.js
 sap.ui.define([], function () {
 	"use strict";
 

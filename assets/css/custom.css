@@ -37,6 +37,14 @@
     display: none;
 }
 
+/* Suffix like "(TS)" / "(JS)" attached to language-paired inline links
+   (e.g. download-solution links). Visible in raw markdown for readability,
+   hidden on the rendered site — the surrounding .ts-only / .js-only span
+   already disambiguates the language once one of the pair is displayed. */
+.lang-suffix {
+    display: none;
+}
+
 
 /* tabbed switchable language area */
 .code-couple-button {

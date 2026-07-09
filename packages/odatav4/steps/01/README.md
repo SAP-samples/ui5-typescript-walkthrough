@@ -8,29 +8,24 @@ The structure and data model created in this step will be used throughout this t
 
 **Initial app with a simple table**
 
-![](assets/Tutorial_OData_V4_Step1_Preview_9d0182f.png "Initial app with a simple table")
+![Initial app with a simple table](assets/Tutorial_OData_V4_Step1_Preview_9d0182f.png "Initial app with a simple table")
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 1](https://ui5.github.io/tutorials/odatav4/odatav4-step-01.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 1](https://ui5.github.io/tutorials/odatav4/odatav4-step-01-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 1](https://ui5.github.io/tutorials/odatav4/odatav4-step-01.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 1](https://ui5.github.io/tutorials/odatav4/odatav4-step-01-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ***
 
 ## Setup
 
-1.  To set up your project for this tutorial, download the files at [OData V4 - Step 1](https://ui5.github.io/tutorials/odatav4/odatav4-step-01.zip).
+The initial code for this step ships with the repository at [packages/odatav4/steps/01/](./). Open it and run:
 
-2.  Extract the downloaded `.zip` file at the desired location on your local machine.
-3.  Open a shell in the extracted folder and run `npm install`.
-4.  Run `npm start` to start the web server and to open a new browser window hosting your newly created `index.html`.
+```sh
+npm install
+npm start
+```
+
+This starts the local web server and opens a browser window hosting `index.html`.
+
+If you prefer to work outside the monorepo, download the standalone bundle at <span class="ts-only">[OData V4 - Step 1](https://ui5.github.io/tutorials/odatav4/odatav4-step-01.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[OData V4 - Step 1](https://ui5.github.io/tutorials/odatav4/odatav4-step-01-js.zip)<span class="lang-suffix"> (JS)</span></span>, extract it, and run the same two commands from the extracted folder.
 
 You should now have the following files:
 
@@ -38,22 +33,22 @@ You should now have the following files:
 
 ```text
 webapp/
-├── Component.?s
+├── Component.ts/.js
 ├── controller/
-│   └── App.controller.?s
+│   └── App.controller.ts/.js
 ├── i18n/
 │   └── i18n.properties
 ├── index-cdn.html
 ├── index.html
-├── initMockServer.?s
+├── initMockServer.ts/.js
 ├── localService/
 │   ├── metadata.xml
 │   ├── mockdata/
 │   │   └── people.json
-│   └── mockserver.?s
+│   └── mockserver.ts/.js
 ├── manifest.json
 ├── model/
-│   └── models.?s
+│   └── models.ts/.js
 └── view/
     └── App.view.xml
 ```
@@ -92,7 +87,7 @@ The `manifest.json` descriptor file contains the app configuration. In the `sap.
 > :note:
 > The mock server included in this tutorial is only meant to support the features needed in this tutorial. Currently, there is no "general-purpose mock server" for application development available with OData V4 \(like there is for OData V2\).
 
-The `mockserver.?s` file contains the implementation of the mock server. It is quite simple since the mock server is only used to simulate certain types of requests to the *TripPin* service.
+The `mockserver.ts/.js` file contains the implementation of the mock server. It is quite simple since the mock server is only used to simulate certain types of requests to the *TripPin* service.
 
 The `metadata.xml` file contains the service metadata that includes, for example, entity types and entity sets. Those define the possible requests as well as the structure of responses.
 
@@ -104,9 +99,9 @@ In this tutorial, we only use the entity type `Person` of the *TripPin* service.
 
 [*OData* Reference Services including *TripPin*](http://www.odata.org/odata-services/)
 
-[Bootstrapping: Loading and Initializing](../04_Essentials/bootstrapping-loading-and-initializing-a04b0d1.md "To use SAPUI5 features in your HTML page, you have to load and initialize the SAPUI5 library.")
+[Bootstrapping: Loading and Initializing](https://sdk.openui5.org/topic/a04b0d10fb494d1cb722b9e341b584ba.html "To use SAPUI5 features in your HTML page, you have to load and initialize the SAPUI5 library.")
 
-[Descriptor for Applications, Components, and Libraries \(manifest.json\)](../04_Essentials/descriptor-for-applications-components-and-libraries-manifest-json-be0cf40.md "The descriptor for applications, components, and libraries (in short: app descriptor) is inspired by the WebApplication Manifest concept introduced by the W3C. The descriptor provides a central, machine-readable, and easy-to-access location for storing metadata associated with an application, an application component, or a library.")
+[Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html "The descriptor for applications, components, and libraries (in short: app descriptor) is inspired by the WebApplication Manifest concept introduced by the W3C. The descriptor provides a central, machine-readable, and easy-to-access location for storing metadata associated with an application, an application component, or a library.")
 
 ***
 

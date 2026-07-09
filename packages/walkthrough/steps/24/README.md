@@ -9,7 +9,7 @@ To make our list of invoices even more user-friendly, we sort it alphabetically 
 ### Preview
   
 
-![](assets/loio33f71b44bb644d1fa2a0ab14f1fcc02a_LowRes.png "The list is now sorted and grouped by the shipping company")
+![The list is now sorted and grouped by the shipping company](assets/loio33f71b44bb644d1fa2a0ab14f1fcc02a_LowRes.png "The list is now sorted and grouped by the shipping company")
 
 <sup>*The list is now sorted and grouped by the shipping company*</sup>
 
@@ -19,17 +19,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 24](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-24.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 24](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-24-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 24](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-24.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 24](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-24-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/view/InvoiceList.view.xml

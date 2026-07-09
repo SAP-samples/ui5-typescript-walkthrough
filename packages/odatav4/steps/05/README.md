@@ -1,16 +1,6 @@
 # Step 5: Batch Groups
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 5](https://ui5.github.io/tutorials/odatav4/odatav4-step-05.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 5](https://ui5.github.io/tutorials/odatav4/odatav4-step-05-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 5](https://ui5.github.io/tutorials/odatav4/odatav4-step-05.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 5](https://ui5.github.io/tutorials/odatav4/odatav4-step-05-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 In this step, we have a closer look at batch groups. Batch groups are used to group multiple requests into one server request to improve the overall performance.
 
@@ -18,13 +8,13 @@ In this step, we have a closer look at batch groups. Batch groups are used to gr
 
 **No visual change compared to the last step**
 
-![](assets/Tutorial_OData_V4_Step_4_3ac4fcc.png "No visual change compared to the last step")
+![No visual change compared to the last step](assets/Tutorial_OData_V4_Step_4_3ac4fcc.png "No visual change compared to the last step")
 
 ## Coding
 
 You can view this step live: [🔗 Live Preview of Step 5](https://ui5.github.io/tutorials/odatav4/build/05/index-cdn.html).
 
-## `webapp/manifest.?s`on
+## `webapp/manifest.ts/.js`on
 
 ```json
 ...
@@ -55,9 +45,9 @@ A `$batch` request uses multipart MIME to put several requests into one. This ma
 
 **Related Information**
 
-[Batch Control](../04_Essentials/batch-control-74142a3.md "OData V4 allows you to group multiple operations into a single HTTP request payload, as described in the official OData V4 specification Part 1, Batch Requests (see the link under Related Information for more details).")
+[Batch Control](https://sdk.openui5.org/topic/74142a3 "OData V4 allows you to group multiple operations into a single HTTP request payload, as described in the official OData V4 specification Part 1, Batch Requests (see the link under Related Information for more details).")
 
-[Performance Aspects](../04_Essentials/performance-aspects-5a0d286.md "The OData V4 model offers the features described below which influence performance.")
+[Performance Aspects](https://sdk.openui5.org/topic/5a0d286 "The OData V4 model offers the features described below which influence performance.")
 
 ***
 

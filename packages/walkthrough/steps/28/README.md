@@ -13,13 +13,13 @@ We haven’t thought about testing our interaction with the app yet, so in this 
 
 ### Preview
 
-![](assets/loio250d5b92921d44a4b432cc0fade88cc9_LowRes.png "An OPA test opens the &quot;Hello&quot; dialog from step 16")
+![An OPA test opens the &quot;Hello&quot; dialog from step 16](assets/loio250d5b92921d44a4b432cc0fade88cc9_LowRes.png "An OPA test opens the &quot;Hello&quot; dialog from step 16")
 
 <sup>*An OPA test opens the "Hello" dialog from step 16*</sup>
 
 We add a new folder `integration` below the `test` folder, where we put our new test cases. Page objects that help structuring such integration tests are put in the `pages` subfolder that we also create now.
 
-![](assets/loio27e84d5bd72a485498564b92894869b5_LowRes.png "Folder Structure for this Step")
+![Folder Structure for this Step](assets/loio27e84d5bd72a485498564b92894869b5_LowRes.png "Folder Structure for this Step")
 <sup>*Folder Structure for this Step*</sup>
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 28](https://ui5.github.io/tutorials/walkthrough/build/28/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/tutorial/walkthrough/testsuite.cdn.qunit&test=integration/opaTests).
@@ -29,20 +29,10 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 ### Coding  
   
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 28](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-28.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 28](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-28-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 28](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-28.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 28](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-28-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/test/integration/pages/HelloPanelPage.?s \(New\)
+### webapp/test/integration/pages/HelloPanelPage.ts/.js \(New\)
 
 We create a new `HelloPanelPage.ts` file under `webapp/test/integration/pages`.
 
@@ -53,6 +43,7 @@ In the actions section of the page object we define a function to click the "Hel
 In the assertions section we define a `waitFor` statement that checks if a `sap.m.Dialog` control is existing in the DOM of the app. When the dialog has been found, the test is successful and we can immediately confirm by calling an `ok` statement with a meaningful message.
 
 ```ts
+// webapp/test/integration/pages/HelloPanelPage.ts
 import Opa5 from "sap/ui/test/Opa5";
 import Press from "sap/ui/test/actions/Press";
 
@@ -85,6 +76,7 @@ export default class HelloPanelPage extends Opa5 {
 ```
 
 ```js
+// webapp/test/integration/pages/HelloPanelPage.js
 sap.ui.define(["sap/ui/test/Opa5", "sap/ui/test/actions/Press"], function (Opa5, Press) {
   "use strict";
 
@@ -118,7 +110,7 @@ sap.ui.define(["sap/ui/test/Opa5", "sap/ui/test/actions/Press"], function (Opa5,
 
 ```
 
-### webapp/test/integration/NavigationJourney.?s \(New\)
+### webapp/test/integration/NavigationJourney.ts/.js \(New\)
 
 We create a new `NavigationJourney` file under `webapp/test/integration/`.
 
@@ -138,6 +130,7 @@ The function `opaTest` is the main aspect for defining integration tests with OP
 In our journey, we create a very simple test that starts the `MainPage` and load our app. Then, we carry out the the actions we defined in our `MainPage` and expect that they will be executed successfully. Finally, we shut down the page again by calling function `iTeardownMyApp` on the `MainPage`.
 
 ```ts
+// webapp/test/integration/NavigationJourney.ts
 import opaTest from "sap/ui/test/opaQunit";
 import HelloPanelPage from "./pages/HelloPanelPage";
 
@@ -167,6 +160,7 @@ opaTest("Should open the Hello dialog", function () {
 ```
 
 ```js
+// webapp/test/integration/NavigationJourney.js
 sap.ui.define(["sap/ui/test/opaQunit", "./pages/HelloPanelPage"], function (opaTest, HelloPanelPage) {
   "use strict";
 
@@ -195,28 +189,31 @@ sap.ui.define(["sap/ui/test/opaQunit", "./pages/HelloPanelPage"], function (opaT
 &nbsp;
 As you can see, the test case reads like a user story, we actually do not need the implementation of the methods yet to understand the meaning of the test case. This approach is called "Behavior Driven Development" or simply BDD and is popular in "Agile Software Development".
 
-### webapp/test/integration/opaTests.qunit.?s \(New\)
+### webapp/test/integration/opaTests.qunit.ts/.js \(New\)
 
-We create a new `opaTests.qunit.?s` file under `webapp/test/integration/`. 
+We create a new `opaTests.qunit.ts/.js` file under `webapp/test/integration/`. 
 This module imports our `NavigationJourney` and is the entrypoint for all integration tests in the project.
 
 ```ts
+// webapp/test/integration/opaTests.qunit.ts
 import "./NavigationJourney";
 
 ```
 
 ```js
+// webapp/test/integration/opaTests.qunit.js
 sap.ui.define(["./NavigationJourney"], function (___NavigationJourney) {
 	"use strict";
 });
 
 ```
 
-### webapp/test/testsuite.qunit.?s
+### webapp/test/testsuite.qunit.ts/.js
 
-Finally we reference the new `integration/opaTests.qunit.?s` in the `testsuite.qunit.?s` file. The `.qunit.?s` extension is omitted and will be added automatically during runtime.
+Finally we reference the new `integration/opaTests.qunit.ts/.js` in the `testsuite.qunit.ts/.js` file. The `.qunit.ts/.js` extension is omitted and will be added automatically during runtime.
 
 ```ts
+// webapp/test/testsuite.qunit.ts
 import type {SuiteConfiguration} from "sap/ui/test/starter/config";
 export default {
   // ...
@@ -233,6 +230,7 @@ export default {
 ```
 
 ```js
+// webapp/test/testsuite.qunit.js
 sap.ui.define([], function () {
 	"use strict";
 	//...

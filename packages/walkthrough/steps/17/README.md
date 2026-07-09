@@ -8,7 +8,7 @@ Now that we have integrated the dialog, it's time to add some user interaction. 
 
 ### Preview
   
-![](assets/loioc351bbd078824c43bf1758b0c3679cbd_LowRes.png "The dialog now has an &quot;OK&quot; button")
+![The dialog now has an &quot;OK&quot; button](assets/loioc351bbd078824c43bf1758b0c3679cbd_LowRes.png "The dialog now has an &quot;OK&quot; button")
 
 <sup>*The dialog now has an &quot;OK&quot; button to close the dialog*</sup>
 
@@ -17,24 +17,15 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 17](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-17.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 17](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-17-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 17](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-17.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 17](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-17-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
-### webapp/controller/HelloPanel.controller.?s
+### webapp/controller/HelloPanel.controller.ts/.js
 
 We add an `onCloseDialog` event handler function into the HelloPanel controller file that closes the dialog when triggered. To get the dialog instance we use the `byId` function and then call the `close` function of the dialog.
 
 ```ts
+// webapp/controller/HelloPanel.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import MessageToast from "sap/m/MessageToast";
 import JSONModel from "sap/ui/model/json/JSONModel";
@@ -69,6 +60,7 @@ export default class HelloPanel extends Controller {
 ```
 
 ```js
+// webapp/controller/HelloPanel.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Controller, MessageToast) {
 	"use strict";
 

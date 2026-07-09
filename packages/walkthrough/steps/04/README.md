@@ -10,7 +10,7 @@ When working with OpenUI5, we recommend the use of XML views, as this produces t
 ### Preview
 
 
-![](assets/loio05f6775a39d3409ea673f4acc3812142_LowRes.png "The &quot;Hello World&quot; text is now displayed by a OpenUI5 control  \(No visual changes to last step\)")
+![The &quot;Hello World&quot; text is now displayed by a OpenUI5 control  \(No visual changes to last step\)](assets/loio05f6775a39d3409ea673f4acc3812142_LowRes.png "The &quot;Hello World&quot; text is now displayed by a OpenUI5 control  \(No visual changes to last step\)")
 
 <sup>*The &quot;Hello World&quot; text is now displayed by an OpenUI5 control \(No visual changes to last step\)*</sup>
 
@@ -20,17 +20,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 4](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-04.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 4](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-04-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 4](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-04.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 4](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-04-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/view/App.view.xml \(New\)
@@ -57,11 +47,12 @@ We have created an XML view that displays a text control with the text "Hello Wo
 
 ***
 
-### webapp/index.?s
+### webapp/index.ts/.js
 
-As a next step, we are going to replace the `sap/m/Text` control in our `index.?s` file with the app view that we've just created. To do this, we utilize the `XMLView.create` function, which is a part of the `sap/ui/core/mvc/View` module. This function needs a `viewName` property, which indicates the resource that needs to be loaded. The `viewName` is a combination of the namespace defined in the bootstrap and the path to the app view, but without the ".view.xml" extension. In addition, we set the `id` property to "app". Providing a stable ID is beneficial as it offers an easy and consistent way to identify and refer to specific views and elements in your code, thus helping to keep your code organized.
+As a next step, we are going to replace the `sap/m/Text` control in our `index.ts/.js` file with the app view that we've just created. To do this, we utilize the `XMLView.create` function, which is a part of the `sap/ui/core/mvc/View` module. This function needs a `viewName` property, which indicates the resource that needs to be loaded. The `viewName` is a combination of the namespace defined in the bootstrap and the path to the app view, but without the ".view.xml" extension. In addition, we set the `id` property to "app". Providing a stable ID is beneficial as it offers an easy and consistent way to identify and refer to specific views and elements in your code, thus helping to keep your code organized.
 
 ```ts
+// webapp/index.ts
 import XMLView from "sap/ui/core/mvc/XMLView";
 
 XMLView.create({
@@ -74,6 +65,7 @@ XMLView.create({
 ```
 
 ```js
+// webapp/index.js
 sap.ui.define(["sap/ui/core/mvc/XMLView"], function (XMLView) {
 	"use strict";
 

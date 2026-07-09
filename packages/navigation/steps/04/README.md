@@ -1,5 +1,3 @@
-<!-- loio66670b0aab3948469d5cc8276113e9ea -->
-
 # Step 4: Add a *Back* Button to *Not Found* Page
 
 When we are on the *Not Found* page because of an invalid hash, we want to get back to our app to select another page. Therefore, we will add a *Back* button to the `NotFound` view and make sure that the user gets redirected to either the previous page or the overview page when the *Back* button is pressed.
@@ -15,10 +13,10 @@ When we are on the *Not Found* page because of an invalid hash, we want to get b
 ```text
 webapp/
 ├── controller/
-│   ├── App.controller.?s
-│   ├── BaseController.?s
-│   ├── Home.controller.?s
-│   └── NotFound.controller.?s
+│   ├── App.controller.ts/.js
+│   ├── BaseController.ts/.js
+│   ├── Home.controller.ts/.js
+│   └── NotFound.controller.ts/.js
 ├── i18n/
 │   └── i18n.properties
 ├── localService/
@@ -26,14 +24,14 @@ webapp/
 │   │   ├── Employees.json
 │   │   └── Resumes.json
 │   ├── metadata.xml
-│   └── mockserver.?s
+│   └── mockserver.ts/.js
 ├── view/
 │   ├── App.view.xml
 │   ├── Home.view.xml
 │   └── NotFound.view.xml
-├── Component.?s
+├── Component.ts/.js
 ├── index.html
-├── initMockServer.?s
+├── initMockServer.ts/.js
 └── manifest.json
 ```
 
@@ -67,9 +65,10 @@ You can view this step live: [🔗 Live Preview of Step 4](https://ui5.github.io
 
 In the `NotFound` view, we set the property `showNavButton` of the `Page` control to `true` which automatically displays the *Back* button. We also add an event handler function `onNavBack` to the `navButtonPress` event of the control. The `onNavBack` function will handle the actual back navigation. We could directly add this function to the `NotFound` view’s controller. However, we are smart enough to anticipate that we might need the same handler function for different views. DRY \(“Don’t Repeat Yourself”\) is the right approach for us, so let’s create a `BaseController` from which all other controllers will inherit.
 
-## `webapp/controller/BaseController.?s` \(New\)
+## `webapp/controller/BaseController.ts/.js` \(New\)
 
 ```ts
+// webapp/controller/BaseController.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import History from "sap/ui/core/routing/History";
 import Router from "sap/ui/core/routing/Router";
@@ -98,6 +97,7 @@ export default class BaseController extends Controller {
 ```
 
 ```js
+// webapp/controller/BaseController.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/ui/core/UIComponent"], function (Controller, History, UIComponent) {
 	"use strict";
 
@@ -128,9 +128,10 @@ The third parameter of `navTo("appHome", {}, true /*no history*/);` has the valu
 > :note:
 > In SAPUI5 there are multiple options to reuse code. We recommend to use a base controller for such helper methods because this allows us to decoratively use the `onNavBack` handler directly in any XML view without adding additional code to the controller. Our base controller is an abstract controller that will not be instantiated in any view. Therefore, the naming convention `*.controller.ts` does not apply, and we can just name the file `BaseController.ts`. By not using the naming convention `*.controller.ts` we can even prevent any unintentional usage in views.
 
-## `webapp/controller/NotFound.controller.?s`
+## `webapp/controller/NotFound.controller.ts/.js`
 
 ```ts
+// webapp/controller/NotFound.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 
 /**
@@ -145,6 +146,7 @@ export default class NotFound extends BaseController {
 ```
 
 ```js
+// webapp/controller/NotFound.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 
@@ -159,9 +161,10 @@ In order to reuse the base controller implementation, we have to change the depe
 
 At this point you can open `index.html#/thisIsInvalid` in your browser and press the *Back* button to see what happens. You will be redirected to the app’s home page that is matched by the route `appHome` as you opened the *Not Found* page with an invalid hash. If you change the hash to something invalid when you are on the home page of the app, you will also go to the *Not Found* page but with a history entry. When you press back, you will get to the home page again, but this time with a native history navigation.
 
-## `webapp/controller/App.controller.?s`
+## `webapp/controller/App.controller.ts/.js`
 
 ```ts
+// webapp/controller/App.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 
 /**
@@ -176,6 +179,7 @@ export default class App extends BaseController {
 ```
 
 ```js
+// webapp/controller/App.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 
@@ -188,9 +192,10 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (B
 
 To be consistent, we will now adjust all of our controllers to extend to inherit from the `BaseController`. Change the `App` controller as described above.
 
-## `webapp/controller/Home.controller.?s`
+## `webapp/controller/Home.controller.ts/.js`
 
 ```ts
+// webapp/controller/Home.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 
 /**
@@ -202,6 +207,7 @@ export default class Home extends BaseController {
 ```
 
 ```js
+// webapp/controller/Home.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 

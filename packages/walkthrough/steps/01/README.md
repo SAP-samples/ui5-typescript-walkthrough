@@ -9,7 +9,7 @@ As you know, OpenUI5 is all about HTML5. Let's get started with building a first
 ### Preview
 
 
-![](assets/loio1dd456361379431aab7e5bcdaaeff00f_LowRes.png "The browser shows the text &quot;Hello World&quot;")
+![The browser shows the text &quot;Hello World&quot;](assets/loio1dd456361379431aab7e5bcdaaeff00f_LowRes.png "The browser shows the text &quot;Hello World&quot;")
 
 <sup>*The browser shows the text &quot;Hello World&quot;*</sup>
 
@@ -19,17 +19,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 1](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-01.zip). 
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 1](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-01-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 1](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-01.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 1](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-01-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp \(New\)

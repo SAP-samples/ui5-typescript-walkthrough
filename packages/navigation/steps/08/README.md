@@ -1,5 +1,3 @@
-<!-- loio3e5f6f3e163f46ecaef376950258e5e4 -->
-
 # Step 8: Navigate with Flip Transition
 
 In this step, we want to illustrate how to navigate to a page with a custom transition animation. Both forward and backward navigation will use the “flip” transition but with a different direction. We will create a simple link on the `Employee` view that triggers a flip navigation to a page that displays the resume data of a certain employee. Pressing the *Back* button will navigate back to the `Employee` view with a reversed flip transition.
@@ -28,13 +26,13 @@ You can view this step live: [🔗 Live Preview of Step 8](https://ui5.github.io
 webapp/
 ├── controller/
 │   ├── employee/
-│   │   ├── Employee.controller.?s
-│   │   ├── EmployeeList.controller.?s
-│   │   └── Resume.controller.?s
-│   ├── App.controller.?s
-│   ├── BaseController.?s
-│   ├── Home.controller.?s
-│   └── NotFound.controller.?s
+│   │   ├── Employee.controller.ts/.js
+│   │   ├── EmployeeList.controller.ts/.js
+│   │   └── Resume.controller.ts/.js
+│   ├── App.controller.ts/.js
+│   ├── BaseController.ts/.js
+│   ├── Home.controller.ts/.js
+│   └── NotFound.controller.ts/.js
 ├── i18n/
 │   └── i18n.properties
 ├── localService/
@@ -42,7 +40,7 @@ webapp/
 │   │   ├── Employees.json
 │   │   └── Resumes.json
 │   ├── metadata.xml
-│   └── mockserver.?s
+│   └── mockserver.ts/.js
 ├── view/
 │   ├── employee/
 │   │   ├── Employee.view.xml
@@ -52,9 +50,9 @@ webapp/
 │   ├── App.view.xml
 │   ├── Home.view.xml
 │   └── NotFound.view.xml
-├── Component.?s
+├── Component.ts/.js
 ├── index.html
-├── initMockServer.?s
+├── initMockServer.ts/.js
 └── manifest.json
 ```
 
@@ -99,9 +97,10 @@ webapp/
 
 First we add the *Flip to Resume* link to the *Employee Details* view to trigger the navigation to the resume of the employee that is currently displayed.
 
-## `webapp/controller/employee/Employee.controller.?s`
+## `webapp/controller/employee/Employee.controller.ts/.js`
 
 ```ts
+// webapp/controller/employee/Employee.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 import { Route$MatchedEvent } from "sap/ui/core/routing/Route";
 
@@ -128,6 +127,7 @@ export default class Employee extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/Employee.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 
@@ -311,9 +311,10 @@ Create a file `Resume.view.xml` inside the `webapp/view/employee` folder. The vi
 
 In the `IconTabBar` we display four tabs. Three of them simply use a `Text` control to display the data from the service. The *Projects* tab uses a nested XML view to display the projects of the employee. SAPUI5 takes care of loading the XML view automatically when the user navigates to the *Resume* page.
 
-## `webapp/controller/employee/Resume.controller.?s` \(New\)
+## `webapp/controller/employee/Resume.controller.ts/.js` \(New\)
 
 ```ts
+// webapp/controller/employee/Resume.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 import { Route$MatchedEvent } from "sap/ui/core/routing/Route";
 
@@ -356,6 +357,7 @@ export default class Resume extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/Resume.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 

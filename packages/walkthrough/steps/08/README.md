@@ -10,7 +10,7 @@ This way, they are all in a central place and can be easily translated into othe
 
 ### Preview
 
-![](assets/loio0eb579e2f2a64c5a9894086322c7faa0_LowRes.png "An input field and a description displaying the value of the input field \(No visual changes to last step\(")
+![An input field and a description displaying the value of the input field \(No visual changes to last step\(](assets/loio0eb579e2f2a64c5a9894086322c7faa0_LowRes.png "An input field and a description displaying the value of the input field \(No visual changes to last step\(")
 
 <sup>*An input field and a description displaying the value of the input field \(No visual changes to last step\)*</sup>
 
@@ -19,17 +19,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 ***
 
 ### Coding
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 8](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-08.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 8](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-08-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 8](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-08.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 8](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-08-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/i18n/i18n.properties \(New\)
@@ -47,7 +37,7 @@ In this tutorial we'll only have one properties file. However, in real-world pro
 
 ***
 
-### webapp/controller/App.controller.?s
+### webapp/controller/App.controller.ts/.js
 
 In the controller, we'll create a new resource model that refers to our resource bundle file (`i18n.properties`) and link it to the view associated with the controller. This allows us to bind control properties in the view to translatable texts. We'll also modify the `onShowHello` event handler function to replace the static "Hello World" text with a dynamic greeting text.
 
@@ -57,6 +47,7 @@ In the `onShowHello` event handler function, we first get access to the data mod
 
 
 ```ts
+// webapp/controller/App.controller.ts
 import MessageToast from "sap/m/MessageToast";
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
@@ -97,6 +88,7 @@ export default class AppController extends Controller {
 ```
 
 ```js
+// webapp/controller/App.controller.js
 sap.ui.define(["sap/m/MessageToast", "sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/resource/ResourceModel"], function (MessageToast, Controller, JSONModel, ResourceModel) {
 	"use strict";
 

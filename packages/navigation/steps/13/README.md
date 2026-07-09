@@ -1,5 +1,3 @@
-<!-- loio39759878ae4f48dcad0cf34da1d299f0 -->
-
 # Step 13: Make Table Sorting Bookmarkable
 
 In this step, we will create a button at the top of the table which will change the sorting of the table. When the current sorting state of the table is changed, the sorting state will be reflected in the URL. This illustrates how to make the table sorting bookmarkable.
@@ -14,9 +12,10 @@ In this step, we will create a button at the top of the table which will change 
 
 You can view this step live: [🔗 Live Preview of Step 13](https://ui5.github.io/tutorials/navigation/build/13/index-cdn.html).
 
-## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.?s`
+## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js`
 
 ```ts
+// webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts
 import SearchField, { SearchField$SearchEvent } from "sap/m/SearchField";
 import Table from "sap/m/Table";
 import ViewSettingsDialog, { ViewSettingsDialog$ConfirmEvent } from "sap/m/ViewSettingsDialog";
@@ -66,6 +65,7 @@ export default class EmployeeOverviewContent extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/overview/EmployeeOverviewContent.controller.js
 sap.ui.define(["sap/m/ViewSettingsDialog", "sap/m/ViewSettingsItem", "ui5/tutorial/navigation/controller/BaseController", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/model/Sorter"], function (ViewSettingsDialog, ViewSettingsItem, BaseController, Filter, FilterOperator, Sorter) {
 	"use strict";
 

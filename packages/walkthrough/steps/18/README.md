@@ -8,7 +8,7 @@ Our dialog is still pretty much empty. Since OpenUI5 is shipped with a large ico
 
 ### Preview
   
-![](assets/loiofbc48e23cc7d45e393cc95bbbfc6e0a3_LowRes.png "An icon is now displayed in the dialog box")
+![An icon is now displayed in the dialog box](assets/loiofbc48e23cc7d45e393cc95bbbfc6e0a3_LowRes.png "An icon is now displayed in the dialog box")
 
 <sup>*An icon is now displayed in the dialog box*</sup>
 
@@ -17,17 +17,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 18](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-18.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 18](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-18-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 18](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-18.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 18](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-18-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/view/HelloPanel.view.xml

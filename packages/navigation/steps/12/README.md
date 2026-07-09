@@ -1,5 +1,3 @@
-<!-- loioe85da535ea19430a90c381f3c2bd748e -->
-
 # Step 12: Make a Search Bookmarkable
 
 In this step we will make the search bookmarkable. This allows users to search for employees in the *Employees* table and they can bookmark their search query or share the URL.
@@ -72,9 +70,10 @@ You can view this step live: [🔗 Live Preview of Step 12](https://ui5.github.i
 
 In order to make the search bookmarkable we have to think about how the pattern of the corresponding route should match the bookmark. We decide to allow `/#/employees/overview?search=mySearchQueryString` in order to bookmark a search. Therefore, we simply extend our routing configuration a little. We add the optional `:?query:` parameter to the route `employeeOverview`. We keep in mind that we want to use `search` as the URL parameter for the search term that was entered in the search field.
 
-## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.?s`
+## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js`
 
 ```ts
+// webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts
 import SearchField, { SearchField$SearchEvent } from "sap/m/SearchField";
 import Table from "sap/m/Table";
 import ViewSettingsDialog, { ViewSettingsDialog$ConfirmEvent } from "sap/m/ViewSettingsDialog";
@@ -134,6 +133,7 @@ export default class EmployeeOverviewContent extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/overview/EmployeeOverviewContent.controller.js
 sap.ui.define(["sap/m/ViewSettingsDialog", "sap/m/ViewSettingsItem", "ui5/tutorial/navigation/controller/BaseController", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/model/Sorter"], function (ViewSettingsDialog, ViewSettingsItem, BaseController, Filter, FilterOperator, Sorter) {
 	"use strict";
 

@@ -1,16 +1,6 @@
 # Step 4: Filtering, Sorting, and Counting
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 4](https://ui5.github.io/tutorials/odatav4/odatav4-step-04.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 4](https://ui5.github.io/tutorials/odatav4/odatav4-step-04-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 4](https://ui5.github.io/tutorials/odatav4/odatav4-step-04.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 4](https://ui5.github.io/tutorials/odatav4/odatav4-step-04-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 In this step, we add features to filter, sort, and count the user data by using the OData V4 model API to apply OData system query options `$filter`, `$orderby`, and `$count`.
 
@@ -18,16 +8,18 @@ In this step, we add features to filter, sort, and count the user data by using 
 
 **App now has a search field, the entries can be sorted, and you can see how many entities are loaded and how many more are available**
 
-![](assets/Tutorial_OData_V4_Step_4_3ac4fcc.png "App now has a search field, the entries can be sorted, and you can see how
+![App now has a search field, the entries can be sorted, and you can see how
+					many entities are loaded and how many more are available](assets/Tutorial_OData_V4_Step_4_3ac4fcc.png "App now has a search field, the entries can be sorted, and you can see how
 					many entities are loaded and how many more are available")
 
 ## Coding
 
 You can view this step live: [🔗 Live Preview of Step 4](https://ui5.github.io/tutorials/odatav4/build/04/index-cdn.html).
 
-## `webapp/controller/App.controller.?s`
+## `webapp/controller/App.controller.ts/.js`
 
 ```ts
+// webapp/controller/App.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import MessageToast from "sap/m/MessageToast";
 import MessageBox from "sap/m/MessageBox";
@@ -84,6 +76,7 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 ```
 
 ```js
+// webapp/controller/App.controller.js
 sap.ui.define([
 	"sap/ui/core/mvc/Controller",
 	"sap/m/MessageToast",
@@ -286,9 +279,9 @@ We add the missing texts to the properties file.
 
 **Related Information**
 
-[Filtering](../04_Essentials/filtering-5338bd1.md "The OData V4 Model supports server side filtering on lists.")
+[Filtering](https://sdk.openui5.org/topic/5338bd1 "The OData V4 Model supports server side filtering on lists.")
 
-[Sorting](../04_Essentials/sorting-d2ce3f5.md "The OData V4 model supports server side sorting on lists.")
+[Sorting](https://sdk.openui5.org/topic/d2ce3f5 "The OData V4 model supports server side sorting on lists.")
 
 [Query Options under *Querying Data* in the Basic Tutorial on the OData home page](http://www.odata.org/getting-started/basic-tutorial/#queryData)
 

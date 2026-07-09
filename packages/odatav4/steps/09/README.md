@@ -1,16 +1,6 @@
 # Step 9: List-Detail Scenario
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 9](https://ui5.github.io/tutorials/odatav4/odatav4-step-09.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 9](https://ui5.github.io/tutorials/odatav4/odatav4-step-09-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 9](https://ui5.github.io/tutorials/odatav4/odatav4-step-09.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 9](https://ui5.github.io/tutorials/odatav4/odatav4-step-09-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 In this step we add a detail area with additional information.
 
@@ -24,9 +14,10 @@ In this step we add a detail area with additional information.
 
 You can view this step live: [🔗 Live Preview of Step 9](https://ui5.github.io/tutorials/odatav4/build/09/index-cdn.html).
 
-## `webapp/controller/App.controller.?s`
+## `webapp/controller/App.controller.ts/.js`
 
 ```ts
+// webapp/controller/App.controller.ts
 ...
 		onDelete() {
 			const oContext,
@@ -84,6 +75,7 @@ You can view this step live: [🔗 Live Preview of Step 9](https://ui5.github.io
 ```
 
 ```js
+// webapp/controller/App.controller.js
 ...
 		onDelete : function () {
 			var oContext,
@@ -355,7 +347,7 @@ We add the missing texts to the properties file.
 
 **Related Information**
 
-[Data Reuse](../04_Essentials/data-reuse-648e360.md "The OData V4 model keeps data with respect to bindings, which allows different views on the same data, but also means that data is not automatically shared between bindings. There are mechanisms for sharing data to avoid redundant requests and to keep the same data in different controls in sync.")
+[Data Reuse](https://sdk.openui5.org/topic/648e360 "The OData V4 model keeps data with respect to bindings, which allows different views on the same data, but also means that data is not automatically shared between bindings. There are mechanisms for sharing data to avoid redundant requests and to keep the same data in different controls in sync.")
 
 ***
 

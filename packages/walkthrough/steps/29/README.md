@@ -11,7 +11,7 @@ Luckily, OpenUI5 provides a couple of debugging tools that we can use within the
 ### Preview
   
 
-![](assets/loio930de31b311f43ffa9df9261ca760da0_LowRes.png "The diagnostics window")
+![The diagnostics window](assets/loio930de31b311f43ffa9df9261ca760da0_LowRes.png "The diagnostics window")
   
 <sup>*The diagnostics window*</sup>
 
@@ -21,17 +21,7 @@ Luckily, OpenUI5 provides a couple of debugging tools that we can use within the
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 29](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-29.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 29](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-29-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 29](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-29.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 29](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-29-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ***
 
@@ -112,7 +102,7 @@ Sometimes errors are not as easy to spot and you actually need to debug the Java
 > This makes debugging harder, because the code is a lot less readable. You can load the debug sources by adding the URL parameter `sap-ui-debug=true` or by pressing [Ctrl\] + [Shift\] + [Alt\] /[Option\] + [P\]  and selecting *Use Debug Sources* in the dialog box that is displayed. After reloading the page, you can see in the *Network* tab of the browser’s developer tools that now a lot of files are loaded that have a `–dbg` suffix. These are the source code files that include comments and the uncompressed code of the app and the OpenUI5 artifacts.
   
   
-![](assets/loio34c4b02c74eb4848b8b720d86042bfdc_LowRes.png "Technical information dialog ")
+![Technical information dialog ](assets/loio34c4b02c74eb4848b8b720d86042bfdc_LowRes.png "Technical information dialog ")
 
 <sup>*Technical information dialog*</sup>
 

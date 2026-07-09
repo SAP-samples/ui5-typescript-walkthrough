@@ -11,7 +11,7 @@ To make this work, we have to pass over the information which item has been sele
 ### Preview
   
   
-![](assets/loio31da9d48ae204c36a991146b90648c21_LowRes.png "The selected invoice details are now shown in the details page")
+![The selected invoice details are now shown in the details page](assets/loio31da9d48ae204c36a991146b90648c21_LowRes.png "The selected invoice details are now shown in the details page")
 
 <sup>*The selected invoice details are now shown in the details page*</sup>
 
@@ -21,17 +21,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 31](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-31.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 31](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-31-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 31](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-31.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 31](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-31-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ***
 
@@ -83,7 +73,7 @@ We want to hand over the information for the selected item when navigating to th
 }
 ```
 
-### webapp/controller/InvoiceList.controller.?s
+### webapp/controller/InvoiceList.controller.ts/.js
 
 In the controller for the invoice list view, we extend the `onPress` event handler in such a way, it not only triggers the navigation to the detail view but also passes the selected item to the routing.
 
@@ -95,6 +85,7 @@ Typically we woudl use the key of the item in the back-end system to identify th
 
 
 ```ts
+// webapp/controller/InvoiceList.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import JSONModel from "sap/ui/model/json/JSONModel";
 import { SearchField$SearchEvent } from "sap/m/SearchField";
@@ -125,6 +116,7 @@ export default class App extends Controller {
 ```
 
 ```js
+// webapp/controller/InvoiceList.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/core/UIComponent"], function (Controller, JSONModel, Filter, FilterOperator, UIComponent) {
 	"use strict";
 
@@ -146,7 +138,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/model/json/JSONModel", "sap
 
 ```
 
-### webapp/controller/Detail.controller.?s \(New\)
+### webapp/controller/Detail.controller.ts/.js \(New\)
 
 Now we need to create a new detail controller to set the content we passed in with the URL parameter `invoicePath` on the detail view. This will allow us to access the data of the selected item and display them on the view.
 
@@ -160,6 +152,7 @@ The `bindElement` function is creating a binding context for a OpenUI5 control a
 
 
 ```ts
+// webapp/controller/Detail.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import UIComponent from "sap/ui/core/UIComponent";
 import Route, { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
@@ -185,6 +178,7 @@ export default class Detail extends Controller {
 ```
 
 ```js
+// webapp/controller/Detail.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/UIComponent"], function (Controller, UIComponent) {
 	"use strict";
 

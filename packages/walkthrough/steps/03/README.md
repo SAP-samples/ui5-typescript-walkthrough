@@ -8,7 +8,7 @@ Now it is time to build our first little UI by replacing the “Hello World” t
 
 ### Preview
 
-![](assets/loio30a42d381b9e4388bf7fdc0b941e5381_LowRes.png "The &quot;Hello World&quot; text is now displayed by a OpenUI5 control")
+![The &quot;Hello World&quot; text is now displayed by a OpenUI5 control](assets/loio30a42d381b9e4388bf7fdc0b941e5381_LowRes.png "The &quot;Hello World&quot; text is now displayed by a OpenUI5 control")
 
 <sup>*The &quot;Hello World&quot; text is now displayed by an OpenUI5 control*</sup>
 
@@ -17,17 +17,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ***
 ### Coding
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 3](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-03.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 3](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-03-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 3](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-03.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 3](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-03-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 <details class="ts-only" markdown="1">
@@ -44,7 +34,7 @@ npm install @openui5/types --save-dev
 
 </details>
 
-### webapp/index.?s
+### webapp/index.ts/.js
 
 <details class="ts-only" markdown="1">
 
@@ -70,6 +60,7 @@ To place the text control to our HTML document, we chain the constructor call of
 </details>
 
 ```ts
+// webapp/index.ts
 import Text from "sap/m/Text";
 
 new Text({
@@ -78,6 +69,7 @@ new Text({
 ```
 
 ```js
+// webapp/index.js
 sap.ui.define(["sap/m/Text"], function (Text) {
 	"use strict";
 

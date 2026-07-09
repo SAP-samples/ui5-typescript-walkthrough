@@ -1,5 +1,3 @@
-<!-- loiof96d2522a5ca4382a274ae3c6d002ca0 -->
-
 # Step 7: Navigate to Routes with Mandatory Parameters
 
 In this step, we implement a feature that allows the user to click on an employee in the list to see additional details of the employee. A route pattern can have one or more mandatory parameters to identify objects in an app.
@@ -30,12 +28,12 @@ You can view this step live: [🔗 Live Preview of Step 7](https://ui5.github.io
 webapp/
 ├── controller/
 │   ├── employee/
-│   │   ├── Employee.controller.?s
-│   │   └── EmployeeList.controller.?s
-│   ├── App.controller.?s
-│   ├── BaseController.?s
-│   ├── Home.controller.?s
-│   └── NotFound.controller.?s
+│   │   ├── Employee.controller.ts/.js
+│   │   └── EmployeeList.controller.ts/.js
+│   ├── App.controller.ts/.js
+│   ├── BaseController.ts/.js
+│   ├── Home.controller.ts/.js
+│   └── NotFound.controller.ts/.js
 ├── i18n/
 │   └── i18n.properties
 ├── localService/
@@ -43,7 +41,7 @@ webapp/
 │   │   ├── Employees.json
 │   │   └── Resumes.json
 │   ├── metadata.xml
-│   └── mockserver.?s
+│   └── mockserver.ts/.js
 ├── view/
 │   ├── employee/
 │   │   ├── Employee.view.xml
@@ -51,9 +49,9 @@ webapp/
 │   ├── App.view.xml
 │   ├── Home.view.xml
 │   └── NotFound.view.xml
-├── Component.?s
+├── Component.ts/.js
 ├── index.html
-├── initMockServer.?s
+├── initMockServer.ts/.js
 └── manifest.json
 ```
 
@@ -198,9 +196,10 @@ Create the file `Employee.view.xml` inside the `webapp/view/employee` folder. Th
 > Requiring `sap/ui/layout/form/ResponsiveGridLayout` is needed because we use the `ResponsiveGridLayout` as `layout` for the `sap/ui/layout/form/SimpleForm`.
 > The `sap/ui/layout/form/SimpleForm` requires the configured layout, in case it's not done by the consumer but this may cause an additional rendering cycle if rendering starts before the layout finished loading.
 
-## `webapp/controller/employee/Employee.controller.?s` \(New\)
+## `webapp/controller/employee/Employee.controller.ts/.js` \(New\)
 
 ```ts
+// webapp/controller/employee/Employee.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 import { Route$MatchedEvent } from "sap/ui/core/routing/Route";
 
@@ -243,6 +242,7 @@ export default class Employee extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/Employee.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 
@@ -321,9 +321,10 @@ We also add an event handler to the `change` event as a private function `_onBin
 
 It’s time to change the `EmployeeList` view so that we can navigate to the new view. We set the attribute type of the `StandardListItem` template to `Navigation` to make the item clickable and indicate a navigation feature to the user. Additionally, we add an event handler for the `press` event that is called when the user clicks on an employee list item.
 
-## `webapp/controller/employee/EmployeeList.controller.?s`
+## `webapp/controller/employee/EmployeeList.controller.ts/.js`
 
 ```ts
+// webapp/controller/employee/EmployeeList.controller.ts
 import StandardListItem from "sap/m/StandardListItem";
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 import Event from "sap/ui/base/Event";
@@ -345,6 +346,7 @@ export default class EmployeeList extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/EmployeeList.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 

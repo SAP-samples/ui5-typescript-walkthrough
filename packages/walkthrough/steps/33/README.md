@@ -8,7 +8,7 @@ In this step, we are going to extend the functionality of OpenUI5 with a custom 
 
 ### Preview
     
-![](assets/loio21dd14c37b67473b817c8865f168f668_LowRes.png "A custom product rating control is added to the detail page")
+![A custom product rating control is added to the detail page](assets/loio21dd14c37b67473b817c8865f168f668_LowRes.png "A custom product rating control is added to the detail page")
 
 <sup>*A custom product rating control is added to the detail page*</sup>
 
@@ -17,17 +17,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 ***
 
 ### Coding
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 33](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-33.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 33](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-33-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 33](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-33.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 33](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-33-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/i18n/i18n.properties
@@ -73,7 +63,7 @@ html[dir="rtl"] .myAppDemoWT .myCustomButton.sapMBtn {
 
 We could also do this with more HTML in the renderer but this is the simplest way and it will only be applied inside our custom control. However, please be aware that the custom control is in your app and might have to be adjusted when the inner controls change in future versions of OpenUI5.
 
-### webapp/control/ProductRating.?s \(New\)
+### webapp/control/ProductRating.ts/.js \(New\)
 
 Custom controls are small reuse components that can be created within an application very easily. Due to their nature, they are sometimes also referred to as "notepad” or “on the fly” controls. A custom control is an object that has two special sections \(`metadata` and `renderer`\) and various methods that determine the control's functionality.
 
@@ -95,6 +85,7 @@ The static `renderer` property expects an object that defines how the control is
 > When developing a custom control, it is crucial to specify the appropriate apiVersion for the control's renderer. This ensures that your control can leverage the latest rendering features and improvements available in the RenderManager.
 
 ```ts
+// webapp/control/ProductRating.ts
 import Control from "sap/ui/core/Control";
 import RenderManager from "sap/ui/core/RenderManager";
 
@@ -120,6 +111,7 @@ export default class ProductRating extends Control {
 ```
 
 ```js
+// webapp/control/ProductRating.js
 sap.ui.define(["sap/ui/core/Control"], function (Control) {
 	"use strict";
 
@@ -181,6 +173,7 @@ Next, we have the `press` handler for the rating button that submits our rating.
 We define the `reset` method to be able to revert the state of the control on the UI to its initial state so that the user can again submit a rating.
 
 ```ts
+// webapp/control/ProductRating.ts
 import Control from "sap/ui/core/Control";
 import RenderManager from "sap/ui/core/RenderManager";
 import { MetadataOptions } from "sap/ui/core/Element";
@@ -305,6 +298,7 @@ export default class ProductRating extends Control {
 ```
 
 ```js
+// webapp/control/ProductRating.js
 sap.ui.define(["sap/ui/core/Control", "sap/m/Label", "sap/m/Button", "sap/m/RatingIndicator"], function (Control, Label, Button, RatingIndicator) {
 	"use strict";
 
@@ -429,7 +423,7 @@ You can now stop the interface generator again, as no further control API change
 
 </details>
 
-### webapp/controller/Detail.controller.?s
+### webapp/controller/Detail.controller.ts/.js
 
 In the `Detail` controller we implement a new `onRatingChange` event that reads the value of our coustom change event that is fired when a rating has been submitted. This requires to import our new control, as well as the `ProductRating$ChangeEvent` type we just defined to the detail controller. To keep the sample simple we only display a message message instead of sending the rating to the backend. We therefore load the `MessageToast` module from the `sap.m` namespace to our script. In addition we need the `ResourceBundle` module from the `sap/base/i18n` namespace as well as the `ResourceModel` module from the `sap/ui/model/resource` namespace as we want to display the confirmation message we specified in our resource bundle in the message toast.
 
@@ -438,6 +432,7 @@ In the `onRatingChange` the event handler we extract the value of our custom cha
 In the `onObjectMatched` method, we call the `reset` method to make it possible to submit another rating as soon as the detail view is displayed for a different item.
 
 ```ts
+// webapp/controller/Detail.controller.ts
 import Controller from "sap/ui/core/mvc/Controller";
 import Route, { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 import History from "sap/ui/core/routing/History";
@@ -489,6 +484,7 @@ export default class Detail extends Controller {
 ```
 
 ```js
+// webapp/controller/Detail.controller.js
 sap.ui.define(["sap/ui/core/mvc/Controller", "sap/ui/core/routing/History", "sap/m/MessageToast", "sap/ui/core/UIComponent"], function (Controller, History, MessageToast, UIComponent) {
 	"use strict";
 
@@ -574,6 +570,7 @@ constructor(id?: string, settings?: $ProductRatingSettings) { super(id, settings
 To complete the setup of the generated interface, we follow the instructions and add the block between the BEGIN and END line into the `ProductRating` class body in the file `webapp/control/ProductRating.ts`.
 
 ```ts
+// webapp/control/ProductRating.ts
 import Control from "sap/ui/core/Control";
 import RenderManager from "sap/ui/core/RenderManager";
 import { MetadataOptions } from "sap/ui/core/Element";

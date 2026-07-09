@@ -9,7 +9,7 @@ In this step, we improve the responsiveness of our app. OpenUI5 applications can
 ### Preview
   
   
-![](assets/loiocc3f2e0d8ac6471288af6495836c2f07_LowRes.png "A responsive table is hiding some of the columns on small devices")
+![A responsive table is hiding some of the columns on small devices](assets/loiocc3f2e0d8ac6471288af6495836c2f07_LowRes.png "A responsive table is hiding some of the columns on small devices")
 
 <sup>*A responsive table is hiding some of the columns on small devices*</sup>
 
@@ -19,17 +19,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 ***
 
 ### Coding
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 34](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-34.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 34](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-34-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 34](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-34.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 34](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-34-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/i18n/i18n.properties

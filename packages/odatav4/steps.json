@@ -1,0 +1,105 @@
+{
+  "tutorial": "odatav4",
+  "namespace": "ui5.tutorial.odatav4",
+  "steps": [
+    {
+      "n": 1,
+      "id": "01",
+      "title": "The Initial App",
+      "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/01/index-cdn.html",
+      "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-01.zip",
+      "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-01-js.zip",
+      "description": "We start by setting up a simple app that loads data from an OData service and displays it in a table. We use a mock server to simulate requests to and responses from the service."
+    },
+    {
+      "n": 2,
+      "id": "02",
+      "title": "Data Access and Client-Server Communication",
+      "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/02/index-cdn.html",
+      "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-02.zip",
+      "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-02-js.zip",
+      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 2<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 2<span class=\"lang-suffix\"> (JS)</span></span>."
+    },
+    {
+      "n": 3,
+      "id": "03",
+      "title": "Automatic Data Type Detection",
+      "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/03/index-cdn.html",
+      "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-03.zip",
+      "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-03-js.zip",
+      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 3<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 3<span class=\"lang-suffix\"> (JS)</span></span>."
+    },
+    {
+      "n": 4,
+      "id": "04",
+      "title": "Filtering, Sorting, and Counting",
+      "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/04/index-cdn.html",
+      "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-04.zip",
+      "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-04-js.zip",
+      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 4<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 4<span class=\"lang-suffix\"> (JS)</span></span>."
+    },
+    {
+      "n": 5,
+      "id": "05",
+      "title": "Batch Groups",
+      "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/05/index-cdn.html",
+      "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-05.zip",
+      "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-05-js.zip",
+      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 5<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 5<span class=\"lang-suffix\"> (JS)</span></span>."
+    },
+    {
+      "n": 6,
+      "id": "06",
+      "title": "Create and Edit",
+      "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/06/index-cdn.html",
+      "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-06.zip",
+      "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-06-js.zip",
+      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 6<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 6<span class=\"lang-suffix\"> (JS)</span></span>."
+    },
+    {
+      "n": 7,
+      "id": "07",
+      "title": "Delete",
+      "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/07/index-cdn.html",
+      "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-07.zip",
+      "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-07-js.zip",
+      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 7<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 7<span class=\"lang-suffix\"> (JS)</span></span>."
+    },
+    {
+      "n": 8,
+      "id": "08",
+      "title": "OData Operations",
+      "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/08/index-cdn.html",
+      "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-08.zip",
+      "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-08-js.zip",
+      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 8<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 8<span class=\"lang-suffix\"> (JS)</span></span>."
+    },
+    {
+      "n": 9,
+      "id": "09",
+      "title": "List-Detail Scenario",
+      "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/09/index-cdn.html",
+      "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-09.zip",
+      "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-09-js.zip",
+      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 9<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 9<span class=\"lang-suffix\"> (JS)</span></span>."
+    },
+    {
+      "n": 10,
+      "id": "10",
+      "title": "Enable Data Reuse",
+      "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/10/index-cdn.html",
+      "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-10.zip",
+      "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-10-js.zip",
+      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 10<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 10<span class=\"lang-suffix\"> (JS)</span></span>."
+    },
+    {
+      "n": 11,
+      "id": "11",
+      "title": "Add Table with :n Navigation to Detail Area",
+      "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/11/index-cdn.html",
+      "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-11.zip",
+      "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-11-js.zip",
+      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 11<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 11<span class=\"lang-suffix\"> (JS)</span></span>."
+    }
+  ]
+}

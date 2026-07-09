@@ -1,5 +1,3 @@
-<!-- loio4a063b8250f24d0cbf7c689821df7199 -->
-
 # Step 17: Listen to Matched Events of Any Route
 
 In the previous step, we have listened for bypassed events to detect possible technical issues with our app. In this step, we want to improve the analysis use case even more by listening to any matched event of the route. We could use this information to measure how the app is used and how frequently the pages are called. Many Web analytic tools track page hits this way. The collected information can be used, for example to improve our app and its usability.
@@ -14,9 +12,10 @@ In the previous step, we have listened for bypassed events to detect possible te
 
 You can view this step live: [🔗 Live Preview of Step 17](https://ui5.github.io/tutorials/navigation/build/17/index-cdn.html).
 
-## `webapp/controller/App.controller.?s`
+## `webapp/controller/App.controller.ts/.js`
 
 ```ts
+// webapp/controller/App.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 import Log from "sap/base/Log";
 import { Router$BypassedEvent, Router$RouteMatchedEvent } from "sap/ui/core/routing/Router";
@@ -55,6 +54,7 @@ export default class App extends BaseController {
 ```
 
 ```js
+// webapp/controller/App.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController", "sap/base/Log"], function (BaseController, Log) {
 	"use strict";
 

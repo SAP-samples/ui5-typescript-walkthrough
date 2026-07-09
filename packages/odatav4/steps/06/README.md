@@ -1,16 +1,6 @@
 # Step 6: Create and Edit
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 6](https://ui5.github.io/tutorials/odatav4/odatav4-step-06.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 6](https://ui5.github.io/tutorials/odatav4/odatav4-step-06-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 6](https://ui5.github.io/tutorials/odatav4/odatav4-step-06.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 6](https://ui5.github.io/tutorials/odatav4/odatav4-step-06-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 In this step, we will make it possible to create and edit \(update\) user data from the user interface and send the data to the back end.
 
@@ -18,15 +8,16 @@ In this step, we will make it possible to create and edit \(update\) user data f
 
 **Data can now be edited and added.**
 
-![](assets/Tutorial_OData_V4_Step_6_baf7417.png "Data can now be edited and added.")
+![Data can now be edited and added.](assets/Tutorial_OData_V4_Step_6_baf7417.png "Data can now be edited and added.")
 
 ## Coding
 
 You can view this step live: [🔗 Live Preview of Step 6](https://ui5.github.io/tutorials/odatav4/build/06/index-cdn.html).
 
-## `webapp/controller/App.controller.?s`
+## `webapp/controller/App.controller.ts/.js`
 
 ```ts
+// webapp/controller/App.controller.ts
 ...
 		onInit() {
 			const oMessageManager = sap.ui.getCore().getMessageManager(),
@@ -48,6 +39,7 @@ You can view this step live: [🔗 Live Preview of Step 6](https://ui5.github.io
 ```
 
 ```js
+// webapp/controller/App.controller.js
 ...
 		onInit : function () {
 			var oMessageManager = sap.ui.getCore().getMessageManager(),
@@ -72,6 +64,7 @@ You can view this step live: [🔗 Live Preview of Step 6](https://ui5.github.io
 We change the `onInit` method: The `appView` model receives two additional properties, which we will use to control whether certain controls in the view are enabled or visible during user entries. We also make the `MessageModel` available to the view and add a `ListBinding`. When the OData service reports errors while writing data, the OData Model adds them to the `MessageModel` as technical messages. Therefore we apply a filter to the `ListBinding`. We register our own handler to the `change` event of that `ListBinding` in order to capture any errors.
 
 ```ts
+// webapp/controller/App.controller.ts
 ...
 		onSort() {
 			...
@@ -94,6 +87,7 @@ We change the `onInit` method: The `appView` model receives two additional prope
 ```
 
 ```js
+// webapp/controller/App.controller.js
 ...
 		onSort : function () {
 			...
@@ -119,6 +113,7 @@ We change the `onInit` method: The `appView` model receives two additional prope
 We add the `_setUIChanges` private method that lets us set the property `hasUIChanges` of the `appView` model. Unless there are currently technical messages in the `MessageModel` or it is called with a given value for its `bHasUIChanges` parameter, the method uses `ODataModel.hasPendingChanges`. That method returns `true` if there are any changes that have not yet been written to the service.
 
 ```ts
+// webapp/controller/App.controller.ts
 ...
 		onInit() {
 			...
@@ -147,6 +142,7 @@ We add the `_setUIChanges` private method that lets us set the property `hasUICh
 ```
 
 ```js
+// webapp/controller/App.controller.js
 ...
 		onInit: function () {
 			...
@@ -181,6 +177,7 @@ We add the `onCreate` event handler that responds to the `press` event of the *A
 We also use the binding context returned by the `create` method to focus and select the new row in which the new data can be entered.
 
 ```ts
+// webapp/controller/App.controller.ts
 ...
 		onRefresh() {
 			...
@@ -217,6 +214,7 @@ We also use the binding context returned by the `create` method to focus and sel
 ```
 
 ```js
+// webapp/controller/App.controller.js
 ...
 		onRefresh: function () {
 			...
@@ -260,6 +258,7 @@ The `submitBatch` method returns a `Promise` that is rejected only if the batch 
 We also define a `_setBusy` private function to lock the whole UI while the data is submitted to the back end.
 
 ```ts
+// webapp/controller/App.controller.ts
 ...
 		onSort() {
 			...
@@ -294,6 +293,7 @@ We also define a `_setBusy` private function to lock the whole UI while the data
 ```
 
 ```js
+// webapp/controller/App.controller.js
 ...
 		onSort : function () {
 			...
@@ -331,6 +331,7 @@ We also define a `_setBusy` private function to lock the whole UI while the data
 We implement the event handler for the `change` event of the `ListBinding` to the `MessageModel`. We created the `ListBinding` with a filter to only include technical messages. That means that the `change` event will be fired with every change but only technical messages will have a binding context. In case of technical messages, we get the first one and display it as an error. We also make sure that the toolbar for saving or discarding changes stays visible. We delete the technical messages so that they do not accumulate.
 
 ```ts
+// webapp/controller/App.controller.ts
 ...
 		onRefresh() {
 			...
@@ -347,6 +348,7 @@ We implement the event handler for the `change` event of the `ListBinding` to th
 ```
 
 ```js
+// webapp/controller/App.controller.js
 ...
 		onRefresh: function () {
 			...
@@ -365,6 +367,7 @@ We implement the event handler for the `change` event of the `ListBinding` to th
 The `onResetChanges` method handles discarding pending changes. It uses the `resetChanges` method of the `ODataListBinding` API to remove any such changes. Then it calls the `_setUIChanges` private method to enable the elements of the header toolbar again and hide the footer.
 
 ```ts
+// webapp/controller/App.controller.ts
 ...
 		onCreate() {
 			...
@@ -386,6 +389,7 @@ The `onResetChanges` method handles discarding pending changes. It uses the `res
 ```
 
 ```js
+// webapp/controller/App.controller.js
 ...
 		onCreate: function () {
 			...
@@ -568,15 +572,15 @@ We add the new message texts.
 
 **Related Information**
 
-[Model Instantiation and Data Access](../04_Essentials/model-instantiation-and-data-access-9613f1f.md "One OData V4 model instance can only cover one OData service. This section describes the creation of a model instance in more detail.")
+[Model Instantiation and Data Access](https://sdk.openui5.org/topic/9613f1f "One OData V4 model instance can only cover one OData service. This section describes the creation of a model instance in more detail.")
 
-[Batch Control](../04_Essentials/batch-control-74142a3.md "OData V4 allows you to group multiple operations into a single HTTP request payload, as described in the official OData V4 specification Part 1, Batch Requests (see the link under Related Information for more details).")
+[Batch Control](https://sdk.openui5.org/topic/74142a3 "OData V4 allows you to group multiple operations into a single HTTP request payload, as described in the official OData V4 specification Part 1, Batch Requests (see the link under Related Information for more details).")
 
-[OData Operations](../04_Essentials/odata-operations-b54f789.md "The OData V4 model supports OData operations (ActionImport, FunctionImport, bound Actions and bound Functions). Unbound parameters are limited to primitive values.")
+[OData Operations](https://sdk.openui5.org/topic/b54f789 "The OData V4 model supports OData operations (ActionImport, FunctionImport, bound Actions and bound Functions). Unbound parameters are limited to primitive values.")
 
-[Creating an Entity](../04_Essentials/creating-an-entity-c9723f8.md "The sap.ui.model.odata.v4.ODataListBinding#create method creates a new entity. Users can interact with a newly created entity even before it has been sent to the server.")
+[Creating an Entity](https://sdk.openui5.org/topic/c9723f8 "The sap.ui.model.odata.v4.ODataListBinding#create method creates a new entity. Users can interact with a newly created entity even before it has been sent to the server.")
 
-[Message Model](../04_Essentials/message-model-8956f0a.md "The message model contains all messages and is used to bind to the messages to display them.")
+[Message Model](https://sdk.openui5.org/topic/8956f0a "The message model contains all messages and is used to bind to the messages to display them.")
 
 [API Reference: `sap.ui.model.odata.v4.ODataContextBinding`](https://ui5.sap.com/#/api/sap.ui.model.odata.v4.ODataContextBinding)
 

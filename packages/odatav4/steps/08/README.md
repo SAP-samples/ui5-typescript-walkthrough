@@ -1,16 +1,6 @@
 # Step 8: OData Operations
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 8](https://ui5.github.io/tutorials/odatav4/odatav4-step-08.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 8](https://ui5.github.io/tutorials/odatav4/odatav4-step-08-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 8](https://ui5.github.io/tutorials/odatav4/odatav4-step-08.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 8](https://ui5.github.io/tutorials/odatav4/odatav4-step-08-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 Our OData service provides one OData operation: the `ResetDataSource` action. In this step, we add a button that resets all data changes we made during the tutorial to their original state using this action.
 
@@ -18,15 +8,16 @@ Our OData service provides one OData operation: the `ResetDataSource` action. In
 
 **A Restart Tutorial button is added**
 
-![](assets/Tutorial_OData_V4_Step_8_e518deb.png "A Restart Tutorial button is added")
+![A Restart Tutorial button is added](assets/Tutorial_OData_V4_Step_8_e518deb.png "A Restart Tutorial button is added")
 
 ## Coding
 
 You can view this step live: [🔗 Live Preview of Step 8](https://ui5.github.io/tutorials/odatav4/build/08/index-cdn.html).
 
-## `webapp/controller/App.controller.?s`
+## `webapp/controller/App.controller.ts/.js`
 
 ```ts
+// webapp/controller/App.controller.ts
 ...
 		onResetChanges() {
 			this.byId("peopleList").getBinding("items").resetChanges();
@@ -51,6 +42,7 @@ You can view this step live: [🔗 Live Preview of Step 8](https://ui5.github.io
 ```
 
 ```js
+// webapp/controller/App.controller.js
 ...
 		onResetChanges : function () {
 			this.byId("peopleList").getBinding("items").resetChanges();
@@ -131,9 +123,9 @@ And now we are done! We built a simple application with user data from an OData 
 
 **Related Information**
 
-[Bindings](../04_Essentials/bindings-54e0ddf.md "Bindings connect SAPUI5 view elements to model data, allowing changes in the model to be reflected in the view element and vice versa.")
+[Bindings](https://sdk.openui5.org/topic/54e0ddf "Bindings connect SAPUI5 view elements to model data, allowing changes in the model to be reflected in the view element and vice versa.")
 
-[OData Operations](../04_Essentials/odata-operations-b54f789.md "The OData V4 model supports OData operations (ActionImport, FunctionImport, bound Actions and bound Functions). Unbound parameters are limited to primitive values.")
+[OData Operations](https://sdk.openui5.org/topic/b54f789 "The OData V4 model supports OData operations (ActionImport, FunctionImport, bound Actions and bound Functions). Unbound parameters are limited to primitive values.")
 
 ***
 

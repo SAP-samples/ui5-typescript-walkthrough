@@ -11,7 +11,7 @@ Sometimes we need to define some more fine-granular layouts and this is when we 
 
 ### Preview
   
-![](assets/loiod9a40e539b7c49c485be821efbd3821f_LowRes.png "The space between the button and the input field is now smaller and the output text is bold")
+![The space between the button and the input field is now smaller and the output text is bold](assets/loiod9a40e539b7c49c485be821efbd3821f_LowRes.png "The space between the button and the input field is now smaller and the output text is bold")
 
 <sup>*The space between the button and the input field is now smaller and the output text is bold*</sup>
 
@@ -22,17 +22,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 
 ### Coding
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 14](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-14.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 14](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-14-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 14](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-14.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 14](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-14-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/css/style.css \(New\)

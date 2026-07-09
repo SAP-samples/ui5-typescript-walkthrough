@@ -1,5 +1,3 @@
-<!-- loiob01840ec42ef48e6bfd2bc12612f501f -->
-
 # Step 11: Assign Multiple Targets
 
 In this step, we will add a new button to the home page to illustrate the usage of multiple targets for a route. When the button is pressed, a new page opens that contains two parts: a header part at the top and a content part. The content part displays a table of employees that can be sorted and searched. We will use the array notation in the routing configuration to assign multiple targets to a route - a feature that we have not yet introduced.
@@ -48,9 +46,10 @@ You can view this step live: [🔗 Live Preview of Step 11](https://ui5.github.i
 
 First we add a new button to the `Home` view and add an event handler for the `press` event.
 
-## `webapp/controller/Home.controller.?s`
+## `webapp/controller/Home.controller.ts/.js`
 
 ```ts
+// webapp/controller/Home.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 
 /**
@@ -69,6 +68,7 @@ export default class Home extends BaseController {
 ```
 
 ```js
+// webapp/controller/Home.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 
@@ -218,9 +218,10 @@ The router makes sure that the parent view is loaded in addition to the target v
 
 First we create the parent view by creating the folder `overview` under `webapp/view/employee` and placing the file `EmployeeOverview.view.xml` into that folder. This view contains a `Page` control that is referenced from the targets in our `manifest.json` descriptor file. The content aggregation of the page will be filled by the router with the top and content part when the corresponding route has been hit.
 
-## `webapp/controller/employee/overview/EmployeeOverview.controller.?s` \(New\)
+## `webapp/controller/employee/overview/EmployeeOverview.controller.ts/.js` \(New\)
 
 ```ts
+// webapp/controller/employee/overview/EmployeeOverview.controller.ts
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 
 /**
@@ -232,6 +233,7 @@ export default class EmployeeOverview extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/overview/EmployeeOverview.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (BaseController) {
 	"use strict";
 
@@ -301,9 +303,10 @@ Create the file `EmployeeOverviewTop.view.xml` and place it in the `webapp/view/
 
 Create the file EmployeeOverviewContent.view.xml in the `webapp/view/employee/overview` folder. This view displays a responsive table with several columns containing employee data like *Employee ID*, *First Name*, *Last Name* and so on. In the `headerToolbar`, we add the `SearchField` and a `Button`. The `SearchField` in the header area allows to search in the table. The `Button` next to it opens a dialog to adjust the sorting of the table.
 
-## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.?s` \(New\)
+## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js` \(New\)
 
 ```ts
+// webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts
 import SearchField, { SearchField$SearchEvent } from "sap/m/SearchField";
 import Table from "sap/m/Table";
 import ViewSettingsDialog, { ViewSettingsDialog$ConfirmEvent } from "sap/m/ViewSettingsDialog";
@@ -438,6 +441,7 @@ export default class EmployeeOverviewContent extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/overview/EmployeeOverviewContent.controller.js
 sap.ui.define(["sap/m/ViewSettingsDialog", "sap/m/ViewSettingsItem", "ui5/tutorial/navigation/controller/BaseController", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/model/Sorter"], function (ViewSettingsDialog, ViewSettingsItem, BaseController, Filter, FilterOperator, Sorter) {
   "use strict";
 

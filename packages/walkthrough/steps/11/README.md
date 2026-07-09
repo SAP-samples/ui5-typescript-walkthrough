@@ -8,7 +8,7 @@ After all the work on the app structure it’s time to improve the look of our a
 
 ### Preview
 
-![](assets/loio97feb5417c89462ead5b4259f3ecfd47_LowRes.png "A panel is now displaying the controls from the previous steps")  
+![A panel is now displaying the controls from the previous steps](assets/loio97feb5417c89462ead5b4259f3ecfd47_LowRes.png "A panel is now displaying the controls from the previous steps")  
 
 <sup>*A panel is now displaying the controls from the previous steps*</sup>
 
@@ -19,17 +19,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 11](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-11.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 11](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-11-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 11](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-11.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 11](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-11-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/i18n/i18n.properties

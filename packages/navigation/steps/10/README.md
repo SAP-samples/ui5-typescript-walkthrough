@@ -1,5 +1,3 @@
-<!-- loiocdab0a1123514cc08cf2c8deb22f312e -->
-
 # Step 10: Implement “Lazy Loading”
 
 In the previous steps, we have implemented a `Resume` view that uses tabs to display data. The complete content of all the tabs is loaded once, no matter which tab is currently displayed. We can increase the performance of our app by avoiding to load content that is not visible. Therefore, we implement a “lazy loading” feature that only loads the view and data when requested by the user.
@@ -83,9 +81,10 @@ Create the file `ResumeHobbies.view.xml` in the `webapp/view/employee` folder. M
 
 Create the file `ResumeNotes.view.xml` in the `webapp/view/employee` folder similar to the *Hobbies* view to transform this tab to a separate view as well.
 
-## `webapp/controller/employee/Resume.controller.?s`
+## `webapp/controller/employee/Resume.controller.ts/.js`
 
 ```ts
+// webapp/controller/employee/Resume.controller.ts
 import { IconTabBar$SelectEvent } from "sap/m/IconTabBar";
 import BaseController from "ui5/tutorial/navigation/controller/BaseController";
 import { Route$MatchedEvent } from "sap/ui/core/routing/Route";
@@ -139,6 +138,7 @@ export default class Resume extends BaseController {
 ```
 
 ```js
+// webapp/controller/employee/Resume.controller.js
 sap.ui.define(["ui5/tutorial/navigation/controller/BaseController", "sap/ui/model/json/JSONModel"], function (BaseController, JSONModel) {
 	"use strict";
 

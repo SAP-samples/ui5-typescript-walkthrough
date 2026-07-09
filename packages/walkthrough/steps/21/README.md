@@ -8,7 +8,7 @@ Sometimes the predefined types of OpenUI5 are not flexible enough and you want t
 
 ### Preview
   
-![](assets/loio636b7008113442c8a4765bb710dd8ea9_LowRes.png "The price is now formatted according to its number")
+![The price is now formatted according to its number](assets/loio636b7008113442c8a4765bb710dd8ea9_LowRes.png "The price is now formatted according to its number")
 
 <sup>*The price is now formatted according to its number*</sup>
 
@@ -18,17 +18,7 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 ### Coding
 
-<details class="ts-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 21](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-21.zip).
-
-</details>
-
-<details class="js-only" markdown="1">
-
-You can download the solution for this step here: [📥 Download step 21](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-21-js.zip).
-
-</details>
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 21](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-21.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 21](https://ui5.github.io/tutorials/walkthrough/walkthrough-step-21-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 ***
 
 ### webapp/view/InvoiceList.view.xml
