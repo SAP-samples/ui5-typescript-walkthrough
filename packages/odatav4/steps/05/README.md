@@ -14,7 +14,7 @@ In this step, we have a closer look at batch groups. Batch groups are used to gr
 
 You can view this step live: [🔗 Live Preview of Step 5](https://ui5.github.io/tutorials/odatav4/build/05/index-cdn.html).
 
-## `webapp/manifest.ts/.js`on
+## `webapp/manifest.json`
 
 ```json
 ...
