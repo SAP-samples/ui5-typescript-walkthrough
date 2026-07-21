@@ -12,9 +12,11 @@ Fortunately, we can extend our app and offer an easy solution. There are some us
 
 ![The new Home page with a navigation button](assets/Tutorial_Navigation_and_Routing_Step_05.png "The new Home page with a navigation button")
 
+You can view this step live: [🔗 Live Preview of Step 5](https://ui5.github.io/tutorials/navigation/build/05/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 5](https://ui5.github.io/tutorials/navigation/build/05/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 5](https://ui5.github.io/tutorials/navigation/navigation-step-05.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 5](https://ui5.github.io/tutorials/navigation/navigation-step-05-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## webapp/view/Home.view.xml
 
@@ -215,7 +217,6 @@ When we now click the *Back* button, it works as expected and brings us back to 
 - Think carefully about all navigation patterns in your application, otherwise the user might get stuck
 
 ***
-
 
 ***
 

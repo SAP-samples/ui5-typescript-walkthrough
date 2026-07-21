@@ -16,9 +16,11 @@ In this step, we will add a new button to the home page to illustrate the usage 
 
 ![Sort options for the Employee Overview](assets/Tutorial_Navigation_and_Routing_Step_11c.png "Sort options for the Employee Overview")
 
+You can view this step live: [🔗 Live Preview of Step 11](https://ui5.github.io/tutorials/navigation/build/11/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 11](https://ui5.github.io/tutorials/navigation/build/11/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 11](https://ui5.github.io/tutorials/navigation/navigation-step-11.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 11](https://ui5.github.io/tutorials/navigation/navigation-step-11-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ### Folder Structure for this Step
 
@@ -586,7 +588,6 @@ Employees=Employees
 Add the new texts to the `properties` file.
 
 ***
-
 
 ***
 

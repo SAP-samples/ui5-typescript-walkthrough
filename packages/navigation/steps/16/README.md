@@ -8,9 +8,11 @@ So far we have created many useful routes in our app. In the very early steps we
 
 ![Console output for invalid hashes when listening to bypassed events](assets/Tutorial_Navigation_and_Routing_Step_16.png "Console output for invalid hashes when listening to bypassed events")
 
+You can view this step live: [🔗 Live Preview of Step 16](https://ui5.github.io/tutorials/navigation/build/16/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 16](https://ui5.github.io/tutorials/navigation/build/16/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 16](https://ui5.github.io/tutorials/navigation/navigation-step-16.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 16](https://ui5.github.io/tutorials/navigation/navigation-step-16-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## `webapp/controller/App.controller.ts/.js`
 
@@ -79,7 +81,6 @@ All we need to do is listen to the bypassed event on the router. If the bypassed
 Now try to access `webapp/index.html#/thisIsInvalid` while you have your browser console open. As you can see, there is a message that issues a faulty hash. Furthermore, our `NotFound` page is displayed.
 
 ***
-
 
 ***
 

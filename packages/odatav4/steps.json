@@ -18,7 +18,7 @@
       "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/02/index-cdn.html",
       "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-02.zip",
       "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-02-js.zip",
-      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 2<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 2<span class=\"lang-suffix\"> (JS)</span></span>."
+      "description": "In this step, we see how the Table that is bound to the People entity set initially requests its data, and how the data can be refreshed. We use the Console tab in the browser developer tools to monitor the communication between the browser and the server. We see the initial request as well as the requests for refreshing the data."
     },
     {
       "n": 3,
@@ -27,7 +27,7 @@
       "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/03/index-cdn.html",
       "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-03.zip",
       "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-03-js.zip",
-      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 3<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 3<span class=\"lang-suffix\"> (JS)</span></span>."
+      "description": "In this step, we use the automatic data type detection of the OData V4 model to parse, validate, and format user entries. The service metadata contains type information for the properties of each entity."
     },
     {
       "n": 4,
@@ -36,7 +36,7 @@
       "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/04/index-cdn.html",
       "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-04.zip",
       "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-04-js.zip",
-      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 4<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 4<span class=\"lang-suffix\"> (JS)</span></span>."
+      "description": "In this step, we add features to filter, sort, and count the user data by using the OData V4 model API to apply OData system query options $filter, $orderby, and $count."
     },
     {
       "n": 5,
@@ -45,7 +45,7 @@
       "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/05/index-cdn.html",
       "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-05.zip",
       "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-05-js.zip",
-      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 5<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 5<span class=\"lang-suffix\"> (JS)</span></span>."
+      "description": "In this step, we have a closer look at batch groups. Batch groups are used to group multiple requests into one server request to improve the overall performance."
     },
     {
       "n": 6,
@@ -54,7 +54,7 @@
       "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/06/index-cdn.html",
       "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-06.zip",
       "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-06-js.zip",
-      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 6<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 6<span class=\"lang-suffix\"> (JS)</span></span>."
+      "description": "In this step, we will make it possible to create and edit \\(update\\) user data from the user interface and send the data to the back end."
     },
     {
       "n": 7,
@@ -63,7 +63,7 @@
       "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/07/index-cdn.html",
       "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-07.zip",
       "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-07-js.zip",
-      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 7<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 7<span class=\"lang-suffix\"> (JS)</span></span>."
+      "description": "In this step, we make it possible to delete user data."
     },
     {
       "n": 8,
@@ -72,7 +72,7 @@
       "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/08/index-cdn.html",
       "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-08.zip",
       "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-08-js.zip",
-      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 8<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 8<span class=\"lang-suffix\"> (JS)</span></span>."
+      "description": "Our OData service provides one OData operation: the ResetDataSource action. In this step, we add a button that resets all data changes we made during the tutorial to their original state using this action."
     },
     {
       "n": 9,
@@ -81,7 +81,7 @@
       "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/09/index-cdn.html",
       "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-09.zip",
       "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-09-js.zip",
-      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 9<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 9<span class=\"lang-suffix\"> (JS)</span></span>."
+      "description": "In this step we add a detail area with additional information."
     },
     {
       "n": 10,
@@ -90,7 +90,7 @@
       "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/10/index-cdn.html",
       "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-10.zip",
       "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-10-js.zip",
-      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 10<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 10<span class=\"lang-suffix\"> (JS)</span></span>."
+      "description": "In this step we avoid unnecessary back-end requests by preventing the destruction of data shown in the detail area when sorting or filtering the list."
     },
     {
       "n": 11,
@@ -99,7 +99,7 @@
       "previewUrl": "https://ui5.github.io/tutorials/odatav4/build/11/index-cdn.html",
       "zipTs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-11.zip",
       "zipJs": "https://ui5.github.io/tutorials/odatav4/odatav4-step-11-js.zip",
-      "description": "You can download the solution for this step here: <span class=\"ts-only\">📥 Download step 11<span class=\"lang-suffix\"> (TS)</span></span><span class=\"js-only\">📥 Download step 11<span class=\"lang-suffix\"> (JS)</span></span>."
+      "description": "In this step we add a table with additional information to the detail area."
     }
   ]
 }

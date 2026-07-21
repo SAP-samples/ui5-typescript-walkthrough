@@ -8,6 +8,8 @@ When we are on the *Not Found* page because of an invalid hash, we want to get b
 
 ![Not Found page with Back button](assets/Tutorial_Navigation_and_Routing_Step_04a.png)
 
+You can view this step live: [🔗 Live Preview of Step 4](https://ui5.github.io/tutorials/navigation/build/04/index-cdn.html).
+
 ### Folder structure for this step
 
 ```text
@@ -37,7 +39,7 @@ webapp/
 
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 4](https://ui5.github.io/tutorials/navigation/build/04/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 4](https://ui5.github.io/tutorials/navigation/navigation-step-04.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 4](https://ui5.github.io/tutorials/navigation/navigation-step-04-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## webapp/view/NotFound.view.xml
 
@@ -228,7 +230,6 @@ The same applies to our `Home` controller, we now also inherit from the `BaseCon
 - Query the history and go to the home page if there is no history available for the current app
 
 ***
-
 
 ***
 

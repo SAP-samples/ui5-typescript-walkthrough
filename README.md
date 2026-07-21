@@ -13,6 +13,7 @@ We first introduce you to the basic development paradigms like *Model-View-Contr
 This repository contains following tutorials:
 - [Quickstart](./packages/quickstart/)
 - [Walkthrough](./packages/walkthrough/)
+- [Data Binding](./packages/databinding/)
 - [Navigation and Routing](./packages/navigation/)
 - [OData V4](./packages/odatav4/)
 

@@ -1,7 +1,5 @@
 # Step 8: OData Operations
 
-You can download the solution for this step here: <span class="ts-only">[📥 Download step 8](https://ui5.github.io/tutorials/odatav4/odatav4-step-08.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 8](https://ui5.github.io/tutorials/odatav4/odatav4-step-08-js.zip)<span class="lang-suffix"> (JS)</span></span>.
-
 Our OData service provides one OData operation: the `ResetDataSource` action. In this step, we add a button that resets all data changes we made during the tutorial to their original state using this action.
 
 ## Preview
@@ -10,9 +8,11 @@ Our OData service provides one OData operation: the `ResetDataSource` action. In
 
 ![A Restart Tutorial button is added](assets/Tutorial_OData_V4_Step_8_e518deb.png "A Restart Tutorial button is added")
 
+You can view this step live: [🔗 Live Preview of Step 8](https://ui5.github.io/tutorials/odatav4/build/08/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 8](https://ui5.github.io/tutorials/odatav4/build/08/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 8](https://ui5.github.io/tutorials/odatav4/odatav4-step-08.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 8](https://ui5.github.io/tutorials/odatav4/odatav4-step-08-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## `webapp/controller/App.controller.ts/.js`
 

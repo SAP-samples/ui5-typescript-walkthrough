@@ -1,7 +1,5 @@
 # Step 2: Data Access and Client-Server Communication
 
-You can download the solution for this step here: <span class="ts-only">[📥 Download step 2](https://ui5.github.io/tutorials/odatav4/odatav4-step-02.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 2](https://ui5.github.io/tutorials/odatav4/odatav4-step-02-js.zip)<span class="lang-suffix"> (JS)</span></span>.
-
 In this step, we see how the `Table` that is bound to the `People` entity set initially requests its data, and how the data can be refreshed. We use the *Console* tab in the browser developer tools to monitor the communication between the browser and the server. We see the initial request as well as the requests for refreshing the data.
 
 ## Preview
@@ -12,9 +10,11 @@ In this step, we see how the `Table` that is bound to the `People` entity set in
 					button](assets/Tutorial_OData_V4_Step_2_0abcbb6.png "App with a toolbar that contains a Refresh
 					button")
 
+You can view this step live: [🔗 Live Preview of Step 2](https://ui5.github.io/tutorials/odatav4/build/02/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 2](https://ui5.github.io/tutorials/odatav4/build/02/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 2](https://ui5.github.io/tutorials/odatav4/odatav4-step-02.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 2](https://ui5.github.io/tutorials/odatav4/odatav4-step-02-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## `webapp/controller/App.controller.ts/.js`
 

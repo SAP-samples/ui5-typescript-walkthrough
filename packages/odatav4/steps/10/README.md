@@ -1,7 +1,5 @@
 # Step 10: Enable Data Reuse
 
-You can download the solution for this step here: <span class="ts-only">[📥 Download step 10](https://ui5.github.io/tutorials/odatav4/odatav4-step-10.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 10](https://ui5.github.io/tutorials/odatav4/odatav4-step-10-js.zip)<span class="lang-suffix"> (JS)</span></span>.
-
 In this step we avoid unnecessary back-end requests by preventing the destruction of data shown in the detail area when sorting or filtering the list.
 
 ## Preview
@@ -10,9 +8,11 @@ In this step we avoid unnecessary back-end requests by preventing the destructio
 
 ![A list of users with an added detail area](assets/Tut_OD4_Step_9_6e9025b.png "No visual change compared to the last step")
 
+You can view this step live: [🔗 Live Preview of Step 10](https://ui5.github.io/tutorials/odatav4/build/10/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 10](https://ui5.github.io/tutorials/odatav4/build/10/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 10](https://ui5.github.io/tutorials/odatav4/odatav4-step-10.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 10](https://ui5.github.io/tutorials/odatav4/odatav4-step-10-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## `webapp/controller/App.controller.ts/.js`
 

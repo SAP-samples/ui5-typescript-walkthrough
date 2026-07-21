@@ -8,9 +8,11 @@ In this step we will modify the app and introduce routing. Instead of having the
 
 ![Views are wired together using the router](assets/Tutorial_Navigation_and_Routing_Step_02a.png "Views are wired together using the router")
 
+You can view this step live: [🔗 Live Preview of Step 2](https://ui5.github.io/tutorials/navigation/build/02/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 2](https://ui5.github.io/tutorials/navigation/build/02/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 2](https://ui5.github.io/tutorials/navigation/navigation-step-02.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 2](https://ui5.github.io/tutorials/navigation/navigation-step-02-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ### Folder structure for this step
 
@@ -234,7 +236,6 @@ Create a file `Home.controller.ts` in the `webapp/controller` folder. The contro
 - Initialize the router in the component
 
 ***
-
 
 ***
 

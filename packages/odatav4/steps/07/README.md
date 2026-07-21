@@ -1,7 +1,5 @@
 # Step 7: Delete
 
-You can download the solution for this step here: <span class="ts-only">[📥 Download step 7](https://ui5.github.io/tutorials/odatav4/odatav4-step-07.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 7](https://ui5.github.io/tutorials/odatav4/odatav4-step-07-js.zip)<span class="lang-suffix"> (JS)</span></span>.
-
 In this step, we make it possible to delete user data.
 
 ## Preview
@@ -10,9 +8,11 @@ In this step, we make it possible to delete user data.
 
 ![A new Delete User button is added](assets/Tutorial_OData_V4_Step_7_32509f4.png "A new Delete User button is added")
 
+You can view this step live: [🔗 Live Preview of Step 7](https://ui5.github.io/tutorials/odatav4/build/07/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 7](https://ui5.github.io/tutorials/odatav4/build/07/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 7](https://ui5.github.io/tutorials/odatav4/odatav4-step-07.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 7](https://ui5.github.io/tutorials/odatav4/odatav4-step-07-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## `webapp/App.controller.ts/.js`
 

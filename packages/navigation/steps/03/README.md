@@ -8,9 +8,11 @@ Sometimes it is important to display an indication that the requested resource w
 
 ![Not Found page](assets/Tutorial_Navigation_and_Routing_Step_03.png "Not Found page")
 
+You can view this step live: [🔗 Live Preview of Step 3](https://ui5.github.io/tutorials/navigation/build/03/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 3](https://ui5.github.io/tutorials/navigation/build/03/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 3](https://ui5.github.io/tutorials/navigation/navigation-step-03.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 3](https://ui5.github.io/tutorials/navigation/navigation-step-03-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ### Folder structure for this step
 
@@ -157,7 +159,6 @@ Open the URL `index.html#/thisIsInvalid` in your browser. From now on the user w
 - Use the `sap.m.IllustratedMessage` control to display routing related error messages
 
 ***
-
 
 ***
 

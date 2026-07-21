@@ -8,9 +8,11 @@ In the previous steps, we have implemented a `Resume` view that uses tabs to dis
 
 ![Tabs with lazy loading](assets/Tutorial_Navigation_and_Routing_Step_10a.png "Tabs with lazy loading")
 
+You can view this step live: [🔗 Live Preview of Step 10](https://ui5.github.io/tutorials/navigation/build/10/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 10](https://ui5.github.io/tutorials/navigation/build/10/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 10](https://ui5.github.io/tutorials/navigation/navigation-step-10.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 10](https://ui5.github.io/tutorials/navigation/navigation-step-10-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ### Folder Structure for this Step
 
@@ -293,7 +295,6 @@ Try it out yourself: Open the *Network* tab of your browser's developer tools an
 - Lazy-load content that is not initially displayed to the user
 
 ***
-
 
 ***
 

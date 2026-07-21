@@ -8,9 +8,11 @@ The *Employees* table displays employee data. However, the resumes of the employ
 
 ![Navigation to an existing route from a table item](assets/Tutorial_Navigation_and_Routing_Step_15.png "Navigation to an existing route from a table item")
 
+You can view this step live: [🔗 Live Preview of Step 15](https://ui5.github.io/tutorials/navigation/build/15/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 15](https://ui5.github.io/tutorials/navigation/build/15/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 15](https://ui5.github.io/tutorials/navigation/navigation-step-15.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 15](https://ui5.github.io/tutorials/navigation/navigation-step-15-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## webapp/view/employee/overview/EmployeeOverviewContent.view.xml
 
@@ -244,7 +246,6 @@ sap.ui.define(["sap/m/ViewSettingsDialog", "sap/m/ViewSettingsItem", "ui5/tutori
 Next we add the `itemPress` handler `.onItemPressed` to the `EmployeeOverviewContent` controller. It reads from the binding context which item has been chosen and navigates to the `employeeResume` route. We have already added this route and the corresponding target in a previous step and can now reuse it. From now on it is possible to navigate to the `employeeResume` route from our employee table as well as from the employee detail page created in an earlier step \(the route name is `employee`\).
 
 ***
-
 
 ***
 

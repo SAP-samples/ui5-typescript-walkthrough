@@ -12,9 +12,11 @@ In this step, we'll create a second button on the home page, with which we can n
 
 ![Employee list with Back button](assets/Tutorial_Navigation_and_Routing_Step_06b.png "Employee list with Back button")
 
+You can view this step live: [🔗 Live Preview of Step 6](https://ui5.github.io/tutorials/navigation/build/06/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 6](https://ui5.github.io/tutorials/navigation/build/06/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 6](https://ui5.github.io/tutorials/navigation/navigation-step-06.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 6](https://ui5.github.io/tutorials/navigation/navigation-step-06-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ### Folder structure for this step
 
@@ -262,7 +264,6 @@ Add the new texts to the `i18n.properties` file.
 Now you can open the app and press the *Show Employee List* button to navigate to the employee list. From there, you can press either the browser’s or the app’s *Back* button to get back to the home page.
 
 ***
-
 
 ***
 
