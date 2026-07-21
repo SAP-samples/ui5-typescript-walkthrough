@@ -1,7 +1,5 @@
 # Step 3: Automatic Data Type Detection
 
-You can download the solution for this step here: <span class="ts-only">[📥 Download step 3](https://ui5.github.io/tutorials/odatav4/odatav4-step-03.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 3](https://ui5.github.io/tutorials/odatav4/odatav4-step-03-js.zip)<span class="lang-suffix"> (JS)</span></span>.
-
 In this step, we use the automatic data type detection of the OData V4 model to parse, validate, and format user entries. The service metadata contains type information for the properties of each entity.
 
 The OData V4 Model utilizes this information to compute the corresponding SAPUI5 type, including constraints, and sets this type to the SAPUI5 property binding for the entity property. For example, for `<Input value={Age}/>` the SAPUI5 type `Int64` is used, which corresponds to the OData type `Edm.Int64`.
@@ -12,9 +10,11 @@ The OData V4 Model utilizes this information to compute the corresponding SAPUI5
 
 ![Input does not match the underlying data type](assets/Tutorial_OData_V4_Step_3_8320fcf.png "Input does not match the underlying data type")
 
+You can view this step live: [🔗 Live Preview of Step 3](https://ui5.github.io/tutorials/odatav4/build/03/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 3](https://ui5.github.io/tutorials/odatav4/build/03/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 3](https://ui5.github.io/tutorials/odatav4/odatav4-step-03.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 3](https://ui5.github.io/tutorials/odatav4/odatav4-step-03-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## `webapp/manifest.json`
 

@@ -18,9 +18,11 @@ The detail page has to read the ID of the employee from the URL to fetch and dis
 
 ![Not Found page for an invalid EmployeeID](assets/Tutorial_Navigation_and_Routing_Step_07c.png "Not Found page for an invalid EmployeeID")
 
+You can view this step live: [🔗 Live Preview of Step 7](https://ui5.github.io/tutorials/navigation/build/07/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 7](https://ui5.github.io/tutorials/navigation/build/07/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 7](https://ui5.github.io/tutorials/navigation/navigation-step-07.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 7](https://ui5.github.io/tutorials/navigation/navigation-step-07-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ### Folder structure for this step
 
@@ -391,7 +393,6 @@ That’s it. You can go to `webapp/index.html#/employees` and click on any list 
 - `webapp/index.html#/employees/33`
 
 ***
-
 
 ***
 

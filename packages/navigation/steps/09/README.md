@@ -10,9 +10,11 @@ In this step, we implement a bookmarking feature by enabling deep linking to tab
 
 ![Deep link to allow bookmarkable tabs](assets/Tutorial_Navigation_and_Routing_Step_09.png "Deep link to allow bookmarkable tabs")
 
+You can view this step live: [🔗 Live Preview of Step 9](https://ui5.github.io/tutorials/navigation/build/09/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 9](https://ui5.github.io/tutorials/navigation/build/09/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 9](https://ui5.github.io/tutorials/navigation/navigation-step-09.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 9](https://ui5.github.io/tutorials/navigation/navigation-step-09-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## webapp/manifest.json
 
@@ -285,7 +287,6 @@ From now on our tabs are bookmarkable. Try to access the following \(deep\) link
 When you click on any tab you will see that the hash in the URL changes immediately, and when you change the hash in the URL parameter manually, you can see that the UI is also updated accordingly.
 
 ***
-
 
 ***
 

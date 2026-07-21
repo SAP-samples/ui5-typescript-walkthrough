@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es2023",
+    "types": [
+      "@openui5/types"
+    ],
+    "skipLibCheck": true,
+    "allowJs": true,
+    "strictPropertyInitialization": false,
+    "rootDir": "./webapp",
+    "paths": {
+      "ui5/tutorial/databinding/*": [
+        "./webapp/*"
+      ]
+    },
+    "strict": false,
+    "strictNullChecks": false
+  },
+  "exclude": [
+    "./webapp/test/e2e/**/*"
+  ],
+  "include": [
+    "./webapp/**/*"
+  ]
+}

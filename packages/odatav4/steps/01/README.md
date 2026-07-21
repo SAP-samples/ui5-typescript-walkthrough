@@ -10,8 +10,6 @@ The structure and data model created in this step will be used throughout this t
 
 ![Initial app with a simple table](assets/Tutorial_OData_V4_Step1_Preview_9d0182f.png "Initial app with a simple table")
 
-You can download the solution for this step here: <span class="ts-only">[📥 Download step 1](https://ui5.github.io/tutorials/odatav4/odatav4-step-01.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 1](https://ui5.github.io/tutorials/odatav4/odatav4-step-01-js.zip)<span class="lang-suffix"> (JS)</span></span>.
-
 ***
 
 ## Setup

@@ -1,7 +1,5 @@
 # Step 6: Create and Edit
 
-You can download the solution for this step here: <span class="ts-only">[📥 Download step 6](https://ui5.github.io/tutorials/odatav4/odatav4-step-06.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 6](https://ui5.github.io/tutorials/odatav4/odatav4-step-06-js.zip)<span class="lang-suffix"> (JS)</span></span>.
-
 In this step, we will make it possible to create and edit \(update\) user data from the user interface and send the data to the back end.
 
 ## Preview
@@ -10,9 +8,11 @@ In this step, we will make it possible to create and edit \(update\) user data f
 
 ![Data can now be edited and added.](assets/Tutorial_OData_V4_Step_6_baf7417.png "Data can now be edited and added.")
 
+You can view this step live: [🔗 Live Preview of Step 6](https://ui5.github.io/tutorials/odatav4/build/06/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 6](https://ui5.github.io/tutorials/odatav4/build/06/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 6](https://ui5.github.io/tutorials/odatav4/odatav4-step-06.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 6](https://ui5.github.io/tutorials/odatav4/odatav4-step-06-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## `webapp/controller/App.controller.ts/.js`
 

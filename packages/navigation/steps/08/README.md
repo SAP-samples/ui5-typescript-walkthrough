@@ -16,9 +16,11 @@ In this step, we want to illustrate how to navigate to a page with a custom tran
 
 ![Not Found page for resume](assets/Tutorial_Navigation_and_Routing_Step_08c.png "Not Found page for resume")
 
+You can view this step live: [🔗 Live Preview of Step 8](https://ui5.github.io/tutorials/navigation/build/08/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 8](https://ui5.github.io/tutorials/navigation/build/08/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 8](https://ui5.github.io/tutorials/navigation/navigation-step-08.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 8](https://ui5.github.io/tutorials/navigation/navigation-step-08-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ### Folder structure for this step
 
@@ -426,7 +428,6 @@ Add the new texts to the `i18n.properties` file.
 You can go to `webapp/index.html#/employees/3` and click on the *Flip to Resume* link to be redirected with a nice flip transition to the employee’s resume. The back navigation uses a reverse flip navigation to get back to the *Employee Details* page. You can also directly navigate to `webapp/index.html#/employees/3/resume` or `webapp/index.html#/employees/33/resume` to see what happens.
 
 ***
-
 
 ***
 

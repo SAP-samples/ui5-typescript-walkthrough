@@ -1,7 +1,5 @@
 # Step 4: Filtering, Sorting, and Counting
 
-You can download the solution for this step here: <span class="ts-only">[📥 Download step 4](https://ui5.github.io/tutorials/odatav4/odatav4-step-04.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 4](https://ui5.github.io/tutorials/odatav4/odatav4-step-04-js.zip)<span class="lang-suffix"> (JS)</span></span>.
-
 In this step, we add features to filter, sort, and count the user data by using the OData V4 model API to apply OData system query options `$filter`, `$orderby`, and `$count`.
 
 ## Preview
@@ -12,9 +10,11 @@ In this step, we add features to filter, sort, and count the user data by using 
 					many entities are loaded and how many more are available](assets/Tutorial_OData_V4_Step_4_3ac4fcc.png "App now has a search field, the entries can be sorted, and you can see how
 					many entities are loaded and how many more are available")
 
+You can view this step live: [🔗 Live Preview of Step 4](https://ui5.github.io/tutorials/odatav4/build/04/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 4](https://ui5.github.io/tutorials/odatav4/build/04/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 4](https://ui5.github.io/tutorials/odatav4/odatav4-step-04.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 4](https://ui5.github.io/tutorials/odatav4/odatav4-step-04-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## `webapp/controller/App.controller.ts/.js`
 

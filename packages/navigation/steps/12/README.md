@@ -8,9 +8,11 @@ In this step we will make the search bookmarkable. This allows users to search f
 
 ![Search and sorting bookmarkable](assets/Tutorial_Navigation_and_Routing_Step_12.png "Search and sorting bookmarkable")
 
+You can view this step live: [🔗 Live Preview of Step 12](https://ui5.github.io/tutorials/navigation/build/12/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 12](https://ui5.github.io/tutorials/navigation/build/12/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 12](https://ui5.github.io/tutorials/navigation/navigation-step-12.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 12](https://ui5.github.io/tutorials/navigation/navigation-step-12-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## webapp/manifest.json
 
@@ -281,7 +283,6 @@ That’s it, now our search is bookmarkable and reflected in the URL. Try to acc
 When you change the value in the search field, you see that the hash updates accordingly.
 
 ***
-
 
 ***
 

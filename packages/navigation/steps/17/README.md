@@ -8,9 +8,11 @@ In the previous step, we have listened for bypassed events to detect possible te
 
 ![Console output for routes matched by listening to routeMatched events](assets/Tutorial_Navigation_and_Routing_Step_17.png "Console output for routes matched by listening to routeMatched events")
 
+You can view this step live: [🔗 Live Preview of Step 17](https://ui5.github.io/tutorials/navigation/build/17/index-cdn.html).
+
 ## Coding
 
-You can view this step live: [🔗 Live Preview of Step 17](https://ui5.github.io/tutorials/navigation/build/17/index-cdn.html).
+You can download the solution for this step here: <span class="ts-only">[📥 Download step 17](https://ui5.github.io/tutorials/navigation/navigation-step-17.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 17](https://ui5.github.io/tutorials/navigation/navigation-step-17-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
 ## `webapp/controller/App.controller.ts/.js`
 
@@ -41,7 +43,6 @@ export default class App extends BaseController {
 			// telling what resource the user tried to access...
 			Log.info(`Sorry, but the hash '${hash}' is invalid.`, "The resource was not found.");
 		});
-
 
 		router.attachRouteMatched((event: Router$RouteMatchedEvent) => {
 			const sRouteName = event.getParameter("name");
@@ -88,7 +89,6 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController", "sap/base/Lo
 We extend the `App` controller again and listen to the `routeMatched` event. The `routeMatched` event is thrown for any route that matches to our route configuration in the descriptor file. In the event handler, we determine the name of the matched route from the event parameters and log it together with a time stamp. In an actual app, the information could be sent to a back-end system or an analytics server to find out more about the usage of your app.
 
 Now you can access, for example, `webapp/index.html#/employees` while you have the console of the browser open. As you can see, there is a message logged for each navigation step that you do within the app.
-
 
 ***
 
