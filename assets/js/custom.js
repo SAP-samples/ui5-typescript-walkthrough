@@ -179,6 +179,13 @@ function replaceFileExtensions(lang) {
 	const replacement =
 		"<span class='ts-only'>.ts</span><span class='js-only'>.js</span>";
 
+	// The `.ts/.js` toggle token only represents a *complete* file extension.
+	// Requiring a non-word boundary after `.js` prevents a mis-authored token
+	// that is really part of a longer extension (e.g. `manifest.ts/.js` + `on`,
+	// a leftover from tokenizing `.json`) from being swapped into a corrupt
+	// filename like `manifest.tson` when TypeScript is active.
+	const tokenPattern = /\.ts\/\.js(?![A-Za-z0-9])/g;
+
 	// select all text nodes in the body
 	const walker = document.createTreeWalker(
 		document.body,
@@ -191,9 +198,9 @@ function replaceFileExtensions(lang) {
 	// iterate over each text node
 	while (node) {
 		let nextNode = walker.nextNode();
-		if (node.nodeValue.includes(".ts/.js")) {
+		if (tokenPattern.test(node.nodeValue)) {
 			const temp = document.createElement("div");
-			temp.innerHTML = node.nodeValue.replace(/\.ts\/\.js/g, replacement);
+			temp.innerHTML = node.nodeValue.replace(tokenPattern, replacement);
 
 			const fragment = document.createDocumentFragment();
 			while (temp.firstChild) {

@@ -16,7 +16,7 @@ The OData V4 Model utilizes this information to compute the corresponding SAPUI5
 
 You can view this step live: [🔗 Live Preview of Step 3](https://ui5.github.io/tutorials/odatav4/build/03/index-cdn.html).
 
-## `webapp/manifest.ts/.js`on
+## `webapp/manifest.json`
 
 ```json
 {
