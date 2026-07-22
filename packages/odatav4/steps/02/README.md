@@ -227,13 +227,13 @@ We search for the following mock server requests:
 
 **Related Information**
 
-[Bindings](https://sdk.openui5.org/topic/54e0ddf "Bindings connect SAPUI5 view elements to model data, allowing changes in the model to be reflected in the view element and vice versa.")
+[Bindings](https://sdk.openui5.org/topic/54e0ddf695af4a6c978472cecb01c64d "Bindings connect OpenUI5 view elements to model data, allowing changes in the model to be reflected in the view element and vice versa.")
 
-[API Reference: `sap.ui.model.odata.v4.ODataMetaModel`](https://ui5.sap.com/#/api/sap.ui.model.odata.v4.ODataMetaModel)
+[API Reference: `sap.ui.model.odata.v4.ODataMetaModel`](https://sdk.openui5.org/#/api/sap.ui.model.odata.v4.ODataMetaModel)
 
-[API Reference: `sap.ui.model.odata.v4.ODataListBinding.refresh`](https://ui5.sap.com/#/api/sap.ui.model.odata.v4.ODataListBinding/methods/refresh)
+[API Reference: `sap.ui.model.odata.v4.ODataListBinding.refresh`](https://sdk.openui5.org/#/api/sap.ui.model.odata.v4.ODataListBinding/methods/refresh)
 
-[Troubleshooting Tutorial Step 1: Browser Developer Tools](step-1-browser-developer-tools-eadd60a.md "In this step, you will learn how to use your browser's developers tools to troubleshoot your SAPUI5 app.")
+[Troubleshooting Tutorial Step 1: Browser Developer Tools](step-1-browser-developer-tools-eadd60a.md "In this step, you will learn how to use your browser's developers tools to troubleshoot your OpenUI5 app.")
 
 ***
 

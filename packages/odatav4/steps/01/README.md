@@ -2,7 +2,7 @@
 
 We start by setting up a simple app that loads data from an OData service and displays it in a table. We use a mock server to simulate requests to and responses from the service.
 
-The structure and data model created in this step will be used throughout this tutorial to illustrate the OData V4 features in SAPUI5.
+The structure and data model created in this step will be used throughout this tutorial to illustrate the OData V4 features in OpenUI5.
 
 ## Preview
 
@@ -97,7 +97,7 @@ In this tutorial, we only use the entity type `Person` of the *TripPin* service.
 
 [*OData* Reference Services including *TripPin*](http://www.odata.org/odata-services/)
 
-[Bootstrapping: Loading and Initializing](https://sdk.openui5.org/topic/a04b0d10fb494d1cb722b9e341b584ba.html "To use SAPUI5 features in your HTML page, you have to load and initialize the SAPUI5 library.")
+[Bootstrapping: Loading and Initializing](https://sdk.openui5.org/topic/a04b0d10fb494d1cb722b9e341b584ba.html "To use OpenUI5 features in your HTML page, you have to load and initialize the OpenUI5 library.")
 
 [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html "The descriptor for applications, components, and libraries (in short: app descriptor) is inspired by the WebApplication Manifest concept introduced by the W3C. The descriptor provides a central, machine-readable, and easy-to-access location for storing metadata associated with an application, an application component, or a library.")
 

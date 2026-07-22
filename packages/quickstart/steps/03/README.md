@@ -205,8 +205,8 @@ Have fun with OpenUI5!
 
 **Related Information** 
 
-[Working with Controls](https://sdk.openui5.org/#/topic/91f0a22d6f4d1014b6dd926db0e91070 "Controls are used to define the appearance and behavior of screen areas.")
+[Working with Controls](https://sdk.openui5.org/topic/91f0a22d6f4d1014b6dd926db0e91070 "Controls are used to define the appearance and behavior of screen areas.")
 
-[Data Binding](https://sdk.openui5.org/#/topic/68b9644a253741e8a4b9e4279a35c247 "You use data binding to bind UI elements to data sources to keep the data in sync and allow data editing on the UI.")
+[Data Binding](https://sdk.openui5.org/topic/68b9644a253741e8a4b9e4279a35c247 "You use data binding to bind UI elements to data sources to keep the data in sync and allow data editing on the UI.")
 
-[Routing and Navigation](https://sdk.openui5.org/#/topic/3d18f20bd2294228acb6910d8e8a5fb5 "OpenUI5 offers hash-based navigation, which allows you to build single-page apps where the navigation is done by changing the hash. In this way the browser does not have to reload the page; instead there is a callback to which the app and especially the affected view can react. A hash string is parsed and matched against patterns which will then inform the handlers.")
+[Routing and Navigation](https://sdk.openui5.org/topic/3d18f20bd2294228acb6910d8e8a5fb5 "OpenUI5 offers hash-based navigation, which allows you to build single-page apps where the navigation is done by changing the hash. In this way the browser does not have to reload the page; instead there is a callback to which the app and especially the affected view can react. A hash string is parsed and matched against patterns which will then inform the handlers.")

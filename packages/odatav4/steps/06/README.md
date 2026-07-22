@@ -542,9 +542,9 @@ We add the `$$updateGroupId: 'peopleGroup'` parameter to the table. This means t
 
 We add a new *Add User* button to the overflow toolbar in the table header, and define a footer toolbar that contains *Save* and *Cancel* buttons that we can display or hide through the `appView` model. We can disable the *Save* button separately, for example when a user enters invalid data.
 
-Finally, we add the `liveChange="onInputChange"` event handler to the table cells to make it possible to react to user input. In addition, we set the `valueLiveUpdate` properties for the fields for `UserName` and `Age`. That makes sure that the SAPUI5 types validate the field content with each keystroke.
+Finally, we add the `liveChange="onInputChange"` event handler to the table cells to make it possible to react to user input. In addition, we set the `valueLiveUpdate` properties for the fields for `UserName` and `Age`. That makes sure that the OpenUI5 types validate the field content with each keystroke.
 
-Creation via a form is demonstrated in our [Sales Orders sample app](https://ui5.sap.com/#/entity/sap.ui.model.odata.v4.ODataModel/sample/sap.ui.core.sample.odata.v4.SalesOrders).
+Creation via a form is demonstrated in our [Sales Orders sample app](https://sdk.openui5.org/#/entity/sap.ui.model.odata.v4.ODataModel/sample/sap.ui.core.sample.odata.v4.SalesOrders).
 
 ## webapp/i18n/i18n.properties
 
@@ -572,17 +572,17 @@ We add the new message texts.
 
 **Related Information**
 
-[Model Instantiation and Data Access](https://sdk.openui5.org/topic/9613f1f "One OData V4 model instance can only cover one OData service. This section describes the creation of a model instance in more detail.")
+[Model Instantiation and Data Access](https://sdk.openui5.org/topic/9613f1f2d88747cab21896f7216afdac "One OData V4 model instance can only cover one OData service. This section describes the creation of a model instance in more detail.")
 
-[Batch Control](https://sdk.openui5.org/topic/74142a3 "OData V4 allows you to group multiple operations into a single HTTP request payload, as described in the official OData V4 specification Part 1, Batch Requests (see the link under Related Information for more details).")
+[Batch Control](https://sdk.openui5.org/topic/74142a38e3d4467c8d6a70b28764048f "OData V4 allows you to group multiple operations into a single HTTP request payload, as described in the official OData V4 specification Part 1, Batch Requests (see the link under Related Information for more details).")
 
-[OData Operations](https://sdk.openui5.org/topic/b54f789 "The OData V4 model supports OData operations (ActionImport, FunctionImport, bound Actions and bound Functions). Unbound parameters are limited to primitive values.")
+[OData Operations](https://sdk.openui5.org/topic/b54f7895b7594c61a83fa7257fa9d13f "The OData V4 model supports OData operations (ActionImport, FunctionImport, bound Actions and bound Functions). Unbound parameters are limited to primitive values.")
 
-[Creating an Entity](https://sdk.openui5.org/topic/c9723f8 "The sap.ui.model.odata.v4.ODataListBinding#create method creates a new entity. Users can interact with a newly created entity even before it has been sent to the server.")
+[Creating an Entity](https://sdk.openui5.org/topic/c9723f8265f644af91c0ed941e114d46 "The sap.ui.model.odata.v4.ODataListBinding#create method creates a new entity. Users can interact with a newly created entity even before it has been sent to the server.")
 
-[Message Model](https://sdk.openui5.org/topic/8956f0a "The message model contains all messages and is used to bind to the messages to display them.")
+[Message Model](https://sdk.openui5.org/topic/8956f0a223284d729900ebad4ca88356 "The message model contains all messages and is used to bind to the messages to display them.")
 
-[API Reference: `sap.ui.model.odata.v4.ODataContextBinding`](https://ui5.sap.com/#/api/sap.ui.model.odata.v4.ODataContextBinding)
+[API Reference: `sap.ui.model.odata.v4.ODataContextBinding`](https://sdk.openui5.org/#/api/sap.ui.model.odata.v4.ODataContextBinding)
 
 ***
 

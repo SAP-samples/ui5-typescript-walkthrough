@@ -135,7 +135,7 @@ As you can see above, the example uses a special binding syntax for the `number`
 
 [API Reference: sap.ui.base.ManagedObject.PropertyBindingInfo](https://sdk.openui5.org/api/sap.ui.base.ManagedObject.PropertyBindingInfo)
 
-[API Reference: `sap.ui.model.type`](https://ui5.sap.com/#/api/sap.ui.model.type)
+[API Reference: `sap.ui.model.type`](https://sdk.openui5.org/#/api/sap.ui.model.type)
 
 [API Reference: sap.ui.model.type.Currency](https://sdk.openui5.org/api/sap.ui.model.type.Currency)
 

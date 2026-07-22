@@ -178,7 +178,7 @@ The test suite serves as the entry point for all tests within our project such a
 
 The previously created generic `Test.qunit.html` file is referenced as the test `page` and configured with query parameters so that individual tests can be run. The placeholders `{suite}` and `{name}` are replaced with the suite and test names respectively.
 
-For more information, read [Test Starter - Concept and Basic Setup](https://sdk.openui5.org/#/topic/22f50c0f0b104bf3ba84620880793d3f).
+For more information, read [Test Starter - Concept and Basic Setup](https://sdk.openui5.org/topic/22f50c0f0b104bf3ba84620880793d3f).
 
 ```ts
 // webapp/test/testsuite.qunit.ts

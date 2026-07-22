@@ -347,7 +347,7 @@ We add the missing texts to the properties file.
 
 **Related Information**
 
-[Data Reuse](https://sdk.openui5.org/topic/648e360 "The OData V4 model keeps data with respect to bindings, which allows different views on the same data, but also means that data is not automatically shared between bindings. There are mechanisms for sharing data to avoid redundant requests and to keep the same data in different controls in sync.")
+[Data Reuse](https://sdk.openui5.org/topic/648e360fa22d46248ca783dc6eb44531 "The OData V4 model keeps data with respect to bindings, which allows different views on the same data, but also means that data is not automatically shared between bindings. There are mechanisms for sharing data to avoid redundant requests and to keep the same data in different controls in sync.")
 
 ***
 

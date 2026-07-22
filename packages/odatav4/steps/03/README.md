@@ -2,7 +2,7 @@
 
 In this step, we use the automatic data type detection of the OData V4 model to parse, validate, and format user entries. The service metadata contains type information for the properties of each entity.
 
-The OData V4 Model utilizes this information to compute the corresponding SAPUI5 type, including constraints, and sets this type to the SAPUI5 property binding for the entity property. For example, for `<Input value={Age}/>` the SAPUI5 type `Int64` is used, which corresponds to the OData type `Edm.Int64`.
+The OData V4 Model utilizes this information to compute the corresponding OpenUI5 type, including constraints, and sets this type to the OpenUI5 property binding for the entity property. For example, for `<Input value={Age}/>` the OpenUI5 type `Int64` is used, which corresponds to the OData type `Edm.Int64`.
 
 ## Preview
 
@@ -51,9 +51,9 @@ You can download the solution for this step here: <span class="ts-only">[📥 Do
 
 ```
 
-In the `manifest.json` descriptor file, we add the `"handleValidation": true` setting. This makes sure that any validation errors that are detected by the SAPUI5 types are shown on the UI using the message manager.
+In the `manifest.json` descriptor file, we add the `"handleValidation": true` setting. This makes sure that any validation errors that are detected by the OpenUI5 types are shown on the UI using the message manager.
 
-We now run the app using the `index.html` file and enter values that don't match the type and constraints given in the metadata file. For example, enter the string value `Young at Heart` in field *Age*, which requires an integer input \(SAPUI5 type `sap.ui.model.odata.type.Int64`, corresponding to OData type `Edm.Int64`\), or remove an entry from the *User Name* or *First Name* fields, which are mandatory. Fields with incorrect entries are highlighted and an error message is displayed.
+We now run the app using the `index.html` file and enter values that don't match the type and constraints given in the metadata file. For example, enter the string value `Young at Heart` in field *Age*, which requires an integer input \(OpenUI5 type `sap.ui.model.odata.type.Int64`, corresponding to OData type `Edm.Int64`\), or remove an entry from the *User Name* or *First Name* fields, which are mandatory. Fields with incorrect entries are highlighted and an error message is displayed.
 
 > :note:
 > If you explicitly define a type in the binding info of a control, the automatic type detection for that binding will be turned off. For example, if you change the `Input` for `Age` in the view to `<Input value="{path:'Age', type:'sap.ui.model.type.String'}/>`, the `String` type will be used, not the `Int64` type from the service metadata.
@@ -82,11 +82,11 @@ To make the *User Name* optional, we remove the parameter `Nullable="false"` fro
 
 **Related Information**
 
-[Type Determination](https://sdk.openui5.org/topic/53cdd55 "")
+[Type Determination](https://sdk.openui5.org/topic/53cdd55a77ce4f33a14bd0767a293063 "")
 
-[API Reference: `sap.ui.model.odata.type`](https://ui5.sap.com/#/api/sap.ui.model.odata.type)
+[API Reference: `sap.ui.model.odata.type`](https://sdk.openui5.org/#/api/sap.ui.model.odata.type)
 
-[Sample for `sap.ui.core.mvc.XMLView`: *XML Templating: UI5 OData types*](https://ui5.sap.com/#/entity/sap.ui.core.mvc.XMLView/sample/sap.ui.core.sample.ViewTemplate.types)
+[Sample for `sap.ui.core.mvc.XMLView`: *XML Templating: UI5 OData types*](https://sdk.openui5.org/#/entity/sap.ui.core.mvc.XMLView/sample/sap.ui.core.sample.ViewTemplate.types)
 
 ***
 

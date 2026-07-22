@@ -279,9 +279,9 @@ We add the missing texts to the properties file.
 
 **Related Information**
 
-[Filtering](https://sdk.openui5.org/topic/5338bd1 "The OData V4 Model supports server side filtering on lists.")
+[Filtering](https://sdk.openui5.org/topic/5338bd1f9afb45fb8b2af957c3530e8f "The OData V4 Model supports server side filtering on lists.")
 
-[Sorting](https://sdk.openui5.org/topic/d2ce3f5 "The OData V4 model supports server side sorting on lists.")
+[Sorting](https://sdk.openui5.org/topic/d2ce3f51e5e34198b0c1a7f6ddd98def "The OData V4 model supports server side sorting on lists.")
 
 [Query Options under *Querying Data* in the Basic Tutorial on the OData home page](http://www.odata.org/getting-started/basic-tutorial/#queryData)
 
