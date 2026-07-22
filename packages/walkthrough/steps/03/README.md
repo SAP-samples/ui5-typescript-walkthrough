@@ -144,15 +144,15 @@ ui5 add sap.m
 
 [Working with Controls](https://sdk.openui5.org/topic/91f0a22d6f4d1014b6dd926db0e91070.html "Controls are used to define the appearance and behavior of screen areas.")
 
-[API Reference: `sap.m.Text`](https://sdk.openui5.orgapi/sap.m.Text)
+[API Reference: `sap.m.Text`](https://sdk.openui5.org/#/api/sap.m.Text)
 
-[Samples: `sap.m.Text` ](https://sdk.openui5.orgentity/sap.m.Text)
+[Samples: `sap.m.Text` ](https://sdk.openui5.org/#/entity/sap.m.Text)
 
-[API Reference: `sap.ui.core.Control`](https://sdk.openui5.orgapi/sap.ui.core.Control)
+[API Reference: `sap.ui.core.Control`](https://sdk.openui5.org/#/api/sap.ui.core.Control)
 
-[API Reference: `sap.ui.core.Element`](https://sdk.openui5.orgapi/sap.ui.core.Element)
+[API Reference: `sap.ui.core.Element`](https://sdk.openui5.org/#/api/sap.ui.core.Element)
 
-[API Reference: `sap.ui.base.ManagedObject`](https://sdk.openui5.orgapi/sap.ui.base.ManagedObject)
+[API Reference: `sap.ui.base.ManagedObject`](https://sdk.openui5.org/#/api/sap.ui.base.ManagedObject)
 
 <details class="ts-only" markdown="1">
 

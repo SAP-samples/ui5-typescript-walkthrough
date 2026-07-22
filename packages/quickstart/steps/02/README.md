@@ -117,6 +117,6 @@ You can see a title bar and a blue button that reacts to your input. Congratulat
 
 **Related Information**  
 
-[XML View](https://sdk.openui5.org/#/topic/1409791afe4747319a3b23a1e2fc7064 "The XML view type is defined in an XML file, with a file name ending in .view.xml. The file name and the folder structure together specify the name of the view that equals the OpenUI5 module name.")
+[XML View](https://sdk.openui5.org/topic/1409791afe4747319a3b23a1e2fc7064 "The XML view type is defined in an XML file, with a file name ending in .view.xml. The file name and the folder structure together specify the name of the view that equals the OpenUI5 module name.")
 
-[Controller](https://sdk.openui5.org/#/topic/121b8e6337d147af9819129e428f1f75 "A controller contains methods that define how models and views interact.")
+[Controller](https://sdk.openui5.org/topic/121b8e6337d147af9819129e428f1f75 "A controller contains methods that define how models and views interact.")

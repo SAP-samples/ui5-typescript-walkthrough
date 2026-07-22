@@ -90,7 +90,7 @@ webapp/
 
 ```
 
-Single-page applications based on SAPUI5 can use a so-called “router” to dispatch hash-based URLs to one or more views of the app. Therefore, the router needs to know how to address and show the views. In SAPUI5, we can simply add a `routing` section to our existing `sap.ui5` section in the descriptor file to configure the router. There are three properties that can be used to configure the routing of your application:
+Single-page applications based on OpenUI5 can use a so-called “router” to dispatch hash-based URLs to one or more views of the app. Therefore, the router needs to know how to address and show the views. In OpenUI5, we can simply add a `routing` section to our existing `sap.ui5` section in the descriptor file to configure the router. There are three properties that can be used to configure the routing of your application:
 
 - `config`
 
@@ -110,7 +110,7 @@ Single-page applications based on SAPUI5 can use a so-called “router” to dis
     This basic routing configuration was easy enough. However, you can’t see it in action until you have initialized the router.
 
 > :note:
-> As of SAPUI5 version 1.30, we recommend that you define the routing in the `manifest.json` descriptor file using routes and targets. In older versions of SAPUI5, the routing configuration had to be done directly in the metadata section of the component, and with different syntax.
+> As of OpenUI5 version 1.30, we recommend that you define the routing in the `manifest.json` descriptor file using routes and targets. In older versions of OpenUI5, the routing configuration had to be done directly in the metadata section of the component, and with different syntax.
 
 ## `webapp/Component.ts/.js`
 

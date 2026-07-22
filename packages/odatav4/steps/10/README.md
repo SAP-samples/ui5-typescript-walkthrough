@@ -116,7 +116,7 @@ You can use the `Context#setKeepAlive` method to prevent the destruction of info
 
 **Related Information**
 
-[Extending the Lifetime of a Context that is not Used Exclusively by a Table Collection](https://sdk.openui5.org/topic/648e360#loio648e360fa22d46248ca783dc6eb44531__section_ELC)
+[Extending the Lifetime of a Context that is not Used Exclusively by a Table Collection](https://sdk.openui5.org/topic/648e360fa22d46248ca783dc6eb44531.html#loio648e360fa22d46248ca783dc6eb44531/section_ELC)
 
 ***
 

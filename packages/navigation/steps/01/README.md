@@ -2,7 +2,7 @@
 
 We start by setting up a simple app for this tutorial. The app displays mock data only and mimics real OData back-end calls with the mock server as you have seen in the *Walkthrough* tutorial.
 
-The structure and data model created in this step will be used throughout the rest of this tutorial. The initial app created in this step will be extended in the subsequent steps to illustrate the navigation and routing features of SAPUI5.
+The structure and data model created in this step will be used throughout the rest of this tutorial. The initial app created in this step will be extended in the subsequent steps to illustrate the navigation and routing features of OpenUI5.
 
 ## Preview
 
@@ -53,11 +53,11 @@ webapp/
 
 ## The Initial App
 
-With the downloaded coding, you have an initial app with recommended settings that provides the basic features of an SAPUI5 app:
+With the downloaded coding, you have an initial app with recommended settings that provides the basic features of an OpenUI5 app:
 
 - **Home Page**
 
-    The home page of our app is defined in the `webapp/index.html` file. In this file we bootstrap SAPUI5 and tell the runtime where to find our custom resources. Furthermore, we initialize the `MockServer` to simulate back-end requests as we do not have a real back-end service throughout this tutorial. Finally, we instantiate the application component, assign it to a `sap.m.Shell` control, and place the shell into the body. The corresponding `Component.ts` file in the `webapp` folder will be extended throughout this tutorial.
+    The home page of our app is defined in the `webapp/index.html` file. In this file we bootstrap OpenUI5 and tell the runtime where to find our custom resources. Furthermore, we initialize the `MockServer` to simulate back-end requests as we do not have a real back-end service throughout this tutorial. Finally, we instantiate the application component, assign it to a `sap.m.Shell` control, and place the shell into the body. The corresponding `Component.ts` file in the `webapp` folder will be extended throughout this tutorial.
 
 - **Data**
 

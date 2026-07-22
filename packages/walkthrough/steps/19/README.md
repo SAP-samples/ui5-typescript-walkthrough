@@ -202,9 +202,9 @@ In the app view we add a second view and assign it to our newly created InvoiceL
 
 [Folder Structure: Where to Put Your Files](https://sdk.openui5.org/topic/003f755d46d34dd1bbce9ffe08c8d46a.html "The details described here represent a best practice for structuring an application that features one component, one OData service and less than 20 views. If you're building an app that has more components, OData services and views, you may have to introduce more folder levels than described here.")
 
-[Lists](https://sdk.openui5.org/#/topic/1da158152f644ba1ad408a3e982fd3df.html "Lists have properties and events and they contain list items that inherit from sap.m.ListItemBase, which provides navigation, selection and event features. The list item type determines the way the list item interacts by providing additional features.")
+[Lists](https://sdk.openui5.org/topic/1da158152f644ba1ad408a3e982fd3df.html "Lists have properties and events and they contain list items that inherit from sap.m.ListItemBase, which provides navigation, selection and event features. The list item type determines the way the list item interacts by providing additional features.")
 
-[List Binding (Aggregation Binding)](https://sdk.openui5.org/#/topic/91f057786f4d1014b6dd926db0e91070.html "List binding (or aggregation binding) is used to automatically create child controls according to model data.")
+[List Binding (Aggregation Binding)](https://sdk.openui5.org/topic/91f057786f4d1014b6dd926db0e91070.html "List binding (or aggregation binding) is used to automatically create child controls according to model data.")
 
 [API Reference: `sap.ui.base.ManagedObject.AggregationBindingInfo`](https://sdk.openui5.org/api/sap.ui.base.ManagedObject.AggregationBindingInfo)
 

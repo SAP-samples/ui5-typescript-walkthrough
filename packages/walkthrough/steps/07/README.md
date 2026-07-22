@@ -142,6 +142,6 @@ In addition to this, we create a greeting message. We combine the static text "H
 
 [Property Binding](https://sdk.openui5.org/topic/91f0652b6f4d1014b6dd926db0e91070.html "With property binding, you can initialize properties of a control automatically and update them based on the data of the model.")
 
-[Binding Path](https://ui5.sap.com/#/topic/2888af49635949eca14fa326d04833b9.html "Binding paths address the different properties and lists in a model and define how a node in the hierarchical data tree can be found.")
+[Binding Path](https://sdk.openui5.org/topic/2888af49635949eca14fa326d04833b9.html "Binding paths address the different properties and lists in a model and define how a node in the hierarchical data tree can be found.")
 
 [API Reference: `sap.ui.base.ManagedObject.PropertyBindingInfo`](https://sdk.openui5.org/api/sap.ui.base.ManagedObject.PropertyBindingInfo "Configuration for the binding of a managed property.")

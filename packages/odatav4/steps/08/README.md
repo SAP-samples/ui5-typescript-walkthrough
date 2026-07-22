@@ -74,7 +74,7 @@ We call that action by first creating a deferred operation binding on the model.
 The invocation is asynchronous; the `invoke` method therefore returns a `Promise`. We attach simple success and error handlers to that `Promise` by calling its `then` method.
 
 > :note:
-> Many of the methods in the OData V4 API of SAPUI5 return a `Promise` to manage asynchronous processing
+> Many of the methods in the OData V4 API of OpenUI5 return a `Promise` to manage asynchronous processing
 
 ## webapp/view/App.view.xml
 
@@ -123,9 +123,9 @@ And now we are done! We built a simple application with user data from an OData 
 
 **Related Information**
 
-[Bindings](https://sdk.openui5.org/topic/54e0ddf "Bindings connect SAPUI5 view elements to model data, allowing changes in the model to be reflected in the view element and vice versa.")
+[Bindings](https://sdk.openui5.org/topic/54e0ddf695af4a6c978472cecb01c64d "Bindings connect OpenUI5 view elements to model data, allowing changes in the model to be reflected in the view element and vice versa.")
 
-[OData Operations](https://sdk.openui5.org/topic/b54f789 "The OData V4 model supports OData operations (ActionImport, FunctionImport, bound Actions and bound Functions). Unbound parameters are limited to primitive values.")
+[OData Operations](https://sdk.openui5.org/topic/b54f7895b7594c61a83fa7257fa9d13f "The OData V4 model supports OData operations (ActionImport, FunctionImport, bound Actions and bound Functions). Unbound parameters are limited to primitive values.")
 
 ***
 
