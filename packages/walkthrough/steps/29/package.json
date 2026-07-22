@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "@openui5/types": "^1.148.1",
-    "@types/qunit": "2.5.4",
+    "@types/qunit": "2.19.14",
     "@ui5/cli": "^4.0.53",
     "typescript": "^6.0.3",
     "ui5-middleware-livereload": "^3.3.1",
