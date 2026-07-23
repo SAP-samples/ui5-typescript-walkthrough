@@ -24,7 +24,7 @@ You can download the solution for this step here: <span class="ts-only">[📥 Do
 
 ### webapp/i18n/i18n.properties \(New\)
 
-The `i18n` file allows you to store translated texts for multiple languages, making your application accessible to a wider audience. In oder to achive this, the `properties` file for texts contains name-value pairs for each element. You can add any number of placeholders to the texts by enclosing them in curly brackets with corresponding numbers. These numbers indicate the sequence in which the placeholders are accessed \(starting with 0\).
+The `i18n` file allows you to store translated texts for multiple languages, making your application accessible to a wider audience. In oder to achieve this, the `properties` file for texts contains name-value pairs for each element. You can add any number of placeholders to the texts by enclosing them in curly brackets with corresponding numbers. These numbers indicate the sequence in which the placeholders are accessed \(starting with 0\).
 
 To set up the `i18n` file, we navigate to the `webapp` folder and create a new folder named `i18n`. Inside this folder, we place the `i18n.properties` file, which serves as a storage for our translated texts. We add two name-value pairs to our properties file: The `showHelloButtonText` name represents the text for the button on our App view. The `helloMsg` name represents the greeting message we will display in the message toast. To include the appropriate recipient's name in the message, we use a placeholder with the greeting message text.
 
