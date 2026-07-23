@@ -5,6 +5,7 @@
 		"github>ui5/renovate-config:lts#v1.2.1"
 	],
 	"ignorePresets": [":ignoreModulesAndTests"],
+	"ignoreDeps": ["node", "npm", "@types/qunit"],
 	"minimumReleaseAge": "3 days",
 	"rangeStrategy": "pin",
 	"prCreation": "immediate",
@@ -42,13 +43,6 @@
 			"schedule": [
 				"* 8-16 * * 1"
 			]
-		},
-		{
-			"matchPackageNames": [
-				"node",
-				"npm"
-			],
-			"enabled": false
 		},
 		{
 			"matchDepNames": [
