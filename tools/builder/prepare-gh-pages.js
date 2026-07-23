@@ -4,7 +4,7 @@ const { exec } = require("child_process");
 const utils = require("util");
 const execute = utils.promisify(exec);
 
-const archiver = require("archiver");
+const { ZipArchive } = require("archiver");
 const fg = require('fast-glob');
 
 const sanitize = require("./sanitze");
@@ -13,7 +13,7 @@ const yaml = require('js-yaml');
 const cwd = process.cwd();
 
 function zipDirectory(sourceDir, outPath) {
-	const archive = archiver('zip', { zlib: { level: 9 }});
+	const archive = new ZipArchive({ zlib: { level: 9 }});
 	const stream = createWriteStream(outPath);
 
 	return new Promise((resolve, reject) => {
