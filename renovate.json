@@ -4,10 +4,10 @@
 		"config:best-practices",
 		"github>ui5/renovate-config:lts#v1.2.1"
 	],
-	"ignorePresets": [":ignoreModulesAndTests"],
+	"ignorePresets": [":ignoreModulesAndTests", ":pinDevDependencies"],
 	"ignoreDeps": ["node", "npm", "@types/qunit"],
 	"minimumReleaseAge": "3 days",
-	"rangeStrategy": "pin",
+	"rangeStrategy": "replace",
 	"prCreation": "immediate",
 	"lockFileMaintenance": {
 		"enabled": true,
