@@ -88,34 +88,23 @@ export default class EmployeeOverviewContent extends BaseController {
   /**
    * Applies sorting on our table control.
    * @param {string} fieldName the name of the field used for sorting
-   * @param {string | boolean} sortDescending true or false as a string or boolean value to specify a descending sorting
+   * @param {boolean} sortDescending whether to sort descending
    * @private
    */
-  private _applySorter(fieldName: string, sortDescending: string | boolean): void {
+  private _applySorter(fieldName: string, sortDescending: boolean): void {
     // only continue if we have a valid sort field
     if (fieldName && this.validSortFields.includes(fieldName)) {
-      let descending: boolean;
-
-      // convert the sort order to a boolean value
-      if (typeof sortDescending === "string") {
-        descending = sortDescending === "true";
-      } else if (typeof sortDescending === "boolean") {
-        descending = sortDescending;
-      } else {
-        descending = false;
-      }
-
       // sort only if the sorter has changed
-      if (this.sortField && this.sortField === fieldName && this.sortDescending === descending) {
+      if (this.sortField && this.sortField === fieldName && this.sortDescending === sortDescending) {
         return;
       }
 
       this.sortField = fieldName;
-      this.sortDescending = descending;
-      const sorter = new Sorter(fieldName, descending);
+      this.sortDescending = sortDescending;
+      const sorter = new Sorter(fieldName, sortDescending);
 
       // sync with View Settings Dialog
-      this._syncViewSettingsDialogSorter(fieldName, descending);
+      this._syncViewSettingsDialogSorter(fieldName, sortDescending);
 
       const binding = (<ListBinding> this.table.getBinding("items"));
       binding.sort(sorter);
