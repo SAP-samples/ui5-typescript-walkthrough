@@ -32,7 +32,7 @@ Throughout this tutorial we will add features for navigating to pages and bookma
 >
 > You can view and download the files for all steps in the Demo Kit at [Navigation and Routing](https://sdk.openui5.org/#/entity/sap.ui.core.tutorial.navigation). Copy the code to your workspace and make sure that the application runs by calling the `webapp/index.html` file. Depending on your development environment you might have to adjust resource paths and configuration entries.
 >
-> For more information check the [Downloading Code for a Tutorial Step](https://sdk.openui5.org/#/topic/8b49fc198bf04b2d9800fc37fecbb218) section of the tutorials overview page [Get Started: Setup, Tutorials, and Demo Apps](https://sdk.openui5.org/#/topic/8b49fc198bf04b2d9800fc37fecbb218).
+> For more information, see the [Downloading Code for a Tutorial Step](https://sdk.openui5.org/#/topic/8b49fc198bf04b2d9800fc37fecbb218#loio8b49fc198bf04b2d9800fc37fecbb218/tutorials_download) section of the [Get Started: Setup, Tutorials, and Demo Apps](https://sdk.openui5.org/#/topic/8b49fc198bf04b2d9800fc37fecbb218) overview.
 
 ***
 
