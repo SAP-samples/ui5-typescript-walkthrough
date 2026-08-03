@@ -14,10 +14,10 @@ You can view this step live: [🔗 Live Preview of Step 14](https://ui5.github.i
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 14](https://ui5.github.io/tutorials/navigation/navigation-step-14.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 14](https://ui5.github.io/tutorials/navigation/navigation-step-14-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## /controller/employee/overview/EmployeeOverviewContent.controller.ts
+## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js`
 
 ```ts
-// /controller/employee/overview/EmployeeOverviewContent.controller.ts
+// webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts
 import SearchField, { SearchField$SearchEvent } from "sap/m/SearchField";
 import Table from "sap/m/Table";
 import ViewSettingsDialog, { ViewSettingsDialog$ConfirmEvent, ViewSettingsDialog$CancelEvent } from "sap/m/ViewSettingsDialog";
@@ -83,7 +83,7 @@ export default class EmployeeOverviewContent extends BaseController {
 ```
 
 ```js
-// /controller/employee/overview/EmployeeOverviewContent.controller.js
+// webapp/controller/employee/overview/EmployeeOverviewContent.controller.js
 sap.ui.define(["sap/m/ViewSettingsDialog", "sap/m/ViewSettingsItem", "ui5/tutorial/navigation/controller/BaseController", "sap/ui/model/Filter", "sap/ui/model/FilterOperator", "sap/ui/model/Sorter"], function (ViewSettingsDialog, ViewSettingsItem, BaseController, Filter, FilterOperator, Sorter) {
 	"use strict";
 
