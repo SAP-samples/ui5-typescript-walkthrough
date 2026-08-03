@@ -386,20 +386,20 @@ export default class EmployeeOverviewContent extends BaseController {
 		if (searchQuery?.length > 0) {
 			const filters: Filter[] = [];
 
-			aFilters.push(new Filter("FirstName", FilterOperator.Contains, searchQuery));
-			aFilters.push(new Filter("LastName", FilterOperator.Contains, searchQuery));
-			oFilter = new Filter({ filters: aFilters, and: false }); // OR filter
+			filters.push(new Filter("FirstName", FilterOperator.Contains, searchQuery));
+			filters.push(new Filter("LastName", FilterOperator.Contains, searchQuery));
+			filter = new Filter({ filters: filters, and: false }); // OR filter
 		}
 
 		// update list binding
 		const binding = (<ListBinding> this.table.getBinding("items"));
-		binding.filter(oFilter, "Application");
+		binding.filter(filter, "Application");
 	}
 
 	/**
 	 * Applies sorting on our table control.
 	 * @param {string} fieldName the name of the field used for sorting
-	 * @param {string} sortDescending true or false as a string or boolean value to specify a descending sorting
+	 * @param {string | boolean} sortDescending true or false as a string or boolean value to specify a descending sorting
 	 * @private
 	 */
 	private _applySorter(fieldName: string, sortDescending: string | boolean): void {
