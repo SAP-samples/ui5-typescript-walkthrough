@@ -162,9 +162,9 @@ We have now moved everything out of the app view and controller. The app control
 
 ***
 
-**Next:** [Step 16: Dialogs and Fragments](../16/README.md "In this step, we will take a closer look at another element which can be used to assemble views: the fragment.")
+**Next:** [Step 16: Dialogs and Fragments](../16/README.md)
 
-**Previous:** [Step 14: Margins and Paddings](../14/README.md "Sometimes we need to define some more fine-granular layouts and this is when we can use the flexibility of CSS by adding custom style classes to controls and style them as we like.")
+**Previous:** [Step 14: Margins and Paddings](../14/README.md)
 
 ***
 

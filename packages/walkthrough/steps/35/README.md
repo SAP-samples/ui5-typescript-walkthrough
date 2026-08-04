@@ -297,9 +297,9 @@ Optimize your application for the different screen sizes of phone, tablet, and d
 
 ***
 
-**Next:** [Step 36: Content Density](../36/README.md "In this step of our Walkthrough tutorial, we adjust the content density based on the user’s device. OpenUI5 contains different content densities allowing you to display larger controls for touch-enabled devices and a smaller, more compact design for devices that are operated by mouse. In our app, we will detect the device and adjust the density accordingly.")
+**Next:** [Step 36: Content Density](../36/README.md)
 
-**Previous:** [Step 34: Routing and Navigation](../34/README.md "We can now navigate between the overview and the detail page, but the actual item that we selected in the overview is not displayed on the detail page yet. A typical use case for our app is to show additional information for the selected item on the detail page.")
+**Previous:** [Step 34: Routing and Navigation](../34/README.md)
 
 ***
 

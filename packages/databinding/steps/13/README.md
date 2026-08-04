@@ -201,9 +201,9 @@ Now, you can click on an element in the list and view its details in the panel b
 
 ***
 
-**Next:** [Step 14: Expression Binding](../14/README.md "An expression binding lets you display a calculated value on the screen, which is derived from values found in a model object.")
+**Next:** [Step 14: Expression Binding](../14/README.md)
 
-**Previous:** [Step 12: Aggregation Binding Using Templates](../12/README.md "Aggregation binding, also known as list binding, lets a control bind to a list within the model data.")
+**Previous:** [Step 12: Aggregation Binding Using Templates](../12/README.md)
 
 ***
 

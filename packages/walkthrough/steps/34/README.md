@@ -197,9 +197,9 @@ We can see the results when we decrease the browser's screen size or open the ap
 
 ***
 
-**Next:** [Step 35: Routing and Navigation](../35/README.md "We now configure the visibility and properties of controls based on the device that we run the application on. By making use of the sap.ui.Device API and defining a device model we will make the app look great on many devices.")
+**Next:** [Step 35: Routing and Navigation](../35/README.md)
 
-**Previous:** [Step 33: Debugging Tools](../33/README.md "In this step, we are going to extend the functionality of OpenUI5 with a custom control. We want to rate the product shown on the detail page, so we create a composition of multiple standard controls using the OpenUI5 extension mechanism and add some glue code to make them work nicely together. This way, we can reuse the control across the app and keep all related functionality in one module.")
+**Previous:** [Step 33: Debugging Tools](../33/README.md)
 
 ***
 

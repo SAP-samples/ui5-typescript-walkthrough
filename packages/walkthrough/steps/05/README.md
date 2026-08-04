@@ -106,9 +106,9 @@ A view does not necessarily need an explicitly assigned controller. You do not h
 
 ***
 
-**Next:** [Step 6: Modules](../06/README.md "In OpenUI5, resources are often referred to as modules. In this step, we replace the alert from the last exercise with a proper Message Toast from the `sap.m` library.")
+**Next:** [Step 6: Modules](../06/README.md)
 
-**Previous:** [Step 4: XML Views](../04/README.md "Putting all our UI into the index.html file will very soon result in a messy setup and there is quite a bit of work ahead of us. So let’s do a first modularization by putting the sap/m/Text control into a dedicated view.")
+**Previous:** [Step 4: XML Views](../04/README.md)
 
 ***
 

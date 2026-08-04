@@ -231,9 +231,9 @@ You should now see the invoice details on a separate page when you click on an i
 
 ***
 
-**Next:** [Step 32: Routing Back and History](../32/README.md "Now we can navigate to our detail page and display an invoice, but we cannot go back to the overview page yet. We'll add a back button to the detail page and implement a function that shows our overview page again.")
+**Next:** [Step 32: Routing Back and History](../32/README.md)
 
-**Previous:** [Step 30: Routing and Navigation](../30/README.md "So far, we have put all app content on one single page. As we add more and more features, we want to split the content and put it on separate pages.")
+**Previous:** [Step 30: Routing and Navigation](../30/README.md)
 
 ***
 

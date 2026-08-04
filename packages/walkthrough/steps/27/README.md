@@ -284,9 +284,9 @@ If we now open the `webapp/test/testsuite.qunit.html` file in the browser and se
 
 ***
 
-**Next:** [Step 28: Integration Test with OPA](../28/README.md "If we want to test interaction patterns or more visual features of our app, we can also write an integration test.")
+**Next:** [Step 28: Integration Test with OPA](../28/README.md)
 
-**Previous:** [Step 26: Mock Server Configuration](../26/README.md "We just ran our app against a real service, but for developing and testing our app we do not want to rely on the availability of the “real” service or put additional load on the system where the data service is located.")
+**Previous:** [Step 26: Mock Server Configuration](../26/README.md)
 
 ***
 

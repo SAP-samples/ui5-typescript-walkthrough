@@ -177,9 +177,9 @@ As you can see, we now have four landmarks on our page. The top three landmarks 
 
 ***
 
-**Next:** [Step 38: Build Your Application](../38/README.md "We now configure the visibility and properties of controls based on the device that we run the application on. By making use of the `sap.ui.Device` API and defining a device model we will make the app look great on many devices.")
+**Next:** [Step 38: Build Your Application](../38/README.md)
 
-**Previous:** [Step 36: Content Density](../36/README.md "In this step of our Walkthrough tutorial, we adjust the content density based on the user’s device. OpenUI5 contains different content densities allowing you to display larger controls for touch-enabled devices and a smaller, more compact design for devices that are operated by mouse. In our app, we will detect the device and adjust the density accordingly.")
+**Previous:** [Step 36: Content Density](../36/README.md)
 
 ***
 

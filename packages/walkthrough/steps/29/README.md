@@ -120,9 +120,9 @@ If you're stuck and need help for some development task, you can also post a que
 
 ***
 
-**Next:** [Step 30: Routing and Navigation](../30/README.md "So far, we have put all app content on one single page. As we add more and more features, we want to split the content and put it on separate pages.")
+**Next:** [Step 30: Routing and Navigation](../30/README.md)
 
-**Previous:** [Step 28: Integration Test with OPA](../28/README.md "If we want to test interaction patterns or more visual features of our app, we can also write an integration test.")
+**Previous:** [Step 28: Integration Test with OPA](../28/README.md)
 
 ***
 

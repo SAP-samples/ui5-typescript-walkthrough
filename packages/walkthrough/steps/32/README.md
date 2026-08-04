@@ -118,9 +118,9 @@ You should now see a back button when navigating to the detail page and being ab
 
 ***
 
-**Next:** [Step 33: Custom Controls](../33/README.md "We can now navigate between the overview and the detail page, but the actual item that we selected in the overview is not displayed on the detail page yet. A typical use case for our app is to show additional information for the selected item on the detail page.")
+**Next:** [Step 33: Custom Controls](../33/README.md)
 
-**Previous:** [Step 31: Routing and Navigation](../31/README.md "We can now navigate between the overview and the detail page, but the actual item that we selected in the overview is not displayed on the detail page yet. A typical use case for our app is to show additional information for the selected item on the detail page.")
+**Previous:** [Step 31: Routing and Navigation](../31/README.md)
 
 ***
 

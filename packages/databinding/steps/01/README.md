@@ -215,7 +215,7 @@ server:
 
 ***
 
-**Next:** [Step 2: Creating a Model](../02/README.md "In this step, we create a model. It serves as a container for the data your application operates on.")
+**Next:** [Step 2: Creating a Model](../02/README.md)
 
 ***
 

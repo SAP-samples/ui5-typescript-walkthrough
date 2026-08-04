@@ -53,9 +53,9 @@ To check the result, append the `sap-language=DE` URL parameter to the URL in yo
 
 ***
 
-**Next:** [Step 8: Binding Paths: Accessing Properties in Hierarchically Structured Models](../08/README.md "Let's explore how to reference fields in a hierarchically structured model object.")
+**Next:** [Step 8: Binding Paths: Accessing Properties in Hierarchically Structured Models](../08/README.md)
 
-**Previous:** [Step 6: Resource Models](../06/README.md "Business applications often require language-specific (translatable) text used as labels and descriptions on the user interface.")
+**Previous:** [Step 6: Resource Models](../06/README.md)
 
 ***
 

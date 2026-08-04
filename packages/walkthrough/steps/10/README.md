@@ -267,9 +267,9 @@ We can now delete our `index.ts/.js` file, because our component is now initiate
 
 ***
 
-**Next:** [Step 11: Pages and Panels](../11/README.md "After all the work on the app structure it’s time to improve the look of our app. We will use two controls from the sap.m library to add a bit more bling to our UI. You will also learn about control aggregations in this step.")
+**Next:** [Step 11: Pages and Panels](../11/README.md)
 
-**Previous:** [Step 9: Component Configuration](../09/README.md "After we have introduced all three parts of the Model-View-Controller \(MVC\) concept, we now come to another important structural aspect of OpenUI5.")
+**Previous:** [Step 9: Component Configuration](../09/README.md)
 
 ***
 

@@ -294,9 +294,9 @@ stockValue=Lagerbestand Wert
 
 ***
 
-**Next:** [Step 13: Element Binding](../13/README.md "Now, let's do something with that newly generated list.")
+**Next:** [Step 13: Element Binding](../13/README.md)
 
-**Previous:** [Step 11: Validation Using `sap/ui/core/Messaging`](../11/README.md "Up to this point, we've created a currency field that formats itself correctly.")
+**Previous:** [Step 11: Validation Using `sap/ui/core/Messaging`](../11/README.md)
 
 ***
 

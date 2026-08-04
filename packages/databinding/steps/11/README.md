@@ -60,9 +60,9 @@ However, the error message only displays when that particular field is in focus:
 
 ***
 
-**Next:** [Step 12: Aggregation Binding Using Templates](../12/README.md "Aggregation binding, also known as list binding, lets a control bind to a list within the model data.")
+**Next:** [Step 12: Aggregation Binding Using Templates](../12/README.md)
 
-**Previous:** [Step 10: Property Formatting Using Data Types](../10/README.md "OpenUI5 offers a set of simple data types, including Boolean, Currency, Date and Float.")
+**Previous:** [Step 10: Property Formatting Using Data Types](../10/README.md)
 
 ***
 

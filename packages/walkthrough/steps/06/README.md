@@ -67,9 +67,9 @@ For now, the message toast just displays a static "Hello World" message. We will
 
 ***
 
-**Next:** [Step 7: JSON Model](../07/README.md "Now that we have set up the view and controller, it’s about time to think about the M in MVC.")
+**Next:** [Step 7: JSON Model](../07/README.md)
 
-**Previous:** [Step 5: Controllers](../05/README.md "In this step, we replace the text with a button and show the Hello World message when the button is pressed. The handling of the button's press event is implemented in the controller of the view.")
+**Previous:** [Step 5: Controllers](../05/README.md)
 
 ***
 

@@ -353,9 +353,9 @@ If you now open the app, you should now see the detail page when clicking an ite
 
 ***
 
-**Next:** [Step 31: Routing and Navigation](../31/README.md "We can now navigate between the overview and the detail page, but the actual item that we selected in the overview is not displayed on the detail page yet. A typical use case for our app is to show additional information for the selected item on the detail page.")
+**Next:** [Step 31: Routing and Navigation](../31/README.md)
 
-**Previous:** [Step 29: Debugging Tools](../29/README.md "Even though we have added a basic test coverage in the previous steps, it seems like we accidentally broke our app, because it does not display prices to our invoices anymore. We need to debug the issue and fix it before someone finds out.")
+**Previous:** [Step 29: Debugging Tools](../29/README.md)
 
 ***
 

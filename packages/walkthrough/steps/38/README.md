@@ -82,7 +82,7 @@ You've completed the walkthrough, good job! You should now be familiar with all 
 
 ***
 
-**Previous:** [Step 37: Accessibility](../37/README.md "In this step we're going to improve the accessibility of our app.")
+**Previous:** [Step 37: Accessibility](../37/README.md)
 
 ***
 

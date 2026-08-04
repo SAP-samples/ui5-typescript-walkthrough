@@ -92,9 +92,9 @@ The `App` control does the following important things for us:
 
 ***
 
-**Next:** [Step 12: Shell Control as Container](../12/README.md "Now we use a shell control as container for our app and use it as our new root element. The shell takes care of visual adaptation of the application to the device’s screen size by introducing a so-called letterbox on desktop screens.")
+**Next:** [Step 12: Shell Control as Container](../12/README.md)
 
-**Previous:** [Step 10: Manifest (Descriptor for Applications)](../10/README.md "All application-specific configuration settings will now further be put into the manifest. This clearly separates the application coding from the configuration settings and makes our app even more flexible.")
+**Previous:** [Step 10: Manifest (Descriptor for Applications)](../10/README.md)
 
 ***
 

@@ -192,9 +192,9 @@ In the app view we add a second view and assign it to our newly created InvoiceL
 
 ***
 
-**Next:** Step 20: [Data Types](../20/README.md "The list of invoices is already looking nice, but what is an invoice without a price assigned? Typically prices are stored in a technical format and with a '.' delimiter in the data model. For example, our invoice for pineapples has the calculated price 87.2 without a currency. We are going to use the OpenUI5 data types to format the price properly, with a locale-dependent decimal separator and two digits after the separator.")
+**Next:** Step 20: [Data Types](../20/README.md)
 
-**Previous:** Step 18: [Icons](../18/README.md "Our dialog is still pretty much empty. Since OpenUI5 is shipped with a large icon font that contains more than 500 icons, we will add an icon to greet our users when the dialog is opened.")
+**Previous:** Step 18: [Icons](../18/README.md)
 
 ***
 

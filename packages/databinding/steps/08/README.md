@@ -123,9 +123,9 @@ panel2HeaderText=Adressdetails
 
 ***
 
-**Next:** [Step 9: Formatting Values](../09/README.md "We'd also like to provide our users with a way of contacting Harry Hawk, so we're adding a link that sends an e-mail to Harry.")
+**Next:** [Step 9: Formatting Values](../09/README.md)
 
-**Previous:** [Step 7: \(Optional\) Resource Bundles and Multiple Languages](../07/README.md "Resource bundles exist to enable an app to run in multiple languages without the need to change any code.")
+**Previous:** [Step 7: \(Optional\) Resource Bundles and Multiple Languages](../07/README.md)
 
 ***
 

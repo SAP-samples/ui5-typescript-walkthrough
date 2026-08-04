@@ -134,9 +134,9 @@ ui5 add sap.m
 
 ***
 
-**Next:** [Step 4: XML Views](../04/README.md "Putting all our UI into the index.html file will very soon result in a messy setup and there is quite a bit of work ahead of us. So let’s do a first modularization by putting the sap/m/Text control into a dedicated view.")
+**Next:** [Step 4: XML Views](../04/README.md)
 
-**Previous:** [Step 2: Bootstrap](../02/README.md "Before we can do something with OpenUI5, we need to load and initialize it. This process of loading and initializing OpenUI5 is called bootstrapping. Once this bootstrapping is finished, we simply display an alert.")
+**Previous:** [Step 2: Bootstrap](../02/README.md)
 
 ***
 

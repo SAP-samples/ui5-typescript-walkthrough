@@ -246,9 +246,9 @@ sap.ui.define(["sap/ui/core/ComponentContainer"], function (ComponentContainer) 
 
 ***
 
-**Next:** [Step 10: Manifest (Descriptor for Applications)](../10/README.md "All application-specific configuration settings will now further be put into the manifest. This clearly separates the application coding from the configuration settings and makes our app even more flexible.")
+**Next:** [Step 10: Manifest (Descriptor for Applications)](../10/README.md)
 
-**Previous:** [Step 8: Translatable Texts](../08/README.md "In this step we move the texts of our UI to a separate resource file.")
+**Previous:** [Step 8: Translatable Texts](../08/README.md)
 
 &nbsp;
 ***

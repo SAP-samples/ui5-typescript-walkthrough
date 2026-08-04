@@ -67,9 +67,9 @@ There are further options to customize the shell, like setting a custom backgrou
 
 ***
 
-**Next:** [Step 13: Margins and Paddings](../13/README.md "Our app content is still glued to the corners of the letterbox. To fine-tune our layout, we can add margins and paddings to the controls that we added in the previous step.")
+**Next:** [Step 13: Margins and Paddings](../13/README.md)
 
-**Previous:** [Step 11: Pages and Panels](../11/README.md "After all the work on the app structure it’s time to improve the look of our app. We will use two controls from the sap.m library to add a bit more &quot;bling&quot; to our UI. You will also learn about control aggregations in this step.")
+**Previous:** [Step 11: Pages and Panels](../11/README.md)
 
 ***
 

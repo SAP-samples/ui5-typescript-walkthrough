@@ -162,9 +162,9 @@ It is a good practice to set a unique ID like `helloWorldButton` to key controls
 
 ***
 
-**Next:** [Step 17: Fragment Callbacks](../17/README.md "Now that we have integrated the dialog, it's time to add some user interaction. The user will definitely want to close the dialog again at some point, so we add a button to close the dialog and assign an event handler.")
+**Next:** [Step 17: Fragment Callbacks](../17/README.md)
 
-**Previous:** [Step15: Nested Views](../15/README.md "Our panel content is getting more and more complex and now it is time to move the panel content to a separate view. With that approach, the application structure is much easier to understand, and the individual parts of the app can be reused.")
+**Previous:** [Step15: Nested Views](../15/README.md)
 
 ***
 
