@@ -248,9 +248,9 @@ Now you can benefit from live reload on changes and built framework resources at
 
 ***
 
-**Next:** [Step 3: Controls](../03/README.md "Now it's time to build our first little UI by replacing the Hello World text in the HTML body by the OpenUI5 control sap.m.Text. In the beginning, we will use the TypeScript control API to set up the UI, the control instance is then placed into the HTML body‚")
+**Next:** [Step 3: Controls](../03/README.md)
 
-**Previous:** [Step 1: Hello World!](../01/README.md "As you know OpenUI5 is all about HTML5. Let's get started with building a first Hello World with only HTML. In addition we will initialize the UI5 CLI, so we can benefit from it from the beginning.")
+**Previous:** [Step 1: Hello World!](../01/README.md)
 
 ***
 

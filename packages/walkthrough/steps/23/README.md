@@ -152,9 +152,9 @@ The search field is part of the list header and therefore, each change on the li
  
 ***
 
-**Next:**[Step 24: Sorting and Grouping](../24/README.md "To make our list of invoices even more user-friendly, we sort it alphabetically instead of just showing the order from the data model. Additionally, we introduce groups and add the company that ships the products so that the data is easier to consume.")
+**Next:**[Step 24: Sorting and Grouping](../24/README.md)
 
-**Previous:**[Step 22: Custom Formatters](../22/README.md "If we want to do a more complex logic for formatting properties of our data model, we can also write a custom formatting function. We will now add a localized status with a custom formatter, because the status in our data model is in a rather technical format.")
+**Previous:**[Step 22: Custom Formatters](../22/README.md)
 
 ***
 

@@ -131,9 +131,9 @@ By using the `loadFragment` function to create the fragment content in the contr
 
 ***
 
-**Next:** [Step 18: Icons](../18/README.md "Our dialog is still pretty much empty. Since  OpenUI5 is shipped with a large icon font that contains more than 500 icons, we will add an icon to greet our users when the dialog is opened.")
+**Next:** [Step 18: Icons](../18/README.md)
 
-**Previous** [Step 16: Dialogs and Fragments](../16/README.md "In this step, we will take a closer look at another element which can be used to assemble views: the fragment.")
+**Previous** [Step 16: Dialogs and Fragments](../16/README.md)
 
 ***
 

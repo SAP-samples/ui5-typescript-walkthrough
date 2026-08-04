@@ -118,9 +118,9 @@ As you can see above, the example uses a special binding syntax for the `number`
 
 ***
 
-**Next:** [Step 21: Expression Binding](../21/README.md "Sometimes the predefined types of OpenUI5 are not flexible enough and you want to do a simple calculation or formatting in the view - that is where expressions are really helpful. We use them to format our price according to the current number in the data model.")
+**Next:** [Step 21: Expression Binding](../21/README.md)
 
-**Previous:** [Step 19: Aggregation Binding](../19/README.md "Now that we have established a good structure for our app, it's time to add some more functionality. We start exploring more features of data binding by adding some invoice data in JSON format that we display in a list below the panel.")
+**Previous:** [Step 19: Aggregation Binding](../19/README.md)
 
 ***
 

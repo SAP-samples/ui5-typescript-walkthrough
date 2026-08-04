@@ -163,9 +163,9 @@ in the `ObjectStatus` control we defined our alias `Formatter` that holds our fo
  
 ***
 
-**Next:** [Step 23: Filtering](../23/README.md "In this step, we add a search field for our product list and define a filter that represents the search term. When searching, the list is automatically updated to show only the items that match the search term.")
+**Next:** [Step 23: Filtering](../23/README.md)
 
-**Previous:** [Step 21: Expression Binding](../21/README.md "Sometimes the predefined types of OpenUI5 are not flexible enough and you want to do a simple calculation or formatting in the view - that is where expressions are really helpful. We use them to format our price according to the current number in the data model..")
+**Previous:** [Step 21: Expression Binding](../21/README.md)
 
 ***
 

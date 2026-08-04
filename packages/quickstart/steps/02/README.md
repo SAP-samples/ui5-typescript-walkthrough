@@ -111,7 +111,7 @@ sap.ui.define([
 You can see a title bar and a blue button that reacts to your input. Congratulations, you have created our very first app.
 
 
-**Next:** [Step 3: Go!](../03/README.md "Before we can do something with UI5, we need to laod and initialize it. This process of loading and initializing UI5 is called bootstrapping. Once this bootstrapping is finished, we simply display an alert.")
+**Next:** [Step 3: Go!](../03/README.md)
 
 ***
 

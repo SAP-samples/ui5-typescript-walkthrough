@@ -100,9 +100,9 @@ Two things are happening here:
 
 ***
 
-**Next:** [Step 5: One-Way Data Binding](../05/README.md "Unlike the two-way binding behavior we've seen, one-way data binding is also possible.")
+**Next:** [Step 5: One-Way Data Binding](../05/README.md)
 
-**Previous:** [Step 3: Create Property Binding](../03/README.md "Although there is no visible difference, the text on the screen is now derived from model data.")
+**Previous:** [Step 3: Create Property Binding](../03/README.md)
 
 ***
 

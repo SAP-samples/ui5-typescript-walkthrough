@@ -82,9 +82,9 @@ We could define a custom group header factory if we wanted by setting the `group
 
 ***
 
-**Next:** [Step 25: Remote OData Service](../25/README.md "So far we have worked with local JSON data, but now we will access a real OData service to visualize remote data.")
+**Next:** [Step 25: Remote OData Service](../25/README.md)
 
-**Previous:** [Step 23: Remote OData Service](../23/README.md "In this step, we add a search field for our product list and define a filter that represents the search term. When searching, the list is automatically updated to show only the items that match the search term.")
+**Previous:** [Step 23: Remote OData Service](../23/README.md)
 
 ***
 

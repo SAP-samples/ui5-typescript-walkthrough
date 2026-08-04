@@ -138,9 +138,9 @@ The ampersand \(`&`\) character also has a high-priority meaning to the XML pars
 
 ***
 
-**Next:** [Step 15: Aggregation Binding Using a Factory Function](../15/README.md "Instead of using a single hard-coded template control, we now opt for a factory function to generate different controls based on the data received at runtime.")
+**Next:** [Step 15: Aggregation Binding Using a Factory Function](../15/README.md)
 
-**Previous:** [Step 13: Element Binding](../13/README.md "Now, let's do something with that newly generated list.")
+**Previous:** [Step 13: Element Binding](../13/README.md)
 
 ***
 

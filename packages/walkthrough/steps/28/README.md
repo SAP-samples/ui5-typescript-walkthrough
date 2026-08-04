@@ -261,9 +261,9 @@ If we now open the `webapp/test/testsuite.qunit.html` file in the browser and se
 
 ***
 
-**Next:** [Step 29: Debugging Tools](../29/README.md "Even though we have added a basic test coverage in the previous steps, it seems like we accidentally broke our app, because it does not display prices to our invoices anymore. We need to debug the issue and fix it before someone finds out.")
+**Next:** [Step 29: Debugging Tools](../29/README.md)
 
-**Previous:** [Step 27: Unit Test with QUnit](../27/README.md "Now that we have a test folder in the app, we can start to increase our test coverage.")
+**Previous:** [Step 27: Unit Test with QUnit](../27/README.md)
 
 ***
 

@@ -199,9 +199,9 @@ You can use multiple model instances by using different model names. The model n
 
 ***
 
-**Next:** [Step 7: \(Optional\) Resource Bundles and Multiple Languages](../07/README.md "Resource bundles exist to enable an app to run in multiple languages without the need to change any code.")
+**Next:** [Step 7: \(Optional\) Resource Bundles and Multiple Languages](../07/README.md)
 
-**Previous:** [Step 5: One-Way Data Binding](../05/README.md "Unlike the two-way binding behavior we've seen, one-way data binding is also possible.")
+**Previous:** [Step 5: One-Way Data Binding](../05/README.md)
 
 ***
 

@@ -75,9 +75,9 @@ Expressions are limited to a particular set of operations that help formatting t
 
 ***
 
-**Next:** [Step 22: Custom Formatters](../22/README.md "If we want to do a more complex logic for formatting properties of our data model, we can also write a custom formatting function. We will now add a localized status with a custom formatter, because the status in our data model is in a rather technical format.")
+**Next:** [Step 22: Custom Formatters](../22/README.md)
 
-**Previous:** [Step 20: Data Types](../20/README.md "The list of invoices is already looking nice, but what is an invoice without a price assigned? Typically prices are stored in a technical format and with a '.' delimiter in the data model. For example, our invoice for pineapples has the calculated price 87.2 without a currency. We are going to use the OpenUI5 data types to format the price properly, with a locale-dependent decimal separator and two digits after the separator.")
+**Previous:** [Step 20: Data Types](../20/README.md)
 
 ***
 

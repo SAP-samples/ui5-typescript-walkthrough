@@ -178,9 +178,9 @@ A resource bundle is a flat structure, therefore the preceding slash \(/\) can b
 
 ***
 
-**Next:** [Step 9: Component Configuration](../09/README.md "After we have introduced all three parts of the Model-View-Controller \(MVC\) concept, we now come to another important structural aspect of OpenUI5.")
+**Next:** [Step 9: Component Configuration](../09/README.md)
 
-**Previous:** [Step 7: JSON Model](../07/README.md "Now that we have set up the view and controller, it’s about time to think about the M in MVC.")
+**Previous:** [Step 7: JSON Model](../07/README.md)
 
 ***
 

@@ -86,9 +86,9 @@ The text that is displayed on the UI is still hard-coded and not taken from the 
 
 ***
 
-**Next:** [Step 3: Create Property Binding](../03/README.md "Although there is no visible difference, the text on the screen is now derived from model data.")
+**Next:** [Step 3: Create Property Binding](../03/README.md)
 
-**Previous:** [Step 1: No Data Binding](../01/README.md "In this step, we create a basic application and simply place some text on the screen using a standard sap.m.Text control.")
+**Previous:** [Step 1: No Data Binding](../01/README.md)
 
 ***
 

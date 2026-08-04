@@ -40,9 +40,9 @@ Assign the `text` property of the `sap.m.Text` control to the value `{/greetingT
 
 ***
 
-**Next:** [Step 4: Two-Way Data Binding](../04/README.md "In the examples we've looked at so far, we've displayed the value of a model property using a read-only field.")
+**Next:** [Step 4: Two-Way Data Binding](../04/README.md)
 
-**Previous:** [Step 2: Creating a Model](../02/README.md "In this step, we create a model.")
+**Previous:** [Step 2: Creating a Model](../02/README.md)
 
 ***
 

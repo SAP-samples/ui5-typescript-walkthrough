@@ -133,9 +133,9 @@ salesAmount=Verk\u00e4ufe bis zum heutigen Datum
 
 ***
 
-**Next:** [Step 11: Validation Using `sap/ui/core/Messaging`](../11/README.md "Up to this point, we've created a currency field that formats itself correctly. The currency data type can also validate user input to ensure it meets currency requirements.")
+**Next:** [Step 11: Validation Using `sap/ui/core/Messaging`](../11/README.md)
 
-**Previous:** [Step 9: Formatting Values](../09/README.md "We'd also like to provide our users with a way of contacting Harry Hawk, so we're adding a link that sends an e-mail to Harry.")
+**Previous:** [Step 9: Formatting Values](../09/README.md)
 
 ***
 

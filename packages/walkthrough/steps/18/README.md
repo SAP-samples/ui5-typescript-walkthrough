@@ -97,9 +97,9 @@ In the dialog fragment, we add an icon control to the content aggregation of the
 
 ***
 
-**Next:** Step 19: [Aggregation Binding](../19/README.md "Now that we have established a good structure for our app, it's time to add some more functionality. We start exploring more features of data binding by adding some invoice data in JSON format that we display in a list below the panel.")
+**Next:** Step 19: [Aggregation Binding](../19/README.md)
 
-**Previous** Step 17: [Fragment Callbacks](../17/README.md "Now that we have integrated the dialog, it's time to add some user interaction. The user will definitely want to close the dialog again at some point, so we add a button to close the dialog and assign an event handler.")
+**Previous** Step 17: [Fragment Callbacks](../17/README.md)
 
 ***
 

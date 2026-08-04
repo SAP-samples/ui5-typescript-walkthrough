@@ -161,9 +161,9 @@ mailBody=Wie geht es dir?
 
 ***
 
-**Next:** [Step 10: Property Formatting Using Data Types](../10/README.md "OpenUI5 offers a set of simple data types, including Boolean, Currency, Date and Float.")
+**Next:** [Step 10: Property Formatting Using Data Types](../10/README.md)
 
-**Previous:** [Step 8: Binding Paths: Accessing Properties in Hierarchically Structured Models](../08/README.md "In Step 6, we stated that the fields in a resource model are arranged in a flat structure; in other words, there is no hierarchy of properties.")
+**Previous:** [Step 8: Binding Paths: Accessing Properties in Hierarchically Structured Models](../08/README.md)
 
 ***
 

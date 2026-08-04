@@ -606,9 +606,9 @@ Adding the block between the BEGIN and END line into the `ProductRating` class b
 
 ***
 
-**Next:** [Step 34: Responsiveness](../34/README.md "In this step, we improve the responsiveness of our app. OpenUI5 applications can be run on phone, tablet, and desktop devices and we can configure the application to make best use of the screen estate for each scenario. Fortunately, OpenUI5 controls like the sap.m.Table already deliver a lot of features that we can use.")
+**Next:** [Step 34: Responsiveness](../34/README.md)
 
-**Previous:** [Step 32: Routing Back and History](../32/README.md "Now we can navigate to our detail page and display an invoice, but we cannot go back to the overview page yet. We'll add a back button to the detail page and implement a function that shows our overview page again.")
+**Previous:** [Step 32: Routing Back and History](../32/README.md)
 
 ***
 

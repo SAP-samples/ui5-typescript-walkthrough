@@ -90,6 +90,6 @@ If you wish to alter the binding mode, you've got two options:
 
 ***
 
-**Next:** [Step 6: Resource Models](../06/README.md "Business applications often require language-specific \(translatable\) text used as labels and descriptions on the user interface.")
+**Next:** [Step 6: Resource Models](../06/README.md)
 
-**Previous:** [Step 4: Two-Way Data Binding](../04/README.md "In the examples we've looked at so far, we've displayed the value of a model property using a read-only field.")
+**Previous:** [Step 4: Two-Way Data Binding](../04/README.md)

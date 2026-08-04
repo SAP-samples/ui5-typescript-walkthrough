@@ -80,9 +80,9 @@ To format the output text individually, we remove the description from the input
 
 ***
 
-**Next:** [Step 14: Custom CSS and Theme Colors](../14/README.md "Sometimes we need to define some more fine-granular layouts and this is when we can use the flexibility of CSS by adding custom style classes to controls and style them as we like.")
+**Next:** [Step 14: Custom CSS and Theme Colors](../14/README.md)
 
-**Previous:** [Step 12: Shell Control as Container](../12/README.md "Now we use a shell control as container for our app and use it as our new root element. The shell takes care of visual adaptation of the application to the device’s screen size by introducing a so-called letterbox on desktop screens.")
+**Previous:** [Step 12: Shell Control as Container](../12/README.md)
 
 ***
 

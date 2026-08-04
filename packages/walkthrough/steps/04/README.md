@@ -104,9 +104,9 @@ We have now embed our app view to the body of the HTML document.
 
 ***
 
-**Next:** [Step 5: Controllers](../05/README.md "In this step, we replace the text with a button and show the Hello World message when the button is pressed. The handling of the button's press event is implemented in the controller of the view.")
+**Next:** [Step 5: Controllers](../05/README.md)
 
-**Previous:** [Step 3: Controls](../03/README.md "Now it's time to build our first little UI by replacing the Hello World text in the HTML body by the OpenUI5 control sap.m.Text. In the beginning, we will use the TypeScript control AOI to set up the UI, the control instance is then placed into the HTML body.")
+**Previous:** [Step 3: Controls](../03/README.md)
 
 ***
 

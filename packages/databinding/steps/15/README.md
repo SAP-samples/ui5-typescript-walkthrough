@@ -236,7 +236,7 @@ Congratulations! You've completed the Data Binding tutorial.
 
 ***
 
-**Previous:** [Step 14: Expression Binding](../14/README.md "An expression binding lets you display a calculated value on the screen, which is derived from values found in a model object.")
+**Previous:** [Step 14: Expression Binding](../14/README.md)
 
 ***
 

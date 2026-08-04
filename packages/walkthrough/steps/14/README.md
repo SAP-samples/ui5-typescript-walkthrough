@@ -133,9 +133,9 @@ The actual color now depends on the selected theme which ensures that the color 
 **Related Information**  
 
 
-**Next:** [Step 15: Nested Views](../15/README.md "Our panel content is getting more and more complex and now it is time to move the panel content to a separate view. With that approach, the application structure is much easier to understand, and the individual parts of the app can be reused.")
+**Next:** [Step 15: Nested Views](../15/README.md)
 
-**Previous:** [Step 13: Margins and Paddings](../13/README.md "Our app content is still glued to the corners of the letterbox. To fine-tune our layout, we can add margins and paddings to the controls that we added in the previous step.")
+**Previous:** [Step 13: Margins and Paddings](../13/README.md)
 
 ***
 
