@@ -1,8 +1,8 @@
-# Step 8: OData Operations
+## Step 8: OData Operations
 
 Our OData service provides one OData operation: the `ResetDataSource` action. In this step, we add a button that resets all data changes we made during the tutorial to their original state using this action.
 
-## Preview
+### Preview
 
 **A Restart Tutorial button is added**
 
@@ -10,11 +10,11 @@ Our OData service provides one OData operation: the `ResetDataSource` action. In
 
 You can view this step live: [🔗 Live Preview of Step 8](https://ui5.github.io/tutorials/odatav4/build/08/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 8](https://ui5.github.io/tutorials/odatav4/odatav4-step-08.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 8](https://ui5.github.io/tutorials/odatav4/odatav4-step-08-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## `webapp/controller/App.controller.ts/.js`
+### webapp/controller/App.controller.ts/.js
 
 ```ts
 // webapp/controller/App.controller.ts
@@ -76,7 +76,7 @@ The invocation is asynchronous; the `invoke` method therefore returns a `Promise
 > 📝
 > Many of the methods in the OData V4 API of OpenUI5 return a `Promise` to manage asynchronous processing
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -102,7 +102,7 @@ The invocation is asynchronous; the `invoke` method therefore returns a `Promise
 
 We add the **headerContent** aggregation to the **Page** and insert the new **Button**. We add the **onResetDataSource** event handler to the **press** event.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```ini
 ...

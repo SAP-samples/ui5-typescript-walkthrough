@@ -1,15 +1,15 @@
 
-# Step 1: No Data Binding
+## Step 1: No Data Binding
 
 In this step, we create a basic application and simply place some text on the screen using a standard `sap.m.Text` control. The text in this control is a hard-coded part of the control's definition; therefore, this is not an example of data binding!
 
-## Preview
+### Preview
 
 ![The browser shows the text "Hi, my name is Harry Hawk"](assets/Tutorial_Data_Binding_Step_1_6d391d5.png "The browser shows the text &quot;Hi, my name is Harry Hawk&quot;")
 
 You can view this step live: [🔗 Live Preview of Step 1](https://ui5.github.io/tutorials/databinding/build/01/index-cdn.html).
 
-## Setup
+### Setup
 
 Open a terminal and install UI5 Tooling globally on your machine by executing the following command:
 
@@ -17,11 +17,11 @@ Open a terminal and install UI5 Tooling globally on your machine by executing th
 npm install --global @ui5/cli
 ```
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 1](https://ui5.github.io/tutorials/databinding/databinding-step-01.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 1](https://ui5.github.io/tutorials/databinding/databinding-step-01-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -36,7 +36,7 @@ webapp/
 
 2. Create a new file called `package.json` which will enable you to execute commands and consume packages from the [npm registry](https://www.npmjs.com/) via the npm command line interface. Enter the following content:
 
-## package.json \(New\)
+### package.json \(New\)
 
 ```json
 {
@@ -55,7 +55,7 @@ webapp/
 
 4. Create a new HTML file named `index.html` in your webapp folder and enter the following content:
 
-## webapp/index.html \(New\)
+### webapp/index.html \(New\)
 
 ```html
 <!DOCTYPE html>
@@ -84,7 +84,7 @@ webapp/
 
 5. Create a new file named `manifest.json` in the webapp folder; it's also known as the "app descriptor". All application-specific configuration options which we'll introduce in this tutorial will be added to this file. Enter the following content:
 
-## webapp/manifest.json \(New\)
+### webapp/manifest.json \(New\)
 
 ```json
 {
@@ -129,7 +129,7 @@ webapp/
 
 6. Create a new file named `Component.ts/.js` in the webapp folder. Enter the following content:
 
-## `webapp/Component.ts/.js` \(New\)
+### webapp/Component.ts/.js \(New\)
 
 ```ts
 // webapp/Component.ts
@@ -162,7 +162,7 @@ sap.ui.define(["sap/ui/core/UIComponent"], function (UIComponent) {
 
 7. Create a new folder named `view` in the webapp folder. Then, create a new file `App.view.xml` within the `view` folder. We start by placing the `sap.m.Text` control into the XML view. Since the value of the control's text property is hard-coded, it doesn't relate to any data that might exist within a model object. Therefore, data binding is **not** used here.
 
-## webapp/view/App.view.xml \(New\)
+### webapp/view/App.view.xml \(New\)
 
 ```xml
 <mvc:View
@@ -182,7 +182,7 @@ sap.ui.define(["sap/ui/core/UIComponent"], function (UIComponent) {
 
 12. Configure the tooling extensions we installed from npm in our UI5 Tooling setup, so we can use them in our project:
 
-## ui5.yaml
+### ui5.yaml
 
 ```yaml
 specVersion: "4.0"

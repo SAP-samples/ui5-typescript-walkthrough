@@ -1,21 +1,21 @@
 
-# Step 15: Aggregation Binding Using a Factory Function
+## Step 15: Aggregation Binding Using a Factory Function
 
 Instead of using a single hard-coded template control, we now opt for a factory function to generate different controls based on the data received at runtime. This approach is much more flexible and allows for the display of complex or heterogeneous data.
 
-## Preview
+### Preview
 
-### A different type of list item is displayed for a discontinued product
+#### A different type of list item is displayed for a discontinued product
 
 ![A different type of list item is displayed for a discontinued product](assets/Tutorial_Data_Binding_Step_15_db27ba8.png "A different type of list item is displayed for a discontinued product")
 
 You can view this step live: [🔗 Live Preview of Step 15](https://ui5.github.io/tutorials/databinding/build/15/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 15](https://ui5.github.io/tutorials/databinding/databinding-step-15.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 15](https://ui5.github.io/tutorials/databinding/databinding-step-15-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -38,7 +38,7 @@ webapp/
 
 Create a `ProductSimple.fragment.xml` file in the `view` folder. Here, define an `sap.m.StandardListItem` that is used when the stock level is zero and the product is discontinued. In this simple use case, you only need to define a warning icon and a "Product Discontinued" message in the `info` property.
 
-## webapp/view/ProductSimple.fragment.xml \(New\)
+### webapp/view/ProductSimple.fragment.xml \(New\)
 
 ```xml
 <core:FragmentDefinition
@@ -58,7 +58,7 @@ Create a `ProductSimple.fragment.xml` file in the `view` folder. Here, define an
 
 Create a new `ProductExtended.fragment.xml` file in the `view` folder. In this extended use case, you create an `ObjectListItem` to display more product details. The properties are bound to the fields of the current data binding context. This allows the use of types, formatters, and all handlers defined in the assigned controller. However, you can't define more complex logic declaratively in XML. Therefore, we add a single `sap.m.ObjectAttribute` in a factory function of the controller using JavaScript, which displays an "Out of Stock" message when the stock level is zero.
 
-## webapp/view/ProductExtended.fragment.xml \(New\)
+### webapp/view/ProductExtended.fragment.xml \(New\)
 
 ```xml
 <core:FragmentDefinition
@@ -86,7 +86,7 @@ Create a new `ProductExtended.fragment.xml` file in the `view` folder. In this e
 
 In the `App.view.xml` file, add an XML namespace for `sap.ui.core`. Then, remove the `items` aggregation from the `sap.m.List` XML element. Add an `id` attribute to the `sap.m.List` and include the factory function in the items' binding definition. Lastly, add the two newly created fragments as dependents to the `sap.m.List`.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -123,7 +123,7 @@ The `sap.m.List` that previously held the product list is now just a named, but 
 
 In the `App.controller.ts/.js` file, add a new import for the `sap.m.ObjectAttribute` class and create a new function called `productListFactory`. This factory function returns a control for the associated binding context, similar to the XML templates we've defined in the previous steps. The controls returned by this factory function must suit the items aggregation of the `sap.m.List` object. In this case, it returns either an `sap.m.StandardListItem` or an `sap.m.ObjectListItem` based on the data stored in the context of the item to be created.
 
-## `webapp/controller/App.controller.ts/.js`
+### webapp/controller/App.controller.ts/.js
 
 ```ts
 // webapp/controller/App.controller.ts
@@ -214,7 +214,7 @@ Finally, the function returns the control that is then displayed inside the list
 
 Lastly, add the new texts to the `i18n.properties` and `i18n_de.properties` files.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...
@@ -223,7 +223,7 @@ Lastly, add the new texts to the `i18n.properties` and `i18n_de.properties` file
 outOfStock=Out of Stock
 ```
 
-## webapp/i18n/i18n\_de.properties
+### webapp/i18n/i18n\_de.properties
 
 ```properties
 ...

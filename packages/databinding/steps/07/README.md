@@ -1,21 +1,21 @@
 
-# Step 7: \(Optional\) Resource Bundles and Multiple Languages
+## Step 7: \(Optional\) Resource Bundles and Multiple Languages
 
 Resource bundles exist to enable an app to run in multiple languages without the need to change any code. To demonstrate this feature, let's create a German version of the app – in fact, all we need to do is create a German version of the resource bundle file. In our code, we activate the German locale for the ResourceModel.
 
-## Preview
+### Preview
 
-### The texts are now adapted for the German locale
+#### The texts are now adapted for the German locale
 
 ![The texts are now adapted for the German locale](assets/Tutorial_Data_Binding_Step_7_d96cdf9.png "The texts are now adapted for the German locale")
 
 You can view this step live: [🔗 Live Preview of Step 7](https://ui5.github.io/tutorials/databinding/build/07/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 7](https://ui5.github.io/tutorials/databinding/databinding-step-07.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 7](https://ui5.github.io/tutorials/databinding/databinding-step-07-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -31,7 +31,7 @@ webapp/
 └── manifest.json
 ```
 
-## webapp/i18n/i18n\_de.properties \(New\)
+### webapp/i18n/i18n\_de.properties \(New\)
 
 In the `i18n` folder, duplicate the `i18n.properties` file and rename its copy to `i18n`**`_de`**`.properties`. Replace the English text with the German text provided below. The suffix `de` represents the locale for the German language. Since the `de` locale is already set in the `supportedLocales` configuration of the `manifest.json`, it will be taken into account.
 

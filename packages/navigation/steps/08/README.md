@@ -1,28 +1,28 @@
-# Step 8: Navigate with Flip Transition
+## Step 8: Navigate with Flip Transition
 
 In this step, we want to illustrate how to navigate to a page with a custom transition animation. Both forward and backward navigation will use the “flip” transition but with a different direction. We will create a simple link on the `Employee` view that triggers a flip navigation to a page that displays the resume data of a certain employee. Pressing the *Back* button will navigate back to the `Employee` view with a reversed flip transition.
 
-## Preview
+### Preview
 
-### Employee Details page with Flip to Resume link
+#### Employee Details page with Flip to Resume link
 
 ![Employee Details page with Flip to Resume link](assets/Tutorial_Navigation_and_Routing_Step_08a.png "Employee Details page with Flip to Resume link")
 
-### Resume page with multiple tabs
+#### Resume page with multiple tabs
 
 ![Resume page with multiple tabs](assets/Tutorial_Navigation_and_Routing_Step_08b.png "Resume page with multiple tabs")
 
-### Not Found page for resume
+#### Not Found page for resume
 
 ![Not Found page for resume](assets/Tutorial_Navigation_and_Routing_Step_08c.png "Not Found page for resume")
 
 You can view this step live: [🔗 Live Preview of Step 8](https://ui5.github.io/tutorials/navigation/build/08/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 8](https://ui5.github.io/tutorials/navigation/navigation-step-08.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 8](https://ui5.github.io/tutorials/navigation/navigation-step-08-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -58,7 +58,7 @@ webapp/
 └── manifest.json
 ```
 
-## webapp/view/employee/Employee.view.xml
+### webapp/view/employee/Employee.view.xml
 
 ```xml
 <mvc:View
@@ -99,7 +99,7 @@ webapp/
 
 First we add the *Flip to Resume* link to the *Employee Details* view to trigger the navigation to the resume of the employee that is currently displayed.
 
-## `webapp/controller/employee/Employee.controller.ts/.js`
+### webapp/controller/employee/Employee.controller.ts/.js
 
 ```ts
 // webapp/controller/employee/Employee.controller.ts
@@ -173,7 +173,7 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (B
 
 Then we change the `Employee.controller.ts` file by adding the press handler `onShowResume` for the *Flip to Resume* link. The handler simply navigates to a new route `employeeResume` and fills the mandatory parameter `employeeId` with the property `EmployeeID` from the view’s bound context. The route `employeeResume` is not available yet, so we will have to add it to our routing configuration.
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 {
@@ -270,7 +270,7 @@ The target `employeeResume` references the view `employee.Resume` that we are ab
 >
 > You can also implement your own transitions and add it to a control that extends `sap.m.NavContainer` \(for example, `sap.m.App` or `sap.m.SplitApp`\). For more information, see the [API Reference: `NavContainer`](https://sdk.openui5.org/#/api/sap.m.NavContainer).
 
-## webapp/view/employee/Resume.view.xml \(New\)
+### webapp/view/employee/Resume.view.xml \(New\)
 
 ```xml
 <mvc:View
@@ -313,7 +313,7 @@ Create a file `Resume.view.xml` inside the `webapp/view/employee` folder. The vi
 
 In the `IconTabBar` we display four tabs. Three of them simply use a `Text` control to display the data from the service. The *Projects* tab uses a nested XML view to display the projects of the employee. OpenUI5 takes care of loading the XML view automatically when the user navigates to the *Resume* page.
 
-## `webapp/controller/employee/Resume.controller.ts/.js` \(New\)
+### webapp/controller/employee/Resume.controller.ts/.js \(New\)
 
 ```ts
 // webapp/controller/employee/Resume.controller.ts
@@ -397,7 +397,7 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (B
 
 Create a file `Resume.controller.ts` in the `webapp/controller/employee` folder. In this controller, we make sure to bind the view to the correct employee whenever the `employeeResume` route has matched. We have already used this approach in the previous step so you should be able to recognize the building blocks in the code above. Again, in case the user cannot be found we display the `notFound` target.
 
-## webapp/view/employee/ResumeProjects.view.xml \(New\)
+### webapp/view/employee/ResumeProjects.view.xml \(New\)
 
 ```xml
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
@@ -410,7 +410,7 @@ Create a file `ResumeProjects.view.xml` in the `webapp/view/employee` folder. Th
 > 📝
 > For more complex applications, the performance is significantly increased if parts of the UI are only loaded when the user is actively selecting it. In this example, the view is always loaded even though the user never decided to display the project information. In the next steps, we will extend the UI so that the content is loaded “lazy” by OpenUI5 only when the filter item is clicked. The back-end service will fetch the data only on request and the UI will only have to be updated with the selected data instead of loading all data.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...

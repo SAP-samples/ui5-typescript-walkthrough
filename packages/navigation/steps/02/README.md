@@ -1,20 +1,20 @@
-# Step 2: Enable Routing
+## Step 2: Enable Routing
 
 In this step we will modify the app and introduce routing. Instead of having the home page of the app hard coded we will configure a router to wire multiple views together when our app is called. The routing configuration controls the application flow when the user triggers a navigation action or opens a link to the application directly.
 
-## Preview
+### Preview
 
-### Views are wired together using the router
+#### Views are wired together using the router
 
 ![Views are wired together using the router](assets/Tutorial_Navigation_and_Routing_Step_02a.png "Views are wired together using the router")
 
 You can view this step live: [🔗 Live Preview of Step 2](https://ui5.github.io/tutorials/navigation/build/02/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 2](https://ui5.github.io/tutorials/navigation/navigation-step-02.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 2](https://ui5.github.io/tutorials/navigation/navigation-step-02-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -38,7 +38,7 @@ webapp/
 └── manifest.json
 ```
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 {
@@ -112,7 +112,7 @@ Single-page applications based on OpenUI5 can use a so-called “router” to di
 > 📝
 > As of OpenUI5 version 1.30, we recommend that you define the routing in the `manifest.json` descriptor file using routes and targets. In older versions of OpenUI5, the routing configuration had to be done directly in the metadata section of the component, and with different syntax.
 
-## `webapp/Component.ts/.js`
+### webapp/Component.ts/.js
 
 ```ts
 // webapp/Component.ts
@@ -160,7 +160,7 @@ sap.ui.define(["sap/ui/core/UIComponent"], function (UIComponent) {
 
 We override the `init` function and call the parent’s `init` function first. We get a reference to the router and call `initialize()`on it. The router is instantiated automatically with the configuration loaded in the descriptor. The routing events and our configuration in the descriptor are now automatically enabled in the app. Running the app at this point would lead to an error, because the home view is not implemented yet.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -177,7 +177,7 @@ We override the `init` function and call the parent’s `init` function first. W
 
 In the `App` view, we remove the content of `App` control. The pages will be added dynamically the way we have configured it in the descriptor. The view configured with the property `rootView` is automatically instantiated when the app is called initially.
 
-## webapp/view/Home.view.xml \(New\)
+### webapp/view/Home.view.xml \(New\)
 
 ```xml
 <mvc:View
@@ -197,7 +197,7 @@ In the `App` view, we remove the content of `App` control. The pages will be add
 
 Create a file `Home.view.xml` in the `webapp/view` folder. The home view only contains a page control that displays a button. For illustration, we bind the title of the page to the `i18n>homePageTitle`, you can use data binding just the way you are used to it.
 
-## `webapp/controller/Home.controller.ts/.js` \(New\)
+### webapp/controller/Home.controller.ts/.js \(New\)
 
 ```ts
 // webapp/controller/Home.controller.ts
@@ -228,7 +228,7 @@ Create a file `Home.controller.ts` in the `webapp/controller` folder. The contro
 >
 > Based on the routing configuration, you define the navigation between pages and pass parameters to the target views.
 
-## Conventions
+### Conventions
 
 - Configure the router in the `manifest.json` descriptor file
 

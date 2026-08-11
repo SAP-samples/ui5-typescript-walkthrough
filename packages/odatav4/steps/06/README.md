@@ -1,8 +1,8 @@
-# Step 6: Create and Edit
+## Step 6: Create and Edit
 
 In this step, we will make it possible to create and edit \(update\) user data from the user interface and send the data to the back end.
 
-## Preview
+### Preview
 
 **Data can now be edited and added.**
 
@@ -10,11 +10,11 @@ In this step, we will make it possible to create and edit \(update\) user data f
 
 You can view this step live: [🔗 Live Preview of Step 6](https://ui5.github.io/tutorials/odatav4/build/06/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 6](https://ui5.github.io/tutorials/odatav4/odatav4-step-06.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 6](https://ui5.github.io/tutorials/odatav4/odatav4-step-06-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## `webapp/controller/App.controller.ts/.js`
+### webapp/controller/App.controller.ts/.js
 
 ```ts
 // webapp/controller/App.controller.ts
@@ -412,7 +412,7 @@ The `onResetChanges` method handles discarding pending changes. It uses the `res
 
 The `onInputChange` event handler manages entries in any of the `Input` fields and triggers updates to the `appView` model as needed. It does an extra check on the `UserName` field to make sure that users cannot be saved without a `UserName`. Otherwise the OData service would return errors because `UserName` is a mandatory field.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -546,7 +546,7 @@ Finally, we add the `liveChange="onInputChange"` event handler to the table cell
 
 Creation via a form is demonstrated in our [Sales Orders sample app](https://sdk.openui5.org/#/entity/sap.ui.model.odata.v4.ODataModel/sample/sap.ui.core.sample.odata.v4.SalesOrders).
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```ini
 # Toolbar

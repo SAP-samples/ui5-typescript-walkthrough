@@ -114,7 +114,7 @@ Don't worry too much about the details, we will explain them in the next tutoria
 ```
 
 
-### webapp/App.controller.js
+### webapp/App.controller.ts/.js
 
 The `onPress` function now also triggers the navigation to the `intro` page. We fetch the `app` control by its ID and instruct it to navigate by calling the `to` method.
 

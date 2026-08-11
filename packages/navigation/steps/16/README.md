@@ -1,20 +1,20 @@
-# Step 16: Handle Invalid Hashes by Listening to Bypassed Events
+## Step 16: Handle Invalid Hashes by Listening to Bypassed Events
 
 So far we have created many useful routes in our app. In the very early steps we have also made sure that a *Not Found* page is displayed in case the app was called with an invalid hash. Now, we proceed further and track invalid hashes to be able to detect and correct any invalid links or add new URL patterns that are often requested but not found. Therefore, we simply listen to the bypassed events
 
-## Preview
+### Preview
 
-### Console output for invalid hashes when listening to bypassed events
+#### Console output for invalid hashes when listening to bypassed events
 
 ![Console output for invalid hashes when listening to bypassed events](assets/Tutorial_Navigation_and_Routing_Step_16.png "Console output for invalid hashes when listening to bypassed events")
 
 You can view this step live: [🔗 Live Preview of Step 16](https://ui5.github.io/tutorials/navigation/build/16/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 16](https://ui5.github.io/tutorials/navigation/navigation-step-16.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 16](https://ui5.github.io/tutorials/navigation/navigation-step-16-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## `webapp/controller/App.controller.ts/.js`
+### webapp/controller/App.controller.ts/.js
 
 ```ts
 // webapp/controller/App.controller.ts

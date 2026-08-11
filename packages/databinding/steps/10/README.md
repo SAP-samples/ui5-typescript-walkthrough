@@ -1,21 +1,21 @@
 
-# Step 10: Property Formatting Using Data Types
+## Step 10: Property Formatting Using Data Types
 
 OpenUI5 offers a set of simple data types, including `Boolean`, `Currency`, `Date` and `Float`. You can apply these data types to controls to ensure that the value displayed on the screen is formatted correctly. If the field is open for input, this also ensures that the user input meets the requirements of that data type. Let's add a new field called *Sales Amount* of type `Currency`.
 
-## Preview
+### Preview
 
-### An input field for a currency amount is added to the second panel
+#### An input field for a currency amount is added to the second panel
 
 ![An input field for a currency amount is added to the second panel](assets/Tutorial_Data_Binding_Step_10_d15f8bc.png "An input field for a currency amount is added to the second panel")
 
 You can view this step live: [🔗 Live Preview of Step 10](https://ui5.github.io/tutorials/databinding/build/10/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 10](https://ui5.github.io/tutorials/databinding/databinding-step-10.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 10](https://ui5.github.io/tutorials/databinding/databinding-step-10-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -35,7 +35,7 @@ webapp/
 
 Add two new JSON model properties, `salesAmount` and `currencyCode`, to the `data.json` file.
 
-## webapp/model/data.json
+### webapp/model/data.json
 
 ```json
 {
@@ -55,7 +55,7 @@ Add two new JSON model properties, `salesAmount` and `currencyCode`, to the `dat
 
 Add a `sap.ui.layout.HorizontalLayout` to the content of the second `sap.m.Panel` within `App.view.xml` file. Move the existing `sap.ui.layout.VerticalLayout` to the default aggregation of the new `sap.ui.layout.HorizontalLayout`. Finally, add a second `sap.ui.layout.VerticalLayout`, containing a `sap.m.Label` and a `sap.m.Input` control, to the `sap.ui.layout.HorizontalLayout`.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -105,7 +105,7 @@ We've created a new pair of `Label` and `Input` elements for the `salesAmount` m
 
 Add the highlighted texts to the `properties` files. Remember, you need to enter special characters \(non-Latin-1\) using Unicode escape characters.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...
@@ -118,7 +118,7 @@ salesAmount=Sales Amount
 ...
 ```
 
-## webapp/i18n/i18n\_de.properties
+### webapp/i18n/i18n\_de.properties
 
 ```properties
 ...

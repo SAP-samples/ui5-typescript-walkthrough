@@ -1,16 +1,16 @@
-# Step 4: Add a *Back* Button to *Not Found* Page
+## Step 4: Add a *Back* Button to *Not Found* Page
 
 When we are on the *Not Found* page because of an invalid hash, we want to get back to our app to select another page. Therefore, we will add a *Back* button to the `NotFound` view and make sure that the user gets redirected to either the previous page or the overview page when the *Back* button is pressed.
 
-## Preview
+### Preview
 
-### Not Found page with Back button
+#### Not Found page with Back button
 
 ![Not Found page with Back button](assets/Tutorial_Navigation_and_Routing_Step_04a.png)
 
 You can view this step live: [🔗 Live Preview of Step 4](https://ui5.github.io/tutorials/navigation/build/04/index-cdn.html).
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -37,11 +37,11 @@ webapp/
 └── manifest.json
 ```
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 4](https://ui5.github.io/tutorials/navigation/navigation-step-04.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 4](https://ui5.github.io/tutorials/navigation/navigation-step-04-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## webapp/view/NotFound.view.xml
+### webapp/view/NotFound.view.xml
 
 ```xml
 <mvc:View
@@ -67,7 +67,7 @@ You can download the solution for this step here: <span class="ts-only">[📥 Do
 
 In the `NotFound` view, we set the property `showNavButton` of the `Page` control to `true` which automatically displays the *Back* button. We also add an event handler function `onNavBack` to the `navButtonPress` event of the control. The `onNavBack` function will handle the actual back navigation. We could directly add this function to the `NotFound` view’s controller. However, we are smart enough to anticipate that we might need the same handler function for different views. DRY \(“Don’t Repeat Yourself”\) is the right approach for us, so let’s create a `BaseController` from which all other controllers will inherit.
 
-## `webapp/controller/BaseController.ts/.js` \(New\)
+### webapp/controller/BaseController.ts/.js \(New\)
 
 ```ts
 // webapp/controller/BaseController.ts
@@ -130,7 +130,7 @@ The third parameter of `navTo("appHome", {}, true /*no history*/);` has the valu
 > 📝
 > In OpenUI5 there are multiple options to reuse code. We recommend to use a base controller for such helper methods because this allows us to decoratively use the `onNavBack` handler directly in any XML view without adding additional code to the controller. Our base controller is an abstract controller that will not be instantiated in any view. Therefore, the naming convention `*.controller.ts` does not apply, and we can just name the file `BaseController.ts`. By not using the naming convention `*.controller.ts` we can even prevent any unintentional usage in views.
 
-## `webapp/controller/NotFound.controller.ts/.js`
+### webapp/controller/NotFound.controller.ts/.js
 
 ```ts
 // webapp/controller/NotFound.controller.ts
@@ -163,7 +163,7 @@ In order to reuse the base controller implementation, we have to change the depe
 
 At this point you can open `index.html#/thisIsInvalid` in your browser and press the *Back* button to see what happens. You will be redirected to the app’s home page that is matched by the route `appHome` as you opened the *Not Found* page with an invalid hash. If you change the hash to something invalid when you are on the home page of the app, you will also go to the *Not Found* page but with a history entry. When you press back, you will get to the home page again, but this time with a native history navigation.
 
-## `webapp/controller/App.controller.ts/.js`
+### webapp/controller/App.controller.ts/.js
 
 ```ts
 // webapp/controller/App.controller.ts
@@ -194,7 +194,7 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (B
 
 To be consistent, we will now adjust all of our controllers to extend to inherit from the `BaseController`. Change the `App` controller as described above.
 
-## `webapp/controller/Home.controller.ts/.js`
+### webapp/controller/Home.controller.ts/.js
 
 ```ts
 // webapp/controller/Home.controller.ts
@@ -223,7 +223,7 @@ The same applies to our `Home` controller, we now also inherit from the `BaseCon
 > 📝
 > In this step we have added the *Back* button. The user can always use the browser’s native *Back* button as well. Each app can freely configure the behavior of the *Back* button. However, there is no clean way to apply the same logic for the browser’s *Back* button in single-page applications. Tweaking the browser history or using other quirks for cancelling backward or forward navigation is not recommended due to the implementation details of the browsers. The browser’s *Back* button always uses the browser history while the *Back* button of the app can make use of the browser history **or** can implement its own navigation logic. Make sure to understand this difference and only control the *Back* button inside the app.
 
-## Conventions
+### Conventions
 
 - Implement a global `onNavBack` handler for back navigation in your app
 

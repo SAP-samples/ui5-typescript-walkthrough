@@ -1,21 +1,21 @@
 
-# Step 14: Expression Binding
+## Step 14: Expression Binding
 
 An expression binding lets you display a calculated value on the screen, which is derived from values found in a model object. This feature allows you to insert simple formatting or calculations directly into the data binding string. In this example, we're changing the color of the price depending on whether it's above or below a certain threshold. The threshold value is stored in the JSON model.
 
-## Preview
+### Preview
 
-### Prices are color-coded depending on a selected threshold
+#### Prices are color-coded depending on a selected threshold
 
 ![Prices are color-coded depending on a selected threshold](assets/Tutorial_Data_Binding_Step_14_b9fb758.png "Prices are color-coded depending on a selected threshold")
 
 You can view this step live: [🔗 Live Preview of Step 14](https://ui5.github.io/tutorials/databinding/build/14/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 14](https://ui5.github.io/tutorials/databinding/databinding-step-14.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 14](https://ui5.github.io/tutorials/databinding/databinding-step-14-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -36,7 +36,7 @@ webapp/
 
 Add a new property called `priceThreshold` with a value of 20 to the `data.json` file.
 
-## webapp/model/data.json
+### webapp/model/data.json
 
 ```json
 {
@@ -57,7 +57,7 @@ Add a new property called `priceThreshold` with a value of 20 to the `data.json`
 
 In the `App.view.xml` file, add a new `numberState` property to the `ObjectListItem` element within the `List`. The value of this property is an expression that gets evaluated for each item. The expression compares each invoice value against the price threshold and returns a number state based on the result.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 ...

@@ -1,21 +1,21 @@
 
-# Step 4: Two-Way Data Binding
+## Step 4: Two-Way Data Binding
 
 In the examples we've looked at so far, we've displayed the value of a model property using a read-only field. We'll now change the user interface to display first and last name fields using `sap.m.Input` fields. We're also adding a check box control to enable or disable both input fields. This setup illustrates a feature known as "two-way data binding". As the view now contains more controls, we're also moving the view definition into an XML file.
 
-## Preview
+### Preview
 
-### Two input fields and a checkbox to enable or disable them
+#### Two input fields and a checkbox to enable or disable them
 
 ![Two input fields and a checkbox to enable or disable them](assets/Tutorial_Data_Binding_Step_4_61d68f1.png "Two input fields and a checkbox to enable or disable them")
 
 You can view this step live: [🔗 Live Preview of Step 4](https://ui5.github.io/tutorials/databinding/build/04/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 4](https://ui5.github.io/tutorials/databinding/databinding-step-04.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 4](https://ui5.github.io/tutorials/databinding/databinding-step-04-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -30,7 +30,7 @@ webapp/
 
 Replace the content of the `App.view.xml` file with the following content:
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -75,7 +75,7 @@ Replace the content of the `App.view.xml` file with the following content:
 
 Replace the content of the `data.json` file in the `model` folder with the following content:
 
-## webapp/model/data.json
+### webapp/model/data.json
 
 ```json
 {

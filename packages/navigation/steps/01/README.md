@@ -1,16 +1,16 @@
-# Step 1: Set Up the Initial App
+## Step 1: Set Up the Initial App
 
 We start by setting up a simple app for this tutorial. The app displays mock data only and mimics real OData back-end calls with the mock server as you have seen in the *Walkthrough* tutorial.
 
 The structure and data model created in this step will be used throughout the rest of this tutorial. The initial app created in this step will be extended in the subsequent steps to illustrate the navigation and routing features of OpenUI5.
 
-## Preview
+### Preview
 
-### Initial app with a simple button
+#### Initial app with a simple button
 
 ![Initial app with a simple button](assets/Tutorial_Navigation_and_Routing_Step_01a.png "Initial app with a simple button")
 
-## Setup
+### Setup
 
 The initial code for this step ships with the repository at [packages/navigation/steps/01/](./). Open it and run:
 
@@ -25,7 +25,7 @@ If you prefer to work outside the monorepo, download the standalone bundle at <s
 
 You should have the same files as displayed in the following figure:
 
-### Folder structure with downloaded files
+#### Folder structure with downloaded files
 
 ```text
 webapp/
@@ -51,7 +51,7 @@ webapp/
 > 📝
 > The content of the `localService` folder will not be changed in this tutorial. The `i18n` folder will always contain the `i18n.properties` file only. Therefore, we will show both subfolders collapsed in the following steps.
 
-## The Initial App
+### The Initial App
 
 With the downloaded coding, you have an initial app with recommended settings that provides the basic features of an OpenUI5 app:
 

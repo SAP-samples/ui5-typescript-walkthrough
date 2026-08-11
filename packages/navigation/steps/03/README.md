@@ -1,20 +1,20 @@
-# Step 3: Catch Invalid Hashes
+## Step 3: Catch Invalid Hashes
 
 Sometimes it is important to display an indication that the requested resource was not found. To give you an example: If a user tries to access an invalid pattern which does not match any of the configured routes, the user is notified that something went wrong. You might also know this as a “404” or *Not Found Page* from traditional web pages. In this step, we will implement a feature that detects invalid hashes and visualizes this in a nice way.
 
-## Preview
+### Preview
 
-### Not Found page
+#### Not Found page
 
 ![Not Found page](assets/Tutorial_Navigation_and_Routing_Step_03.png "Not Found page")
 
 You can view this step live: [🔗 Live Preview of Step 3](https://ui5.github.io/tutorials/navigation/build/03/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 3](https://ui5.github.io/tutorials/navigation/navigation-step-03.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 3](https://ui5.github.io/tutorials/navigation/navigation-step-03-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -40,7 +40,7 @@ webapp/
 └── manifest.json
 ```
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 {
@@ -84,7 +84,7 @@ webapp/
 
 Let’s extend the routing configuration in the descriptor by adding a `bypassed` property and setting its `target` to `notFound`. This configuration tells the router to display the `notFound` target in case no route was matched to the current hash. Next, we add a `notFound` target to the `bypassed` section. The `notFound` target simply configures a `NotFound` view with a `show` transition.
 
-## webapp/view/NotFound.view.xml \(New\)
+### webapp/view/NotFound.view.xml \(New\)
 
 ```xml
 <mvc:View
@@ -108,7 +108,7 @@ Let’s extend the routing configuration in the descriptor by adding a `bypassed
 
 Now we create the view referenced above in a new file `NotFound.view.xml` within the `webapp/view` folder. It uses a `sap.m.Page` containing a `sap.m.IllustratedMessage` control to display an error message to the user. In a real app you might use a dynamic message matching the current error situation. Here, we simply display a preconfigured text from our resource bundle.
 
-## `webapp/controller/NotFound.controller.ts/.js` \(New\)
+### webapp/controller/NotFound.controller.ts/.js \(New\)
 
 ```ts
 // webapp/controller/NotFound.controller.ts
@@ -139,7 +139,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 
 Now we create the controller for the `NotFound` view and save it into the `webapp/controller` folder. This controller will be extended later.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...
@@ -152,7 +152,7 @@ Add the new properties to the `i18n.properties` file.
 
 Open the URL `index.html#/thisIsInvalid` in your browser. From now on the user will see a nice *Not Found* page if a hash could not be matched to one of our routes.
 
-## Conventions
+### Conventions
 
 - Always configure the `bypassed` property and a corresponding target
 

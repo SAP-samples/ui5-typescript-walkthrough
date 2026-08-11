@@ -1,30 +1,30 @@
-# Step 7: Navigate to Routes with Mandatory Parameters
+## Step 7: Navigate to Routes with Mandatory Parameters
 
 In this step, we implement a feature that allows the user to click on an employee in the list to see additional details of the employee. A route pattern can have one or more mandatory parameters to identify objects in an app.
 
 The detail page has to read the ID of the employee from the URL to fetch and display the employee data from the server. If the employee was not found, for example, because an invalid employee ID was passed on, we want to inform the user by displaying the `notFound` target. Of course, the back navigation has to work as well for this page.
 
-## Preview
+### Preview
 
-### Employee list with navigation option for items
+#### Employee list with navigation option for items
 
 ![Employee list with navigation option for items](assets/Tutorial_Navigation_and_Routing_Step_07a.png "Employee list with navigation option for items")
 
-### Detail Page for a selected employee
+#### Detail Page for a selected employee
 
 ![Detail Page for a selected employee](assets/Tutorial_Navigation_and_Routing_Step_07b.png "Detail Page for a selected employee")
 
-### Not Found page for an invalid EmployeeID
+#### Not Found page for an invalid EmployeeID
 
 ![Not Found page for an invalid EmployeeID](assets/Tutorial_Navigation_and_Routing_Step_07c.png "Not Found page for an invalid EmployeeID")
 
 You can view this step live: [🔗 Live Preview of Step 7](https://ui5.github.io/tutorials/navigation/build/07/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 7](https://ui5.github.io/tutorials/navigation/navigation-step-07.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 7](https://ui5.github.io/tutorials/navigation/navigation-step-07-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -57,7 +57,7 @@ webapp/
 └── manifest.json
 ```
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 {
@@ -133,7 +133,7 @@ The following hashes would match in our case: `employees/2`, `employees/7`, `emp
 
 Next, we have to create the view `employees.Employee`; for better illustration the `path` is not specified this time.
 
-## webapp/view/employee/Employee.view.xml \(New\)
+### webapp/view/employee/Employee.view.xml \(New\)
 
 ```xml
 <mvc:View
@@ -198,7 +198,7 @@ Create the file `Employee.view.xml` inside the `webapp/view/employee` folder. Th
 > Requiring `sap/ui/layout/form/ResponsiveGridLayout` is needed because we use the `ResponsiveGridLayout` as `layout` for the `sap/ui/layout/form/SimpleForm`.
 > The `sap/ui/layout/form/SimpleForm` requires the configured layout, in case it's not done by the consumer but this may cause an additional rendering cycle if rendering starts before the layout finished loading.
 
-## `webapp/controller/employee/Employee.controller.ts/.js` \(New\)
+### webapp/controller/employee/Employee.controller.ts/.js \(New\)
 
 ```ts
 // webapp/controller/employee/Employee.controller.ts
@@ -291,7 +291,7 @@ We also add an event handler to the `change` event as a private function `_onBin
 > 📝
 > Instead of calling `attachMatched(…)` on a route we could also call `attachRouteMatched(…)` directly on the router. However, the event for the latter is fired for every matched event of any route in the whole app. We don’t use the latter because we would have to implement an additional check for making sure that current route is the route that has been matched. We want to avoid this extra overhead and register on the route instead.
 
-## webapp/view/employee/EmployeeList.view.xml
+### webapp/view/employee/EmployeeList.view.xml
 
 ```xml
 <mvc:View
@@ -323,7 +323,7 @@ We also add an event handler to the `change` event as a private function `_onBin
 
 It’s time to change the `EmployeeList` view so that we can navigate to the new view. We set the attribute type of the `StandardListItem` template to `Navigation` to make the item clickable and indicate a navigation feature to the user. Additionally, we add an event handler for the `press` event that is called when the user clicks on an employee list item.
 
-## `webapp/controller/employee/EmployeeList.controller.ts/.js`
+### webapp/controller/employee/EmployeeList.controller.ts/.js
 
 ```ts
 // webapp/controller/employee/EmployeeList.controller.ts
@@ -369,7 +369,7 @@ Finally, we attach the handler function `onListItemPressed` to the `press` event
 
 Then we navigate to the `employee` route and pass a configuration object on to the `navTo` method containing the mandatory parameter `employeeId` filled with the correct `EmployeeID`. The router always makes sure that mandatory parameters as specified in the route’s pattern are set; otherwise an error is thrown.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...

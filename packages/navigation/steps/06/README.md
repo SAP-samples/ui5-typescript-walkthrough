@@ -1,24 +1,24 @@
-# Step 6: Navigate to Routes with Hard-Coded Patterns
+## Step 6: Navigate to Routes with Hard-Coded Patterns
 
 In this step, we'll create a second button on the home page, with which we can navigate to a simple list of employees. This example illustrates how to navigate to a route that has a hard-coded pattern.
 
-## Preview
+### Preview
 
-### Show Employee List button on the Home page
+#### Show Employee List button on the Home page
 
 ![Show Employee List button on the Home page](assets/Tutorial_Navigation_and_Routing_Step_06a.png "Show Employee List button on the Home page")
 
-### Employee list with Back button
+#### Employee list with Back button
 
 ![Employee list with Back button](assets/Tutorial_Navigation_and_Routing_Step_06b.png "Employee list with Back button")
 
 You can view this step live: [🔗 Live Preview of Step 6](https://ui5.github.io/tutorials/navigation/build/06/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 6](https://ui5.github.io/tutorials/navigation/navigation-step-06.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 6](https://ui5.github.io/tutorials/navigation/navigation-step-06-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -49,7 +49,7 @@ webapp/
 └── manifest.json
 ```
 
-## webapp/view/Home.view.xml
+### webapp/view/Home.view.xml
 
 ```xml
 <mvc:View
@@ -70,7 +70,7 @@ webapp/
 
 First, we change the `Home` view by adding the *Show Employee List* button. We register an event handler `onNavToEmployees` for the press event.
 
-## `webapp/controller/Home.controller.ts/.js`
+### webapp/controller/Home.controller.ts/.js
 
 ```ts
 // webapp/controller/Home.controller.ts
@@ -116,7 +116,7 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (B
 
 The new event handler `onNavToEmployees` calls `navTo("employeeList")` on the router instance. The parameter `employeeList` is the name of the route that we want to navigate to.
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 {
@@ -188,7 +188,7 @@ The view that we are about to create has to be placed in the `webapp/view/employ
 
 Setting the `level` to `2` helps the router to determine how to animate the \(in our case\) `slide` transition. For us, this means that a navigation from the home page to the `employees` target will be animated with a “Slide to Left” animation. In contrast to that, the back navigation from the `employees` target to the home page will be animated with a “Slide to Right” animation. This behavior is due to the fact that the home page has a lower `level` than the `employees` target.
 
-## webapp/view/employee/EmployeeList.view.xml \(New\)
+### webapp/view/employee/EmployeeList.view.xml \(New\)
 
 ```xml
 <mvc:View
@@ -224,7 +224,7 @@ In the view, we use a `sap.m.List` control and bind its items to the data from o
 
 This view can be referenced by `ui5.tutorial.navigation.view.employee.EmployeeList`.
 
-## `webapp/controller/employee/EmployeeList.controller.ts/.js` \(New\)
+### webapp/controller/employee/EmployeeList.controller.ts/.js \(New\)
 
 ```ts
 // webapp/controller/employee/EmployeeList.controller.ts
@@ -250,7 +250,7 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (B
 
 Finally, we will add a new controller. Create a subfolder `employee` inside `webapp/controller` folder and place the file `EmployeeList.controller.ts` there. As you can see, the folder structure of the controllers is in sync with the folder structure of the views.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...

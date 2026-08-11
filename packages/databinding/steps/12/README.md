@@ -1,5 +1,5 @@
 
-# Step 12: Aggregation Binding Using Templates
+## Step 12: Aggregation Binding Using Templates
 
 Aggregation binding, also known as "list binding", lets a control bind to a list within the model data. This binding allows relative binding to the list entries by its child controls.
 
@@ -9,19 +9,19 @@ The system automatically creates as many child controls as are needed to display
 
 - It uses a factory function to generate the correct control for each bound list entry, based on the data received at runtime.
 
-## Preview
+### Preview
 
-### A third panel with a list of products is displayed
+#### A third panel with a list of products is displayed
 
 ![A third panel with a list of products is displayed](assets/Tutorial_Data_Binding_Step_12_1642433.png "A third panel with a list of products is displayed")
 
 You can view this step live: [🔗 Live Preview of Step 12](https://ui5.github.io/tutorials/databinding/build/12/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 12](https://ui5.github.io/tutorials/databinding/databinding-step-12.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 12](https://ui5.github.io/tutorials/databinding/databinding-step-12-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -42,7 +42,7 @@ webapp/
 
 Add a new entry named `products` to the `models` entry under `sap.ui5` in the `manifest.json` file:
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 {
@@ -78,7 +78,7 @@ Add a new entry named `products` to the `models` entry under `sap.ui5` in the `m
 
 Create a new file named `Products.json` in the `model` folder. Enter the data for the products:
 
-## webapp/model/Products.json \(New\)
+### webapp/model/Products.json \(New\)
 
 ```json
 {
@@ -149,7 +149,7 @@ Create a new file named `Products.json` in the `model` folder. Enter the data fo
 
 In the `App.view.xml` file, add a new panel with an `sap.m.List` control containing the `sap.m.ObjectListItem` template control as shown below. Note that the template control is only present once in the XML view. It's automatically cloned for each entry in the products' JSON model.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -203,7 +203,7 @@ In the `App.view.xml` file, add a new panel with an `sap.m.List` control contain
 
 Also, add another formatter to the `App.controller.ts/.js` file to calculate the value of the stock of each product.
 
-## `webapp/controller/App.controller.ts/.js`
+### webapp/controller/App.controller.ts/.js
 
 ```ts
 // webapp/controller/App.controller.ts
@@ -260,7 +260,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/library", "sap/ui/model/type
 
 Lastly, add the missing texts to the `i18n.properties` and `i18n_de.properties` files. These texts are used in the newly added UI elements.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...
@@ -276,7 +276,7 @@ productListTitle=Product List
 stockValue=Current Stock Value
 ```
 
-## webapp/i18n/i18n\_de.properties
+### webapp/i18n/i18n\_de.properties
 
 ```properties
 ...

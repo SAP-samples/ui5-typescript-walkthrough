@@ -21,9 +21,20 @@ You can access the live preview by clicking on this link: [🔗 Live Preview of 
 
 After this step your project structure will look like the figure below. We will create the `Component.ts/.js` file now and modify the related files in the app.
 
-![Folder Structure for this Step](assets/loio1e237a36972a44ac8522dd1a540ac062_LowRes.png "Folder Structure for this Step")
-
-<sup>*Folder Structure for this Step*</sup>
+```text
+webapp/
+├── Component.ts/.js
+├── controller/
+│   └── App.controller.ts/.js
+├── i18n/
+│   └── i18n.properties
+├── index-cdn.html
+├── index.html
+├── index.ts/.js
+├── manifest.json
+└── view/
+    └── App.view.xml
+```
 
 ***
 ### Coding

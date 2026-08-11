@@ -1,21 +1,21 @@
 
-# Step 5: One-Way Data Binding
+## Step 5: One-Way Data Binding
 
 Unlike the two-way binding behavior we've seen, one-way data binding is also possible. In this case, data travels in one direction only: from the model, through the binding instance, to the consumer \(usually the property of a control\), but never in the other direction. Let's modify the previous example to use one-way data binding. This shows how you can switch off the flow of data from the user interface back to the model if needed.
 
-## Preview
+### Preview
 
-### Two input fields and a checkbox
+#### Two input fields and a checkbox
 
 ![Two input fields and a checkbox](assets/Tutorial_Data_Binding_Step_4_61d68f1.png "Two input fields and a checkbox")
 
 You can view this step live: [🔗 Live Preview of Step 5](https://ui5.github.io/tutorials/databinding/build/05/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 5](https://ui5.github.io/tutorials/databinding/databinding-step-05.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 5](https://ui5.github.io/tutorials/databinding/databinding-step-05-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -30,7 +30,7 @@ webapp/
 
 Insert the highlighted code into the `Component.ts/.js` file. The `init` function calls the init function of its parent, retrieves the default model instance bound to the component, and sets the default binding mode to one-way data binding.
 
-## `webapp/Component.ts/.js`
+### webapp/Component.ts/.js
 
 ```ts
 // webapp/Component.ts

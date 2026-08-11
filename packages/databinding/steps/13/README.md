@@ -1,21 +1,21 @@
 
-# Step 13: Element Binding
+## Step 13: Element Binding
 
 Now, let's do something with that newly generated list. Typically, you use a list to allow selection of an item and then display the details of that item elsewhere. To accomplish this, we use a form with relatively bound controls and bind it to the selected entity via element binding.
 
-## Preview
+### Preview
 
-### A fourth panel with details for a selected product is displayed
+#### A fourth panel with details for a selected product is displayed
 
 ![A fourth panel with details for a selected product is displayed](assets/Tutorial_Data_Binding_Step_13_872d2ed.png "A fourth panel with details for a selected product is displayed")
 
 You can view this step live: [🔗 Live Preview of Step 13](https://ui5.github.io/tutorials/databinding/build/13/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 13](https://ui5.github.io/tutorials/databinding/databinding-step-13.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 13](https://ui5.github.io/tutorials/databinding/databinding-step-13-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -36,7 +36,7 @@ webapp/
 
 In the `App.view.xml` file, add a `press` event handler to the items in the list. Below the panel with the list, add a new panel with an `sap.m.SimpleForm`. To populate the form with data, we bind the entire panel to the path of the element you clicked in the list.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 ...
@@ -109,7 +109,7 @@ In the `App.view.xml` file, add a `press` event handler to the items in the list
 
 In the controller, add a new function `onItemSelected`, which binds the newly created panel to the correct item whenever it's pressed.
 
-## `webapp/controller/App.controller.ts/.js`
+### webapp/controller/App.controller.ts/.js
 
 ```ts
 // webapp/controller/App.controller.ts
@@ -152,7 +152,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/library", "sap/ui/model/type
 
 Lastly, add the new texts to the `i18n.properties` and `i18n_de.properties` files.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...
@@ -174,7 +174,7 @@ Discontinued=Discontinued
 
 ```
 
-## webapp/i18n/i18n\_de.properties
+### webapp/i18n/i18n\_de.properties
 
 ```properties
 # Screen titles

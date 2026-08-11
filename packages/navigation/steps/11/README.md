@@ -1,32 +1,32 @@
-# Step 11: Assign Multiple Targets
+## Step 11: Assign Multiple Targets
 
 In this step, we will add a new button to the home page to illustrate the usage of multiple targets for a route. When the button is pressed, a new page opens that contains two parts: a header part at the top and a content part. The content part displays a table of employees that can be sorted and searched. We will use the array notation in the routing configuration to assign multiple targets to a route - a feature that we have not yet introduced.
 
-## Preview
+### Preview
 
-### New button Show Employee Overview
+#### New button Show Employee Overview
 
 ![New button Show Employee Overview](assets/Tutorial_Navigation_and_Routing_Step_11a.png "New button Show Employee Overview")
 
-### Employee Overview with search field
+#### Employee Overview with search field
 
 ![Employee Overview with search field](assets/Tutorial_Navigation_and_Routing_Step_11b.png "Employee Overview with search field")
 
-### Sort options for the Employee Overview
+#### Sort options for the Employee Overview
 
 ![Sort options for the Employee Overview](assets/Tutorial_Navigation_and_Routing_Step_11c.png "Sort options for the Employee Overview")
 
 You can view this step live: [🔗 Live Preview of Step 11](https://ui5.github.io/tutorials/navigation/build/11/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 11](https://ui5.github.io/tutorials/navigation/navigation-step-11.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 11](https://ui5.github.io/tutorials/navigation/navigation-step-11-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder Structure for this Step
+#### Folder Structure for this Step
 
 ![Folder Structure for this Step](assets/Tutorial_Navigation_and_Routing_Step_11d.png "Folder Structure for this Step")
 
-## webapp/view/Home.view.xml
+### webapp/view/Home.view.xml
 
 ```xml
 <mvc:View
@@ -48,7 +48,7 @@ You can download the solution for this step here: <span class="ts-only">[📥 Do
 
 First we add a new button to the `Home` view and add an event handler for the `press` event.
 
-## `webapp/controller/Home.controller.ts/.js`
+### webapp/controller/Home.controller.ts/.js
 
 ```ts
 // webapp/controller/Home.controller.ts
@@ -94,7 +94,7 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (B
 
 As you know already from the previous steps, we add the `press` event handler `onNavToEmployeeOverview`. It navigates to the route `employeeOverview` which does not exist yet, so let’s create it.
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 {
@@ -197,7 +197,7 @@ The router makes sure that the parent view is loaded in addition to the target v
 
 - `EmployeeOverviewContent`
 
-## webapp/view/employee/overview/EmployeeOverview.view.xml \(New\)
+### webapp/view/employee/overview/EmployeeOverview.view.xml \(New\)
 
 ```xml
 <mvc:View
@@ -220,7 +220,7 @@ The router makes sure that the parent view is loaded in addition to the target v
 
 First we create the parent view by creating the folder `overview` under `webapp/view/employee` and placing the file `EmployeeOverview.view.xml` into that folder. This view contains a `Page` control that is referenced from the targets in our `manifest.json` descriptor file. The content aggregation of the page will be filled by the router with the top and content part when the corresponding route has been hit.
 
-## `webapp/controller/employee/overview/EmployeeOverview.controller.ts/.js` \(New\)
+### webapp/controller/employee/overview/EmployeeOverview.controller.ts/.js \(New\)
 
 ```ts
 // webapp/controller/employee/overview/EmployeeOverview.controller.ts
@@ -246,7 +246,7 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (B
 
 The controller does not contain any logic yet, but we will add back navigation features here in the next steps.
 
-## webapp/view/employee/overview/EmployeeOverviewTop.view.xml \(New\)
+### webapp/view/employee/overview/EmployeeOverviewTop.view.xml \(New\)
 
 ```xml
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" class="sapUiMediumMarginBottom">
@@ -256,7 +256,7 @@ The controller does not contain any logic yet, but we will add back navigation f
 
 Create the file `EmployeeOverviewTop.view.xml` and place it in the `webapp/view/employee/overview` folder. This view displays a static text for illustration purposes. Change it according to your own requirements. We don’t need a controller for this view
 
-## webapp/view/employee/overview/EmployeeOverviewContent.view.xml \(New\)
+### webapp/view/employee/overview/EmployeeOverviewContent.view.xml \(New\)
 
 ```xml
 <mvc:View
@@ -305,7 +305,7 @@ Create the file `EmployeeOverviewTop.view.xml` and place it in the `webapp/view/
 
 Create the file EmployeeOverviewContent.view.xml in the `webapp/view/employee/overview` folder. This view displays a responsive table with several columns containing employee data like *Employee ID*, *First Name*, *Last Name* and so on. In the `headerToolbar`, we add the `SearchField` and a `Button`. The `SearchField` in the header area allows to search in the table. The `Button` next to it opens a dialog to adjust the sorting of the table.
 
-## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js` \(New\)
+### webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js \(New\)
 
 ```ts
 // webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts
@@ -550,7 +550,7 @@ Of course, you can also search the table and change the sorting. When the sortin
 
 However, we have one problem yet to solve: the search and table ordering are not bookmarkable. Fortunately, we have additional navigation features at hand and you will see how this works in the next steps
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...

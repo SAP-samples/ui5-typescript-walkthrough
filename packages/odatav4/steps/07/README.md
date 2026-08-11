@@ -1,8 +1,8 @@
-# Step 7: Delete
+## Step 7: Delete
 
 In this step, we make it possible to delete user data.
 
-## Preview
+### Preview
 
 **A new Delete User button is added**
 
@@ -10,11 +10,11 @@ In this step, we make it possible to delete user data.
 
 You can view this step live: [🔗 Live Preview of Step 7](https://ui5.github.io/tutorials/odatav4/build/07/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 7](https://ui5.github.io/tutorials/odatav4/odatav4-step-07.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 7](https://ui5.github.io/tutorials/odatav4/odatav4-step-07-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## `webapp/App.controller.ts/.js`
+### webapp/App.controller.ts/.js
 
 ```
 ...
@@ -88,7 +88,7 @@ You can download the solution for this step here: <span class="ts-only">[📥 Do
 
 We add the `onDelete` event handler to the controller. In the event handler, we check whether an item is selected in the table and if so, we retrieve the binding context of the selection and call its `delete` method. By doing this, the context is removed from the table on the client side and the deletion is stored as a pending change in the update group of the table's list binding. A call to `_setUIChanges` ensures that the `appView` model reflects the deletion as a pending change and that the *Save* button becomes enabled. The deletion will be submitted with all other changes related to the same update group once the *Save* button is pressed. If the deletion fails on the server side, or the changes are reset via API, the related entity is restored in the table automatically. To distinguish these two situations, the rejected error has `canceled` set to `true` in case of a reset.
 
-## webapp/App.view.xml
+### webapp/App.view.xml
 
 ```
 <mvc:View
@@ -159,7 +159,7 @@ We change the `mode` of the table to `SingleSelectLeft` to make it possible to s
 
 We add the *Delete* button to the toolbar. With the `OverflowToolbarLayoutData priority="NeverOverflow"` parameter, we make sure that the button is always visible.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```ini
 ...

@@ -1,4 +1,4 @@
-# Step 5: Display a Target Without Changing the Hash
+## Step 5: Display a Target Without Changing the Hash
 
 In this step, you will learn more about targets and how to display a target from the routing configuration manually.
 
@@ -6,19 +6,19 @@ We will display the *Not Found* target from the previous step without changing t
 
 Fortunately, we can extend our app and offer an easy solution. There are some use cases that should not be persisted in the URL but just be triggered by the application logic if needed. A target is a navigation-related configuration for a view and we can display targets manually without referencing them in a navigation route. Good examples for this are temporary errors, switching to an edit page for a business object, or going to a *Settings* page. Sometimes you will also have to implement a way back manually.
 
-## Preview
+### Preview
 
-### The new Home page with a navigation button
+#### The new Home page with a navigation button
 
 ![The new Home page with a navigation button](assets/Tutorial_Navigation_and_Routing_Step_05.png "The new Home page with a navigation button")
 
 You can view this step live: [🔗 Live Preview of Step 5](https://ui5.github.io/tutorials/navigation/build/05/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 5](https://ui5.github.io/tutorials/navigation/navigation-step-05.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 5](https://ui5.github.io/tutorials/navigation/navigation-step-05-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## webapp/view/Home.view.xml
+### webapp/view/Home.view.xml
 
 ```xml
 <mvc:View
@@ -38,7 +38,7 @@ You can download the solution for this step here: <span class="ts-only">[📥 Do
 
 We start by changing the `Button` control from the home view. When the button is pressed, the `onDisplayNotFound` handler is called.
 
-## `webapp/controller/Home.controller.ts/.js`
+### webapp/controller/Home.controller.ts/.js
 
 ```ts
 // webapp/controller/Home.controller.ts
@@ -84,7 +84,7 @@ If you now call the app and press the *Display Not Found* button you see that th
 
 When pressing the app’s *Back* button, the `onNavBack` from the previous step is called. It detects that there is no previous hash and therefore tries to navigate to the `appHome` route again. The router is smart enough to detect that the current hash did not change and therefore skips the navigation to the route. Fortunately, there is an easy workaround for us. However, we need to touch the `Home` controller again.
 
-## `webapp/controller/Home.controller.ts/.js` \(Changed Again\)
+### webapp/controller/Home.controller.ts/.js \(Changed Again\)
 
 ```ts
 // webapp/controller/Home.controller.ts
@@ -123,7 +123,7 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (B
 
 This time we pass on a data object as the second parameter for the display method which contains the name of the current target; the one from which we navigate to the `notFound` target. We decide to choose the key `fromTarget` but since it is a custom configuration object any other key would be fine as well.
 
-## `webapp/controller/NotFound.controller.ts/.js`
+### webapp/controller/NotFound.controller.ts/.js
 
 ```ts
 // webapp/controller/NotFound.controller.ts
@@ -199,7 +199,7 @@ From the router reference we can fetch a reference to the `notFound` target. Eac
 
 Similar to OpenUI5 controls, targets define API methods and events that can be attached. We attach a display event handler and save the configuration that was received as the event parameter `data` in an internal controller variable `this.data`. This also includes the `fromTarget` information in case the caller passed it on. However, we now have to override the base controller’s `onNavBack` implementation to change the behavior a bit. We add a special case for our *Back* functionality in case the `fromTarget` property has been passed on. If specified, we simply display the target defined as `fromTarget` manually the same way we actually called the `notFound` target manually. Otherwise we just call the `onNavBack` implementation in the `BaseController`.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...
@@ -210,7 +210,7 @@ Add the new property to the `i18n.properties` file.
 
 When we now click the *Back* button, it works as expected and brings us back to the overview page, also when the *Not Found* view is displayed manually.
 
-## Conventions
+### Conventions
 
 - Display targets manually if you want to trigger a navigation without changing the hash
 

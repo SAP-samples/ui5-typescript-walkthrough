@@ -1,8 +1,8 @@
-# Step 2: Data Access and Client-Server Communication
+## Step 2: Data Access and Client-Server Communication
 
 In this step, we see how the `Table` that is bound to the `People` entity set initially requests its data, and how the data can be refreshed. We use the *Console* tab in the browser developer tools to monitor the communication between the browser and the server. We see the initial request as well as the requests for refreshing the data.
 
-## Preview
+### Preview
 
 **App with a toolbar that contains a Refresh button**
 
@@ -12,11 +12,11 @@ In this step, we see how the `Table` that is bound to the `People` entity set in
 
 You can view this step live: [🔗 Live Preview of Step 2](https://ui5.github.io/tutorials/odatav4/build/02/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 2](https://ui5.github.io/tutorials/odatav4/odatav4-step-02.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 2](https://ui5.github.io/tutorials/odatav4/odatav4-step-02-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## `webapp/controller/App.controller.ts/.js`
+### webapp/controller/App.controller.ts/.js
 
 ```ts
 // webapp/controller/App.controller.ts
@@ -138,7 +138,7 @@ We add the event handler `onRefresh` to the controller. In this method, we retri
 
 We also add the private method `_getText` to retrieve translatable texts from the resource bundle \(`i18n` model\).
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 ...
@@ -170,7 +170,7 @@ We also add the private method `_getText` to retrieve translatable texts from th
 
 We add the `headerToolbar` with a single `Button` to the `Table`. The button has a `press` event to which we attach an event handler called `onRefresh`.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```
 # App Descriptor
@@ -193,7 +193,7 @@ refreshSuccessMessage=Data refreshed
 
 We add the tooltip and message texts to the `properties` file.
 
-## Under the Hood
+### Under the Hood
 
 To get more insight into the client-server communication, we open the *Console* tab of the browser developer tools and then reload the app.
 
