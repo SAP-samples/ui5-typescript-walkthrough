@@ -7,6 +7,9 @@
     --inactive-color: #666;
     --inactive-border: #ccc;
     --neutral-border: #aaa;
+    /* sliding switch track */
+    --switch-track-bg: #eef4f9;
+    --switch-track-border: #d6e3ef;
 }
 
 /* color-scheme for dark mode */
@@ -19,6 +22,9 @@
         --inactive-color: #aaa;
         --inactive-border: #666;
         --neutral-border: #666;
+        /* sliding switch track */
+        --switch-track-bg: #0b0f14;
+        --switch-track-border: #30363d;
     }
 }
 
@@ -46,7 +52,7 @@
 }
 
 
-/* tabbed switchable language area */
+/* tabbed switchable language area: folder-style tabs above the code block */
 .code-couple-button {
     margin-top: 8px;
     padding: 10px 20px;
@@ -91,35 +97,61 @@
 }
 
 
-/* overall language switch buttons */
+/* overall language switch buttons: matching segmented pill, top-right,
+   with a knob that slides between the two segments. */
 
 .language-switch-container {
     position: fixed;
     top: 10px;
     right: 10px;
-    display: flex;
-    gap: 5px;
+    display: inline-flex;
+    gap: 2px;
+    padding: 4px;
+    background-color: var(--switch-track-bg);
+    border: 1px solid var(--switch-track-border);
+    border-radius: 999px;
     z-index: 1000;
 }
 
+/* the sliding knob sits behind the active segment.
+   Geometry: buttons are 48px wide with a 2px gap, so a language change
+   slides the knob by exactly one segment (48px + 2px = 50px). */
+.language-switch-container::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 48px;
+    height: calc(100% - 8px);
+    box-sizing: border-box;
+    background-color: var(--active-bg);
+    border: 2px solid var(--active-border);
+    border-radius: 999px;
+    transition: transform 0.25s ease;
+}
+
+body.page-language-js .language-switch-container::before {
+    transform: translateX(50px);
+}
+
 .language-switch-button {
-    background-color: var(--inactive-bg);
+    position: relative;   /* keep labels above the sliding knob */
+    z-index: 1;
+    width: 48px;
+    padding: 5px 0;
+    text-align: center;
+    background-color: transparent;
     color: var(--inactive-color);
-    border-color: var(--inactive-border);
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 5px;
-    padding: 5px 10px;
+    border: 0;
+    border-radius: 999px;
     cursor: pointer;
-    transition: opacity 0.3s, background-color 0.3s;
-    opacity: 1;
+    font-weight: bold;
+    transition: color 0.25s ease;
 }
 
 body.page-language-js .language-switch-button.lang-js,
 body.page-language-ts .language-switch-button.lang-ts {
-    background-color: var(--active-bg);
     color: var(--active-color);
-    border-color: var(--active-border);
 }
 
 li > section.ts-only, li > section.js-only {
@@ -127,24 +159,7 @@ li > section.ts-only, li > section.js-only {
 }
 
 .language-switch-button:hover {
-    opacity: 0.8;
-    background-color: rgba(20, 20, 20, 0.8);
-}
-
-/* for OS dark theme */
-@media (prefers-color-scheme: dark) {
-    .language-switch-button {
-        border-color: var(--inactive-border);
-        color: var(--inactive-color);
-        background-color: var(--inactive-bg);
-    }
-
-    body.page-language-js .language-switch-button.lang-js,
-    body.page-language-ts .language-switch-button.lang-ts {
-        background-color: var(--active-bg);
-        color: var(--active-color);
-        border-color: var(--active-border);
-    }
+    opacity: 0.85;
 }
 
 #__bs_notify__ {

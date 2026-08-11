@@ -3,4 +3,7 @@ _
 dist
 node_modules
 package-lock-json
+# non-npm lock files: this repo uses npm; ignore others to avoid stray commits
+pnpm-lock.yaml
+yarn.lock
 .DS_Store
