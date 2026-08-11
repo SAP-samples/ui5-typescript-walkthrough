@@ -101,7 +101,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast"], function (Co
 
 ```
 &nbsp;
-> :tip:
+> 💡
 > To reuse the dialog opening and closing functionality in other controllers, you might create a new file `ui5.tutorial.walkthrough.controller.controller.BaseController`, which extends `sap.ui.core.mvc.Controller`, and put all your dialog-related coding into this controller. Now, all the other controllers can extend from `ui5.tutorial.walkthrough.controller.BaseController` instead of `sap.ui.core.mvc.Controller`.
 
 

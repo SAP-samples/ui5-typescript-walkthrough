@@ -81,7 +81,7 @@ If you wish to alter the binding mode, you've got two options:
 
 - Specify the data binding mode for a specific binding instance by using the `oBindingInfo.mode` parameter. This change only applies to this data binding instance. Any other binding instances will continue to use the model's default binding mode.For more information, see [API Reference: `sap.ui.base.ManagedObject.bindProperty`](https://sdk.openui5.org/#/api/sap.ui.base.ManagedObject/methods/bindProperty).
 
-> :note:
+> 📝
 > There are two important points to understand about alterations to a model object's data binding mode:
 >
 > - If you alter the default binding mode of a model \(as in the example above\), **all** binding instances created after that point in time will use the altered binding mode, unless you explicitly say otherwise.

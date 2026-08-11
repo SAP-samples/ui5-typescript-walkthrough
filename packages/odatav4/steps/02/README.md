@@ -133,7 +133,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller", "sap/m/MessageToast", "sap/m/Messag
 
 We add the event handler `onRefresh` to the controller. In this method, we retrieve the current data binding of the table. If the binding has unsaved changes, we display an error message, otherwise we call `refresh()` and display a success message.
 
-> :note:
+> 📝
 > At this stage, our app cannot have unsaved changes. We will change this in Step 6.
 
 We also add the private method `_getText` to retrieve translatable texts from the resource bundle \(`i18n` model\).
@@ -197,7 +197,7 @@ We add the tooltip and message texts to the `properties` file.
 
 To get more insight into the client-server communication, we open the *Console* tab of the browser developer tools and then reload the app.
 
-> :note:
+> 📝
 > To monitor the client-server communication in a productive app, you would use the *Network* tab of the developer tools.
 >
 > In this tutorial, we are using a mock server instead of a real OData service so that we can run the code in every environment. The mock server does not generate any network traffic, so we use the *Console* tab to monitor the communication.

@@ -79,7 +79,7 @@ Also add the `i18n` property to the `sap.app` section and modify the `title` and
 ...
 ```
 
-> :note:
+> 📝
 > The configured `supportedLocales` represent the following i18n files present \(see Step 7\):
 >
 > - `""` - `i18n/i18n.properties`

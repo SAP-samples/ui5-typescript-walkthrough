@@ -48,7 +48,7 @@ webapp/
     └── App.view.xml
 ```
 
-> :note:
+> 📝
 > The content of the `localService` folder will not be changed in this tutorial. The `i18n` folder will always contain the `i18n.properties` file only. Therefore, we will show both subfolders collapsed in the following steps.
 
 ## The Initial App

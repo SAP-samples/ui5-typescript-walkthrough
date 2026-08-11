@@ -97,7 +97,7 @@ The new `formatter` file is placed in the model folder of the app, because forma
 
 &nbsp;
 
-> :info:
+> ℹ️
 > In the above example, `this` refers to the controller instance as soon as the formatter gets called. We access the resource bundle via the component using `this.getOwnerComponent().getModel()` instead of using `this.getView().getModel()`. The latter call might return `undefined`, because the view might not have been attached to the component yet, and thus the view can't inherit a model from the component.
 
 **Additional Information:**

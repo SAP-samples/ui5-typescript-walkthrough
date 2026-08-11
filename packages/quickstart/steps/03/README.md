@@ -48,7 +48,7 @@ Let's spice up our app by adding some more UI controls. We add two more librarie
 </html>
 ```
 
-> :tip:
+> 💡
 > To browse all available controls and libraries, see the [Samples](https://sdk.openui5.org/#/controls). 
 
 ### webapp/App.view.xml

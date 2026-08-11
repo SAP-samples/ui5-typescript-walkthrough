@@ -114,7 +114,7 @@ Create a new file named `manifest.json` in the webapp folder; it's also known as
 }
 ```
 
-> :note:
+> 📝
 > In this tutorial step, we focus on adding the absolute minimum configuration to the app descriptor file. In certain development environments you might encounter validation errors due to missing settings. However, for the purposes of this tutorial you can safely ignore these errors. In [Step 10: Descriptor for Applications](../10/README.md) we'll examine the purpose of the file in detail and configure some further options.
 
 ***
@@ -283,7 +283,7 @@ Next,  we have to configure the tooling extension we installed from npm to our U
 
 -   All our custom middleware extensions will be called after the `compression` middleware.
 
-> :info:
+> ℹ️
 > Middleware configurations are applied in the order in which they are defined. 
 
 <details class="ts-only" markdown="1">
@@ -321,7 +321,7 @@ Now you can benefit from live reload on changes and built framework resources at
 </details>
 
 <br>
-> :note:
+> 📝
 > During its initial run, the `ui5-middleware-serveframework` middleware will build the framework, which can take a while. In all following steps, the build will not happen again and the framework is served from the built resources.
 
 &nbsp;

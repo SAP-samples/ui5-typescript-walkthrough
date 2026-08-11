@@ -57,7 +57,7 @@ We enhance the **`sap.app`** namespace by adding configuration for the following
 
 -   `description`: Similarly, we make the description text language-dependent by referencing the `appDescription` text from the resource bundle using the handlebar syntax: {{key}}
 
-> :warning: **Remember:** <br>
+> ⚠️ **Remember:** <br>
 > Properties of the resource bundle are enclosed in two curly brackets in the manifest. This is not an OpenUI5 data binding syntax but a variable reference to the resource bundle in the manifest in handlebars syntax.
 
 In addition to the `sap.app` namespace, there are two other important namespaces:
@@ -67,7 +67,7 @@ The **`sap.ui`** namespace is used for UI-specific attributes and comes with the
 
 -   `deviceTypes` \(mandatory\): This property defines the supported device types for the application. It is an object that contains three boolean properties: `desktop`, `tablet`, and `phone`. Each property indicates whether the application is designed to be used on that particular device type. We define all three device types as "true", which means that our application is intended to be used on desktops, tablets, and phones.
         
-> :note:
+> 📝
 > By configuring the `deviceTypes` property, developers can ensure that the application's user interface is optimized for different device types, providing a consistent and responsive experience across various devices.
 
 The **`sap.ui5`** namespace adds OpenUI5-specific configuration parameters that are automatically processed by OpenUI5. The following parameters are important:
@@ -80,7 +80,7 @@ The **`sap.ui5`** namespace adds OpenUI5-specific configuration parameters that 
     In our component we currenetly only use the `sap.ui.core` and `sap.m` liibraries. The `sap.ui.core` library provides the basic framework functionality and is required for any OpenUI5 application.<br>
     By default, loading of libraries is set to `"lazy": false`, which means they are loaded immediately when the component initializes. For libraries that are essential for your app to function from the start, like `sap.ui.core` and in our case also `sap.m` (since it is used in the root view), we can keep the default setting of `"lazy": false`.
 
-    > :info:
+    > ℹ️
     > It is crucial to be mindful of the lazy loading configuration for libraries. Only libraries that are absolutely necessary for your component to start should be declared with `"lazy": false`. For libraries that are not required immediately, it is recommended to override the default setting and set `"lazy": true`. This approach allows for better performance and faster initial loading of the component by deferring the loading of non-essential libraries until they are actually needed. 
     > For more information on loading libraries, refer to the [sap.ui.core.Lib.load](https://sdk.openui5.org/api/sap.ui.core.Lib#methods/sap.ui.core.Lib.load) API reference. 
     > If your component requires a minimum version of the library, you need to specify the `minVersion` for information purposes.
@@ -146,7 +146,7 @@ In our current scenario, we only have one model called `i18n`, which is a resour
 }
 ```   
 
-> :note:
+> 📝
 > In this tutorial, we only introduce the most important settings and parameters of the manifest. In some development environments you may get validation errors because some settings are missing - you can ignore those in this context.
 
 ***

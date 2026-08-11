@@ -13,7 +13,7 @@ You can define the business data within a model using various formats:
 
 - Your own custom format \(not covered in this tutorial\)
 
-> :note:
+> 📝
 > There's also a special type of model called a "resource model". This model type is used as a wrapper object around a resource bundle file. The names of such files must end with `.properties`. They're typically used for holding language-specific text.
 >
 > We'll use this in [Step 6: Resource Models](../06/README.md).
@@ -81,7 +81,7 @@ Generally speaking, a model object holding business data should be bound to the 
 
 The text that is displayed on the UI is still hard-coded and not taken from the model. We'll bind the property `greetingText` to our UI control in the next step.
 
-> :note:
+> 📝
 > You can set models on every control by calling `setModel()`. The model is then propagated to all aggregated child controls \(and their children, and so on …\). All child controls then have access to that model.
 
 ***

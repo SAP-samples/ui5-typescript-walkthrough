@@ -54,7 +54,7 @@ To place the text control to our HTML document, we chain the constructor call of
 
 <details class="js-only" markdown="1">
 
-> :info:
+> ℹ️
 > It is best practice to use of Anynchronous Module Loading (AMD) style for defining modules and their dependencies. This ensures better performance, proper dependency tracking between modules and helps avoid issues related to loading order.
 
 </details>
@@ -81,7 +81,7 @@ sap.ui.define(["sap/m/Text"], function (Text) {
 
 All controls of OpenUI5 have a fixed set of properties, aggregations, and associations for configuration. You can find their descriptions in the Demo Kit. In addition, each control comes with a set of public functions that you can look up in the API reference.
 
-> :info:
+> ℹ️
 > Only instances of `sap.ui.core.Control` or their subclasses can be rendered stand-alone and have a `placeAt` function. Each control extends `sap.ui.core.Element` that can only be rendered inside controls. Check the API reference to learn more about the inheritance hierarchy of controls. The API documentation of each control refers to the directly known subclasses.
 
 ***

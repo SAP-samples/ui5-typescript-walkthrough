@@ -196,7 +196,7 @@ Discontinued=Eingestellt
 
 Now, you can click on an element in the list and view its details in the panel below. You can even edit these details, and the changes are directly reflected in the list because we use two-way binding.
 
-> :note:
+> 📝
 > Element bindings can also be relative to their parent context.
 
 ***
