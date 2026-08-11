@@ -1,20 +1,20 @@
-# Step 13: Make Table Sorting Bookmarkable
+## Step 13: Make Table Sorting Bookmarkable
 
 In this step, we will create a button at the top of the table which will change the sorting of the table. When the current sorting state of the table is changed, the sorting state will be reflected in the URL. This illustrates how to make the table sorting bookmarkable.
 
-## Preview
+### Preview
 
-### Bookmarkable search and sorting
+#### Bookmarkable search and sorting
 
 ![Bookmarkable search and sorting](assets/Tutorial_Navigation_and_Routing_Step_13.png "Bookmarkable search and sorting")
 
 You can view this step live: [🔗 Live Preview of Step 13](https://ui5.github.io/tutorials/navigation/build/13/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 13](https://ui5.github.io/tutorials/navigation/navigation-step-13.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 13](https://ui5.github.io/tutorials/navigation/navigation-step-13-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js`
+### webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js
 
 ```ts
 // webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts

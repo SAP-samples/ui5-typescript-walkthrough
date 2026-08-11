@@ -76,7 +76,7 @@ We outsource the controller logic to an app controller. The `.onPress` event now
 </mvc:View>
 ```
 
-### webapp/App.controller.js \(New\)
+### webapp/App.controller.ts/.js \(New\)
 
 In our controller, we load the `Controller` base class and extend it to define the behavior of our app. We also add the event handler for our button. The `MessageToast` is also loaded as a dependency. When the button is pressed, we now display a "Hello App" message.
 

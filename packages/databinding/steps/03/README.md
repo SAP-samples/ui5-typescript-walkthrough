@@ -1,19 +1,19 @@
 
-# Step 3: Create Property Binding
+## Step 3: Create Property Binding
 
 Although there is no visible difference, the text on the screen is now derived from model data.
 
-## Preview
+### Preview
 
 ![The browser shows the text "Hi, my name is Harry Hawk"](assets/Tutorial_Data_Binding_Step_1_6d391d5.png "The browser shows the text &quot;Hi, my name is Harry Hawk&quot;")
 
 You can view this step live: [🔗 Live Preview of Step 3](https://ui5.github.io/tutorials/databinding/build/03/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 3](https://ui5.github.io/tutorials/databinding/databinding-step-03.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 3](https://ui5.github.io/tutorials/databinding/databinding-step-03-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -28,7 +28,7 @@ webapp/
 
 Assign the `text` property of the `sap.m.Text` control to the value `{/greetingText}`. The curly brackets enclosing a binding path \(binding syntax\) are automatically interpreted as a binding. These binding instances are called property bindings. In this scenario, the control's `text` property is bound to the `greetingText` property at the root of the default model. The slash \(`/`\) at the beginning of the binding path signifies an absolute binding path.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View

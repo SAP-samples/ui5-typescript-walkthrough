@@ -1,23 +1,23 @@
 
-# Step 6: Resource Models
+## Step 6: Resource Models
 
 Business applications often require language-specific \(translatable\) text used as labels and descriptions on the user interface.
 
 The example we used at the start of this tutorial was quite simplistic as we stored language-specific text directly in a JSON model object. Generally speaking, unless language-specific text comes directly from a back-end system, it's not considered good programming practice to put translatable texts directly into a model. So, let's fix this by placing all translatable texts \(such as field labels\) into a resource bundle.
 
-## Preview
+### Preview
 
-### The texts are now derived from a resource model \(No visual change to last step\)
+#### The texts are now derived from a resource model \(No visual change to last step\)
 
 ![The texts are now derived from a resource model (No visual change to last step)](assets/Tutorial_Data_Binding_Step_4_61d68f1.png "The texts are now derived from a resource model (No visual change to last step)")
 
 You can view this step live: [🔗 Live Preview of Step 6](https://ui5.github.io/tutorials/databinding/build/06/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 6](https://ui5.github.io/tutorials/databinding/databinding-step-06.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 6](https://ui5.github.io/tutorials/databinding/databinding-step-06-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -36,7 +36,7 @@ Create a new entry in the `manifest.json` file under the `models` entry as shown
 
 Also add the `i18n` property to the `sap.app` section and modify the `title` and `description` property to use the corresponding texts from the `i18n.properties` as shown below.
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 ...
@@ -89,7 +89,7 @@ Also add the `i18n` property to the `sap.app` section and modify the `title` and
 
 Update the `i18n.properties` and add the code shown below.
 
-## webapp/i18n/i18n.properties \(New\)
+### webapp/i18n/i18n.properties \(New\)
 
 ```properties
 # App Descriptor
@@ -111,7 +111,7 @@ Language-specific text stored in resource models obeys the Java convention for i
 
 Modify the data binding for the panel header and the labels in `App.view.xml` to include the model name. Note that a "greater than" character separates the model name and the property name. Also, i18n property names **must not** start with a slash character.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -152,7 +152,7 @@ Modify the data binding for the panel header and the labels in `App.view.xml` to
 
 Remove the line `panelHeaderText : "Data Binding Basics"` from the model data in the `data.json` file. This text has now been moved to the resource model.
 
-## webapp/model/data.json
+### webapp/model/data.json
 
 ```json
 {
@@ -164,7 +164,7 @@ Remove the line `panelHeaderText : "Data Binding Basics"` from the model data in
 
 Remove the `init` function and the import of `sap/ui/model/BindingMode` from `Component.ts/.js` as we do not want to set the one-way binding mode anymore.
 
-## `webapp/Component.ts/.js`
+### webapp/Component.ts/.js
 
 ```ts
 // webapp/Component.ts

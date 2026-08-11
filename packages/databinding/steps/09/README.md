@@ -1,21 +1,21 @@
 
-# Step 9: Formatting Values
+## Step 9: Formatting Values
 
 We'd also like to provide our users with a way of contacting Harry Hawk, so we're adding a link that sends an e-mail to Harry. To do this, we convert our data in the model to match the `sap.m.URLHelper.normalizeEmail` API. As soon as the user changes the name, the e-mail also changes. We need a custom formatter function for this.
 
-## Preview
+### Preview
 
-### An e-mail link is added to the address panel
+#### An e-mail link is added to the address panel
 
 ![An e-mail link is added to the address panel](assets/Tutorial_Data_Binding_Step_9_1161575.png "An e-mail link is added to the address panel")
 
 You can view this step live: [🔗 Live Preview of Step 9](https://ui5.github.io/tutorials/databinding/build/09/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 9](https://ui5.github.io/tutorials/databinding/databinding-step-09.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 9](https://ui5.github.io/tutorials/databinding/databinding-step-09-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -35,7 +35,7 @@ webapp/
 
 Create a new folder named `controller` within your `webapp` folder as a general location for all controller files for this app. Next, create a new file named `App.controller.ts/.js` with the following content:
 
-## `webapp/controller/App.controller.ts/.js` \(New\)
+### webapp/controller/App.controller.ts/.js \(New\)
 
 ```ts
 // webapp/controller/App.controller.ts
@@ -88,7 +88,7 @@ In the `formatMail` function, we use the `sap.m.URLHelper.normalizeEmail` functi
 
 Enhance the `App.view.xml` file as shown below:
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -137,7 +137,7 @@ For more complex bindings, we can't use the simple binding syntax with the curly
 
 Add the `# E-mail` section to the `i18n.properties` and `i18n_de.properties` files as shown below.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...
@@ -148,7 +148,7 @@ mailSubject=Hi {0}!
 mailBody=How are you?
 ```
 
-## webapp/i18n/i18n\_de.properties
+### webapp/i18n/i18n\_de.properties
 
 ```properties
 ...

@@ -1,8 +1,8 @@
-# Step 5: Batch Groups
+## Step 5: Batch Groups
 
 In this step, we have a closer look at batch groups. Batch groups are used to group multiple requests into one server request to improve the overall performance.
 
-## Preview
+### Preview
 
 **No visual change compared to the last step**
 
@@ -10,11 +10,11 @@ In this step, we have a closer look at batch groups. Batch groups are used to gr
 
 You can view this step live: [🔗 Live Preview of Step 5](https://ui5.github.io/tutorials/odatav4/build/05/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 5](https://ui5.github.io/tutorials/odatav4/odatav4-step-05.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 5](https://ui5.github.io/tutorials/odatav4/odatav4-step-05-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## `webapp/manifest.json`
+### webapp/manifest.json
 
 ```json
 ...

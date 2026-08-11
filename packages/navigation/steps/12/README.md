@@ -1,20 +1,20 @@
-# Step 12: Make a Search Bookmarkable
+## Step 12: Make a Search Bookmarkable
 
 In this step we will make the search bookmarkable. This allows users to search for employees in the *Employees* table and they can bookmark their search query or share the URL.
 
-## Preview
+### Preview
 
-### Search and sorting bookmarkable
+#### Search and sorting bookmarkable
 
 ![Search and sorting bookmarkable](assets/Tutorial_Navigation_and_Routing_Step_12.png "Search and sorting bookmarkable")
 
 You can view this step live: [🔗 Live Preview of Step 12](https://ui5.github.io/tutorials/navigation/build/12/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 12](https://ui5.github.io/tutorials/navigation/navigation-step-12.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 12](https://ui5.github.io/tutorials/navigation/navigation-step-12-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 {
@@ -72,7 +72,7 @@ You can download the solution for this step here: <span class="ts-only">[📥 Do
 
 In order to make the search bookmarkable we have to think about how the pattern of the corresponding route should match the bookmark. We decide to allow `/#/employees/overview?search=mySearchQueryString` in order to bookmark a search. Therefore, we simply extend our routing configuration a little. We add the optional `:?query:` parameter to the route `employeeOverview`. We keep in mind that we want to use `search` as the URL parameter for the search term that was entered in the search field.
 
-## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js`
+### webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js
 
 ```ts
 // webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts

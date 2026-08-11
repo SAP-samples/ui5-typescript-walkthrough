@@ -1,8 +1,8 @@
-# Step 4: Filtering, Sorting, and Counting
+## Step 4: Filtering, Sorting, and Counting
 
 In this step, we add features to filter, sort, and count the user data by using the OData V4 model API to apply OData system query options `$filter`, `$orderby`, and `$count`.
 
-## Preview
+### Preview
 
 **App now has a search field, the entries can be sorted, and you can see how many entities are loaded and how many more are available**
 
@@ -12,11 +12,11 @@ In this step, we add features to filter, sort, and count the user data by using 
 
 You can view this step live: [🔗 Live Preview of Step 4](https://ui5.github.io/tutorials/odatav4/build/04/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 4](https://ui5.github.io/tutorials/odatav4/odatav4-step-04.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 4](https://ui5.github.io/tutorials/odatav4/odatav4-step-04-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## `webapp/controller/App.controller.ts/.js`
+### webapp/controller/App.controller.ts/.js
 
 ```ts
 // webapp/controller/App.controller.ts
@@ -152,7 +152,7 @@ The **`onSort`** event handler requests the data unordered, or in ascending orde
 
 We add the `order` property to variable `oJSONData` in `onInit` method. This property stores the current sort order.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -244,7 +244,7 @@ We add the `$count : true` parameter to tell the OData service to send the numbe
 
 In the `OverflowToolbar`, we add a *Search* field and a *Sort* button with their events.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```
 ...

@@ -19,8 +19,47 @@ Actually, every feature that we added to the app so far, would require a separat
 
 We add a new folder `unit` under the `test` folder and a `model` subfolder where we will place our formatter unit test. The folder structure matches the app structure to easily find the corresponding unit tests.
   
-![Folder Structure for this Step](assets/loio1b5613ac3ab94757af2c7823039222a9_LowRes.png "Folder Structure for this Step")
-<sup>*Folder Structure for this Step*</sup>
+```text
+webapp/
+├── Component.ts/.js
+├── controller/
+│   ├── App.controller.ts/.js
+│   ├── HelloPanel.controller.ts/.js
+│   └── InvoiceList.controller.ts/.js
+├── css/
+│   └── style.css
+├── i18n/
+│   └── i18n.properties
+├── index-cdn.html
+├── index.html
+├── localService/
+│   ├── metadata.xml
+│   ├── mockdata/
+│   │   └── Invoices.json
+│   └── mockserver.ts/.js
+├── manifest.json
+├── model/
+│   └── formatter.ts/.js
+├── test/
+│   ├── Test.cdn.qunit.html
+│   ├── Test.qunit.html
+│   ├── initMockServer.ts/.js
+│   ├── mockServer-cdn.html
+│   ├── mockServer.html
+│   ├── testsuite.cdn.qunit.html
+│   ├── testsuite.cdn.qunit.ts/.js
+│   ├── testsuite.qunit.html
+│   ├── testsuite.qunit.ts/.js
+│   └── unit/
+│       ├── model/
+│       │   └── formatter.ts/.js
+│       └── unitTests.qunit.ts/.js
+└── view/
+    ├── App.view.xml
+    ├── HelloDialog.fragment.xml
+    ├── HelloPanel.view.xml
+    └── InvoiceList.view.xml
+```
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 27](https://ui5.github.io/tutorials/walkthrough/build/27/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/tutorial/walkthrough/testsuite.cdn.qunit&test=unit/unitTests).
 

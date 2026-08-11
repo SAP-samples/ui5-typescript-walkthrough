@@ -1,5 +1,5 @@
 
-# Step 2: Creating a Model
+## Step 2: Creating a Model
 
 In this step, we create a model. It serves as a container for the data your application operates on.
 
@@ -24,17 +24,17 @@ An OData model, however, is a server-side model. This means that whenever an app
 
 In this tutorial, we focus on JSON models since they're the simplest ones to work with.
 
-## Preview
+### Preview
 
 ![The browser shows the text "Hi, my name is Harry Hawk"](assets/Tutorial_Data_Binding_Step_1_6d391d5.png "The browser shows the text &quot;Hi, my name is Harry Hawk&quot;")
 
 You can view this step live: [🔗 Live Preview of Step 2](https://ui5.github.io/tutorials/databinding/build/02/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 2](https://ui5.github.io/tutorials/databinding/databinding-step-02.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 2](https://ui5.github.io/tutorials/databinding/databinding-step-02-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -49,7 +49,7 @@ webapp/
 
 1. Create a new folder named `model` in the `webapp` folder. In this folder, create a file called `data.json` with the following content:
 
-## webapp/model/data.json \(New\)
+### webapp/model/data.json \(New\)
 
 ```json
 {
@@ -59,7 +59,7 @@ webapp/
 
 2. Create a new JSON model in the `manifest.json` and set its path via a URI. This binds the model object to the app component and makes it globally available to all controls used within the application.
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 {

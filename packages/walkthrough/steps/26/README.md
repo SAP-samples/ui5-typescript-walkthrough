@@ -19,9 +19,37 @@ The folder structure of our app project is clearly separating test and productiv
 
 The new `localService` folder contains a `metadata.xml` service description file for OData, the `mockserver.js` file that simulates a real service with local data, and the `mockdata` subfolder that contains the local test data \(`Invoices.json`\).
 
-![Folder Structure for this Step](assets/loio7a5e2b02d72d40d388f5e601d7de74df_LowRes.png "Folder Structure for this Step")
-
-<sup>*Folder Structure for this Step*</sup>
+```text
+webapp/
+├── Component.ts/.js
+├── controller/
+│   ├── App.controller.ts/.js
+│   ├── HelloPanel.controller.ts/.js
+│   └── InvoiceList.controller.ts/.js
+├── css/
+│   └── style.css
+├── i18n/
+│   └── i18n.properties
+├── index-cdn.html
+├── index.html
+├── localService/
+│   ├── metadata.xml
+│   ├── mockdata/
+│   │   └── Invoices.json
+│   └── mockserver.ts/.js
+├── manifest.json
+├── model/
+│   └── formatter.ts/.js
+├── test/
+│   ├── initMockServer.ts/.js
+│   ├── mockServer-cdn.html
+│   └── mockServer.html
+└── view/
+    ├── App.view.xml
+    ├── HelloDialog.fragment.xml
+    ├── HelloPanel.view.xml
+    └── InvoiceList.view.xml
+```
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 26](https://ui5.github.io/tutorials/walkthrough/build/26/test/mockServer-cdn.html).
 

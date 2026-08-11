@@ -1,8 +1,8 @@
-# Step 11: Add Table with :n Navigation to Detail Area
+## Step 11: Add Table with :n Navigation to Detail Area
 
 In this step we add a table with additional information to the detail area.
 
-## Preview
+### Preview
 
 **A table containing information about friends of the selected user is added**
 
@@ -10,11 +10,11 @@ In this step we add a table with additional information to the detail area.
 
 You can view this step live: [🔗 Live Preview of Step 11](https://ui5.github.io/tutorials/odatav4/build/11/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 11](https://ui5.github.io/tutorials/odatav4/odatav4-step-11.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 11](https://ui5.github.io/tutorials/odatav4/odatav4-step-11-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View

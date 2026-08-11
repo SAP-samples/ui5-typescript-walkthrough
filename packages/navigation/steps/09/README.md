@@ -1,22 +1,22 @@
-# Step 9: Allow Bookmarkable Tabs with Optional Query Parameters
+## Step 9: Allow Bookmarkable Tabs with Optional Query Parameters
 
 The `resume` view contains four tabs as we have seen in the previous step of this tutorial. However, when the user navigates to the `resume` page, only the first tab is displayed initially. Navigating directly to a specific tab or bookmarking a tab is not yet supported in our current app.
 
 In this step, we implement a bookmarking feature by enabling deep linking to tabs with optional query parameters. A deep link is basically a link that directly references a deeper structure and parameters of the app in the URL. It is often bookmarked or shared to have a convenient entry point into the app for a certain task or action. The selected tab should be reflected in the URL but the tab can also be omitted, for example, when we initially navigate to the resume page.
 
-## Preview
+### Preview
 
-### Deep link to allow bookmarkable tabs
+#### Deep link to allow bookmarkable tabs
 
 ![Deep link to allow bookmarkable tabs](assets/Tutorial_Navigation_and_Routing_Step_09.png "Deep link to allow bookmarkable tabs")
 
 You can view this step live: [🔗 Live Preview of Step 9](https://ui5.github.io/tutorials/navigation/build/09/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 9](https://ui5.github.io/tutorials/navigation/navigation-step-09.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 9](https://ui5.github.io/tutorials/navigation/navigation-step-09-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 {
@@ -73,7 +73,7 @@ This allows URLs like `webapp/index.html#/employees/3/resume?tab=Projects` where
 
 The `:?query:` parameter starts and ends with `:`, which means that it is optional. If you want to make it mandatory, you can use the `{?query}` syntax \(everything in between `{}` is considered as being mandatory\).
 
-## webapp/view/employee/Resume.view.xml
+### webapp/view/employee/Resume.view.xml
 
 ```xml
 <mvc:View
@@ -116,7 +116,7 @@ The `:?query:` parameter starts and ends with `:`, which means that it is option
 
 To update the currently selected tab in the URL we listen to the select event of the `IconTabBar` by setting `select=".onTabSelect"` in the resume view. The `selectedKey` is bound to a view model. This allows to easily change the `selectedKey` according to the selected tab in the URL.
 
-## `webapp/controller/employee/Resume.controller.ts/.js`
+### webapp/controller/employee/Resume.controller.ts/.js
 
 ```ts
 // webapp/controller/employee/Resume.controller.ts

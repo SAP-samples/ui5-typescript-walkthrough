@@ -19,8 +19,52 @@ We haven’t thought about testing our interaction with the app yet, so in this 
 
 We add a new folder `integration` below the `test` folder, where we put our new test cases. Page objects that help structuring such integration tests are put in the `pages` subfolder that we also create now.
 
-![Folder Structure for this Step](assets/loio27e84d5bd72a485498564b92894869b5_LowRes.png "Folder Structure for this Step")
-<sup>*Folder Structure for this Step*</sup>
+```text
+webapp/
+├── Component.ts/.js
+├── controller/
+│   ├── App.controller.ts/.js
+│   ├── HelloPanel.controller.ts/.js
+│   └── InvoiceList.controller.ts/.js
+├── css/
+│   └── style.css
+├── i18n/
+│   └── i18n.properties
+├── index-cdn.html
+├── index.html
+├── localService/
+│   ├── metadata.xml
+│   ├── mockdata/
+│   │   └── Invoices.json
+│   └── mockserver.ts/.js
+├── manifest.json
+├── model/
+│   └── formatter.ts/.js
+├── test/
+│   ├── Test.cdn.qunit.html
+│   ├── Test.qunit.html
+│   ├── initMockServer.ts/.js
+│   ├── integration/
+│   │   ├── NavigationJourney.ts/.js
+│   │   ├── opaTests.qunit.ts/.js
+│   │   └── pages/
+│   │       └── HelloPanelPage.ts/.js
+│   ├── mockServer-cdn.html
+│   ├── mockServer.html
+│   ├── testsuite.cdn.qunit.html
+│   ├── testsuite.cdn.qunit.ts/.js
+│   ├── testsuite.qunit.html
+│   ├── testsuite.qunit.ts/.js
+│   └── unit/
+│       ├── model/
+│       │   └── formatter.ts/.js
+│       └── unitTests.qunit.ts/.js
+└── view/
+    ├── App.view.xml
+    ├── HelloDialog.fragment.xml
+    ├── HelloPanel.view.xml
+    └── InvoiceList.view.xml
+```
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 28](https://ui5.github.io/tutorials/walkthrough/build/28/test/Test.cdn.qunit.html?testsuite=test-resources/ui5/tutorial/walkthrough/testsuite.cdn.qunit&test=integration/opaTests).
 

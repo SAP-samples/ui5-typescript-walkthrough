@@ -1,8 +1,8 @@
-# Step 9: List-Detail Scenario
+## Step 9: List-Detail Scenario
 
 In this step we add a detail area with additional information.
 
-## Preview
+### Preview
 
 **A detail area containing information about the selected user is added**
 
@@ -10,11 +10,11 @@ In this step we add a detail area with additional information.
 
 You can view this step live: [🔗 Live Preview of Step 9](https://ui5.github.io/tutorials/odatav4/build/09/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 9](https://ui5.github.io/tutorials/odatav4/odatav4-step-09.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 9](https://ui5.github.io/tutorials/odatav4/odatav4-step-09-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## `webapp/controller/App.controller.ts/.js`
+### webapp/controller/App.controller.ts/.js
 
 ```ts
 // webapp/controller/App.controller.ts
@@ -138,7 +138,7 @@ Afterwards the detail area is made visible and is resized.
 
 The application also needs to close the detail area if its binding context is deleted. If the deleted context is restored after a failed DELETE request, or undeleted via `Context#resetChanges`, it could be shown in the detail area again, unless the user had selected another row in the meantime. Hence, we call `_setDetailArea` without a context once the context gets deleted, and with the restored context in the error handler of the `Context#delete` API. In `_setDetailArea` we resize the view based on the given context in an appropriate way.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -315,7 +315,7 @@ It is important that all bindings we introduced in the detail area are relative 
 
 One of the most vital parts of the data reuse functionality is the usage of the `autoExpandSelect` binding parameter. It permits us to put a tailored `$select` clause in the `GET` request, so that only missing properties are requested for display in the detail area.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```ini
 ...

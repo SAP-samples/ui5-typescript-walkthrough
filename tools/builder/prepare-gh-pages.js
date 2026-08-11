@@ -139,6 +139,15 @@ function removeTSfromUI5YAML(ui5yaml) {
 			copyFileSync(join(tutorialDir, "steps.json"), join(distTutorialDir, "steps.json"));
 		}
 
+		if (existsSync(join(tutorialDir, "assets"))) {
+			console.log(`  🌅 Copying tutorial assets...`);
+			const tutorialAssets = fg.globSync(["**/*"], { cwd: join(tutorialDir, "assets") });
+			tutorialAssets.forEach((asset) => {
+				mkdirSync(dirname(join(distTutorialDir, "assets", asset)), { recursive: true });
+				copyFileSync(join(tutorialDir, "assets", asset), join(distTutorialDir, "assets", asset));
+			});
+		}
+
 		console.log(`  👉 Zipping TypeScript sources...`);
 		await Promise.all(steps.map((step) => {
 			return zipDirectory(

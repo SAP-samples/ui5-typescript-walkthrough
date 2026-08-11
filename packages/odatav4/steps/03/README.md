@@ -1,10 +1,10 @@
-# Step 3: Automatic Data Type Detection
+## Step 3: Automatic Data Type Detection
 
 In this step, we use the automatic data type detection of the OData V4 model to parse, validate, and format user entries. The service metadata contains type information for the properties of each entity.
 
 The OData V4 Model utilizes this information to compute the corresponding OpenUI5 type, including constraints, and sets this type to the OpenUI5 property binding for the entity property. For example, for `<Input value={Age}/>` the OpenUI5 type `Int64` is used, which corresponds to the OData type `Edm.Int64`.
 
-## Preview
+### Preview
 
 **Input does not match the underlying data type**
 
@@ -12,11 +12,11 @@ The OData V4 Model utilizes this information to compute the corresponding OpenUI
 
 You can view this step live: [🔗 Live Preview of Step 3](https://ui5.github.io/tutorials/odatav4/build/03/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 3](https://ui5.github.io/tutorials/odatav4/odatav4-step-03.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 3](https://ui5.github.io/tutorials/odatav4/odatav4-step-03-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## `webapp/manifest.json`
+### webapp/manifest.json
 
 ```json
 {
@@ -58,7 +58,7 @@ We now run the app using the `index.html` file and enter values that don't match
 > 📝
 > If you explicitly define a type in the binding info of a control, the automatic type detection for that binding will be turned off. For example, if you change the `Input` for `Age` in the view to `<Input value="{path:'Age', type:'sap.ui.model.type.String'}/>`, the `String` type will be used, not the `Int64` type from the service metadata.
 
-## localService/metadata.xml
+### localService/metadata.xml
 
 ```xml
 <EntityType Name="Person">

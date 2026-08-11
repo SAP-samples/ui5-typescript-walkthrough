@@ -1,20 +1,20 @@
-# Step 15: Reuse an Existing Route
+## Step 15: Reuse an Existing Route
 
 The *Employees* table displays employee data. However, the resumes of the employees are not accessible from this view yet. We could create a new route and a new view to visualize the resume again, but we could also simply reuse an existing route to cross-link the resume of a certain employee. In this step, we will add a feature that allows users to directly navigate to the resume of a certain employee. We will reuse the *Resume* page that we have created in an earlier step. This example illustrates that there can be multiple navigation paths that direct to the same page.
 
-## Preview
+### Preview
 
-### Navigation to an existing route from a table item
+#### Navigation to an existing route from a table item
 
 ![Navigation to an existing route from a table item](assets/Tutorial_Navigation_and_Routing_Step_15.png "Navigation to an existing route from a table item")
 
 You can view this step live: [🔗 Live Preview of Step 15](https://ui5.github.io/tutorials/navigation/build/15/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 15](https://ui5.github.io/tutorials/navigation/navigation-step-15.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 15](https://ui5.github.io/tutorials/navigation/navigation-step-15-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-## webapp/view/employee/overview/EmployeeOverviewContent.view.xml
+### webapp/view/employee/overview/EmployeeOverviewContent.view.xml
 
 ```xml
 <mvc:View
@@ -43,7 +43,7 @@ You can download the solution for this step here: <span class="ts-only">[📥 Do
 
 In the `EmployeeOverviewContent` view we register an event handler for the `itemPress` event and set the type attribute of the `ColumnListItem` to `Active` so that we can choose an item and trigger the navigation.
 
-## `webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js`
+### webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts/.js
 
 ```ts
 // webapp/controller/employee/overview/EmployeeOverviewContent.controller.ts

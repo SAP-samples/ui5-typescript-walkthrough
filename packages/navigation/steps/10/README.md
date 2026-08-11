@@ -1,24 +1,24 @@
-# Step 10: Implement “Lazy Loading”
+## Step 10: Implement “Lazy Loading”
 
 In the previous steps, we have implemented a `Resume` view that uses tabs to display data. The complete content of all the tabs is loaded once, no matter which tab is currently displayed. We can increase the performance of our app by avoiding to load content that is not visible. Therefore, we implement a “lazy loading” feature that only loads the view and data when requested by the user.
 
-## Preview
+### Preview
 
-### Tabs with lazy loading
+#### Tabs with lazy loading
 
 ![Tabs with lazy loading](assets/Tutorial_Navigation_and_Routing_Step_10a.png "Tabs with lazy loading")
 
 You can view this step live: [🔗 Live Preview of Step 10](https://ui5.github.io/tutorials/navigation/build/10/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 10](https://ui5.github.io/tutorials/navigation/navigation-step-10.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 10](https://ui5.github.io/tutorials/navigation/navigation-step-10-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder Structure for this Step
+#### Folder Structure for this Step
 
 ![Folder Structure for this Step](assets/Tutorial_Navigation_and_Routing_Step_10b.png "Folder Structure for this Step")
 
-## webapp/view/employee/Resume.view.xml
+### webapp/view/employee/Resume.view.xml
 
 ```xml
 <mvc:View
@@ -63,7 +63,7 @@ To illustrate lazy loading, we implement that the content is loaded only when th
 
 In the `resume` view we remove the content of the *Hobbies* and *Notes* tabs as we will now fill it dynamically with navigation features.
 
-## webapp/view/employee/ResumeHobbies.view.xml \(New\)
+### webapp/view/employee/ResumeHobbies.view.xml \(New\)
 
 ```xml
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
@@ -73,7 +73,7 @@ In the `resume` view we remove the content of the *Hobbies* and *Notes* tabs as 
 
 Create the file `ResumeHobbies.view.xml` in the `webapp/view/employee` folder. Move the content for the tab that was previously in the `Resume` view to the newly created view. We don’t need a controller for this view as there is no additional logic involved. This view will be lazy-loaded and placed into the content of the *Hobbies* tab with navigation features.
 
-## webapp/view/employee/ResumeNotes.view.xml \(New\)
+### webapp/view/employee/ResumeNotes.view.xml \(New\)
 
 ```xml
 <mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
@@ -83,7 +83,7 @@ Create the file `ResumeHobbies.view.xml` in the `webapp/view/employee` folder. M
 
 Create the file `ResumeNotes.view.xml` in the `webapp/view/employee` folder similar to the *Hobbies* view to transform this tab to a separate view as well.
 
-## `webapp/controller/employee/Resume.controller.ts/.js`
+### webapp/controller/employee/Resume.controller.ts/.js
 
 ```ts
 // webapp/controller/employee/Resume.controller.ts
@@ -213,7 +213,7 @@ Now we extend the `Resume` controller a little and add additional logic to the p
 
 These lines of code make sure that the targets are only loaded when they are needed \(“lazy loading”\). But the router does not know the new targets yet, so let’s create them in our routing configuration.
 
-## webapp/manifest.json
+### webapp/manifest.json
 
 ```json
 {
@@ -290,7 +290,7 @@ We have now implemented lazy loading for the tabs *Hobbies* and *Notes*. These t
 
 Try it out yourself: Open the *Network* tab of your browser's developer tools and click on the tabs of your app. In the network traffic you will see that `ResumeHobbies.view.xml` file is only loaded when the *Hobbies* tab is displayed the first time. The same applies for the *Notes* tab. Mission accomplished!
 
-## Conventions
+### Conventions
 
 - Lazy-load content that is not initially displayed to the user
 

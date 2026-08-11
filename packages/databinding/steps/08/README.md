@@ -1,21 +1,21 @@
 
-# Step 8: Binding Paths: Accessing Properties in Hierarchically Structured Models
+## Step 8: Binding Paths: Accessing Properties in Hierarchically Structured Models
 
 In Step 6 , we stated that the fields in a resource model are arranged in a flat structure; in other words, there is no hierarchy of properties. However, this is only true for resource models. The properties within JSON and OData models are usually arranged in a hierarchical structure. So, let's explore how to reference fields in a hierarchically structured model object.
 
-## Preview
+### Preview
 
-### A second panel with address data is added
+#### A second panel with address data is added
 
 ![A second panel with address data is added](assets/Tutorial_Data_Binding_Step_8_12705f5.png "A second panel with address data is added")
 
 You can view this step live: [🔗 Live Preview of Step 8](https://ui5.github.io/tutorials/databinding/build/08/index-cdn.html).
 
-## Coding
+### Coding
 
 You can download the solution for this step here: <span class="ts-only">[📥 Download step 8](https://ui5.github.io/tutorials/databinding/databinding-step-08.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download step 8](https://ui5.github.io/tutorials/databinding/databinding-step-08-js.zip)<span class="lang-suffix"> (JS)</span></span>.
 
-### Folder structure for this step
+#### Folder structure for this step
 
 ```text
 webapp/
@@ -33,7 +33,7 @@ webapp/
 
 In the `data.json` file, add an additional sub-object named `address`. This object has four properties: `street`, `city`, `zip`, and `country`.
 
-## webapp/model/data.json
+### webapp/model/data.json
 
 ```json
 {
@@ -55,7 +55,7 @@ The `text` property of the `Label` element is bound to the i18n resource bundle 
 
 The `htmlText` property of the `FormattedText` element is bound to four JSON model properties: `/address/street`, `/address/zip`, `/address/city`, and `/address/country`. You can achieve the resulting address format by separating each one of these JSON model property references with a hard-coded newline character. Note that `zip` and `city` are separated by a space.
 
-## webapp/view/App.view.xml
+### webapp/view/App.view.xml
 
 ```xml
 <mvc:View
@@ -94,7 +94,7 @@ The `htmlText` property of the `FormattedText` element is bound to four JSON mod
 
 Update the `i18n.properties` and `i18n_de.properties` files as shown below.
 
-## webapp/i18n/i18n.properties
+### webapp/i18n/i18n.properties
 
 ```properties
 ...
@@ -104,7 +104,7 @@ panel1HeaderText=Data Binding Basics
 panel2HeaderText=Address Details
 ```
 
-## webapp/i18n/i18n\_de.properties
+### webapp/i18n/i18n\_de.properties
 
 ```properties
 ...
