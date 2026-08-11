@@ -69,7 +69,7 @@ Replace the content of the `App.view.xml` file with the following content:
 </mvc:View>
 ```
 
-> :note:
+> 📝
 > Requiring `sap/ui/layout/form/ColumnLayout` is needed because we use the `ColumnLayout` as `layout` for the `sap/ui/layout/form/SimpleForm`.
 > The `sap/ui/layout/form/SimpleForm` requires the configured layout, in case it's not done by the consumer but this may cause an additional rendering cycle if rendering starts before the layout finished loading.
 

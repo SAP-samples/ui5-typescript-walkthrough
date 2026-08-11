@@ -86,7 +86,7 @@ We introduced a typo in the binding of the number attribute to simulate a freque
 &nbsp;
 Now we call the app and notice that the price is actually missing. By entering the [shortcut](https://sdk.openui5.org/topic/154844c3ac2a4675a37aeb6259a5e034.html) [Ctrl\] + [Shift\] + [Alt\] /[Option\] + [S\]  we open the OpenUI5 support diagnostics tool and check the app.
 
-> :note:
+> 📝
 >
 > If you use the Google Chrome browser, you can install the *UI5 Inspector* plugin. With this plugin, you can easily debug your OpenUI5- or OpenUI5-based apps. For more information, see [UI5 Inspector](https://sdk.openui5.org/topic/b24e72443eb34d0fb7bf6940f2d697eb.html).
 
@@ -96,7 +96,7 @@ A hierarchical tree of OpenUI5 controls is shown on the left and the properties 
 
 Sometimes errors are not as easy to spot and you actually need to debug the JavaScript code with the tools of the browser.
 
-> :note:
+> 📝
 > When debugging UI5 applications that use built resources, the OpenUI5 files are minified, which means that variable names are shortened and comments are removed.
 > 
 > This makes debugging harder, because the code is a lot less readable. You can load the debug sources by adding the URL parameter `sap-ui-debug=true` or by pressing [Ctrl\] + [Shift\] + [Alt\] /[Option\] + [P\]  and selecting *Use Debug Sources* in the dialog box that is displayed. After reloading the page, you can see in the *Network* tab of the browser’s developer tools that now a lot of files are loaded that have a `–dbg` suffix. These are the source code files that include comments and the uncompressed code of the app and the OpenUI5 artifacts.

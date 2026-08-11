@@ -127,7 +127,7 @@ The function checks if there is a previous hash value in the app history. If so,
 
 The third parameter of `navTo("appHome", {}, true /*no history*/);` has the value `true` and makes sure that the hash is replaced. With the line `sap.ui.core.UIComponent.getRouterFor(this)` you can easily access your component’s router throughout the app. To make it even more comfortable, we also add a handy shortcut `getRouter` to the base controller. This function is now available in each subclass as well. It is also used in the `onNavBack` handler to get a reference to the router before calling `navTo`. We now have to implement the reuse in all other controllers.
 
-> :note:
+> 📝
 > In OpenUI5 there are multiple options to reuse code. We recommend to use a base controller for such helper methods because this allows us to decoratively use the `onNavBack` handler directly in any XML view without adding additional code to the controller. Our base controller is an abstract controller that will not be instantiated in any view. Therefore, the naming convention `*.controller.ts` does not apply, and we can just name the file `BaseController.ts`. By not using the naming convention `*.controller.ts` we can even prevent any unintentional usage in views.
 
 ## `webapp/controller/NotFound.controller.ts/.js`
@@ -220,7 +220,7 @@ sap.ui.define(["ui5/tutorial/navigation/controller/BaseController"], function (B
 
 The same applies to our `Home` controller, we now also inherit from the `BaseController`.
 
-> :note:
+> 📝
 > In this step we have added the *Back* button. The user can always use the browser’s native *Back* button as well. Each app can freely configure the behavior of the *Back* button. However, there is no clean way to apply the same logic for the browser’s *Back* button in single-page applications. Tweaking the browser history or using other quirks for cancelling backward or forward navigation is not recommended due to the implementation details of the browsers. The browser’s *Back* button always uses the browser history while the *Back* button of the app can make use of the browser history **or** can implement its own navigation logic. Make sure to understand this difference and only control the *Back* button inside the app.
 
 ## Conventions

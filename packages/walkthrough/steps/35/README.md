@@ -24,7 +24,7 @@ You can download the solution for this step here: <span class="ts-only">[📥 Do
 
 In the `app` component we import the `Device` module from the `sap.ui` namespace and initialize the device model in the `init` method. We can simply pass the loaded dependency `Device` to the constructor function of the JSONModel. This will make most properties of the OpenUI5 device API available as a JSON model. The model is then set on the component as a named model so that we can reference it in data binding.
 
-> :info:
+> ℹ️
 > We have to set the binding mode to `OneWay` as the device model is read-only and we want to avoid changing the model accidentally when we bind properties of a control to it. By default, models in OpenUI5 are bidirectional \(`TwoWay`\). When the property changes, the bound model value is updated as well.
 
 ```ts
@@ -146,7 +146,7 @@ We can also hide single controls by device type when we set a CSS class like `sa
 &nbsp;
 The device API of OpenUI5 offers more functionality to detect various device-specific settings, please have a look at the [documentation](https://sdk.openui5.org/api/sap.ui.Device) for more details.
 
-> :info:
+> ℹ️
 > The `sap.ui.Device` API detects the device type \(Phone, Tablet, Desktop\) based on the user agent and many other properties of the device. Therefore simply reducing the screen size will not change the device type. To test this feature, you will have to enable device emulation in your browser or open it on a real device.
 
 ### webapp/controller/Detail.controller.ts/.js
@@ -284,7 +284,7 @@ We add the `number` and `numberUnit` field from the list of the previous steps a
 
 We can see the results when we decrease the browser's screen size or open the app on a small device.
 
-> :note:
+> 📝
 > You can test the device specific features of your app with the developer tools of your browser. For example in Google Chrome, you can emulate a tablet or a phone easily and see the effects. Some responsive options of OpenUI5 are only set initially when loading the app, so you might have to reload your page to see the results.
 
 ***

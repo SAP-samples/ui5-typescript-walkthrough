@@ -114,7 +114,7 @@ panel1HeaderText=Data Binding Grundlagen
 panel2HeaderText=Adressdetails
 ```
 
-> :note:
+> 📝
 > The resource bundle files now contain new properties for the address and a new panel header text. Both panel properties are numbered.
 >
 > In the XML view, inside the curly brackets for the binding path of the `htmlText` element, you'll notice that the first character is a forward slash. This is necessary for binding paths that make absolute references to properties in JSON and OData models, but you must not use it for resource models. After the first forward slash character, the binding path syntax uses the object name and the property names separated by forward slash characters \(`{/address/street}`\).

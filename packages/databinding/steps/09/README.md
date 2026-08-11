@@ -83,7 +83,7 @@ In our custom formatter, we set the first and last name currently in the model a
 
 In the `formatMail` function, we use the `sap.m.URLHelper.normalizeEmail` function that expects an e-mail address, a mail subject, and a text body. When a user follows the link, their default email client will open with these parameters. For more information, see [API Reference: `sap.m.URLHelper.normalizeEmail`](https://sdk.openui5.org/#/api/sap.m.URLHelper/methods/normalizeEmail). The `mailSubject` resource bundle text contains a placeholder for the recipient's first name \(see below\). Therefore, we provide the name with `[firstName]`.
 
-> :note:
+> 📝
 > For a detailed description of the e-mail link format, see [MDN - Creating hyperlinks: Email links](https://developer.mozilla.org/de/docs/Web/Guide/HTML/Email_links).
 
 Enhance the `App.view.xml` file as shown below:
@@ -132,7 +132,7 @@ For more complex bindings, we can't use the simple binding syntax with the curly
 
 	This is a reference to the function that receives the parameters listed in the `parts` array. Whatever value the formatter function returns becomes the value set for the `href` property. The dot `formatMail`\) at the beginning of the formatter tells OpenUI5 to look for a `formatMail` function on the controller instance of the view. If you don't use the dot, the function will be resolved by looking into the global namespace.
 
-> :note:
+> 📝
 > When using formatter functions, the binding automatically switches to "one-way". Therefore, you can’t use a formatter function for "two-way" scenarios. However, you can use data types \(which we explain in the following steps\).
 
 Add the `# E-mail` section to the `i18n.properties` and `i18n_de.properties` files as shown below.

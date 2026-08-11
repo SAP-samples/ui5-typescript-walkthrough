@@ -62,7 +62,7 @@ sap.ui.define(["sap/ui/core/mvc/Controller"], function (Controller) {
 ```
 <details class="ts-only" markdown="1">
 
-> :note:
+> 📝
 > The comment `@name ui5.tutorial.walkthrough.controller.App` is a JSDoc comment that names this controller. It can be used by documentation generators and IDEs to provide more information about this class.
 
 </details>

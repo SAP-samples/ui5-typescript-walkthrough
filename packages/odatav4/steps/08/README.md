@@ -73,7 +73,7 @@ We call that action by first creating a deferred operation binding on the model.
 
 The invocation is asynchronous; the `invoke` method therefore returns a `Promise`. We attach simple success and error handlers to that `Promise` by calling its `then` method.
 
-> :note:
+> 📝
 > Many of the methods in the OData V4 API of OpenUI5 return a `Promise` to manage asynchronous processing
 
 ## webapp/view/App.view.xml

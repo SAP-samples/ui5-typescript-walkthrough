@@ -194,7 +194,7 @@ Next, we have to create the view `employees.Employee`; for better illustration t
 
 Create the file `Employee.view.xml` inside the `webapp/view/employee` folder. This employee view displays master data for an employee in a panel with a `SimpleForm` control: first name, last name and so on. The data comes from a relative data binding that is set on the view level as we can see in the controller later. As we are focusing on the navigation aspects in this tutorial, we won’t go into detail on the controls of the view. Just copy the code.
 
-> :note:
+> 📝
 > Requiring `sap/ui/layout/form/ResponsiveGridLayout` is needed because we use the `ResponsiveGridLayout` as `layout` for the `sap/ui/layout/form/SimpleForm`.
 > The `sap/ui/layout/form/SimpleForm` requires the configured layout, in case it's not done by the consumer but this may cause an additional rendering cycle if rendering starts before the layout finished loading.
 
@@ -288,7 +288,7 @@ In `_onRouteMatched` we call `bindElement()` on the view to make sure that the d
 
 We also add an event handler to the `change` event as a private function `_onBindingChange`. It checks if the data could be loaded by querying the binding context of the view. As seen in the previous steps, we will display the `notFound` target if the data could not be loaded.
 
-> :note:
+> 📝
 > Instead of calling `attachMatched(…)` on a route we could also call `attachRouteMatched(…)` directly on the router. However, the event for the latter is fired for every matched event of any route in the whole app. We don’t use the latter because we would have to implement an additional check for making sure that current route is the route that has been matched. We want to avoid this extra overhead and register on the route instead.
 
 ## webapp/view/employee/EmployeeList.view.xml

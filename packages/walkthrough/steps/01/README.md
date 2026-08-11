@@ -47,7 +47,7 @@ In our webapp folder, we create a new HTML file named `index.html` and copy the 
 </html>
 ```
 
-> :note:
+> 📝
 > An HTML document consists basically of two sections: head and body. The head part will be used by the browser to process the document.
 > 
 > Using meta tags, we can influence the behavior of the browser. In this case, we tell the browser to use `UTF-8` as the document character set.
@@ -66,7 +66,7 @@ Let's start by creating a new file named `manifest.json` in the webapp folder an
 
 Since we want our app to support not only the latest OpenUI5 version but rather the latest long-term maintenance version, which is OpenUI5 1.148, we set the format version to `2.8.0`.
 
-  > :note:
+  > 📝
   > The manifest version should not necessarily align directly with the OpenUI5 version being used. Instead, choose the descriptor version that matches the requirements or supports the features you intend to use in your application. 
   
   To find the appropriate `_version` for each OpenUI5 release, refer to [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html) or the [mapping.json](https://github.com/SAP/ui5-manifest/blob/main/mapping.json) file of the [ui5-manifest](https://github.com/SAP/ui5-manifest/) project.
@@ -79,7 +79,7 @@ Since we want our app to support not only the latest OpenUI5 version but rather 
 
     -   `title`: This defines the title of the application, which appears in application management tools like the SAP Fiori launchpad.
 
-        > :note:
+        > 📝
         > It is advisable to make the title language-dependent. We'll cover implementing language-dependent titles in [Step 10: Manifest (Descriptor for Applications)](../10/README.md), but for now we'll use a static title.
 
     -   `applicationVersion`: This is used to denote the version of the application using semantic versioning principles. It's typically used for tracking and managing changes to the application over time.
@@ -98,7 +98,7 @@ Since we want our app to support not only the latest OpenUI5 version but rather 
 }
 ```
 
-> :note:
+> 📝
 > In this tutorial step, we focus on adding the absolute minimum configuration to the app descriptor file. In certain development environments you might encounter validation errors due to missing settings. However, for the purposes of this tutorial you can safely ignore these errors. In [Step 10: Descriptor for Applications](../10/README.md) we'll examine the purpose of the file in detail and configure some further options.
 
 ***
