@@ -28,11 +28,9 @@ We will create a simple app displaying the data of a company’s employees to sh
 Throughout this tutorial we will add features for navigating to pages and bookmarking them. We will add backward and forward navigation with common transition animations \(slide, show, flip, etc.\). We will add more pages to the app and navigate between them to show typical use cases. We will even learn how to implement features for bookmarking a specific search, table sorting via filters, and dialogs.
 
 > :tip:
-> You don't have to do all tutorial steps sequentially, you can also jump directly to any step you want. Just download the code from the previous step, and start there.
+> You don't have to do all tutorial steps sequentially, you can also jump directly to any step you want. Just download the code from the previous step and make sure that the application runs as intended.
 >
-> You can view and download the files for all steps in the Demo Kit at [Navigation and Routing](https://sdk.openui5.org/#/entity/sap.ui.core.tutorial.navigation). Copy the code to your workspace and make sure that the application runs by calling the `webapp/index.html` file. Depending on your development environment you might have to adjust resource paths and configuration entries.
->
-> For more information, see the [Downloading Code for a Tutorial Step](https://sdk.openui5.org/#/topic/8b49fc198bf04b2d9800fc37fecbb218#loio8b49fc198bf04b2d9800fc37fecbb218/tutorials_download) section of the [Get Started: Setup, Tutorials, and Demo Apps](https://sdk.openui5.org/#/topic/8b49fc198bf04b2d9800fc37fecbb218) overview.
+> You can view the samples for all steps here in this repository.
 
 ***
 
