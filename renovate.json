@@ -46,7 +46,7 @@
 		},
 		{
 			"matchDepNames": [
-				"openui5",
+				"openui5_lts",
 				"@types/openui5"
 			],
 			"automerge": false,
