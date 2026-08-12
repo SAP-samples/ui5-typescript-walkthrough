@@ -234,7 +234,7 @@ To use OpenUI5, execute the following command:
 ui5 use OpenUI5
 ```
 
-To use install the required UI5 libraries, execute the following command:
+To use install the required OpenUI5 libraries, execute the following command:
 
 ```sh
 ui5 add sap.m sap.tnt sap.ui.core sap.ui.layout themelib_sap_horizon
@@ -274,7 +274,7 @@ Let's break down what each package does:
 
 #### ui5.yaml
 
-Next,  we have to configure the tooling extension we installed from npm to our UI5 CLI setup, so we can use them in our project. To hook a custom task into a certain build phase of a project, it needs to reference another task that will get executed before or after it. The same applies for a custom middleware:
+Next, we have to configure the tooling extension we installed from npm to our UI5 CLI setup, so we can use them in our project. To hook a custom task into a certain build phase of a project, it needs to reference another task that will get executed before or after it. The same applies for a custom middleware:
 <details class="ts-only" markdown="1">
 
 -   For the `ui5-tooling-transpile-task` we specify that this should happen after the`replaceVersion` task.
