@@ -93,6 +93,4 @@ We extend the detail area of the `appView` by adding a table after the `FlexBox`
 
 ***
 
-**Next:** [Step 1: The Initial App](../01/README.md)
-
 **Previous:** [Step 10: Enable Data Reuse](../10/README.md)

@@ -43,14 +43,16 @@ A `$batch` request uses multipart MIME to put several requests into one. This ma
 
 -   Copy the relevant part of the request or response from the developer tools to an editor and auto-format it as JSON to analyze it.
 
-**Related Information**
-
-[Batch Control](https://sdk.openui5.org/topic/74142a38e3d4467c8d6a70b28764048f "OData V4 allows you to group multiple operations into a single HTTP request payload, as described in the official OData V4 specification Part 1, Batch Requests (see the link under Related Information for more details).")
-
-[Performance Aspects](https://sdk.openui5.org/topic/5a0d286c5606424b8e0d663c87445733 "The OData V4 model offers the features described below which influence performance.")
-
 ***
 
 **Next:** [Step 6: Create and Edit](../06/README.md)
 
 **Previous:** [Step 4: Filtering, Sorting, and Counting](../04/README.md)
+
+***
+
+**Related Information**
+
+[Batch Control](https://sdk.openui5.org/topic/74142a38e3d4467c8d6a70b28764048f "OData V4 allows you to group multiple operations into a single HTTP request payload, as described in the official OData V4 specification Part 1, Batch Requests (see the link under Related Information for more details).")
+
+[Performance Aspects](https://sdk.openui5.org/topic/5a0d286c5606424b8e0d663c87445733 "The OData V4 model offers the features described below which influence performance.")

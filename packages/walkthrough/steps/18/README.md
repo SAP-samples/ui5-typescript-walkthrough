@@ -10,8 +10,6 @@ Our dialog is still pretty much empty. Since OpenUI5 is shipped with a large ico
   
 ![An icon is now displayed in the dialog box](assets/loiofbc48e23cc7d45e393cc95bbbfc6e0a3_LowRes.png "An icon is now displayed in the dialog box")
 
-<sup>*An icon is now displayed in the dialog box*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 18](https://ui5.github.io/tutorials/walkthrough/build/18/index-cdn.html).
 ***
 
@@ -97,9 +95,9 @@ In the dialog fragment, we add an icon control to the content aggregation of the
 
 ***
 
-**Next:** Step 19: [Aggregation Binding](../19/README.md)
+**Next:** [Step 19: Aggregation Binding](../19/README.md)
 
-**Previous** Step 17: [Fragment Callbacks](../17/README.md)
+**Previous:** [Step 17: Fragment Callbacks](../17/README.md)
 
 ***
 

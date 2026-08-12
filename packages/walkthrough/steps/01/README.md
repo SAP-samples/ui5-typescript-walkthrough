@@ -11,8 +11,6 @@ As you know, OpenUI5 is all about HTML5. Let's get started with building a first
 
 ![The browser shows the text &quot;Hello World&quot;](assets/loio1dd456361379431aab7e5bcdaaeff00f_LowRes.png "The browser shows the text &quot;Hello World&quot;")
 
-<sup>*The browser shows the text &quot;Hello World&quot;*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 1](https://ui5.github.io/tutorials/walkthrough/build/01/index.html).
 
 ***

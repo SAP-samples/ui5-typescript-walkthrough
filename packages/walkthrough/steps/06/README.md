@@ -10,8 +10,6 @@ In OpenUI5, resources are often referred to as modules. In this step, we replace
 
 ![A message toast displays the &quot;Hello World&quot; message](assets/loio2f629a95211f49afa367b60d233fb390_LowRes.png "A message toast displays the &quot;Hello World&quot; message")
 
-<sup>*A message toast displays the "Hello World" message*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 6](https://ui5.github.io/tutorials/walkthrough/build/06/index-cdn.html).
 
 ***

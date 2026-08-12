@@ -10,9 +10,7 @@ When working with OpenUI5, we recommend the use of XML views, as this produces t
 ### Preview
 
 
-![The &quot;Hello World&quot; text is now displayed by a OpenUI5 control  \(No visual changes to last step\)](assets/loio05f6775a39d3409ea673f4acc3812142_LowRes.png "The &quot;Hello World&quot; text is now displayed by a OpenUI5 control  \(No visual changes to last step\)")
-
-<sup>*The &quot;Hello World&quot; text is now displayed by an OpenUI5 control \(No visual changes to last step\)*</sup>
+![The &quot;Hello World&quot; text is now displayed by an OpenUI5 control \(No visual changes to last step\)](assets/loio05f6775a39d3409ea673f4acc3812142_LowRes.png "The &quot;Hello World&quot; text is now displayed by an OpenUI5 control \(No visual changes to last step\)")
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 4](https://ui5.github.io/tutorials/walkthrough/build/04/index-cdn.html).
 

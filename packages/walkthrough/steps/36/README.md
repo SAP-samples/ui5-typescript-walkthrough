@@ -8,9 +8,7 @@ In this step of our Walkthrough tutorial, we adjust the content density based on
 
 ### Preview 
 
-![The content density is compact on desktop devices and cozy on touch-enabled devices](assets/loiof216b131c492448d8a1df25db2b9a26d_LowRes.png "The content density is compact on desktop devices and cozy on touch-enabled devices")
-
-<sup>*The content density is compact on devices without a touch screen and cozy on touch-enabled devices*</sup>
+![The content density is compact on devices without a touch screen and cozy on touch-enabled devices](assets/loiof216b131c492448d8a1df25db2b9a26d_LowRes.png "The content density is compact on devices without a touch screen and cozy on touch-enabled devices")
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 36](https://ui5.github.io/tutorials/walkthrough/build/36/test/mockServer-cdn.html).
 
@@ -144,7 +142,7 @@ As we have just enabled the app to run in both modes depending on the devices ca
 
 **Next:** [Step 37: Accessibility](../37/README.md)
 
-**Previous:** [Step 35: Routing and Navigation](../35/README.md)
+**Previous:** [Step 35: Device Adaptation](../35/README.md)
 
 ***
 

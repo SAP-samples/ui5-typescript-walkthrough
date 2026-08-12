@@ -10,8 +10,6 @@ In this step, we are going to extend the functionality of OpenUI5 with a custom 
     
 ![A custom product rating control is added to the detail page](assets/loio21dd14c37b67473b817c8865f168f668_LowRes.png "A custom product rating control is added to the detail page")
 
-<sup>*A custom product rating control is added to the detail page*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 33](https://ui5.github.io/tutorials/walkthrough/build/33/test/mockServer-cdn.html).
  
 ***

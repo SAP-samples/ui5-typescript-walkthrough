@@ -16,8 +16,6 @@ We will now add a dialog to our app. Dialogs are special, because they open on t
   
 ![A dialog opens when the new &quot;Say Hello With Dialog&quot; button is clicked](assets/loio0916080895e144ed8b31963bfb18e17f_LowRes.png "A dialog opens when the new &quot;Say Hello With Dialog&quot; button is clicked")
 
-<sup>*A dialog opens when the new “Say Hello With Dialog” button is clicked*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 16](https://ui5.github.io/tutorials/walkthrough/build/16/index-cdn.html).
 
 ***
@@ -164,7 +162,7 @@ It is a good practice to set a unique ID like `helloWorldButton` to key controls
 
 **Next:** [Step 17: Fragment Callbacks](../17/README.md)
 
-**Previous:** [Step15: Nested Views](../15/README.md)
+**Previous:** [Step 15: Nested Views](../15/README.md)
 
 ***
 

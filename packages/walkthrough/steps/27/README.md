@@ -15,8 +15,6 @@ Actually, every feature that we added to the app so far, would require a separat
   
 ![A unit test for our formatters is now available](assets/loio0d29491d96574cfe8d8158d60a0a32e2_LowRes.png "A unit test for our formatters is now available")
 
-<sup>*A unit test for our formatters is now available*</sup>
-
 We add a new folder `unit` under the `test` folder and a `model` subfolder where we will place our formatter unit test. The folder structure matches the app structure to easily find the corresponding unit tests.
   
 ```text

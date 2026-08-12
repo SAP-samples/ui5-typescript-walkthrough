@@ -15,8 +15,6 @@ We haven’t thought about testing our interaction with the app yet, so in this 
 
 ![An OPA test opens the &quot;Hello&quot; dialog from step 16](assets/loio250d5b92921d44a4b432cc0fade88cc9_LowRes.png "An OPA test opens the &quot;Hello&quot; dialog from step 16")
 
-<sup>*An OPA test opens the "Hello" dialog from step 16*</sup>
-
 We add a new folder `integration` below the `test` folder, where we put our new test cases. Page objects that help structuring such integration tests are put in the `pages` subfolder that we also create now.
 
 ```text

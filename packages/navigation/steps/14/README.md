@@ -239,8 +239,6 @@ As you can see, the dialog opens automatically if the parameter `showDialog=1` i
 
 ***
 
-***
-
 **Next:** [Step 15: Reuse an Existing Route](../15/README.md)
 
 **Previous:** [Step 13: Make Table Sorting Bookmarkable](../13/README.md)

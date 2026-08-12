@@ -12,8 +12,6 @@ We'll create a view model in our controller, add an input field to our app, bind
 
 ![An input field and a description displaying the value of the input field](assets/loioafc105517a644407bd90662e3d94ea01_LowRes.png "An input field and a description displaying the value of the input field")
 
-<sup>*An input field and a description displaying the value of the input field*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 7](https://ui5.github.io/tutorials/walkthrough/build/07/index-cdn.html).
 
 ***

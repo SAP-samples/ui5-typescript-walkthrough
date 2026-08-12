@@ -218,8 +218,6 @@ When we now click the *Back* button, it works as expected and brings us back to 
 
 ***
 
-***
-
 **Next:** [Step 6: Navigate to Routes with Hard-Coded Patterns](../06/README.md)
 
 **Previous:** [Step 4: Add a *Back* Button to *Not Found* Page](../04/README.md)

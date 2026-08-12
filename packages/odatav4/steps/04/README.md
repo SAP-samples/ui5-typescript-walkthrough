@@ -6,9 +6,7 @@ In this step, we add features to filter, sort, and count the user data by using 
 
 **App now has a search field, the entries can be sorted, and you can see how many entities are loaded and how many more are available**
 
-![App now has a search field, the entries can be sorted, and you can see how
-					many entities are loaded and how many more are available](assets/Tutorial_OData_V4_Step_4_3ac4fcc.png "App now has a search field, the entries can be sorted, and you can see how
-					many entities are loaded and how many more are available")
+![App now has a search field, the entries can be sorted, and you can see how many entities are loaded and how many more are available](assets/Tutorial_OData_V4_Step_4_3ac4fcc.png "App now has a search field, the entries can be sorted, and you can see how many entities are loaded and how many more are available")
 
 You can view this step live: [🔗 Live Preview of Step 4](https://ui5.github.io/tutorials/odatav4/build/04/index-cdn.html).
 
@@ -277,6 +275,14 @@ sortNone=the sequence on the server
 
 We add the missing texts to the properties file.
 
+***
+
+**Next:** [Step 5: Batch Groups](../05/README.md)
+
+**Previous:** [Step 3: Automatic Data Type Detection](../03/README.md)
+
+***
+
 **Related Information**
 
 [Filtering](https://sdk.openui5.org/topic/5338bd1f9afb45fb8b2af957c3530e8f "The OData V4 Model supports server side filtering on lists.")
@@ -284,9 +290,3 @@ We add the missing texts to the properties file.
 [Sorting](https://sdk.openui5.org/topic/d2ce3f51e5e34198b0c1a7f6ddd98def "The OData V4 model supports server side sorting on lists.")
 
 [Query Options under *Querying Data* in the Basic Tutorial on the OData home page](http://www.odata.org/getting-started/basic-tutorial/#queryData)
-
-***
-
-**Next:** [Step 5: Batch Groups](../05/README.md)
-
-**Previous:** [Step 3: Automatic Data Type Detection](../03/README.md)

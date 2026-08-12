@@ -11,8 +11,6 @@ In this step, we replace the text with a button and show the “Hello World” m
 
 ![A Say Hello button is added](assets/loiocedfdf89b30643ddbfcab1fe50bfa892_LowRes.png "A Say Hello button is added")
 
-<sup>*A Say Hello button is added*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 5](https://ui5.github.io/tutorials/walkthrough/build/05/index-cdn.html).
 
 ***

@@ -11,8 +11,6 @@ Let's get you ready for your journey! We bootstrap OpenUI5 in an HTML page and i
 
 ![The browser shows a "Ready" button that triggers a "Hello World" message](assets/loio9c157e9764b846fea7de519d141c33ac_LowRes.png "The browser shows a Ready button that triggers a Hello World message")
 
-<sup>*The browser shows a "Ready" button that triggers a "Hello World" message*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 1](https://ui5.github.io/tutorials/quickstart/build/01/index-cdn.html).
 
 ***

@@ -238,8 +238,6 @@ Create a file `Home.controller.ts` in the `webapp/controller` folder. The contro
 
 ***
 
-***
-
 **Next:** [Step 3: Catch Invalid Hashes](../03/README.md)
 
 **Previous:** [Step 1: Set Up the Initial App](../01/README.md)

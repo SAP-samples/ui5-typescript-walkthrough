@@ -10,9 +10,7 @@ This way, they are all in a central place and can be easily translated into othe
 
 ### Preview
 
-![An input field and a description displaying the value of the input field \(No visual changes to last step\(](assets/loio0eb579e2f2a64c5a9894086322c7faa0_LowRes.png "An input field and a description displaying the value of the input field \(No visual changes to last step\(")
-
-<sup>*An input field and a description displaying the value of the input field \(No visual changes to last step\)*</sup>
+![An input field and a description displaying the value of the input field \(No visual changes to last step\)](assets/loio0eb579e2f2a64c5a9894086322c7faa0_LowRes.png "An input field and a description displaying the value of the input field \(No visual changes to last step\)")
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 8](https://ui5.github.io/tutorials/walkthrough/build/08/index-cdn.html).
 

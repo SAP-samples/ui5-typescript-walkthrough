@@ -231,8 +231,6 @@ The same applies to our `Home` controller, we now also inherit from the `BaseCon
 
 ***
 
-***
-
 **Next:** [Step 5: Display a Target Without Changing the Hash](../05/README.md)
 
 **Previous:** [Step 3: Catch Invalid Hashes](../03/README.md)

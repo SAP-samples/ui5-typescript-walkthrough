@@ -10,8 +10,6 @@ The list of invoices is already looking nice, but what is an invoice without a p
   
 ![The list of invoices with prices and number units](assets/loiodc9e919119564ddab78b8d0550ecfa9b_LowRes.png "The list of invoices with prices and number units")
 
-<sup>*The list of invoices with prices and number units*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 20](https://ui5.github.io/tutorials/walkthrough/build/20/index-cdn.html).
 ***
 

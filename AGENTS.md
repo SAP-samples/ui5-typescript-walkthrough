@@ -76,7 +76,7 @@ Full author docs are in [CONTRIBUTING.md](CONTRIBUTING.md).
 Other conventions:
 
 - Callouts use `> :note:`, `> :tip:`, `> :info:` (custom syntax, not GitHub's `[!NOTE]` alerts).
-- Step navigation footer: `***` separator, then `**Next:** [Step N+1: <title>](../<NN+1>/README.md)` and `**Previous:** [Step N-1: <title>](../<NN-1>/README.md)`.
+- Step navigation footer: a single `***` separator, then `**Next:** [Step N+1: <title>](../<NN+1>/README.md)` and `**Previous:** [Step N-1: <title>](../<NN-1>/README.md)`. When a step also has a **Related Information** section, the order is Next/Previous first, then another `***`, then `**Related Information**` (matches all five tutorials). The first step has no `**Previous:**`; the last step has no `**Next:**`. The link display text must match the target step's actual title.
 - Preview images: descriptive `alt` text (no bare `![](…)`), optional `"title"` for the hover tooltip.
 - Do not add `<!-- loio… -->` markers or `<a name="loio…"/>` anchors — those are SAP-internal SDK artifacts.
 

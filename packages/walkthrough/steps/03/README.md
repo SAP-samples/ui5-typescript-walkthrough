@@ -8,9 +8,7 @@ Now it is time to build our first little UI by replacing the “Hello World” t
 
 ### Preview
 
-![The &quot;Hello World&quot; text is now displayed by a OpenUI5 control](assets/loio30a42d381b9e4388bf7fdc0b941e5381_LowRes.png "The &quot;Hello World&quot; text is now displayed by a OpenUI5 control")
-
-<sup>*The &quot;Hello World&quot; text is now displayed by an OpenUI5 control*</sup>
+![The &quot;Hello World&quot; text is now displayed by an OpenUI5 control](assets/loio30a42d381b9e4388bf7fdc0b941e5381_LowRes.png "The &quot;Hello World&quot; text is now displayed by an OpenUI5 control")
 
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 3](https://ui5.github.io/tutorials/walkthrough/build/03/index-cdn.html).

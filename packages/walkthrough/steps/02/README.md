@@ -11,8 +11,6 @@ Before we can do something with OpenUI5, we need to load and initialize it. This
 
 ![An alert &quot;UI5 is ready&quot; is displayed](assets/loio0f6b6b9dc46a474da9287c382c8d3456_LowRes.png "An alert &quot;UI5 is ready&quot; is displayed")
 
-<sup>*An alert &quot;UI5 is ready&quot; is displayed*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 2](https://ui5.github.io/tutorials/walkthrough/build/02/index-cdn.html).
 
 ***

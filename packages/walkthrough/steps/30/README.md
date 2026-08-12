@@ -13,8 +13,6 @@ In this step, we will use the OpenUI5 navigation features to load and show a sep
   
 ![A second page is added to display the invoice](assets/loio94152a595fe24d45b12223e0abcccb9c_LowRes.png "A second page is added to display the invoice")
 
-<sup>*A second page is added to display the invoice*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 30](https://ui5.github.io/tutorials/walkthrough/build/30/test/mockServer-cdn.html).
 
 ***
@@ -353,7 +351,7 @@ If you now open the app, you should now see the detail page when clicking an ite
 
 ***
 
-**Next:** [Step 31: Routing and Navigation](../31/README.md)
+**Next:** [Step 31: Routing with Parameters](../31/README.md)
 
 **Previous:** [Step 29: Debugging Tools](../29/README.md)
 

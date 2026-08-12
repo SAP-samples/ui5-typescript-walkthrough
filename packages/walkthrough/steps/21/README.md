@@ -10,8 +10,6 @@ Sometimes the predefined types of OpenUI5 are not flexible enough and you want t
   
 ![The price is now formatted according to its number](assets/loio636b7008113442c8a4765bb710dd8ea9_LowRes.png "The price is now formatted according to its number")
 
-<sup>*The price is now formatted according to its number*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 21](https://ui5.github.io/tutorials/walkthrough/build/21/index-cdn.html).
 
 ***

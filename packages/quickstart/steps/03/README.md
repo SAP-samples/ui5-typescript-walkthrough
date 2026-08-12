@@ -11,8 +11,6 @@ Finally, we add a second page to our app showcasing some of the key OpenUI5 conc
 
 ![The second page shows plenty of UI controls and concepts to explore](assets/loio79e1157d948c488c9717ef840fa9b396_LowRes.png "The second page shows plenty of UI controls and concepts to explore")
 
-<sup>*The second page shows plenty of UI controls and concepts to explore*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 3](https://ui5.github.io/tutorials/quickstart/build/03/index-cdn.html).
 
 ***

@@ -11,8 +11,6 @@ Instead of relying on a local HTML file for the bootstrap, the manifest is parse
 ### Preview
 ![An input field and a description displaying the value of the input field \(No visual changes to last step\)](assets/loio7b2aef85c016485da4a31c087bf4c0f0_LowRes.png "An input field and a description displaying the value of the input field \(No visual changes to last step\)")  
 
-<sup>*An input field and a description displaying the value of the input field \(No visual changes to last step\)*</sub>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 10](https://ui5.github.io/tutorials/walkthrough/build/10/index-cdn.html).
 
 ***

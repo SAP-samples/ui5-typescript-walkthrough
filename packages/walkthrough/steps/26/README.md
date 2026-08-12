@@ -13,8 +13,6 @@ This system is the so-called back-end system that we will now simulate with anOp
 
 ![The list of invoices is now served by the Mock Server](assets/loiofe1403346ce9499f8bb102beaa4986d5_LowRes.png "The list of invoices is now served by the Mock Server")
 
-<sup>*The list of invoices is now served by the Mock Server*</sup>
-
 The folder structure of our app project is clearly separating test and productive files after this step. The new `test` folder now contains a new HTML page `mockServer.html` which will launch our application in test mode without calling the real service.
 
 The new `localService` folder contains a `metadata.xml` service description file for OData, the `mockserver.js` file that simulates a real service with local data, and the `mockdata` subfolder that contains the local test data \(`Invoices.json`\).

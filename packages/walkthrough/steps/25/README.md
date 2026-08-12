@@ -14,8 +14,6 @@ In the real world, data often resides on remote servers and is accessed via an O
 
 ![Products from the OData invoices test service are now shown within our app](assets/loio5b76bb4b15eb44e1862d0b6c1c802571_LowRes.png "Products from the OData invoices test service are now shown within our app")
 
-<sup>*Products from the OData invoices test service are now shown within our app*</sup>
-
 *A real-time preview utilizing data from the OData remote service is currently unavailable in this setup. However, we assure you that it will work on your local machine as long as you avoid making any mistakes. So, give it a try and see the results for yourself!*
 
 ***
