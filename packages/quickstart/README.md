@@ -1,28 +1,24 @@
-# OpenUI5 Quickstart
+# Quickstart Tutorial
 
-In this tutorial we'll introduce you to all major development paradigms of OpenUI5. <details class="ts-only"><summary>This section is relevant for TypeScript only</summary><span>We'll also demonstrate the use of TypeScript with OpenUI5 and highlight the specific characteristics of this approach.</span></details>
+In this tutorial we'll get you up and running with OpenUI5 quickly with a hands-on first app.
 
 ## Description
 
-We first introduce you to the basic development paradigms like *Model-View-Controller* and establish a best-practice structure of our application. We'll do this along the classic example of “Hello World” and start a new app from scratch. Next, we'll introduce the fundamental data binding concepts of OpenUI5 and extend our app to show a list of invoices. We'll continue to add more functionality by adding navigation, extending controls, and making our app responsive. We'll also have look at the testing features and the built-in support tools of OpenUI5.
+We set up the development environment and bootstrap OpenUI5 in an HTML page with a simple "Hello World" button. We then extend the app to follow the "Model-View-Controller" pattern by introducing an XML view and a controller. Finally, we add a second page and showcase key OpenUI5 concepts like data binding, JSON models, and navigation in action.
 
 ### Preview
 
-![Preview of the OpenUI5 application that is going to be built in this tutorial. Contains a Hello World upper part with buttons and a text input. The lower part shows list of invoices with details, grouped by vendor names.](steps/03/assets/loio79e1157d948c488c9717ef840fa9b396_LowRes.png).
+![The second page of the final quickstart app titled 'Create Enterprise-Ready Web Apps with Ease', showing the OpenUI5 phoenix logo, a 'This is UI5!' heading, six feature InfoLabels, and an expandable 'Are you ready?' panel.](steps/03/assets/loio79e1157d948c488c9717ef840fa9b396_LowRes.png)
 
-> 💡
-> You don't have to do all tutorial steps sequentially, you can also jump directly to any step you want. Just download the code from the previous step and make sure that the application runs as intended.
-> 
-> You can view the samples for all steps here in this repository.
->
+<sup>*The second page of the finished app, reached by pressing the Go! button*</sup>
 
 ### Steps
 
-The tutorial consists of the following steps. To start, just open the first link - you`ll be guided from there.
+The tutorial consists of the following steps. To start, just open the first link - you'll be guided from there. Each step also has a download link so you can jump in at any point with the complete code from the previous step, then run `npm install` and `npm start` in the unzipped folder.
 
 - **[Step 1: Ready...](steps/01/README.md)** — Let's get you ready for your journey! We bootstrap OpenUI5 in an HTML page and implement a simple "Hello World" example. ([🔗 Live Preview](https://ui5.github.io/tutorials/quickstart/build/01/index-cdn.html) \| <span class="ts-only">[📥 Download Solution](https://ui5.github.io/tutorials/quickstart/quickstart-step-01.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download Solution](https://ui5.github.io/tutorials/quickstart/quickstart-step-01-js.zip)<span class="lang-suffix"> (JS)</span></span> )
 - **[Step 2: Steady...](steps/02/README.md)** — Now we extend our minimalist HTML page to a basic app with a view and a controller. ([🔗 Live Preview](https://ui5.github.io/tutorials/quickstart/build/02/index-cdn.html) \| <span class="ts-only">[📥 Download Solution](https://ui5.github.io/tutorials/quickstart/quickstart-step-02.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download Solution](https://ui5.github.io/tutorials/quickstart/quickstart-step-02-js.zip)<span class="lang-suffix"> (JS)</span></span> )
-- **[Step 3: Go!](steps/03/README.md)** — Now it is time to build our first little UI by replacing the "Hello World" text in the HTML body by the OpenUI5 control sap/m/Text. In the beginning, we will use the JavaScript control interface to set up the UI, the control instance is then placed into the HTML body. ([🔗 Live Preview](https://ui5.github.io/tutorials/quickstart/build/03/index-cdn.html) \| <span class="ts-only">[📥 Download Solution](https://ui5.github.io/tutorials/quickstart/quickstart-step-03.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download Solution](https://ui5.github.io/tutorials/quickstart/quickstart-step-03-js.zip)<span class="lang-suffix"> (JS)</span></span> )
+- **[Step 3: Go!](steps/03/README.md)** — Finally, we add a second page to our app and showcase key OpenUI5 concepts like navigation, data binding, and JSON models in a hand-on playground. ([🔗 Live Preview](https://ui5.github.io/tutorials/quickstart/build/03/index-cdn.html) \| <span class="ts-only">[📥 Download Solution](https://ui5.github.io/tutorials/quickstart/quickstart-step-03.zip)<span class="lang-suffix"> (TS)</span></span><span class="js-only">[📥 Download Solution](https://ui5.github.io/tutorials/quickstart/quickstart-step-03-js.zip)<span class="lang-suffix"> (JS)</span></span> )
 
 ## License
 

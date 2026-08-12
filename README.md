@@ -1,25 +1,44 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/UI5/tutorials)](https://api.reuse.software/info/github.com/UI5/tutorials)
 
-# UI5 Tutorials
+# Tutorials
 
-In this tutorial we'll introduce you to all major development paradigms of OpenUI5. <details class="ts-only"><summary>This section is relevant for TypeScript only</summary><span>We'll also demonstrate the use of TypeScript with OpenUI5 and highlight the specific characteristics of this approach.</span></details>
+These tutorials cover [OpenUI5](https://sdk.openui5.org/#/topic/ec699e0817fb46a0817b0fa276a249f8) application development, from beginner foundations to focused deep dives on specific concepts. Along the way you'll also use the [UI5 CLI](https://ui5.github.io/cli/stable/) for local development tooling.
 
-## Description
+All tutorials are available in both **TypeScript** and **JavaScript**. Use the language toggle at the top of each tutorial page to switch between versions.
 
-We first introduce you to the basic development paradigms like *Model-View-Controller* and establish a best-practice structure of our application. We'll do this along the classic example of “Hello World” and start a new app from scratch. Next, we'll introduce the fundamental data binding concepts of OpenUI5 and extend our app to show a list of invoices. We'll continue to add more functionality by adding navigation, extending controls, and making our app responsive. We'll also have look at the testing features and the built-in support tools of OpenUI5.
+No prior OpenUI5 experience is needed. Basic familiarity with HTML, CSS, and JavaScript (or TypeScript) is assumed.
 
-## Tutorials
+## Learning path
 
-This repository contains following tutorials:
-- [Quickstart](./packages/quickstart/)
-- [Walkthrough](./packages/walkthrough/)
-- [Data Binding](./packages/databinding/)
-- [Navigation and Routing](./packages/navigation/)
-- [OData V4](./packages/odatav4/)
+| Tutorial | Type | Content
+|---|---|---|
+| [Quickstart](./packages/quickstart/) | Foundation | Get a first OpenUI5 app running in minutes, covering bootstrapping, MVC basics, and a quick showcase of data binding and navigation. |
+| [Walkthrough](./packages/walkthrough/) | Foundation | Builds a complete app from scratch, covering MVC, data binding, navigation, custom controls, testing, and production build. |
+| [Data Binding](./packages/databinding/) | Deep dive | Explores the core binding modes in depth along with formatting, data types, and validation. |
+| [Navigation and Routing](./packages/navigation/) | Deep dive | Covers the core routing API through a realistic employee app: URL parameters, transitions, bookmarkable states, lazy loading, and error handling. |
+| [OData V4](./packages/odatav4/) | Deep dive | Builds a list/detail app against an OData V4 service covering CRUD operations, filtering, sorting, batch groups, and OData actions. |
+
+The live published site is at **<https://ui5.github.io/tutorials/>**.
+
+## Repository structure
+
+```
+packages/
+ <tutorial>/
+  docs/         # Markdown source for the tutorial steps
+  steps/        # One self-contained app per step
+```
+
+Each step under `steps/` is a standalone npm workspace package named `ui5.tutorial.<name>.stepNN`.
+
+The JS/TS language toggle is implemented via CSS classes (`ts-only`, `js-only`) on elements in the markdown source. The local dev server and the GitHub Pages site both apply the toggle at render time. On plain github.com those elements render as standard collapsed HTML details.
 
 ## Running locally
 
 The repository is set up as an npm workspaces monorepo. Each tutorial step under `packages/*/steps/*` is a self-contained app you can run standalone, and the root build orchestrator produces a unified preview that mirrors the published GitHub Pages site.
+
+**Prerequisites:** 
+Node.js 20.11.0 or higher, or v22 or higher (v21 is not supported). The UI5 CLI is installed automatically as part of `npm install`. 
 
 ```sh
 # 1) install dependencies for every step

@@ -1,4 +1,4 @@
-# OpenUI5 Walkthrough
+# Walkthrough Tutorial
 
 In this tutorial we'll introduce you to all major development paradigms of OpenUI5. <details class="ts-only"><summary>This section is relevant for TypeScript only</summary><span>We'll also demonstrate the use of TypeScript with OpenUI5 and highlight the specific characteristics of this approach.</span></details>
 

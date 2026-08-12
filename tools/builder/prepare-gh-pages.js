@@ -90,7 +90,7 @@ function removeTSfromUI5YAML(ui5yaml) {
 	}
 	function rewriteLinks(file) {
 		let permalink = file.split("dist/")[1].replace(".md", ".html");
-		const title = "UI5 Tutorials";
+		const title = "OpenUI5 Tutorials";
 		let content = `---\ntitle: ${title}\npermalink: ${permalink}\n---\n\n${readFileSync(file, { encoding: "utf8"})}`;
 		content = content.replace(/README\.md/g, "index.html");
 		content = content.replace(/\.\/packages\//g, "./");
