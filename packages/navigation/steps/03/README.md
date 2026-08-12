@@ -160,8 +160,6 @@ Open the URL `index.html#/thisIsInvalid` in your browser. From now on the user w
 
 ***
 
-***
-
 **Next:** [Step 4: Add a *Back* Button to *Not Found* Page](../04/README.md)
 
 **Previous:** [Step 2: Enable Routing](../02/README.md)

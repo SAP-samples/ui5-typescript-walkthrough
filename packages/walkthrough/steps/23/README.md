@@ -10,8 +10,6 @@ In this step, we add a search field for our product list and define a filter tha
   
 ![A search field is displayed above the list](assets/loio472ab6bf88674c23ba103efd97163133_LowRes.png "A search field is displayed above the list")
 
-<sup>*A search field is displayed above the list*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 23](https://ui5.github.io/tutorials/walkthrough/build/23/index-cdn.html).
 
 ***
@@ -152,9 +150,9 @@ The search field is part of the list header and therefore, each change on the li
  
 ***
 
-**Next:**[Step 24: Sorting and Grouping](../24/README.md)
+**Next:** [Step 24: Sorting and Grouping](../24/README.md)
 
-**Previous:**[Step 22: Custom Formatters](../22/README.md)
+**Previous:** [Step 22: Custom Formatters](../22/README.md)
 
 ***
 

@@ -57,6 +57,34 @@ function rewriteGhPagesUrls(html) {
 	return html;
 }
 
+/**
+ * Build the "UI5 Tutorials › <Tutorial>" breadcrumb for a step page, mirroring
+ * the production breadcrumb injected by tools/builder/prepare-gh-pages.js. On
+ * the dev server, step READMEs are served at /packages/<slug>/steps/NN/README.md
+ * and the tutorial overview at /packages/<slug>/. Returns "" for any page that
+ * is not a step page (root, overview).
+ */
+function breadcrumbFor(reqPath) {
+	const match = reqPath.match(/^\/packages\/([^/]+)\/steps\/[^/]+\/README\.md$/);
+	if (!match) {
+		return "";
+	}
+	const slug = match[1];
+	const overview = join(cwd, "packages", slug, "README.md");
+	let title = slug;
+	if (existsSync(overview)) {
+		const md = readFileSync(overview, { encoding: "utf-8" });
+		title = md.match(/^#\s+(.+)$/m)?.[1]?.trim() || slug;
+	}
+	return (
+		`<nav class="tutorial-breadcrumb">` +
+		`<a href="/">UI5 Tutorials</a>` +
+		` <span class="tutorial-breadcrumb-sep">&rsaquo;</span> ` +
+		`<a href="/packages/${slug}/">${title}</a>` +
+		`</nav>\n`
+	);
+}
+
 async function getTemplate() {
 	const headContent = readFileSync(join(cwd, "_includes/head-custom.html"), { encoding: "utf-8" });
 	let template = readFileSync(join(__dirname, "ghpage-template.hbs"), { encoding: "utf-8" });
@@ -116,6 +144,7 @@ app.use(async (req, res, next) => {
 		const md = readFileSync(file, { encoding: "utf-8" });
 		let bodyContent = await convertMarkdown(md);
 		bodyContent = rewriteGhPagesUrls(bodyContent);
+		bodyContent = breadcrumbFor(reqUrlWithoutParams) + bodyContent;
 		const templateFn = await getTemplate();
 		// get title as first line in the md file which starts with hashes, which indicates it is a title of some kind
 		const title = md.match(/^##* (.+)$/m)?.[1] || reqUrlWithoutParams;

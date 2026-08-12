@@ -11,8 +11,6 @@ Now we can navigate to our detail page and display an invoice, but we cannot go 
   
 ![A back button is now displayed on the detail page](assets/loio33a8341077bb458685274c64d2317f6b_LowRes.png "A back button is now displayed on the detail page")
 
-<sup>*A back button is now displayed on the detail page*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 32](https://ui5.github.io/tutorials/walkthrough/build/32/test/mockServer-cdn.html).
 
 ***
@@ -120,7 +118,7 @@ You should now see a back button when navigating to the detail page and being ab
 
 **Next:** [Step 33: Custom Controls](../33/README.md)
 
-**Previous:** [Step 31: Routing and Navigation](../31/README.md)
+**Previous:** [Step 31: Routing with Parameters](../31/README.md)
 
 ***
 

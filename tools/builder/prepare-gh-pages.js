@@ -70,6 +70,42 @@ function removeTSfromUI5YAML(ui5yaml) {
 	mkdirSync(join(cwd, "dist"), { recursive: true });
 
 	console.log(`👉 Copying root README.md...`);
+	// Display titles for the per-tutorial breadcrumb, read from each tutorial's
+	// overview README (first `# ` heading). Populated once the tutorials are
+	// known (see below); step pages get a breadcrumb injected in rewriteLinks.
+	const tutorialTitles = {};
+
+	function extractTitle(readmePath) {
+		const md = readFileSync(readmePath, { encoding: "utf8" });
+		const match = md.match(/^#\s+(.+)$/m);
+		return match ? match[1].trim() : null;
+	}
+
+	// Build a "UI5 Tutorials › <Tutorial>" breadcrumb for step pages only. The
+	// tutorial name links to that tutorial's overview so a reader can get back
+	// to it (not just to the repo root). Links are relative to the page's depth
+	// so they work under the site's `/tutorials/` base path. Returns "" for the
+	// root index and tutorial-overview pages.
+	function breadcrumbFor(permalink) {
+		const match = permalink.match(/^([^/]+)\/build\/[^/]+\/README\.html$/);
+		if (!match) {
+			return "";
+		}
+		const slug = match[1];
+		const title = tutorialTitles[slug] || slug;
+		const depth = permalink.split("/").length - 1; // directories above the file
+		const up = (n) => "../".repeat(n);
+		const rootHref = `${up(depth)}index.html`;
+		const overviewHref = `${up(depth - 1)}index.html`;
+		return (
+			`<nav class="tutorial-breadcrumb">` +
+			`<a href="${rootHref}">UI5 Tutorials</a>` +
+			` <span class="tutorial-breadcrumb-sep">&rsaquo;</span> ` +
+			`<a href="${overviewHref}">${title}</a>` +
+			`</nav>\n\n`
+		);
+	}
+
 	function escapeCodeBlocks(content) {
 		// Jekyll/Liquid (used by GitHub Pages) interprets `{{ ... }}` and `{% ... %}`
 		// inside the markdown. Code snippets (fenced blocks and inline code) often
@@ -91,7 +127,8 @@ function removeTSfromUI5YAML(ui5yaml) {
 	function rewriteLinks(file) {
 		let permalink = file.split("dist/")[1].replace(".md", ".html");
 		const title = "OpenUI5 Tutorials";
-		let content = `---\ntitle: ${title}\npermalink: ${permalink}\n---\n\n${readFileSync(file, { encoding: "utf8"})}`;
+		const breadcrumb = breadcrumbFor(permalink);
+		let content = `---\ntitle: ${title}\npermalink: ${permalink}\n---\n\n${breadcrumb}${readFileSync(file, { encoding: "utf8"})}`;
 		content = content.replace(/README\.md/g, "index.html");
 		content = content.replace(/\.\/packages\//g, "./");
 		content = content.replace(/\[LICENSE\]\([\.\/\w]*\)/g, "[LICENSE](https://github.com/UI5/tutorials/blob/-/LICENSE)");
@@ -119,6 +156,15 @@ function removeTSfromUI5YAML(ui5yaml) {
 
 	const tutorials = getTutorials();
 	console.log(`👉 Found tutorials: ${tutorials.join(", ")}`);
+
+	// Read each tutorial's display title up front so step-page breadcrumbs
+	// (injected by rewriteLinks) can name the tutorial they belong to.
+	for (const tutorial of tutorials) {
+		const overview = join(cwd, "packages", tutorial, "README.md");
+		if (existsSync(overview)) {
+			tutorialTitles[tutorial] = extractTitle(overview) || tutorial;
+		}
+	}
 
 	for (const tutorial of tutorials) {
 		const tutorialDir = join(cwd, "packages", tutorial);

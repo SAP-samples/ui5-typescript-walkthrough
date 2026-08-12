@@ -211,8 +211,6 @@ When changing the table’s sorting options, you will see that the hash updates 
 
 ***
 
-***
-
 **Next:** [Step 14: Make Dialogs Bookmarkable](../14/README.md)
 
 **Previous:** [Step 12: Make a Search Bookmarkable](../12/README.md)

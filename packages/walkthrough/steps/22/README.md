@@ -10,8 +10,6 @@ If we want to do a more complex logic for formatting properties of our data mode
   
 ![A status is now displayed with a custom formatter](assets/loio7aa185a90dd7495cb6ec30c96bc80a54_LowRes.png "A status is now displayed with a custom formatter")
 
-<sup>*A status is now displayed with a custom formatter*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 22](https://ui5.github.io/tutorials/walkthrough/build/22/index-cdn.html).
 
 ***

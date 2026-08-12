@@ -9,8 +9,6 @@ Now that we have established a good structure for our app, it's time to add some
   
 ![A list of invoices is displayed below the panel](assets/loiob05bdb47393b4abda3e1b54498959c38_LowRes.png "A list of invoices is displayed below the panel")
 
-<sup>*A list of invoices is displayed below the panel*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 19](https://ui5.github.io/tutorials/walkthrough/build/19/index-cdn.html).
 
 ***
@@ -192,9 +190,9 @@ In the app view we add a second view and assign it to our newly created InvoiceL
 
 ***
 
-**Next:** Step 20: [Data Types](../20/README.md)
+**Next:** [Step 20: Data Types](../20/README.md)
 
-**Previous:** Step 18: [Icons](../18/README.md)
+**Previous:** [Step 18: Icons](../18/README.md)
 
 ***
 

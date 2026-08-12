@@ -114,10 +114,14 @@ For the new context we set `keepAlive` to `true` and add `_setDetailArea` as an 
 
 You can use the `Context#setKeepAlive` method to prevent the destruction of information shown in the detail area when the selected user is no longer part of the list from which the information was selected. This could otherwise happen if you filter or sort the list.
 
-**Related Information**
-
-[Extending the Lifetime of a Context that is not Used Exclusively by a Table Collection](https://sdk.openui5.org/topic/648e360fa22d46248ca783dc6eb44531.html#loio648e360fa22d46248ca783dc6eb44531/section_ELC)
-
 ***
 
 **Next:** [Step 11: Add Table with :n Navigation to Detail Area](../11/README.md)
+
+**Previous:** [Step 9: List-Detail Scenario](../09/README.md)
+
+***
+
+**Related Information**
+
+[Extending the Lifetime of a Context that is not Used Exclusively by a Table Collection](https://sdk.openui5.org/topic/648e360fa22d46248ca783dc6eb44531.html#loio648e360fa22d46248ca783dc6eb44531/section_ELC)

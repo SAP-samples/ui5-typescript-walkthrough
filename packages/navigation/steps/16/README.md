@@ -82,8 +82,6 @@ Now try to access `webapp/index.html#/thisIsInvalid` while you have your browser
 
 ***
 
-***
-
 **Next:** [Step 17: Listen to Matched Events of Any Route](../17/README.md)
 
 **Previous:** [Step 15: Reuse an Existing Route](../15/README.md)

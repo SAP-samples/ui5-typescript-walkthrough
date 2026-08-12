@@ -8,9 +8,7 @@ We set up the development environment and bootstrap OpenUI5 in an HTML page with
 
 ### Preview
 
-![The second page of the final quickstart app titled 'Create Enterprise-Ready Web Apps with Ease', showing the OpenUI5 phoenix logo, a 'This is UI5!' heading, six feature InfoLabels, and an expandable 'Are you ready?' panel.](steps/03/assets/loio79e1157d948c488c9717ef840fa9b396_LowRes.png)
-
-<sup>*The second page of the finished app, reached by pressing the Go! button*</sup>
+![Three cascading browser windows show the three steps of the Quickstart tutorial: a "Ready..." button with a "Hello World!" message, a "Steady..." button with a "Hello App!" message, and a "Go!" button with a "Hello UI5!" message.](assets/loio443918d392b94ec58e0f84df6ec54d46_LowRes.png "The OpenUI5 application that is going to be built in this tutorial")
 
 ### Steps
 

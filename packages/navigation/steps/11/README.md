@@ -567,8 +567,6 @@ Add the new texts to the `properties` file.
 
 ***
 
-***
-
 **Next:** [Step 12: Make a Search Bookmarkable](../12/README.md)
 
 **Previous:** [Step 10: Implement “Lazy Loading”](../10/README.md)

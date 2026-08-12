@@ -8,9 +8,7 @@ Now we use a shell control as container for our app and use it as our new root e
 
 ### Preview
   
-![The app is now run in a shall that limits the app width](assets/loio0becf3ee81f5486a864e3b39ba036402_LowRes.png "The app is now run in a shall that limits the app width")
-
-<sup>*The app is now run in a shell that limits the app width*</sup>
+![The app is now run in a shell that limits the app width](assets/loio0becf3ee81f5486a864e3b39ba036402_LowRes.png "The app is now run in a shell that limits the app width")
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 12](https://ui5.github.io/tutorials/walkthrough/build/12/index-cdn.html).
 

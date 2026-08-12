@@ -11,8 +11,6 @@ Now we extend our minimalist HTML page to a basic app with a view and a controll
 
 ![The browser shows a Steady button in an app](assets/loio240ef5357d7f4d36955092cdaf1884a2_LowRes.png "The browser shows a Steady button in an app")
 
-<sup>*The browser shows a Steady button in an app*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 2](https://ui5.github.io/tutorials/quickstart/build/02/index-cdn.html).
 
 ***

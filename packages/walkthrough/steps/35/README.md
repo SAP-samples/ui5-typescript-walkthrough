@@ -10,8 +10,6 @@ We now configure the visibility and properties of controls based on the device t
 
 ![On phone devices, the panel is collapsed to save screen space and a button is hidden](assets/loio0b0d57e04e574d7fbc4b10395e6cb260_LowRes.png "On phone devices, the panel is collapsed to save screen space and a button is hidden")
 
-<sup>*On phone devices, the panel is collapsed to save screen space and a button is hidden*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 35](https://ui5.github.io/tutorials/walkthrough/build/35/test/mockServer-cdn.html).
 
 ***
@@ -299,7 +297,7 @@ Optimize your application for the different screen sizes of phone, tablet, and d
 
 **Next:** [Step 36: Content Density](../36/README.md)
 
-**Previous:** [Step 34: Routing and Navigation](../34/README.md)
+**Previous:** [Step 34: Responsiveness](../34/README.md)
 
 ***
 

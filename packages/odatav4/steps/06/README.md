@@ -570,6 +570,14 @@ changesSentMessage=User data sent to the server
 
 We add the new message texts.
 
+***
+
+**Next:** [Step 7: Delete](../07/README.md)
+
+**Previous:** [Step 5: Batch Groups](../05/README.md)
+
+***
+
 **Related Information**
 
 [Model Instantiation and Data Access](https://sdk.openui5.org/topic/9613f1f2d88747cab21896f7216afdac "One OData V4 model instance can only cover one OData service. This section describes the creation of a model instance in more detail.")
@@ -583,9 +591,3 @@ We add the new message texts.
 [Message Model](https://sdk.openui5.org/topic/8956f0a223284d729900ebad4ca88356 "The message model contains all messages and is used to bind to the messages to display them.")
 
 [API Reference: `sap.ui.model.odata.v4.ODataContextBinding`](https://sdk.openui5.org/#/api/sap.ui.model.odata.v4.ODataContextBinding)
-
-***
-
-**Next:** [Step 7: Delete](../07/README.md)
-
-**Previous:** [Step 5: Batch Groups](../05/README.md)

@@ -8,9 +8,7 @@ Now that we have integrated the dialog, it's time to add some user interaction. 
 
 ### Preview
   
-![The dialog now has an &quot;OK&quot; button](assets/loioc351bbd078824c43bf1758b0c3679cbd_LowRes.png "The dialog now has an &quot;OK&quot; button")
-
-<sup>*The dialog now has an &quot;OK&quot; button to close the dialog*</sup>
+![The dialog now has an &quot;OK&quot; button to close the dialog](assets/loioc351bbd078824c43bf1758b0c3679cbd_LowRes.png "The dialog now has an &quot;OK&quot; button to close the dialog")
 
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 17](https://ui5.github.io/tutorials/walkthrough/build/17/index-cdn.html).
 ***

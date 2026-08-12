@@ -11,8 +11,6 @@ To make our list of invoices even more user-friendly, we sort it alphabetically 
 
 ![The list is now sorted and grouped by the shipping company](assets/loio33f71b44bb644d1fa2a0ab14f1fcc02a_LowRes.png "The list is now sorted and grouped by the shipping company")
 
-<sup>*The list is now sorted and grouped by the shipping company*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 24](https://ui5.github.io/tutorials/walkthrough/build/24/index-cdn.html).
 
 ***
@@ -84,7 +82,7 @@ We could define a custom group header factory if we wanted by setting the `group
 
 **Next:** [Step 25: Remote OData Service](../25/README.md)
 
-**Previous:** [Step 23: Remote OData Service](../23/README.md)
+**Previous:** [Step 23: Filtering](../23/README.md)
 
 ***
 

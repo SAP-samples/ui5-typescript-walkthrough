@@ -180,12 +180,14 @@ deletionRestoredMessage=User {0} restored
 
 We add the missing texts to the properties file.
 
-**Related Information**
-
-[Deleting an Entity](https://sdk.openui5.org/topic/2613ebc835764abd9aefd2e6fa8b7392 "The v4.Context.delete method deletes an entity on the server and updates the user interface accordingly.")
-
 ***
 
 **Next:** [Step 8: OData Operations](../08/README.md)
 
 **Previous:** [Step 6: Create and Edit](../06/README.md)
+
+***
+
+**Related Information**
+
+[Deleting an Entity](https://sdk.openui5.org/topic/2613ebc835764abd9aefd2e6fa8b7392 "The v4.Context.delete method deletes an entity on the server and updates the user interface accordingly.")

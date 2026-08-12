@@ -273,8 +273,6 @@ When you change the value in the search field, you see that the hash updates acc
 
 ***
 
-***
-
 **Next:** [Step 13: Make Table Sorting Bookmarkable](../13/README.md)
 
 **Previous:** [Step 11: Assign Multiple Targets](../11/README.md)

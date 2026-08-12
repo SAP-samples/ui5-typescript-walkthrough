@@ -288,8 +288,6 @@ When you click on any tab you will see that the hash in the URL changes immediat
 
 ***
 
-***
-
 **Next:** [Step 10: Implement “Lazy Loading”](../10/README.md)
 
 **Previous:** [Step 8: Navigate with Flip Transition](../08/README.md)

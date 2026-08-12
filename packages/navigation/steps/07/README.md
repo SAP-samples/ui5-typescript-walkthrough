@@ -394,8 +394,6 @@ That’s it. You can go to `webapp/index.html#/employees` and click on any list 
 
 ***
 
-***
-
 **Next:** [Step 8: Navigate with Flip Transition](../08/README.md)
 
 **Previous:** [Step 6: Navigate to Routes with Hard-Coded Patterns](../06/README.md)

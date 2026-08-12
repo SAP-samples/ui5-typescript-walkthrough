@@ -10,8 +10,6 @@ Our panel content is getting more and more complex and now it is time to move th
   
 ![The panel content is now refactored to a separate view \(No visual changes to last step\)](assets/loiof3724d2f97e94a78b27d8ab01ff9c37d_LowRes.png "The panel content is now refactored to a separate view \(No visual changes to last step\)")
 
-<sup>*The panel content is now refactored to a separate view \(No visual changes to last step\)*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 15](https://ui5.github.io/tutorials/walkthrough/build/15/index-cdn.html).
 
 ***
@@ -164,7 +162,7 @@ We have now moved everything out of the app view and controller. The app control
 
 **Next:** [Step 16: Dialogs and Fragments](../16/README.md)
 
-**Previous:** [Step 14: Margins and Paddings](../14/README.md)
+**Previous:** [Step 14: Custom CSS and Theme Colors](../14/README.md)
 
 ***
 

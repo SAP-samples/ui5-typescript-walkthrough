@@ -236,8 +236,6 @@ Next we add the `itemPress` handler `.onItemPressed` to the `EmployeeOverviewCon
 
 ***
 
-***
-
 **Next:** [Step 16: Handle Invalid Hashes by Listening to Bypassed Events](../16/README.md)
 
 **Previous:** [Step 14: Make Dialogs Bookmarkable](../14/README.md)

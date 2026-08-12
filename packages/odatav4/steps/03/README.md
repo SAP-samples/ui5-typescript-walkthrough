@@ -80,6 +80,14 @@ To make the *User Name* optional, we remove the parameter `Nullable="false"` fro
 > 💡
 > To see the metadata of an OData service, you append the `$metadata` variable to the URL of the service. You can try this, for example, with [http://services.odata.org/TripPinRESTierService/](http://services.odata.org/TripPinRESTierService/) and [http://services.odata.org/TripPinRESTierService/$metadata](http://services.odata.org/TripPinRESTierService/$metadata)
 
+***
+
+**Next:** [Step 4: Filtering, Sorting, and Counting](../04/README.md)
+
+**Previous:** [Step 2: Data Access and Client-Server Communication](../02/README.md)
+
+***
+
 **Related Information**
 
 [Type Determination](https://sdk.openui5.org/topic/53cdd55a77ce4f33a14bd0767a293063 "")
@@ -87,9 +95,3 @@ To make the *User Name* optional, we remove the parameter `Nullable="false"` fro
 [API Reference: `sap.ui.model.odata.type`](https://sdk.openui5.org/#/api/sap.ui.model.odata.type)
 
 [Sample for `sap.ui.core.mvc.XMLView`: *XML Templating: UI5 OData types*](https://sdk.openui5.org/#/entity/sap.ui.core.mvc.XMLView/sample/sap.ui.core.sample.ViewTemplate.types)
-
-***
-
-**Next:** [Step 4: Filtering, Sorting, and Counting](../04/README.md)
-
-**Previous:** [Step 2: Data Access and Client-Server Communication](../02/README.md)

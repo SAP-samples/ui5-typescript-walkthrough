@@ -17,8 +17,6 @@ One part of the ARIA attribute set are the so-called landmarks. You can compare 
   
 ![Landmarks in our app](assets/loiob35deda1ebe1433fbf0ff066f6e3fc4b_LowRes.png "Landmarks in our app")
 
-<sup>*Landmarks in our app*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 37](https://ui5.github.io/tutorials/walkthrough/build/37/test/mockServer-cdn.html).
 
 ***

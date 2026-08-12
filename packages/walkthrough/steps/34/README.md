@@ -11,8 +11,6 @@ In this step, we improve the responsiveness of our app. OpenUI5 applications can
   
 ![A responsive table is hiding some of the columns on small devices](assets/loiocc3f2e0d8ac6471288af6495836c2f07_LowRes.png "A responsive table is hiding some of the columns on small devices")
 
-<sup>*A responsive table is hiding some of the columns on small devices*</sup>
-
 You can access the live preview by clicking on this link: [🔗 Live Preview of Step 34](https://ui5.github.io/tutorials/walkthrough/build/34/test/mockServer-cdn.html).
 
 
@@ -197,9 +195,9 @@ We can see the results when we decrease the browser's screen size or open the ap
 
 ***
 
-**Next:** [Step 35: Routing and Navigation](../35/README.md)
+**Next:** [Step 35: Device Adaptation](../35/README.md)
 
-**Previous:** [Step 33: Debugging Tools](../33/README.md)
+**Previous:** [Step 33: Custom Controls](../33/README.md)
 
 ***
 

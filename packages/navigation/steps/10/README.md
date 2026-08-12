@@ -296,8 +296,6 @@ Try it out yourself: Open the *Network* tab of your browser's developer tools an
 
 ***
 
-***
-
 **Next:** [Step 11: Assign Multiple Targets](../11/README.md)
 
 **Previous:** [Step 9: Allow Bookmarkable Tabs with Optional Query Parameters](../09/README.md)

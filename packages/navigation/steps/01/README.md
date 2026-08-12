@@ -91,7 +91,4 @@ So far we have a basic app that does not really have any navigation or routing i
 
 ***
 
-
-***
-
 **Next:** [Step 2: Enable Routing](../02/README.md)

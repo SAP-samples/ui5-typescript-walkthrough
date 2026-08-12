@@ -265,8 +265,6 @@ Now you can open the app and press the *Show Employee List* button to navigate t
 
 ***
 
-***
-
 **Next:** [Step 7: Navigate to Routes with Mandatory Parameters](../07/README.md)
 
 **Previous:** [Step 5: Display a Target Without Changing the Hash](../05/README.md)

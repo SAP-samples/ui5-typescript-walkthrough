@@ -166,3 +166,35 @@ li > section.ts-only, li > section.js-only {
     background-color: rgba(27, 32, 50, 0.3) !important;
     top: 40px !important;
 }
+
+/* Image captions rendered from each image's alt text (see renderImageCaptions
+   in assets/js/custom.js). Restores the SAP Demo Kit behavior of showing the
+   image description below the figure. */
+figure.img-figure {
+    margin: 16px 0;
+}
+
+figure.img-figure > .img-caption {
+    margin-top: 6px;
+    font-size: 90%;
+    font-style: italic;
+    color: var(--inactive-color);
+    text-align: center;
+}
+
+/* Breadcrumb shown at the top of each step page: "UI5 Tutorials › <Tutorial>".
+   Injected server-side (tools/builder/prepare-gh-pages.js for GitHub Pages,
+   tools/dev-server/server.js for local preview) so the reader knows which
+   tutorial they are in and can jump back to its overview. */
+.tutorial-breadcrumb {
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--neutral-border);
+    font-size: 90%;
+    color: var(--inactive-color);
+}
+
+.tutorial-breadcrumb .tutorial-breadcrumb-sep {
+    margin: 0 6px;
+    color: var(--inactive-color);
+}

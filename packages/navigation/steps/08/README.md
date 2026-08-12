@@ -429,8 +429,6 @@ You can go to `webapp/index.html#/employees/3` and click on the *Flip to Resume*
 
 ***
 
-***
-
 **Next:** [Step 9: Allow Bookmarkable Tabs with Optional Query Parameters](../09/README.md)
 
 **Previous:** [Step 7: Navigate to Routes with Mandatory Parameters](../07/README.md)

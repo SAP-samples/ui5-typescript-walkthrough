@@ -93,6 +93,12 @@ To be able to add data to the emulated OData responses, we have to store the ent
 
 In this tutorial, we only use the entity type `Person` of the *TripPin* service. The entities of type `Person` are collected in the entity set `People`. Each `Person` has a key property `UserName` and the properties `Age`, `FirstName`, and `LastName`.
 
+***
+
+**Next:** [Step 2: Data Access and Client-Server Communication](../02/README.md)
+
+***
+
 **Related Information**
 
 [*OData* Reference Services including *TripPin*](http://www.odata.org/odata-services/)
@@ -100,7 +106,3 @@ In this tutorial, we only use the entity type `Person` of the *TripPin* service.
 [Bootstrapping: Loading and Initializing](https://sdk.openui5.org/topic/a04b0d10fb494d1cb722b9e341b584ba.html "To use OpenUI5 features in your HTML page, you have to load and initialize the OpenUI5 library.")
 
 [Descriptor for Applications, Components, and Libraries \(manifest.json\)](https://sdk.openui5.org/topic/be0cf40f61184b358b5faedaec98b2da.html "The descriptor for applications, components, and libraries (in short: app descriptor) is inspired by the WebApplication Manifest concept introduced by the W3C. The descriptor provides a central, machine-readable, and easy-to-access location for storing metadata associated with an application, an application component, or a library.")
-
-***
-
-**Next:** [Step 2: Data Access and Client-Server Communication](../02/README.md)

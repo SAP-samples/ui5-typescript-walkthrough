@@ -12,8 +12,6 @@ Luckily, OpenUI5 provides a couple of debugging tools that we can use within the
   
 
 ![The diagnostics window](assets/loio930de31b311f43ffa9df9261ca760da0_LowRes.png "The diagnostics window")
-  
-<sup>*The diagnostics window*</sup>
 
 *The code in this step remains unchanged, except for the addition and subsequent removal of a bug using troubleshooting tools. As a result, there is no live preview or download available for this step.*
 
@@ -103,8 +101,6 @@ Sometimes errors are not as easy to spot and you actually need to debug the Java
   
   
 ![Technical information dialog ](assets/loio34c4b02c74eb4848b8b720d86042bfdc_LowRes.png "Technical information dialog ")
-
-<sup>*Technical information dialog*</sup>
 
 For a more detailed explanation of the OpenUI5 support tools, go through the [Troubleshooting Tutorial](https://sdk.openui5.org/topic/5661952e72df471b932eddc10350c081.html) tutorial.
 

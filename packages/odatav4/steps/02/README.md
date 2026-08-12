@@ -6,9 +6,7 @@ In this step, we see how the `Table` that is bound to the `People` entity set in
 
 **App with a toolbar that contains a Refresh button**
 
-![App with a toolbar that contains a Refresh
-					button](assets/Tutorial_OData_V4_Step_2_0abcbb6.png "App with a toolbar that contains a Refresh
-					button")
+![App with a toolbar that contains a Refresh button](assets/Tutorial_OData_V4_Step_2_0abcbb6.png "App with a toolbar that contains a Refresh button")
 
 You can view this step live: [🔗 Live Preview of Step 2](https://ui5.github.io/tutorials/odatav4/build/02/index-cdn.html).
 
@@ -225,6 +223,14 @@ We search for the following mock server requests:
 
     This request explicitly lists the fields that should be included in the response by using the `$select` query option. Although the *TripPin* service has more fields in its `People` entity set, only those four are included in the response. This is a feature of the OData V4 Model called "automatic determination of `$select`", or "auto-`$select`". It helps restricting the size of responses to what is really needed. The `ODataModel` computes the required fields from binding paths specified for controls. This feature is not active by default. In our case, this is activated by setting the `autoExpandSelect` property to `true` when instantiating the model in the `manifest.json` descriptor file .
 
+***
+
+**Next:** [Step 3: Automatic Data Type Detection](../03/README.md)
+
+**Previous:** [Step 1: The Initial App](../01/README.md)
+
+***
+
 **Related Information**
 
 [Bindings](https://sdk.openui5.org/topic/54e0ddf695af4a6c978472cecb01c64d "Bindings connect OpenUI5 view elements to model data, allowing changes in the model to be reflected in the view element and vice versa.")
@@ -234,9 +240,3 @@ We search for the following mock server requests:
 [API Reference: `sap.ui.model.odata.v4.ODataListBinding.refresh`](https://sdk.openui5.org/#/api/sap.ui.model.odata.v4.ODataListBinding/methods/refresh)
 
 [Troubleshooting Tutorial Step 1: Browser Developer Tools](step-1-browser-developer-tools-eadd60a.md "In this step, you will learn how to use your browser's developers tools to troubleshoot your OpenUI5 app.")
-
-***
-
-**Next:** [Step 3: Automatic Data Type Detection](../03/README.md)
-
-**Previous:** [Step 1: The Initial App](../01/README.md)

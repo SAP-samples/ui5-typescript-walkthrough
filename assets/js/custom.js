@@ -276,6 +276,60 @@ function updateAllCodeCouples(globalLang) {
 
 // initialization on startup
 
+/**
+ * Render each content image's `alt` text as a visible caption beneath it,
+ * mirroring the SAP Demo Kit behavior that was lost when the tutorials moved
+ * to GitHub Pages. The caption text lives only in the image's `alt` attribute
+ * (also used by screen readers and as the broken-image fallback), so there is
+ * a single source of truth.
+ *
+ * Idempotent: an image already wrapped in <figure class="img-figure"> is
+ * skipped, so re-running (e.g. after a language switch) does not duplicate.
+ */
+function renderImageCaptions() {
+	const images = document.querySelectorAll("img");
+	images.forEach((img) => {
+		const caption = (img.getAttribute("alt") || "").trim();
+		if (!caption) {
+			return; // no alt text -> no caption
+		}
+		if (img.closest("figure.img-figure")) {
+			return; // already processed
+		}
+
+		// A link-wrapped image is captioned via its anchor; otherwise the image
+		// itself is the wrap target.
+		const wrapTarget =
+			img.parentElement && img.parentElement.tagName === "A"
+				? img.parentElement
+				: img;
+		const host = wrapTarget.parentElement;
+		if (!host) {
+			return;
+		}
+
+		// Only caption block-level "preview" images — those that are the sole
+		// meaningful content of their containing block. This skips inline
+		// images sitting inside a line of prose (badges, inline icons), which
+		// should not get a centered caption. `host.textContent` is empty for a
+		// standalone image because the <img> contributes no text.
+		if (host.textContent.trim() !== "") {
+			return;
+		}
+
+		const figure = document.createElement("figure");
+		figure.classList.add("img-figure");
+
+		const figcaption = document.createElement("figcaption");
+		figcaption.classList.add("img-caption");
+		figcaption.textContent = caption;
+
+		wrapTarget.parentNode.insertBefore(figure, wrapTarget);
+		figure.appendChild(wrapTarget);
+		figure.appendChild(figcaption);
+	});
+}
+
 document.addEventListener("DOMContentLoaded", (event) => {
 	setTimeout(() => {
 		const lang = initializeLanguage();
@@ -285,5 +339,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		addLanguageSwitchButtons();
 		updateAllCodeCouples(lang);
 		updatePrevNextLinks(lang);
+		renderImageCaptions();
 	});
 });
