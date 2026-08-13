@@ -169,12 +169,16 @@ li > section.ts-only, li > section.js-only {
 
 /* Image captions rendered from each image's alt text (see renderImageCaptions
    in assets/js/custom.js). Restores the SAP Demo Kit behavior of showing the
-   image description below the figure. */
+   image description below the figure. The figure shrink-wraps to the image and
+   is centered on the page, with the caption centered beneath the image. */
 figure.img-figure {
-    margin: 16px 0;
+    display: table;
+    margin: 16px auto;
 }
 
 figure.img-figure > .img-caption {
+    display: table-caption;
+    caption-side: bottom;
     margin-top: 6px;
     font-size: 90%;
     font-style: italic;
