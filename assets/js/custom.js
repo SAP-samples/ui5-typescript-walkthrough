@@ -297,13 +297,15 @@ function renderImageCaptions() {
 			return; // already processed
 		}
 
-		// A link-wrapped image is captioned via its anchor; otherwise the image
-		// itself is the wrap target.
-		const wrapTarget =
-			img.parentElement && img.parentElement.tagName === "A"
-				? img.parentElement
-				: img;
-		const host = wrapTarget.parentElement;
+		// Skip link-wrapped images. In the tutorials these are badges / icons
+		// (e.g. the REUSE status badge `[![…](…)](…)`), never a preview
+		// screenshot — content images are always plain `![alt](assets/…)`. A
+		// linked image should not get a caption.
+		if (img.parentElement && img.parentElement.tagName === "A") {
+			return;
+		}
+
+		const host = img.parentElement;
 		if (!host) {
 			return;
 		}
@@ -311,7 +313,7 @@ function renderImageCaptions() {
 		// Only caption block-level "preview" images — those that are the sole
 		// meaningful content of their containing block. This skips inline
 		// images sitting inside a line of prose (badges, inline icons), which
-		// should not get a centered caption. `host.textContent` is empty for a
+		// should not get a caption. `host.textContent` is empty for a
 		// standalone image because the <img> contributes no text.
 		if (host.textContent.trim() !== "") {
 			return;
@@ -324,8 +326,8 @@ function renderImageCaptions() {
 		figcaption.classList.add("img-caption");
 		figcaption.textContent = caption;
 
-		wrapTarget.parentNode.insertBefore(figure, wrapTarget);
-		figure.appendChild(wrapTarget);
+		img.parentNode.insertBefore(figure, img);
+		figure.appendChild(img);
 		figure.appendChild(figcaption);
 	});
 }
