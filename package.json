@@ -40,7 +40,7 @@
     "fast-glob": "3.3.3",
     "github-markdown-css": "5.9.0",
     "handlebars": "4.7.9",
-    "js-yaml": "5.2.3",
+    "js-yaml": "5.3.0",
     "knip": "6.32.2",
     "lockfile-lint": "5.0.1",
     "showdown": "2.1.0",
