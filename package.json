@@ -42,7 +42,7 @@
     "handlebars": "4.7.9",
     "js-yaml": "5.2.3",
     "knip": "6.32.2",
-    "lockfile-lint": "5.0.0",
+    "lockfile-lint": "5.0.1",
     "showdown": "2.1.0",
     "showdown-footnotes": "2.1.2",
     "showdown-highlight": "3.1.0"
