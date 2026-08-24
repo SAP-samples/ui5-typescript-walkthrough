@@ -31,7 +31,7 @@
     "typecheck": "npm run typecheck --workspaces --if-present"
   },
   "devDependencies": {
-    "@highlightjs/cdn-assets": "11.11.1",
+    "@highlightjs/cdn-assets": "11.12.0",
     "anchor-js": "5.0.0",
     "archiver": "8.0.0",
     "axios": "1.19.0",
