@@ -53,7 +53,7 @@
 			"groupName": "openui5",
 			"commitMessagePrefix": "deps:",
 			"commitMessageAction": "Update",
-			"minimumReleaseAge": "0 days",
+			"minimumReleaseAge": null,
 			"schedule": [
 				"* 8-16 * * 1"
 			]
