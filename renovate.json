@@ -15,7 +15,7 @@
       "matchStrings": [
         "\"@openui5/types\":\\s*\"(?<currentValue>[\\d.]+)\""
       ],
-      "depNameTemplate": "@openui5/types",
+      "depNameTemplate": "openui5_types",
       "datasourceTemplate": "custom.openui5_lts"
     }
   ],
@@ -60,7 +60,7 @@
 		{
 			"matchDepNames": [
 				"openui5_lts",
-				"@openui5/types"
+				"openui5_types"
 			],
 			"automerge": false,
 			"groupName": "openui5",
